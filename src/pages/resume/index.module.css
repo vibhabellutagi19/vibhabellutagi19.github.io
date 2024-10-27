@@ -1,0 +1,115 @@
+.resumeContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contactInfo {
+  font-size: 1.2em;
+  color: #555;
+}
+
+.summary {
+  margin-bottom: 30px;
+}
+
+.contentColumns {
+  display: flex;
+  gap: 20px;
+}
+
+.leftColumn {
+  flex: 1;
+}
+
+.rightColumn {
+  flex: 2;
+}
+
+.skills,
+.education,
+.certifications,
+.experience {
+  margin-bottom: 30px;
+}
+
+.skillsTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.skillsTable th,
+.skillsTable td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.skillsTable th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.job {
+  margin-bottom: 20px;
+}
+
+.jobDuration {
+  font-style: italic;
+  color: #777;
+}
+
+.certifications ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.certifications li {
+  margin-bottom: 10px;
+}
+
+.experience ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.experience li {
+  margin-bottom: 10px;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] {
+  --background-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --border-color: #333;
+  --header-color: #2e8555;
+}
+
+.resumeContainer {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.skillsTable th,
+.skillsTable td {
+  border: 1px solid var(--border-color);
+}
+
+.skillsTable th {
+  background-color: var(--header-color);
+}
+
+.contactInfo a {
+  color: var(--header-color);
+}
+
+.jobDuration {
+  color: var(--text-color);
+}
