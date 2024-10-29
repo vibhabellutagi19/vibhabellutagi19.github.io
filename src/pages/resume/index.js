@@ -1,12 +1,16 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import styles from './index.module.css';
+import { FaLinkedin } from "react-icons/fa";
+import { FaPhone } from "react-icons/fa";
+import { BsEnvelopeAtFill } from "react-icons/bs";
 
 const ContactInfo = () => (
   <div className={styles.header}>
     <h1>Vibhavari Bellutagi</h1>
-    <p className={styles.contactInfo}>
-      Email id: vibhavari.bellutagi@gmail.com | Mobile: +33 752209047 | <a href="https://www.linkedin.com/in/vibhavari-bellutagi-837871189/">LinkedIn</a>
+    <p className={styles.ContactInfo}>
+      <BsEnvelopeAtFill /> vibhavari.bellutagi@gmail.com | <FaPhone /> +33 752209047 |
+      <a href="https://www.linkedin.com/in/vibhavari-bellutagi-837871189/" target="_blank" rel="noopener noreferrer" ><FaLinkedin/> vibhavari-bellutagi</a>
     </p>
   </div>
 );

@@ -12,7 +12,13 @@
 }
 
 .contactInfo {
+  display: flex;
   font-size: 1.2em;
+  color: #ffffff;
+}
+
+.icons {
+  font-size: 1.0em;
   color: #555;
 }
 
@@ -90,6 +96,11 @@
   --text-color: #e0e0e0;
   --border-color: #333;
   --header-color: #2e8555;
+}
+
+.contactInfo {
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .resumeContainer {
