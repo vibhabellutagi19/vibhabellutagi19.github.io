@@ -4,6 +4,7 @@ import styles from './index.module.css';
 import { FaLinkedin } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa";
 import { BsEnvelopeAtFill } from "react-icons/bs";
+import { FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa';
 
 const ContactInfo = () => (
   <div className={styles.header}>
@@ -91,26 +92,46 @@ const Certifications = () => (
 
 const Experience = () => (
   <div className={styles.experience}>
-    <h2>Professional Experience</h2>
-    {jobs.map((job, index) => (
-      <div key={index} className={styles.job}>
-        <h3>{job.title} - {job.company}</h3>
-        <p className={styles.jobDuration}>{job.duration}</p>
-        <ul>
-          {job.responsibilities.map((responsibility, i) => (
-            <li key={i}>{responsibility}</li>
-          ))}
-        </ul>
-      </div>
-    ))}
+    <h2>My Journey</h2>
+    <div className={styles.timeline}>
+      {jobs.map((job, index) => (
+        <div key={index} className={styles.timelineItem}>
+          <div className={styles.timelineYear}>
+            <div className={styles.yearContainer}>
+              <FaCalendarAlt className={styles.yearIcon} />
+              <span>{job.year}</span>
+            </div>
+            <div className={styles.locationContainer}>
+              <FaMapMarkerAlt className={styles.locationIcon} />
+              <span>{job.Location}</span>
+            </div>
+          </div>
+          <div className={styles.timelineContent}>
+            <h3>{job.title} - {job.company}</h3>
+            <ul>
+              {job.responsibilities.map((responsibility, i) => (
+                <li key={i}>{responsibility}</li>
+              ))}
+            </ul>
+            {job.skills && (
+              <p className={styles.highlightedSkills}>
+                <strong>Skills:</strong> {job.skills.join(', ')}
+              </p>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
   </div>
-);
+  );
 
 const jobs = [
   {
+    year: "2021-2024",
     title: 'Data Engineer',
     company: 'XYZ',
-    duration: "Sep '21 - Present, France",
+    Location: "France",
+    skills: ['Spark', 'AWS', 'FlinkSQL', 'Kafka', 'Livy', 'Presto'],
     responsibilities: [
       'Collaborated with a team of 6 data scientists & engineers to deploy cutting-edge Machine Learning Models for production environments, resulting in a 50% reduction in deployment time.',
       'Streamlined ETL pipelines to enhance data quality for ML models, slashing data processing time by 60% using Apache Spark and AWS Analytics services.',
@@ -120,9 +141,11 @@ const jobs = [
     ]
   },
   {
+    year: '2018-2021',
     title: 'Data Engineer',
     company: 'Company 2',
-    duration: "Sep '18 - Aug '21, India",
+    Location: "India",
+    skills: ['Hadoop', 'Spark', 'UC4 Automation', 'ETL'],
     responsibilities: [
       'Led the development & execution of a robust ETL pipeline utilizing Hadoop & Spark to process over 30GBs of data daily, improving data-driven decision-making by 30% for cross-departmental teams.',
       'Created reusable orchestration workflows for end-to-end pipelines using UC4 automation tool, reducing workflow duplication by 40%.',
@@ -130,18 +153,22 @@ const jobs = [
     ]
   },
   {
+    year: '2017-2018',
     title: 'Software Engineer',
     company: 'Company 1',
-    duration: "Jul '17 - Sep '18, India",
+    Location: "India",
+    skills: ['Hive', 'Sqoop', 'HDFS', 'Java'],
     responsibilities: [
       'Strategised solutions for analysing ~100k credit card transactions during POC using tools like Hive, Sqoop, and HDFS.',
       'Implemented optimisation techniques such as partitioning, bucketing, and compression to automate Hive external table creation, saving 20% time.'
     ]
   },
   {
+    year: '2015-2017',
     title: 'Systems Engineer',
     company: 'Company',
-    duration: "Sep '15 - Jun '17, India",
+    Location: "India",
+    skills: ['Java', 'Spring', 'Hibernate', 'SDLC'],
     responsibilities: [
       'Involved in all phases of SDLC for a mid-sized application, focusing on requirement gathering, development, testing, and deployment using Java with Spring and Hibernate frameworks.',
       'Proactively identified and addressed application vulnerabilities, ensuring continuous enhancement and optimal performance.'
@@ -149,7 +176,8 @@ const jobs = [
   }
 ];
 
-const NewResumePage = () => {
+
+const resumePage = () => {
   return (
     <Layout title="Resume" description="Resume of Vibhavari Bellutagi">
       <div className={styles.resumeContainer}>
@@ -170,4 +198,4 @@ const NewResumePage = () => {
   );
 };
 
-export default NewResumePage;
+export default resumePage;
