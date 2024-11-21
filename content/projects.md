@@ -1,3 +1,3 @@
-# Intro
+# Projects
 
 Project intro here

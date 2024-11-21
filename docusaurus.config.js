@@ -37,7 +37,9 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: './sidebars.js'
+          sidebarPath: './sidebars.js',
+          path: 'content',
+          routeBasePath: '/',
         },
         blog: {
           showReadingTime: true,
@@ -70,16 +72,19 @@ const config = {
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'ProjectsSidebar',
             position: 'left',
             label: 'Projects',
+            to: '/projects'
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/vibhabellutagi19/vibhabellutagi19.github.io',
-            label: 'GitHub',
-            position: 'right',
+            position: 'left',
+            label: 'Resume',
+            to: '/resume/experience',
+          },
+          {
+            to: '/blog',
+            label: 'Blog',
+            position: 'left'
           },
         ],
       },
@@ -91,7 +96,7 @@ const config = {
             items: [
               {
                 label: 'Projects',
-                to: '/docs/intro',
+                to: '/projects',
               },
             ],
           },
