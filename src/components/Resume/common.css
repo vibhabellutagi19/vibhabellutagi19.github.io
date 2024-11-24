@@ -43,7 +43,7 @@ body {
 }
 
 .profile-picture {
-  width: 75px;
+  width: 65px;
   height: 75px;
   border-radius: 10%;
   margin-bottom: 10px;
@@ -52,7 +52,8 @@ body {
 .btn-primary {
   background-color: var(--primary-color);
   color: var(--text-color);
-  text-decoration: none; /* Ensures it's styled as a button */
+  text-decoration: none;
+  /* Ensures it's styled as a button */
   border: none;
   padding: 10px 15px;
   border-radius: 5px;
@@ -78,7 +79,7 @@ body {
 }
 
 .work-card {
-  background: #f9f9f9;
+  background: var(--background-color);
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 15px;
