@@ -3,12 +3,13 @@ import Typist from 'react-typist';
 import './resume.css';
 
 const things_I_like = [
-    "AWS Analytics Services.",
     "Apache Spark.",
+    "AWS Analytics Services.",
     "Apache Kafka.",
     "FastAPI.",
     "PostgreSQL.",
-    "Redshift."
+    "Docker.",
+    "Terraform.",
 ];
 
 const TypistComponent = () => (

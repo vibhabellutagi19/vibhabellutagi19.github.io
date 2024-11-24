@@ -27,6 +27,12 @@ body {
   align-items: flex-start;
 }
 
+.profile-info p {
+  font-size: 1em;
+  margin: 0.5em 0;
+  color: var(--text-color);
+}
+
 .btn-primary {
   background-color: var(--ifm-color-primary);
   color: var(--text-color);
@@ -49,9 +55,9 @@ body {
 }
 
 .work-section {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
-  flex-wrap: wrap;
 }
 
 .work-card {
@@ -59,7 +65,6 @@ body {
   border: 1px solid #2183ec;
   border-radius: 8px;
   padding: 15px;
-  flex: 1;
   min-width: 250px;
 }
 
@@ -69,12 +74,66 @@ body {
 }
 
 .typist-container {
-  font-family: var(--font-family);
-  font-size: 2em;
+  font-family: 'Courier New',
+    Courier,
+    monospace;
+  font-size: 1.5em;
   color: var(--text-color);
 }
 
 .typist-strong {
   font-weight: bold;
   color: var(--ifm-color-primary);
+}
+
+.detypist-container {
+  display: inline-block;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.3em;
+  color: var(--ifm-color-primary);
+}
+
+.detypist-strong {
+  font-weight: bolder;
+  color: var(--ifm-color-primary);
+}
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: var(--background-color);
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-close-button {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.modal-body {
+  margin-top: 10px;
 }
