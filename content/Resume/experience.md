@@ -1,5 +1,5 @@
 ---
-title: About Me
+title: Vibhavari Bellutagi
 sidebar_position: 1
 ---
 

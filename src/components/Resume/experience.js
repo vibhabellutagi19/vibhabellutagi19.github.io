@@ -1,15 +1,9 @@
 import React from 'react';
-import './common.css';
+import './resume.css';
 import { Typist } from './typist.js';
 
 const ProfileInfo = () => (
   <div className="profile-info">
-    <img
-      className="profile-picture"
-      src={require('./assets/vibha.png').default}
-      alt="Profile"
-    />
-    <h1>Vibhavari Bellutagi</h1>
     <p>I'm a Data Engineer based in South of France.</p>
     <Typist />
   </div>

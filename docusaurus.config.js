@@ -4,7 +4,7 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -64,6 +64,11 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/vb-social-card.png',
+      colorMode: {
+        defaultMode: 'dark',
+        disableSwitch: true,
+        respectPrefersColorScheme: true,
+      },
       navbar: {
         title: 'Vibhavari Bellutagi',
         logo: {
@@ -77,14 +82,14 @@ const config = {
             to: '/projects'
           },
           {
-            position: 'left',
-            label: 'Resume',
-            to: '/Resume/experience',
-          },
-          {
             to: '/blog',
             label: 'Blog',
             position: 'left'
+          },
+          {
+            position: 'left',
+            label: 'Resume',
+            to: '/Resume/experience',
           },
           {
             to: '/FirstPrinciples/thoughts',

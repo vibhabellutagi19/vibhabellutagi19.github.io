@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import ProjectList from './Projectlist';
-import './githubStats.css';
+import ProjectList from './projectlist';
+import './projects.css';
 
 const GitHubStats = ({ username }) => {
     const [stats, setStats] = useState(null);

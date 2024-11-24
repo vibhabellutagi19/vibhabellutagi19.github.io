@@ -1,31 +1,29 @@
 import React from 'react';
 import Typist from 'react-typist';
+import './resume.css';
 
 const things_I_like = [
-    "Python",
-    "AWS",
-    "Apache Spark",
-    "Apache Kafka",
-    "FastAPI",
-    "PostgreSQL",
-    "Redshift"
-]
+    "AWS Analytics Services.",
+    "Apache Spark.",
+    "Apache Kafka.",
+    "FastAPI.",
+    "PostgreSQL.",
+    "Redshift."
+];
 
 const TypistComponent = () => (
-    <Typist>
-        <Typist.Delay ms={600} />
-        {things_I_like.map((thing, index) => {
-            return (
-                <strong key={thing}>
+    <div className="typist-container">
+        <Typist>
+            <Typist.Delay ms={600} />
+            {things_I_like.map((thing, index) => (
+                <span key={thing} className="typist-strong">
                     {thing}
-                    <Typist.Backspace count={things_I_like[index].length} delay={1000} />
-                </strong>
-            )
-        })}
-        <strong>Javascript.</strong>
-    </Typist>
-)
+                    <Typist.Backspace count={thing.length} delay={1000} />
+                </span>
+            ))}
+            <span className="typist-strong">Python.</span>
+        </Typist>
+    </div>
+);
 
-TypistComponent.propTypes = {}
-
-export { TypistComponent as Typist }
+export { TypistComponent as Typist };

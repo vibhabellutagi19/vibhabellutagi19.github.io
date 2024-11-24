@@ -1,20 +1,4 @@
-:root {
-  /* Light theme colors */
-  --background-color: #ffffff;
-  --text-color: #000000;
-  --primary-color: #2e8555;
-  --hover-color: #020202;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Dark theme colors */
-    --background-color: #121212;
-    --text-color: #ffffff;
-    --primary-color: #2e8555;
-    --hover-color: #444444;
-  }
-}
+@import '../../css/custom.css';
 
 body {
   background-color: var(--background-color);
@@ -22,10 +6,11 @@ body {
 }
 
 .profile-container {
-  font-family: Arial, sans-serif;
+  font-family: var(--font-family);
   color: var(--text-color);
-  margin: 20px;
+  margin: 30px;
   background-color: var(--background-color);
+  margin-left: -5px;
 }
 
 .profile-details {
@@ -42,15 +27,8 @@ body {
   align-items: flex-start;
 }
 
-.profile-picture {
-  width: 65px;
-  height: 75px;
-  border-radius: 10%;
-  margin-bottom: 10px;
-}
-
 .btn-primary {
-  background-color: var(--primary-color);
+  background-color: var(--ifm-color-primary);
   color: var(--text-color);
   text-decoration: none;
   /* Ensures it's styled as a button */
@@ -66,9 +44,7 @@ body {
   background-color: var(--hover-color);
 }
 
-.experience-section,
-.about-me,
-.contact-section {
+.experience-section {
   margin: 20px 0;
 }
 
@@ -80,7 +56,7 @@ body {
 
 .work-card {
   background: var(--background-color);
-  border: 1px solid #ddd;
+  border: 1px solid #2183ec;
   border-radius: 8px;
   padding: 15px;
   flex: 1;
@@ -90,4 +66,15 @@ body {
 .work-card h3 {
   margin: 0;
   font-size: 1.2em;
+}
+
+.typist-container {
+  font-family: var(--font-family);
+  font-size: 2em;
+  color: var(--text-color);
+}
+
+.typist-strong {
+  font-weight: bold;
+  color: var(--ifm-color-primary);
 }
