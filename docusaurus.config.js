@@ -79,11 +79,16 @@ const config = {
           {
             position: 'left',
             label: 'Resume',
-            to: '/resume/experience',
+            to: '/Resume/experience',
           },
           {
             to: '/blog',
             label: 'Blog',
+            position: 'left'
+          },
+          {
+            to: '/FirstPrinciples/thoughts',
+            label: 'First Principles',
             position: 'left'
           },
         ],

@@ -1,0 +1,92 @@
+:root {
+  /* Light theme colors */
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --primary-color: #2e8555;
+  --hover-color: #020202;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark theme colors */
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --primary-color: #2e8555;
+    --hover-color: #444444;
+  }
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.profile-container {
+  font-family: Arial, sans-serif;
+  color: var(--text-color);
+  margin: 20px;
+  background-color: var(--background-color);
+}
+
+.profile-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.profile-picture {
+  width: 75px;
+  height: 75px;
+  border-radius: 10%;
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  text-decoration: none; /* Ensures it's styled as a button */
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-primary:hover {
+  background-color: var(--hover-color);
+}
+
+.experience-section,
+.about-me,
+.contact-section {
+  margin: 20px 0;
+}
+
+.work-section {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.work-card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  flex: 1;
+  min-width: 250px;
+}
+
+.work-card h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
