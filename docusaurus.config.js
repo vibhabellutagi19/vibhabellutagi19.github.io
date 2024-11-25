@@ -15,7 +15,7 @@ const config = {
   baseUrl: '/',
   organizationName: 'vibhabellutagi19',
   projectName: 'vibhabellutagi19.github.io',
-  deploymentBranch: 'main',
+  deploymentBranch: 'gh-pages',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
