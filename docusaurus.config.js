@@ -11,17 +11,10 @@ const config = {
   title: 'Vibhavari Bellutagi',
   tagline: 'Engineering Data, Framing Moments',
   favicon: 'img/favicon.ico',
-
-  // Set the production url of your site here
   url: 'https://github.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/vibhabellutagi19.github.io/',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'vibhabellutagi19', // Usually your GitHub org/user name.
-  projectName: 'vibhabellutagi19.github.io', // Usually your repo name.
+  baseUrl: '/',
+  organizationName: 'vibhabellutagi19',
+  projectName: 'vibhabellutagi19.github.io',
   deploymentBranch: 'gh-pages',
 
   onBrokenLinks: 'throw',
