@@ -3,16 +3,11 @@ import './projects.css';
 
 const projects = [
     {
-        name: 'Project 1',
-        description: 'Description of project 1.',
+        name: 'Blog Curator',
+        description: 'BlogCurator is designed to enhance your blog reading experience by providing a robust system equipped to manage various functionalities including link management, status tracking, tagging, and note-taking.',
+        skills: 'Python, FastApi, SQLAlchemy, PostgreSQL',
         link: 'https://github.com/vibhabellutagi19/blogcurator',
     },
-    {
-        name: 'Project 2',
-        description: 'Description of project 2.',
-        link: 'https://github.com/vibhabellutagi19/python-cookiecutter',
-    },
-    // Add more projects as needed
 ];
 
 const ProjectList = () => {
@@ -22,6 +17,7 @@ const ProjectList = () => {
                 <div key={index} className="project-card">
                     <h3>{project.name}</h3>
                     <p>{project.description}</p>
+                    <p className="skills">Skills: {project.skills}</p>
                     <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
                         View Project
                     </a>

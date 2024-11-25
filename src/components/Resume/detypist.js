@@ -4,8 +4,8 @@ import './resume.css';
 
 const DataEngineerTypist = () => (
     <Typist>
-        <Typist.Delay ms={600} />
-        <span className="detypist-strong">Data Engineer.</span>
+        <Typist.Delay ms={1000} />
+        <span className="detypist-strong">Data Engineer</span>
     </Typist>
 );
 
