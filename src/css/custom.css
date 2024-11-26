@@ -6,20 +6,35 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
+  --ifm-color-primary: #153660;
+  --ifm-color-primary-dark: #133156;
+  --ifm-color-primary-darker: #122e52;
+  --ifm-color-primary-darkest: #0f2643;
+  --ifm-color-primary-light: #173b6a;
+  --ifm-color-primary-lighter: #183e6e;
+  --ifm-color-primary-lightest: #1b467d;
+  --ifm-button-background-color: #153660;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --font-family: 'Verdana';
   --background-color: #ffffff;
   --text-color: #000000;
-  --hover-color: #29784c;
+  --hover-color: #343637;
 }
 
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary: #95d8f9;
+  --ifm-color-primary-dark: #6fcaf7;
+  --ifm-color-primary-darker: #5cc3f6;
+  --ifm-color-primary-darkest: #24aef3;
+  --ifm-color-primary-light: #bbe6fb;
+  --ifm-color-primary-lighter: #ceedfc;
+  --ifm-color-primary-lightest: #ffffff;
+  --ifm-background-color: #272835;
+  --ifm-button-background-color: #4d7589;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-  --background-color: #121212;
-  --text-color: #ffffff;
-  --hover-color: #1e9b7a;
+  --background-color: #272835;
+  --text-color: #838080;
+  --hover-color: #343637;
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
 }

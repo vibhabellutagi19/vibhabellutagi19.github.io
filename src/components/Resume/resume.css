@@ -34,7 +34,7 @@ body {
 }
 
 .btn-primary {
-  background-color: var(--ifm-color-primary);
+  background-color: var(--ifm-button-background-color);
   color: var(--text-color);
   text-decoration: none;
   /* Ensures it's styled as a button */
@@ -122,7 +122,7 @@ work-card:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(61, 66, 65, 0.717);
+  background: rgba(66, 63, 61, 0.717);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -130,12 +130,12 @@ work-card:hover {
 }
 
 .modal {
-  background: rgba(12, 50, 42, 0.917);
+  background: rgb(50, 71, 84);
   border-radius: 8px;
   padding: 20px;
   max-width: 500px;
   width: 100%;
-  box-shadow: 0 2px 10px rgba(53, 137, 112, 0.514);
+  box-shadow: 0 2px 10px rgba(105, 172, 190, 0.467);
 }
 
 .modal-header {

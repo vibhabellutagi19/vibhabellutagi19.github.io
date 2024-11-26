@@ -1,100 +1,55 @@
-import React, { useEffect, useState } from 'react';
-import { useInView } from 'react-intersection-observer';
-import './ResponsiveScrollComponent.css';
+import Heading from "@theme/Heading";
+import styles from "./styles.module.css";
+import Grid from "@mui/material/Grid";
+import Link from "@docusaurus/Link";
 
-const ResponsiveScrollComponent = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
+const FeatureList = [
+  {
+    title: "Blog",
+    link: "blog",
+    Svg: require("@site/static/img/undraw_undraw_blog_9pne_-1-_mama.svg").default,
+    description: (
+      <>
+        Find my latest blog posts on topics related to Python, Data Engineering, Software Engineering and System Design
+      </>
+    ),
+  },
+  {
+    title: "From First Principles",
+    link: "/FirstPrinciples/thoughts",
+    Svg: require("@site/static/img/undraw_instant_analysis_re_mid5.svg").default,
+    description: (
+      <>
+        A collection of articles that explain complex topics from first principles
+      </>
+    ),
+  },
+];
 
-  // Throttle function to optimize scroll performance
-  const throttle = (func, limit) => {
-    let inThrottle;
-    return function () {
-      const args = arguments;
-      const context = this;
-      if (!inThrottle) {
-        func.apply(context, args);
-        inThrottle = true;
-        setTimeout(() => (inThrottle = false), limit);
-      }
-    };
-  };
-
-  const handleScroll = () => {
-    const position = window.scrollY;
-    setScrollPosition(position);
-  };
-
-  useEffect(() => {
-    const throttledHandleScroll = throttle(handleScroll, 200);
-    window.addEventListener('scroll', throttledHandleScroll);
-    return () => {
-      window.removeEventListener('scroll', throttledHandleScroll);
-    };
-  }, []);
-
+function Feature({ Svg, title, description, link }) {
   return (
-    <div className="page-container">
-      <div className="header" style={{
-        backgroundColor: scrollPosition > 50 ? '#282c34' : 'transparent',
-        transition: 'background-color 0.3s ease',
-      }}>
-        <h1>Responsive Scroll Header</h1>
+    <>
+      <div className="text--center">
+        <Svg className={styles.featureSvg} role="img" />
       </div>
-      <div className="scrollable-section">
-        <div className="timeline-container">
-          <h2>My Journey</h2>
-          <div className="timeline">
-          <TimelineItem year="2023" icon="🔖" text="Certified as AWS Specialty - Big Data Analytics" />
-          <TimelineItem year="2021" icon="🖥️" text="Joined AgileLab as Data Engineer" />
-          <TimelineItem year="2021" icon="🇫🇷" text="Moved to France with my spouse" /> 
-          <TimelineItem year="2019" icon="👩‍❤️‍👨" text="Started New Journey, Married to one of the best human being" />
-          <TimelineItem year="2018" icon="📊" text="Joined Deloitte as Consultant ( Big Data Engineer )" />
-          <TimelineItem year="2017" icon="📈" text="Started my career as Big Data Engineer, After joining Attra Infotech" />
-          <TimelineItem year="2015" icon="💻" text="Joined Infosys as Systems Trainee" />
-          <TimelineItem year="2015" icon="👩🏼‍💻" text="Graduated as Computer Science Student From Sapthagiri College Of Engineering" />
-          <TimelineItem year="1994" icon="🇮🇳" text="I was born in Karnataka, Southern India" />
-          </div>
-        </div>
+      <div className="text--center padding-horiz--md">
+        <Link to={link}>
+          <Heading as="h3">{title}</Heading>
+        </Link>
+        <p>{description}</p>
       </div>
-      <div className="activities-section">
-        <h2>Things I Do Outside of Work</h2>
-        <div className="activities">
-          <div className="activity-item">
-            <span role="img" aria-label="Travel">✈️</span>
-            <p>I love traveling and exploring new cultures, cuisines, and landscapes. It's my way to recharge and find inspiration.</p>
-          </div>
-          <div className="activity-item">
-            <span role="img" aria-label="Photography">📸</span>
-            <p>Photography is my passion. Capturing moments, whether during travels or in daily life, allows me to tell stories visually.</p>
-          </div>
-        </div>
-      </div>
-      <div className="gallery-section">
-        <h2>Photography Gallery</h2>
-        <div className="gallery">
-          <div className="gallery-column">
-          <img src={require('./images/photo1.jpg').default} alt="Travel Photo 1" className="gallery-image" />
-          <img src={require('./images/photo2.jpg').default} alt="Travel Photo 2" className="gallery-image" />
-          </div>
-        </div>
-        <p>Check out more of my photography on <a href="https://www.instagram.com/your_instagram" target="_blank" rel="noopener noreferrer">Instagram</a>.</p>
-      </div>
-    </div>
+    </>
   );
-};
+}
 
-const TimelineItem = ({ year, icon, text }) => {
-  const { ref, inView } = useInView({ threshold: 0.1 });
-
+export default function HomepageFeatures() {
   return (
-    <div ref={ref} className={`timeline-item ${inView ? 'visible' : ''}`}>
-      <div className="timeline-icon">{icon}</div>
-      <div className="timeline-content">
-        <h3>{year}</h3>
-        <p>{text}</p>
-      </div>
-    </div>
+    <>
+      {FeatureList.map((props, idx) => (
+        <Grid key={idx} xs={12} sm={10} md={6}>
+          <Feature key={idx} {...props} />
+        </Grid>
+      ))}
+    </>
   );
-};
-
-export default ResponsiveScrollComponent;
+}

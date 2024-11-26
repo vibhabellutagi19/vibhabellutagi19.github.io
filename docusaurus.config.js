@@ -134,6 +134,7 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
     }),
+  stylesheets: ["https://fonts.googleapis.com/icon?family=Material+Icons"],
   themes: [
     // ... Your other themes.
     [
