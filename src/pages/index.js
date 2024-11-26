@@ -20,7 +20,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/Resume/experience">
-            Who Am I?
+            Know Me Better
           </Link>
         </div>
       </div>

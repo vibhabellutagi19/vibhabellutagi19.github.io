@@ -8,8 +8,8 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Vibhavari Bellutagi',
-  tagline: 'Engineering Data, Framing Moments',
+  title: 'Vibhavari Bellutagi (builtwith_vibs)',
+  tagline: 'Learn | Build | Share',
   favicon: 'img/favicon.ico',
   url: 'https://github.com',
   baseUrl: '/',
@@ -60,11 +60,11 @@ const config = {
       image: 'img/vb-social-card.png',
       colorMode: {
         defaultMode: 'dark',
-        disableSwitch: true,
+        disableSwitch: false,
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'Vibhavari Bellutagi',
+        title: 'buildwith_vibs',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.png',
@@ -134,6 +134,23 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
     }),
+  themes: [
+    // ... Your other themes.
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      ({
+        // ... Your options.
+        // `hashed` is recommended as long-term-cache of index file is possible.
+        hashed: true,
+        language: ["en"]
+        // For Docs using Chinese, The `language` is recommended to set to:
+        // ```
+        // language: ["en", "zh"],
+        // ```
+      }),
+    ],
+  ],
 };
 
 module.exports = config;

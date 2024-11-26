@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://github.com/blog</id>
-    <title>Vibhavari Bellutagi Blog</title>
-    <updated>2024-10-26T00:00:00.000Z</updated>
+    <title>Vibhavari Bellutagi (builtwith_vibs) Blog</title>
+    <updated>2024-11-26T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://github.com/blog"/>
-    <subtitle>Vibhavari Bellutagi Blog</subtitle>
+    <subtitle>Vibhavari Bellutagi (builtwith_vibs) Blog</subtitle>
     <icon>https://github.com/img/favicon.ico</icon>
     <entry>
-        <title type="html"><![CDATA[First Blog Post]]></title>
-        <id>https://github.com/blog/first-blog-post</id>
-        <link href="https://github.com/blog/first-blog-post"/>
-        <updated>2024-10-26T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[My first blog...]]></summary>
-        <content type="html"><![CDATA[<p>My first blog...</p>
-<p>...consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>]]></content>
+        <title type="html"><![CDATA[Welcome]]></title>
+        <id>https://github.com/blog/welcome-to-my-blog</id>
+        <link href="https://github.com/blog/welcome-to-my-blog"/>
+        <updated>2024-11-26T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Welcome dear readers...]]></summary>
+        <content type="html"><![CDATA[<p>Welcome dear readers...</p>
+<p>Hi there!
+I'm a passionated data engineer and I'm starting this blog to share my thoughts and experiences with you. Im so excited to start this journey with you. Stay tuned for more content!</p>]]></content>
         <author>
             <name>Vibhavari Bellutagi</name>
             <uri>https://github.com/vibhabellutagi19</uri>
