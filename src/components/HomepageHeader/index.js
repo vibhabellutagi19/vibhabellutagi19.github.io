@@ -71,8 +71,9 @@ export default function HomepageHeader() {
               src={useBaseUrl("/img/vibs.png")}
               style={{
                 borderRadius: "50%",
-                maxWidth: "225px",
+                maxWidth: "200px",
                 textAlign: "center",
+                boxShadow: "0 0 10px 0 rgba(0,0,0,1.5)",
               }}
             />
 
