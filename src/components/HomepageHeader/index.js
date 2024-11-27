@@ -68,7 +68,7 @@ export default function HomepageHeader() {
           >
             <img
               alt={"vibhavari bellutagi"}
-              src={useBaseUrl("/img/vibs.jpg")}
+              src={useBaseUrl("/img/vibs.png")}
               style={{
                 borderRadius: "50%",
                 maxWidth: "225px",
