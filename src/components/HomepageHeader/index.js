@@ -49,7 +49,7 @@ export default function HomepageHeader() {
         maxWidth="md"
         justifyContent="center"
         alignItems="center"
-        style={{ padding: 0 }}
+        style={{ padding: 30 }}
       >
         <Grid
           container

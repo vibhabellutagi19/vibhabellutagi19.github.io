@@ -58,11 +58,6 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/vb-social-card.png',
-      colorMode: {
-        defaultMode: 'dark',
-        disableSwitch: false,
-        respectPrefersColorScheme: true,
-      },
       navbar: {
         title: 'buildwith_vibs',
         logo: {
@@ -141,7 +136,13 @@ const config = {
       require.resolve("@easyops-cn/docusaurus-search-local"),
       /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
       ({
-        hashed: true
+        // ... Your options.
+        // `hashed` is recommended as long-term-cache of index file is possible.
+        hashed: true,
+        // For Docs using Chinese, The `language` is recommended to set to:
+        // ```
+        // language: ["en", "zh"],
+        // ```
       }),
     ],
   ],

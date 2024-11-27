@@ -24,6 +24,16 @@ const FeatureList = [
       </>
     ),
   },
+  {
+    title: "Tech Bytes",
+    link: "/TechBytes/intro",
+    Svg: require("@site/static/img/undraw_my_code_snippets_re_4adu.svg").default,
+    description: (
+      <>
+        Tech Bytes is a collection of code snippets, tips and tricks that I have found useful in my journey as a software engineer
+      </>
+    ),
+  },
 ];
 
 function Feature({ Svg, title, description, link }) {
