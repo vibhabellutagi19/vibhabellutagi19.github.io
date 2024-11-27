@@ -84,7 +84,7 @@ export default function HomepageHeader() {
                 width: "100px",
               }}
             >
-              {/* <AnimatedSvg /> */}
+              <AnimatedSvg />
             </div>
           </Grid>
           <svg
@@ -119,7 +119,7 @@ export default function HomepageHeader() {
             <h1 className="hero__title">{siteConfig.title}</h1>
 
             <h3>
-              Data Engineer | Python Developer | BuildWith_Me
+              Data Engineer | Learn | Build | Share
             </h3>
 
             <p>
@@ -135,9 +135,9 @@ export default function HomepageHeader() {
             >
               <Grid item>
                 <Link
-                  className="button"
+                  className={styles.button}
                   to="https://github.com/vibhabellutagi19"
-                  style={{ padding: "0rem" }}
+                  style={{ padding: "1rem" }}
                 >
                   <GitHubIcon fontSize={"large"} />
                 </Link>
@@ -145,33 +145,14 @@ export default function HomepageHeader() {
 
               <Grid item>
                 <Link
-                  className="button"
-                  to="https://www.youtube.com/c/FedericoTartarini"
-                  style={{ padding: "0rem" }}
-                >
-                  <YouTubeIcon fontSize={"large"} />
-                </Link>
-              </Grid>
-
-              <Grid item>
-                <Link
-                  className="button"
-                  to="https://www.linkedin.com/in/federico-tartarini-3991995b/"
+                  className={styles.button}
+                  to="https://www.linkedin.com/in/vibhavari-bellutagi-837871189/"
                   style={{ padding: "1rem" }}
                 >
                   <LinkedInIcon fontSize={"large"} />
                 </Link>
               </Grid>
 
-              <Grid item>
-                <Link
-                  className="button"
-                  to="https://scholar.google.com/citations?user=QcamSPwAAAAJ&hl=en"
-                  style={{ padding: "1rem" }}
-                >
-                  <SchoolIcon fontSize={"large"} />
-                </Link>
-              </Grid>
             </Grid>
             <div className={styles.buttons}>
               <Link
