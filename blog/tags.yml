@@ -1,14 +1,19 @@
-dataengineering:
+data-engineering:
   label: data-engineering
-  permalink: /de
+  permalink: /data-engineering
   description: DE tag description
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
+dimensional-modeling:
+  label: dimensional-modeling
+  permalink: /dimensional-modeling
+  description: Dimensional Modeling tag description
 
 hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+  label: Welcome post
+  permalink: /welcome
+  description: Welcome post
+
+data-engineering-bootcamp:
+  label: data-engineering-bootcamp
+  permalink: /data-engineering-bootcamp
+  description: Tags on Data Engineering Bootcamp by Zach Wilson
