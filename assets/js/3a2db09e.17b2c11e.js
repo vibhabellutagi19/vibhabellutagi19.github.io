@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkvibhavari_bellutagi=self.webpackChunkvibhavari_bellutagi||[]).push([[121],{8070:a=>{a.exports=JSON.parse('{"tags":[{"label":"Hola","permalink":"/blog/tags/hola","description":"Hola tag description","count":1},{"label":"data-engineering","permalink":"/blog/tags/de","description":"DE tag description","count":1}]}')}}]);

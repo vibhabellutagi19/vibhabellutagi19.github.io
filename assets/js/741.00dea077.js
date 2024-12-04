@@ -1,1 +1,0 @@
-(self.webpackChunkvibhavari_bellutagi=self.webpackChunkvibhavari_bellutagi||[]).push([[741],{5741:()=>{}}]);

@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.6.3">
+<title data-rh="true">Dimensional Modelling - Cumulative Table | Vibhavari Bellutagi</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://github.com/img/vb-social-card.png"><meta data-rh="true" name="twitter:image" content="https://github.com/img/vb-social-card.png"><meta data-rh="true" property="og:url" content="https://github.com/blog/de-bootcamp-dimensional-modelling"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="Dimensional Modelling - Cumulative Table | Vibhavari Bellutagi"><meta data-rh="true" name="description" content="Im sharing my learning from the Data Engineering Bootcamp, where we are learning about Data Engeering. Today we are learning about Dimensional modelling - Cumulative Table."><meta data-rh="true" property="og:description" content="Im sharing my learning from the Data Engineering Bootcamp, where we are learning about Data Engeering. Today we are learning about Dimensional modelling - Cumulative Table."><meta data-rh="true" name="keywords" content="data engineering,data engineering bootcamp,dimensional modeling,cumulative table"><meta data-rh="true" property="og:type" content="article"><meta data-rh="true" property="article:published_time" content="2024-11-29T00:00:00.000Z"><meta data-rh="true" property="article:author" content="https://github.com/vibhabellutagi19"><meta data-rh="true" property="article:tag" content="data-engineering,dimensional-modeling,data-engineering-bootcamp,cumulative-table"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://github.com/blog/de-bootcamp-dimensional-modelling"><link data-rh="true" rel="alternate" href="https://github.com/blog/de-bootcamp-dimensional-modelling" hreflang="en"><link data-rh="true" rel="alternate" href="https://github.com/blog/de-bootcamp-dimensional-modelling" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","@id":"https://github.com/blog/de-bootcamp-dimensional-modelling","mainEntityOfPage":"https://github.com/blog/de-bootcamp-dimensional-modelling","url":"https://github.com/blog/de-bootcamp-dimensional-modelling","headline":"Dimensional Modelling - Cumulative Table","name":"Dimensional Modelling - Cumulative Table","description":"Im sharing my learning from the Data Engineering Bootcamp, where we are learning about Data Engeering. Today we are learning about Dimensional modelling - Cumulative Table.","datePublished":"2024-11-29T00:00:00.000Z","author":{"@type":"Person","name":"Vibhavari Bellutagi","description":"Data Engineer","url":"https://github.com/vibhabellutagi19","image":"https://avatars.githubusercontent.com/u/39341524?s=400&u=5d760c052fe0614d3af649de9e85474d1cafeba7&v=4"},"keywords":["data engineering","data engineering bootcamp","dimensional modeling","cumulative table"],"isPartOf":{"@type":"Blog","@id":"https://github.com/blog","name":"Blog"}}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Vibhavari Bellutagi RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Vibhavari Bellutagi Atom Feed">
+
+<link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1F9P2Z6DLX"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-1F9P2Z6DLX",{anonymize_ip:!0})</script>
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><link rel="stylesheet" href="/assets/css/styles.b9621725.css">
+<script src="/assets/js/runtime~main.d3a26361.js" defer="defer"></script>
+<script src="/assets/js/main.6322c2be.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">buildwith_vibs</b></a><a class="navbar__item navbar__link" href="/projects">Projects</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/blog">Blog</a><a class="navbar__item navbar__link" href="/Resume/experience">Resume</a><a class="navbar__item navbar__link" href="/FirstPrinciples/thoughts">First Principles</a></div><div class="navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite" aria-pressed="false"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input"><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class="row"><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label="Blog recent posts navigation"><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role="group"><h3 class="yearGroupHeading_rMGB">2024</h3><ul class="sidebarItemList_Yudw clean-list"><li class="sidebarItem__DBe"><a class="sidebarItemLink_mo7H" href="/blog/de-bootcamp-dimensional-modelling-scd">Dimensional Modelling - SCD</a></li><li class="sidebarItem__DBe"><a aria-current="page" class="sidebarItemLink_mo7H sidebarItemLinkActive_I1ZP" href="/blog/de-bootcamp-dimensional-modelling">Dimensional Modelling - Cumulative Table</a></li><li class="sidebarItem__DBe"><a class="sidebarItemLink_mo7H" href="/blog/welcome-to-my-blog">Welcome</a></li></ul></div></nav></aside><main class="col col--7"><article><header><h1 class="title_f1Hy">Dimensional Modelling - Cumulative Table</h1><div class="container_mt6G margin-vert--md"><time datetime="2024-11-29T00:00:00.000Z">November 29, 2024</time> · <!-- -->9 min read</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a href="https://github.com/vibhabellutagi19" target="_blank" rel="noopener noreferrer" class="avatar__photo-link"><img class="avatar__photo authorImage_XqGP" src="https://avatars.githubusercontent.com/u/39341524?s=400&amp;u=5d760c052fe0614d3af649de9e85474d1cafeba7&amp;v=4" alt="Vibhavari Bellutagi"></a><div class="avatar__intro authorDetails_lV9A"><div class="avatar__name"><a href="https://github.com/vibhabellutagi19" target="_blank" rel="noopener noreferrer"><span class="authorName_yefp">Vibhavari Bellutagi</span></a></div><small class="authorTitle_nd0D" title="Data Engineer">Data Engineer</small><div class="authorSocials_rSDt"><a href="https://github.com/vibhabellutagi19" target="_blank" rel="noopener noreferrer" class="authorSocialLink_owbf" title="GitHub"><svg viewBox="0 0 256 250" width="1em" height="1em" class="authorSocialLink_owbf githubSvg_Uu4N" xmlns="http://www.w3.org/2000/svg" style="--dark:#000;--light:#fff" preserveAspectRatio="xMidYMid"><path d="M128.001 0C57.317 0 0 57.307 0 128.001c0 56.554 36.676 104.535 87.535 121.46 6.397 1.185 8.746-2.777 8.746-6.158 0-3.052-.12-13.135-.174-23.83-35.61 7.742-43.124-15.103-43.124-15.103-5.823-14.795-14.213-18.73-14.213-18.73-11.613-7.944.876-7.78.876-7.78 12.853.902 19.621 13.19 19.621 13.19 11.417 19.568 29.945 13.911 37.249 10.64 1.149-8.272 4.466-13.92 8.127-17.116-28.431-3.236-58.318-14.212-58.318-63.258 0-13.975 5-25.394 13.188-34.358-1.329-3.224-5.71-16.242 1.24-33.874 0 0 10.749-3.44 35.21 13.121 10.21-2.836 21.16-4.258 32.038-4.307 10.878.049 21.837 1.47 32.066 4.307 24.431-16.56 35.165-13.12 35.165-13.12 6.967 17.63 2.584 30.65 1.255 33.873 8.207 8.964 13.173 20.383 13.173 34.358 0 49.163-29.944 59.988-58.447 63.157 4.591 3.972 8.682 11.762 8.682 23.704 0 17.126-.148 30.91-.148 35.126 0 3.407 2.304 7.398 8.792 6.14C219.37 232.5 256 184.537 256 128.002 256 57.307 198.691 0 128.001 0Zm-80.06 182.34c-.282.636-1.283.827-2.194.39-.929-.417-1.45-1.284-1.15-1.922.276-.655 1.279-.838 2.205-.399.93.418 1.46 1.293 1.139 1.931Zm6.296 5.618c-.61.566-1.804.303-2.614-.591-.837-.892-.994-2.086-.375-2.66.63-.566 1.787-.301 2.626.591.838.903 1 2.088.363 2.66Zm4.32 7.188c-.785.545-2.067.034-2.86-1.104-.784-1.138-.784-2.503.017-3.05.795-.547 2.058-.055 2.861 1.075.782 1.157.782 2.522-.019 3.08Zm7.304 8.325c-.701.774-2.196.566-3.29-.49-1.119-1.032-1.43-2.496-.726-3.27.71-.776 2.213-.558 3.315.49 1.11 1.03 1.45 2.505.701 3.27Zm9.442 2.81c-.31 1.003-1.75 1.459-3.199 1.033-1.448-.439-2.395-1.613-2.103-2.626.301-1.01 1.747-1.484 3.207-1.028 1.446.436 2.396 1.602 2.095 2.622Zm10.744 1.193c.036 1.055-1.193 1.93-2.715 1.95-1.53.034-2.769-.82-2.786-1.86 0-1.065 1.202-1.932 2.733-1.958 1.522-.03 2.768.818 2.768 1.868Zm10.555-.405c.182 1.03-.875 2.088-2.387 2.37-1.485.271-2.861-.365-3.05-1.386-.184-1.056.893-2.114 2.376-2.387 1.514-.263 2.868.356 3.061 1.403Z"></path></svg></a><a href="https://www.linkedin.com/in/vibhavari-bellutagi-837871189/" target="_blank" rel="noopener noreferrer" class="authorSocialLink_owbf" title="LinkedIn"><svg width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" viewBox="0 0 256 256" class="authorSocialLink_owbf"><path d="M218.123 218.127h-37.931v-59.403c0-14.165-.253-32.4-19.728-32.4-19.756 0-22.779 15.434-22.779 31.369v60.43h-37.93V95.967h36.413v16.694h.51a39.907 39.907 0 0 1 35.928-19.733c38.445 0 45.533 25.288 45.533 58.186l-.016 67.013ZM56.955 79.27c-12.157.002-22.014-9.852-22.016-22.009-.002-12.157 9.851-22.014 22.008-22.016 12.157-.003 22.014 9.851 22.016 22.008A22.013 22.013 0 0 1 56.955 79.27m18.966 138.858H37.95V95.967h37.97v122.16ZM237.033.018H18.89C8.58-.098.125 8.161-.001 18.471v219.053c.122 10.315 8.576 18.582 18.89 18.474h218.144c10.336.128 18.823-8.139 18.966-18.474V18.454c-.147-10.33-8.635-18.588-18.966-18.453" fill="#0A66C2"></path></svg></a></div></div></div></div></div></header><div id="__blog-post-container" class="markdown"><p>Im sharing my learning from the Data Engineering Bootcamp, where we are learning about Data Engeering. Today we are learning about Dimensional modelling - Cumulative Table.</p>
+<p>I would like to extend my gratitude to Zach Wilson, the founder of <a href="https://bootcamp.techcreator.io/lessons" target="_blank" rel="noopener noreferrer">DataExpert.io</a>, for his invaluable guidance and the comprehensive Data Engineering Bootcamp.
+Connect with Zach Wilson on <a href="https://www.linkedin.com/in/eczachly/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+Thank you, Zach, for this amazing intense bootcamp on Data engineering!</p>
+<hr>
+<p>Day-1: Dimensional Modelling (Theory)</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-is-a-dimension">What is a Dimension?<a href="#what-is-a-dimension" class="hash-link" aria-label="Direct link to What is a Dimension?" title="Direct link to What is a Dimension?">​</a></h2>
+<p>Dimension are <code>attributes</code> of an entity ( example: user&#x27;s name, age etc)</p>
+<ul>
+<li>Dimensions may be <code>IDENTIFY</code> an entity, which would be a unique identifier for the entity (example: user_id, device_id etc)</li>
+<li>Dimensions may be <code>DESCRIPTIVE</code> which would be the attributes of the entity (example: user&#x27;s name,age etc) but wont be unique.</li>
+</ul>
+<p>Dimensions comes in two flavors:</p>
+<ul>
+<li><code>Slowly Changing Dimensions</code> : Dimensions that change over time like user&#x27;s address, phone number etc. This attribute is time dependent. Can be painful deal with these attributes.</li>
+<li><code>Fixed</code>: Dimensions that do not change over time like user&#x27;s birthdate. These are easy to deal with.</li>
+</ul>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Knowing whether the attributes are slowly changing or fixed is important to design the data model.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="knowing-your-data-consumer">Knowing your data consumer<a href="#knowing-your-data-consumer" class="hash-link" aria-label="Direct link to Knowing your data consumer" title="Direct link to Knowing your data consumer">​</a></h2>
+<p><code>Who is using your data?</code> is the most important question to ask before designing the data model. The data model should be designed in such a way that it is easy for the data consumer to understand the data.</p>
+<p>Whether the data is getting delivered to:</p>
+<ol>
+<li>Data Analyst / Data Scientist:<!-- -->
+<ul>
+<li>They would be interested in the data that is <code>easy to understand and analyze</code>.</li>
+<li>They wouldnt be interested in dealing with <code>complex data types</code> like JSON, XML etc.</li>
+</ul>
+</li>
+<li>Data Engineers:<!-- -->
+<ul>
+<li>Sometimes downstream systems would be handled by Data Engineers, to take your data sets and join with other data to achieve the buisness logic, so the data model be compact and probably harder to query.</li>
+<li>Nested types are fine to model the data.</li>
+<li>Usually, as we get further up in ladder of data engineering, there would be <code>Master Data</code> which would be used by other data engineers or teams, to join the master data with other data sets.</li>
+</ul>
+</li>
+<li>ML models:<!-- -->
+<ul>
+<li>Generally machine learning models would need <code>identifier</code> and bunch of flattened decimal columns like <code>feature value columns</code> etc.</li>
+<li>Sometimes it depends on the model, the model can sometime handle the complex data structures, similiar to what Data analyst and data scientist would need.</li>
+</ul>
+</li>
+<li>Customers<!-- -->
+<ul>
+<li>You would never give the data directly ( like JSON, CSVs etc) to the customers, you would always give them the <code>dashboards</code> or <code>reports</code> which would be easy to understand and analyze.</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>Not knowing your data consumer, there is a high chance that the data model would be designed in a wrong way, can lead to business loss.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="oltp-vs-olap-vs-master-data">OLTP Vs OLAP Vs Master Data<a href="#oltp-vs-olap-vs-master-data" class="hash-link" aria-label="Direct link to OLTP Vs OLAP Vs Master Data" title="Direct link to OLTP Vs OLAP Vs Master Data">​</a></h2>
+<ol>
+<li>OLTP(Online Transaction Processing):<!-- -->
+<ul>
+<li>OLTP is the system that is used to record the transactions that are happening in the system.</li>
+<li>The data model is optimized for <code>low latency</code> and <code>low-volume</code> queries, usually dealing with <code>single record</code> at a time.</li>
+<li>Usually Software Engineers model the data in OLTP.</li>
+<li>The data model in OLTP is <code>3NF</code> (Third Normal Form) which means the data is broken down into multiple tables and the data is not repeated.</li>
+<li>Databases: MySQL, Postgres etc.</li>
+</ul>
+</li>
+<li>OLAP(Online Analytical Processing):<!-- -->
+<ul>
+<li>OLAP is the system that is used to analyze the data that is stored in the OLTP system.</li>
+<li>The data model is optimized for <code>high volume</code> and <code>complex queries</code>, using <code>aggregations</code> and <code>joins</code>.</li>
+<li>Usually <code>Data Engineers</code> model the data in OLAP.</li>
+<li>Analytical Databases: Redshift, BigQuery etc.</li>
+</ul>
+</li>
+<li>Master Data:<!-- -->
+<ul>
+<li>Master Data is optimied for completeness of entity definition and deduped.</li>
+<li>Master Data is usually a middle layer between OLTP and OLAP.</li>
+</ul>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="impacts-of-mismatched-data-model">Impacts of Mismatched Data Model<a href="#impacts-of-mismatched-data-model" class="hash-link" aria-label="Direct link to Impacts of Mismatched Data Model" title="Direct link to Impacts of Mismatched Data Model">​</a></h2>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Mismatching needs of the data consumer == Less business value</p></div></div>
+<ul>
+<li>When you model transaction system as analytical system, like transactional system usually need only one record at a time, but if you model it as analytical system, you would retrieve all the unnecessary data which would be a performance hit.</li>
+<li>When you model analytical system as transactional system, like analytical system usually need to aggregate the data, but if you model it as transactional system, you would have to do the aggregation/joins on the fly which would be a performance hit.</li>
+<li>Having the Master Data as middle layer, would give you the flexibility whichever data model you want to use.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="oltp-and-olap-is-a-continuum">OLTP and OLAP is a continuum<a href="#oltp-and-olap-is-a-continuum" class="hash-link" aria-label="Direct link to OLTP and OLAP is a continuum" title="Direct link to OLTP and OLAP is a continuum">​</a></h2>
+<p><img decoding="async" loading="lazy" alt="data-flow" src="/assets/images/data-flow-0daf58888b976755903f9cf43700ae92.png" width="575" height="171" class="img_ev3q"></p>
+<ul>
+<li><code>Production Database Snapshot</code>: Usually the data in Production databases are transactional data, which is used to record the transactions that are happening in the system/web application/mobile application etc.</li>
+<li><code>Master Data</code>: Taking the production datasets and creating the master data, for easy to understanding. Instead of querying &quot;many&quot; transactional databases, merging them into master data would be much efficient.</li>
+<li><code>OLAP Cubes</code>:<!-- -->
+<ul>
+<li>You would flatten the data, like you might have multiple rows per entity, where you can aggregate the data.</li>
+<li>OLAP Cubes space is also create the slice and dice the data.</li>
+</ul>
+</li>
+<li><code>Metrics</code>: You would aggregate even further to get the one number which would be like <code>KPIs</code> of the business.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="cumulative-table-design">Cumulative Table Design<a href="#cumulative-table-design" class="hash-link" aria-label="Direct link to Cumulative Table Design" title="Direct link to Cumulative Table Design">​</a></h2>
+<ul>
+<li>Some days not every user would be active, but still master data should hold the details of the user.</li>
+<li>Cumulative table is the table that holds the <code>history of the data</code>.</li>
+</ul>
+<p><em>The way cumulative table is designed is</em>:</p>
+<ul>
+<li>You would have 2 datasets like <code>today</code> and <code>yesterday</code>.</li>
+<li><code>Full Outer Join</code> is done on the datasets, to get all the data, pulling the history data every day.</li>
+<li><code>Coalesce</code> is used to get the latest data.</li>
+</ul>
+<p><em>Where is it used?</em></p>
+<ul>
+<li><code>Growth Analysis</code>: To see how the data is growing over time.</li>
+<li><code>State transition tracking</code>: To see how the data is changing over time.</li>
+</ul>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><ul>
+<li>Cumulative table gets bigger and bigger over time, so applying the filtering on the data is important.</li>
+</ul></div></div>
+<p><em>Cumulative Table: Strengths and Drawbacks</em></p>
+<table><thead><tr><th><strong>Category</strong></th><th><strong>Strengths</strong></th><th><strong>Drawbacks</strong></th></tr></thead><tbody><tr><td><strong>Analytics</strong></td><td>- Enables historical analysis without shuffling or reprocessing the data.</td><td>- Sequential backfilling can limit flexibility when correcting or reprocessing older data.</td></tr><tr><td><strong>Tracking</strong></td><td>- Easy to track changes and transitions over time.</td><td>- Incremental growth of data size over time, leading to storage and performance challenges.</td></tr><tr><td><strong>Data</strong></td><td>- Provides a complete snapshot of trends and transitions.</td><td>- Retains potentially outdated or deleted PII data, complicating compliance with data privacy laws.</td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-compactness-vs-usability-tradeoff">The compactness vs usability tradeoff<a href="#the-compactness-vs-usability-tradeoff" class="hash-link" aria-label="Direct link to The compactness vs usability tradeoff" title="Direct link to The compactness vs usability tradeoff">​</a></h2>
+<ul>
+<li>
+<p>The most usable tables usually are</p>
+<ul>
+<li>They are straightforward, they would have identifier for dimensional model.</li>
+<li>Have no complex data types.</li>
+<li>Easily can be manipulated with <code>WHERE</code> and <code>GROUP BY</code> clauses.</li>
+</ul>
+</li>
+<li>
+<p>The most compact tables usually are</p>
+<ul>
+<li>Are compressed to be as small as possible, which would be harder to query directly until they&#x27;re decoded.</li>
+</ul>
+</li>
+<li>
+<p>The middle-ground table:</p>
+<ul>
+<li>Where you would use complex data types (e.g. ARRAY, STRUCT, MAP) to model the data, which would be harder to query directly but can be used to join with other data sets.</li>
+</ul>
+</li>
+</ul>
+<p><em>When would you each type of table?</em></p>
+<ul>
+<li>Most compact:<!-- -->
+<ul>
+<li>Online systems where latency and data volume are critical.</li>
+<li>Consumers are usually hihgly technical and can handle complex data types.</li>
+</ul>
+</li>
+<li>Most usable:<!-- -->
+<ul>
+<li>When analytics is the main consumer</li>
+<li>The majority of the consumer are less technical and need the data to be easy to understand and analyze.</li>
+</ul>
+</li>
+<li>Middle-ground:<!-- -->
+<ul>
+<li>Upstream staging/master data are used by majority of consumers who are other data engineers.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="struct-vs-array-vs-map">Struct Vs Array Vs Map<a href="#struct-vs-array-vs-map" class="hash-link" aria-label="Direct link to Struct Vs Array Vs Map" title="Direct link to Struct Vs Array Vs Map">​</a></h2>
+<table><thead><tr><th><strong>Feature</strong></th><th><strong>Struct</strong></th><th><strong>Map</strong></th><th><strong>Array</strong></th></tr></thead><tbody><tr><td><strong>Definition</strong></td><td>A table within a table.</td><td>A key-value pair structure.</td><td>A list of values.</td></tr><tr><td><strong>Keys</strong></td><td>Rigidly defined, improving compression.</td><td>Flexible, less compression efficiency.</td><td>Not applicable (index-based).</td></tr><tr><td><strong>Values</strong></td><td>Can be of any type.</td><td>Must all be of the same type.</td><td>Must all be of the same type.</td></tr><tr><td><strong>Usage</strong></td><td>Suitable for structured data with predefined keys.</td><td>Best for flexible key-value relationships.</td><td>Ideal for ordered collections of data.</td></tr><tr><td><strong>Complexity</strong></td><td>Higher due to nested structure.</td><td>Simpler, dynamic key-value management.</td><td>Simplest among the three; index-based access.</td></tr><tr><td><strong>Nesting</strong></td><td>Supports nesting within itself or arrays.</td><td>Can be nested inside structs or arrays.</td><td>Can contain structs or maps as elements.</td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="impact-of-adding-a-temporal-time-based-dimension">Impact of adding a temporal (time-based) dimension<a href="#impact-of-adding-a-temporal-time-based-dimension" class="hash-link" aria-label="Direct link to Impact of adding a temporal (time-based) dimension" title="Direct link to Impact of adding a temporal (time-based) dimension">​</a></h2>
+<ol>
+<li>
+<p><strong>Cardinality Explosion</strong>:</p>
+<ul>
+<li>Adding a time dimension (e.g., days, nights, or timestamps) increases the number of unique combinations in the dataset. This often grows by at least <strong>one order of magnitude</strong> (10x or more).</li>
+<li>Example: Airbnb has ~6 million listings. If we want to track the nightly availability and pricing for each listing for a year, it results in:<!-- -->
+<ul>
+<li><strong>365 days × 6 million listings = ~2 billion rows</strong> of data.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Challenges with Dataset Design</strong>:</p>
+<ul>
+<li><strong>Option 1</strong>: You could store this data as a single listing with an array (list) of 365 nights. This approach is compact but may be harder to query efficiently.</li>
+<li><strong>Option 2</strong>: Alternatively, store it as 2 billion rows, where each row represents one listing-night combination. While this structure is easier to query, it increases the dataset size significantly.</li>
+</ul>
+</li>
+<li>
+<p><strong>Using the Parquet</strong>:</p>
+<ul>
+<li>Using efficient file formats like <strong>Parquet</strong>, which compresses data well, helps to reduce the size of both approaches. With proper sorting and organization, you can minimize storage overhead.</li>
+</ul>
+</li>
+</ol>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p>Badness of denormolized temporal dimension: if you have to join the data with other dimensions, spark shuffle will ruin the compression.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="run-length-encoding-compression">Run length encoding compression<a href="#run-length-encoding-compression" class="hash-link" aria-label="Direct link to Run length encoding compression" title="Direct link to Run length encoding compression">​</a></h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Run-length_encoding" target="_blank" rel="noopener noreferrer">Run length encoding</a>  is a form of lossless data compression in which runs of data (consecutive occurrences of the same data value) are stored as a single occurrence of that data value and a count of its consecutive occurrences, rather than as the original run. <sup>[1]</sup></li>
+<li>RLE is one of reasons why Parquet is so efficient for storing data.</li>
+<li>However, <strong>shuffle can ruin this efficiency</strong>. Since shuffle happens in a distributed environment during JOIN and GROUP BY operations, data is redistributed across nodes, and compression benefits like RLE are often lost.</li>
+</ul>
+<hr>
+<p>[1]: source from wikipedia</p></div><footer class="docusaurus-mt-lg"><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col"><b>Tags:</b><ul class="tags_jXut padding--none margin-left--sm"><li class="tag_QGVx"><a title="DE tag description" class="tag_zVej tagRegular_sFm0" href="/blog/tags/de">data-engineering</a></li><li class="tag_QGVx"><a title="Dimensional Modeling tag description" class="tag_zVej tagRegular_sFm0" href="/blog/tags/dim">dimensional-modeling</a></li><li class="tag_QGVx"><a title="Tags on Data Engineering Bootcamp by Zach Wilson" class="tag_zVej tagRegular_sFm0" href="/blog/tags/de-bootcamp">data-engineering-bootcamp</a></li><li class="tag_QGVx"><a title="Cumulative Table tag description" class="tag_zVej tagRegular_sFm0" href="/blog/tags/cumulativetable">cumulative-table</a></li></ul></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Blog post page navigation"><a class="pagination-nav__link pagination-nav__link--prev" href="/blog/de-bootcamp-dimensional-modelling-scd"><div class="pagination-nav__sublabel">Newer post</div><div class="pagination-nav__label">Dimensional Modelling - SCD</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/blog/welcome-to-my-blog"><div class="pagination-nav__sublabel">Older post</div><div class="pagination-nav__label">Welcome</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#what-is-a-dimension" class="table-of-contents__link toc-highlight">What is a Dimension?</a></li><li><a href="#knowing-your-data-consumer" class="table-of-contents__link toc-highlight">Knowing your data consumer</a></li><li><a href="#oltp-vs-olap-vs-master-data" class="table-of-contents__link toc-highlight">OLTP Vs OLAP Vs Master Data</a></li><li><a href="#impacts-of-mismatched-data-model" class="table-of-contents__link toc-highlight">Impacts of Mismatched Data Model</a></li><li><a href="#oltp-and-olap-is-a-continuum" class="table-of-contents__link toc-highlight">OLTP and OLAP is a continuum</a></li><li><a href="#cumulative-table-design" class="table-of-contents__link toc-highlight">Cumulative Table Design</a></li><li><a href="#the-compactness-vs-usability-tradeoff" class="table-of-contents__link toc-highlight">The compactness vs usability tradeoff</a></li><li><a href="#struct-vs-array-vs-map" class="table-of-contents__link toc-highlight">Struct Vs Array Vs Map</a></li><li><a href="#impact-of-adding-a-temporal-time-based-dimension" class="table-of-contents__link toc-highlight">Impact of adding a temporal (time-based) dimension</a></li><li><a href="#run-length-encoding-compression" class="table-of-contents__link toc-highlight">Run length encoding compression</a></li></ul></div></div></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/projects">Projects</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://www.linkedin.com/in/vibhavari-bellutagi-837871189/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Linkedin<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/vibhabellutagi19/vibhabellutagi19.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 Vibhavari Bellutagi, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

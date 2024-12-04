@@ -4,10 +4,354 @@
         <title>Vibhavari Bellutagi Blog</title>
         <link>https://github.com/blog</link>
         <description>Vibhavari Bellutagi Blog</description>
-        <lastBuildDate>Tue, 26 Nov 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 01 Dec 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Dimensional Modelling - SCD]]></title>
+            <link>https://github.com/blog/de-bootcamp-dimensional-modelling-scd</link>
+            <guid>https://github.com/blog/de-bootcamp-dimensional-modelling-scd</guid>
+            <pubDate>Sun, 01 Dec 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Im sharing my learning from the Data Engineering Bootcamp, where we are learning about Data Engeering. Today we are learning about Dimensional modelling - Idempotency and SCDs.]]></description>
+            <content:encoded><![CDATA[<p>Im sharing my learning from the Data Engineering Bootcamp, where we are learning about Data Engeering. Today we are learning about Dimensional modelling - Idempotency and SCDs.</p>
+<p>I would like to extend my gratitude to Zach Wilson, the founder of <a href="https://bootcamp.techcreator.io/lessons" target="_blank" rel="noopener noreferrer">DataExpert.io</a>, for his invaluable guidance and the comprehensive Data Engineering Bootcamp.
+Connect with Zach Wilson on <a href="https://www.linkedin.com/in/eczachly/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+Thank you, Zach, for this amazing intense bootcamp on Data engineering!</p>
+<hr>
+<p>Day-2: Dimensional Modelling - Slowly Changing Dimensions (Theory)</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-is-an-idempotent-pipeline">What is an Idempotent Pipeline?<a href="https://github.com/blog/de-bootcamp-dimensional-modelling-scd#what-is-an-idempotent-pipeline" class="hash-link" aria-label="Direct link to What is an Idempotent Pipeline?" title="Direct link to What is an Idempotent Pipeline?">​</a></h2>
+<blockquote>
+<p>Idempotency: An idempotent pipeline ensures that processing the same data multiple times (whether it's live production data or backfill data) yields the same result without any unintended side effects. This consistency is crucial for reliability and simplicity in data workflows.</p>
+</blockquote>
+<p>Pipelines should produce the same results:</p>
+<ol>
+<li>The day they are run</li>
+<li>How many times they are run</li>
+<li>What hour they are run</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="why-is-hard-to-troubleshoot-non-idempotent-pipelines">Why is hard to troubleshoot non-idempotent pipelines?<a href="https://github.com/blog/de-bootcamp-dimensional-modelling-scd#why-is-hard-to-troubleshoot-non-idempotent-pipelines" class="hash-link" aria-label="Direct link to Why is hard to troubleshoot non-idempotent pipelines?" title="Direct link to Why is hard to troubleshoot non-idempotent pipelines?">​</a></h3>
+<ol>
+<li>Silent Failure: The non-idempotent pipelines can produce different results every time they are run, it doesnt fail. This results in <span style="background-color:#3e6980;border-radius:2px;color:#fff;padding:0.2rem">non reproduceable results</span>.</li>
+<li>This causes inconsistency in the data to the downstream systems too.</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="what-can-make-a-pipline-non-idempotent">What can make a pipline non-idempotent?<a href="https://github.com/blog/de-bootcamp-dimensional-modelling-scd#what-can-make-a-pipline-non-idempotent" class="hash-link" aria-label="Direct link to What can make a pipline non-idempotent?" title="Direct link to What can make a pipline non-idempotent?">​</a></h3>
+<ol>
+<li><code>INSERT INTO</code> without <code>TRUNCATE</code>:<!-- -->
+<ol>
+<li>If you dont <code>TRUNCATE</code> data before INSERT, it will keep on adding the data to the table, creating duplicates.</li>
+<li>Thus your pipeline will not be idempotent, as it will keep on adding the data to the table.</li>
+<li>Highly recommended to use <span style="background-color:#3e6980;border-radius:2px;color:#fff;padding:0.2rem">MERGE</span> or <span style="background-color:#3e6980;border-radius:2px;color:#fff;padding:0.2rem">INSERT OVERWRITE</span> always.</li>
+</ol>
+</li>
+<li>Using <code>start_date &gt;</code> without a corresponding <code>end_date &lt;</code>:<!-- -->
+<ol>
+<li>If you dont have <code>end_date</code> in your SCD, you will not be able to track the changes in the data.</li>
+<li>This can create a out of memory exceptions, when you backfill the data.</li>
+<li>Highly recommended to use <span style="background-color:#3e6980;border-radius:2px;color:#fff;padding:0.2rem">end_date</span> in your SCD always.</li>
+</ol>
+</li>
+<li>Not using a full set of partition sensors:<!-- -->
+<ol>
+<li>Your pipeline may run with partial set of inputs.</li>
+<li>pipeline might run when there is no/partial data</li>
+</ol>
+</li>
+<li>Not using <code>depends_on_past</code> for cumulative pipelines:<!-- -->
+<ol>
+<li>When you process the data in parallel ( lets say processing parallel days ), pipeline may end up processing yesterday's data, which hasnt been created yet.</li>
+</ol>
+</li>
+</ol>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>The beauty of an idempotent pipeline lies in its ability to produce consistent results for both production and backfill data.</p></div></div>
+<p><strong>Example:</strong>
+Imagine a pipeline that:</p>
+<ol>
+<li>Reads data (e.g., transactions).</li>
+<li>Cleans and deduplicates it.</li>
+<li>Stores the cleaned data in a database.</li>
+</ol>
+<ul>
+<li><strong>Production:</strong> As new transactions come in, they’re cleaned, deduplicated, and stored.</li>
+<li><strong>Backfill:</strong> When historical transactions are added, they go through the same cleaning and deduplication process, ensuring no duplicate records and consistent results.</li>
+</ul>
+<p>Because the pipeline is idempotent:</p>
+<ul>
+<li>Processing the same data again won’t alter the results or create issues.</li>
+<li>Whether it's production or backfill data, the behavior remains identical.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="few-more-problems-that-can-make-a-pipeline-non-idempotent">Few more problems that can make a pipeline non-idempotent<a href="https://github.com/blog/de-bootcamp-dimensional-modelling-scd#few-more-problems-that-can-make-a-pipeline-non-idempotent" class="hash-link" aria-label="Direct link to Few more problems that can make a pipeline non-idempotent" title="Direct link to Few more problems that can make a pipeline non-idempotent">​</a></h3>
+<ol>
+<li>Relying on the <strong>latest</strong> partition of a not properly modeled SCD table.<!-- -->
+<ul>
+<li>Cumulative table design AMPLIFIES this bug.</li>
+</ul>
+</li>
+<li>One exception relying on latest partition is when you have properly modeled SCD table and <span style="background-color:#3e8045;border-radius:2px;color:#fff;padding:0.2rem">you are backfilling not in production</span>.</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="the-pains-of-not-having-an-idempotent-pipeline">The pains of not having an idempotent pipeline<a href="https://github.com/blog/de-bootcamp-dimensional-modelling-scd#the-pains-of-not-having-an-idempotent-pipeline" class="hash-link" aria-label="Direct link to The pains of not having an idempotent pipeline" title="Direct link to The pains of not having an idempotent pipeline">​</a></h3>
+<ul>
+<li>Backfilling causes inconsistencies between the old and restated data.</li>
+<li>Hard to troubleshoot bugs and fix the issues.</li>
+<li>Unit testing cannot replicate the production behavior.</li>
+<li>The pipeline doesnt fail, but the data is inconsistent, which is silent failures.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="slowly-changing-dimensions-scd">Slowly Changing Dimensions (SCD)<a href="https://github.com/blog/de-bootcamp-dimensional-modelling-scd#slowly-changing-dimensions-scd" class="hash-link" aria-label="Direct link to Slowly Changing Dimensions (SCD)" title="Direct link to Slowly Changing Dimensions (SCD)">​</a></h2>
+<p>The Slowly Changing Dimensions (SCD) are dimensions that change slowly over time, which would have time frame with them. For example,</p>
+<ol>
+<li>Customer Address</li>
+<li>Product Description</li>
+<li>Employee Details</li>
+<li>etc.</li>
+</ol>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p>Not modelling the SCDs properly can impact the idempotency.</p></div></div>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>The slower the changes in a Slowly Changing Dimension (SCD), the more effectively it can be modeled.</p></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="how-can-you-model-dimensions-that-change-over-time">How can you model dimensions that change over time?<a href="https://github.com/blog/de-bootcamp-dimensional-modelling-scd#how-can-you-model-dimensions-that-change-over-time" class="hash-link" aria-label="Direct link to How can you model dimensions that change over time?" title="Direct link to How can you model dimensions that change over time?">​</a></h3>
+<ul>
+<li>Singular snapshot: The dimension table only contains the most recent data.<!-- -->
+<ul>
+<li>Be Careful: This pipelines are not idempotent.</li>
+</ul>
+</li>
+<li>Daily partitioned snapshots: The dimension table contains a snapshot of the data for each day.<!-- -->
+<ul>
+<li>Very simple way of implementing SCD.</li>
+</ul>
+</li>
+<li>SCD Types 1,2,3</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="types-of-slowly-changing-dimensions">Types of Slowly Changing Dimensions<a href="https://github.com/blog/de-bootcamp-dimensional-modelling-scd#types-of-slowly-changing-dimensions" class="hash-link" aria-label="Direct link to Types of Slowly Changing Dimensions" title="Direct link to Types of Slowly Changing Dimensions">​</a></h3>
+<p>Here’s a Markdown table summarizing the content provided:</p>
+<table><thead><tr><th><strong>Type</strong></th><th><strong>Description</strong></th><th><strong>Key Features</strong></th><th><strong>Limitations</strong></th></tr></thead><tbody><tr><td><strong>Type 0</strong></td><td>Static dimensions, not actually slowly changing.</td><td>- No temporal columns. <br> - Table contains only identifier and value.</td><td>- No changes tracked or maintained.</td></tr><tr><td><strong>Type 1</strong></td><td>Overwrites old data with new data, only latest data is retained.</td><td>- Simple and efficient. <br> - No history maintained.</td><td>- Cannot retrieve historical data.</td></tr><tr><td><strong>Type 2</strong></td><td>Gold standard of Slowly Changing Dimensions, maintains history using temporal columns.</td><td>- Uses <code>start_date</code> and <code>end_date</code>. <br> - Current rows have <code>end_date = NULL</code> or <code>9999-12-31</code>. <br> - Optionally uses <code>is_current</code> column.</td><td>- More than one row per dimension can complicate filtering and querying.</td></tr><tr><td><strong>Type 3</strong></td><td>Maintains only two versions of the data: <code>original</code> and <code>current</code>.</td><td>- One row per dimension.</td><td>- Loses history of changes between <code>original</code> and <code>current</code>. <br> - Partially idempotent.</td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="which-types-are-idempotent">Which types are idempotent?<a href="https://github.com/blog/de-bootcamp-dimensional-modelling-scd#which-types-are-idempotent" class="hash-link" aria-label="Direct link to Which types are idempotent?" title="Direct link to Which types are idempotent?">​</a></h3>
+<table><thead><tr><th>Type</th><th>Idempotent</th><th>Reason</th></tr></thead><tbody><tr><td>Type 0</td><td>Yes</td><td>The values are unchanging.</td></tr><tr><td>Type 2</td><td>Yes</td><td>It is idempotent, but you need to be careful with how you use the <code>start_date</code> and <code>end_date</code>.</td></tr><tr><td>Type 1</td><td>No</td><td>Backfilling with this dataset gives the dimension as it is now, not as it was before.</td></tr><tr><td>Type 3</td><td>No</td><td>Backfilling makes it impossible to determine whether to pick "original" or "current."</td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="loading-scd2">Loading SCD2<a href="https://github.com/blog/de-bootcamp-dimensional-modelling-scd#loading-scd2" class="hash-link" aria-label="Direct link to Loading SCD2" title="Direct link to Loading SCD2">​</a></h3>
+<ul>
+<li>Load the entire history in one query<!-- -->
+<ul>
+<li>Inefficient but nimble</li>
+</ul>
+</li>
+<li>Incremnetally load the data after the previoud SCD is generated<!-- -->
+<ul>
+<li>Has the same <code>depends_on_past</code>. its efficient but cumbersome.</li>
+</ul>
+</li>
+</ul>]]></content:encoded>
+            <category>data-engineering</category>
+            <category>dimensional-modeling</category>
+            <category>data-engineering-bootcamp</category>
+            <category>slowly-changing-dimension</category>
+        </item>
+        <item>
+            <title><![CDATA[Dimensional Modelling - Cumulative Table]]></title>
+            <link>https://github.com/blog/de-bootcamp-dimensional-modelling</link>
+            <guid>https://github.com/blog/de-bootcamp-dimensional-modelling</guid>
+            <pubDate>Fri, 29 Nov 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Im sharing my learning from the Data Engineering Bootcamp, where we are learning about Data Engeering. Today we are learning about Dimensional modelling - Cumulative Table.]]></description>
+            <content:encoded><![CDATA[<p>Im sharing my learning from the Data Engineering Bootcamp, where we are learning about Data Engeering. Today we are learning about Dimensional modelling - Cumulative Table.</p>
+<p>I would like to extend my gratitude to Zach Wilson, the founder of <a href="https://bootcamp.techcreator.io/lessons" target="_blank" rel="noopener noreferrer">DataExpert.io</a>, for his invaluable guidance and the comprehensive Data Engineering Bootcamp.
+Connect with Zach Wilson on <a href="https://www.linkedin.com/in/eczachly/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+Thank you, Zach, for this amazing intense bootcamp on Data engineering!</p>
+<hr>
+<p>Day-1: Dimensional Modelling (Theory)</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-is-a-dimension">What is a Dimension?<a href="https://github.com/blog/de-bootcamp-dimensional-modelling#what-is-a-dimension" class="hash-link" aria-label="Direct link to What is a Dimension?" title="Direct link to What is a Dimension?">​</a></h2>
+<p>Dimension are <code>attributes</code> of an entity ( example: user's name, age etc)</p>
+<ul>
+<li>Dimensions may be <code>IDENTIFY</code> an entity, which would be a unique identifier for the entity (example: user_id, device_id etc)</li>
+<li>Dimensions may be <code>DESCRIPTIVE</code> which would be the attributes of the entity (example: user's name,age etc) but wont be unique.</li>
+</ul>
+<p>Dimensions comes in two flavors:</p>
+<ul>
+<li><code>Slowly Changing Dimensions</code> : Dimensions that change over time like user's address, phone number etc. This attribute is time dependent. Can be painful deal with these attributes.</li>
+<li><code>Fixed</code>: Dimensions that do not change over time like user's birthdate. These are easy to deal with.</li>
+</ul>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Knowing whether the attributes are slowly changing or fixed is important to design the data model.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="knowing-your-data-consumer">Knowing your data consumer<a href="https://github.com/blog/de-bootcamp-dimensional-modelling#knowing-your-data-consumer" class="hash-link" aria-label="Direct link to Knowing your data consumer" title="Direct link to Knowing your data consumer">​</a></h2>
+<p><code>Who is using your data?</code> is the most important question to ask before designing the data model. The data model should be designed in such a way that it is easy for the data consumer to understand the data.</p>
+<p>Whether the data is getting delivered to:</p>
+<ol>
+<li>Data Analyst / Data Scientist:<!-- -->
+<ul>
+<li>They would be interested in the data that is <code>easy to understand and analyze</code>.</li>
+<li>They wouldnt be interested in dealing with <code>complex data types</code> like JSON, XML etc.</li>
+</ul>
+</li>
+<li>Data Engineers:<!-- -->
+<ul>
+<li>Sometimes downstream systems would be handled by Data Engineers, to take your data sets and join with other data to achieve the buisness logic, so the data model be compact and probably harder to query.</li>
+<li>Nested types are fine to model the data.</li>
+<li>Usually, as we get further up in ladder of data engineering, there would be <code>Master Data</code> which would be used by other data engineers or teams, to join the master data with other data sets.</li>
+</ul>
+</li>
+<li>ML models:<!-- -->
+<ul>
+<li>Generally machine learning models would need <code>identifier</code> and bunch of flattened decimal columns like <code>feature value columns</code> etc.</li>
+<li>Sometimes it depends on the model, the model can sometime handle the complex data structures, similiar to what Data analyst and data scientist would need.</li>
+</ul>
+</li>
+<li>Customers<!-- -->
+<ul>
+<li>You would never give the data directly ( like JSON, CSVs etc) to the customers, you would always give them the <code>dashboards</code> or <code>reports</code> which would be easy to understand and analyze.</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>Not knowing your data consumer, there is a high chance that the data model would be designed in a wrong way, can lead to business loss.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="oltp-vs-olap-vs-master-data">OLTP Vs OLAP Vs Master Data<a href="https://github.com/blog/de-bootcamp-dimensional-modelling#oltp-vs-olap-vs-master-data" class="hash-link" aria-label="Direct link to OLTP Vs OLAP Vs Master Data" title="Direct link to OLTP Vs OLAP Vs Master Data">​</a></h2>
+<ol>
+<li>OLTP(Online Transaction Processing):<!-- -->
+<ul>
+<li>OLTP is the system that is used to record the transactions that are happening in the system.</li>
+<li>The data model is optimized for <code>low latency</code> and <code>low-volume</code> queries, usually dealing with <code>single record</code> at a time.</li>
+<li>Usually Software Engineers model the data in OLTP.</li>
+<li>The data model in OLTP is <code>3NF</code> (Third Normal Form) which means the data is broken down into multiple tables and the data is not repeated.</li>
+<li>Databases: MySQL, Postgres etc.</li>
+</ul>
+</li>
+<li>OLAP(Online Analytical Processing):<!-- -->
+<ul>
+<li>OLAP is the system that is used to analyze the data that is stored in the OLTP system.</li>
+<li>The data model is optimized for <code>high volume</code> and <code>complex queries</code>, using <code>aggregations</code> and <code>joins</code>.</li>
+<li>Usually <code>Data Engineers</code> model the data in OLAP.</li>
+<li>Analytical Databases: Redshift, BigQuery etc.</li>
+</ul>
+</li>
+<li>Master Data:<!-- -->
+<ul>
+<li>Master Data is optimied for completeness of entity definition and deduped.</li>
+<li>Master Data is usually a middle layer between OLTP and OLAP.</li>
+</ul>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="impacts-of-mismatched-data-model">Impacts of Mismatched Data Model<a href="https://github.com/blog/de-bootcamp-dimensional-modelling#impacts-of-mismatched-data-model" class="hash-link" aria-label="Direct link to Impacts of Mismatched Data Model" title="Direct link to Impacts of Mismatched Data Model">​</a></h2>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Mismatching needs of the data consumer == Less business value</p></div></div>
+<ul>
+<li>When you model transaction system as analytical system, like transactional system usually need only one record at a time, but if you model it as analytical system, you would retrieve all the unnecessary data which would be a performance hit.</li>
+<li>When you model analytical system as transactional system, like analytical system usually need to aggregate the data, but if you model it as transactional system, you would have to do the aggregation/joins on the fly which would be a performance hit.</li>
+<li>Having the Master Data as middle layer, would give you the flexibility whichever data model you want to use.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="oltp-and-olap-is-a-continuum">OLTP and OLAP is a continuum<a href="https://github.com/blog/de-bootcamp-dimensional-modelling#oltp-and-olap-is-a-continuum" class="hash-link" aria-label="Direct link to OLTP and OLAP is a continuum" title="Direct link to OLTP and OLAP is a continuum">​</a></h2>
+<p><img decoding="async" loading="lazy" alt="data-flow" src="https://github.com/assets/images/data-flow-0daf58888b976755903f9cf43700ae92.png" width="575" height="171" class="img_ev3q"></p>
+<ul>
+<li><code>Production Database Snapshot</code>: Usually the data in Production databases are transactional data, which is used to record the transactions that are happening in the system/web application/mobile application etc.</li>
+<li><code>Master Data</code>: Taking the production datasets and creating the master data, for easy to understanding. Instead of querying "many" transactional databases, merging them into master data would be much efficient.</li>
+<li><code>OLAP Cubes</code>:<!-- -->
+<ul>
+<li>You would flatten the data, like you might have multiple rows per entity, where you can aggregate the data.</li>
+<li>OLAP Cubes space is also create the slice and dice the data.</li>
+</ul>
+</li>
+<li><code>Metrics</code>: You would aggregate even further to get the one number which would be like <code>KPIs</code> of the business.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="cumulative-table-design">Cumulative Table Design<a href="https://github.com/blog/de-bootcamp-dimensional-modelling#cumulative-table-design" class="hash-link" aria-label="Direct link to Cumulative Table Design" title="Direct link to Cumulative Table Design">​</a></h2>
+<ul>
+<li>Some days not every user would be active, but still master data should hold the details of the user.</li>
+<li>Cumulative table is the table that holds the <code>history of the data</code>.</li>
+</ul>
+<p><em>The way cumulative table is designed is</em>:</p>
+<ul>
+<li>You would have 2 datasets like <code>today</code> and <code>yesterday</code>.</li>
+<li><code>Full Outer Join</code> is done on the datasets, to get all the data, pulling the history data every day.</li>
+<li><code>Coalesce</code> is used to get the latest data.</li>
+</ul>
+<p><em>Where is it used?</em></p>
+<ul>
+<li><code>Growth Analysis</code>: To see how the data is growing over time.</li>
+<li><code>State transition tracking</code>: To see how the data is changing over time.</li>
+</ul>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><ul>
+<li>Cumulative table gets bigger and bigger over time, so applying the filtering on the data is important.</li>
+</ul></div></div>
+<p><em>Cumulative Table: Strengths and Drawbacks</em></p>
+<table><thead><tr><th><strong>Category</strong></th><th><strong>Strengths</strong></th><th><strong>Drawbacks</strong></th></tr></thead><tbody><tr><td><strong>Analytics</strong></td><td>- Enables historical analysis without shuffling or reprocessing the data.</td><td>- Sequential backfilling can limit flexibility when correcting or reprocessing older data.</td></tr><tr><td><strong>Tracking</strong></td><td>- Easy to track changes and transitions over time.</td><td>- Incremental growth of data size over time, leading to storage and performance challenges.</td></tr><tr><td><strong>Data</strong></td><td>- Provides a complete snapshot of trends and transitions.</td><td>- Retains potentially outdated or deleted PII data, complicating compliance with data privacy laws.</td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-compactness-vs-usability-tradeoff">The compactness vs usability tradeoff<a href="https://github.com/blog/de-bootcamp-dimensional-modelling#the-compactness-vs-usability-tradeoff" class="hash-link" aria-label="Direct link to The compactness vs usability tradeoff" title="Direct link to The compactness vs usability tradeoff">​</a></h2>
+<ul>
+<li>
+<p>The most usable tables usually are</p>
+<ul>
+<li>They are straightforward, they would have identifier for dimensional model.</li>
+<li>Have no complex data types.</li>
+<li>Easily can be manipulated with <code>WHERE</code> and <code>GROUP BY</code> clauses.</li>
+</ul>
+</li>
+<li>
+<p>The most compact tables usually are</p>
+<ul>
+<li>Are compressed to be as small as possible, which would be harder to query directly until they're decoded.</li>
+</ul>
+</li>
+<li>
+<p>The middle-ground table:</p>
+<ul>
+<li>Where you would use complex data types (e.g. ARRAY, STRUCT, MAP) to model the data, which would be harder to query directly but can be used to join with other data sets.</li>
+</ul>
+</li>
+</ul>
+<p><em>When would you each type of table?</em></p>
+<ul>
+<li>Most compact:<!-- -->
+<ul>
+<li>Online systems where latency and data volume are critical.</li>
+<li>Consumers are usually hihgly technical and can handle complex data types.</li>
+</ul>
+</li>
+<li>Most usable:<!-- -->
+<ul>
+<li>When analytics is the main consumer</li>
+<li>The majority of the consumer are less technical and need the data to be easy to understand and analyze.</li>
+</ul>
+</li>
+<li>Middle-ground:<!-- -->
+<ul>
+<li>Upstream staging/master data are used by majority of consumers who are other data engineers.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="struct-vs-array-vs-map">Struct Vs Array Vs Map<a href="https://github.com/blog/de-bootcamp-dimensional-modelling#struct-vs-array-vs-map" class="hash-link" aria-label="Direct link to Struct Vs Array Vs Map" title="Direct link to Struct Vs Array Vs Map">​</a></h2>
+<table><thead><tr><th><strong>Feature</strong></th><th><strong>Struct</strong></th><th><strong>Map</strong></th><th><strong>Array</strong></th></tr></thead><tbody><tr><td><strong>Definition</strong></td><td>A table within a table.</td><td>A key-value pair structure.</td><td>A list of values.</td></tr><tr><td><strong>Keys</strong></td><td>Rigidly defined, improving compression.</td><td>Flexible, less compression efficiency.</td><td>Not applicable (index-based).</td></tr><tr><td><strong>Values</strong></td><td>Can be of any type.</td><td>Must all be of the same type.</td><td>Must all be of the same type.</td></tr><tr><td><strong>Usage</strong></td><td>Suitable for structured data with predefined keys.</td><td>Best for flexible key-value relationships.</td><td>Ideal for ordered collections of data.</td></tr><tr><td><strong>Complexity</strong></td><td>Higher due to nested structure.</td><td>Simpler, dynamic key-value management.</td><td>Simplest among the three; index-based access.</td></tr><tr><td><strong>Nesting</strong></td><td>Supports nesting within itself or arrays.</td><td>Can be nested inside structs or arrays.</td><td>Can contain structs or maps as elements.</td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="impact-of-adding-a-temporal-time-based-dimension">Impact of adding a temporal (time-based) dimension<a href="https://github.com/blog/de-bootcamp-dimensional-modelling#impact-of-adding-a-temporal-time-based-dimension" class="hash-link" aria-label="Direct link to Impact of adding a temporal (time-based) dimension" title="Direct link to Impact of adding a temporal (time-based) dimension">​</a></h2>
+<ol>
+<li>
+<p><strong>Cardinality Explosion</strong>:</p>
+<ul>
+<li>Adding a time dimension (e.g., days, nights, or timestamps) increases the number of unique combinations in the dataset. This often grows by at least <strong>one order of magnitude</strong> (10x or more).</li>
+<li>Example: Airbnb has ~6 million listings. If we want to track the nightly availability and pricing for each listing for a year, it results in:<!-- -->
+<ul>
+<li><strong>365 days × 6 million listings = ~2 billion rows</strong> of data.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Challenges with Dataset Design</strong>:</p>
+<ul>
+<li><strong>Option 1</strong>: You could store this data as a single listing with an array (list) of 365 nights. This approach is compact but may be harder to query efficiently.</li>
+<li><strong>Option 2</strong>: Alternatively, store it as 2 billion rows, where each row represents one listing-night combination. While this structure is easier to query, it increases the dataset size significantly.</li>
+</ul>
+</li>
+<li>
+<p><strong>Using the Parquet</strong>:</p>
+<ul>
+<li>Using efficient file formats like <strong>Parquet</strong>, which compresses data well, helps to reduce the size of both approaches. With proper sorting and organization, you can minimize storage overhead.</li>
+</ul>
+</li>
+</ol>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p>Badness of denormolized temporal dimension: if you have to join the data with other dimensions, spark shuffle will ruin the compression.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="run-length-encoding-compression">Run length encoding compression<a href="https://github.com/blog/de-bootcamp-dimensional-modelling#run-length-encoding-compression" class="hash-link" aria-label="Direct link to Run length encoding compression" title="Direct link to Run length encoding compression">​</a></h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Run-length_encoding" target="_blank" rel="noopener noreferrer">Run length encoding</a>  is a form of lossless data compression in which runs of data (consecutive occurrences of the same data value) are stored as a single occurrence of that data value and a count of its consecutive occurrences, rather than as the original run. <sup>[1]</sup></li>
+<li>RLE is one of reasons why Parquet is so efficient for storing data.</li>
+<li>However, <strong>shuffle can ruin this efficiency</strong>. Since shuffle happens in a distributed environment during JOIN and GROUP BY operations, data is redistributed across nodes, and compression benefits like RLE are often lost.</li>
+</ul>
+<hr>
+<p>[1]: source from wikipedia</p>]]></content:encoded>
+            <category>data-engineering</category>
+            <category>dimensional-modeling</category>
+            <category>data-engineering-bootcamp</category>
+            <category>cumulative-table</category>
+        </item>
         <item>
             <title><![CDATA[Welcome]]></title>
             <link>https://github.com/blog/welcome-to-my-blog</link>
@@ -15,10 +359,20 @@
             <pubDate>Tue, 26 Nov 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[Welcome dear readers...]]></description>
             <content:encoded><![CDATA[<p>Welcome dear readers...</p>
-<p>Hi there!
-I'm a passionated data engineer and I'm starting this blog to share my thoughts and experiences with you. Im so excited to start this journey with you. Stay tuned for more content!</p>]]></content:encoded>
-            <category>Hola</category>
-            <category>data-engineering</category>
+<p>Im Vibhavari Bellutagi, from India, currently staying in France. I'm a Data Engineer and I got sometime to channelise my thoughts and experiences in the form of blog. I'm a big fan of <code>Learn by Doing</code>, so you will see most of the posts are practical oriented.</p>
+<p>I always wanted to have a blog to share my thoughts and experiences with the world. Im beginner in the world of blogging, so Im still learning how to write a good and effective content. I hope you enjoy my blog and find it useful.</p>
+<p>I have three different sections in my website:</p>
+<ol>
+<li>Blogs: Where I would long format technical blogs that I have experienced or learned recently.</li>
+<li>Tech Bytes: Where I would post small technical tips and tricks that I have learned.</li>
+<li>Projects: Where I would post the projects that I have worked on, I would like to start with <a href="https://codingchallenges.fyi/" target="_blank" rel="noopener noreferrer">CodeChallenge</a> by <a href="https://www.linkedin.com/in/johncrickett/" target="_blank" rel="noopener noreferrer">John Crickett</a>.</li>
+<li>From First Principles: Where I would post the concepts that I have learned from the scratch going to the depth of it.</li>
+</ol>
+<p>Hope I will be able to keep up with the content and make it useful for you, im striving to make it better everyday.</p>
+<p>Thanks for visiting my blog. Hope you enjoy it.</p>
+<p>Cheers,
+Vibhavari</p>]]></content:encoded>
+            <category>Welcome post</category>
         </item>
     </channel>
 </rss>

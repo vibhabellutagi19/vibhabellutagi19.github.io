@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkvibhavari_bellutagi=self.webpackChunkvibhavari_bellutagi||[]).push([[472],{5513:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Welcome","permalink":"/blog/welcome-to-my-blog","unlisted":false,"date":"2024-11-26T00:00:00.000Z"}]}')}}]);
