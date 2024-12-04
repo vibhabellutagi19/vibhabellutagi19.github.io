@@ -1,11 +1,11 @@
-data-engineering:
+de:
   label: data-engineering
-  permalink: /data-engineering
+  permalink: /de
   description: DE tag description
 
-dimensional-modeling:
+dim:
   label: dimensional-modeling
-  permalink: /dimensional-modeling
+  permalink: /dim
   description: Dimensional Modeling tag description
 
 hola:
@@ -13,7 +13,17 @@ hola:
   permalink: /welcome
   description: Welcome post
 
-data-engineering-bootcamp:
+de-bootcamp:
   label: data-engineering-bootcamp
-  permalink: /data-engineering-bootcamp
+  permalink: /de-bootcamp
   description: Tags on Data Engineering Bootcamp by Zach Wilson
+
+scd:
+  label: slowly-changing-dimension
+  permalink: /scd
+  description: Slowly Changing Dimension tag description
+
+cumulativetable:
+  label: cumulative-table
+  permalink: /cumulativetable
+  description: Cumulative Table tag description

@@ -1,13 +1,28 @@
 ---
 slug: de-bootcamp-dimensional-modelling
-title: Dimensional Modelling - Part 1
+title: Dimensional Modelling - Cumulative Table
 authors: [me]
-tags: [data-engineering, dimensional-modeling, data-engineering-bootcamp]
-keywords: [data engineering, data engineering bootcamp, dimensional modeling]
+tags: [
+        de,
+        dim,
+        de-bootcamp,
+        cumulativetable,
+    ]
+keywords: [
+            data engineering,
+            data engineering bootcamp,
+            dimensional modeling,
+            cumulative table,
+        ]
 hide_table_of_contents: false
 ---
+Im sharing my learning from the Data Engineering Bootcamp, where we are learning about Data Engeering. Today we are learning about Dimensional modelling - Cumulative Table.
 
-I would be starting my journey with Data Engineering Bootcamp by [Zach Wilson](https://www.linkedin.com/in/eczachly/) on dimensional modelling.
+I would like to extend my gratitude to Zach Wilson, the founder of [DataExpert.io](https://bootcamp.techcreator.io/lessons), for his invaluable guidance and the comprehensive Data Engineering Bootcamp.
+Connect with Zach Wilson on [LinkedIn](https://www.linkedin.com/in/eczachly/).
+Thank you, Zach, for this amazing intense bootcamp on Data engineering!
+
+---
 
 Day-1: Dimensional Modelling (Theory)
 
