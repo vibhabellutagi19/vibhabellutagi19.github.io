@@ -27,3 +27,8 @@ cumulativetable:
   label: cumulative-table
   permalink: /cumulativetable
   description: Cumulative Table tag description
+
+graph-database:
+  label: graph-database
+  permalink: /graph-database
+  description: Graph Database tag description

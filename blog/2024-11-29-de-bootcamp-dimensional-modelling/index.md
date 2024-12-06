@@ -15,6 +15,8 @@ keywords: [
             cumulative table,
         ]
 hide_table_of_contents: false
+image: assets/img/dimension_modelling.png
+description: This page is about Dimensional Modelling - Cumulative Table.
 ---
 Im sharing my learning from the Data Engineering Bootcamp, where we are learning about Data Engeering. Today we are learning about Dimensional modelling - Cumulative Table.
 
