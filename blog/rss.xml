@@ -4,10 +4,156 @@
         <title>Vibhavari Bellutagi Blog</title>
         <link>https://github.com/blog</link>
         <description>Vibhavari Bellutagi Blog</description>
-        <lastBuildDate>Sun, 01 Dec 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 05 Dec 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Data Modelling - Graph Databases and Additve Dimensions]]></title>
+            <link>https://github.com/blog/de-bootcamp-graph-databases</link>
+            <guid>https://github.com/blog/de-bootcamp-graph-databases</guid>
+            <pubDate>Thu, 05 Dec 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Im sharing my learning from the Data Engineering Bootcamp, where we are learning about Data Engeering.]]></description>
+            <content:encoded><![CDATA[<p>Im sharing my learning from the Data Engineering Bootcamp, where we are learning about Data Engeering.
+Today we are learning about Data Modelling - Graph Databases</p>
+<p>I would like to extend my gratitude to Zach Wilson, the founder of <a href="https://bootcamp.techcreator.io/lessons" target="_blank" rel="noopener noreferrer">DataExpert.io</a>, for his invaluable guidance and the comprehensive Data Engineering Bootcamp.
+Connect with Zach Wilson on <a href="https://www.linkedin.com/in/eczachly/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+Thank you, Zach, for this amazing intense bootcamp on Data engineering!</p>
+<hr>
+<p>Day - 3: Data Modeling: Graph Databases</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="additive-vs-non-additive-dimensions">Additive vs non-additive dimensions<a href="https://github.com/blog/de-bootcamp-graph-databases#additive-vs-non-additive-dimensions" class="hash-link" aria-label="Direct link to Additive vs non-additive dimensions" title="Direct link to Additive vs non-additive dimensions">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="what-makes-a-dimension-additive">What makes a dimension additive<a href="https://github.com/blog/de-bootcamp-graph-databases#what-makes-a-dimension-additive" class="hash-link" aria-label="Direct link to What makes a dimension additive" title="Direct link to What makes a dimension additive">​</a></h3>
+<ul>
+<li>
+<p>A additive dimension is a dimension that can be summed up across all the dimensions in the fact table.
+For Example: You manage a sales database that tracks daily transactions.
+You want to analyze the <span style="background-color:#3e6980;border-radius:2px;color:#fff;padding:0.2rem">total revenue generated</span> by your business.
+The Revenue measure is an additive dimension because it can be summed across all levels of the data (e.g., by day, month, region, product, etc.).</p>
+</li>
+<li>
+<p>Non-additive dimensions are dimensions that cannot be summed up across all the dimensions in the fact table.
+For Example: Application interface is not additive.
+The number of active users != # of active users on web + # of active users on mobile (Android + iOS).</p>
+<p>Why is this?
+Overlapping Users: A single user can be active on multiple platforms (e.g., logging in on both web and mobile during the same time period). Simply summing active users across platforms would <code>double-count</code> those users.</p>
+</li>
+</ul>
+<div class="theme-admonition theme-admonition-important admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>important</div><div class="admonitionContent_BuS1"><p>A deminsion is additive over a specific window of time, if and only if, the grain of data over that window can
+only ever be one value at a time.</p></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="how-additivity-help">How additivity help?<a href="https://github.com/blog/de-bootcamp-graph-databases#how-additivity-help" class="hash-link" aria-label="Direct link to How additivity help?" title="Direct link to How additivity help?">​</a></h3>
+<ol>
+<li>
+<p><strong>No need for COUNT(DISTINCT)</strong>: When a measure is additive, you can aggregate it (e.g., SUM) across dimensions without needing a COUNT(DISTINCT) to avoid duplicates.</p>
+</li>
+<li>
+<p><strong>Additivity Applies Mostly to SUM:</strong></p>
+<ul>
+<li>Non-additive dimensions (like active users) are usually problematic only when using <code>COUNT</code> because you might double-count. However, <strong>SUM</strong> aggregations typically remain additive.</li>
+</ul>
+</li>
+</ol>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>Can the dimension be 2 things at once? If yes, it's non-additive.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="all-about-enums">All about ENUMS<a href="https://github.com/blog/de-bootcamp-graph-databases#all-about-enums" class="hash-link" aria-label="Direct link to All about ENUMS" title="Direct link to All about ENUMS">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="what-is-an-enum-type">What is an ENUM type?<a href="https://github.com/blog/de-bootcamp-graph-databases#what-is-an-enum-type" class="hash-link" aria-label="Direct link to What is an ENUM type?" title="Direct link to What is an ENUM type?">​</a></h3>
+<p>ENUM is a data type that contains a fixed set of values.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="when-should-you-use-enums">When should you use ENUMs?<a href="https://github.com/blog/de-bootcamp-graph-databases#when-should-you-use-enums" class="hash-link" aria-label="Direct link to When should you use ENUMs?" title="Direct link to When should you use ENUMs?">​</a></h3>
+<ul>
+<li>Enums are great for low-to-medium cardinality columns.</li>
+<li>Country is a great example of where Enums start to struggle.</li>
+</ul>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Enums are great if the set of value count is &lt; 50.</p></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="why-use-enums">Why use ENUMs?<a href="https://github.com/blog/de-bootcamp-graph-databases#why-use-enums" class="hash-link" aria-label="Direct link to Why use ENUMs?" title="Direct link to Why use ENUMs?">​</a></h3>
+<ul>
+<li>Built in data quality:<!-- -->
+<ul>
+<li>IF you model a column as ENUM, you can be sure that the data in that column is one of the values in the ENUM. if the data is not in the ENUM, the pipeline will fail.</li>
+</ul>
+</li>
+<li>Built in static fields:<!-- -->
+<ul>
+<li>If you have a column that is not going to change, you can use ENUMs.</li>
+<li>Example: Employee Type (Full Time, Part Time, Contractor)</li>
+</ul>
+</li>
+<li>Built in documentation:<!-- -->
+<ul>
+<li>You would know already what the values are, it is self documented.</li>
+</ul>
+</li>
+</ul>
+<p>In Postgres you can create ENUMs like this:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">CREATE</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">TYPE</span><span class="token plain"> employee_type </span><span class="token keyword" style="color:#00009f">AS</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">ENUM</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">'Full Time'</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">'Part Time'</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">'Contractor'</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="enumerations-and-sup-partitions">Enumerations and sup partitions<a href="https://github.com/blog/de-bootcamp-graph-databases#enumerations-and-sup-partitions" class="hash-link" aria-label="Direct link to Enumerations and sup partitions" title="Direct link to Enumerations and sup partitions">​</a></h3>
+<ul>
+<li>Enumerations make it easy to create sup partitions, because:<!-- -->
+<ul>
+<li>You can be sure that the data in the column is one of the values in the ENUM.</li>
+<li>They chunk up the big data problem into manageable pieces.</li>
+</ul>
+</li>
+</ul>
+<p><strong>For example:</strong> Deduping the Notification channel (Email, SMS, Push) is defined as ENUM. You can process the data with date and notification channel in parallel.</p>
+<ul>
+<li>The <a href="https://github.com/EcZachly/little-book-of-pipelines/tree/master" target="_blank" rel="noopener noreferrer">little book of pipelines</a> by Zach:<!-- -->
+<ul>
+<li>The <strong>Little Book of Enums</strong> is a design pattern for organizing and managing complex data pipelines with multiple sources. It groups similar data sources together, defines a shared schema for consistency, and uses enums to document metadata, data quality rules, and constants for each group.</li>
+<li>How is this little book generated?<!-- -->
+<ul>
+<li>The <strong>ENUMs</strong> are typically defined in Python or Scala to represent the metadata.</li>
+<li>A dedicated job is used to convert the enumerated list into a table.</li>
+<li>The resulting table is small, as it only contains as many entries as there are ENUMs.</li>
+<li>This table can then be used to share metadata between data quality (DQ) checks (passed as a table) and source functions (passed as Python objects) by joining them as needed.</li>
+</ul>
+</li>
+<li>What type of use cases is this ENUM pattern useful for?<!-- -->
+<ul>
+<li>Whenever you have many sources mapping to a shared schema.</li>
+<li>Airbnb<!-- -->
+<ul>
+<li>Unit Economics (fees, coupons, credits, insurance, infrastructure cost, taxes etc)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>How do you model data from disparate sources into a shared schema?<!-- -->
+<ul>
+<li>Flexible schema: Using map</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="flexible-schema">Flexible schema<a href="https://github.com/blog/de-bootcamp-graph-databases#flexible-schema" class="hash-link" aria-label="Direct link to Flexible schema" title="Direct link to Flexible schema">​</a></h3>
+<ul>
+<li>Benefits<!-- -->
+<ul>
+<li>No need to run ALTER TABLE each time a new column is added.</li>
+<li>Easier management of numerous columns.</li>
+<li>Schemas are not cluttered with many "NULL" columns.</li>
+<li>"Other_properties" columns are excellent for "rarely-used-but-needed" data.</li>
+</ul>
+</li>
+<li>Drawbacks<!-- -->
+<ul>
+<li>Typically results in poorer compression.</li>
+<li>Can affect readability and queryability.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="graph-data-modeling">Graph data modeling<a href="https://github.com/blog/de-bootcamp-graph-databases#graph-data-modeling" class="hash-link" aria-label="Direct link to Graph data modeling" title="Direct link to Graph data modeling">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="what-is-a-graph-database">What is a graph database?<a href="https://github.com/blog/de-bootcamp-graph-databases#what-is-a-graph-database" class="hash-link" aria-label="Direct link to What is a graph database?" title="Direct link to What is a graph database?">​</a></h3>
+<p>Graph databases are a type of NoSQL database that uses graph structures for semantic queries with nodes, edges, and properties to represent and store data.</p>
+<p>Graph modelling is RELATIONSHIP focused, not entity focused. There would be chances of poor job at modelling the entities.</p>
+<p>Usually the model look like this for entities(vertices):</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">- Identifier: STRING</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- Type: STRING</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- Properties: MAP&lt;STRING,STRING&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p>We dont care about the entities, we care about the relationships.</p></div></div>
+<p>The schema for edges would look like this:</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">- subject_identifier: STRING</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- subject_type: VertexType</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- object_identifier: STRING</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- object_type: VertexType</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- edge_type: EdgeType (always a verb: is_a, place_with, has_a etc)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- Properties: MAP&lt;STRING,STRING&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>]]></content:encoded>
+            <category>data-engineering</category>
+            <category>dimensional-modeling</category>
+            <category>data-engineering-bootcamp</category>
+            <category>graph-database</category>
+        </item>
         <item>
             <title><![CDATA[Dimensional Modelling - SCD]]></title>
             <link>https://github.com/blog/de-bootcamp-dimensional-modelling-scd</link>
@@ -148,7 +294,7 @@ Imagine a pipeline that:</p>
             <link>https://github.com/blog/de-bootcamp-dimensional-modelling</link>
             <guid>https://github.com/blog/de-bootcamp-dimensional-modelling</guid>
             <pubDate>Fri, 29 Nov 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[Im sharing my learning from the Data Engineering Bootcamp, where we are learning about Data Engeering. Today we are learning about Dimensional modelling - Cumulative Table.]]></description>
+            <description><![CDATA[This page is about Dimensional Modelling - Cumulative Table.]]></description>
             <content:encoded><![CDATA[<p>Im sharing my learning from the Data Engineering Bootcamp, where we are learning about Data Engeering. Today we are learning about Dimensional modelling - Cumulative Table.</p>
 <p>I would like to extend my gratitude to Zach Wilson, the founder of <a href="https://bootcamp.techcreator.io/lessons" target="_blank" rel="noopener noreferrer">DataExpert.io</a>, for his invaluable guidance and the comprehensive Data Engineering Bootcamp.
 Connect with Zach Wilson on <a href="https://www.linkedin.com/in/eczachly/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
@@ -363,10 +509,10 @@ Thank you, Zach, for this amazing intense bootcamp on Data engineering!</p>
 <p>I always wanted to have a blog to share my thoughts and experiences with the world. Im beginner in the world of blogging, so Im still learning how to write a good and effective content. I hope you enjoy my blog and find it useful.</p>
 <p>I have three different sections in my website:</p>
 <ol>
-<li>Blogs: Where I would long format technical blogs that I have experienced or learned recently.</li>
-<li>Tech Bytes: Where I would post small technical tips and tricks that I have learned.</li>
-<li>Projects: Where I would post the projects that I have worked on, I would like to start with <a href="https://codingchallenges.fyi/" target="_blank" rel="noopener noreferrer">CodeChallenge</a> by <a href="https://www.linkedin.com/in/johncrickett/" target="_blank" rel="noopener noreferrer">John Crickett</a>.</li>
-<li>From First Principles: Where I would post the concepts that I have learned from the scratch going to the depth of it.</li>
+<li><a href="https://github.com/blog/welcome-to-my-blog">Blogs</a>: Where I would long format technical blogs that I have experienced or learned recently.</li>
+<li><a href="https://github.com/TechBytes/intro">Tech Bytes</a>: Where I would post small technical tips and tricks that I have learned.</li>
+<li><a href="https://github.com/projects">Projects</a>: Where I would post the projects that I have worked on, I would like to start with <a href="https://codingchallenges.fyi/" target="_blank" rel="noopener noreferrer">CodeChallenge</a> by <a href="https://www.linkedin.com/in/johncrickett/" target="_blank" rel="noopener noreferrer">John Crickett</a>.</li>
+<li><a href="https://github.com/FirstPrinciples/thoughts">From First Principles</a>: Where I would post the concepts that I have learned from the scratch going to the depth of it.</li>
 </ol>
 <p>Hope I will be able to keep up with the content and make it useful for you, im striving to make it better everyday.</p>
 <p>Thanks for visiting my blog. Hope you enjoy it.</p>
