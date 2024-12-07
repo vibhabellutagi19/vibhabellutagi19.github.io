@@ -81,7 +81,7 @@ export default function HomepageHeader() {
               style={{
                 position: "absolute",
                 zIndex: 200,
-                transform: `translate(220px, -75px)`,
+                transform: `translate(150px, -60px)`,
                 width: "100px",
               }}
             >
