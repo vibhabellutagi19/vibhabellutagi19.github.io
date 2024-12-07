@@ -89,11 +89,11 @@ const config = {
             label: 'Resume',
             to: '/Resume/experience',
           },
-          {
-            to: '/FirstPrinciples/thoughts',
-            label: 'First Principles',
-            position: 'left'
-          },
+          // {
+          //   to: '/FirstPrinciples/thoughts',
+          //   label: 'First Principles',
+          //   position: 'left'
+          // },
         ],
       },
       footer: {
