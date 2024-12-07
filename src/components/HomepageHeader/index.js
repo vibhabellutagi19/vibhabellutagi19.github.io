@@ -128,6 +128,16 @@ export default function HomepageHeader() {
               pipelines and solving complex problems.
             </p>
 
+            {/* Move the About Me button here */}
+            <div className={styles.buttons} style={{ marginBottom: "20px" }}>
+              <Link
+                className="button button--secondary button--lg"
+                to="/Resume/experience"
+              >
+                About me
+              </Link>
+            </div>
+
             <Grid
               container
               justifyContent="center"
@@ -155,14 +165,6 @@ export default function HomepageHeader() {
               </Grid>
 
             </Grid>
-            <div className={styles.buttons}>
-              <Link
-                className="button button--secondary button--lg"
-                to="/Resume/experience"
-              >
-                About me
-              </Link>
-            </div>
           </Grid>
         </Grid>
       </Container>
