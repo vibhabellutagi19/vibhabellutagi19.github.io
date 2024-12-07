@@ -100,8 +100,21 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'About Me',
             items: [
+              {
+                label: 'Resume',
+                to: '/Resume/experience',
+              }
+            ],
+          },
+          {
+            title: 'Resources',
+            items: [
+              {
+                label: 'Blog',
+                to: '/blog',
+              },
               {
                 label: 'Projects',
                 to: '/projects',
@@ -109,24 +122,24 @@ const config = {
             ],
           },
           {
-            title: 'Community',
+            title: 'Contact',
             items: [
               {
-                label: 'Linkedin',
-                href: 'https://www.linkedin.com/in/vibhavari-bellutagi-837871189/',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
+                label: 'Mail',
+                to: 'mailto:vibhavari.bellutagi@gmail.com',
               },
               {
                 label: 'GitHub',
                 href: 'https://github.com/vibhabellutagi19/vibhabellutagi19.github.io',
+              },
+              {
+                label: 'Linkedin',
+                href: 'https://www.linkedin.com/in/vibhavari-bellutagi-837871189/',
+              },
+              {
+                label: 'Twitter',
+                to: 'https://x.com/buildwith_vibs',
+
               },
             ],
           },
