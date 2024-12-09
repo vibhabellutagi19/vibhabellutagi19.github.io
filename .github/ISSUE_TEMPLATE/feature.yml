@@ -1,15 +1,14 @@
-name: Bug Report
-description: File a bug report.
-title: "[Bug]: "
-labels: ["bug", "triage"]
-projects: ["octo-org/1", "octo-org/44"]
+name: Issue Feature
+description: Issue template for new feature requests
+title: "[Feature]: "
+labels: ["feature", "triage"]
 assignees:
-  - octocat
+  - vibhabellutagi19
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
+        Thanks for suggesting a new feature! Please fill out the sections below to help us understand your request.
   - type: input
     id: contact
     attributes:
