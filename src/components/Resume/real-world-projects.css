@@ -1,0 +1,126 @@
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    padding: 50px;
+}
+
+.card {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    flex: 1 1 calc(40% - 40px);
+    max-width: 500px;
+    background-color: var(--ifm-background-color);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 1000px;
+    box-shadow: 0 2px 10px rgba(0, 115, 255, 0.467);
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.card svg {
+    width: 48px;
+    fill: #333;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 10px rgba(0, 115, 255, 0.467);
+}
+
+.card__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: var(--ifm-background-color);
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: 20px;
+}
+
+.card:hover .card__content {
+    transform: rotateX(0deg);
+}
+
+.card__title {
+    margin: 0;
+    font-size: 1.5em;
+    color: var(--ifm-color-primary);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.card:hover svg {
+    scale: 0;
+}
+
+.card__description {
+    margin: 10px 0 10px;
+    font-size: 1.0em;
+    color: var(--ifm-color-primary);
+    line-height: 1.4;
+    text-align: justify;
+}
+
+.card__front,
+.card__back {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card__front {
+    transform: rotateZ(0deg);
+}
+
+.card__back {
+    transform: rotateY(180deg);
+    background: var(--ifm-background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card.flipped .card__front {
+    transform: rotateY(-180deg);
+}
+
+.card.flipped .card__back {
+    transform: rotateY(0deg);
+}
+
+.card__details {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: var(--ifm-color-primary);
+    font-size: 0.8em;
+    line-height: 1.5;
+}
+
+.card__details li {
+    margin-bottom: 10px;
+}
