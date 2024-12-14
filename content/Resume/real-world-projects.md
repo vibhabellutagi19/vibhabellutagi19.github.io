@@ -1,5 +1,5 @@
 ---
-title: "Real-World Projects"
+title: "Projects"
 sidebar_position: 2
 ---
 
