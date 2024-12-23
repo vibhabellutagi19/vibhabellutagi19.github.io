@@ -1,4 +1,4 @@
-# always-true condition in SQL
+# always-true condition
 
 Have you ever wondered why do we use `1=1` in the `WHERE` clause of SQL queries? It seems like a redundant condition that always evaluates to true. But there are specific scenarios where this condition can be quite useful, we will explore them in this TechByte.
 
