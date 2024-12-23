@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkvibhavari_bellutagi=self.webpackChunkvibhavari_bellutagi||[]).push([[2215],{5459:e=>{e.exports=JSON.parse('{"categoryGeneratedIndex":{"title":"Resume","slug":"/category/resume","permalink":"/category/resume","sidebar":"tutorialSidebar","navigation":{"next":{"title":"Vibhavari Bellutagi","permalink":"/Resume/experience"}}}}')}}]);
