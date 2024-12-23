@@ -8,6 +8,11 @@ dim:
   permalink: /dim
   description: Dimensional Modeling tag description
 
+fact:
+  label: fact-dimensional-modeling
+  permalink: /fact
+  description: Fact Dimensional Modeling tag description
+
 hola:
   label: Welcome post
   permalink: /welcome
