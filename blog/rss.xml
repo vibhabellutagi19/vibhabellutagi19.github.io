@@ -4,10 +4,192 @@
         <title>Vibhavari Bellutagi Blog</title>
         <link>https://github.com/blog</link>
         <description>Vibhavari Bellutagi Blog</description>
-        <lastBuildDate>Thu, 05 Dec 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 19 Dec 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Data Modelling - Fact vs Dimension]]></title>
+            <link>https://github.com/blog/de-bootcamp-fact-vs-dimension</link>
+            <guid>https://github.com/blog/de-bootcamp-fact-vs-dimension</guid>
+            <pubDate>Thu, 19 Dec 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[I'm sharing my learnings from the Data Engineering Bootcamp, where we are currently focusing on Fact vs Dimension.]]></description>
+            <content:encoded><![CDATA[<p>I'm sharing my learnings from the Data Engineering Bootcamp, where we are currently focusing on Fact vs Dimension.</p>
+<table><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>DataExpert.io</td><td><a href="https://bootcamp.techcreator.io/lessons" target="_blank" rel="noopener noreferrer">DataExpert.io</a></td></tr><tr><td>Zach Wilson on LinkedIn</td><td><a href="https://www.linkedin.com/in/eczachly/" target="_blank" rel="noopener noreferrer">LinkedIn</a></td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="thank-you-zach-for-your-invaluable-guidance-and-this-comprehensive-bootcamp">Thank you, Zach, for your invaluable guidance and this comprehensive bootcamp!<a href="https://github.com/blog/de-bootcamp-fact-vs-dimension#thank-you-zach-for-your-invaluable-guidance-and-this-comprehensive-bootcamp" class="hash-link" aria-label="Direct link to Thank you, Zach, for your invaluable guidance and this comprehensive bootcamp!" title="Direct link to Thank you, Zach, for your invaluable guidance and this comprehensive bootcamp!">​</a></h2>
+<p>Week-2, Day-2: Fact vs Dimension</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fact-vs-dimension">Fact vs Dimension<a href="https://github.com/blog/de-bootcamp-fact-vs-dimension#fact-vs-dimension" class="hash-link" aria-label="Direct link to Fact vs Dimension" title="Direct link to Fact vs Dimension">​</a></h2>
+<ul>
+<li>The examples of <code>dim is active</code> and <code>dim is activated</code>, both user dimensions on Facebook.</li>
+<li><code>Dim is active</code> is based on whether a user has engaged with the app in a given timeframe. This could be considered an aggregation of facts (e.g. likes, comments, shares), potentially making it difficult to categorise as purely a dimension.</li>
+<li>In contrast, <code>dim is activated</code> indicates whether a user has explicitly deactivated their account. This is a pure dimension, as it's an attribute of the user object, independent of their actions within the app.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="bucketisation">Bucketisation<a href="https://github.com/blog/de-bootcamp-fact-vs-dimension#bucketisation" class="hash-link" aria-label="Direct link to Bucketisation" title="Direct link to Bucketisation">​</a></h3>
+<ul>
+<li><strong>Necessity for Meaningful Analysis:</strong> When creating dimensions based on user activity (e.g., number of likes), bucketisation becomes crucial to avoid excessively high cardinality that would lead to groups of one, rendering analysis less meaningful.</li>
+<li><strong>Data Distribution Awareness:</strong> The choice of buckets shouldn't be arbitrary. Instead, it should be informed by the data's statistical distribution. Examining percentiles, quartiles, or quintiles can help define meaningful bucket ranges.</li>
+<li><strong>Impact on Compression and Flexibility:</strong> Bucketisation can improve data compression by reducing the number of unique values. However, it comes at the expense of flexibility, as pre-defined buckets may limit the types of analyses possible.</li>
+<li><strong>Avoiding Arbitrary Buckets:</strong> The author cautions against arbitrarily choosing bucket ranges without considering the underlying data distribution, as it can lead to misleading analyses and weaken the credibility of the derived insights.</li>
+<li><strong>Stakeholder Involvement:</strong> When defining buckets for dimensions that could impact business decisions, it's crucial to involve relevant stakeholders to ensure alignment and minimise the need for future changes, which can be costly and time-consuming.</li>
+</ul>
+<p>Zach also provides examples where bucketisation plays a significant role:</p>
+<ul>
+<li><strong>Facebook's "Dim is active":</strong> While not explicitly bucketised, this dimension demonstrates the aggregation of user actions (facts) into a broader category. A more refined approach could involve bucketising users into activity levels (e.g., low, medium, high) based on their engagement metrics.</li>
+<li><strong>Airbnb superhosts:</strong> Determining superhost status involves evaluating multiple criteria and potentially bucketising hosts based on their performance across these dimensions. This illustrates how bucketisation can create a meaningful dimension that reflects a collection of behaviours.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="properties-of-fact-and-dimension-tables">Properties of Fact and Dimension tables<a href="https://github.com/blog/de-bootcamp-fact-vs-dimension#properties-of-fact-and-dimension-tables" class="hash-link" aria-label="Direct link to Properties of Fact and Dimension tables" title="Direct link to Properties of Fact and Dimension tables">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="dimensions">Dimensions<a href="https://github.com/blog/de-bootcamp-fact-vs-dimension#dimensions" class="hash-link" aria-label="Direct link to Dimensions" title="Direct link to Dimensions">​</a></h3>
+<ul>
+<li>Usually show up in <code>GROUP BY</code> clause when doing analytics.</li>
+<li>Can be "high cardinality" (e.g., user_id) or "low cardinality" (e.g., region).</li>
+<li>Generally come from a snapshot of state.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="facts">Facts<a href="https://github.com/blog/de-bootcamp-fact-vs-dimension#facts" class="hash-link" aria-label="Direct link to Facts" title="Direct link to Facts">​</a></h3>
+<ul>
+<li>Usually aggregated (e.g., SUM, COUNT, AVG) in analytics.</li>
+<li>Almost always higher volume that dimensions, although some fact sources are low-volume, think "rare events".</li>
+<li>Generally are events and logs.</li>
+</ul>]]></content:encoded>
+            <category>data-engineering</category>
+            <category>fact-dimensional-modeling</category>
+            <category>data-engineering-bootcamp</category>
+        </item>
+        <item>
+            <title><![CDATA[Data Modelling - Fact Modelling]]></title>
+            <link>https://github.com/blog/de-bootcamp-fact-modelling</link>
+            <guid>https://github.com/blog/de-bootcamp-fact-modelling</guid>
+            <pubDate>Sat, 14 Dec 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Im sharing my learning from the Data Engineering Bootcamp, where we are learning about Data Engeering.]]></description>
+            <content:encoded><![CDATA[<p>Im sharing my learning from the Data Engineering Bootcamp, where we are learning about Data Engeering.
+Today we are learning about Fact Modelling.</p>
+<p>I would like to extend my gratitude to Zach Wilson, the founder of <a href="https://bootcamp.techcreator.io/lessons" target="_blank" rel="noopener noreferrer">DataExpert.io</a>, for his invaluable guidance and the comprehensive Data Engineering Bootcamp.
+Connect with Zach Wilson on <a href="https://www.linkedin.com/in/eczachly/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+Thank you, Zach, for this amazing intense bootcamp on Data engineering!</p>
+<hr>
+<p>Week-2, Day-1: Fact Data Modeling</p>
+<div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>caution</div><div class="admonitionContent_BuS1"><p>Fact data is the biggest data you work as data engineer. Zach shares, he worked 2PB of data in a day at Netflix !!</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fact-data-modelling">Fact Data Modelling<a href="https://github.com/blog/de-bootcamp-fact-modelling#fact-data-modelling" class="hash-link" aria-label="Direct link to Fact Data Modelling" title="Direct link to Fact Data Modelling">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="what-is-a-fact">What is a fact?<a href="https://github.com/blog/de-bootcamp-fact-modelling#what-is-a-fact" class="hash-link" aria-label="Direct link to What is a fact?" title="Direct link to What is a fact?">​</a></h3>
+<p>Fact can be thought as a record of an event that happened or occured.</p>
+<ul>
+<li>A user logs in to an app ( an action )</li>
+<li>A transaction is made</li>
+<li>You run a mile with your smartwatch - ( a mile can be a aggregated, considering each step in that mile as a granular)</li>
+</ul>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Fact cannot be broken down further. It is the most granular data you have. ( this is way you think about fact )</p></div></div>
+<p><span style="background-color:#3e6980;border-radius:2px;color:#fff;padding:0.2rem">Facts are not slowly changing</span>, which makes them easier to model than dimensions.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="hardest-part-of-modelling-facts">Hardest part of modelling facts<a href="https://github.com/blog/de-bootcamp-fact-modelling#hardest-part-of-modelling-facts" class="hash-link" aria-label="Direct link to Hardest part of modelling facts" title="Direct link to Hardest part of modelling facts">​</a></h3>
+<ul>
+<li>Fact data is usually 10-100x bigger than dimension data.</li>
+<li>Fact data can need a lot of context for effective analysis like which dimension is it related to etc.</li>
+<li>Facts would have duplicate data which is way more common than dimensions.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="how-does-fact-data-work">How does fact data work?<a href="https://github.com/blog/de-bootcamp-fact-modelling#how-does-fact-data-work" class="hash-link" aria-label="Direct link to How does fact data work?" title="Direct link to How does fact data work?">​</a></h3>
+<ul>
+<li>Normalized facts dont have any dimesnional attributes, just IDs to join to get that information.</li>
+<li>Denormalized facts bring in some dimension attributes to make it quicket analysis at the cost of storage.</li>
+</ul>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Normalised facts works well for a small scale, you would remove the duplicate facts and data integrity is achieved.</p></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="how-does-fact-modelling-work">How does fact modelling work?<a href="https://github.com/blog/de-bootcamp-fact-modelling#how-does-fact-modelling-work" class="hash-link" aria-label="Direct link to How does fact modelling work?" title="Direct link to How does fact modelling work?">​</a></h3>
+<p>Here’s a concise table highlighting the differences between <strong>fact data</strong> and <strong>raw log data</strong>, as described in the slide:</p>
+<table><thead><tr><th><strong>Aspect</strong></th><th><strong>Raw Logs</strong></th><th><strong>Fact Data</strong></th></tr></thead><tbody><tr><td><strong>Schema Design</strong></td><td>Ugly schemas designed for online systems, making data analysis difficult.</td><td>Well-structured with nice column names.</td></tr><tr><td><strong>Data Quality</strong></td><td>May contain duplicates and other quality issues.</td><td>Includes quality guarantees like uniqueness, non-null constraints, etc.</td></tr><tr><td><strong>Retention</strong></td><td>Usually has shorter retention.</td><td>Retained for longer periods.</td></tr></tbody></table>
+<p>Though Fact data and Raw logs are dependent, they are not the same. Fact data is a subset of raw logs, and it is the data that is used for analysis.</p>
+<p>Fact can be identified as <code>Who</code>, <code>What</code>, <code>When</code>, <code>Where</code>, <code>How</code> of the data.</p>
+<ul>
+<li>
+<p><strong>Who</strong> - User ID ( user who did the action )</p>
+</li>
+<li>
+<p><strong>Where</strong> - Location ID ( where the action happened ), most likely modeled out like who with "IDs" to join, but more likely to bring in dimensions.</p>
+</li>
+<li>
+<p><strong>How</strong> - Similiar to where, "He used an iphone to make this click"</p>
+</li>
+<li>
+<p><strong>When</strong> - Timestamp ( when the action happened ). fundamentally part of the nature of the fact.</p>
+<ul>
+<li>Mostly an "event_timestamp" field or "event_date" field. ( always to be not null )</li>
+</ul>
+</li>
+<li>
+<p><strong>What</strong> - The action that happened. ( what is the fact ) ( always to be not null )</p>
+<ul>
+<li>In notification world, it could be "notification_sent", "notification_delivered", "notification_clicked"</li>
+</ul>
+</li>
+<li>
+<p>Fact datasets should have quality guarantees like uniqueness, non-null constraints, etc.</p>
+</li>
+<li>
+<p>Fact data &lt; raw logs</p>
+</li>
+<li>
+<p>Fact data should parse out hard-to-understand columns.</p>
+</li>
+<li>
+<p>Expected to have the simple data types, in some cases, there can be complex data types</p>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="how-logging-fit-into-fact-data">How logging fit into fact data?<a href="https://github.com/blog/de-bootcamp-fact-modelling#how-logging-fit-into-fact-data" class="hash-link" aria-label="Direct link to How logging fit into fact data?" title="Direct link to How logging fit into fact data?">​</a></h3>
+<ul>
+<li>It brings in all the crtical context for your fact data</li>
+<li>Do not log everything, log what you need</li>
+<li>Logging should conform to values specified by the online teams, define the standard schema for logging<!-- -->
+<ul>
+<li>Thrift was used at Netflix and Airbnb</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="potential-options-when-working-with-high-volume-fact-data">Potential options when working with high volume fact data<a href="https://github.com/blog/de-bootcamp-fact-modelling#potential-options-when-working-with-high-volume-fact-data" class="hash-link" aria-label="Direct link to Potential options when working with high volume fact data" title="Direct link to Potential options when working with high volume fact data">​</a></h3>
+<ul>
+<li>
+<p><strong>Sampling</strong>: This involves analysing a subset of the data, which can be significantly faster and require less storage, especially for gauging trends or directionality. However, sampling is unsuitable for situations like security analysis, where capturing rare events is crucial.</p>
+</li>
+<li>
+<p><strong>Bucketing</strong>: This involves dividing the data into smaller partitions based on a key, like user ID. Bucketing can speed up joins, especially when employing techniques like bucket joins or sorted merge bucket joins (SMB joins) that minimise or eliminate shuffle.</p>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="retention-of-fact-data">Retention of Fact Data<a href="https://github.com/blog/de-bootcamp-fact-modelling#retention-of-fact-data" class="hash-link" aria-label="Direct link to Retention of Fact Data" title="Direct link to Retention of Fact Data">​</a></h3>
+<ul>
+<li>High volumes make fact data much more costly to store.</li>
+<li>Any fact tables &lt; 10 TBs, Retention is not a big deal.<!-- -->
+<ul>
+<li>Anonymisation of facts usually happens after 60-90 days, the data would be moved to a new table the PII data would be removed.</li>
+</ul>
+</li>
+<li>Fact tables &gt; 100 TBs, very short retention is common. (~ 14 days)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="deduplication-of-fact-data">Deduplication of Fact Data<a href="https://github.com/blog/de-bootcamp-fact-modelling#deduplication-of-fact-data" class="hash-link" aria-label="Direct link to Deduplication of Fact Data" title="Direct link to Deduplication of Fact Data">​</a></h3>
+<p>As duplicate records are much more common in fact datasets compared to dimensional data. These duplicates can arise from various sources, such as:</p>
+<ul>
+<li><strong>Data quality errors:</strong> Software bugs in logging systems can lead to duplicate entries every time an event occurs.</li>
+<li><strong>Genuine duplicate actions:</strong> Users might perform the same action multiple times within a given timeframe, resulting in multiple legitimate entries that need to be accounted for without inflating metrics. For example, a user might click on a notification multiple times, or a step-tracking app might record multiple steps in quick succession.</li>
+</ul>
+<p><strong>Deduplication is crucial for accurate analysis</strong>, as failing to address duplicates can distort metrics like click-through rates or user engagement. For example, if duplicates aren't removed from notification click data, the click-through rate might appear artificially inflated.</p>
+<p>The suggestion here is to consider the <strong>timeframe</strong> for deduplication.  While it's essential to remove duplicates within a specific period where they significantly impact analysis, duplicates occurring over a longer timeframe might be less critical. For instance, a user clicking on a notification a year after initially clicking on it might not be relevant for measuring short-term engagement.</p>
+<p>Two approaches to efficiently handle deduplication for high-volume fact data:</p>
+<ul>
+<li><strong>Streaming:</strong>
+<ul>
+<li>This method processes data in real time, deduplicating records as they arrive.</li>
+<li>Windowing matters in streaming, you need to have a window to deduplicate the data.</li>
+<li>Entire day deduplication is not possible in streaming, because it needs to hold onto such a big window of memory.</li>
+<li>Large number of duplicates happens within a short time of first event.</li>
+<li><strong>Deduplication window</strong> - 15 minutes, a sweet spot</li>
+</ul>
+</li>
+<li><strong>Microbatch processing:</strong>
+<ul>
+<li>This technique involves processing data in small batches, such as hourly, to deduplicate records within each batch and subsequently merge the deduplicated batches.</li>
+<li>There is a specific microbatch deduplication pattern involving hourly aggregation followed by a series of full outer joins to merge deduplicated data from different hours.</li>
+</ul>
+</li>
+</ul>
+<p>The choice between streaming and microbatch processing depends on factors like latency requirements and the complexity of the deduplication logic.</p>]]></content:encoded>
+            <category>data-engineering</category>
+            <category>fact-dimensional-modeling</category>
+            <category>data-engineering-bootcamp</category>
+        </item>
         <item>
             <title><![CDATA[Data Modelling - Graph Databases and Additve Dimensions]]></title>
             <link>https://github.com/blog/de-bootcamp-graph-databases</link>
