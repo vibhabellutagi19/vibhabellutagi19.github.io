@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://github.com/blog</id>
+    <id>https://buildwithvibs.in/blog</id>
     <title>Vibhavari Bellutagi Blog</title>
     <updated>2024-12-19T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://github.com/blog"/>
+    <link rel="alternate" href="https://buildwithvibs.in/blog"/>
     <subtitle>Vibhavari Bellutagi Blog</subtitle>
-    <icon>https://github.com/img/favicon.ico</icon>
+    <icon>https://buildwithvibs.in/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Data Modelling - Fact vs Dimension]]></title>
-        <id>https://github.com/blog/de-bootcamp-fact-vs-dimension</id>
-        <link href="https://github.com/blog/de-bootcamp-fact-vs-dimension"/>
+        <id>https://buildwithvibs.in/blog/de-bootcamp-fact-vs-dimension</id>
+        <link href="https://buildwithvibs.in/blog/de-bootcamp-fact-vs-dimension"/>
         <updated>2024-12-19T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[I'm sharing my learnings from the Data Engineering Bootcamp, where we are currently focusing on Fact vs Dimension.]]></summary>
         <content type="html"><![CDATA[<p>I'm sharing my learnings from the Data Engineering Bootcamp, where we are currently focusing on Fact vs Dimension.</p>
 <table><thead><tr><th>Resource</th><th>Link</th></tr></thead><tbody><tr><td>DataExpert.io</td><td><a href="https://bootcamp.techcreator.io/lessons" target="_blank" rel="noopener noreferrer">DataExpert.io</a></td></tr><tr><td>Zach Wilson on LinkedIn</td><td><a href="https://www.linkedin.com/in/eczachly/" target="_blank" rel="noopener noreferrer">LinkedIn</a></td></tr></tbody></table>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="thank-you-zach-for-your-invaluable-guidance-and-this-comprehensive-bootcamp">Thank you, Zach, for your invaluable guidance and this comprehensive bootcamp!<a href="https://github.com/blog/de-bootcamp-fact-vs-dimension#thank-you-zach-for-your-invaluable-guidance-and-this-comprehensive-bootcamp" class="hash-link" aria-label="Direct link to Thank you, Zach, for your invaluable guidance and this comprehensive bootcamp!" title="Direct link to Thank you, Zach, for your invaluable guidance and this comprehensive bootcamp!">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="thank-you-zach-for-your-invaluable-guidance-and-this-comprehensive-bootcamp">Thank you, Zach, for your invaluable guidance and this comprehensive bootcamp!<a href="https://buildwithvibs.in/blog/de-bootcamp-fact-vs-dimension#thank-you-zach-for-your-invaluable-guidance-and-this-comprehensive-bootcamp" class="hash-link" aria-label="Direct link to Thank you, Zach, for your invaluable guidance and this comprehensive bootcamp!" title="Direct link to Thank you, Zach, for your invaluable guidance and this comprehensive bootcamp!">​</a></h2>
 <p>Week-2, Day-2: Fact vs Dimension</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fact-vs-dimension">Fact vs Dimension<a href="https://github.com/blog/de-bootcamp-fact-vs-dimension#fact-vs-dimension" class="hash-link" aria-label="Direct link to Fact vs Dimension" title="Direct link to Fact vs Dimension">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fact-vs-dimension">Fact vs Dimension<a href="https://buildwithvibs.in/blog/de-bootcamp-fact-vs-dimension#fact-vs-dimension" class="hash-link" aria-label="Direct link to Fact vs Dimension" title="Direct link to Fact vs Dimension">​</a></h2>
 <ul>
 <li>The examples of <code>dim is active</code> and <code>dim is activated</code>, both user dimensions on Facebook.</li>
 <li><code>Dim is active</code> is based on whether a user has engaged with the app in a given timeframe. This could be considered an aggregation of facts (e.g. likes, comments, shares), potentially making it difficult to categorise as purely a dimension.</li>
 <li>In contrast, <code>dim is activated</code> indicates whether a user has explicitly deactivated their account. This is a pure dimension, as it's an attribute of the user object, independent of their actions within the app.</li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="bucketisation">Bucketisation<a href="https://github.com/blog/de-bootcamp-fact-vs-dimension#bucketisation" class="hash-link" aria-label="Direct link to Bucketisation" title="Direct link to Bucketisation">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="bucketisation">Bucketisation<a href="https://buildwithvibs.in/blog/de-bootcamp-fact-vs-dimension#bucketisation" class="hash-link" aria-label="Direct link to Bucketisation" title="Direct link to Bucketisation">​</a></h3>
 <ul>
 <li><strong>Necessity for Meaningful Analysis:</strong> When creating dimensions based on user activity (e.g., number of likes), bucketisation becomes crucial to avoid excessively high cardinality that would lead to groups of one, rendering analysis less meaningful.</li>
 <li><strong>Data Distribution Awareness:</strong> The choice of buckets shouldn't be arbitrary. Instead, it should be informed by the data's statistical distribution. Examining percentiles, quartiles, or quintiles can help define meaningful bucket ranges.</li>
@@ -36,14 +36,14 @@
 <li><strong>Facebook's "Dim is active":</strong> While not explicitly bucketised, this dimension demonstrates the aggregation of user actions (facts) into a broader category. A more refined approach could involve bucketising users into activity levels (e.g., low, medium, high) based on their engagement metrics.</li>
 <li><strong>Airbnb superhosts:</strong> Determining superhost status involves evaluating multiple criteria and potentially bucketising hosts based on their performance across these dimensions. This illustrates how bucketisation can create a meaningful dimension that reflects a collection of behaviours.</li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="properties-of-fact-and-dimension-tables">Properties of Fact and Dimension tables<a href="https://github.com/blog/de-bootcamp-fact-vs-dimension#properties-of-fact-and-dimension-tables" class="hash-link" aria-label="Direct link to Properties of Fact and Dimension tables" title="Direct link to Properties of Fact and Dimension tables">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="dimensions">Dimensions<a href="https://github.com/blog/de-bootcamp-fact-vs-dimension#dimensions" class="hash-link" aria-label="Direct link to Dimensions" title="Direct link to Dimensions">​</a></h3>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="properties-of-fact-and-dimension-tables">Properties of Fact and Dimension tables<a href="https://buildwithvibs.in/blog/de-bootcamp-fact-vs-dimension#properties-of-fact-and-dimension-tables" class="hash-link" aria-label="Direct link to Properties of Fact and Dimension tables" title="Direct link to Properties of Fact and Dimension tables">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="dimensions">Dimensions<a href="https://buildwithvibs.in/blog/de-bootcamp-fact-vs-dimension#dimensions" class="hash-link" aria-label="Direct link to Dimensions" title="Direct link to Dimensions">​</a></h3>
 <ul>
 <li>Usually show up in <code>GROUP BY</code> clause when doing analytics.</li>
 <li>Can be "high cardinality" (e.g., user_id) or "low cardinality" (e.g., region).</li>
 <li>Generally come from a snapshot of state.</li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="facts">Facts<a href="https://github.com/blog/de-bootcamp-fact-vs-dimension#facts" class="hash-link" aria-label="Direct link to Facts" title="Direct link to Facts">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="facts">Facts<a href="https://buildwithvibs.in/blog/de-bootcamp-fact-vs-dimension#facts" class="hash-link" aria-label="Direct link to Facts" title="Direct link to Facts">​</a></h3>
 <ul>
 <li>Usually aggregated (e.g., SUM, COUNT, AVG) in analytics.</li>
 <li>Almost always higher volume that dimensions, although some fact sources are low-volume, think "rare events".</li>
@@ -59,8 +59,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Data Modelling - Fact Modelling]]></title>
-        <id>https://github.com/blog/de-bootcamp-fact-modelling</id>
-        <link href="https://github.com/blog/de-bootcamp-fact-modelling"/>
+        <id>https://buildwithvibs.in/blog/de-bootcamp-fact-modelling</id>
+        <link href="https://buildwithvibs.in/blog/de-bootcamp-fact-modelling"/>
         <updated>2024-12-14T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Im sharing my learning from the Data Engineering Bootcamp, where we are learning about Data Engeering.]]></summary>
         <content type="html"><![CDATA[<p>Im sharing my learning from the Data Engineering Bootcamp, where we are learning about Data Engeering.
@@ -71,8 +71,8 @@ Thank you, Zach, for this amazing intense bootcamp on Data engineering!</p>
 <hr>
 <p>Week-2, Day-1: Fact Data Modeling</p>
 <div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>caution</div><div class="admonitionContent_BuS1"><p>Fact data is the biggest data you work as data engineer. Zach shares, he worked 2PB of data in a day at Netflix !!</p></div></div>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fact-data-modelling">Fact Data Modelling<a href="https://github.com/blog/de-bootcamp-fact-modelling#fact-data-modelling" class="hash-link" aria-label="Direct link to Fact Data Modelling" title="Direct link to Fact Data Modelling">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="what-is-a-fact">What is a fact?<a href="https://github.com/blog/de-bootcamp-fact-modelling#what-is-a-fact" class="hash-link" aria-label="Direct link to What is a fact?" title="Direct link to What is a fact?">​</a></h3>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fact-data-modelling">Fact Data Modelling<a href="https://buildwithvibs.in/blog/de-bootcamp-fact-modelling#fact-data-modelling" class="hash-link" aria-label="Direct link to Fact Data Modelling" title="Direct link to Fact Data Modelling">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="what-is-a-fact">What is a fact?<a href="https://buildwithvibs.in/blog/de-bootcamp-fact-modelling#what-is-a-fact" class="hash-link" aria-label="Direct link to What is a fact?" title="Direct link to What is a fact?">​</a></h3>
 <p>Fact can be thought as a record of an event that happened or occured.</p>
 <ul>
 <li>A user logs in to an app ( an action )</li>
@@ -81,19 +81,19 @@ Thank you, Zach, for this amazing intense bootcamp on Data engineering!</p>
 </ul>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Fact cannot be broken down further. It is the most granular data you have. ( this is way you think about fact )</p></div></div>
 <p><span style="background-color:#3e6980;border-radius:2px;color:#fff;padding:0.2rem">Facts are not slowly changing</span>, which makes them easier to model than dimensions.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="hardest-part-of-modelling-facts">Hardest part of modelling facts<a href="https://github.com/blog/de-bootcamp-fact-modelling#hardest-part-of-modelling-facts" class="hash-link" aria-label="Direct link to Hardest part of modelling facts" title="Direct link to Hardest part of modelling facts">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="hardest-part-of-modelling-facts">Hardest part of modelling facts<a href="https://buildwithvibs.in/blog/de-bootcamp-fact-modelling#hardest-part-of-modelling-facts" class="hash-link" aria-label="Direct link to Hardest part of modelling facts" title="Direct link to Hardest part of modelling facts">​</a></h3>
 <ul>
 <li>Fact data is usually 10-100x bigger than dimension data.</li>
 <li>Fact data can need a lot of context for effective analysis like which dimension is it related to etc.</li>
 <li>Facts would have duplicate data which is way more common than dimensions.</li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="how-does-fact-data-work">How does fact data work?<a href="https://github.com/blog/de-bootcamp-fact-modelling#how-does-fact-data-work" class="hash-link" aria-label="Direct link to How does fact data work?" title="Direct link to How does fact data work?">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="how-does-fact-data-work">How does fact data work?<a href="https://buildwithvibs.in/blog/de-bootcamp-fact-modelling#how-does-fact-data-work" class="hash-link" aria-label="Direct link to How does fact data work?" title="Direct link to How does fact data work?">​</a></h3>
 <ul>
 <li>Normalized facts dont have any dimesnional attributes, just IDs to join to get that information.</li>
 <li>Denormalized facts bring in some dimension attributes to make it quicket analysis at the cost of storage.</li>
 </ul>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Normalised facts works well for a small scale, you would remove the duplicate facts and data integrity is achieved.</p></div></div>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="how-does-fact-modelling-work">How does fact modelling work?<a href="https://github.com/blog/de-bootcamp-fact-modelling#how-does-fact-modelling-work" class="hash-link" aria-label="Direct link to How does fact modelling work?" title="Direct link to How does fact modelling work?">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="how-does-fact-modelling-work">How does fact modelling work?<a href="https://buildwithvibs.in/blog/de-bootcamp-fact-modelling#how-does-fact-modelling-work" class="hash-link" aria-label="Direct link to How does fact modelling work?" title="Direct link to How does fact modelling work?">​</a></h3>
 <p>Here’s a concise table highlighting the differences between <strong>fact data</strong> and <strong>raw log data</strong>, as described in the slide:</p>
 <table><thead><tr><th><strong>Aspect</strong></th><th><strong>Raw Logs</strong></th><th><strong>Fact Data</strong></th></tr></thead><tbody><tr><td><strong>Schema Design</strong></td><td>Ugly schemas designed for online systems, making data analysis difficult.</td><td>Well-structured with nice column names.</td></tr><tr><td><strong>Data Quality</strong></td><td>May contain duplicates and other quality issues.</td><td>Includes quality guarantees like uniqueness, non-null constraints, etc.</td></tr><tr><td><strong>Retention</strong></td><td>Usually has shorter retention.</td><td>Retained for longer periods.</td></tr></tbody></table>
 <p>Though Fact data and Raw logs are dependent, they are not the same. Fact data is a subset of raw logs, and it is the data that is used for analysis.</p>
@@ -133,7 +133,7 @@ Thank you, Zach, for this amazing intense bootcamp on Data engineering!</p>
 <p>Expected to have the simple data types, in some cases, there can be complex data types</p>
 </li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="how-logging-fit-into-fact-data">How logging fit into fact data?<a href="https://github.com/blog/de-bootcamp-fact-modelling#how-logging-fit-into-fact-data" class="hash-link" aria-label="Direct link to How logging fit into fact data?" title="Direct link to How logging fit into fact data?">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="how-logging-fit-into-fact-data">How logging fit into fact data?<a href="https://buildwithvibs.in/blog/de-bootcamp-fact-modelling#how-logging-fit-into-fact-data" class="hash-link" aria-label="Direct link to How logging fit into fact data?" title="Direct link to How logging fit into fact data?">​</a></h3>
 <ul>
 <li>It brings in all the crtical context for your fact data</li>
 <li>Do not log everything, log what you need</li>
@@ -143,7 +143,7 @@ Thank you, Zach, for this amazing intense bootcamp on Data engineering!</p>
 </ul>
 </li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="potential-options-when-working-with-high-volume-fact-data">Potential options when working with high volume fact data<a href="https://github.com/blog/de-bootcamp-fact-modelling#potential-options-when-working-with-high-volume-fact-data" class="hash-link" aria-label="Direct link to Potential options when working with high volume fact data" title="Direct link to Potential options when working with high volume fact data">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="potential-options-when-working-with-high-volume-fact-data">Potential options when working with high volume fact data<a href="https://buildwithvibs.in/blog/de-bootcamp-fact-modelling#potential-options-when-working-with-high-volume-fact-data" class="hash-link" aria-label="Direct link to Potential options when working with high volume fact data" title="Direct link to Potential options when working with high volume fact data">​</a></h3>
 <ul>
 <li>
 <p><strong>Sampling</strong>: This involves analysing a subset of the data, which can be significantly faster and require less storage, especially for gauging trends or directionality. However, sampling is unsuitable for situations like security analysis, where capturing rare events is crucial.</p>
@@ -152,7 +152,7 @@ Thank you, Zach, for this amazing intense bootcamp on Data engineering!</p>
 <p><strong>Bucketing</strong>: This involves dividing the data into smaller partitions based on a key, like user ID. Bucketing can speed up joins, especially when employing techniques like bucket joins or sorted merge bucket joins (SMB joins) that minimise or eliminate shuffle.</p>
 </li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="retention-of-fact-data">Retention of Fact Data<a href="https://github.com/blog/de-bootcamp-fact-modelling#retention-of-fact-data" class="hash-link" aria-label="Direct link to Retention of Fact Data" title="Direct link to Retention of Fact Data">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="retention-of-fact-data">Retention of Fact Data<a href="https://buildwithvibs.in/blog/de-bootcamp-fact-modelling#retention-of-fact-data" class="hash-link" aria-label="Direct link to Retention of Fact Data" title="Direct link to Retention of Fact Data">​</a></h3>
 <ul>
 <li>High volumes make fact data much more costly to store.</li>
 <li>Any fact tables &lt; 10 TBs, Retention is not a big deal.<!-- -->
@@ -162,7 +162,7 @@ Thank you, Zach, for this amazing intense bootcamp on Data engineering!</p>
 </li>
 <li>Fact tables &gt; 100 TBs, very short retention is common. (~ 14 days)</li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="deduplication-of-fact-data">Deduplication of Fact Data<a href="https://github.com/blog/de-bootcamp-fact-modelling#deduplication-of-fact-data" class="hash-link" aria-label="Direct link to Deduplication of Fact Data" title="Direct link to Deduplication of Fact Data">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="deduplication-of-fact-data">Deduplication of Fact Data<a href="https://buildwithvibs.in/blog/de-bootcamp-fact-modelling#deduplication-of-fact-data" class="hash-link" aria-label="Direct link to Deduplication of Fact Data" title="Direct link to Deduplication of Fact Data">​</a></h3>
 <p>As duplicate records are much more common in fact datasets compared to dimensional data. These duplicates can arise from various sources, such as:</p>
 <ul>
 <li><strong>Data quality errors:</strong> Software bugs in logging systems can lead to duplicate entries every time an event occurs.</li>
@@ -199,8 +199,8 @@ Thank you, Zach, for this amazing intense bootcamp on Data engineering!</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[Data Modelling - Graph Databases and Additve Dimensions]]></title>
-        <id>https://github.com/blog/de-bootcamp-graph-databases</id>
-        <link href="https://github.com/blog/de-bootcamp-graph-databases"/>
+        <id>https://buildwithvibs.in/blog/de-bootcamp-graph-databases</id>
+        <link href="https://buildwithvibs.in/blog/de-bootcamp-graph-databases"/>
         <updated>2024-12-05T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Im sharing my learning from the Data Engineering Bootcamp, where we are learning about Data Engeering.]]></summary>
         <content type="html"><![CDATA[<p>Im sharing my learning from the Data Engineering Bootcamp, where we are learning about Data Engeering.
@@ -210,8 +210,8 @@ Connect with Zach Wilson on <a href="https://www.linkedin.com/in/eczachly/" targ
 Thank you, Zach, for this amazing intense bootcamp on Data engineering!</p>
 <hr>
 <p>Day - 3: Data Modeling: Graph Databases</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="additive-vs-non-additive-dimensions">Additive vs non-additive dimensions<a href="https://github.com/blog/de-bootcamp-graph-databases#additive-vs-non-additive-dimensions" class="hash-link" aria-label="Direct link to Additive vs non-additive dimensions" title="Direct link to Additive vs non-additive dimensions">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="what-makes-a-dimension-additive">What makes a dimension additive<a href="https://github.com/blog/de-bootcamp-graph-databases#what-makes-a-dimension-additive" class="hash-link" aria-label="Direct link to What makes a dimension additive" title="Direct link to What makes a dimension additive">​</a></h3>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="additive-vs-non-additive-dimensions">Additive vs non-additive dimensions<a href="https://buildwithvibs.in/blog/de-bootcamp-graph-databases#additive-vs-non-additive-dimensions" class="hash-link" aria-label="Direct link to Additive vs non-additive dimensions" title="Direct link to Additive vs non-additive dimensions">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="what-makes-a-dimension-additive">What makes a dimension additive<a href="https://buildwithvibs.in/blog/de-bootcamp-graph-databases#what-makes-a-dimension-additive" class="hash-link" aria-label="Direct link to What makes a dimension additive" title="Direct link to What makes a dimension additive">​</a></h3>
 <ul>
 <li>
 <p>A additive dimension is a dimension that can be summed up across all the dimensions in the fact table.
@@ -229,7 +229,7 @@ Overlapping Users: A single user can be active on multiple platforms (e.g., logg
 </ul>
 <div class="theme-admonition theme-admonition-important admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>important</div><div class="admonitionContent_BuS1"><p>A deminsion is additive over a specific window of time, if and only if, the grain of data over that window can
 only ever be one value at a time.</p></div></div>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="how-additivity-help">How additivity help?<a href="https://github.com/blog/de-bootcamp-graph-databases#how-additivity-help" class="hash-link" aria-label="Direct link to How additivity help?" title="Direct link to How additivity help?">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="how-additivity-help">How additivity help?<a href="https://buildwithvibs.in/blog/de-bootcamp-graph-databases#how-additivity-help" class="hash-link" aria-label="Direct link to How additivity help?" title="Direct link to How additivity help?">​</a></h3>
 <ol>
 <li>
 <p><strong>No need for COUNT(DISTINCT)</strong>: When a measure is additive, you can aggregate it (e.g., SUM) across dimensions without needing a COUNT(DISTINCT) to avoid duplicates.</p>
@@ -242,16 +242,16 @@ only ever be one value at a time.</p></div></div>
 </li>
 </ol>
 <div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>Can the dimension be 2 things at once? If yes, it's non-additive.</p></div></div>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="all-about-enums">All about ENUMS<a href="https://github.com/blog/de-bootcamp-graph-databases#all-about-enums" class="hash-link" aria-label="Direct link to All about ENUMS" title="Direct link to All about ENUMS">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="what-is-an-enum-type">What is an ENUM type?<a href="https://github.com/blog/de-bootcamp-graph-databases#what-is-an-enum-type" class="hash-link" aria-label="Direct link to What is an ENUM type?" title="Direct link to What is an ENUM type?">​</a></h3>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="all-about-enums">All about ENUMS<a href="https://buildwithvibs.in/blog/de-bootcamp-graph-databases#all-about-enums" class="hash-link" aria-label="Direct link to All about ENUMS" title="Direct link to All about ENUMS">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="what-is-an-enum-type">What is an ENUM type?<a href="https://buildwithvibs.in/blog/de-bootcamp-graph-databases#what-is-an-enum-type" class="hash-link" aria-label="Direct link to What is an ENUM type?" title="Direct link to What is an ENUM type?">​</a></h3>
 <p>ENUM is a data type that contains a fixed set of values.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="when-should-you-use-enums">When should you use ENUMs?<a href="https://github.com/blog/de-bootcamp-graph-databases#when-should-you-use-enums" class="hash-link" aria-label="Direct link to When should you use ENUMs?" title="Direct link to When should you use ENUMs?">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="when-should-you-use-enums">When should you use ENUMs?<a href="https://buildwithvibs.in/blog/de-bootcamp-graph-databases#when-should-you-use-enums" class="hash-link" aria-label="Direct link to When should you use ENUMs?" title="Direct link to When should you use ENUMs?">​</a></h3>
 <ul>
 <li>Enums are great for low-to-medium cardinality columns.</li>
 <li>Country is a great example of where Enums start to struggle.</li>
 </ul>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Enums are great if the set of value count is &lt; 50.</p></div></div>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="why-use-enums">Why use ENUMs?<a href="https://github.com/blog/de-bootcamp-graph-databases#why-use-enums" class="hash-link" aria-label="Direct link to Why use ENUMs?" title="Direct link to Why use ENUMs?">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="why-use-enums">Why use ENUMs?<a href="https://buildwithvibs.in/blog/de-bootcamp-graph-databases#why-use-enums" class="hash-link" aria-label="Direct link to Why use ENUMs?" title="Direct link to Why use ENUMs?">​</a></h3>
 <ul>
 <li>Built in data quality:<!-- -->
 <ul>
@@ -272,7 +272,7 @@ only ever be one value at a time.</p></div></div>
 </ul>
 <p>In Postgres you can create ENUMs like this:</p>
 <div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">CREATE</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">TYPE</span><span class="token plain"> employee_type </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">AS</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">ENUM</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token string" style="color:rgb(255, 121, 198)">'Full Time'</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token string" style="color:rgb(255, 121, 198)">'Part Time'</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token string" style="color:rgb(255, 121, 198)">'Contractor'</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="enumerations-and-sup-partitions">Enumerations and sup partitions<a href="https://github.com/blog/de-bootcamp-graph-databases#enumerations-and-sup-partitions" class="hash-link" aria-label="Direct link to Enumerations and sup partitions" title="Direct link to Enumerations and sup partitions">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="enumerations-and-sup-partitions">Enumerations and sup partitions<a href="https://buildwithvibs.in/blog/de-bootcamp-graph-databases#enumerations-and-sup-partitions" class="hash-link" aria-label="Direct link to Enumerations and sup partitions" title="Direct link to Enumerations and sup partitions">​</a></h3>
 <ul>
 <li>Enumerations make it easy to create sup partitions, because:<!-- -->
 <ul>
@@ -312,7 +312,7 @@ only ever be one value at a time.</p></div></div>
 </ul>
 </li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="flexible-schema">Flexible schema<a href="https://github.com/blog/de-bootcamp-graph-databases#flexible-schema" class="hash-link" aria-label="Direct link to Flexible schema" title="Direct link to Flexible schema">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="flexible-schema">Flexible schema<a href="https://buildwithvibs.in/blog/de-bootcamp-graph-databases#flexible-schema" class="hash-link" aria-label="Direct link to Flexible schema" title="Direct link to Flexible schema">​</a></h3>
 <ul>
 <li>Benefits<!-- -->
 <ul>
@@ -329,8 +329,8 @@ only ever be one value at a time.</p></div></div>
 </ul>
 </li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="graph-data-modeling">Graph data modeling<a href="https://github.com/blog/de-bootcamp-graph-databases#graph-data-modeling" class="hash-link" aria-label="Direct link to Graph data modeling" title="Direct link to Graph data modeling">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="what-is-a-graph-database">What is a graph database?<a href="https://github.com/blog/de-bootcamp-graph-databases#what-is-a-graph-database" class="hash-link" aria-label="Direct link to What is a graph database?" title="Direct link to What is a graph database?">​</a></h3>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="graph-data-modeling">Graph data modeling<a href="https://buildwithvibs.in/blog/de-bootcamp-graph-databases#graph-data-modeling" class="hash-link" aria-label="Direct link to Graph data modeling" title="Direct link to Graph data modeling">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="what-is-a-graph-database">What is a graph database?<a href="https://buildwithvibs.in/blog/de-bootcamp-graph-databases#what-is-a-graph-database" class="hash-link" aria-label="Direct link to What is a graph database?" title="Direct link to What is a graph database?">​</a></h3>
 <p>Graph databases are a type of NoSQL database that uses graph structures for semantic queries with nodes, edges, and properties to represent and store data.</p>
 <p>Graph modelling is RELATIONSHIP focused, not entity focused. There would be chances of poor job at modelling the entities.</p>
 <p>Usually the model look like this for entities(vertices):</p>
@@ -349,8 +349,8 @@ only ever be one value at a time.</p></div></div>
     </entry>
     <entry>
         <title type="html"><![CDATA[Dimensional Modelling - SCD]]></title>
-        <id>https://github.com/blog/de-bootcamp-dimensional-modelling-scd</id>
-        <link href="https://github.com/blog/de-bootcamp-dimensional-modelling-scd"/>
+        <id>https://buildwithvibs.in/blog/de-bootcamp-dimensional-modelling-scd</id>
+        <link href="https://buildwithvibs.in/blog/de-bootcamp-dimensional-modelling-scd"/>
         <updated>2024-12-01T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Im sharing my learning from the Data Engineering Bootcamp, where we are learning about Data Engeering. Today we are learning about Dimensional modelling - Idempotency and SCDs.]]></summary>
         <content type="html"><![CDATA[<p>Im sharing my learning from the Data Engineering Bootcamp, where we are learning about Data Engeering. Today we are learning about Dimensional modelling - Idempotency and SCDs.</p>
@@ -359,7 +359,7 @@ Connect with Zach Wilson on <a href="https://www.linkedin.com/in/eczachly/" targ
 Thank you, Zach, for this amazing intense bootcamp on Data engineering!</p>
 <hr>
 <p>Day-2: Dimensional Modelling - Slowly Changing Dimensions (Theory)</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-is-an-idempotent-pipeline">What is an Idempotent Pipeline?<a href="https://github.com/blog/de-bootcamp-dimensional-modelling-scd#what-is-an-idempotent-pipeline" class="hash-link" aria-label="Direct link to What is an Idempotent Pipeline?" title="Direct link to What is an Idempotent Pipeline?">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-is-an-idempotent-pipeline">What is an Idempotent Pipeline?<a href="https://buildwithvibs.in/blog/de-bootcamp-dimensional-modelling-scd#what-is-an-idempotent-pipeline" class="hash-link" aria-label="Direct link to What is an Idempotent Pipeline?" title="Direct link to What is an Idempotent Pipeline?">​</a></h2>
 <blockquote>
 <p>Idempotency: An idempotent pipeline ensures that processing the same data multiple times (whether it's live production data or backfill data) yields the same result without any unintended side effects. This consistency is crucial for reliability and simplicity in data workflows.</p>
 </blockquote>
@@ -369,12 +369,12 @@ Thank you, Zach, for this amazing intense bootcamp on Data engineering!</p>
 <li>How many times they are run</li>
 <li>What hour they are run</li>
 </ol>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="why-is-hard-to-troubleshoot-non-idempotent-pipelines">Why is hard to troubleshoot non-idempotent pipelines?<a href="https://github.com/blog/de-bootcamp-dimensional-modelling-scd#why-is-hard-to-troubleshoot-non-idempotent-pipelines" class="hash-link" aria-label="Direct link to Why is hard to troubleshoot non-idempotent pipelines?" title="Direct link to Why is hard to troubleshoot non-idempotent pipelines?">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="why-is-hard-to-troubleshoot-non-idempotent-pipelines">Why is hard to troubleshoot non-idempotent pipelines?<a href="https://buildwithvibs.in/blog/de-bootcamp-dimensional-modelling-scd#why-is-hard-to-troubleshoot-non-idempotent-pipelines" class="hash-link" aria-label="Direct link to Why is hard to troubleshoot non-idempotent pipelines?" title="Direct link to Why is hard to troubleshoot non-idempotent pipelines?">​</a></h3>
 <ol>
 <li>Silent Failure: The non-idempotent pipelines can produce different results every time they are run, it doesnt fail. This results in <span style="background-color:#3e6980;border-radius:2px;color:#fff;padding:0.2rem">non reproduceable results</span>.</li>
 <li>This causes inconsistency in the data to the downstream systems too.</li>
 </ol>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="what-can-make-a-pipline-non-idempotent">What can make a pipline non-idempotent?<a href="https://github.com/blog/de-bootcamp-dimensional-modelling-scd#what-can-make-a-pipline-non-idempotent" class="hash-link" aria-label="Direct link to What can make a pipline non-idempotent?" title="Direct link to What can make a pipline non-idempotent?">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="what-can-make-a-pipline-non-idempotent">What can make a pipline non-idempotent?<a href="https://buildwithvibs.in/blog/de-bootcamp-dimensional-modelling-scd#what-can-make-a-pipline-non-idempotent" class="hash-link" aria-label="Direct link to What can make a pipline non-idempotent?" title="Direct link to What can make a pipline non-idempotent?">​</a></h3>
 <ol>
 <li><code>INSERT INTO</code> without <code>TRUNCATE</code>:<!-- -->
 <ol>
@@ -419,7 +419,7 @@ Imagine a pipeline that:</p>
 <li>Processing the same data again won’t alter the results or create issues.</li>
 <li>Whether it's production or backfill data, the behavior remains identical.</li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="few-more-problems-that-can-make-a-pipeline-non-idempotent">Few more problems that can make a pipeline non-idempotent<a href="https://github.com/blog/de-bootcamp-dimensional-modelling-scd#few-more-problems-that-can-make-a-pipeline-non-idempotent" class="hash-link" aria-label="Direct link to Few more problems that can make a pipeline non-idempotent" title="Direct link to Few more problems that can make a pipeline non-idempotent">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="few-more-problems-that-can-make-a-pipeline-non-idempotent">Few more problems that can make a pipeline non-idempotent<a href="https://buildwithvibs.in/blog/de-bootcamp-dimensional-modelling-scd#few-more-problems-that-can-make-a-pipeline-non-idempotent" class="hash-link" aria-label="Direct link to Few more problems that can make a pipeline non-idempotent" title="Direct link to Few more problems that can make a pipeline non-idempotent">​</a></h3>
 <ol>
 <li>Relying on the <strong>latest</strong> partition of a not properly modeled SCD table.<!-- -->
 <ul>
@@ -428,14 +428,14 @@ Imagine a pipeline that:</p>
 </li>
 <li>One exception relying on latest partition is when you have properly modeled SCD table and <span style="background-color:#3e8045;border-radius:2px;color:#fff;padding:0.2rem">you are backfilling not in production</span>.</li>
 </ol>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="the-pains-of-not-having-an-idempotent-pipeline">The pains of not having an idempotent pipeline<a href="https://github.com/blog/de-bootcamp-dimensional-modelling-scd#the-pains-of-not-having-an-idempotent-pipeline" class="hash-link" aria-label="Direct link to The pains of not having an idempotent pipeline" title="Direct link to The pains of not having an idempotent pipeline">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="the-pains-of-not-having-an-idempotent-pipeline">The pains of not having an idempotent pipeline<a href="https://buildwithvibs.in/blog/de-bootcamp-dimensional-modelling-scd#the-pains-of-not-having-an-idempotent-pipeline" class="hash-link" aria-label="Direct link to The pains of not having an idempotent pipeline" title="Direct link to The pains of not having an idempotent pipeline">​</a></h3>
 <ul>
 <li>Backfilling causes inconsistencies between the old and restated data.</li>
 <li>Hard to troubleshoot bugs and fix the issues.</li>
 <li>Unit testing cannot replicate the production behavior.</li>
 <li>The pipeline doesnt fail, but the data is inconsistent, which is silent failures.</li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="slowly-changing-dimensions-scd">Slowly Changing Dimensions (SCD)<a href="https://github.com/blog/de-bootcamp-dimensional-modelling-scd#slowly-changing-dimensions-scd" class="hash-link" aria-label="Direct link to Slowly Changing Dimensions (SCD)" title="Direct link to Slowly Changing Dimensions (SCD)">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="slowly-changing-dimensions-scd">Slowly Changing Dimensions (SCD)<a href="https://buildwithvibs.in/blog/de-bootcamp-dimensional-modelling-scd#slowly-changing-dimensions-scd" class="hash-link" aria-label="Direct link to Slowly Changing Dimensions (SCD)" title="Direct link to Slowly Changing Dimensions (SCD)">​</a></h2>
 <p>The Slowly Changing Dimensions (SCD) are dimensions that change slowly over time, which would have time frame with them. For example,</p>
 <ol>
 <li>Customer Address</li>
@@ -445,7 +445,7 @@ Imagine a pipeline that:</p>
 </ol>
 <div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p>Not modelling the SCDs properly can impact the idempotency.</p></div></div>
 <div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>The slower the changes in a Slowly Changing Dimension (SCD), the more effectively it can be modeled.</p></div></div>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="how-can-you-model-dimensions-that-change-over-time">How can you model dimensions that change over time?<a href="https://github.com/blog/de-bootcamp-dimensional-modelling-scd#how-can-you-model-dimensions-that-change-over-time" class="hash-link" aria-label="Direct link to How can you model dimensions that change over time?" title="Direct link to How can you model dimensions that change over time?">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="how-can-you-model-dimensions-that-change-over-time">How can you model dimensions that change over time?<a href="https://buildwithvibs.in/blog/de-bootcamp-dimensional-modelling-scd#how-can-you-model-dimensions-that-change-over-time" class="hash-link" aria-label="Direct link to How can you model dimensions that change over time?" title="Direct link to How can you model dimensions that change over time?">​</a></h3>
 <ul>
 <li>Singular snapshot: The dimension table only contains the most recent data.<!-- -->
 <ul>
@@ -459,12 +459,12 @@ Imagine a pipeline that:</p>
 </li>
 <li>SCD Types 1,2,3</li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="types-of-slowly-changing-dimensions">Types of Slowly Changing Dimensions<a href="https://github.com/blog/de-bootcamp-dimensional-modelling-scd#types-of-slowly-changing-dimensions" class="hash-link" aria-label="Direct link to Types of Slowly Changing Dimensions" title="Direct link to Types of Slowly Changing Dimensions">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="types-of-slowly-changing-dimensions">Types of Slowly Changing Dimensions<a href="https://buildwithvibs.in/blog/de-bootcamp-dimensional-modelling-scd#types-of-slowly-changing-dimensions" class="hash-link" aria-label="Direct link to Types of Slowly Changing Dimensions" title="Direct link to Types of Slowly Changing Dimensions">​</a></h3>
 <p>Here’s a Markdown table summarizing the content provided:</p>
 <table><thead><tr><th><strong>Type</strong></th><th><strong>Description</strong></th><th><strong>Key Features</strong></th><th><strong>Limitations</strong></th></tr></thead><tbody><tr><td><strong>Type 0</strong></td><td>Static dimensions, not actually slowly changing.</td><td>- No temporal columns. <br> - Table contains only identifier and value.</td><td>- No changes tracked or maintained.</td></tr><tr><td><strong>Type 1</strong></td><td>Overwrites old data with new data, only latest data is retained.</td><td>- Simple and efficient. <br> - No history maintained.</td><td>- Cannot retrieve historical data.</td></tr><tr><td><strong>Type 2</strong></td><td>Gold standard of Slowly Changing Dimensions, maintains history using temporal columns.</td><td>- Uses <code>start_date</code> and <code>end_date</code>. <br> - Current rows have <code>end_date = NULL</code> or <code>9999-12-31</code>. <br> - Optionally uses <code>is_current</code> column.</td><td>- More than one row per dimension can complicate filtering and querying.</td></tr><tr><td><strong>Type 3</strong></td><td>Maintains only two versions of the data: <code>original</code> and <code>current</code>.</td><td>- One row per dimension.</td><td>- Loses history of changes between <code>original</code> and <code>current</code>. <br> - Partially idempotent.</td></tr></tbody></table>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="which-types-are-idempotent">Which types are idempotent?<a href="https://github.com/blog/de-bootcamp-dimensional-modelling-scd#which-types-are-idempotent" class="hash-link" aria-label="Direct link to Which types are idempotent?" title="Direct link to Which types are idempotent?">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="which-types-are-idempotent">Which types are idempotent?<a href="https://buildwithvibs.in/blog/de-bootcamp-dimensional-modelling-scd#which-types-are-idempotent" class="hash-link" aria-label="Direct link to Which types are idempotent?" title="Direct link to Which types are idempotent?">​</a></h3>
 <table><thead><tr><th>Type</th><th>Idempotent</th><th>Reason</th></tr></thead><tbody><tr><td>Type 0</td><td>Yes</td><td>The values are unchanging.</td></tr><tr><td>Type 2</td><td>Yes</td><td>It is idempotent, but you need to be careful with how you use the <code>start_date</code> and <code>end_date</code>.</td></tr><tr><td>Type 1</td><td>No</td><td>Backfilling with this dataset gives the dimension as it is now, not as it was before.</td></tr><tr><td>Type 3</td><td>No</td><td>Backfilling makes it impossible to determine whether to pick "original" or "current."</td></tr></tbody></table>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="loading-scd2">Loading SCD2<a href="https://github.com/blog/de-bootcamp-dimensional-modelling-scd#loading-scd2" class="hash-link" aria-label="Direct link to Loading SCD2" title="Direct link to Loading SCD2">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="loading-scd2">Loading SCD2<a href="https://buildwithvibs.in/blog/de-bootcamp-dimensional-modelling-scd#loading-scd2" class="hash-link" aria-label="Direct link to Loading SCD2" title="Direct link to Loading SCD2">​</a></h3>
 <ul>
 <li>Load the entire history in one query<!-- -->
 <ul>
@@ -488,8 +488,8 @@ Imagine a pipeline that:</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[Dimensional Modelling - Cumulative Table]]></title>
-        <id>https://github.com/blog/de-bootcamp-dimensional-modelling</id>
-        <link href="https://github.com/blog/de-bootcamp-dimensional-modelling"/>
+        <id>https://buildwithvibs.in/blog/de-bootcamp-dimensional-modelling</id>
+        <link href="https://buildwithvibs.in/blog/de-bootcamp-dimensional-modelling"/>
         <updated>2024-11-29T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[This page is about Dimensional Modelling - Cumulative Table.]]></summary>
         <content type="html"><![CDATA[<p>Im sharing my learning from the Data Engineering Bootcamp, where we are learning about Data Engeering. Today we are learning about Dimensional modelling - Cumulative Table.</p>
@@ -498,7 +498,7 @@ Connect with Zach Wilson on <a href="https://www.linkedin.com/in/eczachly/" targ
 Thank you, Zach, for this amazing intense bootcamp on Data engineering!</p>
 <hr>
 <p>Day-1: Dimensional Modelling (Theory)</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-is-a-dimension">What is a Dimension?<a href="https://github.com/blog/de-bootcamp-dimensional-modelling#what-is-a-dimension" class="hash-link" aria-label="Direct link to What is a Dimension?" title="Direct link to What is a Dimension?">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-is-a-dimension">What is a Dimension?<a href="https://buildwithvibs.in/blog/de-bootcamp-dimensional-modelling#what-is-a-dimension" class="hash-link" aria-label="Direct link to What is a Dimension?" title="Direct link to What is a Dimension?">​</a></h2>
 <p>Dimension are <code>attributes</code> of an entity ( example: user's name, age etc)</p>
 <ul>
 <li>Dimensions may be <code>IDENTIFY</code> an entity, which would be a unique identifier for the entity (example: user_id, device_id etc)</li>
@@ -510,7 +510,7 @@ Thank you, Zach, for this amazing intense bootcamp on Data engineering!</p>
 <li><code>Fixed</code>: Dimensions that do not change over time like user's birthdate. These are easy to deal with.</li>
 </ul>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Knowing whether the attributes are slowly changing or fixed is important to design the data model.</p></div></div>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="knowing-your-data-consumer">Knowing your data consumer<a href="https://github.com/blog/de-bootcamp-dimensional-modelling#knowing-your-data-consumer" class="hash-link" aria-label="Direct link to Knowing your data consumer" title="Direct link to Knowing your data consumer">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="knowing-your-data-consumer">Knowing your data consumer<a href="https://buildwithvibs.in/blog/de-bootcamp-dimensional-modelling#knowing-your-data-consumer" class="hash-link" aria-label="Direct link to Knowing your data consumer" title="Direct link to Knowing your data consumer">​</a></h2>
 <p><code>Who is using your data?</code> is the most important question to ask before designing the data model. The data model should be designed in such a way that it is easy for the data consumer to understand the data.</p>
 <p>Whether the data is getting delivered to:</p>
 <ol>
@@ -542,7 +542,7 @@ Thank you, Zach, for this amazing intense bootcamp on Data engineering!</p>
 <blockquote>
 <p>Not knowing your data consumer, there is a high chance that the data model would be designed in a wrong way, can lead to business loss.</p>
 </blockquote>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="oltp-vs-olap-vs-master-data">OLTP Vs OLAP Vs Master Data<a href="https://github.com/blog/de-bootcamp-dimensional-modelling#oltp-vs-olap-vs-master-data" class="hash-link" aria-label="Direct link to OLTP Vs OLAP Vs Master Data" title="Direct link to OLTP Vs OLAP Vs Master Data">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="oltp-vs-olap-vs-master-data">OLTP Vs OLAP Vs Master Data<a href="https://buildwithvibs.in/blog/de-bootcamp-dimensional-modelling#oltp-vs-olap-vs-master-data" class="hash-link" aria-label="Direct link to OLTP Vs OLAP Vs Master Data" title="Direct link to OLTP Vs OLAP Vs Master Data">​</a></h2>
 <ol>
 <li>OLTP(Online Transaction Processing):<!-- -->
 <ul>
@@ -568,15 +568,15 @@ Thank you, Zach, for this amazing intense bootcamp on Data engineering!</p>
 </ul>
 </li>
 </ol>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="impacts-of-mismatched-data-model">Impacts of Mismatched Data Model<a href="https://github.com/blog/de-bootcamp-dimensional-modelling#impacts-of-mismatched-data-model" class="hash-link" aria-label="Direct link to Impacts of Mismatched Data Model" title="Direct link to Impacts of Mismatched Data Model">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="impacts-of-mismatched-data-model">Impacts of Mismatched Data Model<a href="https://buildwithvibs.in/blog/de-bootcamp-dimensional-modelling#impacts-of-mismatched-data-model" class="hash-link" aria-label="Direct link to Impacts of Mismatched Data Model" title="Direct link to Impacts of Mismatched Data Model">​</a></h2>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Mismatching needs of the data consumer == Less business value</p></div></div>
 <ul>
 <li>When you model transaction system as analytical system, like transactional system usually need only one record at a time, but if you model it as analytical system, you would retrieve all the unnecessary data which would be a performance hit.</li>
 <li>When you model analytical system as transactional system, like analytical system usually need to aggregate the data, but if you model it as transactional system, you would have to do the aggregation/joins on the fly which would be a performance hit.</li>
 <li>Having the Master Data as middle layer, would give you the flexibility whichever data model you want to use.</li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="oltp-and-olap-is-a-continuum">OLTP and OLAP is a continuum<a href="https://github.com/blog/de-bootcamp-dimensional-modelling#oltp-and-olap-is-a-continuum" class="hash-link" aria-label="Direct link to OLTP and OLAP is a continuum" title="Direct link to OLTP and OLAP is a continuum">​</a></h2>
-<p><img decoding="async" loading="lazy" alt="data-flow" src="https://github.com/assets/images/data-flow-0daf58888b976755903f9cf43700ae92.png" width="575" height="171" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="oltp-and-olap-is-a-continuum">OLTP and OLAP is a continuum<a href="https://buildwithvibs.in/blog/de-bootcamp-dimensional-modelling#oltp-and-olap-is-a-continuum" class="hash-link" aria-label="Direct link to OLTP and OLAP is a continuum" title="Direct link to OLTP and OLAP is a continuum">​</a></h2>
+<p><img decoding="async" loading="lazy" alt="data-flow" src="https://buildwithvibs.in/assets/images/data-flow-0daf58888b976755903f9cf43700ae92.png" width="575" height="171" class="img_ev3q"></p>
 <ul>
 <li><code>Production Database Snapshot</code>: Usually the data in Production databases are transactional data, which is used to record the transactions that are happening in the system/web application/mobile application etc.</li>
 <li><code>Master Data</code>: Taking the production datasets and creating the master data, for easy to understanding. Instead of querying "many" transactional databases, merging them into master data would be much efficient.</li>
@@ -588,7 +588,7 @@ Thank you, Zach, for this amazing intense bootcamp on Data engineering!</p>
 </li>
 <li><code>Metrics</code>: You would aggregate even further to get the one number which would be like <code>KPIs</code> of the business.</li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="cumulative-table-design">Cumulative Table Design<a href="https://github.com/blog/de-bootcamp-dimensional-modelling#cumulative-table-design" class="hash-link" aria-label="Direct link to Cumulative Table Design" title="Direct link to Cumulative Table Design">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="cumulative-table-design">Cumulative Table Design<a href="https://buildwithvibs.in/blog/de-bootcamp-dimensional-modelling#cumulative-table-design" class="hash-link" aria-label="Direct link to Cumulative Table Design" title="Direct link to Cumulative Table Design">​</a></h2>
 <ul>
 <li>Some days not every user would be active, but still master data should hold the details of the user.</li>
 <li>Cumulative table is the table that holds the <code>history of the data</code>.</li>
@@ -609,7 +609,7 @@ Thank you, Zach, for this amazing intense bootcamp on Data engineering!</p>
 </ul></div></div>
 <p><em>Cumulative Table: Strengths and Drawbacks</em></p>
 <table><thead><tr><th><strong>Category</strong></th><th><strong>Strengths</strong></th><th><strong>Drawbacks</strong></th></tr></thead><tbody><tr><td><strong>Analytics</strong></td><td>- Enables historical analysis without shuffling or reprocessing the data.</td><td>- Sequential backfilling can limit flexibility when correcting or reprocessing older data.</td></tr><tr><td><strong>Tracking</strong></td><td>- Easy to track changes and transitions over time.</td><td>- Incremental growth of data size over time, leading to storage and performance challenges.</td></tr><tr><td><strong>Data</strong></td><td>- Provides a complete snapshot of trends and transitions.</td><td>- Retains potentially outdated or deleted PII data, complicating compliance with data privacy laws.</td></tr></tbody></table>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-compactness-vs-usability-tradeoff">The compactness vs usability tradeoff<a href="https://github.com/blog/de-bootcamp-dimensional-modelling#the-compactness-vs-usability-tradeoff" class="hash-link" aria-label="Direct link to The compactness vs usability tradeoff" title="Direct link to The compactness vs usability tradeoff">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-compactness-vs-usability-tradeoff">The compactness vs usability tradeoff<a href="https://buildwithvibs.in/blog/de-bootcamp-dimensional-modelling#the-compactness-vs-usability-tradeoff" class="hash-link" aria-label="Direct link to The compactness vs usability tradeoff" title="Direct link to The compactness vs usability tradeoff">​</a></h2>
 <ul>
 <li>
 <p>The most usable tables usually are</p>
@@ -652,9 +652,9 @@ Thank you, Zach, for this amazing intense bootcamp on Data engineering!</p>
 </ul>
 </li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="struct-vs-array-vs-map">Struct Vs Array Vs Map<a href="https://github.com/blog/de-bootcamp-dimensional-modelling#struct-vs-array-vs-map" class="hash-link" aria-label="Direct link to Struct Vs Array Vs Map" title="Direct link to Struct Vs Array Vs Map">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="struct-vs-array-vs-map">Struct Vs Array Vs Map<a href="https://buildwithvibs.in/blog/de-bootcamp-dimensional-modelling#struct-vs-array-vs-map" class="hash-link" aria-label="Direct link to Struct Vs Array Vs Map" title="Direct link to Struct Vs Array Vs Map">​</a></h2>
 <table><thead><tr><th><strong>Feature</strong></th><th><strong>Struct</strong></th><th><strong>Map</strong></th><th><strong>Array</strong></th></tr></thead><tbody><tr><td><strong>Definition</strong></td><td>A table within a table.</td><td>A key-value pair structure.</td><td>A list of values.</td></tr><tr><td><strong>Keys</strong></td><td>Rigidly defined, improving compression.</td><td>Flexible, less compression efficiency.</td><td>Not applicable (index-based).</td></tr><tr><td><strong>Values</strong></td><td>Can be of any type.</td><td>Must all be of the same type.</td><td>Must all be of the same type.</td></tr><tr><td><strong>Usage</strong></td><td>Suitable for structured data with predefined keys.</td><td>Best for flexible key-value relationships.</td><td>Ideal for ordered collections of data.</td></tr><tr><td><strong>Complexity</strong></td><td>Higher due to nested structure.</td><td>Simpler, dynamic key-value management.</td><td>Simplest among the three; index-based access.</td></tr><tr><td><strong>Nesting</strong></td><td>Supports nesting within itself or arrays.</td><td>Can be nested inside structs or arrays.</td><td>Can contain structs or maps as elements.</td></tr></tbody></table>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="impact-of-adding-a-temporal-time-based-dimension">Impact of adding a temporal (time-based) dimension<a href="https://github.com/blog/de-bootcamp-dimensional-modelling#impact-of-adding-a-temporal-time-based-dimension" class="hash-link" aria-label="Direct link to Impact of adding a temporal (time-based) dimension" title="Direct link to Impact of adding a temporal (time-based) dimension">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="impact-of-adding-a-temporal-time-based-dimension">Impact of adding a temporal (time-based) dimension<a href="https://buildwithvibs.in/blog/de-bootcamp-dimensional-modelling#impact-of-adding-a-temporal-time-based-dimension" class="hash-link" aria-label="Direct link to Impact of adding a temporal (time-based) dimension" title="Direct link to Impact of adding a temporal (time-based) dimension">​</a></h2>
 <ol>
 <li>
 <p><strong>Cardinality Explosion</strong>:</p>
@@ -682,7 +682,7 @@ Thank you, Zach, for this amazing intense bootcamp on Data engineering!</p>
 </li>
 </ol>
 <div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p>Badness of denormolized temporal dimension: if you have to join the data with other dimensions, spark shuffle will ruin the compression.</p></div></div>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="run-length-encoding-compression">Run length encoding compression<a href="https://github.com/blog/de-bootcamp-dimensional-modelling#run-length-encoding-compression" class="hash-link" aria-label="Direct link to Run length encoding compression" title="Direct link to Run length encoding compression">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="run-length-encoding-compression">Run length encoding compression<a href="https://buildwithvibs.in/blog/de-bootcamp-dimensional-modelling#run-length-encoding-compression" class="hash-link" aria-label="Direct link to Run length encoding compression" title="Direct link to Run length encoding compression">​</a></h2>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Run-length_encoding" target="_blank" rel="noopener noreferrer">Run length encoding</a>  is a form of lossless data compression in which runs of data (consecutive occurrences of the same data value) are stored as a single occurrence of that data value and a count of its consecutive occurrences, rather than as the original run. <sup>[1]</sup></li>
 <li>RLE is one of reasons why Parquet is so efficient for storing data.</li>
@@ -701,8 +701,8 @@ Thank you, Zach, for this amazing intense bootcamp on Data engineering!</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
-        <id>https://github.com/blog/welcome-to-my-blog</id>
-        <link href="https://github.com/blog/welcome-to-my-blog"/>
+        <id>https://buildwithvibs.in/blog/welcome-to-my-blog</id>
+        <link href="https://buildwithvibs.in/blog/welcome-to-my-blog"/>
         <updated>2024-11-26T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Welcome dear readers...]]></summary>
         <content type="html"><![CDATA[<p>Welcome dear readers...</p>
@@ -710,10 +710,10 @@ Thank you, Zach, for this amazing intense bootcamp on Data engineering!</p>
 <p>I always wanted to have a blog to share my thoughts and experiences with the world. Im beginner in the world of blogging, so Im still learning how to write a good and effective content. I hope you enjoy my blog and find it useful.</p>
 <p>I have three different sections in my website:</p>
 <ol>
-<li><a href="https://github.com/blog/welcome-to-my-blog">Blogs</a>: Where I would long format technical blogs that I have experienced or learned recently.</li>
-<li><a href="https://github.com/TechBytes/intro">Tech Bytes</a>: Where I would post small technical tips and tricks that I have learned.</li>
-<li><a href="https://github.com/projects">Projects</a>: Where I would post the projects that I have worked on, I would like to start with <a href="https://codingchallenges.fyi/" target="_blank" rel="noopener noreferrer">CodeChallenge</a> by <a href="https://www.linkedin.com/in/johncrickett/" target="_blank" rel="noopener noreferrer">John Crickett</a>.</li>
-<li><a href="https://github.com/FirstPrinciples/thoughts">From First Principles</a>: Where I would post the concepts that I have learned from the scratch going to the depth of it.</li>
+<li><a href="https://buildwithvibs.in/blog/welcome-to-my-blog">Blogs</a>: Where I would long format technical blogs that I have experienced or learned recently.</li>
+<li><a href="https://buildwithvibs.in/TechBytes/intro">Tech Bytes</a>: Where I would post small technical tips and tricks that I have learned.</li>
+<li><a href="https://buildwithvibs.in/projects">Projects</a>: Where I would post the projects that I have worked on, I would like to start with <a href="https://codingchallenges.fyi/" target="_blank" rel="noopener noreferrer">CodeChallenge</a> by <a href="https://www.linkedin.com/in/johncrickett/" target="_blank" rel="noopener noreferrer">John Crickett</a>.</li>
+<li><a href="https://buildwithvibs.in/FirstPrinciples/thoughts">From First Principles</a>: Where I would post the concepts that I have learned from the scratch going to the depth of it.</li>
 </ol>
 <p>Hope I will be able to keep up with the content and make it useful for you, im striving to make it better everyday.</p>
 <p>Thanks for visiting my blog. Hope you enjoy it.</p>
