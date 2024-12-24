@@ -6,7 +6,7 @@ const config = {
   title: 'Vibhavari Bellutagi',
   tagline: 'Learn | Build | Share',
   favicon: 'img/favicon.ico',
-  url: 'https://github.com',
+  url: 'https://buildwithvibs.in',
   baseUrl: '/',
   organizationName: 'vibhabellutagi19',
   projectName: 'vibhabellutagi19.github.io',

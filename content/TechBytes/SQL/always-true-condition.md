@@ -1,3 +1,14 @@
+---
+slug: always-true-condition-sql
+title: Why Use 1=1 in WHERE Clause?
+keywords: [
+            data engineering,
+            SQL
+        ]
+---
+
+import SocialLinks from '@site/src/components/SocialLinks/SocialLinks.js'
+
 # always-true condition
 
 Have you ever wondered why do we use `1=1` in the `WHERE` clause of SQL queries? It seems like a redundant condition that always evaluates to true. But there are specific scenarios where this condition can be quite useful, we will explore them in this TechByte.
@@ -107,4 +118,7 @@ Use it judiciously in contexts where it adds value, such as dynamic query buildi
 
 ---
 
-I hope this TechByte helped you understand the use of `1=1` in the `WHERE` clause of SQL queries. If you have any questions or feedback, feel free to reach out to me on [Twitter](https://x.com/buildwith_vibs).
+I hope this TechByte helped you understand the use of `1=1` in the `WHERE` clause of SQL queries. 
+
+If you have any questions or feedback, feel free to reach out to me on 
+<SocialLinks />
