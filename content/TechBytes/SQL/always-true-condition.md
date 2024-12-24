@@ -7,7 +7,7 @@ keywords: [
         ]
 ---
 
-<!-- import SocialLinks from '@site/src/components/SocialLinks/SocialLinks.js' -->
+import SocialLinks from '@site/src/components/SocialLinks/socialLinks.js'
 
 # always-true condition
 
@@ -121,4 +121,4 @@ Use it judiciously in contexts where it adds value, such as dynamic query buildi
 I hope this TechByte helped you understand the use of `1=1` in the `WHERE` clause of SQL queries. 
 
 If you have any questions or feedback, feel free to reach out to me on 
-<!-- <SocialLinks /> -->
+<SocialLinks />
