@@ -37,3 +37,8 @@ graph-database:
   label: graph-database
   permalink: /graph-database
   description: Graph Database tag description
+
+apache-spark:
+  label: apache-spark
+  permalink: /apache-spark
+  description: Spark tag description

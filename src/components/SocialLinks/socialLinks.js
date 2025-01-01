@@ -22,7 +22,6 @@ const SocialLinks = () => {
                     className="social-link"
                 >
                     <span className={`social-icon ${link.name.toLowerCase()}`}>{link.icon}</span>
-                    <span>{link.name}</span>
                 </a>
             ))}
         </div>

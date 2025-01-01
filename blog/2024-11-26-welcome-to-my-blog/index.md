@@ -7,6 +7,8 @@ keywords: [blog, welcome]
 hide_table_of_contents: false
 ---
 
+import SocialLinks from '@site/src/components/SocialLinks/socialLinks.js'
+
 Welcome dear readers...
 
 Im Vibhavari Bellutagi, from India, currently staying in France. I'm a Data Engineer and I got sometime to channelise my thoughts and experiences in the form of blog. I'm a big fan of `Learn by Doing`, so you will see most of the posts are practical oriented.
@@ -24,7 +26,8 @@ I have three different sections in my website:
 
 Hope I will be able to keep up with the content and make it useful for you, im striving to make it better everyday.
 
-Thanks for visiting my blog. Hope you enjoy it.
+Thanks for visiting my blog. Hope you enjoy it. Feel free to reach out to me on 
+<SocialLinks />.
 
 Cheers,
 Vibhavari

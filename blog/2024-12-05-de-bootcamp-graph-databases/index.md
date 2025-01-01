@@ -16,11 +16,14 @@ keywords: [
         ]
 hide_table_of_contents: false
 ---
+import SocialLinks from '@site/src/components/SocialLinks/socialLinks.js'
+
 Im sharing my learning from the Data Engineering Bootcamp, where we are learning about Data Engeering. 
 Today we are learning about Data Modelling - Graph Databases
 
 I would like to extend my gratitude to Zach Wilson, the founder of [DataExpert.io](https://bootcamp.techcreator.io/lessons), for his invaluable guidance and the comprehensive Data Engineering Bootcamp.
 Connect with Zach Wilson on [LinkedIn](https://www.linkedin.com/in/eczachly/).
+
 Thank you, Zach, for this amazing intense bootcamp on Data engineering!
 
 ---
@@ -150,3 +153,5 @@ The schema for edges would look like this:
 - edge_type: EdgeType (always a verb: is_a, place_with, has_a etc)
 - Properties: MAP<STRING,STRING>
 ``` 
+
+I hope you enjoyed reading this blog on Graph Data Modelling. If you have any questions or feedback, feel free to reach out to me on <SocialLinks />

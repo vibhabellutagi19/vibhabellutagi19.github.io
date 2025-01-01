@@ -15,6 +15,8 @@ keywords: [
         ]
 hide_table_of_contents: false
 ---
+import SocialLinks from '@site/src/components/SocialLinks/socialLinks.js'
+
 I'm sharing my learnings from the Data Engineering Bootcamp, where we are currently focusing on Fact vs Dimension.
 
 | Resource | Link |
@@ -23,6 +25,7 @@ I'm sharing my learnings from the Data Engineering Bootcamp, where we are curren
 | Zach Wilson on LinkedIn | [LinkedIn](https://www.linkedin.com/in/eczachly/) |
 
 Thank you, Zach, for your invaluable guidance and this comprehensive bootcamp!
+
 ---
 
 Week-2, Day-2: Fact vs Dimension
@@ -57,3 +60,5 @@ Zach also provides examples where bucketisation plays a significant role:
 - Usually aggregated (e.g., SUM, COUNT, AVG) in analytics.
 - Almost always higher volume that dimensions, although some fact sources are low-volume, think "rare events".
 - Generally are events and logs.
+
+I hope you enjoyed reading this blog on Facts vs Dimensions. If you have any questions or feedback, feel free to reach out to me on <SocialLinks />

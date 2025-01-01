@@ -17,10 +17,13 @@ keywords: [
 hide_table_of_contents: false
 
 ---
+import SocialLinks from '@site/src/components/SocialLinks/socialLinks.js'
+
 Im sharing my learning from the Data Engineering Bootcamp, where we are learning about Data Engeering. Today we are learning about Dimensional modelling - Idempotency and SCDs.
 
 I would like to extend my gratitude to Zach Wilson, the founder of [DataExpert.io](https://bootcamp.techcreator.io/lessons), for his invaluable guidance and the comprehensive Data Engineering Bootcamp.
 Connect with Zach Wilson on [LinkedIn](https://www.linkedin.com/in/eczachly/).
+
 Thank you, Zach, for this amazing intense bootcamp on Data engineering!
 
 ---
@@ -137,3 +140,5 @@ Here’s a Markdown table summarizing the content provided:
     - Inefficient but nimble
 - Incremnetally load the data after the previoud SCD is generated
     - Has the same `depends_on_past`. its efficient but cumbersome.
+
+I hope you enjoyed reading this blog on Slowly Changing Dimensions. If you have any questions or feedback, feel free to reach out to me on <SocialLinks />

@@ -18,10 +18,13 @@ hide_table_of_contents: false
 image: assets/img/dimension_modelling.png
 description: This page is about Dimensional Modelling - Cumulative Table.
 ---
+import SocialLinks from '@site/src/components/SocialLinks/socialLinks.js'
+
 Im sharing my learning from the Data Engineering Bootcamp, where we are learning about Data Engeering. Today we are learning about Dimensional modelling - Cumulative Table.
 
 I would like to extend my gratitude to Zach Wilson, the founder of [DataExpert.io](https://bootcamp.techcreator.io/lessons), for his invaluable guidance and the comprehensive Data Engineering Bootcamp.
 Connect with Zach Wilson on [LinkedIn](https://www.linkedin.com/in/eczachly/).
+
 Thank you, Zach, for this amazing intense bootcamp on Data engineering!
 
 ---
@@ -184,5 +187,6 @@ Badness of denormolized temporal dimension: if you have to join the data with ot
 - RLE is one of reasons why Parquet is so efficient for storing data.
 - However, **shuffle can ruin this efficiency**. Since shuffle happens in a distributed environment during JOIN and GROUP BY operations, data is redistributed across nodes, and compression benefits like RLE are often lost.
 
+I hope you enjoyed reading this blog on Dimensional Modelling. If you have any questions or feedback, feel free to reach out to me on <SocialLinks />
 ---
 [1]: source from wikipedia

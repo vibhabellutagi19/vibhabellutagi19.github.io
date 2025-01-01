@@ -15,11 +15,15 @@ keywords: [
         ]
 hide_table_of_contents: false
 ---
+
+import SocialLinks from '@site/src/components/SocialLinks/socialLinks.js'
+
 Im sharing my learning from the Data Engineering Bootcamp, where we are learning about Data Engeering. 
 Today we are learning about Fact Modelling.
 
 I would like to extend my gratitude to Zach Wilson, the founder of [DataExpert.io](https://bootcamp.techcreator.io/lessons), for his invaluable guidance and the comprehensive Data Engineering Bootcamp.
 Connect with Zach Wilson on [LinkedIn](https://www.linkedin.com/in/eczachly/).
+
 Thank you, Zach, for this amazing intense bootcamp on Data engineering!
 
 ---
@@ -132,3 +136,5 @@ Two approaches to efficiently handle deduplication for high-volume fact data:
     - There is a specific microbatch deduplication pattern involving hourly aggregation followed by a series of full outer joins to merge deduplicated data from different hours.
 
 The choice between streaming and microbatch processing depends on factors like latency requirements and the complexity of the deduplication logic. 
+
+I hope you enjoyed reading this blog on Fact Data Modelling. If you have any questions or feedback, feel free to reach out to me on <SocialLinks />
