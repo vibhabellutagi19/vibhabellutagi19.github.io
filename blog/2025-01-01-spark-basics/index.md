@@ -79,8 +79,6 @@ Spark is not a part of the Hadoop ecosystem, but it can run on top of Hadoop YAR
 
 ## Spark Ecosystem
 
-Here's a table summarizing the core components of the Apache Spark ecosystem:
-
 | **Component**       | **Purpose**                                | **Key Features**                                                                 | **Use Cases**                                   |
 |----------------------|--------------------------------------------|----------------------------------------------------------------------------------|------------------------------------------------|
 | **Spark Core**       | General-purpose distributed computing.     | Task scheduling, memory management, fault recovery, and interaction with storage.| Foundation for all other Spark components.     |
