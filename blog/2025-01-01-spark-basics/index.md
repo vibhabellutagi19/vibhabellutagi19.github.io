@@ -12,20 +12,19 @@ keywords: [
             apache spark,
         ]
 hide_table_of_contents: false
+image: assets/spark-basics/spark-basics.png
 ---
 import SocialLinks from '@site/src/components/SocialLinks/socialLinks.js'
 
-Day 1/45 of Apache Spark
+Welcome to my **Apache Spark** series! I’ll dive deep into Apache Spark, from basics to advanced concepts. This series is about learning, exploring, and sharing—documenting my journey to mastering Apache Spark ( again ) while sharing insights, challenges, and tips.
 
-Welcome to my **40 Days of Apache Spark** series! Over the next 45 days, I’ll dive deep into Apache Spark, from basics to advanced concepts. This series is about learning, exploring, and sharing—documenting my journey to mastering Apache Spark while sharing insights, challenges, and tips.
-
-In this first post, we’ll cover the fundamentals of Apache Spark, its history, and why it’s a game-changer in data engineering 💡🔥
+In this first post, we’ll cover the fundamentals of Apache Spark, its history, and why it’s a game-changer in data engineering.
 
 Find all the blogs in the series [here](/blog/tags/apache-spark).
 <!-- truncate -->
 
 ## Spark History
-Apache Spark started as a research project by [Matei Zaharia](https://www.linkedin.com/in/mateizaharia/) at the University of California, Berkeley's AMPLab in 2009 which focuses on big analytics. The project was open-sourced in 2010, initially focused on MapReduce computing with a faster API.
+Apache Spark started as a research project by [Matei Zaharia](https://www.linkedin.com/in/mateizaharia/) at the University of California, Berkeley's AMPLab in 2009 which focuses on big data analytics. The project was open-sourced in 2010, initially focused on MapReduce computing with a faster API.
 
 The aim was to design a programming model that supports a much wider class of applications than MapReduce, while maintaining its automatic fault tolerance.
 
