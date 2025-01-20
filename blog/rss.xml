@@ -13,13 +13,12 @@
             <link>https://buildwithvibs.in/blog/spark-basics</link>
             <guid>https://buildwithvibs.in/blog/spark-basics</guid>
             <pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[Day 1/45 of Apache Spark]]></description>
-            <content:encoded><![CDATA[<p>Day 1/45 of Apache Spark</p>
-<p>Welcome to my <strong>40 Days of Apache Spark</strong> series! Over the next 45 days, I’ll dive deep into Apache Spark, from basics to advanced concepts. This series is about learning, exploring, and sharing—documenting my journey to mastering Apache Spark while sharing insights, challenges, and tips.</p>
-<p>In this first post, we’ll cover the fundamentals of Apache Spark, its history, and why it’s a game-changer in data engineering 💡🔥</p>
+            <description><![CDATA[Welcome to my Apache Spark series! I’ll dive deep into Apache Spark, from basics to advanced concepts. This series is about learning, exploring, and sharing—documenting my journey to mastering Apache Spark ( again ) while sharing insights, challenges, and tips.]]></description>
+            <content:encoded><![CDATA[<p>Welcome to my <strong>Apache Spark</strong> series! I’ll dive deep into Apache Spark, from basics to advanced concepts. This series is about learning, exploring, and sharing—documenting my journey to mastering Apache Spark ( again ) while sharing insights, challenges, and tips.</p>
+<p>In this first post, we’ll cover the fundamentals of Apache Spark, its history, and why it’s a game-changer in data engineering.</p>
 <p>Find all the blogs in the series <a href="https://buildwithvibs.in/blog/tags/apache-spark">here</a>.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="spark-history">Spark History<a href="https://buildwithvibs.in/blog/spark-basics#spark-history" class="hash-link" aria-label="Direct link to Spark History" title="Direct link to Spark History">​</a></h2>
-<p>Apache Spark started as a research project by <a href="https://www.linkedin.com/in/mateizaharia/" target="_blank" rel="noopener noreferrer">Matei Zaharia</a> at the University of California, Berkeley's AMPLab in 2009 which focuses on big analytics. The project was open-sourced in 2010, initially focused on MapReduce computing with a faster API.</p>
+<p>Apache Spark started as a research project by <a href="https://www.linkedin.com/in/mateizaharia/" target="_blank" rel="noopener noreferrer">Matei Zaharia</a> at the University of California, Berkeley's AMPLab in 2009 which focuses on big data analytics. The project was open-sourced in 2010, initially focused on MapReduce computing with a faster API.</p>
 <p>The aim was to design a programming model that supports a much wider class of applications than MapReduce, while maintaining its automatic fault tolerance.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="motivation-for-apache-spark">Motivation for Apache Spark<a href="https://buildwithvibs.in/blog/spark-basics#motivation-for-apache-spark" class="hash-link" aria-label="Direct link to Motivation for Apache Spark" title="Direct link to Motivation for Apache Spark">​</a></h3>
 <p>At the time, MapReduce was the de facto standard for big data processing, but it had notable limitations:</p>
