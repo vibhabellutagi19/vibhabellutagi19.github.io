@@ -55,7 +55,7 @@ const ExperienceSection = () => {
         ])}>
           <h3>Data Engineer</h3>
           <p>AgileLab, Remote</p>
-          <span>Sept 2021 - Present</span>
+          <span>Sept 2021 - Dec 2024</span>
         </div>
         <div className="work-card" onClick={() => handleCardClick('Big Data Engineer', [
           'Developed and executed a robust ETL pipeline using Hadoop, Spark, Hive, and Sqoop to process 30GBs of data daily, resulting in a <strong>30% enhancement in data-driven decision-making</strong>',

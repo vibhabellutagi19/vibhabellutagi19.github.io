@@ -75,8 +75,8 @@ const config = {
           items: [
             {
               position: 'left',
-              label: 'Projects',
-              to: '/projects'
+              label: 'Content',
+              to: '/content'
             },
             {
               to: '/blog',
@@ -115,8 +115,8 @@ const config = {
                   to: '/blog',
                 },
                 {
-                  label: 'Projects',
-                  to: '/projects',
+                  label: 'Content',
+                  to: '/content',
                 },
               ],
             },
