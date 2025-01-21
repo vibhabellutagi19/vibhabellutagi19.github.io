@@ -5,6 +5,7 @@ import './resume.css';
 const things_I_like = [
     "Apache Spark.",
     "AWS Analytics Services.",
+    "Python.",
     "Apache Kafka.",
     "FastAPI.",
     "PostgreSQL.",
