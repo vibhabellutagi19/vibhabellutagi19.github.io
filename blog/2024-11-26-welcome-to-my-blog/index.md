@@ -17,7 +17,7 @@ Im Vibhavari Bellutagi, from India, currently staying in France. I'm a Data Engi
 
 I always wanted to have a blog to share my thoughts and experiences with the data engineering world. Im beginner in the world of blogging, so Im still learning how to write a good and effective content. I hope you enjoy my blog and find it useful.
 
-I have four different sections in my website:
+I have three different sections in my website:
 
 1. [Blogs](index.md): Where I would long format technical blogs that I have experienced or learned recently.
 2. [Tech Bytes](/TechBytes/intro): Where I would post small technical tips and tricks that I have learned.
