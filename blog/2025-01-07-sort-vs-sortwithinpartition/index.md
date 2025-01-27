@@ -1,6 +1,6 @@
 ---
 slug: sort-vs-sortwithinpartition
-title: Sorting in Apache Spark - Sort vs SortWithinPartition
+title: Sorting - Sort vs SortWithinPartition
 authors: [me]
 tags: [
         de,
@@ -12,6 +12,7 @@ keywords: [
             sort,
         ]
 hide_table_of_contents: false
+unlisted: true
 ---
 import SocialLinks from '@site/src/components/SocialLinks/socialLinks.js'
 
