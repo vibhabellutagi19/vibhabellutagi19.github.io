@@ -15,7 +15,7 @@ Im Vibhavari Bellutagi, from India, currently staying in France. I'm a Data Engi
 
 <!-- truncate -->
 
-I always wanted to have a blog to share my thoughts and experiences with the world. Im beginner in the world of blogging, so Im still learning how to write a good and effective content. I hope you enjoy my blog and find it useful.
+I always wanted to have a blog to share my thoughts and experiences with the data engineering world. Im beginner in the world of blogging, so Im still learning how to write a good and effective content. I hope you enjoy my blog and find it useful.
 
 I have three different sections in my website:
 
