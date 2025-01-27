@@ -12,6 +12,7 @@ keywords: [
             columns and expressions,
         ]
 hide_table_of_contents: false
+image: assets/col_n_exps.png
 ---
 
 import SocialLinks from '@site/src/components/SocialLinks/socialLinks.js'
@@ -145,7 +146,7 @@ cars_df.selectExpr(
 Choosing between `col()`, `column()`, `expr()`, or even raw string references comes down to personal preference, readability, and complexity of your transformations. For simple column references, col() is often the most straightforward. However, if you prefer writing SQL-like expressions directly in your code or need complex SQL functions, `expr()` and `selectExpr()` provide the flexibility you need.
 
 ---
-I hope this TechByte helped you understand the use of `Columns and Expressions` in Apache Spark.
+I hope this blog helped you understand the use of `Columns and Expressions` in Apache Spark. If you are interested in more such content, do check out [Apache Spark](/blog/tags/apache-spark). series.
 
 If you have any questions or feedback, feel free to reach out to me on 
 <SocialLinks />

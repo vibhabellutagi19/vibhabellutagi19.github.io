@@ -12,6 +12,7 @@ keywords: [
             nulls in spark,
         ]
 hide_table_of_contents: false
+image: assets/logo.png
 ---
 import SocialLinks from '@site/src/components/SocialLinks/socialLinks.js'
 
