@@ -16,7 +16,7 @@ image: assets/spark-basics/spark-basics.png
 ---
 import SocialLinks from '@site/src/components/SocialLinks/socialLinks.js'
 
-Welcome to my **Apache Spark** series! I’ll dive deep into Apache Spark, from basics to advanced concepts. This series is about learning, exploring, and sharing—documenting my journey to mastering Apache Spark ( again ) while sharing insights, challenges, and tips.
+Welcome to my [Apache Spark](/blog/tags/apache-spark) series! I’ll dive deep into Apache Spark, from basics to advanced concepts. This series is about learning, exploring, and sharing—documenting my journey to mastering Apache Spark ( again ) while sharing insights, challenges, and tips.
 
 In this first post, we’ll cover the fundamentals of Apache Spark, its history, and why it’s a game-changer in data engineering.
 
