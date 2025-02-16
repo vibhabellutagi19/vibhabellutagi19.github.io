@@ -133,7 +133,7 @@ const config = {
                 },
                 {
                   label: 'Linkedin',
-                  href: 'https://www.linkedin.com/in/vibhavari-bellutagi-837871189/',
+                  href: 'https://www.linkedin.com/in/vibhavari-bellutagi/',
                 },
                 {
                   label: 'Twitter',
