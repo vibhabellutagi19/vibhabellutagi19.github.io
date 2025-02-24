@@ -7,17 +7,17 @@ tags: [
         apache-spark
     ]
 keywords: [
-            data engineering,
-            apache spark,
-            spark application architecture,
-            spark execution modes
+        data engineering,
+        apache spark,
+        spark application architecture,
+        spark execution modes
         ]
 hide_table_of_contents: false
 ---
 import SocialLinks from '@site/src/components/SocialLinks/socialLinks.js'
 import ClusterManager from './assets/cluster_manager.png'
-import ClusterMode from './assets/cluster_mode.png'
-import ClientMode from './assets/client_mode.png'
+import ClusterMode from './assets/cluster_mode.gif'
+import ClientMode from './assets/client_mode.gif'
 
 In this post, we will discuss the different execution modes available in Apache Spark. Apache Spark provides three execution modes to run Spark applications. These execution modes are: Cluster mode, Client mode, and Local mode. Each of these modes has its own use case and is suitable for different scenarios.
  <!--truncate-->
@@ -25,7 +25,7 @@ In this post, we will discuss the different execution modes available in Apache 
  To have an understand of the execution mode, we will need to re-visit the high-level components of a Spark application, those are:
 
  1. **The Spark Driver**: 
-    - Driver is the <Highlight color="#3e6980">controller of the execution</Highlight> of the spark application, it maintains the state of the spark cluster ( the state and tasks of the executors). 
+    - Driver is the <Highlight color="#3e6980">controller of the execution</Highlight> of the spark application, it maintains the state of the spark cluster (the state and tasks of the executors). 
     - It will interact with the cluster manager to allocate resources for the executors and schedule tasks on the executors. 
     - The driver is just a process on the physical machine, which is responsible for maintaining the state of the application running on the cluster.
  2. **The Spark Executors**:
@@ -39,13 +39,14 @@ In this post, we will discuss the different execution modes available in Apache 
     - Somewhat confusingly, a cluster manager has its own "driver" (sometimes referred to as master) and "worker" abstractions.
     - The key difference is that these abstractions are tied to physical machines rather than processes, as they are in Spark.
 
+<div class="text--center"><img src={ClusterManager} width="550" height="450" /></div>
+
+### Analogy
 Running a Spark application is like managing a busy restaurant where each component plays a distinct role to ensure everything runs smoothly and efficiently:
 
 1. **Spark Driver (Head Chef)**: The head chef manages the kitchen, assigns tasks to the cooks (executors), and makes sure every dish is prepared correctly.  
 2. **Spark Executors (Cooks)**: The cooks prepare the dishes following the head chef’s instructions and report back when each dish is ready.  
 3. **Cluster Manager (Restaurant Manager)**: The restaurant manager ensures the kitchen has enough staff, ingredients, and equipment to run smoothly, handling multiple orders at once.
-
-<div class="text--center"><img src={ClusterManager} width="550" height="450" /></div>
 
 ## Execution Modes
 
@@ -78,7 +79,7 @@ An execution mode gives you the power to determine where the aforementioned reso
 4. No cluster manager is required; Spark manages everything locally.  
 5. Ideal for small datasets and quick experiments but not suitable for production or large-scale jobs.
 
-## Conculsion
+## Conclusion
 
 |                            | **Client Mode**                          | **Cluster Mode**                       |
 |-----------------------------|------------------------------------------|----------------------------------------|
@@ -88,5 +89,5 @@ An execution mode gives you the power to determine where the aforementioned reso
 | **Advantages**              | Easier to debug and monitor from client machine | More reliable and scalable for production workloads |
 | **Disadvantages**           | Unreliable for long-running tasks        | More setup needed, harder to debug directly |
 
-I hope this blog helped you understand the different execution modes. To learn more about the Spark application architecture, you will find it [here](blog/spark-application-lifecycle-outside). If you are interested in reading more about Spark, check out the other posts in this [series](/blog/tags/apache-spark).
+I hope this blog helped you understand the different execution modes. To learn more about the Spark application architecture, you will find it [here](/blog/spark-application-lifecycle-outside). If you are interested in reading more about Spark, check out the other posts in this [series](/blog/tags/apache-spark).
 If you have any questions or feedback, feel free to reach out to me on <SocialLinks />

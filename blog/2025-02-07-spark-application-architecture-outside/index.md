@@ -16,8 +16,8 @@ hide_table_of_contents: false
 ---
 import SocialLinks from '@site/src/components/SocialLinks/socialLinks.js'
 import Completion from './assets/completion.png';
-import RequestingResources from './assets/requesting_resources.png';
-import LaunchApp from './assets/launch-app.png';
+import RequestingResources from './assets/requesting_resources.gif';
+import LaunchApp from './assets/launch.gif';
 import Execution from './assets/execution.png';
 
 
@@ -32,6 +32,7 @@ In this blog, we will go in-depth on the overall life cycle of Spark Application
 
 <div class="text--center"><img src={RequestingResources} width="500" height="400" /></div>
 
+
 ```
 ./bin/spark-submit \
   --class <main-class> \
@@ -45,7 +46,7 @@ In this blog, we will go in-depth on the overall life cycle of Spark Application
 
 The Spark Submit command takes number of arguments, for example:
 - the main class of the Application
-- the master URL ( local, yarn, mesos etc )
+- the master URL ( local, yarn, Mesos etc )
 - the deploy mode (local, cluster, client)
 - the configuration of the application
 - Other arguments like the number of executors to use, the amount of memory to allocate to each executor, the location of the input data.
@@ -54,11 +55,11 @@ The Spark Submit command takes number of arguments, for example:
 ## Launch
 
 - After the spark-submit command is executed, the driver process has been placed on the cluster, begins running user code
-- The user code should contain `SparkSession`, which is responsible for initialising the Spark Cluster(eg: driver and executors).
+- The user code should contain `SparkSession`, which is responsible for initializing the Spark Cluster(eg: driver and executors).
 - Subsequently, the `SparkSession` will communicate with cluster manager for launching the spark executors processors across the cluster.
 - The relevant configurations like number of executors, memory, cores etc are passed to the cluster manager by user via `spark-submit` command.
 
-<div class="text--center"><img src={LaunchApp} width="700" height="400" /></div>
+<div class="text--center"><img src={LaunchApp} width="500" height="400" /></div>
 
 
 ## Execution

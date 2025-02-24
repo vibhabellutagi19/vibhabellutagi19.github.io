@@ -4,12 +4,12 @@ title: Introduction to Apache Spark
 authors: [me]
 tags: [
         de,
-        apache-spark,
-        de-bootcamp
+        apache-spark
     ]
 keywords: [
             data engineering,
             apache spark,
+            Apache spark basics
         ]
 hide_table_of_contents: false
 image: assets/spark-basics/spark-basics.png
