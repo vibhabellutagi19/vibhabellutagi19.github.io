@@ -2,11 +2,149 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://buildwithvibs.in/blog</id>
     <title>Vibhavari Bellutagi Blog</title>
-    <updated>2025-01-21T00:00:00.000Z</updated>
+    <updated>2025-02-07T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://buildwithvibs.in/blog"/>
     <subtitle>Vibhavari Bellutagi Blog</subtitle>
     <icon>https://buildwithvibs.in/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[The Life Cycle of a Spark Application ( Outside )]]></title>
+        <id>https://buildwithvibs.in/blog/spark-application-lifecycle-outside</id>
+        <link href="https://buildwithvibs.in/blog/spark-application-lifecycle-outside"/>
+        <updated>2025-02-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[In this blog, we will go in-depth on the overall life cycle of Spark Applications from outside the actual Spark code. Before going ahead, I recommend reading the Execution Modes of the Spark application.]]></summary>
+        <content type="html"><![CDATA[<p>In this blog, we will go in-depth on the overall life cycle of Spark Applications from outside the actual Spark code. Before going ahead, I recommend reading the <a href="https://buildwithvibs.in/blog/spark-execution-modes">Execution Modes</a> of the Spark application.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="client-request">Client Request<a href="https://buildwithvibs.in/blog/spark-application-lifecycle-outside#client-request" class="hash-link" aria-label="Direct link to Client Request" title="Direct link to Client Request">​</a></h2>
+<ul>
+<li>The first step is the client request. This is the request that is made by the user to the Spark Application.</li>
+<li>This request can be made in a variety of ways: Compiled Jars or a library. The most common way is through the <code>Spark Submit</code> command Using compiled Jars.</li>
+<li>At this point, the client is executing code on the local machine and is going to make a request to the cluster manager driver node.</li>
+</ul>
+<div class="text--center"><img src="https://buildwithvibs.in/assets/images/requesting_resources-08d31b188d513bb914c06cb1769d5072.gif" width="500" height="400"></div>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">./bin/spark-submit \</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  --class &lt;main-class&gt; \</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  --master &lt;master-url&gt; \</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  --deploy-mode cluster \</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  --conf &lt;key&gt;=&lt;value&gt; \</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  ... # other options</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  &lt;application-jar&gt; \</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  [application-arguments]</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>The Spark Submit command takes number of arguments, for example:</p>
+<ul>
+<li>the main class of the Application</li>
+<li>the master URL ( local, yarn, Mesos etc )</li>
+<li>the deploy mode (local, cluster, client)</li>
+<li>the configuration of the application</li>
+<li>Other arguments like the number of executors to use, the amount of memory to allocate to each executor, the location of the input data.</li>
+<li>the location of the application jar file.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="launch">Launch<a href="https://buildwithvibs.in/blog/spark-application-lifecycle-outside#launch" class="hash-link" aria-label="Direct link to Launch" title="Direct link to Launch">​</a></h2>
+<ul>
+<li>After the spark-submit command is executed, the driver process has been placed on the cluster, begins running user code</li>
+<li>The user code should contain <code>SparkSession</code>, which is responsible for initializing the Spark Cluster(eg: driver and executors).</li>
+<li>Subsequently, the <code>SparkSession</code> will communicate with cluster manager for launching the spark executors processors across the cluster.</li>
+<li>The relevant configurations like number of executors, memory, cores etc are passed to the cluster manager by user via <code>spark-submit</code> command.</li>
+</ul>
+<div class="text--center"><img src="https://buildwithvibs.in/assets/images/launch-3d8102d2afd13de56278cd0188e93baf.gif" width="500" height="400"></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="execution">Execution<a href="https://buildwithvibs.in/blog/spark-application-lifecycle-outside#execution" class="hash-link" aria-label="Direct link to Execution" title="Direct link to Execution">​</a></h2>
+<ul>
+<li>Spark Context is created now, spark goes about executing the code.</li>
+<li>The driver process and executors communicate with each other, executing code and moving data between each other.</li>
+<li>The driver schedules tasks onto each worker, and each worker responds with the status of those tasks and success or failure.</li>
+</ul>
+<div class="text--center"><img src="https://buildwithvibs.in/assets/images/execution-a188bc81cd6b08360af122955fa48d69.gif" width="550" height="400"></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="completion">Completion<a href="https://buildwithvibs.in/blog/spark-application-lifecycle-outside#completion" class="hash-link" aria-label="Direct link to Completion" title="Direct link to Completion">​</a></h2>
+<ul>
+<li>Upon completion, the driver process exits with either success or failure.</li>
+<li>The cluster manager shuts down the executors in the Spark cluster for the driver.</li>
+<li>The success or failure of the Spark Application can be checked by querying the cluster manager.</li>
+</ul>
+<div class="text--center"><img src="https://buildwithvibs.in/assets/images/completion-77a6039131b5b22a2ccb5e06457f9f32.gif" width="550" height="400"></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="conclusion">Conclusion<a href="https://buildwithvibs.in/blog/spark-application-lifecycle-outside#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion">​</a></h2>
+<p>In this blog, we have explored the overall life cycle of a Spark Application from outside the actual Spark code. We have detailed how the client request is made, how the Spark Application is launched, how the code is executed, and how the Spark Application reaches its completion. If you are interested in more such content, do check out <a href="https://buildwithvibs.in/blog/tags/apache-spark">Apache Spark</a> series.</p>
+<p>If you have any questions or feedback, feel free to reach out to me on </p><div class="social-container"><a href="https://github.com/vibhabellutagi19" target="_blank" rel="noopener noreferrer" class="social-link"><span class="social-icon github"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></span></a><a href="https://x.com/buildwith_vibs" target="_blank" rel="noopener noreferrer" class="social-link"><span class="social-icon twitter"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg></span></a><a href="https://www.linkedin.com/in/vibhavari-bellutagi-837871189/" target="_blank" rel="noopener noreferrer" class="social-link"><span class="social-icon linkedin"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg></span></a><a href="https://www.instagram.com/buildwith_vibs/" target="_blank" rel="noopener noreferrer" class="social-link"><span class="social-icon instagram"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg></span></a></div><p></p>]]></content>
+        <author>
+            <name>Vibhavari Bellutagi</name>
+            <uri>https://buildwithvibs.in/</uri>
+        </author>
+        <category label="data-engineering" term="data-engineering"/>
+        <category label="apache-spark" term="apache-spark"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Spark Execution Modes]]></title>
+        <id>https://buildwithvibs.in/blog/spark-execution-modes</id>
+        <link href="https://buildwithvibs.in/blog/spark-execution-modes"/>
+        <updated>2025-02-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[In this post, we will discuss the different execution modes available in Apache Spark. Apache Spark provides three execution modes to run Spark applications. These execution modes are: Cluster mode, Client mode, and Local mode. Each of these modes has its own use case and is suitable for different scenarios.]]></summary>
+        <content type="html"><![CDATA[<p>In this post, we will discuss the different execution modes available in Apache Spark. Apache Spark provides three execution modes to run Spark applications. These execution modes are: Cluster mode, Client mode, and Local mode. Each of these modes has its own use case and is suitable for different scenarios.</p>
+<p>To have an understand of the execution mode, we will need to re-visit the high-level components of a Spark application, those are:</p>
+<ol>
+<li><strong>The Spark Driver</strong>:<!-- -->
+<ul>
+<li>Driver is the <span style="background-color:#3e6980;border-radius:2px;color:#fff;padding:0.2rem">controller of the execution</span> of the spark application, it maintains the state of the spark cluster (the state and tasks of the executors).</li>
+<li>It will interact with the cluster manager to allocate resources for the executors and schedule tasks on the executors.</li>
+<li>The driver is just a process on the physical machine, which is responsible for maintaining the state of the application running on the cluster.</li>
+</ul>
+</li>
+<li><strong>The Spark Executors</strong>:<!-- -->
+<ul>
+<li>Executors are <span style="background-color:#3e6980;border-radius:2px;color:#fff;padding:0.2rem">the processes that run the actual tasks</span> of the spark application, assigned by the driver.</li>
+<li>The main responsibility of the executor is to<!-- -->
+<ul>
+<li>take the tasks from the driver</li>
+<li>run the tasks</li>
+<li>report back the status of the tasks to the driver and results.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Cluster Manager</strong>:<!-- -->
+<ul>
+<li>The cluster manager is responsible for <span style="background-color:#3e6980;border-radius:2px;color:#fff;padding:0.2rem">maintaining a cluster of machines</span> that will run your Spark Application(s).</li>
+<li>Somewhat confusingly, a cluster manager has its own "driver" (sometimes referred to as master) and "worker" abstractions.</li>
+<li>The key difference is that these abstractions are tied to physical machines rather than processes, as they are in Spark.</li>
+</ul>
+</li>
+</ol>
+<div class="text--center"><img src="https://buildwithvibs.in/assets/images/cluster_manager-ee69ff7b4553bc54b04ae088f7250cf9.png" width="550" height="450"></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="analogy">Analogy<a href="https://buildwithvibs.in/blog/spark-execution-modes#analogy" class="hash-link" aria-label="Direct link to Analogy" title="Direct link to Analogy">​</a></h3>
+<p>Running a Spark application is like managing a busy restaurant where each component plays a distinct role to ensure everything runs smoothly and efficiently:</p>
+<ol>
+<li><strong>Spark Driver (Head Chef)</strong>: The head chef manages the kitchen, assigns tasks to the cooks (executors), and makes sure every dish is prepared correctly.</li>
+<li><strong>Spark Executors (Cooks)</strong>: The cooks prepare the dishes following the head chef’s instructions and report back when each dish is ready.</li>
+<li><strong>Cluster Manager (Restaurant Manager)</strong>: The restaurant manager ensures the kitchen has enough staff, ingredients, and equipment to run smoothly, handling multiple orders at once.</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="execution-modes">Execution Modes<a href="https://buildwithvibs.in/blog/spark-execution-modes#execution-modes" class="hash-link" aria-label="Direct link to Execution Modes" title="Direct link to Execution Modes">​</a></h2>
+<p>An execution mode gives you the power to determine where the aforementioned resources are physically located when you go to run your application.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="cluster-mode">Cluster Mode<a href="https://buildwithvibs.in/blog/spark-execution-modes#cluster-mode" class="hash-link" aria-label="Direct link to Cluster Mode" title="Direct link to Cluster Mode">​</a></h3>
+<ol>
+<li>The user submits a JAR, Python script to the cluster manager.</li>
+<li>The cluster manager launches both the driver and executors on worker nodes within the cluster.</li>
+<li>The driver process runs on one worker node, while executors run on other worker nodes.</li>
+<li>The cluster manager manages and monitors all Spark application processes.</li>
+</ol>
+<div class="text--center"><img src="https://buildwithvibs.in/assets/images/cluster_mode-e0aa25aea4b420a85c48b967f0b1e514.gif" width="600" height="400"></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="client-mode">Client Mode<a href="https://buildwithvibs.in/blog/spark-execution-modes#client-mode" class="hash-link" aria-label="Direct link to Client Mode" title="Direct link to Client Mode">​</a></h3>
+<ol>
+<li>Client Mode is similar to Cluster Mode, but the Spark Driver runs on the client machine (the machine that submits the application).</li>
+<li>The client machine is responsible for managing the driver process.</li>
+<li>The cluster manager handles the executor processes, which run on worker nodes in the cluster.</li>
+<li>In Client Mode, the application is submitted from a machine <strong>outside the cluster</strong>, often called a <strong>gateway machine</strong> or <strong>edge node</strong>.</li>
+<li>The driver stays on the client machine, while executors run inside the cluster on worker nodes.</li>
+</ol>
+<div class="text--center"><img src="https://buildwithvibs.in/assets/images/client_mode-425a36cd961a4be2fddf5ef5536c5f84.gif" width="600" height="400"></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="local-mode">Local Mode<a href="https://buildwithvibs.in/blog/spark-execution-modes#local-mode" class="hash-link" aria-label="Direct link to Local Mode" title="Direct link to Local Mode">​</a></h3>
+<ol>
+<li>Local Mode runs the entire Spark application on a single machine.</li>
+<li>It achieves parallelism using threads on the same machine, not multiple worker nodes.</li>
+<li>Used for learning Spark, testing applications, and iterative development.</li>
+<li>No cluster manager is required; Spark manages everything locally.</li>
+<li>Ideal for small datasets and quick experiments but not suitable for production or large-scale jobs.</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="conclusion">Conclusion<a href="https://buildwithvibs.in/blog/spark-execution-modes#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion">​</a></h2>
+<table><thead><tr><th></th><th><strong>Client Mode</strong></th><th><strong>Cluster Mode</strong></th></tr></thead><tbody><tr><td><strong>Best for</strong></td><td>Interactive use (development, debugging)</td><td>Production jobs, large-scale deployments</td></tr><tr><td><strong>Latency</strong></td><td>Lower latency for small tasks</td><td>Slightly higher due to internal resource allocation</td></tr><tr><td><strong>Example Use Case</strong></td><td>Testing and interactive Spark shells</td><td>Scheduled batch jobs or long-running Spark applications</td></tr><tr><td><strong>Advantages</strong></td><td>Easier to debug and monitor from client machine</td><td>More reliable and scalable for production workloads</td></tr><tr><td><strong>Disadvantages</strong></td><td>Unreliable for long-running tasks</td><td>More setup needed, harder to debug directly</td></tr></tbody></table>
+<p>I hope this blog helped you understand the different execution modes. To learn more about the Spark application architecture, you will find it <a href="https://buildwithvibs.in/blog/spark-application-lifecycle-outside">here</a>. If you are interested in reading more about Spark, check out the other posts in this <a href="https://buildwithvibs.in/blog/tags/apache-spark">series</a>.
+If you have any questions or feedback, feel free to reach out to me on </p><div class="social-container"><a href="https://github.com/vibhabellutagi19" target="_blank" rel="noopener noreferrer" class="social-link"><span class="social-icon github"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></span></a><a href="https://x.com/buildwith_vibs" target="_blank" rel="noopener noreferrer" class="social-link"><span class="social-icon twitter"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg></span></a><a href="https://www.linkedin.com/in/vibhavari-bellutagi-837871189/" target="_blank" rel="noopener noreferrer" class="social-link"><span class="social-icon linkedin"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg></span></a><a href="https://www.instagram.com/buildwith_vibs/" target="_blank" rel="noopener noreferrer" class="social-link"><span class="social-icon instagram"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg></span></a></div><p></p>]]></content>
+        <author>
+            <name>Vibhavari Bellutagi</name>
+            <uri>https://buildwithvibs.in/</uri>
+        </author>
+        <category label="data-engineering" term="data-engineering"/>
+        <category label="apache-spark" term="apache-spark"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Under the hood of a Spark job]]></title>
         <id>https://buildwithvibs.in/blog/spark-job-anatomy</id>
@@ -182,8 +320,8 @@ The answer may be <code>zero</code> (we know that he owns none) or <code>null</c
         <id>https://buildwithvibs.in/blog/columns-and-expressions</id>
         <link href="https://buildwithvibs.in/blog/columns-and-expressions"/>
         <updated>2025-01-10T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Apache Spark's Column and Expression play a big role in making your pipeline more efficient. In this Tech Byte we will look into ALL the possible ways to select columns, use built-in functions and perform calculations with column objects and expressions in PySpark. So, whether you build an ETL pipeline or doing exploratory data analysis, these techniques methods will come in handy.]]></summary>
-        <content type="html"><![CDATA[<p>Apache Spark's <code>Column and Expression</code> play a big role in making your pipeline more efficient. In this Tech Byte we will look into ALL the possible ways to select columns, use built-in functions and perform calculations with column objects and expressions in PySpark. So, whether you build an ETL pipeline or doing exploratory data analysis, these techniques methods will come in handy.</p>
+        <summary type="html"><![CDATA[Apache Spark's Column and Expression play a big role in making your pipeline more efficient. In this blog we will look into ALL the possible ways to select columns, use built-in functions and perform calculations with column objects and expressions in PySpark. So, whether you build an ETL pipeline or doing exploratory data analysis, these techniques methods will come in handy.]]></summary>
+        <content type="html"><![CDATA[<p>Apache Spark's <code>Column and Expression</code> play a big role in making your pipeline more efficient. In this blog we will look into ALL the possible ways to select columns, use built-in functions and perform calculations with column objects and expressions in PySpark. So, whether you build an ETL pipeline or doing exploratory data analysis, these techniques methods will come in handy.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="columns-and-experssions">Columns and Experssions<a href="https://buildwithvibs.in/blog/columns-and-expressions#columns-and-experssions" class="hash-link" aria-label="Direct link to Columns and Experssions" title="Direct link to Columns and Experssions">​</a></h2>
 <p>In Spark, columns are not actual data; they are logical constructs—formulas, basically—that say how to calculate a value for every row in a table. These formulas by themselves don’t contain any real data, just return real values when they are applied to rows in a DataFrame. For this reason, columns can’t exist in isolation — you need a DataFrame and some of its rows for a column’s formula to be evaluated. Therefore, the creation or manipulation of columns should always occur by transforming on a DataFrame instead of on the column alone.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="ways-of-constructing-the-column">Ways of Constructing the Column<a href="https://buildwithvibs.in/blog/columns-and-expressions#ways-of-constructing-the-column" class="hash-link" aria-label="Direct link to Ways of Constructing the Column" title="Direct link to Ways of Constructing the Column">​</a></h3>
@@ -232,7 +370,7 @@ The answer may be <code>zero</code> (we know that he owns none) or <code>null</c
         <link href="https://buildwithvibs.in/blog/spark-basics"/>
         <updated>2025-01-01T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Welcome to my Apache Spark series! I’ll dive deep into Apache Spark, from basics to advanced concepts. This series is about learning, exploring, and sharing—documenting my journey to mastering Apache Spark ( again ) while sharing insights, challenges, and tips.]]></summary>
-        <content type="html"><![CDATA[<p>Welcome to my <strong>Apache Spark</strong> series! I’ll dive deep into Apache Spark, from basics to advanced concepts. This series is about learning, exploring, and sharing—documenting my journey to mastering Apache Spark ( again ) while sharing insights, challenges, and tips.</p>
+        <content type="html"><![CDATA[<p>Welcome to my <a href="https://buildwithvibs.in/blog/tags/apache-spark">Apache Spark</a> series! I’ll dive deep into Apache Spark, from basics to advanced concepts. This series is about learning, exploring, and sharing—documenting my journey to mastering Apache Spark ( again ) while sharing insights, challenges, and tips.</p>
 <p>In this first post, we’ll cover the fundamentals of Apache Spark, its history, and why it’s a game-changer in data engineering.</p>
 <p>Find all the blogs in the series <a href="https://buildwithvibs.in/blog/tags/apache-spark">here</a>.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="spark-history">Spark History<a href="https://buildwithvibs.in/blog/spark-basics#spark-history" class="hash-link" aria-label="Direct link to Spark History" title="Direct link to Spark History">​</a></h2>
@@ -302,7 +440,6 @@ The answer may be <code>zero</code> (we know that he owns none) or <code>null</c
         </author>
         <category label="data-engineering" term="data-engineering"/>
         <category label="apache-spark" term="apache-spark"/>
-        <category label="data-engineering-bootcamp" term="data-engineering-bootcamp"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Data Modelling - Fact vs Dimension]]></title>
