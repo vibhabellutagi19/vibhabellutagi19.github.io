@@ -17,7 +17,7 @@ image: assets/col_n_exps.png
 
 import SocialLinks from '@site/src/components/SocialLinks/socialLinks.js'
 
-Apache Spark's `Column and Expression` play a big role in making your pipeline more efficient. In this Tech Byte we will look into ALL the possible ways to select columns, use built-in functions and perform calculations with column objects and expressions in PySpark. So, whether you build an ETL pipeline or doing exploratory data analysis, these techniques methods will come in handy.
+Apache Spark's `Column and Expression` play a big role in making your pipeline more efficient. In this blog we will look into ALL the possible ways to select columns, use built-in functions and perform calculations with column objects and expressions in PySpark. So, whether you build an ETL pipeline or doing exploratory data analysis, these techniques methods will come in handy.
 
 <!-- truncate -->
 
