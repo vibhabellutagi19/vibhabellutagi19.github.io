@@ -15,10 +15,10 @@ hide_table_of_contents: false
 
 ---
 import SocialLinks from '@site/src/components/SocialLinks/socialLinks.js'
-import Completion from './assets/completion.png';
+import Completion from './assets/completion.gif';
 import RequestingResources from './assets/requesting_resources.gif';
 import LaunchApp from './assets/launch.gif';
-import Execution from './assets/execution.png';
+import Execution from './assets/execution.gif';
 
 
 In this blog, we will go in-depth on the overall life cycle of Spark Applications from outside the actual Spark code. Before going ahead, I recommend reading the [Execution Modes](/blog/spark-execution-modes) of the Spark application.
