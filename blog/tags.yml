@@ -3,6 +3,11 @@ de:
   permalink: /de
   description: DE tag description
 
+devops:
+  label: devops
+  permalink: /devops
+  description: devops tag description
+
 dim:
   label: dimensional-modeling
   permalink: /dim
@@ -42,3 +47,14 @@ apache-spark:
   label: apache-spark
   permalink: /apache-spark
   description: Spark tag description
+
+spark-tuning:
+    label: spark-tuning
+    permalink: /apache-spark-tuning
+    description: Spark Tuning tag description
+
+ci-cd:
+  label: ci-cd
+  permalink: /ci-cd
+  description: CI CD tag description
+

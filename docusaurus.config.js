@@ -4,7 +4,6 @@ import { themes as prismThemes } from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Vibhavari Bellutagi',
-  tagline: 'Learn | Build | Share',
   favicon: 'img/favicon.ico',
   url: 'https://buildwithvibs.in',
   baseUrl: '/',
@@ -87,12 +86,7 @@ const config = {
               position: 'left',
               label: 'Resume',
               to: '/Resume/experience',
-            },
-            // {
-            //   to: '/FirstPrinciples/thoughts',
-            //   label: 'First Principles',
-            //   position: 'left'
-            // },
+            }
           ],
         },
         footer: {
