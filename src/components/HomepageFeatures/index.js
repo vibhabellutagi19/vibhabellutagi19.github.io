@@ -15,16 +15,6 @@ const FeatureList = [
     ),
   },
   {
-    title: "From First Principles",
-    link: "/FirstPrinciples/thoughts",
-    Svg: require("@site/static/img/undraw_instant_analysis_re_mid5.svg").default,
-    description: (
-      <>
-        A collection of articles that explain complex topics from first principles
-      </>
-    ),
-  },
-  {
     title: "Tech Bytes",
     link: "/TechBytes/intro",
     Svg: require("@site/static/img/undraw_my_code_snippets_re_4adu.svg").default,

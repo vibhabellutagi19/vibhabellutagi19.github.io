@@ -1,9 +1,8 @@
 import Grid from "@mui/material/Grid";
 import clsx from "clsx";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import YouTubeIcon from "@mui/icons-material/YouTube";
+import EmailIcon from '@mui/icons-material/Email';
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import SchoolIcon from "@mui/icons-material/School";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { Container } from "@mui/material";
 import Link from "@docusaurus/Link";
@@ -120,7 +119,7 @@ export default function HomepageHeader() {
             <h1 className="hero__title">{siteConfig.title}</h1>
 
             <h3>
-              Data Engineer | Learn | Build | Share
+              Data Engineer
             </h3>
 
             <p>
@@ -147,6 +146,16 @@ export default function HomepageHeader() {
               <Grid item>
                 <Link
                   className={styles.button}
+                  to="mailto:vibhavari.bellutagi@gmail.com"
+                  style={{ padding: "1rem" }}
+                >
+                  <EmailIcon fontSize={"large"} />
+                </Link>
+              </Grid>
+              
+              <Grid item>
+                <Link
+                  className={styles.button}
                   to="https://github.com/vibhabellutagi19"
                   style={{ padding: "1rem" }}
                 >
@@ -163,6 +172,8 @@ export default function HomepageHeader() {
                   <LinkedInIcon fontSize={"large"} />
                 </Link>
               </Grid>
+
+              
 
             </Grid>
           </Grid>

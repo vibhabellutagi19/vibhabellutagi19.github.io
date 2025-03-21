@@ -20,7 +20,6 @@ So, here’s how I’ve organized my little digital playground:
 
 1. [Blogs](/blog): Long-form technical deep-dives (buckle up—this is the serious stuff I’ve been tinkering with or recently discovered).
 2. [Tech Bytes](/TechBytes/intro): Quick tips and tricks that are guaranteed to make you go, “Wait, that’s how you do it?!”
-3. [From First Principles](/FirstPrinciples/thoughts): My attempt at peeling back the layers of complexity from scratch and poking at the gooey center of concepts (because who doesn’t love a good deep dive?). [Work In Progess!]
 
 My goal is to keep churning out content that’s actually useful (and maybe even a little fun). I’m working to make this better every day—like a perpetual software update, minus the annoying restarts.
 

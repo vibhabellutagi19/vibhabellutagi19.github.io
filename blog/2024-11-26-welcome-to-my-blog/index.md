@@ -21,7 +21,6 @@ I have three different sections in my website:
 
 1. [Blogs](index.md): Where I would long format technical blogs that I have experienced or learned recently.
 2. [Tech Bytes](/TechBytes/intro): Where I would post small technical tips and tricks that I have learned.
-4. [From First Principles](/FirstPrinciples/thoughts): Where I would post the concepts that I have learned from the scratch going to the depth of it.
 
 Hope I will be able to keep up with the content and make it useful for you, im striving to make it better everyday.
 
