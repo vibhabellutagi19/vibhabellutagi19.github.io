@@ -1,110 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog Post - Vibhavari Bellutagi</title>
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="../lightbox.js"></script>
     <style>
-        .article-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem 0;
-        }
-        .article-content h2 {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            font-size: 2rem;
-            margin-top: 3rem;
-            margin-bottom: 1rem;
-            color: var(--ivory);
-        }
-        .article-content h3 {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            font-size: 1.5rem;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            color: var(--ivory);
-        }
-        .article-content p {
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-        .article-content code {
-            background: var(--shadow);
-            padding: 0.2rem 0.4rem;
-            border-radius: 3px;
-            font-size: 0.9em;
-        }
-        .article-content pre {
-            background: var(--shadow);
-            padding: 1.5rem;
-            border-radius: 5px;
-            overflow-x: auto;
-            margin: 2rem 0;
-        }
-        .article-content pre code {
-            background: none;
-            padding: 0;
-        }
-        .back-link {
-            display: inline-block;
-            margin-top: 3rem;
-            color: var(--accent);
-            text-decoration: none;
-            transition: opacity 0.3s ease;
-        }
-        .back-link:hover {
-            opacity: 0.7;
-        }
-        .loading {
-            text-align: center;
-            padding: 4rem;
-            color: var(--muted);
-        }
+      .article-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem 0;
+      }
+      .article-content h2 {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif,
+          'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+          'Noto Color Emoji';
+        font-size: 2rem;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        color: var(--ivory);
+      }
+      .article-content h3 {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif,
+          'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+          'Noto Color Emoji';
+        font-size: 1.5rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: var(--ivory);
+      }
+      .article-content p {
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+      }
+      .article-content code {
+        background: var(--shadow);
+        padding: 0.2rem 0.4rem;
+        border-radius: 3px;
+        font-size: 0.9em;
+      }
+      .article-content pre {
+        background: var(--shadow);
+        padding: 1.5rem;
+        border-radius: 5px;
+        overflow-x: auto;
+        margin: 2rem 0;
+      }
+      .article-content pre code {
+        background: none;
+        padding: 0;
+      }
+      .back-link {
+        display: inline-block;
+        margin-top: 3rem;
+        color: var(--accent);
+        text-decoration: none;
+        transition: opacity 0.3s ease;
+      }
+      .back-link:hover {
+        opacity: 0.7;
+      }
+      .loading {
+        text-align: center;
+        padding: 4rem;
+        color: var(--muted);
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <nav>
-        <a href="/" class="logo">VB</a>
-        <ul class="nav-links">
-            <li><a href="/#experience">Experience</a></li>
-            <li><a href="index.html">Blog</a></li>
-            <li><a href="/#photography">Photography</a></li>
-        </ul>
+      <a href="/" class="logo">VB</a>
+      <ul class="nav-links">
+        <li><a href="/#experience">Experience</a></li>
+        <li><a href="index.html">Blog</a></li>
+        <li><a href="/#photography">Photography</a></li>
+      </ul>
     </nav>
 
     <article>
-        <div id="article-meta" class="article-meta"></div>
-        <h1 id="article-title" class="article-title"></h1>
-        <p id="article-excerpt" class="article-excerpt"></p>
-        <div id="article-content" class="article-content">
-            <div class="loading">Loading post...</div>
-        </div>
+      <div id="article-meta" class="article-meta"></div>
+      <h1 id="article-title" class="article-title"></h1>
+      <p id="article-excerpt" class="article-excerpt"></p>
+      <div id="article-content" class="article-content">
+        <div class="loading">Loading post...</div>
+      </div>
 
-        <div class="like-section">
-            <h3 style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; margin-bottom: 1rem; color: var(--ivory);">
-                Enjoyed this article?
-            </h3>
-            <p style="color: var(--muted); margin-bottom: 1.5rem;">
-                React with an emoji below! Your reactions are stored in GitHub and visible to everyone.
-            </p>
-            
-            <!-- Giscus Reactions Only Widget -->
-            <div class="giscus-reactions-container"></div>
-        </div>
+      <div class="like-section">
+        <h3
+          style="
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+              'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans',
+              sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+              'Segoe UI Symbol', 'Noto Color Emoji';
+            margin-bottom: 1rem;
+            color: var(--ivory);
+          "
+        >
+          Enjoyed this article?
+        </h3>
+        <p style="color: var(--muted); margin-bottom: 1.5rem">
+          React with an emoji below! Your reactions are stored in GitHub and
+          visible to everyone.
+        </p>
 
-        <div class="comments-section">
-            <h2 class="comments-title">Comments & Discussion</h2>
-            <!-- Giscus Comments Widget will load here -->
-        </div>
+        <!-- Giscus Reactions Only Widget -->
+        <div class="giscus-reactions-container"></div>
+      </div>
 
-        <a href="index.html" class="back-link">← Back to all posts</a>
+      <div class="comments-section">
+        <h2 class="comments-title">Comments & Discussion</h2>
+        <!-- Giscus Comments Widget will load here -->
+      </div>
+
+      <a href="index.html" class="back-link">← Back to all posts</a>
     </article>
 
     <script src="utils.js"></script>
     <script src="post.js"></script>
-</body>
+  </body>
 </html>
-
