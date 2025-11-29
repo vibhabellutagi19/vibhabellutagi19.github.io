@@ -72,16 +72,19 @@ The blog uses **Giscus** for both comments AND reactions (likes). Everything is 
 ### Step-by-Step Setup:
 
 1. **Enable Discussions** in your repository:
+
    - Go to Settings → General
    - Scroll to "Features"
    - Check "Discussions"
 
 2. **Install Giscus App**:
+
    - Visit https://github.com/apps/giscus
    - Click "Install"
    - Select your repository
 
 3. **Configure Giscus**:
+
    - Go to https://giscus.app
    - Enter your repository name (username/repo-name)
    - Choose "Discussion title contains page **pathname**"
@@ -90,14 +93,14 @@ The blog uses **Giscus** for both comments AND reactions (likes). Everything is 
    - Copy the generated script
 
 4. **Update Your Files**:
-   
+
    Open `blog/modern-web-architecture.html` and find the Giscus script section. Replace these values:
-   
+
    ```html
-   data-repo="your-username/your-repo-name"
-   data-repo-id="R_xxxxx"  <!-- Get from giscus.app -->
-   data-category="General"
-   data-category-id="DIC_xxxxx"  <!-- Get from giscus.app -->
+   data-repo="your-username/your-repo-name" data-repo-id="R_xxxxx"
+   <!-- Get from giscus.app -->
+   data-category="General" data-category-id="DIC_xxxxx"
+   <!-- Get from giscus.app -->
    ```
 
 5. **Test It**:
@@ -108,7 +111,7 @@ The blog uses **Giscus** for both comments AND reactions (likes). Everything is 
 
 ### How Reactions Work:
 
-- Users click emoji reactions (❤️ 👍 🎉 etc.) 
+- Users click emoji reactions (❤️ 👍 🎉 etc.)
 - Reactions are stored in GitHub Discussions
 - Everyone sees the same reaction counts in real-time
 - Users must be logged into GitHub to react
@@ -122,22 +125,24 @@ Edit the CSS variables in `index.html`:
 
 ```css
 :root {
-    --noir: #0a0a0a;        /* Dark background */
-    --ivory: #f8f6f1;       /* Light text */
-    --accent: #d4af37;      /* Gold accent (change this!) */
-    --shadow: #1a1a1a;      /* Slightly lighter dark */
-    --muted: #6b6b6b;       /* Muted text */
-    --border: #2a2a2a;      /* Border color */
+  --noir: #0a0a0a; /* Dark background */
+  --ivory: #f8f6f1; /* Light text */
+  --accent: #d4af37; /* Gold accent (change this!) */
+  --shadow: #1a1a1a; /* Slightly lighter dark */
+  --muted: #6b6b6b; /* Muted text */
+  --border: #2a2a2a; /* Border color */
 }
 ```
 
 ### Fonts
 
 The site uses:
+
 - **Playfair Display** for headings (elegant serif)
 - **IBM Plex Mono** for body text (modern monospace)
 
 To change fonts:
+
 1. Visit [Google Fonts](https://fonts.google.com)
 2. Select your fonts
 3. Replace the font link in the `<head>` section
@@ -148,11 +153,13 @@ To change fonts:
 To add your own photos:
 
 1. **Option 1 - Use Unsplash URLs** (easiest):
+
    - Find photos on [Unsplash](https://unsplash.com)
    - Get the photo URL
    - Replace in the gallery items
 
 2. **Option 2 - Upload Your Own**:
+
    - Create an `images` folder in your repository
    - Upload your photos
    - Update image paths: `src="images/your-photo.jpg"`
@@ -183,6 +190,7 @@ portfolio/
 ## Browser Support
 
 Works on all modern browsers:
+
 - Chrome/Edge (latest)
 - Firefox (latest)
 - Safari (latest)
@@ -204,16 +212,19 @@ Works on all modern browsers:
 Common issues:
 
 **Site not showing up?**
+
 - Wait 5-10 minutes after enabling GitHub Pages
 - Check that files are in the root directory
 - Verify repository is public
 
 **Comments not working?**
+
 - Make sure Discussions are enabled
 - Verify Giscus app is installed
 - Check that repository details in script are correct
 
 **Images not loading?**
+
 - Verify image URLs are correct
 - Check file paths are relative or absolute
 - Ensure images are uploaded to repository or using valid external URLs
@@ -221,6 +232,7 @@ Common issues:
 ## Future Enhancements
 
 Consider adding:
+
 - Blog RSS feed
 - Dark/light mode toggle
 - Search functionality

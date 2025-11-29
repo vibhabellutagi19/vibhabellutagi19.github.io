@@ -1,82 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog - Vibhavari Bellutagi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=IBM+Plex+Mono:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../style.css" />
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navigation -->
     <nav>
-        <a href="/" class="logo">VB</a>
-        <ul class="nav-links">
-            <li><a href="/#experience">Experience</a></li>
-            <li><a href="/#blog">Blog</a></li>
-            <li><a href="/#photography">Photography</a></li>
-        </ul>
+      <a href="/" class="logo">VB</a>
+      <ul class="nav-links">
+        <li><a href="/#experience">Experience</a></li>
+        <li><a href="/#blog">Blog</a></li>
+        <li><a href="/#photography">Photography</a></li>
+      </ul>
     </nav>
 
     <!-- Blog Section -->
-    <section id="blog" style="padding-top: 10rem;">
-        <div class="section-header">
-            <div class="section-number">ALL POSTS</div>
-            <h2 class="section-title">Blog Archive</h2>
-        </div>
-        <div class="blog-grid" id="blog-grid">
-            <!-- Blog items will be dynamically generated here -->
-        </div>
+    <section id="blog" style="padding-top: 10rem">
+      <div class="section-header">
+        <div class="section-number">ALL POSTS</div>
+        <h2 class="section-title">Blog Archive</h2>
+      </div>
+      <div class="blog-grid" id="blog-grid">
+        <!-- Blog items will be dynamically generated here -->
+      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="social-links">
-                <a href="https://github.com/yourusername">GitHub</a>
-                <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
-                <a href="https://twitter.com/yourusername">Twitter</a>
-                <a href="/cdn-cgi/l/email-protection#afd6c0dadd81cac2cec6c3efcad7cec2dfc3ca81ccc0c2">Email</a>
-            </div>
-            <p class="copyright">&copy; 2024 Vibhavari Bellutagi. All rights reserved.</p>
+      <div class="footer-content">
+        <div class="social-links">
+          <a href="https://github.com/yourusername">GitHub</a>
+          <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
+          <a href="https://twitter.com/yourusername">Twitter</a>
+          <a
+            href="/cdn-cgi/l/email-protection#afd6c0dadd81cac2cec6c3efcad7cec2dfc3ca81ccc0c2"
+            >Email</a
+          >
         </div>
+        <p class="copyright">
+          &copy; 2024 Vibhavari Bellutagi. All rights reserved.
+        </p>
+      </div>
     </footer>
 
     <!-- External JavaScript files -->
     <script src="utils.js"></script>
     <script src="../blog.js"></script>
-    
+
     <script>
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
+      // Intersection Observer for fade-in animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px',
+      };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
-                }
-            });
-        }, observerOptions);
-
-        // Function to observe elements for fade-in animations
-        function observeElements() {
-            document.querySelectorAll('.blog-card').forEach(el => {
-                observer.observe(el);
-            });
-        }
-
-        // Initialize page when DOM is ready
-        document.addEventListener('DOMContentLoaded', async function() {
-            // Render all blog items (no limit)
-            await renderBlogItems();
-
-            // Observe elements after they're rendered
-            observeElements();
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+          }
         });
-    </script>
-</body>
-</html>
+      }, observerOptions);
 
+      // Function to observe elements for fade-in animations
+      function observeElements() {
+        document.querySelectorAll('.blog-card').forEach((el) => {
+          observer.observe(el);
+        });
+      }
+
+      // Initialize page when DOM is ready
+      document.addEventListener('DOMContentLoaded', async function () {
+        // Render all blog items (no limit)
+        await renderBlogItems();
+
+        // Observe elements after they're rendered
+        observeElements();
+      });
+    </script>
+  </body>
+</html>
