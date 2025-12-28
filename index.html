@@ -18,6 +18,7 @@
         <li><a href="#experience">Experience</a></li>
         <li><a href="#blog">Blog</a></li>
         <li><a href="#photography">Photography</a></li>
+        <li><a href="#knowme">About</a></li>
       </ul>
     </nav>
 
@@ -25,12 +26,29 @@
     <section class="hero">
       <div class="hero-content">
         <h1>Crafting <span class="accent-word">Digital</span> Experiences</h1>
-        <p>
-          A Data Engineer by profession and a Photographer by passion.
-          Transforming raw data into actionable intelligence, and transforming
-          ordinary moments into extraordinary visuals in my free time.
+        <p class="hero-subhead">
+          7+ years of experience across two strengths: software engineering for
+          technical products and data engineering for operational data primarily
+          in Python and Cloud.
         </p>
-        <a href="#experience" class="cta-button">Explore My Work</a>
+        <ul
+          class="proof-strip"
+          id="proof-strip"
+          aria-label="Technical proof points"
+        >
+          <!-- Proof items will be dynamically generated here -->
+        </ul>
+        <div class="hero-cta">
+          <a
+            href="https://calendly.com/vibhavari-bellutagi/discovery-call"
+            class="cta-button"
+            >Book a 30-min consult</a
+          >
+          <a href="#experience" class="cta-secondary"
+            >Real Project Experiences</a
+          >
+          <a href="#blog" class="cta-secondary">Latest thoughts</a>
+        </div>
       </div>
     </section>
 
@@ -40,8 +58,19 @@
         <div class="section-number">01 / EXPERIENCE</div>
         <h2 class="section-title">Professional Journey</h2>
       </div>
-      <div class="experience-grid" id="experience-grid">
-        <!-- Experience items will be dynamically generated here -->
+      <div class="experience-stack">
+        <div class="experience-group">
+          <div class="experience-group-title">Work Experience</div>
+          <div class="experience-grid blog-grid" id="work-grid">
+            <!-- Work cards will be dynamically generated here -->
+          </div>
+        </div>
+        <div class="experience-group">
+          <div class="experience-group-title">Freelance Projects</div>
+          <div class="experience-grid blog-grid" id="freelance-grid">
+            <!-- Freelance cards will be dynamically generated here -->
+          </div>
+        </div>
       </div>
     </section>
 
@@ -67,6 +96,58 @@
       </div>
       <div class="gallery-grid" id="gallery-grid">
         <!-- Gallery items will be dynamically generated here -->
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="knowme">
+      <div class="section-header">
+        <div class="section-number">04 / ABOUT</div>
+        <h2 class="section-title">About Me</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-body">
+          <p>
+            I help teams ship reliable data products by combining software
+            engineering rigor with data platform expertise. My work spans Python
+            and cloud systems, production data pipelines, and modern cloud
+            stacks.
+          </p>
+          <p>
+            I partner with startups and data teams to build robust foundations,
+            from data modeling and orchestration to testing, observability, and
+            performance tuning.
+          </p>
+          <div class="about-highlights">
+            <h3>What I focus on</h3>
+            <ul>
+              <li>Data platform architecture and reliability</li>
+              <li>Operational data pipelines and lakehouse workflows</li>
+              <li>Performance tuning for cost and speed</li>
+              <li>Python + Cloud ecosystems and tooling</li>
+            </ul>
+          </div>
+        </div>
+        <div class="about-side">
+          <div class="about-contact">
+            <h3>Contact</h3>
+            <p>
+              Have a data platform project in mind? Share a quick brief and I
+              will respond within 1-2 business days.
+            </p>
+            <a
+              href="mailto:vibhavari.bellutagi@gmail.com?subject=Project%20inquiry"
+              class="cta-secondary"
+              >Email me</a
+            >
+            <div class="about-contact-links">
+              <a href="https://www.linkedin.com/in/vibhavari-bellutagi/"
+                >LinkedIn</a
+              >
+              <a href="https://github.com/vibhabellutagi19">GitHub</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -111,7 +192,7 @@
       // Function to observe elements for fade-in animations
       function observeElements() {
         document
-          .querySelectorAll('.experience-item, .blog-card, .gallery-item')
+          .querySelectorAll('.experience-card, .blog-card, .gallery-item')
           .forEach((el) => {
             observer.observe(el);
           });
@@ -120,6 +201,7 @@
       // Initialize page when DOM is ready
       document.addEventListener('DOMContentLoaded', async function () {
         // Render all items
+        renderProofStrip();
         renderExperienceItems();
         await renderBlogItems(3); // Show only 3 latest posts on homepage
         renderPhotographyItems();
