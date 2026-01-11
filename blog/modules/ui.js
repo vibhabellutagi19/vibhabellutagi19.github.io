@@ -28,10 +28,13 @@ export function generateShareLinks(title) {
   if (!container) return;
 
   const url = encodeURIComponent(window.location.href);
-  const text = encodeURIComponent(title);
+  const shareText = encodeURIComponent(`Check out this blog by Vibhavari Bellutagi on "${title}"`);
 
-  const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
-  const twitterUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+  // Twitter uses 'text' parameter for the body
+  const twitterUrl = `https://twitter.com/intent/tweet?url=${url}&text=${shareText}`;
+  
+  // LinkedIn feed share with pre-filled text
+  const linkedinUrl = `https://www.linkedin.com/feed/?shareActive=true&text=${shareText}%20${url}`;
 
   container.innerHTML = `
     <a href="${linkedinUrl}" target="_blank" rel="noopener noreferrer" class="share-link share-linkedin">
