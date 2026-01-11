@@ -16,6 +16,9 @@
       .section-title, .blog-title {
         font-family: 'Playfair Display', serif;
       }
+      .section-title {
+        color: var(--accent);
+      }
       .blog-meta {
         font-family: 'IBM Plex Mono', monospace;
       }
@@ -24,6 +27,11 @@
   <body>
     <!-- Navigation -->
     <nav>
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <a href="/" class="logo">VB</a>
       <ul class="nav-links">
         <li><a href="/#experience">Experience</a></li>
@@ -35,8 +43,7 @@
 
     <!-- Blog Section -->
     <section id="blog" style="padding-top: 10rem">
-      <div class="section-header">
-        <div class="section-number">ALL POSTS</div>
+      <div class="section-header" style="text-align: center; max-width: 900px; margin: 0 auto 4rem auto;">
         <h2 class="section-title">Blog Archive</h2>
       </div>
       <div class="blog-grid" id="blog-grid">
@@ -83,6 +90,17 @@
       function observeElements() {
         document.querySelectorAll('.blog-card').forEach((el) => {
           observer.observe(el);
+        });
+      }
+
+      // Mobile Menu Toggle
+      const mobileBtn = document.querySelector('.mobile-menu-btn');
+      const navLinks = document.querySelector('.nav-links');
+
+      if (mobileBtn && navLinks) {
+        mobileBtn.addEventListener('click', () => {
+          mobileBtn.classList.toggle('open');
+          navLinks.classList.toggle('open');
         });
       }
 
