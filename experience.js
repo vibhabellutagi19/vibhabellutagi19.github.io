@@ -93,7 +93,7 @@ function renderExperienceItems() {
   const renderCard = (exp, index) => {
     const skillsString = exp.skills ? exp.skills.join(', ') : '';
     return `
-            <div class="experience-card blog-card" data-skills="${skillsString}" data-index="${index}">
+            <div class="experience-card" data-skills="${skillsString}" data-index="${index}">
                 <div class="experience-header">
                     <h3 class="experience-title">${exp.title}</h3>
                     <span class="experience-date">${exp.date}</span>

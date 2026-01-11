@@ -108,25 +108,44 @@ async function renderBlogItems(limit = null) {
     const pathname = window.location.pathname;
     const isBlogPage = pathname.includes('/blog/') || pathname.endsWith('/blog');
     
-    blogGrid.innerHTML = postsToShow.map(blog => {
-        // Adjust link path based on current page location
-        const adjustedLink = isBlogPage ? blog.link : blog.link;
+    // Check if we are on the homepage (not blog page)
+    const isHomepage = !isBlogPage;
+
+    if (isHomepage) {
+        blogGrid.classList.add('blog-list-view');
+        blogGrid.classList.remove('blog-grid');
         
-        return `
-        <article class="blog-card">
-            <div class="blog-meta">
-                <span>${blog.date}</span>
-                <span>${blog.readTime}</span>
-            </div>
-            <h3 class="blog-title">
-                <a href="${adjustedLink}">${blog.title}</a>
-            </h3>
-            <p class="blog-excerpt">${blog.excerpt}</p>
-            <div class="blog-actions">
-                <a href="${adjustedLink}" class="read-more">Read More →</a>
-            </div>
-        </article>
-        `;
-    }).join('');
+        blogGrid.innerHTML = postsToShow.map(blog => {
+            const adjustedLink = blog.link;
+            return `
+            <a href="${adjustedLink}" class="blog-list-item">
+                <span class="blog-list-date">${blog.date}</span>
+                <span class="blog-list-title">${blog.title}</span>
+                <span class="blog-list-arrow">→</span>
+            </a>
+            `;
+        }).join('');
+    } else {
+        // Keep grid view for blog index page
+        blogGrid.innerHTML = postsToShow.map(blog => {
+            const adjustedLink = blog.link;
+            
+            return `
+            <article class="blog-card">
+                <div class="blog-meta">
+                    <span>${blog.date}</span>
+                    <span>${blog.readTime}</span>
+                </div>
+                <h3 class="blog-title">
+                    <a href="${adjustedLink}">${blog.title}</a>
+                </h3>
+                <p class="blog-excerpt">${blog.excerpt}</p>
+                <div class="blog-actions">
+                    <a href="${adjustedLink}" class="read-more">Read More →</a>
+                </div>
+            </article>
+            `;
+        }).join('');
+    }
 }
 
