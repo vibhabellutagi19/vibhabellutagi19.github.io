@@ -23,6 +23,11 @@
     </div>
 
     <nav>
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <a href="/" class="logo">VB</a>
       <ul class="nav-links">
         <li><a href="/#experience">Experience</a></li>
@@ -102,6 +107,17 @@
         const scrolled = (scrollTop / (scrollHeight - clientHeight)) * 100;
         document.getElementById('progress-bar').style.width = scrolled + '%';
       });
+
+      // Mobile Menu Toggle
+      const mobileBtn = document.querySelector('.mobile-menu-btn');
+      const navLinks = document.querySelector('.nav-links');
+
+      if (mobileBtn && navLinks) {
+        mobileBtn.addEventListener('click', () => {
+          mobileBtn.classList.toggle('open');
+          navLinks.classList.toggle('open');
+        });
+      }
     </script>
   </body>
 </html>

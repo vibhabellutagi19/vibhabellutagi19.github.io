@@ -408,6 +408,12 @@ article {
   overflow-y: auto;
   padding-left: 1rem;
   border-left: 1px solid var(--border-color);
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+#post-toc::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 .post-toc-list {
@@ -528,16 +534,6 @@ article {
   margin-bottom: 2rem;
 }
 
-.comments-section {
-  margin-top: 2rem;
-}
-
-.comments-title {
-  font-family: var(--font-serif);
-  font-size: 1.8rem;
-  margin-bottom: 2rem;
-}
-
 /* --- Copy Button --- */
 .copy-code-button {
   position: absolute;
@@ -598,16 +594,11 @@ article {
     display: inline;
   }
 
-  .back-link {
-    position: static;
-  }
-
-  #post-sidebar-left {
-    display: none;
-  }
-
-  .article-title {
-    font-size: 2.2rem;
+    .back-link {
+      position: static;
+    }
+  
+    .article-title {    font-size: 2.2rem;
   }
 
   nav {

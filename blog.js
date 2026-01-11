@@ -112,8 +112,10 @@ async function renderBlogItems(limit = null) {
     const isHomepage = !isBlogPage;
 
     if (isHomepage) {
+        // Homepage: Simple List View
         blogGrid.classList.add('blog-list-view');
         blogGrid.classList.remove('blog-grid');
+        blogGrid.classList.remove('blog-timeline-view');
         
         blogGrid.innerHTML = postsToShow.map(blog => {
             const adjustedLink = blog.link;
@@ -126,24 +128,42 @@ async function renderBlogItems(limit = null) {
             `;
         }).join('');
     } else {
-        // Keep grid view for blog index page
-        blogGrid.innerHTML = postsToShow.map(blog => {
-            const adjustedLink = blog.link;
-            
+        // Blog Archive: Chronological Timeline View
+        blogGrid.classList.remove('blog-grid');
+        blogGrid.classList.remove('blog-list-view');
+        blogGrid.classList.add('blog-timeline-view');
+
+        // Group posts by year
+        const postsByYear = postsToShow.reduce((acc, post) => {
+            const year = new Date(post.date).getFullYear();
+            if (!acc[year]) acc[year] = [];
+            acc[year].push(post);
+            return acc;
+        }, {});
+
+        // Sort years descending
+        const sortedYears = Object.keys(postsByYear).sort((a, b) => b - a);
+
+        blogGrid.innerHTML = sortedYears.map(year => {
             return `
-            <article class="blog-card">
-                <div class="blog-meta">
-                    <span>${blog.date}</span>
-                    <span>${blog.readTime}</span>
+            <div class="timeline-year-group">
+                <div class="timeline-year">${year}</div>
+                <div class="timeline-posts">
+                    ${postsByYear[year].map(blog => {
+                        const adjustedLink = blog.link;
+                        // Format date as "Month Day" (e.g. "Jan 01")
+                        const dateObj = new Date(blog.date);
+                        const dateStr = dateObj.toLocaleDateString('en-US', { month: 'short', day: '2-digit' });
+                        
+                        return `
+                        <a href="${adjustedLink}" class="timeline-post-item">
+                            <span class="timeline-date">${dateStr}</span>
+                            <span class="timeline-title">${blog.title}</span>
+                        </a>
+                        `;
+                    }).join('')}
                 </div>
-                <h3 class="blog-title">
-                    <a href="${adjustedLink}">${blog.title}</a>
-                </h3>
-                <p class="blog-excerpt">${blog.excerpt}</p>
-                <div class="blog-actions">
-                    <a href="${adjustedLink}" class="read-more">Read More →</a>
-                </div>
-            </article>
+            </div>
             `;
         }).join('');
     }
