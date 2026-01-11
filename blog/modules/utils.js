@@ -1,7 +1,6 @@
-// Shared utility functions for blog functionality
+// Shared utility functions
 
-// Parse frontmatter from markdown content
-function parseFrontmatter(content) {
+export function parseFrontmatter(content) {
     const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/;
     const match = content.match(frontmatterRegex);
     
@@ -33,15 +32,13 @@ function parseFrontmatter(content) {
     return { metadata, content: markdown };
 }
 
-// Calculate reading time from markdown content
-// Uses average reading speed of 200 words per minute
-function calculateReadTime(content) {
+export function calculateReadTime(content) {
     if (!content) return "1 min read";
     
     // Remove markdown syntax for more accurate word count
     let text = content.replace(/```[\s\S]*?```/g, '')
         .replace(/`[^`]+`/g, '')
-        .replace(/\ \[([^\]]+)\]\([^)]+\)/g, '$1')
+        .replace(/\([^)]+\)/g, '$1')
         .replace(/!\[([^\]]*)\]\([^)]+\)/g, '')
         .replace(/#+\s+/g, '')
         .replace(/<[^>]+>/g, '')
@@ -54,4 +51,14 @@ function calculateReadTime(content) {
     const minutes = Math.ceil(wordCount / readingSpeed);
     
     return minutes < 1 ? "1 min read" : `${minutes} min read`;
+}
+
+export function slugify(text) {
+  return text
+    .toString()
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-') // Replace spaces with -
+    .replace(/[^a-z0-9-]/g, '') // Remove all non-word chars
+    .replace(/--+/g, '-'); // Replace multiple - with single -
 }
