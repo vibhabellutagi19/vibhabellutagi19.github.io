@@ -263,44 +263,58 @@ function renderMarkdown(content, metadata, folderName) {
 
   // Generate table of contents for this article
   generateTOC();
-  // Generate left sidebar links to other posts
-  generateSidebarLinks();
+  // Generate Next/Prev navigation
+  generatePostNavigation();
+  // Generate Share Links
+  generateShareLinks(metadata.title);
 
   // Add copy buttons to code blocks
   addCopyButtonsToCodeBlocks();
 
   // Add click handlers for images
   addImageLightbox();
-
-  // Initialize Giscus after content is loaded
-  initializeGiscus(metadata.slug);
 }
 
-// Generate left sidebar with links to other posts
-async function generateSidebarLinks() {
-  // Remove existing sidebar if present
-  const existing = document.getElementById('post-sidebar-left');
-  if (existing) existing.remove();
+// Generate share links (LinkedIn, Twitter)
+function generateShareLinks(title) {
+  const container = document.getElementById('share-links');
+  if (!container) return;
+
+  const url = encodeURIComponent(window.location.href);
+  const text = encodeURIComponent(title);
+
+  const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+  const twitterUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+
+  container.innerHTML = `
+    <a href="${linkedinUrl}" target="_blank" rel="noopener noreferrer" class="share-link share-linkedin">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
+      </svg>
+      Share on LinkedIn
+    </a>
+    <a href="${twitterUrl}" target="_blank" rel="noopener noreferrer" class="share-link share-twitter">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05a4.28 4.28 0 00-7.29 3.9 12.14 12.14 0 01-8.81-4.46 4.29 4.29 0 001.33 5.73 4.27 4.27 0 01-1.94-.53v.05c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 01-1.93.07 4.28 4.28 0 004 2.98 8.57 8.57 0 01-5.3 1.83c-.34 0-.68-.02-1.02-.06a12.14 12.14 0 006.57 1.93c7.88 0 12.2-6.53 12.2-12.2 0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"></path>
+      </svg>
+      Share on Twitter
+    </a>
+  `;
+}
+
+// Generate Next/Prev post navigation
+async function generatePostNavigation() {
+  const container = document.getElementById('post-navigation');
+  if (!container) return;
+
   // Load post folders
   const folders = await loadPostFolders();
   if (!folders || !folders.length) return;
 
-  const sidebar = document.createElement('aside');
-  sidebar.id = 'post-sidebar-left';
-  sidebar.setAttribute('aria-label', 'Other posts');
-
-  const ul = document.createElement('ul');
-  ul.className = 'post-sidebar-list';
-
-  // Heading for sidebar
-  const heading = document.createElement('div');
-  heading.className = 'post-sidebar-heading';
-  heading.textContent = 'Recent posts';
-
   const currentSlug = getPostSlug();
-
-  // Collect metadata for each folder
   const collected = [];
+
+  // Collect metadata for all posts
   for (const folder of folders) {
     try {
       const resp = await fetch(`posts/${folder}/index.md`);
@@ -315,46 +329,42 @@ async function generateSidebarLinks() {
     }
   }
 
-  // Sort by date (newest first) and exclude current post
-  const recent = collected
-    .filter((p) => p.slug !== currentSlug)
-    .sort((a, b) => b.date - a.date)
-    .slice(0, 3);
+  // Sort by date (newest first)
+  collected.sort((a, b) => b.date - a.date);
 
-  // Build list
-  recent.forEach((p) => {
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    a.href = `post.html?post=${p.slug}`;
-    a.className = 'post-sidebar-link';
+  // Find current post index
+  const currentIndex = collected.findIndex((p) => p.slug === currentSlug);
+  if (currentIndex === -1) return;
 
-    // Title span
-    const titleSpan = document.createElement('span');
-    titleSpan.className = 'sidebar-title';
-    titleSpan.textContent = p.title;
+  // Next post (newer) is at index - 1 (since list is sorted newest first)
+  const nextPost = currentIndex > 0 ? collected[currentIndex - 1] : null;
+  // Prev post (older) is at index + 1
+  const prevPost =
+    currentIndex < collected.length - 1 ? collected[currentIndex + 1] : null;
 
-    // Optional meta (date)
-    const metaSpan = document.createElement('span');
-    metaSpan.className = 'sidebar-meta';
-    metaSpan.textContent =
-      p.date && !isNaN(p.date)
-        ? p.date.toLocaleDateString(undefined, {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric',
-          })
-        : '';
+  let html = '';
 
-    a.appendChild(titleSpan);
-    if (metaSpan.textContent) a.appendChild(metaSpan);
+  if (prevPost) {
+    html += `
+      <a href="post.html?post=${prevPost.slug}" class="nav-prev">
+        <span class="nav-label">← Previous</span>
+        <span class="nav-title">${prevPost.title}</span>
+      </a>
+    `;
+  } else {
+    html += `<div></div>`; // Spacer
+  }
 
-    li.appendChild(a);
-    ul.appendChild(li);
-  });
+  if (nextPost) {
+    html += `
+      <a href="post.html?post=${nextPost.slug}" class="nav-next">
+        <span class="nav-label">Next →</span>
+        <span class="nav-title">${nextPost.title}</span>
+      </a>
+    `;
+  }
 
-  sidebar.appendChild(heading);
-  sidebar.appendChild(ul);
-  document.body.appendChild(sidebar);
+  container.innerHTML = html;
 }
 
 // Add lightbox functionality to images
@@ -375,9 +385,11 @@ function addImageLightbox() {
 
 // Generate a Table of Contents from article headings and render a right-side TOC
 function generateTOC() {
-  // Remove existing TOC if present
-  const existing = document.getElementById('post-toc');
-  if (existing) existing.remove();
+  const tocContainer = document.getElementById('post-toc');
+  if (!tocContainer) return;
+
+  // Clear existing content
+  tocContainer.innerHTML = '';
 
   const content = document.querySelector('.article-content');
   if (!content) return;
@@ -386,10 +398,11 @@ function generateTOC() {
   const headings = content.querySelectorAll('h2, h3');
   if (!headings.length) return;
 
-  // Create TOC container
-  const toc = document.createElement('nav');
-  toc.id = 'post-toc';
-  toc.setAttribute('aria-label', 'Table of contents');
+  // Header for TOC
+  const tocHeader = document.createElement('div');
+  tocHeader.className = 'post-sidebar-heading'; // Reusing style
+  tocHeader.textContent = 'Table of Contents';
+  tocContainer.appendChild(tocHeader);
 
   const list = document.createElement('ul');
   list.className = 'post-toc-list';
@@ -419,17 +432,15 @@ function generateTOC() {
     list.appendChild(li);
   });
 
-  toc.appendChild(list);
-  // Append TOC to body (fixed positioning)
-  document.body.appendChild(toc);
+  tocContainer.appendChild(list);
 
   // Observe headings to highlight active TOC entry
-  const tocLinks = toc.querySelectorAll('a');
+  const tocLinks = tocContainer.querySelectorAll('a');
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         const id = entry.target.id;
-        const link = toc.querySelector(`a[href="#${id}"]`);
+        const link = tocContainer.querySelector(`a[href="#${id}"]`);
         if (link) {
           if (entry.isIntersecting) {
             tocLinks.forEach((l) => l.classList.remove('active'));
@@ -450,8 +461,8 @@ function slugify(text) {
     .toLowerCase()
     .trim()
     .replace(/\s+/g, '-') // Replace spaces with -
-    .replace(/[^ -\u7F\w-]/g, '') // Remove non-ascii
-    .replace(/--+/g, '-');
+    .replace(/[^\u0000-\u007F\w-]/g, '') // Remove non-ascii
+    .replace(/--+/g, '-') ;
 }
 
 // Lightbox functions are now in shared lightbox.js
@@ -508,86 +519,6 @@ function addCopyButtonsToCodeBlocks() {
       }
     });
   });
-}
-
-function initializeGiscus(slug) {
-  const giscusConfig = {
-    repo: 'vibhabellutagi19/vibhabellutagi19.github.io',
-    repoId: 'R_kgDONGJxLg',
-    category: 'General',
-    categoryId: 'DIC_kwDONGJxLs4CzKKT',
-    mapping: 'pathname',
-    term: slug || window.location.pathname,
-    reactionsEnabled: '1',
-    emitMetadata: '0',
-    inputPosition: 'top',
-    theme: 'noborder_dark',
-    lang: 'en',
-    loading: 'lazy',
-  };
-
-  const reactionsContainer = document.querySelector(
-    '.giscus-reactions-container'
-  );
-  if (reactionsContainer) {
-    const reactionsScript = document.createElement('script');
-    reactionsScript.src = 'https://giscus.app/client.js';
-    reactionsScript.setAttribute('data-repo', giscusConfig.repo);
-    reactionsScript.setAttribute('data-repo-id', giscusConfig.repoId);
-    reactionsScript.setAttribute('data-category', giscusConfig.category);
-    reactionsScript.setAttribute('data-category-id', giscusConfig.categoryId);
-    reactionsScript.setAttribute('data-mapping', giscusConfig.mapping);
-    reactionsScript.setAttribute('data-term', giscusConfig.term);
-    reactionsScript.setAttribute('data-strict', '0');
-    reactionsScript.setAttribute('data-loading', giscusConfig.loading);
-    reactionsScript.setAttribute('data-reactions-enabled', '1');
-    reactionsScript.setAttribute(
-      'data-emit-metadata',
-      giscusConfig.emitMetadata
-    );
-    reactionsScript.setAttribute(
-      'data-input-position',
-      giscusConfig.inputPosition
-    );
-    reactionsScript.setAttribute('data-theme', giscusConfig.theme);
-    reactionsScript.setAttribute('data-lang', giscusConfig.lang);
-    reactionsScript.crossOrigin = 'anonymous';
-    reactionsScript.async = true;
-
-    reactionsContainer.appendChild(reactionsScript);
-  }
-
-  const commentsContainer = document.querySelector('.comments-section');
-  if (commentsContainer) {
-    const commentsScript = document.createElement('script');
-    commentsScript.src = 'https://giscus.app/client.js';
-    commentsScript.setAttribute('data-repo', giscusConfig.repo);
-    commentsScript.setAttribute('data-repo-id', giscusConfig.repoId);
-    commentsScript.setAttribute('data-category', giscusConfig.category);
-    commentsScript.setAttribute('data-category-id', giscusConfig.categoryId);
-    commentsScript.setAttribute('data-mapping', giscusConfig.mapping);
-    commentsScript.setAttribute('data-term', giscusConfig.term);
-    commentsScript.setAttribute('data-strict', '0');
-    commentsScript.setAttribute(
-      'data-reactions-enabled',
-      giscusConfig.reactionsEnabled
-    );
-    commentsScript.setAttribute(
-      'data-emit-metadata',
-      giscusConfig.emitMetadata
-    );
-    commentsScript.setAttribute(
-      'data-input-position',
-      giscusConfig.inputPosition
-    );
-    commentsScript.setAttribute('data-theme', giscusConfig.theme);
-    commentsScript.setAttribute('data-lang', giscusConfig.lang);
-    commentsScript.setAttribute('data-loading', 'lazy');
-    commentsScript.crossOrigin = 'anonymous';
-    commentsScript.async = true;
-
-    commentsContainer.appendChild(commentsScript);
-  }
 }
 
 // Load post when page is ready

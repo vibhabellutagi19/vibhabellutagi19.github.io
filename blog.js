@@ -123,10 +123,6 @@ async function renderBlogItems(limit = null) {
             </h3>
             <p class="blog-excerpt">${blog.excerpt}</p>
             <div class="blog-actions">
-                <div class="giscus-reactions">
-                    <!-- Giscus reactions will load here -->
-                    <span style="color: var(--muted); font-size: 0.8rem;">💬 Read & React →</span>
-                </div>
                 <a href="${adjustedLink}" class="read-more">Read More →</a>
             </div>
         </article>
