@@ -14,9 +14,7 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: sans-serif;
   background: var(--noir);
   color: var(--ivory);
   font-size: 1rem;
@@ -29,9 +27,7 @@ nav {
 }
 
 .logo {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: sans-serif;
   font-size: 1.5rem;
   font-weight: 900;
   color: var(--accent);
@@ -43,7 +39,7 @@ nav {
 }
 
 article {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 8rem 2rem 4rem 2rem;
 }
@@ -58,9 +54,7 @@ article {
 }
 
 .article-title {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: sans-serif;
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 900;
   line-height: 1.1;
@@ -71,7 +65,6 @@ article {
 .article-excerpt {
   font-size: 1.2rem;
   color: var(--muted);
-  margin-bottom: 3rem;
   padding-bottom: 3rem;
   border-bottom: 1px solid var(--border);
 }
@@ -82,19 +75,15 @@ article {
 }
 
 .article-content h2 {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
-  margin: 3rem 0 1.5rem;
+  margin: 1.0rem 0 1.5rem;
   color: var(--ivory);
 }
 
 .article-content h3 {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   margin: 2.5rem 0 1rem;
@@ -118,6 +107,152 @@ article {
   color: var(--accent);
   text-decoration-color: var(--accent);
   opacity: 0.8;
+}
+
+#post-toc {
+  position: fixed;
+  top: 200px;
+  left: auto;
+  right: 3rem;
+  width: 350px;
+  max-height: calc(100vh - 180px);
+  overflow: auto;
+  padding: 1rem 0.75rem;
+  background: rgba(10, 10, 10, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 6px;
+  backdrop-filter: blur(6px);
+  z-index: 60;
+}
+
+#post-toc .post-toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+#post-toc .post-toc-list li {
+  margin: 0.35rem 0;
+}
+
+#post-toc .post-toc-list li.toc-h3 {
+  margin-left: 0.75rem;
+  font-size: 0.9rem;
+}
+
+#post-toc a {
+  color: var(--ivory);
+  text-decoration: none;
+}
+
+#post-toc a.active,
+#post-toc a:hover {
+  color: var(--accent);
+}
+
+/* Hide TOC on small screens */
+@media (max-width: 980px) {
+  #post-toc {
+    display: none;
+  }
+}
+
+/* Left sidebar with links to other posts */
+#post-sidebar-left {
+  position: fixed;
+  top: 200px;
+  left: 3rem;
+  right: auto;
+  width: 240px;
+  max-height: calc(100vh - 220px);
+  overflow: auto;
+  padding: 1rem;
+  background: rgba(10, 10, 10, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 6px;
+  backdrop-filter: blur(6px);
+  z-index: 60;
+}
+
+#post-sidebar-left .post-sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+#post-sidebar-left .post-sidebar-list li {
+  margin: 0.4rem 0;
+}
+
+#post-sidebar-left a {
+  color: var(--ivory);
+  text-decoration: none;
+  display: block;
+  padding: 0.6rem 0.75rem;
+  border-radius: 6px;
+  background: transparent;
+  transition: background-color 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
+  border-left: 3px solid transparent;
+}
+
+#post-sidebar-left a .sidebar-title {
+  display: block;
+  font-weight: 600;
+  color: var(--ivory);
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+
+#post-sidebar-left a .sidebar-meta {
+  display: block;
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin-top: 0.18rem;
+}
+
+#post-sidebar-left a:hover {
+  background: rgba(255,255,255,0.02);
+  transform: translateX(2px);
+  border-left-color: var(--accent);
+}
+  /* Sidebar heading */
+  #post-sidebar-left .post-sidebar-heading {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--ivory);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Arrow markers on links */
+  #post-sidebar-left a {
+    position: relative;
+    padding-right: 1.2rem;
+  }
+
+  #post-sidebar-left a::after {
+    content: '→';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  #post-sidebar-left a:hover::after {
+    color: var(--accent);
+    transform: translateY(-50%) translateX(3px);
+  }
+}
+
+@media (max-width: 980px) {
+  #post-sidebar-left {
+    display: none;
+  }
 }
 
 .article-content ul,

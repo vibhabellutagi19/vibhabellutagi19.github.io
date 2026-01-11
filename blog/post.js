@@ -261,6 +261,11 @@ function renderMarkdown(content, metadata, folderName) {
 
   document.getElementById('article-content').innerHTML = html;
 
+  // Generate table of contents for this article
+  generateTOC();
+  // Generate left sidebar links to other posts
+  generateSidebarLinks();
+
   // Add copy buttons to code blocks
   addCopyButtonsToCodeBlocks();
 
@@ -269,6 +274,87 @@ function renderMarkdown(content, metadata, folderName) {
 
   // Initialize Giscus after content is loaded
   initializeGiscus(metadata.slug);
+}
+
+// Generate left sidebar with links to other posts
+async function generateSidebarLinks() {
+  // Remove existing sidebar if present
+  const existing = document.getElementById('post-sidebar-left');
+  if (existing) existing.remove();
+  // Load post folders
+  const folders = await loadPostFolders();
+  if (!folders || !folders.length) return;
+
+  const sidebar = document.createElement('aside');
+  sidebar.id = 'post-sidebar-left';
+  sidebar.setAttribute('aria-label', 'Other posts');
+
+  const ul = document.createElement('ul');
+  ul.className = 'post-sidebar-list';
+
+  // Heading for sidebar
+  const heading = document.createElement('div');
+  heading.className = 'post-sidebar-heading';
+  heading.textContent = 'Recent posts';
+
+  const currentSlug = getPostSlug();
+
+  // Collect metadata for each folder
+  const collected = [];
+  for (const folder of folders) {
+    try {
+      const resp = await fetch(`posts/${folder}/index.md`);
+      if (!resp.ok) continue;
+      const md = await resp.text();
+      const { metadata } = parseFrontmatter(md);
+      const slug = metadata.slug || folder.split('-').slice(3).join('-');
+      const date = metadata.date ? new Date(metadata.date) : new Date(0);
+      collected.push({ folder, title: metadata.title || slug, slug, date });
+    } catch (err) {
+      continue;
+    }
+  }
+
+  // Sort by date (newest first) and exclude current post
+  const recent = collected
+    .filter((p) => p.slug !== currentSlug)
+    .sort((a, b) => b.date - a.date)
+    .slice(0, 3);
+
+  // Build list
+  recent.forEach((p) => {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = `post.html?post=${p.slug}`;
+    a.className = 'post-sidebar-link';
+
+    // Title span
+    const titleSpan = document.createElement('span');
+    titleSpan.className = 'sidebar-title';
+    titleSpan.textContent = p.title;
+
+    // Optional meta (date)
+    const metaSpan = document.createElement('span');
+    metaSpan.className = 'sidebar-meta';
+    metaSpan.textContent =
+      p.date && !isNaN(p.date)
+        ? p.date.toLocaleDateString(undefined, {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+          })
+        : '';
+
+    a.appendChild(titleSpan);
+    if (metaSpan.textContent) a.appendChild(metaSpan);
+
+    li.appendChild(a);
+    ul.appendChild(li);
+  });
+
+  sidebar.appendChild(heading);
+  sidebar.appendChild(ul);
+  document.body.appendChild(sidebar);
 }
 
 // Add lightbox functionality to images
@@ -285,6 +371,87 @@ function addImageLightbox() {
       }
     });
   });
+}
+
+// Generate a Table of Contents from article headings and render a right-side TOC
+function generateTOC() {
+  // Remove existing TOC if present
+  const existing = document.getElementById('post-toc');
+  if (existing) existing.remove();
+
+  const content = document.querySelector('.article-content');
+  if (!content) return;
+
+  // Collect headings (h2 and h3)
+  const headings = content.querySelectorAll('h2, h3');
+  if (!headings.length) return;
+
+  // Create TOC container
+  const toc = document.createElement('nav');
+  toc.id = 'post-toc';
+  toc.setAttribute('aria-label', 'Table of contents');
+
+  const list = document.createElement('ul');
+  list.className = 'post-toc-list';
+
+  headings.forEach((h) => {
+    // Ensure each heading has an id
+    if (!h.id) {
+      h.id = slugify(h.textContent);
+    }
+
+    const li = document.createElement('li');
+    li.className = h.tagName.toLowerCase() === 'h2' ? 'toc-h2' : 'toc-h3';
+
+    const a = document.createElement('a');
+    a.href = `#${h.id}`;
+    a.textContent = h.textContent;
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      document
+        .getElementById(h.id)
+        .scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // update hash without jumping
+      history.replaceState(null, '', `#${h.id}`);
+    });
+
+    li.appendChild(a);
+    list.appendChild(li);
+  });
+
+  toc.appendChild(list);
+  // Append TOC to body (fixed positioning)
+  document.body.appendChild(toc);
+
+  // Observe headings to highlight active TOC entry
+  const tocLinks = toc.querySelectorAll('a');
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const id = entry.target.id;
+        const link = toc.querySelector(`a[href="#${id}"]`);
+        if (link) {
+          if (entry.isIntersecting) {
+            tocLinks.forEach((l) => l.classList.remove('active'));
+            link.classList.add('active');
+          }
+        }
+      });
+    },
+    { root: null, rootMargin: '0px 0px -60% 0px', threshold: 0 }
+  );
+
+  headings.forEach((h) => observer.observe(h));
+}
+
+function slugify(text) {
+  return text
+    .toString()
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-') // Replace spaces with -
+    .replace(/[^ -\u7F\w-]/g, '') // Remove non-ascii
+    .replace(/--+/g, '-');
 }
 
 // Lightbox functions are now in shared lightbox.js
