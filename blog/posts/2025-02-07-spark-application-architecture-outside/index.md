@@ -1,21 +1,20 @@
 ---
-title: "The Life Cycle of a Spark Application ( Outside )"
-date: "Feb 7, 2025"
-readTime: "6 min read"
-excerpt: "In this blog, we will go in-depth on the overall life cycle of Spark Applications from outside the actual Spark code. Understanding the lifecycle helps in optimizing and debugging Spark applications."
-slug: "spark-application-lifecycle-outside"
+title: 'The Life Cycle of a Spark Application ( Outside )'
+date: 'Feb 7, 2025'
+slug: 'spark-application-lifecycle-outside'
 ---
+
 In this blog, we will go in-depth on the overall life cycle of Spark Applications from outside the actual Spark code. Before going ahead, I recommend reading the [Execution Modes](/blog/spark-execution-modes) of the Spark application.
+
 <!-- truncate -->
 
 ## Client Request
 
-- The first step is the client request. This is the request that is made by the user to the Spark Application. 
-- This request can be made in a variety of ways: Compiled Jars or a library. The most common way is through the `Spark Submit` command Using compiled Jars. 
+- The first step is the client request. This is the request that is made by the user to the Spark Application.
+- This request can be made in a variety of ways: Compiled Jars or a library. The most common way is through the `Spark Submit` command Using compiled Jars.
 - At this point, the client is executing code on the local machine and is going to make a request to the cluster manager driver node.
 
 ![Requesting Resources](assets/requesting_resources.gif)
-
 
 ```
 ./bin/spark-submit \
@@ -29,6 +28,7 @@ In this blog, we will go in-depth on the overall life cycle of Spark Application
 ```
 
 The Spark Submit command takes number of arguments, for example:
+
 - the main class of the Application
 - the master URL ( local, yarn, Mesos etc )
 - the deploy mode (local, cluster, client)
@@ -45,12 +45,11 @@ The Spark Submit command takes number of arguments, for example:
 
 ![Launch Application](assets/launch.gif)
 
-
 ## Execution
 
 - Spark Context is created now, spark goes about executing the code.
 - The driver process and executors communicate with each other, executing code and moving data between each other.
-- The driver schedules tasks onto each worker, and each worker responds with the status of those tasks and success or failure. 
+- The driver schedules tasks onto each worker, and each worker responds with the status of those tasks and success or failure.
 
 ![Execution](assets/execution.gif)
 

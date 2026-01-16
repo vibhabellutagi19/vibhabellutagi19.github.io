@@ -1,9 +1,8 @@
 ---
-title: "Automating Unit Tests and Deploying AWS Glue & Lambda Python Jobs with CI/CD"
-date: "Mar 21, 2025"
-readTime: "10 min read"
-excerpt: "In this blog, we'll explore how to set up a complete CI/CD pipeline using Jenkins, pytest, and Terraform to automate unit testing and deployment for AWS Glue and Lambda jobs."
-slug: "automate-unit-tests-using-ci-cd"
+title: 'Automating Unit Tests and Deploying AWS Glue & Lambda Python Jobs with CI/CD'
+date: 'Mar 21, 2025'
+readTime: '10 min read'
+slug: 'automate-unit-tests-using-ci-cd'
 ---
 
 In this blog, we’ll explore how to set up a complete CI/CD pipeline using `Jenkins`, `pytest`, and `Terraform` to automate unit testing and deployment for AWS Glue and Lambda jobs. You’ll also learn how to manage Python dependencies using `uv` and `pyproject.toml`, use `JFrog Artifactory` to store and retrieve build artifacts, and enforce code quality with `Ruff`.
@@ -13,6 +12,7 @@ In this blog, we’ll explore how to set up a complete CI/CD pipeline using `Jen
 Automating the execution of unit tests within a DevOps pipeline is indispensable for ensuring the integrity, resilience, and maintainability of distributed data systems. As a data engineer, I’ve worked on setting up Jenkins pipelines that streamline the development lifecycle. These pipelines have brought noticeable improvements in code quality, deployment consistency, and developer confidence.
 
 This comprehensive guide presents a production-ready approach to:
+
 - Automating unit testing for AWS Glue and Lambda Python applications using `pytest`
 - Enforcing code quality with `ruff` (replacing flake8, black, and isort)
 - Managing dependencies efficiently with `uv` and `pyproject.toml`
@@ -31,9 +31,9 @@ Triggered on each commit or pull request, the CI pipeline performs the following
 1. **Initialize Environment**: Initialize Environment: Use `uv` to set up and sync dependencies from pyproject.toml.
 2. **Install Dependencies**: Install project requirements from `pyproject.toml`.
 3. **Code Quality Check**:
-    1. **Formatting**: Use `uv run ruff format --check` to auto-format your code consistently.
-    2. **Linting**: Use `uv run ruff check .` to detect syntax issues, unused imports, and common code errors.
-    3. **Import Sorting**: Use `uv run ruff check --select I` to enforce import order rules.
+   1. **Formatting**: Use `uv run ruff format --check` to auto-format your code consistently.
+   2. **Linting**: Use `uv run ruff check .` to detect syntax issues, unused imports, and common code errors.
+   3. **Import Sorting**: Use `uv run ruff check --select I` to enforce import order rules.
 4. **Unit Testing**: Execute `uv run pytest` and produce JUnit reports.
 5. **Artifact Packaging**: Zip the tested code and upload it to JFrog Artifactory.
 
@@ -78,6 +78,7 @@ data-pipeline/
 ```
 
 **Glue Example**
+
 ```python
 
 # transform.py
@@ -101,8 +102,8 @@ def test_clean_name():
     assert clean_name(input_data) == expected_output
 ```
 
-
 Run locally:
+
 ```bash
 uv run pytest tests/
 ```
@@ -150,6 +151,7 @@ exclude = [".venv", "build"]
 ## Step 3: Sample Jenkins CI Pipeline Configuration
 
 **CI Jenkinsfile using uv**
+
 ```groovy
 pipeline {
     agent any

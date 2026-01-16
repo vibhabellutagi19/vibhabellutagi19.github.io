@@ -1,7 +1,6 @@
 ---
 title: 'Why Version Control Exists - The Pendrive Problem'
 date: 'January 10, 2026'
-excerpt: 'In this blog, we explore why version control exists and how would it become the backbone of modern software development.'
 slug: 'why-version-control-exists'
 ---
 

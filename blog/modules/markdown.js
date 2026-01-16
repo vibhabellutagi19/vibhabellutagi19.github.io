@@ -7,6 +7,7 @@ function getContainerIcon(type) {
     warning: '⚠️',
     info: 'ℹ️',
     note: '📝',
+    danger: '🔥',
   };
   return icons[type.toLowerCase()] || '📌';
 }
@@ -17,6 +18,7 @@ function getContainerTitle(type) {
     warning: 'Warning',
     info: 'Info',
     note: 'Note',
+    danger: 'Danger',
   };
   return titles[type.toLowerCase()] || 'Note';
 }
@@ -42,7 +44,41 @@ export function renderMarkdown(content, metadata, folderName) {
       // Relative path - prepend the post folder path
       href = `posts/${folderName}/${href}`;
     }
-    return originalImage.call(this, href, title, text);
+
+    // Parse custom size from alt text (e.g., "Alt Text|width=500|height=300")
+    let width = '';
+    let height = '';
+    let cleanText = text || '';
+
+    if (text && text.includes('|')) {
+      const parts = text.split('|');
+      cleanText = parts[0].trim();
+      
+      for (let i = 1; i < parts.length; i++) {
+        const param = parts[i].trim();
+        if (param.startsWith('width=')) {
+          width = param.split('=')[1];
+        } else if (param.startsWith('height=')) {
+          height = param.split('=')[1];
+        } else if (param.startsWith('w=')) {
+          width = param.split('=')[1];
+        } else if (param.startsWith('h=')) {
+          height = param.split('=')[1];
+        }
+      }
+    }
+
+    let style = '';
+    if (width) style += `width: ${width}px; max-width: ${width}px;`;
+    if (height) style += `height: ${height}px;`;
+
+    // Call original but with modified text/style (we can't easily pass style to original, so we construct HTML)
+    // Actually simpler to construct the tag here
+    const titleAttr = title ? ` title="${title}"` : '';
+    const altAttr = cleanText ? ` alt="${cleanText}"` : '';
+    const styleAttr = style ? ` style="${style}"` : '';
+    
+    return `<img src="${href}"${altAttr}${titleAttr}${styleAttr}>`;
   };
 
   marked.setOptions({
