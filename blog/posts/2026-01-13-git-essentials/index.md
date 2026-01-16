@@ -1,7 +1,6 @@
 ---
 title: 'Git for Beginners: Essential Commands You Need to Know'
 date: 'January 13, 2026'
-excerpt: 'In this blog, we will see how well git handles version control and essential commands to start with'
 slug: 'git-essentials'
 ---
 

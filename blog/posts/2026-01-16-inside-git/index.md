@@ -1,11 +1,10 @@
 ---
 title: 'Inside Git: How It Works Under the Hood'
 date: 'January 16, 2026'
-excerpt: 'In this blog, we explore how Git works internally and the role of the .git folder in managing version control.'
 slug: 'inside-git'
 ---
 
-In the previous post, we learnt [how Git manages version control](post.html?post=git-essentials) through its internal structures. In this continuation, we will delve deeper into how git works internally and the specific components of the `.git` folder and their functions.
+In the previous post, we learnt [How Git manages version control](post.html?post=git-essentials) through its internal structures. In this continuation, we will delve deeper into how git works internally and the specific components of the `.git` folder and their functions.
 
 ## Git Object Model
 

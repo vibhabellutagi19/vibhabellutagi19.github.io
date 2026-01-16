@@ -33,7 +33,6 @@ async function loadPost() {
     // Update page metadata
     document.title = `${metadata.title} - Blog`;
     document.getElementById('article-title').textContent = metadata.title;
-    document.getElementById('article-excerpt').textContent = metadata.excerpt;
     document.getElementById('article-meta').innerHTML = `
             <span>${metadata.date}</span>
             <span>${readTime}</span>

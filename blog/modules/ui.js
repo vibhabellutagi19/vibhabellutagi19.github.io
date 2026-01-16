@@ -6,14 +6,15 @@ export function generateAuthorDetails() {
   if (!container) return;
 
   container.innerHTML = `
-    <div class="author-inline">
-      <div class="author-avatar-small">VB</div>
-      <span class="author-name">Vibhavari Bellutagi</span>
-      <span class="separator">•</span>
-      <div class="author-socials">
-        <a href="https://www.linkedin.com/in/vibhavari-bellutagi/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <span class="separator">/</span>
-        <a href="https://github.com/vibhabellutagi19" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <div class="author-card-wide">
+      <div class="author-avatar-medium">VB</div>
+      <div class="author-info-stack">
+        <span class="author-label">Written by</span>
+        <h3 class="author-name-large">Vibhavari Bellutagi</h3>
+        <div class="author-socials-row">
+          <a href="https://www.linkedin.com/in/vibhavari-bellutagi/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/vibhabellutagi19" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
       </div>
     </div>
   `;
