@@ -3,6 +3,10 @@
 
 # Build files
 /build
+/out
+.next
+coverage
+/public/posts
 
 # Generated files
 .docusaurus
