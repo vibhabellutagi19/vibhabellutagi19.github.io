@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://vibhabellutagi19.github.io/sitemap.xml

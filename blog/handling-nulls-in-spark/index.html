@@ -1,0 +1,401 @@
+<!DOCTYPE html><!--ikxivgWsDXdClqureGVtH--><html lang="en" class="__variable_b4c22e"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/37786be940ec402b-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/98e207f02528a563-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/d3ebbfd689654d3a-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/db96af6b531dc71f-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/a6830a9bcb3a01e3.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-2256c74a4ed68fb5.js"/><script src="/_next/static/chunks/4bd1b696-c023c6e3521b1417.js" async=""></script><script src="/_next/static/chunks/255-2aa030c9ba2867e3.js" async=""></script><script src="/_next/static/chunks/main-app-2dc88a844eacc61d.js" async=""></script><script src="/_next/static/chunks/619-ba102abea3e3d0e4.js" async=""></script><script src="/_next/static/chunks/app/layout-5e3c729616dc2aad.js" async=""></script><script src="/_next/static/chunks/app/blog/%5Bslug%5D/page-b92476ce0735868f.js" async=""></script><meta name="next-size-adjust" content=""/><title>handling-nulls-in-spark.md | vibhavari@portfolio</title><meta name="description" content="In SQL null is a special marker used to indicate that a data value does not exist in the database. A null should not be confused with a value of 0. Let&#x27;s deep dive into handling nulls in Spark."/><link rel="canonical" href="/blog/handling-nulls-in-spark/"/><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body><div hidden=""><!--$--><!--/$--></div><div id="boot" role="button" tabindex="0" aria-label="Skip boot sequence"><div></div><div class="skip">click or press any key to skip ▸</div></div><header class="tmux"><div class="session">[portfolio]</div><nav><a href="/#home"><span class="idx">0:</span>home</a><a href="/#experience"><span class="idx">1:</span>experience</a><a class="active" href="/blog/"><span class="idx">2<!-- -->:</span>blog</a><a href="/#contact"><span class="idx">3<!-- -->:</span>contact</a></nav><div class="spacer"></div><div class="right"><button type="button" class="tbtn">/ search</button><a class="contact-chip" href="mailto:vibhavari.bellutagi@gmail.com">✉ vibhavari.bellutagi@gmail.com</a><button type="button" class="tbtn">&gt;_ terminal</button><button type="button" class="tbtn">◑ theme</button><span>--:--</span></div></header><div class="workspace"><aside class="sidebar" aria-label="File explorer"><div class="treetitle">EXPLORER · ~/portfolio</div><label class="sidebar-search"><span class="glyph">/</span><input type="search" placeholder="Filter files…" aria-label="Filter explorer" spellCheck="false" value=""/></label><ul class="tree"><li><button type="button" class=""><span class="glyph">▸</span>home.md</button></li><li><button type="button" class=""><span class="glyph">▸</span>experience.git</button></li><li><button type="button" class="dir active"><span class="glyph">▾</span>blog/</button><ul class="tree sub"><li><a href="/blog/inside-git/"><span class="glyph">·</span>inside-git<!-- -->.md</a></li><li><a href="/blog/git-essentials/"><span class="glyph">·</span>git-essentials<!-- -->.md</a></li><li><a href="/blog/why-version-control-exists/"><span class="glyph">·</span>why-version-control-exists<!-- -->.md</a></li><li><a href="/blog/automate-unit-tests-using-ci-cd/"><span class="glyph">·</span>automate-unit-tests-using-ci-cd<!-- -->.md</a></li><li><a href="/blog/spark-application-lifecycle-outside/"><span class="glyph">·</span>spark-application-lifecycle-outside<!-- -->.md</a></li><li><a href="/blog/spark-execution-modes/"><span class="glyph">·</span>spark-execution-modes<!-- -->.md</a></li><li><a href="/blog/spark-job-anatomy/"><span class="glyph">·</span>spark-job-anatomy<!-- -->.md</a></li><li><a href="/blog/handling-nulls-in-spark/"><span class="glyph">·</span>handling-nulls-in-spark<!-- -->.md</a></li><li><a href="/blog/columns-and-expressions/"><span class="glyph">·</span>columns-and-expressions<!-- -->.md</a></li><li><a href="/blog/spark-basics/"><span class="glyph">·</span>spark-basics<!-- -->.md</a></li><li><a href="/blog/welcome-to-my-blog/"><span class="glyph">·</span>welcome-to-my-blog<!-- -->.md</a></li></ul></li><li><button type="button" class=""><span class="glyph">▸</span>.env</button></li></ul></aside><div class="buffer"><main class="blog-standalone"><div class="filehead"><span class="path">~/blog/<!-- -->handling-nulls-in-spark<!-- -->.md</span><span class="ft">8 min read</span></div><div class="frontmatter">--- title: <!-- -->Handling Nulls in Spark<!-- --> · date: <!-- -->Jan 13, 2025<!-- --> · slug: <!-- -->handling-nulls-in-spark<!-- --> ---</div><h1 style="font-size:17px;font-weight:600;margin:12px 0 8px">Handling Nulls in Spark</h1><div class="article-content"><p>In SQL <code>null</code> or <code>Null</code> is a special marker used to indicate that a data value does not exist in the database. A null should not be confused with a value of 0. A null indicates a lack of a value, which is not the same as a zero value.</p>
+<p>For example:<br>Consider the question &quot;How many books does Krishna own?&quot;<br>The answer may be <code>zero</code> (we know that he owns none) or <code>null</code> (we do not know how many he owns).</p>
+<p>Let&#39;s deep dive into handling nulls in Spark.</p>
+<!-- truncate -->
+
+<h2>Handling nulls in Spark</h2>
+<p>In Spark, a null value represents the absence of any value: it is not zero, an empty string, or false. Spark treats nulls in a way similar to SQL. When performing operations on null values, you need to be explicit about how to handle them, as any operation with a null value generally yields a null result (unless specifically handled).</p>
+<p>Key Points about Nulls in Spark:</p>
+<ol>
+<li><p><strong>Null propagation</strong>: If you do an arithmetic operation (e.g., <code>colA + colB</code>) and either <code>colA</code> or <code>colB</code> is null, the result is null unless there is a function to handle null explicitly (like coalesce).</p>
+</li>
+<li><p><strong>Comparison</strong>: Comparisons with null always yield false or unknown. For example, df.filter(<code>df(&quot;age&quot;) == null</code>) might not work as intended. Instead, you need to use methods like isNull or isNotNull.</p>
+</li>
+<li><p><strong>Equi-Null safe join</strong>: Spark SQL provides nullSafeEq or eqNullSafe (<code>&lt;=&gt;</code> in SQL) to compare two columns including nulls. This means if both sides are null, it returns true.</p>
+</li>
+</ol>
+<aside class="callout callout-note">
+      <p class="callout-title">Note</p>
+      <div class="callout-body"><p>In SQL, null is a marker, not a value.</p>
+</div>
+    </aside>
+
+<h3>Data Preparation</h3>
+<pre><code class="language-python">from pyspark.sql import SparkSession
+from pyspark.sql.functions import col, isnull, when, coalesce
+
+spark = SparkSession.builder \
+    .appName(&quot;NullHandlingExample&quot;) \
+    .getOrCreate()
+
+data = [
+    (6.1,   1071,  &quot;12-Jun-98&quot;,  None,  None,                &quot;The Land Girls&quot;),
+    (6.9,   207,   &quot;7-Aug-98&quot;,   None,  None,                &quot;First Love, Last Rites&quot;),
+    (6.8,   865,   &quot;28-Aug-98&quot;,  None,  None,                &quot;I Married a Strange Person&quot;),
+    (5.8,   3275,  &quot;1-Jul-86&quot;,  &quot;13&quot;,  None,                &quot;Pirates&quot;),
+    (3.4,   165,   &quot;9-Oct-98&quot;,   &quot;62&quot;,  &quot;Original Screenplay&quot;,&quot;Slam&quot;),
+    (None,  None,  &quot;15-Jan-99&quot;,  None,  None,                &quot;Mississippi Mermaid&quot;),
+    (7.7,   15133, &quot;4-Apr-99&quot;,   None,  None,                &quot;Following&quot;),
+    (3.8,   353,   &quot;9-Apr-99&quot;,   None,  &quot;Original Screenplay&quot;,&quot;Foolish&quot;),
+    (5.8,   3275,  &quot;1-Jul-86&quot;,   &quot;25&quot;,  None,                &quot;Pirates&quot;),
+    (7.0,   2906,  &quot;31-Dec-46&quot;,  &quot;86&quot;,  None,                &quot;Duel in the Sun&quot;)
+]
+
+columns = [&quot;IMDB_Rating&quot;, &quot;IMDB_Votes&quot;, &quot;Release_Date&quot;, &quot;Rotten_Tomatoes_Rating&quot;, &quot;Source&quot;, &quot;Title&quot;]
+df = spark.createDataFrame(data, columns)
+
+df.show()
+</code></pre>
+<details>
+<summary>Output: You will see the movies data with some null values.</summary>
+```
++-----------+----------+------------+----------------------+-------------------+--------------------------+
+|IMDB_Rating|IMDB_Votes|Release_Date|Rotten_Tomatoes_Rating|Source             |Title                     |
++-----------+----------+------------+----------------------+-------------------+--------------------------+
+|6.1        |1071      |12-Jun-98   |NULL                  |NULL               |The Land Girls            |
+|6.9        |207       |7-Aug-98    |NULL                  |NULL               |First Love, Last Rites    |
+|6.8        |865       |28-Aug-98   |NULL                  |NULL               |I Married a Strange Person|
+|5.8        |3275      |1-Jul-86    |13                    |NULL               |Pirates                   |
+|3.4        |165       |9-Oct-98    |62                    |Original Screenplay|Slam                      |
+|NULL       |NULL      |15-Jan-99   |NULL                  |NULL               |Mississippi Mermaid       |
+|7.7        |15133     |4-Apr-99    |NULL                  |NULL               |Following                 |
+|3.8        |353       |9-Apr-99    |NULL                  |Original Screenplay|Foolish                   |
+|5.8        |3275      |1-Jul-86    |25                    |NULL               |Pirates                   |
+|7.0        |2906      |31-Dec-46   |86                    |NULL               |Duel in the Sun           |
++-----------+----------+------------+----------------------+-------------------+--------------------------+
+```
+</details>
+
+<h3>Coalesce</h3>
+<ul>
+<li>In Spark SQL and DataFrame APIs, <code>coalesce()</code> is used to return the first non-null value among its arguments.</li>
+<li>If you have multiple columns and want a single column which picks up a non-null value from one of them in order, or you want to replace a single column’s null value with a fallback.</li>
+</ul>
+<pre><code class="language-python">rating_df = df.select(col(&quot;Title&quot;),  
+              col(&quot;Rotten_Tomatoes_Rating&quot;),  
+              col(&quot;IMDB_Rating&quot;),  
+              coalesce(col(&quot;Rotten_Tomatoes_Rating&quot;), col(&quot;IMDB_Rating&quot;) * 10).alias(&quot;Rating&quot;))
+
+rating_df.show(10, False)
+</code></pre>
+<details>
+<summary>Output: You will see when `Rotten_Tomatoes_Rating` is null, `Rating` is calculated as `IMDB_Rating * 10`.</summary>
+```
++--------------------------+----------------------+-----------+------+
+|Title                     |Rotten_Tomatoes_Rating|IMDB_Rating|Rating|
++--------------------------+----------------------+-----------+------+
+|The Land Girls            |NULL                  |6.1        |61.0  |
+|First Love, Last Rites    |NULL                  |6.9        |69.0  |
+|I Married a Strange Person|NULL                  |6.8        |68.0  |
+|Pirates                   |13                    |5.8        |13    |
+|Slam                      |62                    |3.4        |62    |
+|Mississippi Mermaid       |NULL                  |NULL       |NULL  |
+|Following                 |NULL                  |7.7        |77.0  |
+|Foolish                   |NULL                  |3.8        |38.0  |
+|Pirates                   |25                    |5.8        |25    |
+|Duel in the Sun           |86                    |7.0        |86    |
++--------------------------+----------------------+-----------+------+
+```
+</details>
+
+<h3>Checking for nulls</h3>
+<p>In Spark, null indicates missing or unknown data. To check if a column has null values, you can use:</p>
+<ul>
+<li><code>isNull()</code></li>
+<li><code>isNotNull()</code></li>
+<li><code>eqNullSafe()</code>: compares two columns, treating null values as equal.</li>
+</ul>
+<pre><code class="language-python"># Check if Rotten_Tomatoes_Rating is null
+check_nulls = df.select(col(&quot;Title&quot;)
+               ,col(&quot;Rotten_Tomatoes_Rating&quot;),col(&quot;IMDB_Rating&quot;)
+               ,coalesce(col(&quot;Rotten_Tomatoes_Rating&quot;)
+               , col(&quot;IMDB_Rating&quot;) * 10).alias(&quot;Rating&quot;)).where(col(&quot;Rating&quot;).isNotNull())
+check_nulls.show(10, False)
+</code></pre>
+<details>
+<summary>Output: You will see only rows where `Rating` is not null.</summary>
+```
++--------------------------+----------------------+-----------+------+
+|Title                     |Rotten_Tomatoes_Rating|IMDB_Rating|Rating|
++--------------------------+----------------------+-----------+------+
+|The Land Girls            |NULL                  |6.1        |61.0  |
+|First Love, Last Rites    |NULL                  |6.9        |69.0  |
+|I Married a Strange Person|NULL                  |6.8        |68.0  |
+|Pirates                   |13                    |5.8        |13    |
+|Slam                      |62                    |3.4        |62    |
+|Following                 |NULL                  |7.7        |77.0  |
+|Foolish                   |NULL                  |3.8        |38.0  |
+|Pirates                   |25                    |5.8        |25    |
+|Duel in the Sun           |86                    |7.0        |86    |
++--------------------------+----------------------+-----------+------+
+```
+</details>
+---
+
+<pre><code class="language-python"># Check for equi-null safe join
+
+df_eq_null_safe = df.filter(col(&quot;IMDB_Rating&quot;).eqNullSafe(&quot;Rotten_Tomatoes_Rating&quot;))
+df_eq_null_safe.show()
+</code></pre>
+<details>
+<summary>Output: You will see only rows where `IMDB_Rating` is equal to `Rotten_Tomatoes_Rating`.</summary>
+```python
++-----------+----------+------------+----------------------+------+-------------------+
+|IMDB_Rating|IMDB_Votes|Release_Date|Rotten_Tomatoes_Rating|Source|              Title|
++-----------+----------+------------+----------------------+------+-------------------+
+|       NULL|      NULL|   15-Jan-99|                  NULL|  NULL|Mississippi Mermaid|
++-----------+----------+------------+----------------------+------+-------------------+
+```
+</details>
+
+<h3>Nulls when ordering columns</h3>
+<p>When you order a DataFrame in Spark, null handling can change your result. By default, Spark sorts <code>nulls first in ascending order</code> and <code>last in descending order</code>.</p>
+<ol>
+<li><code>asc_nulls_first</code>: Ascending order, placing nulls at the top.</li>
+<li><code>asc_nulls_last</code>: Ascending order, placing nulls at the bottom.</li>
+<li><code>desc_nulls_first</code>: Descending order, placing nulls at the top.</li>
+<li><code>desc_nulls_last</code>: Descending order, placing nulls at the bottom</li>
+</ol>
+<pre><code class="language-python"># Move nulls to the end in descending order
+
+move_nulls_to_end = df.orderBy(col(&quot;Rotten_Tomatoes_Rating&quot;).desc_nulls_last())
+move_nulls_to_end.show()
+</code></pre>
+<details>
+<summary>Output: You will see the rows ordered by `Rotten_Tomatoes_Rating` with nulls at the end.</summary>
+```
++-----------+----------+------------+----------------------+-------------------+--------------------+
+|IMDB_Rating|IMDB_Votes|Release_Date|Rotten_Tomatoes_Rating|             Source|               Title|
++-----------+----------+------------+----------------------+-------------------+--------------------+
+|        7.0|      2906|   31-Dec-46|                    86|               NULL|     Duel in the Sun|
+|        3.4|       165|    9-Oct-98|                    62|Original Screenplay|                Slam|
+|        5.8|      3275|    1-Jul-86|                    25|               NULL|             Pirates|
+|        5.8|      3275|    1-Jul-86|                    13|               NULL|             Pirates|
+|        6.9|       207|    7-Aug-98|                  NULL|               NULL|First Love, Last ...|
+|       NULL|      NULL|   15-Jan-99|                  NULL|               NULL| Mississippi Mermaid|
+|        7.7|     15133|    4-Apr-99|                  NULL|               NULL|           Following|
+|        6.8|       865|   28-Aug-98|                  NULL|               NULL|I Married a Stran...|
+|        3.8|       353|    9-Apr-99|                  NULL|Original Screenplay|             Foolish|
+|        6.1|      1071|   12-Jun-98|                  NULL|               NULL|      The Land Girls|
++-----------+----------+------------+----------------------+-------------------+--------------------+
+```
+</details>
+
+
+<h3>Replace nulls with a value</h3>
+<p>Spark provides multiple ways to replace null values:</p>
+<ul>
+<li><code>DataFrame.na.fill(value, subset=None)</code> – Fill null values in specified columns.</li>
+<li><code>DataFrame.fillna(value, subset=None)</code> – Same as na.fill, a common alias.</li>
+</ul>
+<pre><code class="language-python"># Replace nulls with a value for Source column
+replace_nulls = df.na.fill(&quot;Un Source&quot;,[&quot;Source&quot;])
+replace_nulls.show(5, False)
+</code></pre>
+<details>
+<summary>Output: You will see the rows with nulls in the `Source` column replaced with `Un Source`.</summary>
+```
++-----------+----------+------------+----------------------+-------------------+--------------------------+
+|IMDB_Rating|IMDB_Votes|Release_Date|Rotten_Tomatoes_Rating|Source             |Title                     |
++-----------+----------+------------+----------------------+-------------------+--------------------------+
+|6.1        |1071      |12-Jun-98   |NULL                  |Un Source          |The Land Girls            |
+|6.9        |207       |7-Aug-98    |NULL                  |Un Source          |First Love, Last Rites    |
+|6.8        |865       |28-Aug-98   |NULL                  |Un Source          |I Married a Strange Person|
+|5.8        |3275      |1-Jul-86    |13                    |Un Source          |Pirates                   |
+|3.4        |165       |9-Oct-98    |62                    |Original Screenplay|Slam                      |
++-----------+----------+------------+----------------------+-------------------+--------------------------+
+```
+</details>
+
+<pre><code class="language-python"># Replacing multiple columns with nulls
+
+fill_values = {
+    &quot;IMDB_Rating&quot;: 0.0,
+    &quot;IMDB_Votes&quot;:  0,
+    &quot;Source&quot;:      &quot;Unknown Source&quot;
+}
+
+df_fill_multiple = df.na.fill(fill_values)
+df_fill_multiple.show(5, False)
+</code></pre>
+<details>
+<summary>Output: You will see the rows with nulls in the specified columns replaced with the provided values.</summary>
+```
++-----------+----------+------------+----------------------+-------------------+--------------------------+
+|IMDB_Rating|IMDB_Votes|Release_Date|Rotten_Tomatoes_Rating|Source             |Title                     |
++-----------+----------+------------+----------------------+-------------------+--------------------------+
+|6.1        |1071      |12-Jun-98   |NULL                  |Unknown Source     |The Land Girls            |
+|6.9        |207       |7-Aug-98    |NULL                  |Unknown Source     |First Love, Last Rites    |
+|6.8        |865       |28-Aug-98   |NULL                  |Unknown Source     |I Married a Strange Person|
+|5.8        |3275      |1-Jul-86    |13                    |Unknown Source     |Pirates                   |
+|3.4        |165       |9-Oct-98    |62                    |Original Screenplay|Slam                      |
++-----------+----------+------------+----------------------+-------------------+--------------------------+
+```
+</details>
+
+<h3>Remove nulls</h3>
+<p>Sometimes you might want to drop rows that contain any null or all nulls, or conditionally drop rows with null in specific columns.</p>
+<p>Example 1:</p>
+<pre><code class="language-python"># Drop rows with all null values
+
+df_drop_any = df.na.drop(&quot;any&quot;) # &quot;any&quot; means if any column in the row has null, that row is dropped.
+df_drop_any.show(5, False)
+</code></pre>
+<details>
+<summary>Output: You will see the rows with any null values dropped.</summary>
+```
++-----------+----------+------------+----------------------+-------------------+-----+
+|IMDB_Rating|IMDB_Votes|Release_Date|Rotten_Tomatoes_Rating|             Source|Title|
++-----------+----------+------------+----------------------+-------------------+-----+
+|        3.4|       165|    9-Oct-98|                    62|Original Screenplay| Slam|
++-----------+----------+------------+----------------------+-------------------+-----+
+```
+</details>
+
+<p>Example 2:</p>
+<pre><code class="language-python"># Drop rows with all null values
+df_drop_all = df.na.drop(&quot;all&quot;) # &quot;all&quot; means a row must have all columns as null to be dropped.
+df_drop_all.show()
+</code></pre>
+<details>
+<summary>Output: You will see the rows with all null values dropped.</summary>
+```
++-----------+----------+------------+----------------------+-------------------+--------------------------+
+|IMDB_Rating|IMDB_Votes|Release_Date|Rotten_Tomatoes_Rating|Source             |Title                     |
++-----------+----------+------------+----------------------+-------------------+--------------------------+
+|6.1        |1071      |12-Jun-98   |NULL                  |NULL               |The Land Girls            |
+|6.9        |207       |7-Aug-98    |NULL                  |NULL               |First Love, Last Rites    |
+|6.8        |865       |28-Aug-98   |NULL                  |NULL               |I Married a Strange Person|
+|5.8        |3275      |1-Jul-86    |13                    |NULL               |Pirates                   |
+|3.4        |165       |9-Oct-98    |62                    |Original Screenplay|Slam                      |
++-----------+----------+------------+----------------------+-------------------+--------------------------+
+```
+</details>
+
+<p>Example 3:</p>
+<pre><code class="language-python"># Drop rows if &quot;IMDB_Rating&quot; or &quot;IMDB_Votes&quot; is null
+
+df_drop_subset = df.na.drop(&quot;any&quot;, subset=[&quot;IMDB_Rating&quot;, &quot;IMDB_Votes&quot;])
+df_drop_subset.show()
+</code></pre>
+<details>
+<summary>Output: You will see the rows with null values in `IMDB_Rating` or `IMDB_Votes` dropped.</summary>
+```python
++-----------+----------+------------+----------------------+-------------------+--------------------+
+|IMDB_Rating|IMDB_Votes|Release_Date|Rotten_Tomatoes_Rating|             Source|               Title|
++-----------+----------+------------+----------------------+-------------------+--------------------+
+|        6.1|      1071|   12-Jun-98|                  NULL|               NULL|      The Land Girls|
+|        6.9|       207|    7-Aug-98|                  NULL|               NULL|First Love, Last ...|
+|        6.8|       865|   28-Aug-98|                  NULL|               NULL|I Married a Stran...|
+|        5.8|      3275|    1-Jul-86|                    13|               NULL|             Pirates|
+|        3.4|       165|    9-Oct-98|                    62|Original Screenplay|                Slam|
+|        7.7|     15133|    4-Apr-99|                  NULL|               NULL|           Following|
+|        3.8|       353|    9-Apr-99|                  NULL|Original Screenplay|             Foolish|
+|        5.8|      3275|    1-Jul-86|                    25|               NULL|             Pirates|
+|        7.0|      2906|   31-Dec-46|                    86|               NULL|     Duel in the Sun|
++-----------+----------+------------+----------------------+-------------------+--------------------+
+```
+</details>
+
+<h3>Special Null functions</h3>
+<ol>
+<li><strong>equal_null</strong>: Returns <code>true</code> if both expressions are equal (including both being <code>NULL</code>), else <code>false</code>.  </li>
+<li><strong>ifnull</strong>: Returns the second expression if the first is <code>NULL</code>, otherwise returns the first. Same as <code>coalesce</code>. </li>
+<li><strong>nvl</strong>: Same as <code>ifnull</code>—substitutes a <code>NULL</code> value with a provided fallback. Same as <code>coalesce</code>.</li>
+<li><strong>nullif</strong>: Returns <code>NULL</code> if both expressions match, otherwise returns the first expression.  </li>
+<li><strong>nvl2</strong>: Returns the second expression if the first is not <code>NULL</code>, otherwise returns the third.</li>
+</ol>
+<pre><code class="language-python">special_nulls = df.selectExpr(
+    &quot;Title&quot;,
+    &quot;Rotten_Tomatoes_Rating&quot;,
+    &quot;IMDB_Rating&quot;,
+    &quot;equal_null(Rotten_Tomatoes_Rating, IMDB_Rating) as equal_null&quot;,
+    &quot;ifnull(Rotten_Tomatoes_Rating, IMDB_Rating * 10) as if_null&quot;, 
+    &quot;nvl(Rotten_Tomatoes_Rating, IMDB_Rating * 10) as nvl&quot;,
+    &quot;nullif(Rotten_Tomatoes_Rating, IMDB_Rating * 10) as nullif&quot;,
+    &quot;nvl2(Rotten_Tomatoes_Rating, IMDB_Rating * 10, 0.0)&quot; # if (first != null) second else third
+)
+
+special_nulls.show(10, False)
+</code></pre>
+<details>
+<summary>Output: You will see the special null functions applied to the columns.</summary>
+```
++--------------------------+----------------------+-----------+----------+-------+----+------+----+
+|Title                     |Rotten_Tomatoes_Rating|IMDB_Rating|equal_null|if_null|nvl |nullif|nvl2|
++--------------------------+----------------------+-----------+----------+-------+----+------+----+
+|The Land Girls            |NULL                  |6.1        |false     |61.0   |61.0|NULL  |0.0 |
+|First Love, Last Rites    |NULL                  |6.9        |false     |69.0   |69.0|NULL  |0.0 |
+|I Married a Strange Person|NULL                  |6.8        |false     |68.0   |68.0|NULL  |0.0 |
+|Pirates                   |13                    |5.8        |false     |13     |13  |13    |58.0|
+|Slam                      |62                    |3.4        |false     |62     |62  |62    |34.0|
+|Mississippi Mermaid       |NULL                  |NULL       |true      |NULL   |NULL|NULL  |0.0 |
+|Following                 |NULL                  |7.7        |false     |77.0   |77.0|NULL  |0.0 |
+|Foolish                   |NULL                  |3.8        |false     |38.0   |38.0|NULL  |0.0 |
+|Pirates                   |25                    |5.8        |false     |25     |25  |25    |58.0|
+|Duel in the Sun           |86                    |7.0        |false     |86     |86  |86    |70.0|
++--------------------------+----------------------+-----------+----------+-------+----+------+----+
+```
+</details>
+
+<h2>Conclusion</h2>
+<p>Putting all together - </p>
+<table>
+<thead>
+<tr>
+<th><strong>Function / Operation</strong></th>
+<th><strong>One-Line Explanation</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>coalesce(expr1, expr2, …)</strong></td>
+<td>Returns the first non-null expression in the list.</td>
+</tr>
+<tr>
+<td><strong>isNull(column)</strong></td>
+<td>Checks if the column’s value is null, returning a boolean.</td>
+</tr>
+<tr>
+<td><strong>isNotNull(column)</strong></td>
+<td>Checks if the column’s value is not null, returning a boolean.</td>
+</tr>
+<tr>
+<td><strong>eqNullSafe(col1, col2)</strong> or <strong>col1 <code>&lt;=&gt;</code> col2</strong></td>
+<td>Returns <code>true</code> if <code>col1</code> equals <code>col2</code> or both are null, otherwise <code>false</code>.</td>
+</tr>
+<tr>
+<td><strong>ifnull(expr1, expr2)</strong></td>
+<td>Returns <code>expr2</code> if <code>expr1</code> is null, otherwise returns <code>expr1</code>.</td>
+</tr>
+<tr>
+<td><strong>nvl(expr1, expr2)</strong></td>
+<td>Same as <code>ifnull</code>: substitutes <code>expr2</code> when <code>expr1</code> is null.</td>
+</tr>
+<tr>
+<td><strong>nullif(expr1, expr2)</strong></td>
+<td>Returns <code>NULL</code> if <code>expr1</code> equals <code>expr2</code>, otherwise returns <code>expr1</code>.</td>
+</tr>
+<tr>
+<td><strong>nvl2(expr1, expr2, expr3)</strong></td>
+<td>Returns <code>expr2</code> if <code>expr1</code> is not null, otherwise returns <code>expr3</code>.</td>
+</tr>
+<tr>
+<td><strong>fillna / na.fill(value[, subset])</strong></td>
+<td>Replaces null values in specified columns (or all) with a given value.</td>
+</tr>
+<tr>
+<td><strong>dropna / na.drop([how, subset])</strong></td>
+<td>Removes rows containing null values (based on any/all columns or a subset).</td>
+</tr>
+<tr>
+<td><strong>asc_nulls_first / asc_nulls_last</strong> (when sorting)</td>
+<td>Orders rows ascending, placing nulls either first or last.</td>
+</tr>
+<tr>
+<td><strong>desc_nulls_first / desc_nulls_last</strong> (when sorting)</td>
+<td>Orders rows descending, placing nulls either first or last.</td>
+</tr>
+</tbody></table>
+<p>I hope you enjoyed reading this blog on handling nulls in Spark, if you are interested in more such content, do check out <a href="/blog/tags/apache-spark">Apache Spark</a>. series.</p>
+<p>If you have any questions or feedback, feel free to reach out to me.</p>
+</div><div style="margin-top:2rem;padding-top:1rem;border-top:1px solid var(--line)"><a class="readmore" href="/blog/">← cd ../blog</a> · <a class="readmore" href="/">cd ~ → home</a></div></main><!--$--><!--/$--></div></div><div class="termpane" aria-label="Interactive terminal"><div class="thead"><span>TERMINAL · bash · ~/portfolio</span><button type="button" class="close">✕ close</button></div><div class="termout"></div><div class="termin"><span class="tp">vibhavari@portfolio:~$</span><input type="text" autoComplete="off" spellCheck="false" aria-label="Terminal input" placeholder="try: grep spark · ls blog · open git"/></div></div><div class="cmdline"><span class="colon">:</span><input type="text" autoComplete="off" spellCheck="false" aria-label="Command input"/><span class="hint">home · grep spark · theme paper · term</span></div><footer class="statusline"><div class="mode">NORMAL</div><div class="file">~/portfolio/home.md</div><div class="spacer"></div><div class="meta">⌘K search</div><div class="meta">theme: <!-- -->forge</div><div class="meta"><span class="pct">Top</span></div></footer><script src="/_next/static/chunks/webpack-2256c74a4ed68fb5.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n3:I[9766,[],\"\"]\n4:I[8924,[],\"\"]\n6:I[4431,[],\"OutletBoundary\"]\n8:I[5278,[],\"AsyncMetadataOutlet\"]\na:I[4431,[],\"ViewportBoundary\"]\nc:I[4431,[],\"MetadataBoundary\"]\nd:\"$Sreact.suspense\"\nf:I[7150,[],\"\"]\n:HL[\"/_next/static/media/37786be940ec402b-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/98e207f02528a563-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/d3ebbfd689654d3a-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/db96af6b531dc71f-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/css/a6830a9bcb3a01e3.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"ikxivgWsDXdClqureGVtH\",\"p\":\"\",\"c\":[\"\",\"blog\",\"handling-nulls-in-spark\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"blog\",{\"children\":[[\"slug\",\"handling-nulls-in-spark\",\"d\"],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/a6830a9bcb3a01e3.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],\"$L2\"]}],{\"children\":[\"blog\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"slug\",\"handling-nulls-in-spark\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[\"$L5\",null,[\"$\",\"$L6\",null,{\"children\":[\"$L7\",[\"$\",\"$L8\",null,{\"promise\":\"$@9\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[[\"$\",\"$La\",null,{\"children\":\"$Lb\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]],[\"$\",\"$Lc\",null,{\"children\":[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$d\",null,{\"fallback\":null,\"children\":\"$Le\"}]}]}]]}],false]],\"m\":\"$undefined\",\"G\":[\"$f\",[]],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"b:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n7:null\n"])</script><script>self.__next_f.push([1,"10:I[4680,[\"619\",\"static/chunks/619-ba102abea3e3d0e4.js\",\"177\",\"static/chunks/app/layout-5e3c729616dc2aad.js\"],\"BootOverlay\"]\n11:I[5741,[\"619\",\"static/chunks/619-ba102abea3e3d0e4.js\",\"177\",\"static/chunks/app/layout-5e3c729616dc2aad.js\"],\"TerminalShell\"]\n"])</script><script>self.__next_f.push([1,"2:[\"$\",\"html\",null,{\"lang\":\"en\",\"className\":\"__variable_b4c22e\",\"suppressHydrationWarning\":true,\"children\":[\"$\",\"body\",null,{\"children\":[[\"$\",\"$L10\",null,{}],[\"$\",\"$L11\",null,{\"blogPosts\":[{\"slug\":\"inside-git\",\"title\":\"Inside Git: How It Works Under the Hood\",\"excerpt\":\"In the previous post, we learnt [How Git manages version control](post.html?post=git-essentials) through its internal structures. In this continuation, we will delve deeper into h\"},{\"slug\":\"git-essentials\",\"title\":\"Git for Beginners: Essential Commands You Need to Know\",\"excerpt\":\"If you have ever played a video game, you know the anxiety of facing a difficult boss. What is the first thing you do before walking through that boss door? You save your game.\\n\\nW\"},{\"slug\":\"why-version-control-exists\",\"title\":\"Why Version Control Exists - The Pendrive Problem\",\"excerpt\":\"## Why Version Control Exists - The Pendrive Problem\\n\\n**Analogy: The Pendrive Problem**\\n\\nLet's imagine a world where version control systems like Git do not exist. Instead, develo\"},{\"slug\":\"automate-unit-tests-using-ci-cd\",\"title\":\"Automating Unit Tests and Deploying AWS Glue \u0026 Lambda Python Jobs with CI/CD\",\"excerpt\":\"In this blog, we’ll explore how to set up a complete CI/CD pipeline using `Jenkins`, `pytest`, and `Terraform` to automate unit testing and deployment for AWS Glue and Lambda jobs\"},{\"slug\":\"spark-application-lifecycle-outside\",\"title\":\"The Life Cycle of a Spark Application ( Outside )\",\"excerpt\":\"In this blog, we will go in-depth on the overall life cycle of Spark Applications from outside the actual Spark code. Before going ahead, I recommend reading the [Execution Modes]\"},{\"slug\":\"spark-execution-modes\",\"title\":\"Spark Execution Modes\",\"excerpt\":\"In this post, we will discuss the different execution modes available in Apache Spark. Apache Spark provides three execution modes to run Spark applications: Cluster mode, Client mode, and Local mode.\"},{\"slug\":\"spark-job-anatomy\",\"title\":\"Under the hood of a Spark job\",\"excerpt\":\"Understanding the internal execution flow of a Spark application is key to optimizing performance and debugging. This blog dives into the details of Spark jobs, stages, and tasks, providing a thorough exploration of how Spark handles distributed execution.\"},{\"slug\":\"handling-nulls-in-spark\",\"title\":\"Handling Nulls in Spark\",\"excerpt\":\"In SQL null is a special marker used to indicate that a data value does not exist in the database. A null should not be confused with a value of 0. Let's deep dive into handling nulls in Spark.\"},{\"slug\":\"columns-and-expressions\",\"title\":\"Columns and Expressions\",\"excerpt\":\"Apache Spark's Column and Expression play a big role in making your pipeline more efficient. In this blog we will look into ALL the possible ways to select columns, use built-in functions and perform calculations with column objects and expressions in PySpark.\"},{\"slug\":\"spark-basics\",\"title\":\"Introduction to Apache Spark\",\"excerpt\":\"Welcome to my Apache Spark series! I'll dive deep into Apache Spark, from basics to advanced concepts. This series is about learning, exploring, and sharing—documenting my journey to mastering Apache Spark.\"},{\"slug\":\"welcome-to-my-blog\",\"title\":\"Welcome to My Blog\",\"excerpt\":\"Welcome to my blog! This is where I'll be sharing my thoughts, experiences, and insights on technology, development, and more.\"}],\"children\":[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],\"$L12\"],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]}]\n"])</script><script>self.__next_f.push([1,"12:[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]\n"])</script><script>self.__next_f.push([1,"13:T5e78,"])</script><script>self.__next_f.push([1,"\u003cp\u003eIn SQL \u003ccode\u003enull\u003c/code\u003e or \u003ccode\u003eNull\u003c/code\u003e is a special marker used to indicate that a data value does not exist in the database. A null should not be confused with a value of 0. A null indicates a lack of a value, which is not the same as a zero value.\u003c/p\u003e\n\u003cp\u003eFor example:\u003cbr\u003eConsider the question \u0026quot;How many books does Krishna own?\u0026quot;\u003cbr\u003eThe answer may be \u003ccode\u003ezero\u003c/code\u003e (we know that he owns none) or \u003ccode\u003enull\u003c/code\u003e (we do not know how many he owns).\u003c/p\u003e\n\u003cp\u003eLet\u0026#39;s deep dive into handling nulls in Spark.\u003c/p\u003e\n\u003c!-- truncate --\u003e\n\n\u003ch2\u003eHandling nulls in Spark\u003c/h2\u003e\n\u003cp\u003eIn Spark, a null value represents the absence of any value: it is not zero, an empty string, or false. Spark treats nulls in a way similar to SQL. When performing operations on null values, you need to be explicit about how to handle them, as any operation with a null value generally yields a null result (unless specifically handled).\u003c/p\u003e\n\u003cp\u003eKey Points about Nulls in Spark:\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\u003cp\u003e\u003cstrong\u003eNull propagation\u003c/strong\u003e: If you do an arithmetic operation (e.g., \u003ccode\u003ecolA + colB\u003c/code\u003e) and either \u003ccode\u003ecolA\u003c/code\u003e or \u003ccode\u003ecolB\u003c/code\u003e is null, the result is null unless there is a function to handle null explicitly (like coalesce).\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cp\u003e\u003cstrong\u003eComparison\u003c/strong\u003e: Comparisons with null always yield false or unknown. For example, df.filter(\u003ccode\u003edf(\u0026quot;age\u0026quot;) == null\u003c/code\u003e) might not work as intended. Instead, you need to use methods like isNull or isNotNull.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cp\u003e\u003cstrong\u003eEqui-Null safe join\u003c/strong\u003e: Spark SQL provides nullSafeEq or eqNullSafe (\u003ccode\u003e\u0026lt;=\u0026gt;\u003c/code\u003e in SQL) to compare two columns including nulls. This means if both sides are null, it returns true.\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003caside class=\"callout callout-note\"\u003e\n      \u003cp class=\"callout-title\"\u003eNote\u003c/p\u003e\n      \u003cdiv class=\"callout-body\"\u003e\u003cp\u003eIn SQL, null is a marker, not a value.\u003c/p\u003e\n\u003c/div\u003e\n    \u003c/aside\u003e\n\n\u003ch3\u003eData Preparation\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-python\"\u003efrom pyspark.sql import SparkSession\nfrom pyspark.sql.functions import col, isnull, when, coalesce\n\nspark = SparkSession.builder \\\n    .appName(\u0026quot;NullHandlingExample\u0026quot;) \\\n    .getOrCreate()\n\ndata = [\n    (6.1,   1071,  \u0026quot;12-Jun-98\u0026quot;,  None,  None,                \u0026quot;The Land Girls\u0026quot;),\n    (6.9,   207,   \u0026quot;7-Aug-98\u0026quot;,   None,  None,                \u0026quot;First Love, Last Rites\u0026quot;),\n    (6.8,   865,   \u0026quot;28-Aug-98\u0026quot;,  None,  None,                \u0026quot;I Married a Strange Person\u0026quot;),\n    (5.8,   3275,  \u0026quot;1-Jul-86\u0026quot;,  \u0026quot;13\u0026quot;,  None,                \u0026quot;Pirates\u0026quot;),\n    (3.4,   165,   \u0026quot;9-Oct-98\u0026quot;,   \u0026quot;62\u0026quot;,  \u0026quot;Original Screenplay\u0026quot;,\u0026quot;Slam\u0026quot;),\n    (None,  None,  \u0026quot;15-Jan-99\u0026quot;,  None,  None,                \u0026quot;Mississippi Mermaid\u0026quot;),\n    (7.7,   15133, \u0026quot;4-Apr-99\u0026quot;,   None,  None,                \u0026quot;Following\u0026quot;),\n    (3.8,   353,   \u0026quot;9-Apr-99\u0026quot;,   None,  \u0026quot;Original Screenplay\u0026quot;,\u0026quot;Foolish\u0026quot;),\n    (5.8,   3275,  \u0026quot;1-Jul-86\u0026quot;,   \u0026quot;25\u0026quot;,  None,                \u0026quot;Pirates\u0026quot;),\n    (7.0,   2906,  \u0026quot;31-Dec-46\u0026quot;,  \u0026quot;86\u0026quot;,  None,                \u0026quot;Duel in the Sun\u0026quot;)\n]\n\ncolumns = [\u0026quot;IMDB_Rating\u0026quot;, \u0026quot;IMDB_Votes\u0026quot;, \u0026quot;Release_Date\u0026quot;, \u0026quot;Rotten_Tomatoes_Rating\u0026quot;, \u0026quot;Source\u0026quot;, \u0026quot;Title\u0026quot;]\ndf = spark.createDataFrame(data, columns)\n\ndf.show()\n\u003c/code\u003e\u003c/pre\u003e\n\u003cdetails\u003e\n\u003csummary\u003eOutput: You will see the movies data with some null values.\u003c/summary\u003e\n```\n+-----------+----------+------------+----------------------+-------------------+--------------------------+\n|IMDB_Rating|IMDB_Votes|Release_Date|Rotten_Tomatoes_Rating|Source             |Title                     |\n+-----------+----------+------------+----------------------+-------------------+--------------------------+\n|6.1        |1071      |12-Jun-98   |NULL                  |NULL               |The Land Girls            |\n|6.9        |207       |7-Aug-98    |NULL                  |NULL               |First Love, Last Rites    |\n|6.8        |865       |28-Aug-98   |NULL                  |NULL               |I Married a Strange Person|\n|5.8        |3275      |1-Jul-86    |13                    |NULL               |Pirates                   |\n|3.4        |165       |9-Oct-98    |62                    |Original Screenplay|Slam                      |\n|NULL       |NULL      |15-Jan-99   |NULL                  |NULL               |Mississippi Mermaid       |\n|7.7        |15133     |4-Apr-99    |NULL                  |NULL               |Following                 |\n|3.8        |353       |9-Apr-99    |NULL                  |Original Screenplay|Foolish                   |\n|5.8        |3275      |1-Jul-86    |25                    |NULL               |Pirates                   |\n|7.0        |2906      |31-Dec-46   |86                    |NULL               |Duel in the Sun           |\n+-----------+----------+------------+----------------------+-------------------+--------------------------+\n```\n\u003c/details\u003e\n\n\u003ch3\u003eCoalesce\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003eIn Spark SQL and DataFrame APIs, \u003ccode\u003ecoalesce()\u003c/code\u003e is used to return the first non-null value among its arguments.\u003c/li\u003e\n\u003cli\u003eIf you have multiple columns and want a single column which picks up a non-null value from one of them in order, or you want to replace a single column’s null value with a fallback.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre\u003e\u003ccode class=\"language-python\"\u003erating_df = df.select(col(\u0026quot;Title\u0026quot;),  \n              col(\u0026quot;Rotten_Tomatoes_Rating\u0026quot;),  \n              col(\u0026quot;IMDB_Rating\u0026quot;),  \n              coalesce(col(\u0026quot;Rotten_Tomatoes_Rating\u0026quot;), col(\u0026quot;IMDB_Rating\u0026quot;) * 10).alias(\u0026quot;Rating\u0026quot;))\n\nrating_df.show(10, False)\n\u003c/code\u003e\u003c/pre\u003e\n\u003cdetails\u003e\n\u003csummary\u003eOutput: You will see when `Rotten_Tomatoes_Rating` is null, `Rating` is calculated as `IMDB_Rating * 10`.\u003c/summary\u003e\n```\n+--------------------------+----------------------+-----------+------+\n|Title                     |Rotten_Tomatoes_Rating|IMDB_Rating|Rating|\n+--------------------------+----------------------+-----------+------+\n|The Land Girls            |NULL                  |6.1        |61.0  |\n|First Love, Last Rites    |NULL                  |6.9        |69.0  |\n|I Married a Strange Person|NULL                  |6.8        |68.0  |\n|Pirates                   |13                    |5.8        |13    |\n|Slam                      |62                    |3.4        |62    |\n|Mississippi Mermaid       |NULL                  |NULL       |NULL  |\n|Following                 |NULL                  |7.7        |77.0  |\n|Foolish                   |NULL                  |3.8        |38.0  |\n|Pirates                   |25                    |5.8        |25    |\n|Duel in the Sun           |86                    |7.0        |86    |\n+--------------------------+----------------------+-----------+------+\n```\n\u003c/details\u003e\n\n\u003ch3\u003eChecking for nulls\u003c/h3\u003e\n\u003cp\u003eIn Spark, null indicates missing or unknown data. To check if a column has null values, you can use:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003eisNull()\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eisNotNull()\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eeqNullSafe()\u003c/code\u003e: compares two columns, treating null values as equal.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre\u003e\u003ccode class=\"language-python\"\u003e# Check if Rotten_Tomatoes_Rating is null\ncheck_nulls = df.select(col(\u0026quot;Title\u0026quot;)\n               ,col(\u0026quot;Rotten_Tomatoes_Rating\u0026quot;),col(\u0026quot;IMDB_Rating\u0026quot;)\n               ,coalesce(col(\u0026quot;Rotten_Tomatoes_Rating\u0026quot;)\n               , col(\u0026quot;IMDB_Rating\u0026quot;) * 10).alias(\u0026quot;Rating\u0026quot;)).where(col(\u0026quot;Rating\u0026quot;).isNotNull())\ncheck_nulls.show(10, False)\n\u003c/code\u003e\u003c/pre\u003e\n\u003cdetails\u003e\n\u003csummary\u003eOutput: You will see only rows where `Rating` is not null.\u003c/summary\u003e\n```\n+--------------------------+----------------------+-----------+------+\n|Title                     |Rotten_Tomatoes_Rating|IMDB_Rating|Rating|\n+--------------------------+----------------------+-----------+------+\n|The Land Girls            |NULL                  |6.1        |61.0  |\n|First Love, Last Rites    |NULL                  |6.9        |69.0  |\n|I Married a Strange Person|NULL                  |6.8        |68.0  |\n|Pirates                   |13                    |5.8        |13    |\n|Slam                      |62                    |3.4        |62    |\n|Following                 |NULL                  |7.7        |77.0  |\n|Foolish                   |NULL                  |3.8        |38.0  |\n|Pirates                   |25                    |5.8        |25    |\n|Duel in the Sun           |86                    |7.0        |86    |\n+--------------------------+----------------------+-----------+------+\n```\n\u003c/details\u003e\n---\n\n\u003cpre\u003e\u003ccode class=\"language-python\"\u003e# Check for equi-null safe join\n\ndf_eq_null_safe = df.filter(col(\u0026quot;IMDB_Rating\u0026quot;).eqNullSafe(\u0026quot;Rotten_Tomatoes_Rating\u0026quot;))\ndf_eq_null_safe.show()\n\u003c/code\u003e\u003c/pre\u003e\n\u003cdetails\u003e\n\u003csummary\u003eOutput: You will see only rows where `IMDB_Rating` is equal to `Rotten_Tomatoes_Rating`.\u003c/summary\u003e\n```python\n+-----------+----------+------------+----------------------+------+-------------------+\n|IMDB_Rating|IMDB_Votes|Release_Date|Rotten_Tomatoes_Rating|Source|              Title|\n+-----------+----------+------------+----------------------+------+-------------------+\n|       NULL|      NULL|   15-Jan-99|                  NULL|  NULL|Mississippi Mermaid|\n+-----------+----------+------------+----------------------+------+-------------------+\n```\n\u003c/details\u003e\n\n\u003ch3\u003eNulls when ordering columns\u003c/h3\u003e\n\u003cp\u003eWhen you order a DataFrame in Spark, null handling can change your result. By default, Spark sorts \u003ccode\u003enulls first in ascending order\u003c/code\u003e and \u003ccode\u003elast in descending order\u003c/code\u003e.\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\u003ccode\u003easc_nulls_first\u003c/code\u003e: Ascending order, placing nulls at the top.\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003easc_nulls_last\u003c/code\u003e: Ascending order, placing nulls at the bottom.\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003edesc_nulls_first\u003c/code\u003e: Descending order, placing nulls at the top.\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003edesc_nulls_last\u003c/code\u003e: Descending order, placing nulls at the bottom\u003c/li\u003e\n\u003c/ol\u003e\n\u003cpre\u003e\u003ccode class=\"language-python\"\u003e# Move nulls to the end in descending order\n\nmove_nulls_to_end = df.orderBy(col(\u0026quot;Rotten_Tomatoes_Rating\u0026quot;).desc_nulls_last())\nmove_nulls_to_end.show()\n\u003c/code\u003e\u003c/pre\u003e\n\u003cdetails\u003e\n\u003csummary\u003eOutput: You will see the rows ordered by `Rotten_Tomatoes_Rating` with nulls at the end.\u003c/summary\u003e\n```\n+-----------+----------+------------+----------------------+-------------------+--------------------+\n|IMDB_Rating|IMDB_Votes|Release_Date|Rotten_Tomatoes_Rating|             Source|               Title|\n+-----------+----------+------------+----------------------+-------------------+--------------------+\n|        7.0|      2906|   31-Dec-46|                    86|               NULL|     Duel in the Sun|\n|        3.4|       165|    9-Oct-98|                    62|Original Screenplay|                Slam|\n|        5.8|      3275|    1-Jul-86|                    25|               NULL|             Pirates|\n|        5.8|      3275|    1-Jul-86|                    13|               NULL|             Pirates|\n|        6.9|       207|    7-Aug-98|                  NULL|               NULL|First Love, Last ...|\n|       NULL|      NULL|   15-Jan-99|                  NULL|               NULL| Mississippi Mermaid|\n|        7.7|     15133|    4-Apr-99|                  NULL|               NULL|           Following|\n|        6.8|       865|   28-Aug-98|                  NULL|               NULL|I Married a Stran...|\n|        3.8|       353|    9-Apr-99|                  NULL|Original Screenplay|             Foolish|\n|        6.1|      1071|   12-Jun-98|                  NULL|               NULL|      The Land Girls|\n+-----------+----------+------------+----------------------+-------------------+--------------------+\n```\n\u003c/details\u003e\n\n\n\u003ch3\u003eReplace nulls with a value\u003c/h3\u003e\n\u003cp\u003eSpark provides multiple ways to replace null values:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003eDataFrame.na.fill(value, subset=None)\u003c/code\u003e – Fill null values in specified columns.\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eDataFrame.fillna(value, subset=None)\u003c/code\u003e – Same as na.fill, a common alias.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre\u003e\u003ccode class=\"language-python\"\u003e# Replace nulls with a value for Source column\nreplace_nulls = df.na.fill(\u0026quot;Un Source\u0026quot;,[\u0026quot;Source\u0026quot;])\nreplace_nulls.show(5, False)\n\u003c/code\u003e\u003c/pre\u003e\n\u003cdetails\u003e\n\u003csummary\u003eOutput: You will see the rows with nulls in the `Source` column replaced with `Un Source`.\u003c/summary\u003e\n```\n+-----------+----------+------------+----------------------+-------------------+--------------------------+\n|IMDB_Rating|IMDB_Votes|Release_Date|Rotten_Tomatoes_Rating|Source             |Title                     |\n+-----------+----------+------------+----------------------+-------------------+--------------------------+\n|6.1        |1071      |12-Jun-98   |NULL                  |Un Source          |The Land Girls            |\n|6.9        |207       |7-Aug-98    |NULL                  |Un Source          |First Love, Last Rites    |\n|6.8        |865       |28-Aug-98   |NULL                  |Un Source          |I Married a Strange Person|\n|5.8        |3275      |1-Jul-86    |13                    |Un Source          |Pirates                   |\n|3.4        |165       |9-Oct-98    |62                    |Original Screenplay|Slam                      |\n+-----------+----------+------------+----------------------+-------------------+--------------------------+\n```\n\u003c/details\u003e\n\n\u003cpre\u003e\u003ccode class=\"language-python\"\u003e# Replacing multiple columns with nulls\n\nfill_values = {\n    \u0026quot;IMDB_Rating\u0026quot;: 0.0,\n    \u0026quot;IMDB_Votes\u0026quot;:  0,\n    \u0026quot;Source\u0026quot;:      \u0026quot;Unknown Source\u0026quot;\n}\n\ndf_fill_multiple = df.na.fill(fill_values)\ndf_fill_multiple.show(5, False)\n\u003c/code\u003e\u003c/pre\u003e\n\u003cdetails\u003e\n\u003csummary\u003eOutput: You will see the rows with nulls in the specified columns replaced with the provided values.\u003c/summary\u003e\n```\n+-----------+----------+------------+----------------------+-------------------+--------------------------+\n|IMDB_Rating|IMDB_Votes|Release_Date|Rotten_Tomatoes_Rating|Source             |Title                     |\n+-----------+----------+------------+----------------------+-------------------+--------------------------+\n|6.1        |1071      |12-Jun-98   |NULL                  |Unknown Source     |The Land Girls            |\n|6.9        |207       |7-Aug-98    |NULL                  |Unknown Source     |First Love, Last Rites    |\n|6.8        |865       |28-Aug-98   |NULL                  |Unknown Source     |I Married a Strange Person|\n|5.8        |3275      |1-Jul-86    |13                    |Unknown Source     |Pirates                   |\n|3.4        |165       |9-Oct-98    |62                    |Original Screenplay|Slam                      |\n+-----------+----------+------------+----------------------+-------------------+--------------------------+\n```\n\u003c/details\u003e\n\n\u003ch3\u003eRemove nulls\u003c/h3\u003e\n\u003cp\u003eSometimes you might want to drop rows that contain any null or all nulls, or conditionally drop rows with null in specific columns.\u003c/p\u003e\n\u003cp\u003eExample 1:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-python\"\u003e# Drop rows with all null values\n\ndf_drop_any = df.na.drop(\u0026quot;any\u0026quot;) # \u0026quot;any\u0026quot; means if any column in the row has null, that row is dropped.\ndf_drop_any.show(5, False)\n\u003c/code\u003e\u003c/pre\u003e\n\u003cdetails\u003e\n\u003csummary\u003eOutput: You will see the rows with any null values dropped.\u003c/summary\u003e\n```\n+-----------+----------+------------+----------------------+-------------------+-----+\n|IMDB_Rating|IMDB_Votes|Release_Date|Rotten_Tomatoes_Rating|             Source|Title|\n+-----------+----------+------------+----------------------+-------------------+-----+\n|        3.4|       165|    9-Oct-98|                    62|Original Screenplay| Slam|\n+-----------+----------+------------+----------------------+-------------------+-----+\n```\n\u003c/details\u003e\n\n\u003cp\u003eExample 2:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-python\"\u003e# Drop rows with all null values\ndf_drop_all = df.na.drop(\u0026quot;all\u0026quot;) # \u0026quot;all\u0026quot; means a row must have all columns as null to be dropped.\ndf_drop_all.show()\n\u003c/code\u003e\u003c/pre\u003e\n\u003cdetails\u003e\n\u003csummary\u003eOutput: You will see the rows with all null values dropped.\u003c/summary\u003e\n```\n+-----------+----------+------------+----------------------+-------------------+--------------------------+\n|IMDB_Rating|IMDB_Votes|Release_Date|Rotten_Tomatoes_Rating|Source             |Title                     |\n+-----------+----------+------------+----------------------+-------------------+--------------------------+\n|6.1        |1071      |12-Jun-98   |NULL                  |NULL               |The Land Girls            |\n|6.9        |207       |7-Aug-98    |NULL                  |NULL               |First Love, Last Rites    |\n|6.8        |865       |28-Aug-98   |NULL                  |NULL               |I Married a Strange Person|\n|5.8        |3275      |1-Jul-86    |13                    |NULL               |Pirates                   |\n|3.4        |165       |9-Oct-98    |62                    |Original Screenplay|Slam                      |\n+-----------+----------+------------+----------------------+-------------------+--------------------------+\n```\n\u003c/details\u003e\n\n\u003cp\u003eExample 3:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-python\"\u003e# Drop rows if \u0026quot;IMDB_Rating\u0026quot; or \u0026quot;IMDB_Votes\u0026quot; is null\n\ndf_drop_subset = df.na.drop(\u0026quot;any\u0026quot;, subset=[\u0026quot;IMDB_Rating\u0026quot;, \u0026quot;IMDB_Votes\u0026quot;])\ndf_drop_subset.show()\n\u003c/code\u003e\u003c/pre\u003e\n\u003cdetails\u003e\n\u003csummary\u003eOutput: You will see the rows with null values in `IMDB_Rating` or `IMDB_Votes` dropped.\u003c/summary\u003e\n```python\n+-----------+----------+------------+----------------------+-------------------+--------------------+\n|IMDB_Rating|IMDB_Votes|Release_Date|Rotten_Tomatoes_Rating|             Source|               Title|\n+-----------+----------+------------+----------------------+-------------------+--------------------+\n|        6.1|      1071|   12-Jun-98|                  NULL|               NULL|      The Land Girls|\n|        6.9|       207|    7-Aug-98|                  NULL|               NULL|First Love, Last ...|\n|        6.8|       865|   28-Aug-98|                  NULL|               NULL|I Married a Stran...|\n|        5.8|      3275|    1-Jul-86|                    13|               NULL|             Pirates|\n|        3.4|       165|    9-Oct-98|                    62|Original Screenplay|                Slam|\n|        7.7|     15133|    4-Apr-99|                  NULL|               NULL|           Following|\n|        3.8|       353|    9-Apr-99|                  NULL|Original Screenplay|             Foolish|\n|        5.8|      3275|    1-Jul-86|                    25|               NULL|             Pirates|\n|        7.0|      2906|   31-Dec-46|                    86|               NULL|     Duel in the Sun|\n+-----------+----------+------------+----------------------+-------------------+--------------------+\n```\n\u003c/details\u003e\n\n\u003ch3\u003eSpecial Null functions\u003c/h3\u003e\n\u003col\u003e\n\u003cli\u003e\u003cstrong\u003eequal_null\u003c/strong\u003e: Returns \u003ccode\u003etrue\u003c/code\u003e if both expressions are equal (including both being \u003ccode\u003eNULL\u003c/code\u003e), else \u003ccode\u003efalse\u003c/code\u003e.  \u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eifnull\u003c/strong\u003e: Returns the second expression if the first is \u003ccode\u003eNULL\u003c/code\u003e, otherwise returns the first. Same as \u003ccode\u003ecoalesce\u003c/code\u003e. \u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003envl\u003c/strong\u003e: Same as \u003ccode\u003eifnull\u003c/code\u003e—substitutes a \u003ccode\u003eNULL\u003c/code\u003e value with a provided fallback. Same as \u003ccode\u003ecoalesce\u003c/code\u003e.\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003enullif\u003c/strong\u003e: Returns \u003ccode\u003eNULL\u003c/code\u003e if both expressions match, otherwise returns the first expression.  \u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003envl2\u003c/strong\u003e: Returns the second expression if the first is not \u003ccode\u003eNULL\u003c/code\u003e, otherwise returns the third.\u003c/li\u003e\n\u003c/ol\u003e\n\u003cpre\u003e\u003ccode class=\"language-python\"\u003especial_nulls = df.selectExpr(\n    \u0026quot;Title\u0026quot;,\n    \u0026quot;Rotten_Tomatoes_Rating\u0026quot;,\n    \u0026quot;IMDB_Rating\u0026quot;,\n    \u0026quot;equal_null(Rotten_Tomatoes_Rating, IMDB_Rating) as equal_null\u0026quot;,\n    \u0026quot;ifnull(Rotten_Tomatoes_Rating, IMDB_Rating * 10) as if_null\u0026quot;, \n    \u0026quot;nvl(Rotten_Tomatoes_Rating, IMDB_Rating * 10) as nvl\u0026quot;,\n    \u0026quot;nullif(Rotten_Tomatoes_Rating, IMDB_Rating * 10) as nullif\u0026quot;,\n    \u0026quot;nvl2(Rotten_Tomatoes_Rating, IMDB_Rating * 10, 0.0)\u0026quot; # if (first != null) second else third\n)\n\nspecial_nulls.show(10, False)\n\u003c/code\u003e\u003c/pre\u003e\n\u003cdetails\u003e\n\u003csummary\u003eOutput: You will see the special null functions applied to the columns.\u003c/summary\u003e\n```\n+--------------------------+----------------------+-----------+----------+-------+----+------+----+\n|Title                     |Rotten_Tomatoes_Rating|IMDB_Rating|equal_null|if_null|nvl |nullif|nvl2|\n+--------------------------+----------------------+-----------+----------+-------+----+------+----+\n|The Land Girls            |NULL                  |6.1        |false     |61.0   |61.0|NULL  |0.0 |\n|First Love, Last Rites    |NULL                  |6.9        |false     |69.0   |69.0|NULL  |0.0 |\n|I Married a Strange Person|NULL                  |6.8        |false     |68.0   |68.0|NULL  |0.0 |\n|Pirates                   |13                    |5.8        |false     |13     |13  |13    |58.0|\n|Slam                      |62                    |3.4        |false     |62     |62  |62    |34.0|\n|Mississippi Mermaid       |NULL                  |NULL       |true      |NULL   |NULL|NULL  |0.0 |\n|Following                 |NULL                  |7.7        |false     |77.0   |77.0|NULL  |0.0 |\n|Foolish                   |NULL                  |3.8        |false     |38.0   |38.0|NULL  |0.0 |\n|Pirates                   |25                    |5.8        |false     |25     |25  |25    |58.0|\n|Duel in the Sun           |86                    |7.0        |false     |86     |86  |86    |70.0|\n+--------------------------+----------------------+-----------+----------+-------+----+------+----+\n```\n\u003c/details\u003e\n\n\u003ch2\u003eConclusion\u003c/h2\u003e\n\u003cp\u003ePutting all together - \u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003e\u003cstrong\u003eFunction / Operation\u003c/strong\u003e\u003c/th\u003e\n\u003cth\u003e\u003cstrong\u003eOne-Line Explanation\u003c/strong\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003ecoalesce(expr1, expr2, …)\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eReturns the first non-null expression in the list.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eisNull(column)\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eChecks if the column’s value is null, returning a boolean.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eisNotNull(column)\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eChecks if the column’s value is not null, returning a boolean.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eeqNullSafe(col1, col2)\u003c/strong\u003e or \u003cstrong\u003ecol1 \u003ccode\u003e\u0026lt;=\u0026gt;\u003c/code\u003e col2\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eReturns \u003ccode\u003etrue\u003c/code\u003e if \u003ccode\u003ecol1\u003c/code\u003e equals \u003ccode\u003ecol2\u003c/code\u003e or both are null, otherwise \u003ccode\u003efalse\u003c/code\u003e.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eifnull(expr1, expr2)\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eReturns \u003ccode\u003eexpr2\u003c/code\u003e if \u003ccode\u003eexpr1\u003c/code\u003e is null, otherwise returns \u003ccode\u003eexpr1\u003c/code\u003e.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003envl(expr1, expr2)\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eSame as \u003ccode\u003eifnull\u003c/code\u003e: substitutes \u003ccode\u003eexpr2\u003c/code\u003e when \u003ccode\u003eexpr1\u003c/code\u003e is null.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003enullif(expr1, expr2)\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eReturns \u003ccode\u003eNULL\u003c/code\u003e if \u003ccode\u003eexpr1\u003c/code\u003e equals \u003ccode\u003eexpr2\u003c/code\u003e, otherwise returns \u003ccode\u003eexpr1\u003c/code\u003e.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003envl2(expr1, expr2, expr3)\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eReturns \u003ccode\u003eexpr2\u003c/code\u003e if \u003ccode\u003eexpr1\u003c/code\u003e is not null, otherwise returns \u003ccode\u003eexpr3\u003c/code\u003e.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003efillna / na.fill(value[, subset])\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eReplaces null values in specified columns (or all) with a given value.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003edropna / na.drop([how, subset])\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003eRemoves rows containing null values (based on any/all columns or a subset).\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003easc_nulls_first / asc_nulls_last\u003c/strong\u003e (when sorting)\u003c/td\u003e\n\u003ctd\u003eOrders rows ascending, placing nulls either first or last.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003edesc_nulls_first / desc_nulls_last\u003c/strong\u003e (when sorting)\u003c/td\u003e\n\u003ctd\u003eOrders rows descending, placing nulls either first or last.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\u003c/table\u003e\n\u003cp\u003eI hope you enjoyed reading this blog on handling nulls in Spark, if you are interested in more such content, do check out \u003ca href=\"/blog/tags/apache-spark\"\u003eApache Spark\u003c/a\u003e. series.\u003c/p\u003e\n\u003cp\u003eIf you have any questions or feedback, feel free to reach out to me.\u003c/p\u003e\n"])</script><script>self.__next_f.push([1,"5:[\"$\",\"main\",null,{\"className\":\"blog-standalone\",\"children\":[[\"$\",\"div\",null,{\"className\":\"filehead\",\"children\":[[\"$\",\"span\",null,{\"className\":\"path\",\"children\":[\"~/blog/\",\"handling-nulls-in-spark\",\".md\"]}],[\"$\",\"span\",null,{\"className\":\"ft\",\"children\":\"8 min read\"}]]}],[\"$\",\"div\",null,{\"className\":\"frontmatter\",\"children\":[\"--- title: \",\"Handling Nulls in Spark\",\" · date: \",\"Jan 13, 2025\",\" · slug: \",\"handling-nulls-in-spark\",\" ---\"]}],[\"$\",\"h1\",null,{\"style\":{\"fontSize\":\"17px\",\"fontWeight\":600,\"margin\":\"12px 0 8px\"},\"children\":\"Handling Nulls in Spark\"}],[\"$\",\"div\",null,{\"className\":\"article-content\",\"dangerouslySetInnerHTML\":{\"__html\":\"$13\"}}],\"$L14\"]}]\n9:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"handling-nulls-in-spark.md | vibhavari@portfolio\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"In SQL null is a special marker used to indicate that a data value does not exist in the database. A null should not be confused with a value of 0. Let's deep dive into handling nulls in Spark.\"}],[\"$\",\"link\",\"2\",{\"rel\":\"canonical\",\"href\":\"/blog/handling-nulls-in-spark/\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:\"$9:metadata\"\n"])</script><script>self.__next_f.push([1,"15:I[2619,[\"619\",\"static/chunks/619-ba102abea3e3d0e4.js\",\"953\",\"static/chunks/app/blog/%5Bslug%5D/page-b92476ce0735868f.js\"],\"\"]\n14:[\"$\",\"div\",null,{\"style\":{\"marginTop\":\"2rem\",\"paddingTop\":\"1rem\",\"borderTop\":\"1px solid var(--line)\"},\"children\":[[\"$\",\"$L15\",null,{\"className\":\"readmore\",\"href\":\"/blog/\",\"children\":\"← cd ../blog\"}],\" · \",[\"$\",\"$L15\",null,{\"className\":\"readmore\",\"href\":\"/\",\"children\":\"cd ~ → home\"}]]}]\n"])</script></body></html>

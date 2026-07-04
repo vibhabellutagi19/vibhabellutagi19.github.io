@@ -1,0 +1,134 @@
+1:"$Sreact.fragment"
+3:I[9766,[],""]
+4:I[8924,[],""]
+6:I[4431,[],"OutletBoundary"]
+8:I[5278,[],"AsyncMetadataOutlet"]
+a:I[4431,[],"ViewportBoundary"]
+c:I[4431,[],"MetadataBoundary"]
+d:"$Sreact.suspense"
+f:I[7150,[],""]
+:HL["/_next/static/media/37786be940ec402b-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/98e207f02528a563-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/d3ebbfd689654d3a-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/db96af6b531dc71f-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/a6830a9bcb3a01e3.css","style"]
+0:{"P":null,"b":"ikxivgWsDXdClqureGVtH","p":"","c":["","blog","spark-job-anatomy",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","spark-job-anatomy","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/a6830a9bcb3a01e3.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],"$L2"]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","spark-job-anatomy","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L5",null,["$","$L6",null,{"children":["$L7",["$","$L8",null,{"promise":"$@9"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$La",null,{"children":"$Lb"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$Lc",null,{"children":["$","div",null,{"hidden":true,"children":["$","$d",null,{"fallback":null,"children":"$Le"}]}]}]]}],false]],"m":"$undefined","G":["$f",[]],"s":false,"S":true}
+b:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+10:I[4680,["619","static/chunks/619-ba102abea3e3d0e4.js","177","static/chunks/app/layout-5e3c729616dc2aad.js"],"BootOverlay"]
+11:I[5741,["619","static/chunks/619-ba102abea3e3d0e4.js","177","static/chunks/app/layout-5e3c729616dc2aad.js"],"TerminalShell"]
+2:["$","html",null,{"lang":"en","className":"__variable_b4c22e","suppressHydrationWarning":true,"children":["$","body",null,{"children":[["$","$L10",null,{}],["$","$L11",null,{"blogPosts":[{"slug":"inside-git","title":"Inside Git: How It Works Under the Hood","excerpt":"In the previous post, we learnt [How Git manages version control](post.html?post=git-essentials) through its internal structures. In this continuation, we will delve deeper into h"},{"slug":"git-essentials","title":"Git for Beginners: Essential Commands You Need to Know","excerpt":"If you have ever played a video game, you know the anxiety of facing a difficult boss. What is the first thing you do before walking through that boss door? You save your game.\n\nW"},{"slug":"why-version-control-exists","title":"Why Version Control Exists - The Pendrive Problem","excerpt":"## Why Version Control Exists - The Pendrive Problem\n\n**Analogy: The Pendrive Problem**\n\nLet's imagine a world where version control systems like Git do not exist. Instead, develo"},{"slug":"automate-unit-tests-using-ci-cd","title":"Automating Unit Tests and Deploying AWS Glue & Lambda Python Jobs with CI/CD","excerpt":"In this blog, we’ll explore how to set up a complete CI/CD pipeline using `Jenkins`, `pytest`, and `Terraform` to automate unit testing and deployment for AWS Glue and Lambda jobs"},{"slug":"spark-application-lifecycle-outside","title":"The Life Cycle of a Spark Application ( Outside )","excerpt":"In this blog, we will go in-depth on the overall life cycle of Spark Applications from outside the actual Spark code. Before going ahead, I recommend reading the [Execution Modes]"},{"slug":"spark-execution-modes","title":"Spark Execution Modes","excerpt":"In this post, we will discuss the different execution modes available in Apache Spark. Apache Spark provides three execution modes to run Spark applications: Cluster mode, Client mode, and Local mode."},{"slug":"spark-job-anatomy","title":"Under the hood of a Spark job","excerpt":"Understanding the internal execution flow of a Spark application is key to optimizing performance and debugging. This blog dives into the details of Spark jobs, stages, and tasks, providing a thorough exploration of how Spark handles distributed execution."},{"slug":"handling-nulls-in-spark","title":"Handling Nulls in Spark","excerpt":"In SQL null is a special marker used to indicate that a data value does not exist in the database. A null should not be confused with a value of 0. Let's deep dive into handling nulls in Spark."},{"slug":"columns-and-expressions","title":"Columns and Expressions","excerpt":"Apache Spark's Column and Expression play a big role in making your pipeline more efficient. In this blog we will look into ALL the possible ways to select columns, use built-in functions and perform calculations with column objects and expressions in PySpark."},{"slug":"spark-basics","title":"Introduction to Apache Spark","excerpt":"Welcome to my Apache Spark series! I'll dive deep into Apache Spark, from basics to advanced concepts. This series is about learning, exploring, and sharing—documenting my journey to mastering Apache Spark."},{"slug":"welcome-to-my-blog","title":"Welcome to My Blog","excerpt":"Welcome to my blog! This is where I'll be sharing my thoughts, experiences, and insights on technology, development, and more."}],"children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],"$L12"],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]}]
+12:["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]
+13:T1cf6,<p>Understanding the internal execution flow of a Spark application is key to optimizing performance and debugging. This blog dives into the details of <code>Spark jobs</code>, <code>stages</code>, and <code>tasks</code>, providing a thorough exploration of how Spark handles distributed execution.</p>
+<!-- truncate -->
+
+<h2>Spark Job Anatomy</h2>
+<h3>Jobs</h3>
+<p>Each application is made up of one or more Spark jobs. Spark jobs within an application are executed serially. In general, a job is created for <Highlight color="#3e6980">each action operation</Highlight> in the spark application.</p>
+<p>Each job breaks down into a series of stages, the number of which depends on how many shuffle operations need to take place.</p>
+<p>Since Spark <a href="https://en.wikipedia.org/wiki/Lazy_evaluation">evaluates lazily</a>, the job is not executed until an action is called. If there are no actions, there are no jobs.</p>
+<p><img src="/posts/2025-01-21-spark-job-anatomy/assets/no-actions-no-jobs.png" alt="no-action-no-job" loading="lazy" /></p>
+<p>When an action is called on a RDD/DF, a job is created.</p>
+<p><img src="/posts/2025-01-21-spark-job-anatomy/assets/job-created.png" alt="action-job" loading="lazy" /></p>
+<p>Key Features of Spark Jobs:</p>
+<ul>
+<li>Each job is composed of multiple stages.</li>
+<li>Spark generates one job per action.</li>
+<li>Jobs are independent and can run in parallel if no dependencies exist between them.</li>
+</ul>
+<h3>Stages</h3>
+<p>A stage is a group of tasks that Spark can run together to perform the same operation across multiple machines. While Spark tries to include as much work as possible in one stage, it creates a new stage whenever there’s a shuffle operation.</p>
+<p>A shuffle happens when <Highlight color="#3e6980">Spark redistributes data across partitions or nodes in the cluster</Highlight> to complete certain operations. It involves a physical rearrangement of the data to meet the needs of the computation.</p>
+<p><u>For example</u>:<br>Sorting a DataFrame, or grouping data that was loaded from a file by key (which requires sending records with the same key to the same node). </p>
+<p>This type of repartitioning requires coordinating across executors to move data around. Spark starts a new stage after each shuffle, and keeps track of what order the stages must run in to compute the final result</p>
+<pre><code>scala&gt; val df1 = spark.range(2, 10000000, 2) 
+val df1: org.apache.spark.sql.Dataset[Long] = [id: bigint]
+
+scala&gt; val step1 = df1.repartition(5)
+val step1: org.apache.spark.sql.Dataset[Long] = [id: bigint]
+
+scala&gt; step1.count()
+val res0: Long = 4999999
+</code></pre>
+<p><img src="/posts/2025-01-21-spark-job-anatomy/assets/shuffles.png" alt="stages" loading="lazy" /></p>
+<p>In the above example:</p>
+<ul>
+<li>The the 1st stage (stage-0) correspond to the <code>range</code> that you perform in order to create your DataFrames. By default when you create a DataFrame with range, it has <code>8 partitions</code>.</li>
+<li>The next stage (stage-1) is the <code>repartitioning</code>. This changes the number of partitions by shuffling the data. These DataFrames are shuffled into <code>5 partitions</code>.</li>
+<li>The final stage (stage-2) is the <code>count action</code>. This is the final stage that is executed.</li>
+</ul>
+<pre><code class="language-scala">val df1 = spark.range(2, 10000000, 2)
+val df2 = spark.range(2, 10000000, 4)
+val step1 = df1.repartition(5)
+val step12 = df2.repartition(6)
+val step2 = step1.selectExpr(&quot;id * 5 as id&quot;)
+val step3 = step2.join(step12, [&quot;id&quot;])
+val step4 = step3.selectExpr(&quot;sum(id)&quot;)
+</code></pre>
+<p><img src="/posts/2025-01-21-spark-job-anatomy/assets/shuffle-partitions.png" alt="shuffle-partitions" loading="lazy" /></p>
+<p><img src="/posts/2025-01-21-spark-job-anatomy/assets/shuffle-partition-viz.png" alt="shuffle-partition-viz" loading="lazy" /></p>
+<ul>
+<li>Stages 3 and 4 perform on each of those DataFrames and the end of the stage represents the join (a shuffle). </li>
+<li>Suddenly, why we have 200 tasks? This is because of a Spark SQL configuration. The <code>spark.sql.shuffle.partitions</code> default value is 200, which means that when there is a shuffle performed during execution, it outputs 200 shuffle partitions by default. However you can change this value, and the number of output partitions will change.</li>
+</ul>
+<aside class="callout callout-note">
+      <p class="callout-title">Note</p>
+      <div class="callout-body"><p>A good rule of thumb: The number of partitions should be larger than the number of executors on your cluster, potentially by multiple factors depending on the workload.</p>
+</div>
+    </aside>
+
+<h3>Tasks</h3>
+<p>A task is just a <Highlight color="#3e6980">unit of computation applied to a unit of data (the partition)</Highlight>. Stages in Spark consists of tasks. Each task corresponds to a combination of blocks of data and a set of transformations that will run on a single executor.</p>
+<p>Partitioning your data into a greatest number of partitions means that more can be executed in parallel.</p>
+<h2>Summary</h2>
+<p>Easy way to remember how Spark organizes work:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Topic</strong></th>
+<th><strong>Key Points</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>App Decomposition</strong></td>
+<td>- 1 Spark Application can have 1 or more Jobs. <br/> - Each Job is broken into 1 or more Stages.</td>
+</tr>
+<tr>
+<td><strong>Stages &amp; Tasks</strong></td>
+<td>- Each Stage is subdivided into Tasks. <br/> - Shuffle boundaries (data rearrangements) define when Spark moves from one Stage to the next.</td>
+</tr>
+<tr>
+<td><strong>Tasks &amp; Executors</strong></td>
+<td>- One Task runs on one Executor (it can’t move mid-task). <br/> - An Executor can run multiple Tasks (depending on its available cores).</td>
+</tr>
+<tr>
+<td><strong>Partitions &amp; Tasks</strong></td>
+<td>- Processing one partition = one Task. <br/> - The number of Tasks in a Stage often equals the number of partitions for that data.</td>
+</tr>
+<tr>
+<td><strong>Partitions &amp; Executors</strong></td>
+<td>- A partition stays on one Executor while it’s being processed. <br/> - Each Executor can hold 0 or more partitions in memory or on disk.</td>
+</tr>
+<tr>
+<td><strong>Executors &amp; Nodes</strong></td>
+<td>- 1 Executor corresponds to 1 JVM running on 1 physical/virtual Node. <br/> - Each Node can host 0 or more Executors.</td>
+</tr>
+</tbody></table>
+<p>Use this table as a handy to keep the Spark “big picture” in mind:</p>
+<ol>
+<li>Spark <strong>Applications</strong> → <strong>Jobs</strong> → <strong>Stages</strong> → <strong>Tasks</strong>.  </li>
+<li>A <strong>Task</strong> processes a <strong>Partition</strong>.  </li>
+<li><strong>Executors</strong> (JVMs) on cluster <strong>Nodes</strong> do the actual work.</li>
+</ol>
+<h2>References</h2>
+<ol>
+<li><a href="https://www.amazon.com/Spark-Definitive-Guide-Processing-Simple/dp/1491912219">Spark: The Definitive Guide</a></li>
+<li><a href="https://spark.apache.org/docs/latest/index.html">Apache Spark Documentation</a></li>
+</ol>
+<p>I hope you enjoyed reading this blog, if you are interested in learning other topics related to Apache Spark, feel free to check <a href="/blog/tags/apache-spark">Apache Spark</a> series.</p>
+<p>If you have any questions or feedback, feel free to reach out to me.</p>
+5:["$","main",null,{"className":"blog-standalone","children":[["$","div",null,{"className":"filehead","children":[["$","span",null,{"className":"path","children":["~/blog/","spark-job-anatomy",".md"]}],["$","span",null,{"className":"ft","children":"7 min read"}]]}],["$","div",null,{"className":"frontmatter","children":["--- title: ","Under the hood of a Spark job"," · date: ","Jan 21, 2025"," · slug: ","spark-job-anatomy"," ---"]}],["$","h1",null,{"style":{"fontSize":"17px","fontWeight":600,"margin":"12px 0 8px"},"children":"Under the hood of a Spark job"}],["$","div",null,{"className":"article-content","dangerouslySetInnerHTML":{"__html":"$13"}}],"$L14"]}]
+9:{"metadata":[["$","title","0",{"children":"spark-job-anatomy.md | vibhavari@portfolio"}],["$","meta","1",{"name":"description","content":"Understanding the internal execution flow of a Spark application is key to optimizing performance and debugging. This blog dives into the details of Spark jobs, stages, and tasks, providing a thorough exploration of how Spark handles distributed execution."}],["$","link","2",{"rel":"canonical","href":"/blog/spark-job-anatomy/"}]],"error":null,"digest":"$undefined"}
+e:"$9:metadata"
+15:I[2619,["619","static/chunks/619-ba102abea3e3d0e4.js","953","static/chunks/app/blog/%5Bslug%5D/page-b92476ce0735868f.js"],""]
+14:["$","div",null,{"style":{"marginTop":"2rem","paddingTop":"1rem","borderTop":"1px solid var(--line)"},"children":[["$","$L15",null,{"className":"readmore","href":"/blog/","children":"← cd ../blog"}]," · ",["$","$L15",null,{"className":"readmore","href":"/","children":"cd ~ → home"}]]}]

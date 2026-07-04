@@ -1,0 +1,127 @@
+1:"$Sreact.fragment"
+3:I[9766,[],""]
+4:I[8924,[],""]
+6:I[4431,[],"OutletBoundary"]
+8:I[5278,[],"AsyncMetadataOutlet"]
+a:I[4431,[],"ViewportBoundary"]
+c:I[4431,[],"MetadataBoundary"]
+d:"$Sreact.suspense"
+f:I[7150,[],""]
+:HL["/_next/static/media/37786be940ec402b-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/98e207f02528a563-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/d3ebbfd689654d3a-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/db96af6b531dc71f-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/a6830a9bcb3a01e3.css","style"]
+0:{"P":null,"b":"ikxivgWsDXdClqureGVtH","p":"","c":["","blog","columns-and-expressions",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","columns-and-expressions","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/a6830a9bcb3a01e3.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],"$L2"]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","columns-and-expressions","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L5",null,["$","$L6",null,{"children":["$L7",["$","$L8",null,{"promise":"$@9"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$La",null,{"children":"$Lb"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$Lc",null,{"children":["$","div",null,{"hidden":true,"children":["$","$d",null,{"fallback":null,"children":"$Le"}]}]}]]}],false]],"m":"$undefined","G":["$f",[]],"s":false,"S":true}
+b:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+10:I[4680,["619","static/chunks/619-ba102abea3e3d0e4.js","177","static/chunks/app/layout-5e3c729616dc2aad.js"],"BootOverlay"]
+11:I[5741,["619","static/chunks/619-ba102abea3e3d0e4.js","177","static/chunks/app/layout-5e3c729616dc2aad.js"],"TerminalShell"]
+2:["$","html",null,{"lang":"en","className":"__variable_b4c22e","suppressHydrationWarning":true,"children":["$","body",null,{"children":[["$","$L10",null,{}],["$","$L11",null,{"blogPosts":[{"slug":"inside-git","title":"Inside Git: How It Works Under the Hood","excerpt":"In the previous post, we learnt [How Git manages version control](post.html?post=git-essentials) through its internal structures. In this continuation, we will delve deeper into h"},{"slug":"git-essentials","title":"Git for Beginners: Essential Commands You Need to Know","excerpt":"If you have ever played a video game, you know the anxiety of facing a difficult boss. What is the first thing you do before walking through that boss door? You save your game.\n\nW"},{"slug":"why-version-control-exists","title":"Why Version Control Exists - The Pendrive Problem","excerpt":"## Why Version Control Exists - The Pendrive Problem\n\n**Analogy: The Pendrive Problem**\n\nLet's imagine a world where version control systems like Git do not exist. Instead, develo"},{"slug":"automate-unit-tests-using-ci-cd","title":"Automating Unit Tests and Deploying AWS Glue & Lambda Python Jobs with CI/CD","excerpt":"In this blog, we’ll explore how to set up a complete CI/CD pipeline using `Jenkins`, `pytest`, and `Terraform` to automate unit testing and deployment for AWS Glue and Lambda jobs"},{"slug":"spark-application-lifecycle-outside","title":"The Life Cycle of a Spark Application ( Outside )","excerpt":"In this blog, we will go in-depth on the overall life cycle of Spark Applications from outside the actual Spark code. Before going ahead, I recommend reading the [Execution Modes]"},{"slug":"spark-execution-modes","title":"Spark Execution Modes","excerpt":"In this post, we will discuss the different execution modes available in Apache Spark. Apache Spark provides three execution modes to run Spark applications: Cluster mode, Client mode, and Local mode."},{"slug":"spark-job-anatomy","title":"Under the hood of a Spark job","excerpt":"Understanding the internal execution flow of a Spark application is key to optimizing performance and debugging. This blog dives into the details of Spark jobs, stages, and tasks, providing a thorough exploration of how Spark handles distributed execution."},{"slug":"handling-nulls-in-spark","title":"Handling Nulls in Spark","excerpt":"In SQL null is a special marker used to indicate that a data value does not exist in the database. A null should not be confused with a value of 0. Let's deep dive into handling nulls in Spark."},{"slug":"columns-and-expressions","title":"Columns and Expressions","excerpt":"Apache Spark's Column and Expression play a big role in making your pipeline more efficient. In this blog we will look into ALL the possible ways to select columns, use built-in functions and perform calculations with column objects and expressions in PySpark."},{"slug":"spark-basics","title":"Introduction to Apache Spark","excerpt":"Welcome to my Apache Spark series! I'll dive deep into Apache Spark, from basics to advanced concepts. This series is about learning, exploring, and sharing—documenting my journey to mastering Apache Spark."},{"slug":"welcome-to-my-blog","title":"Welcome to My Blog","excerpt":"Welcome to my blog! This is where I'll be sharing my thoughts, experiences, and insights on technology, development, and more."}],"children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],"$L12"],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]}]
+12:["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]
+13:T1cf9,<p>Apache Spark&#39;s <code>Column and Expression</code> play a big role in making your pipeline more efficient. In this blog we will look into ALL the possible ways to select columns, use built-in functions and perform calculations with column objects and expressions in PySpark. So, whether you build an ETL pipeline or doing exploratory data analysis, these techniques methods will come in handy.</p>
+<!-- truncate -->
+
+<h2>Columns and Experssions</h2>
+<p>In Spark, columns are not actual data; they are logical constructs—formulas, basically—that say how to calculate a value for every row in a table. These formulas by themselves don’t contain any real data, just return real values when they are applied to rows in a DataFrame. For this reason, columns can’t exist in isolation — you need a DataFrame and some of its rows for a column’s formula to be evaluated. Therefore, the creation or manipulation of columns should always occur by transforming on a DataFrame instead of on the column alone.</p>
+<h3>Ways of Constructing the Column</h3>
+<p>There are many ways to construct and refer to columns but the simplest ways are by using the <code>col, column functions or expr</code>. <code>col(), column() or expr</code> are from package <code>pyspark.sql.functions</code>. Find the syntax below:</p>
+<pre><code class="language-python">from pyspark.sql.functions import col, column, expr
+col(&quot;columnName&quot;)
+column(&quot;columnName&quot;)
+expr(&quot;columnName&quot;)
+</code></pre>
+<h3>Selecting Columns</h3>
+<p>You can select columns from a DataFrame using the <code>select()</code> method. the <code>select()</code> takes a list of column objects or expressions.</p>
+<h4>Setting up the Spark Session and dummy data</h4>
+<pre><code class="language-python">
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import col, column, expr
+
+spark_session = (
+    SparkSession
+    .builder
+    .appName(&quot;ColumnsAndExpressionsDemo&quot;)
+    .config(&quot;spark.master&quot;, &quot;local&quot;)
+    .getOrCreate()
+)
+
+data = [
+    {&quot;Name&quot;: &quot;car1&quot;, &quot;Horsepower&quot;: 130, &quot;Acceleration&quot;: 12.0, &quot;Weight_in_lbs&quot;: 3504, &quot;Year&quot;: 1970},
+    {&quot;Name&quot;: &quot;car2&quot;, &quot;Horsepower&quot;: 165, &quot;Acceleration&quot;: 11.5, &quot;Weight_in_lbs&quot;: 3693, &quot;Year&quot;: 1970},
+    {&quot;Name&quot;: &quot;car3&quot;, &quot;Horsepower&quot;: 150, &quot;Acceleration&quot;: 10.5, &quot;Weight_in_lbs&quot;: 3436, &quot;Year&quot;: 1970},
+    {&quot;Name&quot;: &quot;car4&quot;, &quot;Horsepower&quot;: 150, &quot;Acceleration&quot;: 10.0, &quot;Weight_in_lbs&quot;: 3761, &quot;Year&quot;: 1970},
+    {&quot;Name&quot;: &quot;car5&quot;, &quot;Horsepower&quot;: 140, &quot;Acceleration&quot;: 9.0,  &quot;Weight_in_lbs&quot;: 3200, &quot;Year&quot;: 1971},
+    {&quot;Name&quot;: &quot;car6&quot;, &quot;Horsepower&quot;: 198, &quot;Acceleration&quot;: 8.5,  &quot;Weight_in_lbs&quot;: 4341, &quot;Year&quot;: 1971},
+    {&quot;Name&quot;: &quot;car7&quot;, &quot;Horsepower&quot;: 220, &quot;Acceleration&quot;: 8.0,  &quot;Weight_in_lbs&quot;: 4354, &quot;Year&quot;: 1971},
+    {&quot;Name&quot;: &quot;car8&quot;, &quot;Horsepower&quot;: 215, &quot;Acceleration&quot;: 7.5,  &quot;Weight_in_lbs&quot;: 4312, &quot;Year&quot;: 1972},
+    {&quot;Name&quot;: &quot;car9&quot;, &quot;Horsepower&quot;: 225, &quot;Acceleration&quot;: 7.7,  &quot;Weight_in_lbs&quot;: 4425, &quot;Year&quot;: 1972},
+    {&quot;Name&quot;: &quot;car10&quot;,&quot;Horsepower&quot;: 190, &quot;Acceleration&quot;: 9.5,  &quot;Weight_in_lbs&quot;: 3850, &quot;Year&quot;: 1972},
+]
+
+cars_df = spark_session.createDataFrame(data)
+cars_df.show()
+</code></pre>
+<h4>Selecting Columns using <code>col</code> and <code>select</code></h4>
+<pre><code class="language-python">first_column = col(&quot;Name&quot;)  # return Column object
+
+cars_df.select(
+    first_column, # using Column object
+    col(&quot;Acceleration&quot;),
+    column(&quot;Weight_in_lbs&quot;),
+    cars_df.Weight_in_lbs, # using dot (.) notation
+    &#39;Horsepower&#39;,       # using string-based column reference
+    expr(&#39;Year&#39;)        # using Spark SQL expression
+).show(10)
+</code></pre>
+<ul>
+<li><Highlight color="#3e6980">col(&quot;columnName&quot;) and column(&quot;columnName&quot;)</Highlight> are functionally equivalent. They create a Column object that you can pass to DataFrame transformations.</li>
+<li>You can also refer to columns directly by their <Highlight color="#3e6980">string name (&#39;Horsepower&#39;)</Highlight>.</li>
+<li><Highlight color="#3e6980">expr(&quot;Year&quot;)</Highlight> showcases how you can mix SQL expressions right within the select statement.</li>
+</ul>
+<h4>Performing Calculations with Columns</h4>
+<pre><code class="language-python">from pyspark.sql.column import Column
+
+simple_expression: Column = col(&quot;Weight_in_lbs&quot;)
+weight_in_kgs_expression: Column = col(&quot;Weight_in_lbs&quot;) / 2.2 # performing arithmetic on columns
+
+cars_df.select(
+    col(&quot;Name&quot;),
+    col(&quot;Weight_in_lbs&quot;),
+    weight_in_kgs_expression.alias(&quot;Weight_in_kgs&quot;)
+).show(5)
+</code></pre>
+<ol>
+<li>Spark allows you to perform arithmetic on columns just like regular Python variables.</li>
+<li>alias(&quot;Weight_in_kgs&quot;) labels your computed column for clarity in the output.</li>
+</ol>
+<h4>Using <code>expr</code> to perform calculations</h4>
+<p>An expression is a set of transformations on one or more values in a record in a DataFrame. Think of it like a function that takes as input one or more column names, resolves them, and then potentially applies more expressions to create a single value for each record in the dataset.</p>
+<p>In the simplest case, an expression, created via the <code>expr function</code>, is just a DataFrame column reference. In the simplest case, expr(&quot;someCol&quot;) is equivalent to col(&quot;someCol&quot;).</p>
+<pre><code class="language-python">
+print(&quot;Select with expr...&quot;)
+cars_df.select(
+    col(&quot;Name&quot;),
+    col(&quot;Weight_in_lbs&quot;),
+    expr(&quot;Weight_in_lbs / 2.2&quot;) # using expr to perform arithmetic
+).show(5)
+</code></pre>
+<h4>Using <code>selectExpr</code></h4>
+<p>The <code>select method</code> when you’re working with columns or expressions, and the <code>selectExpr method</code> when you’re working with expressions in strings. </p>
+<pre><code class="language-python">
+cars_df.selectExpr(
+    &#39;Name&#39;,
+    &#39;Weight_in_lbs&#39;,
+    &#39;Weight_in_lbs / 2.2&#39;
+).show(5)
+</code></pre>
+<h2>Conclusion</h2>
+<p>Choosing between <code>col()</code>, <code>column()</code>, <code>expr()</code>, or even raw string references comes down to personal preference, readability, and complexity of your transformations. For simple column references, col() is often the most straightforward. However, if you prefer writing SQL-like expressions directly in your code or need complex SQL functions, <code>expr()</code> and <code>selectExpr()</code> provide the flexibility you need.</p>
+<hr>
+<p>I hope this blog helped you understand the use of <code>Columns and Expressions</code> in Apache Spark. If you are interested in more such content, do check out <a href="/blog/tags/apache-spark">Apache Spark</a>. series.</p>
+<p>If you have any questions or feedback, feel free to reach out to me.</p>
+5:["$","main",null,{"className":"blog-standalone","children":[["$","div",null,{"className":"filehead","children":[["$","span",null,{"className":"path","children":["~/blog/","columns-and-expressions",".md"]}],["$","span",null,{"className":"ft","children":"7 min read"}]]}],["$","div",null,{"className":"frontmatter","children":["--- title: ","Columns and Expressions"," · date: ","Jan 10, 2025"," · slug: ","columns-and-expressions"," ---"]}],["$","h1",null,{"style":{"fontSize":"17px","fontWeight":600,"margin":"12px 0 8px"},"children":"Columns and Expressions"}],["$","div",null,{"className":"article-content","dangerouslySetInnerHTML":{"__html":"$13"}}],"$L14"]}]
+9:{"metadata":[["$","title","0",{"children":"columns-and-expressions.md | vibhavari@portfolio"}],["$","meta","1",{"name":"description","content":"Apache Spark's Column and Expression play a big role in making your pipeline more efficient. In this blog we will look into ALL the possible ways to select columns, use built-in functions and perform calculations with column objects and expressions in PySpark."}],["$","link","2",{"rel":"canonical","href":"/blog/columns-and-expressions/"}]],"error":null,"digest":"$undefined"}
+e:"$9:metadata"
+15:I[2619,["619","static/chunks/619-ba102abea3e3d0e4.js","953","static/chunks/app/blog/%5Bslug%5D/page-b92476ce0735868f.js"],""]
+14:["$","div",null,{"style":{"marginTop":"2rem","paddingTop":"1rem","borderTop":"1px solid var(--line)"},"children":[["$","$L15",null,{"className":"readmore","href":"/blog/","children":"← cd ../blog"}]," · ",["$","$L15",null,{"className":"readmore","href":"/","children":"cd ~ → home"}]]}]
