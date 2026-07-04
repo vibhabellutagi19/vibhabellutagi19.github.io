@@ -1,0 +1,47 @@
+@import './terminal.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+}
+
+.tree a {
+  border-bottom: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 2px 8px;
+  border-radius: 3px;
+  color: var(--dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tree a:hover {
+  color: var(--text);
+  background: var(--panel);
+}
+
+.tmux nav a {
+  text-decoration: none;
+}

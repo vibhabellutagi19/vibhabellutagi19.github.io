@@ -1,0 +1,26 @@
+:root {
+  /* Cream base */
+  --bg: #faf5ec;
+  --bg-elevated: #fffcf5;
+  --bg-soft: #f1e9db;
+
+  /* Ink */
+  --text: #23201b;
+  --text-soft: #6d675c;
+  --text-faint: #97907f;
+
+  /* Hairlines */
+  --line: #e5dccb;
+  --line-strong: #d3c6ae;
+
+  /* Brick accent */
+  --accent: #b23b23;
+  --accent-deep: #8f2f1c;
+  --accent-tint: #f6e3dc;
+
+  --max-width: 1080px;
+  --radius: 12px;
+  --radius-pill: 999px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
