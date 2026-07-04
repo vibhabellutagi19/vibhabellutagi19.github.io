@@ -106,37 +106,39 @@ export default async function HomePage() {
           <span className="path">
             ~/experience.git — git log --graph --career
           </span>
-          <span className="ft">{experienceData.length} commits · main</span>
+          <span className="ft">{experienceData.length} commits · main · scroll ↓</span>
         </div>
 
-        {experienceData.map((item, index) => (
-          <div className="commit" key={`${item.title}-${item.date}`}>
-            <div className="graph">*</div>
-            <div className="commit-body">
-              <div>
-                <span className="hash">
-                  commit {COMMIT_HASHES[index] || "deadbeef"}
-                </span>
-                {index === 0 && (
-                  <span className="refs"> (HEAD → main, tag: current)</span>
-                )}
-                <span className="refs"> · tag: {item.track}</span>
+        <div className="git-log-scroll" tabIndex={0} aria-label="Experience git log">
+          {experienceData.map((item, index) => (
+            <div className="commit" key={`${item.title}-${item.date}`}>
+              <div className="graph">*</div>
+              <div className="commit-body">
+                <div>
+                  <span className="hash">
+                    commit {COMMIT_HASHES[index] || "deadbeef"}
+                  </span>
+                  {index === 0 && (
+                    <span className="refs"> (HEAD → main, tag: current)</span>
+                  )}
+                  <span className="refs"> · tag: {item.track}</span>
+                </div>
+                <h3>
+                  {item.title} <span className="org">@ {item.company}</span>
+                </h3>
+                <div className="date">Date: {item.date}</div>
+                <ul>
+                  {toBullets(item.description).map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
+                  ))}
+                  <li>
+                    stack: <b>{item.skills.join(", ")}</b>
+                  </li>
+                </ul>
               </div>
-              <h3>
-                {item.title} <span className="org">@ {item.company}</span>
-              </h3>
-              <div className="date">Date: {item.date}</div>
-              <ul>
-                {toBullets(item.description).map((bullet) => (
-                  <li key={bullet}>{bullet}</li>
-                ))}
-                <li>
-                  stack: <b>{item.skills.join(", ")}</b>
-                </li>
-              </ul>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </section>
 
       {projectsData.length > 0 && (
