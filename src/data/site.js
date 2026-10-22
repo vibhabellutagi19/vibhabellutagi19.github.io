@@ -27,7 +27,7 @@ export const analytics = {
  * e.g. "https://blog-likes.<you>.workers.dev"; the like button stays hidden while empty.
  */
 export const likes = {
-  apiUrl: "",
+  apiUrl: "https://blog-likes.vibhavari-bellutagi.workers.dev",
 };
 
 export const heroData = {

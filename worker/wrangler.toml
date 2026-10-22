@@ -1,6 +1,8 @@
 name = "blog-likes"
 main = "src/index.js"
 compatibility_date = "2026-10-01"
+workers_dev = true
+preview_urls = false
 
 [vars]
 ALLOWED_ORIGINS = "https://buildwithvibs.in,http://localhost:3000"
@@ -9,6 +11,6 @@ ALLOWED_ORIGINS = "https://buildwithvibs.in,http://localhost:3000"
 # and paste the id it prints here.
 [[kv_namespaces]]
 binding = "LIKES"
-id = "REPLACE_WITH_KV_NAMESPACE_ID"
+id = "739b375a59dc48ee8b2252a2999475ac"
 
 # IP_SALT is a secret: set it with `npx wrangler secret put IP_SALT`.
