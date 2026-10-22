@@ -2,43 +2,54 @@ import Link from 'next/link';
 
 import { getAllPosts } from '@/lib/posts';
 
+const title = 'Blog · Vibhavari Bellutagi';
+const description = 'Technical essays on data engineering, Git, and software systems.';
+
 export const metadata = {
-  title: 'blog/ | vibhavari@portfolio',
-  description: 'Technical essays on data engineering, Git, and software systems.',
+  title,
+  description,
+  openGraph: {
+    url: '/blog/',
+    title,
+    description,
+    images: ['/opengraph-image.jpg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description,
+    images: ['/twitter-image.jpg'],
+  },
 };
 
 export default async function BlogIndexPage() {
   const posts = await getAllPosts();
 
   return (
-    <main className="blog-standalone">
-      <div className="filehead">
-        <span className="path">~/blog — ls -la *.md</span>
-        <span className="ft">{posts.length} posts</span>
+    <main className="section">
+      <div className="container container-narrow">
+        <div className="section-head">
+          <p className="eyebrow">Writing</p>
+          <h1>Blog</h1>
+          <p className="section-lede">
+            Notes on data engineering, Git and the systems behind software. {posts.length} posts.
+          </p>
+        </div>
+
+        <ul className="post-list">
+          {posts.map((post) => (
+            <li key={post.slug}>
+              <Link className="post-item" href={`/blog/${post.slug}/`}>
+                <span className="post-meta">
+                  {post.date} · {post.readTime}
+                </span>
+                <span className="post-title">{post.title}</span>
+                {post.excerpt && <span className="post-excerpt">{post.excerpt}</span>}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
-
-      {posts.map((post) => (
-        <article className="post" key={post.slug}>
-          <div className="frontmatter">
-            --- date: {post.date} · slug: {post.slug} ---
-          </div>
-          <div className="fname">
-            <Link href={`/blog/${post.slug}/`}>{post.slug}.md</Link>
-          </div>
-          <div className="fmeta">
-            <span className="rt">{post.readTime}</span>
-            <span>{post.date}</span>
-          </div>
-          <p className="excerpt">{post.excerpt || post.title}</p>
-          <Link className="readmore" href={`/blog/${post.slug}/`}>
-            cat {post.slug}.md →
-          </Link>
-        </article>
-      ))}
-
-      <Link className="readmore" href="/">
-        cd ~ → back to portfolio
-      </Link>
     </main>
   );
 }

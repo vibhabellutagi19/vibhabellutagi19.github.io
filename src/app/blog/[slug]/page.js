@@ -15,11 +15,32 @@ export async function generateMetadata({ params }) {
     return {};
   }
 
+  const title = `${post.title} · Vibhavari Bellutagi`;
+  // Excerpts can be raw markdown; previews need one clean line.
+  const text = post.excerpt
+    .replace(/[#>*_`[\]]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  const description = text.length > 160 ? `${text.slice(0, text.lastIndexOf(' ', 157))}…` : text;
+
   return {
-    title: `${post.slug}.md | vibhavari@portfolio`,
-    description: post.excerpt,
+    title,
+    description,
     alternates: {
       canonical: `/blog/${post.slug}/`,
+    },
+    openGraph: {
+      type: 'article',
+      url: `/blog/${post.slug}/`,
+      title,
+      description,
+      images: ['/opengraph-image.jpg'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['/twitter-image.jpg'],
     },
   };
 }
@@ -32,32 +53,29 @@ export default async function BlogPostPage({ params }) {
   }
 
   return (
-    <main className="blog-standalone">
-      <div className="filehead">
-        <span className="path">~/blog/{post.slug}.md</span>
-        <span className="ft">{post.readTime}</span>
-      </div>
-
-      <div className="frontmatter">
-        --- title: {post.title} · date: {post.date} · slug: {post.slug} ---
-      </div>
-
-      <h1 style={{ fontSize: '17px', fontWeight: 600, margin: '12px 0 8px' }}>{post.title}</h1>
-
-      <div
-        className="article-content"
-        dangerouslySetInnerHTML={{ __html: post.html }}
-      />
-
-      <div style={{ marginTop: '2rem', paddingTop: '1rem', borderTop: '1px solid var(--line)' }}>
-        <Link className="readmore" href="/blog/">
-          ← cd ../blog
+    <main className="section">
+      <article className="container container-narrow">
+        <Link className="text-link back-link" href="/blog/">
+          ← All posts
         </Link>
-        {' · '}
-        <Link className="readmore" href="/">
-          cd ~ → home
-        </Link>
-      </div>
+        <header className="article-head">
+          <p className="post-meta">
+            {post.date} · {post.readTime}
+          </p>
+          <h1>{post.title}</h1>
+        </header>
+
+        <div className="article-content" dangerouslySetInnerHTML={{ __html: post.html }} />
+
+        <footer className="article-foot">
+          <Link className="text-link" href="/blog/">
+            ← All posts
+          </Link>
+          <Link className="text-link" href="/#contact">
+            Work with me →
+          </Link>
+        </footer>
+      </article>
     </main>
   );
 }
