@@ -1366,6 +1366,17 @@ img {
   margin-top: 1.1em;
 }
 
+/* Posts with demos are rendered as HTML chunks around each demo. The chunks
+   disappear from layout so their children keep the article's spacing. */
+.article-html {
+  display: contents;
+}
+
+.article-content > .article-html > * + *,
+.article-content > * + .article-html > :first-child {
+  margin-top: 1.1em;
+}
+
 .article-content :is(h2, h3, h4) {
   margin-top: 2em;
   font-family: var(--sans);
@@ -1488,6 +1499,231 @@ img {
   margin-top: 64px;
   padding-top: 24px;
   border-top: 1px solid var(--line);
+}
+
+/* Interactive post demos */
+
+.sim {
+  margin: 2em 0;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.sim button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.sim button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.sim-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.sim-mode {
+  display: inline-flex;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--bg);
+}
+
+.sim-mode button {
+  padding: 6px 14px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-soft);
+  font-size: 14px;
+  font-weight: 600;
+  transition:
+    background 0.2s var(--ease),
+    color 0.2s var(--ease);
+}
+
+.sim-mode button[aria-pressed='true'] {
+  background: var(--text);
+  color: var(--surface);
+}
+
+.sim-clock {
+  font-family: var(--mono);
+  font-size: 22px;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+.sim-board {
+  position: relative;
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  align-items: center;
+  row-gap: 18px;
+  column-gap: 16px;
+  padding-bottom: 28px;
+  /* The now-line spans only the lane column. */
+  --lanes-left: calc(130px + 16px);
+}
+
+.sim-label {
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+.sim-lane {
+  position: relative;
+  height: 16px;
+  border-radius: 8px;
+  background: var(--bg-alt);
+}
+
+.sim-dot {
+  position: absolute;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  border-radius: 50%;
+  background: var(--text);
+  animation: sim-pop 0.3s var(--ease) both;
+}
+
+@keyframes sim-pop {
+  from {
+    transform: scale(0);
+  }
+}
+
+.sim-bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: 8px;
+  transition:
+    width 0.35s var(--ease),
+    background 0.35s var(--ease),
+    opacity 0.35s var(--ease);
+}
+
+.sim-bar-db {
+  background: var(--live);
+}
+
+.sim-bar-cookie {
+  background: var(--accent);
+}
+
+.sim-bar-gone {
+  background: var(--accent);
+  opacity: 0.25;
+}
+
+.sim-axis {
+  position: absolute;
+  left: var(--lanes-left);
+  right: 0;
+  bottom: 0;
+  height: 16px;
+}
+
+.sim-axis span {
+  position: absolute;
+  transform: translateX(-50%);
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+.sim-axis span:first-child {
+  transform: none;
+}
+
+.sim-axis span:last-child {
+  transform: translateX(-100%);
+}
+
+.sim-now {
+  position: absolute;
+  top: -8px;
+  bottom: 22px;
+  width: 2px;
+  margin-left: -1px;
+  background: var(--text);
+  pointer-events: none;
+}
+
+/* .sim-now's left is a percentage of the lane column, so shift and scale it into that column. */
+.sim-board > .sim-now {
+  left: calc(var(--lanes-left) + (100% - var(--lanes-left)) * var(--now, 0));
+}
+
+.sim-status {
+  min-height: 3em;
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--text-soft);
+}
+
+.sim-status.is-bad {
+  background: var(--accent-tint);
+  color: var(--accent-ink);
+}
+
+.sim-status.is-ok {
+  background: color-mix(in srgb, var(--live) 14%, transparent);
+  color: var(--text);
+}
+
+.sim-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.sim-reset {
+  margin-left: auto;
+  border: 0;
+  background: none;
+  color: var(--accent-ink);
+}
+
+.sim figcaption {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--text-faint);
+}
+
+@media (max-width: 640px) {
+  .sim {
+    padding: 18px;
+  }
+
+  .sim-board {
+    grid-template-columns: 1fr;
+    row-gap: 6px;
+    --lanes-left: 0px;
+  }
+
+  .sim-lane {
+    margin-bottom: 10px;
+  }
 }
 
 /* Like */

@@ -81,3 +81,15 @@ The blog supports standard Markdown syntax including:
 
 The markdown is rendered using [marked.js](https://marked.js.org/) which is lazy-loaded only when viewing individual posts.
 
+
+## Interactive demos
+
+Put a line like this on its own in a post to embed an interactive React component:
+
+```markdown
+::demo[session-simulator]
+```
+
+Demos live in `src/components/blog/demos/` and are registered by name in
+`src/components/blog/demos/index.js`. To add one, create a client component there
+and add it to `postDemos`. Unknown names render nothing.

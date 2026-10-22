@@ -66,6 +66,14 @@ function renderContainers(markdown, marked) {
   });
 }
 
+// A line like `::demo[session-simulator]` marks where an interactive demo goes.
+// It becomes an empty placeholder that the post page swaps for the component.
+export const DEMO_PLACEHOLDER = /<div data-demo="([a-z0-9-]+)"><\/div>/;
+
+function renderDemoPlaceholders(markdown) {
+  return markdown.replace(/^::demo\[([a-z0-9-]+)\]$/gm, '\n<div data-demo="$1"></div>\n');
+}
+
 function normalizeLegacyLinks(html) {
   return html.replace(
     /href=["'](?:\.\/)?(?:blog\/)?post\.html\?post=([^"']+)["']/g,
@@ -94,7 +102,7 @@ export async function renderMarkdownToHtml(content, folderName) {
     return `<img src="${normalizedHref}"${safeAlt}${safeTitle} loading="lazy" />`;
   };
 
-  const contentWithContainers = renderContainers(content, marked);
+  const contentWithContainers = renderContainers(renderDemoPlaceholders(content), marked);
   const html = marked.parse(contentWithContainers, { renderer });
   return normalizeLegacyLinks(html);
 }

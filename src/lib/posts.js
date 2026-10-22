@@ -34,6 +34,7 @@ function parseTags(raw) {
 // Tags whose display name isn't plain title case.
 const TAG_LABELS = {
   javascript: 'JavaScript',
+  trpc: 'tRPC',
 };
 
 export function formatTag(tag) {
