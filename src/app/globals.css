@@ -1456,3 +1456,23 @@ img {
     transition: none;
   }
 }
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tag-chip {
+  font-size: 0.8rem;
+  padding: 2px 10px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+.tag-chip:hover {
+  opacity: 1;
+}

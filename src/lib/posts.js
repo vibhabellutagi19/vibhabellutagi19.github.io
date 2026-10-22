@@ -18,6 +18,26 @@ function getFolderSlug(folderName) {
   return folderName.split('-').slice(3).join('-');
 }
 
+function parseTags(raw) {
+  return (raw || '')
+    .split(',')
+    .map((tag) =>
+      tag
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-|-$/g, '')
+    )
+    .filter(Boolean);
+}
+
+export function formatTag(tag) {
+  return tag
+    .split('-')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+}
+
 function estimateReadTime(content) {
   const words = content
     .replace(/```[\s\S]*?```/g, ' ')
@@ -51,6 +71,7 @@ export async function getAllPosts() {
         title: metadata.title || slug,
         date: metadata.date || '',
         excerpt,
+        tags: parseTags(metadata.tags),
         readTime: metadata.readTime || estimateReadTime(content),
       };
     })
@@ -82,4 +103,20 @@ export async function getPostBySlug(slug) {
 export async function getAllPostSlugs() {
   const posts = await getAllPosts();
   return posts.map((post) => post.slug);
+}
+
+export async function getAllTags() {
+  const posts = await getAllPosts();
+  const counts = new Map();
+  posts.forEach((post) => {
+    post.tags.forEach((tag) => counts.set(tag, (counts.get(tag) || 0) + 1));
+  });
+  return [...counts.entries()]
+    .map(([tag, count]) => ({ tag, label: formatTag(tag), count }))
+    .sort((a, b) => a.tag.localeCompare(b.tag));
+}
+
+export async function getPostsByTag(tag) {
+  const posts = await getAllPosts();
+  return posts.filter((post) => post.tags.includes(tag));
 }

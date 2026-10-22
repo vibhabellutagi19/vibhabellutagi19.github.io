@@ -33,6 +33,7 @@ date: "Nov 26, 2024"
 readTime: "5 min read"
 excerpt: "A brief description of your post that will appear in the blog listing."
 slug: "welcome-to-my-blog"
+tags: "apache-spark, data-engineering"   # optional, comma-separated
 ---
 
 Your markdown content goes here...

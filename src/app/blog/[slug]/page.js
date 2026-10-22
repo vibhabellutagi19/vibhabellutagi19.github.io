@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-import { getAllPostSlugs, getPostBySlug } from '@/lib/posts';
+import { formatTag, getAllPostSlugs, getPostBySlug } from '@/lib/posts';
 
 export async function generateStaticParams() {
   const slugs = await getAllPostSlugs();
@@ -63,6 +63,15 @@ export default async function BlogPostPage({ params }) {
             {post.date} · {post.readTime}
           </p>
           <h1>{post.title}</h1>
+          {post.tags.length > 0 && (
+            <p className="post-tags">
+              {post.tags.map((tag) => (
+                <Link key={tag} className="tag-chip" href={`/blog/tags/${tag}/`}>
+                  {formatTag(tag)}
+                </Link>
+              ))}
+            </p>
+          )}
         </header>
 
         <div className="article-content" dangerouslySetInnerHTML={{ __html: post.html }} />

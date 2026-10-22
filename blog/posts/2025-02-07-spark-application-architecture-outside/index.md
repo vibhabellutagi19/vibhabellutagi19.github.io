@@ -2,6 +2,7 @@
 title: 'The Life Cycle of a Spark Application ( Outside )'
 date: 'Feb 7, 2025'
 slug: 'spark-application-lifecycle-outside'
+tags: "apache-spark"
 ---
 
 In this blog, we will go in-depth on the overall life cycle of Spark Applications from outside the actual Spark code. Before going ahead, I recommend reading the [Execution Modes](/blog/spark-execution-modes) of the Spark application.

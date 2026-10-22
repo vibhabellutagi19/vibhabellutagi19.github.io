@@ -2,7 +2,7 @@
 
 Personal portfolio and technical blog — terminal/editor UI, static Next.js export, deployed to GitHub Pages.
 
-**Live site:** [vibhabellutagi19.github.io](https://vibhabellutagi19.github.io)
+**Live site:** [buildwithvibs.in](https://buildwithvibs.in)
 
 ## Stack
 

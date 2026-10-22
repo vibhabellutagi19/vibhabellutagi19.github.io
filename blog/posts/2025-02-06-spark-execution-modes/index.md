@@ -4,6 +4,7 @@ date: "Feb 6, 2025"
 readTime: "6 min read"
 excerpt: "In this post, we will discuss the different execution modes available in Apache Spark. Apache Spark provides three execution modes to run Spark applications: Cluster mode, Client mode, and Local mode."
 slug: "spark-execution-modes"
+tags: "apache-spark"
 ---
 In this post, we will discuss the different execution modes available in Apache Spark. Apache Spark provides three execution modes to run Spark applications. These execution modes are: Cluster mode, Client mode, and Local mode. Each of these modes has its own use case and is suitable for different scenarios.
  <!--truncate-->

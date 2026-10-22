@@ -30,7 +30,7 @@ const description =
 
 // The preview image comes from opengraph-image.jpg / twitter-image.jpg in this folder.
 export const metadata = {
-  metadataBase: new URL('https://vibhabellutagi19.github.io'),
+  metadataBase: new URL('https://buildwithvibs.in'),
   title,
   description,
   openGraph: {

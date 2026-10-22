@@ -4,6 +4,7 @@ date: "Jan 1, 2025"
 readTime: "6 min read"
 excerpt: "Welcome to my Apache Spark series! I'll dive deep into Apache Spark, from basics to advanced concepts. This series is about learning, exploring, and sharing—documenting my journey to mastering Apache Spark."
 slug: "spark-basics"
+tags: "apache-spark"
 ---
 
 Welcome to my [Apache Spark](/blog/tags/apache-spark) series! I’ll dive deep into Apache Spark, from basics to advanced concepts. This series is about learning, exploring, and sharing—documenting my journey to mastering Apache Spark ( again ) while sharing insights, challenges, and tips.

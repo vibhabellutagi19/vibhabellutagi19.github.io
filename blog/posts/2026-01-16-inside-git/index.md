@@ -2,6 +2,7 @@
 title: 'Inside Git: How It Works Under the Hood'
 date: 'January 16, 2026'
 slug: 'inside-git'
+tags: "git"
 ---
 
 In the previous post, we learnt [How Git manages version control](post.html?post=git-essentials) through its internal structures. In this continuation, we will delve deeper into how git works internally and the specific components of the `.git` folder and their functions.

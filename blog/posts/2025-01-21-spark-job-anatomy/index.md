@@ -4,6 +4,7 @@ date: "Jan 21, 2025"
 readTime: "7 min read"
 excerpt: "Understanding the internal execution flow of a Spark application is key to optimizing performance and debugging. This blog dives into the details of Spark jobs, stages, and tasks, providing a thorough exploration of how Spark handles distributed execution."
 slug: "spark-job-anatomy"
+tags: "apache-spark"
 ---
 
 Understanding the internal execution flow of a Spark application is key to optimizing performance and debugging. This blog dives into the details of `Spark jobs`, `stages`, and `tasks`, providing a thorough exploration of how Spark handles distributed execution.

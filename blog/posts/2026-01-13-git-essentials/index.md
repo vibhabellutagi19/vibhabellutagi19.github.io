@@ -2,6 +2,7 @@
 title: 'Git for Beginners: Essential Commands You Need to Know'
 date: 'January 13, 2026'
 slug: 'git-essentials'
+tags: "git"
 ---
 
 If you have ever played a video game, you know the anxiety of facing a difficult boss. What is the first thing you do before walking through that boss door? You save your game.
