@@ -5,7 +5,8 @@ workers_dev = true
 preview_urls = false
 
 [vars]
-ALLOWED_ORIGINS = "https://buildwithvibs.in,http://localhost:3000"
+# http://localhost on any port is always allowed, for local development.
+ALLOWED_ORIGINS = "https://buildwithvibs.in"
 
 # Create the namespace with `npx wrangler kv namespace create LIKES`
 # and paste the id it prints here.

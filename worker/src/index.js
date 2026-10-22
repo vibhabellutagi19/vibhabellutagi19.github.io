@@ -18,6 +18,13 @@ function getAllowedOrigins(env) {
     .filter(Boolean);
 }
 
+// Any local dev server, whatever port it lands on.
+const LOCALHOST_ORIGIN = /^http:\/\/localhost:\d+$/;
+
+function isAllowedOrigin(origin, env) {
+  return LOCALHOST_ORIGIN.test(origin) || getAllowedOrigins(env).includes(origin);
+}
+
 function corsHeaders(request, env) {
   const origin = request.headers.get('Origin');
   const headers = {
@@ -26,7 +33,7 @@ function corsHeaders(request, env) {
     'Access-Control-Max-Age': '86400',
     Vary: 'Origin',
   };
-  if (origin && getAllowedOrigins(env).includes(origin)) {
+  if (origin && isAllowedOrigin(origin, env)) {
     headers['Access-Control-Allow-Origin'] = origin;
   }
   return headers;

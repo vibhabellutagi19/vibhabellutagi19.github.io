@@ -68,6 +68,12 @@ describe('likes worker', () => {
     expect((await call(env, 'GET', '/stats')).status).toBe(404);
   });
 
+  it('accepts any localhost port for local development', async () => {
+    const res = await call(env, 'POST', '/likes/spark-basics', { origin: 'http://localhost:3002' });
+    expect(res.status).toBe(200);
+    expect(res.headers.get('Access-Control-Allow-Origin')).toBe('http://localhost:3002');
+  });
+
   it('answers CORS preflight for the site', async () => {
     const res = await call(env, 'OPTIONS', '/likes/spark-basics');
     expect(res.status).toBe(204);
