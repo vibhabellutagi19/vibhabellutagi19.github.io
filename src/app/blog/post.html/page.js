@@ -19,7 +19,7 @@ export default function LegacyBlogRedirectPage() {
   }, []);
 
   return (
-    <section className="legacy-shell">
+    <section className="section container container-narrow">
       <h1>Redirecting to the updated article URL…</h1>
       {slug ? (
         <p>
