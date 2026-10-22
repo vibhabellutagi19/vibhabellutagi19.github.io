@@ -1490,6 +1490,81 @@ img {
   border-top: 1px solid var(--line);
 }
 
+/* Like */
+
+.like {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  margin-top: 64px;
+  text-align: center;
+}
+
+.like + .article-foot {
+  margin-top: 48px;
+}
+
+.like-prompt {
+  font-family: var(--display);
+  font-size: 20px;
+  color: var(--text-soft);
+}
+
+.like-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-soft);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    border-color 0.2s var(--ease),
+    color 0.2s var(--ease),
+    background 0.2s var(--ease),
+    transform 0.2s var(--ease);
+}
+
+.like-button svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  transition: fill 0.2s var(--ease);
+}
+
+.like-button:hover {
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.like-button:active {
+  transform: scale(0.96);
+}
+
+.like-button[aria-pressed='true'] {
+  border-color: var(--accent);
+  background: var(--accent-tint);
+  color: var(--accent-ink);
+}
+
+.like-button[aria-pressed='true'] svg {
+  fill: var(--accent);
+  stroke: var(--accent);
+}
+
+.like-button:disabled {
+  cursor: progress;
+}
+
+.like-count {
+  font-family: var(--mono);
+  font-size: 14px;
+}
+
 /* ---------- Responsive ---------- */
 
 @media (max-width: 960px) {

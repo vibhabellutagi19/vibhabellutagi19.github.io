@@ -22,6 +22,14 @@ export const analytics = {
   goatcounterCode: "vibhavaribellutagi",
 };
 
+/**
+ * Likes API: the Cloudflare Worker in /worker. Paste its URL once deployed,
+ * e.g. "https://blog-likes.<you>.workers.dev"; the like button stays hidden while empty.
+ */
+export const likes = {
+  apiUrl: "",
+};
+
 export const heroData = {
   eyebrow: "Freelance full-stack developer · available for projects",
   title: "I build the software that runs your business.",

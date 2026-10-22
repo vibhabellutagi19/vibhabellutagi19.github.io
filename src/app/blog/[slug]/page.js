@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import { ViewCount } from '@/components/analytics/ViewCount';
+import { LikeButton } from '@/components/blog/LikeButton';
 import { formatTag, getAllPostSlugs, getPostBySlug } from '@/lib/posts';
 
 export async function generateStaticParams() {
@@ -77,6 +78,8 @@ export default async function BlogPostPage({ params }) {
         </header>
 
         <div className="article-content" dangerouslySetInnerHTML={{ __html: post.html }} />
+
+        <LikeButton slug={post.slug} />
 
         <footer className="article-foot">
           <Link className="text-link" href="/blog/">
