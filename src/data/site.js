@@ -14,6 +14,14 @@ export const profile = {
   recommendationCount: 6,
 };
 
+/**
+ * Cloudflare Web Analytics. Paste the site token from the Cloudflare
+ * dashboard; the beacon stays off while this is empty.
+ */
+export const analytics = {
+  cloudflareToken: "7cbed45ff06d49078c9c8ec08d2fad34",
+};
+
 export const heroData = {
   eyebrow: "Freelance full-stack developer · available for projects",
   title: "I build the software that runs your business.",
