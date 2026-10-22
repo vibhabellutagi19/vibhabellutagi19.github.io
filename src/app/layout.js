@@ -1,6 +1,6 @@
 import { Fraunces, Inter, JetBrains_Mono } from 'next/font/google';
-import Script from 'next/script';
 
+import { GoatCounter } from '@/components/analytics/GoatCounter';
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
 import { analytics } from '@/data/site';
@@ -58,14 +58,7 @@ export default function RootLayout({ children }) {
         <Header />
         <div id="main">{children}</div>
         <Footer />
-        {analytics.cloudflareToken && (
-          <Script
-            type="module"
-            src="https://static.cloudflareinsights.com/beacon.min.js"
-            data-cf-beacon={JSON.stringify({ token: analytics.cloudflareToken })}
-            strategy="afterInteractive"
-          />
-        )}
+        {analytics.goatcounterCode && <GoatCounter code={analytics.goatcounterCode} />}
       </body>
     </html>
   );

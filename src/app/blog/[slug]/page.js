@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
+import { ViewCount } from '@/components/analytics/ViewCount';
 import { formatTag, getAllPostSlugs, getPostBySlug } from '@/lib/posts';
 
 export async function generateStaticParams() {
@@ -61,6 +62,7 @@ export default async function BlogPostPage({ params }) {
         <header className="article-head">
           <p className="post-meta">
             {post.date} · {post.readTime}
+            <ViewCount path={`/blog/${post.slug}/`} />
           </p>
           <h1>{post.title}</h1>
           {post.tags.length > 0 && (

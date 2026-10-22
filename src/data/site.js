@@ -15,11 +15,11 @@ export const profile = {
 };
 
 /**
- * Cloudflare Web Analytics. Paste the site token from the Cloudflare
- * dashboard; the beacon stays off while this is empty.
+ * GoatCounter. Set this to your site code (the "mycode" in
+ * mycode.goatcounter.com); tracking and view counts stay off while it is empty.
  */
 export const analytics = {
-  cloudflareToken: "7cbed45ff06d49078c9c8ec08d2fad34",
+  goatcounterCode: "vibhavaribellutagi",
 };
 
 export const heroData = {
