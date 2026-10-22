@@ -3,7 +3,7 @@ title: "Networking Basics: Comparing TCP and UDP Protocols"
 date: "Jan 28, 2026"
 excerpt: "Discover the key differences between TCP and UDP protocols, their use cases, and why understanding them is crucial for networked applications"
 slug: "tcp-and-udp"
-tags: "networking"
+tags: "networking, hashnode"
 ---
 
 ### Introduction

@@ -3,7 +3,7 @@ title: "Global vs GlobalThis"
 date: "Mar 8, 2026"
 excerpt: "Learn the difference between global and globalThis in JavaScript. Understand the global object, why it has different names across environments, and ho"
 slug: "global-vs-globalthis"
-tags: "javascript"
+tags: "javascript, hashnode"
 ---
 
 **TL;DR**

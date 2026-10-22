@@ -3,7 +3,7 @@ title: "DNS Record Types Explained"
 date: "Jan 26, 2026"
 excerpt: "Learn about different DNS record types and their uses, including A, AAAA, CNAME, NS, MX, and TXT records, in this comprehensive guide"
 slug: "dns-record-types"
-tags: "networking"
+tags: "networking, hashnode"
 ---
 
 Have you ever wondered how your browser knows where to find website? There are billions of websites on the internet, each one stored on a server somewhere in the world. So when you type [`amazon.com`](http://amazon.com), how does your browser know exactly where to go?

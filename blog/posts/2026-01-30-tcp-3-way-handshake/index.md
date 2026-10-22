@@ -3,7 +3,7 @@ title: "TCP Working: 3-Way Handshake & Reliable Communication"
 date: "Jan 30, 2026"
 excerpt: "Learn how TCP ensures reliable communication through the 3-way handshake, addressing packet loss, data integrity, and flow control issues"
 slug: "tcp-3-way-handshake"
-tags: "networking"
+tags: "networking, hashnode"
 ---
 
 ### What is TCP and why it is needed

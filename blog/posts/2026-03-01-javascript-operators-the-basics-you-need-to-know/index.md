@@ -3,7 +3,7 @@ title: "JavaScript Operators: The Basics You Need to Know"
 date: "Mar 1, 2026"
 excerpt: "Think about the last time you used a calculator. You typed in a number, hit a button: +, -, ×, ÷ - typed another number, and got a result. Simple as that…"
 slug: "javascript-operators-the-basics-you-need-to-know"
-tags: "javascript"
+tags: "javascript, hashnode"
 ---
 
 Think about the last time you used a calculator. You typed in a number, hit a button: +, -, ×, ÷ - typed another number, and got a result. Simple as that.

@@ -31,7 +31,16 @@ function parseTags(raw) {
     .filter(Boolean);
 }
 
+// Tags whose display name isn't plain title case.
+const TAG_LABELS = {
+  javascript: 'JavaScript',
+};
+
 export function formatTag(tag) {
+  if (TAG_LABELS[tag]) {
+    return TAG_LABELS[tag];
+  }
+
   return tag
     .split('-')
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))

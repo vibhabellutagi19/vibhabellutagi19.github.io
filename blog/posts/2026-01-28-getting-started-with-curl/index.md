@@ -3,7 +3,7 @@ title: "Getting Started with cURL"
 date: "Jan 28, 2026"
 excerpt: "Learn the basics of cURL, a command-line tool for data transfer and web interactions, essential for developers testing APIs and automating tasks"
 slug: "getting-started-with-curl"
-tags: "networking"
+tags: "networking, hashnode"
 ---
 
 Have you ever wondered how developers test APIs, download files, or communicate with web servers without opening a browser? The answer is **cURL** - one of the most powerful and widely-used command-line tools in a programmer's toolkit.

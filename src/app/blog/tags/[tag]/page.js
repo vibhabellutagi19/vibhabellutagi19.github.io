@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
+import { PostList } from '@/components/blog/PostList';
 import { formatTag, getAllTags, getPostsByTag } from '@/lib/posts';
 
 export const dynamicParams = false;
@@ -38,13 +39,15 @@ export async function generateMetadata({ params }) {
 export default async function BlogTagPage({ params }) {
   const { tag } = await params;
   const posts = await getPostsByTag(tag);
+  const tags = await getAllTags();
+  const tagLabels = Object.fromEntries(tags.map(({ tag: slug, label }) => [slug, label]));
   if (posts.length === 0) {
     notFound();
   }
 
   return (
     <main className="section">
-      <div className="container container-narrow">
+      <div className="container container-blog">
         <Link className="text-link back-link" href="/blog/">
           ← All posts
         </Link>
@@ -56,19 +59,7 @@ export default async function BlogTagPage({ params }) {
           </p>
         </div>
 
-        <ul className="post-list">
-          {posts.map((post) => (
-            <li key={post.slug}>
-              <Link className="post-item" href={`/blog/${post.slug}/`}>
-                <span className="post-meta">
-                  {post.date} · {post.readTime}
-                </span>
-                <span className="post-title">{post.title}</span>
-                {post.excerpt && <span className="post-excerpt">{post.excerpt}</span>}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <PostList posts={posts} tagLabels={tagLabels} />
       </div>
     </main>
   );

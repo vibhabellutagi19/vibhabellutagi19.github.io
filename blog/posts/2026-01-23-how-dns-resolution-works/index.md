@@ -3,7 +3,7 @@ title: "How DNS Resolution Works"
 date: "Jan 23, 2026"
 excerpt: "Understand DNS resolution, its layers, and the role of tools like `dig` in translating domain names to IP addresses effectively"
 slug: "how-dns-resolution-works"
-tags: "networking"
+tags: "networking, hashnode"
 ---
 
 Lets say we need to connect to google.com, but assume we don’t have the domain names but its all [IP address](https://en.wikipedia.org/wiki/IP_address) - a numerical label like _192.0.2.1_ which is assigned to each device connected on internet for communication. It feels difficult to remember the 10 digits phone numbers of everyone we know, remembering IP address of the websites would have been difficult task in itself. To avoid this, we have Domain Name System.

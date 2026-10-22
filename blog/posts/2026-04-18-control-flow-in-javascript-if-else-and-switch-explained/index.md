@@ -3,7 +3,7 @@ title: "Control Flow in JavaScript: If, Else, and Switch Explained"
 date: "Apr 18, 2026"
 excerpt: "Every program you've ever used makes decisions. Your music app skips explicit songs when parental controls are on. Your bank app blocks a transaction if…"
 slug: "control-flow-in-javascript-if-else-and-switch-explained"
-tags: "javascript"
+tags: "javascript, hashnode"
 ---
 
 > Every program you've ever used makes decisions. Your music app skips explicit songs when parental controls are on. Your bank app blocks a transaction if your balance is too low. Your favorite game says "Game Over" when your health hits zero. All of this happens because of **control flow** — and in this post, you'll learn exactly how it works in JavaScript.

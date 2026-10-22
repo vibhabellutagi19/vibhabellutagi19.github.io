@@ -1,9 +1,9 @@
 ---
 title: "The magic of call(), apply(), bind()"
 date: "Apr 18, 2026"
-excerpt: "If you ever worked with javascript, you would have encountered with a famous yet confusing keyword \"this\". In this blog, we will explore how \"this\" works…"
+excerpt: "If you ever worked with javascript, you would have encountered with a famous yet confusing keyword 'this'. In this blog, we will explore how 'this' works…"
 slug: "the-magic-of-call-apply-bind"
-tags: "javascript"
+tags: "javascript, hashnode"
 ---
 
 If you ever worked with javascript, you would have encountered with a famous yet confusing keyword "this". In this blog, we will explore how "this" works, and more about call(), apply() and bind() methods
