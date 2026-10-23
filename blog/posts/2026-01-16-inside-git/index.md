@@ -2,6 +2,7 @@
 title: 'Inside Git: How It Works Under the Hood'
 date: 'January 16, 2026'
 slug: 'inside-git'
+series: "Git"
 tags: "git"
 ---
 

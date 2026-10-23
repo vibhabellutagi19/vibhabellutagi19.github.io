@@ -2,6 +2,7 @@
 title: 'Git for Beginners: Essential Commands You Need to Know'
 date: 'January 13, 2026'
 slug: 'git-essentials'
+series: "Git"
 tags: "git"
 ---
 

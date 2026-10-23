@@ -4,6 +4,7 @@ date: "Jan 10, 2025"
 readTime: "7 min read"
 excerpt: "Apache Spark's Column and Expression play a big role in making your pipeline more efficient. In this blog we will look into ALL the possible ways to select columns, use built-in functions and perform calculations with column objects and expressions in PySpark."
 slug: "columns-and-expressions"
+series: "Apache Spark"
 tags: "apache-spark"
 ---
 

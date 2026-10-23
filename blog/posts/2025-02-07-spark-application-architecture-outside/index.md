@@ -2,6 +2,7 @@
 title: 'The Life Cycle of a Spark Application ( Outside )'
 date: 'Feb 7, 2025'
 slug: 'spark-application-lifecycle-outside'
+series: "Apache Spark"
 tags: "apache-spark"
 ---
 

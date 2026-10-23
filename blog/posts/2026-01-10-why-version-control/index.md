@@ -2,6 +2,7 @@
 title: 'Why Version Control Exists - The Pendrive Problem'
 date: 'January 10, 2026'
 slug: 'why-version-control-exists'
+series: "Git"
 tags: "git"
 ---
 

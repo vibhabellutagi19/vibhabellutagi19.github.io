@@ -6,7 +6,35 @@ const CONTAINER_TITLES = {
   danger: 'Danger',
 };
 
+// Code blocks are highlighted at build time; the page ships coloured HTML, no highlighter.
+const CODE_THEME = 'github-light-high-contrast';
+const CODE_LANGUAGES = {
+  bash: 'Bash',
+  groovy: 'Groovy',
+  hcl: 'HCL',
+  javascript: 'JavaScript',
+  js: 'JavaScript',
+  python: 'Python',
+  scala: 'Scala',
+  sh: 'Shell',
+  sql: 'SQL',
+  toml: 'TOML',
+  ts: 'TypeScript',
+  typescript: 'TypeScript',
+};
+
 let markedPromise;
+let highlighterPromise;
+
+function getHighlighter() {
+  if (!highlighterPromise) {
+    highlighterPromise = import('shiki').then(({ createHighlighter }) =>
+      createHighlighter({ themes: [CODE_THEME], langs: Object.keys(CODE_LANGUAGES) })
+    );
+  }
+
+  return highlighterPromise;
+}
 
 async function getMarked() {
   if (!markedPromise) {
@@ -74,6 +102,67 @@ function renderDemoPlaceholders(markdown) {
   return markdown.replace(/^::demo\[([a-z0-9-]+)\]$/gm, '\n<div data-demo="$1"></div>\n');
 }
 
+function escapeHtml(text) {
+  return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+export function slugify(text) {
+  return (
+    text
+      .toLowerCase()
+      .replace(/<[^>]+>/g, '')
+      .replace(/&[a-z#0-9]+;/g, '')
+      .replace(/[^a-z0-9\s-]/g, '')
+      .trim()
+      .replace(/[\s-]+/g, '-') || 'section'
+  );
+}
+
+/** The h2/h3 headings of rendered post HTML, for the table of contents. */
+export function getHeadings(html) {
+  return [...html.matchAll(/<h([23]) id="([^"]+)"[^>]*>([\s\S]*?)<\/h\1>/g)].map(([, level, id, inner]) => ({
+    level: Number(level),
+    id,
+    text: inner
+      .replace(/<a class="heading-anchor"[\s\S]*?<\/a>/, '')
+      .replace(/<[^>]+>/g, '')
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .trim(),
+  }));
+}
+
+async function highlightCodeBlocks(html, blocks) {
+  if (blocks.length === 0) {
+    return html;
+  }
+
+  const highlighter = await getHighlighter();
+  return html.replace(/<!--code-block:(\d+)-->/g, (_, index) => {
+    const { text, lang } = blocks[Number(index)];
+    const label = CODE_LANGUAGES[lang];
+    const code = label
+      ? highlighter.codeToHtml(text, {
+          lang,
+          theme: CODE_THEME,
+          // The page sets the code background; drop the theme's own.
+          transformers: [{ pre: (node) => void delete node.properties.style }],
+        })
+      : `<pre class="shiki"><code>${escapeHtml(text)}</code></pre>`;
+
+    return `<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">${label ?? ''}</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      ${code}
+    </div>`;
+  });
+}
+
 function normalizeLegacyLinks(html) {
   return html.replace(
     /href=["'](?:\.\/)?(?:blog\/)?post\.html\?post=([^"']+)["']/g,
@@ -102,7 +191,24 @@ export async function renderMarkdownToHtml(content, folderName) {
     return `<img src="${normalizedHref}"${safeAlt}${safeTitle} loading="lazy" />`;
   };
 
+  // Headings get unique ids and a self-link, so sections can be linked to and listed in the TOC.
+  const usedIds = new Map();
+  renderer.heading = function ({ tokens, depth, text }) {
+    const inner = this.parser.parseInline(tokens);
+    const base = slugify(text);
+    const count = usedIds.get(base) ?? 0;
+    usedIds.set(base, count + 1);
+    const id = count === 0 ? base : `${base}-${count}`;
+    return `<h${depth} id="${id}">${inner}<a class="heading-anchor" href="#${id}" aria-label="Link to this section">#</a></h${depth}>\n`;
+  };
+
+  const codeBlocks = [];
+  renderer.code = ({ text, lang = '' }) => {
+    codeBlocks.push({ text, lang: lang.trim().split(/\s+/)[0].toLowerCase() });
+    return `<!--code-block:${codeBlocks.length - 1}-->`;
+  };
+
   const contentWithContainers = renderContainers(renderDemoPlaceholders(content), marked);
   const html = marked.parse(contentWithContainers, { renderer });
-  return normalizeLegacyLinks(html);
+  return normalizeLegacyLinks(await highlightCodeBlocks(html, codeBlocks));
 }

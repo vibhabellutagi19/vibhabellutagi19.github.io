@@ -2,11 +2,22 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import { ViewCount } from '@/components/analytics/ViewCount';
+import { CodeCopy } from '@/components/blog/CodeCopy';
 import { LikeButton } from '@/components/blog/LikeButton';
+import { ReadNext, SeriesBox } from '@/components/blog/PostNav';
+import { ReadingProgress } from '@/components/blog/ReadingProgress';
+import { TableOfContents } from '@/components/blog/TableOfContents';
 import { postDemos } from '@/components/blog/demos';
 import { profile } from '@/data/site';
 import { DEMO_PLACEHOLDER } from '@/lib/markdown';
-import { formatTag, getAllPostSlugs, getPostBySlug } from '@/lib/posts';
+import {
+  formatTag,
+  getAllPosts,
+  getAllPostSlugs,
+  getPostBySlug,
+  getRelatedPosts,
+  getSeries,
+} from '@/lib/posts';
 
 const SITE_URL = 'https://buildwithvibs.in';
 
@@ -90,6 +101,11 @@ export default async function BlogPostPage({ params }) {
     notFound();
   }
 
+  const allPosts = await getAllPosts();
+  const series = getSeries(allPosts, post);
+  const related = getRelatedPosts(allPosts, post, { exclude: series?.next ? [series.next.slug] : [] });
+  const tagLabels = Object.fromEntries(allPosts.flatMap((item) => item.tags).map((tag) => [tag, formatTag(tag)]));
+
   const url = `${SITE_URL}/blog/${post.slug}/`;
   const structuredData = {
     '@context': 'https://schema.org',
@@ -111,40 +127,52 @@ export default async function BlogPostPage({ params }) {
         // JSON.stringify doesn't escape "<", so a title containing "</script>" could break out of the tag.
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, '\\u003c') }}
       />
-      <article className="container container-narrow">
-        <Link className="text-link back-link" href="/blog/">
-          ← All posts
-        </Link>
-        <header className="article-head">
-          <p className="post-meta">
-            {post.date} · {post.readTime}
-            <ViewCount path={`/blog/${post.slug}/`} />
-          </p>
-          <h1>{post.title}</h1>
-          {post.tags.length > 0 && (
-            <p className="post-tags">
-              {post.tags.map((tag) => (
-                <Link key={tag} className="tag-chip" href={`/blog/tags/${tag}/`}>
-                  {formatTag(tag)}
-                </Link>
-              ))}
-            </p>
-          )}
-        </header>
+      <ReadingProgress targetId="post-body" />
+      <CodeCopy />
 
-        <div className="article-content">{renderContent(post.html)}</div>
-
-        <LikeButton slug={post.slug} />
-
-        <footer className="article-foot">
-          <Link className="text-link" href="/blog/">
+      <div className="container article-layout">
+        <article className="article">
+          <Link className="text-link back-link" href="/blog/">
             ← All posts
           </Link>
-          <Link className="text-link" href="/#contact">
-            Work with me →
-          </Link>
-        </footer>
-      </article>
+          <header className="article-head">
+            <p className="post-meta">
+              {post.date} · {post.readTime}
+              <ViewCount path={`/blog/${post.slug}/`} />
+            </p>
+            <h1>{post.title}</h1>
+            {post.tags.length > 0 && (
+              <p className="post-tags">
+                {post.tags.map((tag) => (
+                  <Link key={tag} className="tag-chip" href={`/blog/tags/${tag}/`}>
+                    {formatTag(tag)}
+                  </Link>
+                ))}
+              </p>
+            )}
+          </header>
+
+          {series && <SeriesBox series={series} />}
+          <TableOfContents headings={post.headings} />
+
+          <div id="post-body" className="article-content">
+            {renderContent(post.html)}
+          </div>
+
+          <LikeButton slug={post.slug} />
+
+          <ReadNext series={series} related={related} tagLabels={tagLabels} />
+
+          <footer className="article-foot">
+            <Link className="text-link" href="/blog/">
+              ← All posts
+            </Link>
+            <Link className="text-link" href="/#contact">
+              Work with me →
+            </Link>
+          </footer>
+        </article>
+      </div>
     </main>
   );
 }

@@ -4,6 +4,7 @@ date: "Jan 13, 2025"
 readTime: "8 min read"
 excerpt: "In SQL null is a special marker used to indicate that a data value does not exist in the database. A null should not be confused with a value of 0. Let's deep dive into handling nulls in Spark."
 slug: "handling-nulls-in-spark"
+series: "Apache Spark"
 tags: "apache-spark"
 ---
 

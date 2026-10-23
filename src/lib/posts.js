@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-import { parseFrontmatter, renderMarkdownToHtml } from './markdown';
+import { getHeadings, parseFrontmatter, renderMarkdownToHtml } from './markdown';
 
 const POSTS_DIR = path.join(process.cwd(), 'blog', 'posts');
 const POSTS_MANIFEST_PATH = path.join(POSTS_DIR, 'posts.json');
@@ -82,6 +82,7 @@ export async function getAllPosts() {
         date: metadata.date || '',
         excerpt,
         tags: parseTags(metadata.tags),
+        series: metadata.series || null,
         readTime: metadata.readTime || estimateReadTime(content),
       };
     })
@@ -107,6 +108,7 @@ export async function getPostBySlug(slug) {
     metadata,
     content,
     html,
+    headings: getHeadings(html),
   };
 }
 
@@ -129,4 +131,40 @@ export async function getAllTags() {
 export async function getPostsByTag(tag) {
   const posts = await getAllPosts();
   return posts.filter((post) => post.tags.includes(tag));
+}
+
+/** The series a post belongs to, oldest part first, or null. */
+export function getSeries(posts, post) {
+  if (!post.series) {
+    return null;
+  }
+
+  const parts = posts
+    .filter((item) => item.series === post.series)
+    .sort((a, b) => parsePostDate(a.date) - parsePostDate(b.date));
+  const index = parts.findIndex((item) => item.slug === post.slug);
+
+  return {
+    name: post.series,
+    parts,
+    index,
+    previous: parts[index - 1] ?? null,
+    next: parts[index + 1] ?? null,
+  };
+}
+
+/** Posts sharing the most tags with `post`, newest first among equals; topped up with the latest posts. */
+export function getRelatedPosts(posts, post, { exclude = [], limit = 3 } = {}) {
+  const skip = new Set([post.slug, ...exclude]);
+  const candidates = posts.filter((item) => !skip.has(item.slug));
+  const shared = (item) => item.tags.filter((tag) => post.tags.includes(tag)).length;
+
+  const related = candidates
+    .map((item) => ({ item, score: shared(item) }))
+    .filter(({ score }) => score > 0)
+    .sort((a, b) => b.score - a.score || parsePostDate(b.item.date) - parsePostDate(a.item.date))
+    .map(({ item }) => item);
+
+  const latest = candidates.filter((item) => !related.includes(item));
+  return [...related, ...latest].slice(0, limit);
 }

@@ -93,3 +93,14 @@ Put a line like this on its own in a post to embed an interactive React componen
 Demos live in `src/components/blog/demos/` and are registered by name in
 `src/components/blog/demos/index.js`. To add one, create a client component there
 and add it to `postDemos`. Unknown names render nothing.
+
+## Series
+
+Posts that belong together can share a series name in their frontmatter:
+
+```markdown
+series: "Apache Spark"
+```
+
+Parts are ordered by date, oldest first. Each part gets a "Part 2 of 6" box at the top
+listing every part, and a "Keep reading" card for the next part at the end.
