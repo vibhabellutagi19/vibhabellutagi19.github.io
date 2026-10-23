@@ -1483,6 +1483,12 @@ img {
   border-left-color: var(--warn);
 }
 
+.callout-tldr {
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--line));
+  border-left: 3px solid var(--accent);
+  background: var(--accent-tint);
+}
+
 .callout-title {
   font-family: var(--mono);
   font-size: 12.5px;

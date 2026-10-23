@@ -4,6 +4,7 @@ const CONTAINER_TITLES = {
   info: 'Info',
   note: 'Note',
   danger: 'Danger',
+  tldr: 'TL;DR',
 };
 
 // Code blocks are highlighted at build time; the page ships coloured HTML, no highlighter.

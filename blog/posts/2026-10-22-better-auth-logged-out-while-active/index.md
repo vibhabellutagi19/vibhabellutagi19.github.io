@@ -12,6 +12,12 @@ The app has a deliberate security rule: **stay active and you stay signed in; go
 
 This post walks through why that happened with [Better Auth](https://www.better-auth.com/) and [tRPC](https://trpc.io/), the one-line cause, and the fix. If your users are being logged out while they're active, this is worth checking first.
 
+:::tldr
+**Problem:** users were signed out every 15 minutes, even while active. Better Auth extended the session in the database, but the renewed cookie never reached the browser, so it expired at its original time.
+
+**Fix:** call `auth.api.getSession` with `returnHeaders: true` and forward every `Set-Cookie` header onto your HTTP response.
+:::
+
 ## The setup: a sliding 15-minute session
 
 Move uses Better Auth for authentication and tRPC on Express for the API. The session config looks like this:

@@ -12,6 +12,12 @@ Exactly one of them should get the spot. The other should see "This session is f
 
 This post covers how Move prevents that with a Postgres row lock, a reproduction of the race without the lock, and two mistakes around that lock: one that could freeze every booking at once, and one I only found while writing this post.
 
+:::tldr
+**Problem:** two people booking the last spot at the same moment can both get in, because each checks the count before the other has written.
+
+**Fix:** lock the class's row with `SELECT … FOR UPDATE` inside the booking transaction, so the second request waits and sees the real count. Keep the lock short, and lock only the table you're changing (`FOR UPDATE OF sessions`).
+:::
+
 ## The obvious code has a race condition
 
 The natural way to write a booking looks like this:
