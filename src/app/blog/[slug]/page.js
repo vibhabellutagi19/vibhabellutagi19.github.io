@@ -155,7 +155,11 @@ export default async function BlogPostPage({ params }) {
                   </Link>
                 ))}
               </p>
-              <SaveButton slug={post.slug} />
+              <div className="post-actions">
+                <LikeButton slug={post.slug} />
+                <SaveButton slug={post.slug} />
+                <ShareButton title={post.title} text={getDescription(post)} url={url} />
+              </div>
             </div>
           </header>
 
@@ -164,15 +168,6 @@ export default async function BlogPostPage({ params }) {
 
           <div id="post-body" className="article-content">
             {renderContent(post.html)}
-          </div>
-
-          <div className="like">
-            <p className="like-prompt">Enjoyed this post?</p>
-            <div className="like-actions">
-              <LikeButton slug={post.slug} />
-              <SaveButton slug={post.slug} />
-              <ShareButton title={post.title} text={getDescription(post)} url={url} />
-            </div>
           </div>
 
           <ReadNext series={series} related={related} tagLabels={tagLabels} />

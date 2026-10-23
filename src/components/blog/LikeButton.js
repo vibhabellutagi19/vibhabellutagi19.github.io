@@ -54,6 +54,7 @@ export function LikeButton({ slug }) {
       className="like-button"
       aria-pressed={state.liked}
       aria-label={state.liked ? 'Unlike this post' : 'Like this post'}
+      title={state.liked ? 'Unlike this post' : 'Like this post'}
       disabled={pending}
       onClick={toggle}
     >
