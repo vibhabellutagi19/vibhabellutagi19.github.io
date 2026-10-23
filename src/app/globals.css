@@ -1116,6 +1116,25 @@ img {
   margin-bottom: 32px;
 }
 
+.rss-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.rss-link svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+}
+
+.rss-link circle {
+  fill: currentColor;
+  stroke: none;
+}
+
 /* Topic filter */
 
 .post-filters {
@@ -2259,7 +2278,8 @@ img {
   color: var(--text-soft);
 }
 
-.like-button {
+.like-button,
+.share-button {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -2278,19 +2298,24 @@ img {
     transform 0.2s var(--ease);
 }
 
-.like-button svg {
+.like-button svg,
+.share-button svg {
+  stroke-linecap: round;
+  stroke-linejoin: round;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.8;
   transition: fill 0.2s var(--ease);
 }
 
-.like-button:hover {
+.like-button:hover,
+.share-button:hover {
   border-color: var(--accent);
   color: var(--accent-ink);
 }
 
-.like-button:active {
+.like-button:active,
+.share-button:active {
   transform: scale(0.96);
 }
 
@@ -2307,6 +2332,13 @@ img {
 
 .like-button:disabled {
   cursor: progress;
+}
+
+.like-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
 
 .like-count {

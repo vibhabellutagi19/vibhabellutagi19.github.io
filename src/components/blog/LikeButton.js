@@ -49,21 +49,18 @@ export function LikeButton({ slug }) {
   }
 
   return (
-    <div className="like">
-      <p className="like-prompt">Enjoyed this post?</p>
-      <button
-        type="button"
-        className="like-button"
-        aria-pressed={state.liked}
-        aria-label={state.liked ? 'Unlike this post' : 'Like this post'}
-        disabled={pending}
-        onClick={toggle}
-      >
-        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-          <path d="M12 20.5s-7.5-4.6-9.4-9.3C1.3 7.9 3.4 4.5 6.9 4.5c2 0 3.6 1.1 4.6 2.6l.5.7.5-.7c1-1.5 2.6-2.6 4.6-2.6 3.5 0 5.6 3.4 4.3 6.7-1.9 4.7-9.4 9.3-9.4 9.3z" />
-        </svg>
-        <span className="like-count">{state.count}</span>
-      </button>
-    </div>
+    <button
+      type="button"
+      className="like-button"
+      aria-pressed={state.liked}
+      aria-label={state.liked ? 'Unlike this post' : 'Like this post'}
+      disabled={pending}
+      onClick={toggle}
+    >
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+        <path d="M12 20.5s-7.5-4.6-9.4-9.3C1.3 7.9 3.4 4.5 6.9 4.5c2 0 3.6 1.1 4.6 2.6l.5.7.5-.7c1-1.5 2.6-2.6 4.6-2.6 3.5 0 5.6 3.4 4.3 6.7-1.9 4.7-9.4 9.3-9.4 9.3z" />
+      </svg>
+      <span className="like-count">{state.count}</span>
+    </button>
   );
 }

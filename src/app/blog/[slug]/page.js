@@ -6,6 +6,7 @@ import { CodeCopy } from '@/components/blog/CodeCopy';
 import { LikeButton } from '@/components/blog/LikeButton';
 import { ReadNext, SeriesBox } from '@/components/blog/PostNav';
 import { ReadingProgress } from '@/components/blog/ReadingProgress';
+import { ShareButton } from '@/components/blog/ShareButton';
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { postDemos } from '@/components/blog/demos';
 import { profile } from '@/data/site';
@@ -72,8 +73,10 @@ export async function generateMetadata({ params }) {
     description,
     keywords: post.tags.map(formatTag),
     authors: [{ name: profile.name, url: SITE_URL }],
+    // Setting alternates here replaces the layout's, so the feed link is repeated.
     alternates: {
       canonical: `/blog/${post.slug}/`,
+      types: { 'application/rss+xml': [{ url: '/feed.xml', title: 'Vibhavari Bellutagi · Blog' }] },
     },
     openGraph: {
       type: 'article',
@@ -159,7 +162,13 @@ export default async function BlogPostPage({ params }) {
             {renderContent(post.html)}
           </div>
 
-          <LikeButton slug={post.slug} />
+          <div className="like">
+            <p className="like-prompt">Enjoyed this post?</p>
+            <div className="like-actions">
+              <LikeButton slug={post.slug} />
+              <ShareButton title={post.title} text={getDescription(post)} url={url} />
+            </div>
+          </div>
 
           <ReadNext series={series} related={related} tagLabels={tagLabels} />
 

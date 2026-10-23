@@ -33,6 +33,9 @@ export const metadata = {
   metadataBase: new URL('https://buildwithvibs.in'),
   title,
   description,
+  alternates: {
+    types: { 'application/rss+xml': [{ url: '/feed.xml', title: 'Vibhavari Bellutagi · Blog' }] },
+  },
   openGraph: {
     type: 'website',
     url: '/',
