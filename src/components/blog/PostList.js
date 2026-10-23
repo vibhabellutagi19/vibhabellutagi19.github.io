@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+import { ReadMark } from './ReadMark';
+
 function getYear(date) {
   const year = new Date(date).getFullYear();
   return Number.isNaN(year) ? 'Earlier' : String(year);
@@ -68,6 +70,7 @@ export function PostList({ posts, tagLabels }) {
                 <Link className="post-item" href={`/blog/${post.slug}/`}>
                   <span className="post-meta">
                     {post.date} · {post.readTime}
+                    <ReadMark slug={post.slug} />
                   </span>
                   <span className="post-title">{post.title}</span>
                   {post.excerpt && <span className="post-excerpt">{post.excerpt}</span>}

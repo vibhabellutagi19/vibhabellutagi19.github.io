@@ -6,6 +6,8 @@ import { CodeCopy } from '@/components/blog/CodeCopy';
 import { LikeButton } from '@/components/blog/LikeButton';
 import { ReadNext, SeriesBox } from '@/components/blog/PostNav';
 import { ReadingProgress } from '@/components/blog/ReadingProgress';
+import { ResumeReading } from '@/components/blog/ResumeReading';
+import { SaveButton } from '@/components/blog/SaveButton';
 import { ShareButton } from '@/components/blog/ShareButton';
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { postDemos } from '@/components/blog/demos';
@@ -131,6 +133,7 @@ export default async function BlogPostPage({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, '\\u003c') }}
       />
       <ReadingProgress targetId="post-body" />
+      <ResumeReading slug={post.slug} targetId="post-body" />
       <CodeCopy />
 
       <div className="container article-layout">
@@ -144,7 +147,7 @@ export default async function BlogPostPage({ params }) {
               <ViewCount path={`/blog/${post.slug}/`} />
             </p>
             <h1>{post.title}</h1>
-            {post.tags.length > 0 && (
+            <div className="article-tools">
               <p className="post-tags">
                 {post.tags.map((tag) => (
                   <Link key={tag} className="tag-chip" href={`/blog/tags/${tag}/`}>
@@ -152,7 +155,8 @@ export default async function BlogPostPage({ params }) {
                   </Link>
                 ))}
               </p>
-            )}
+              <SaveButton slug={post.slug} />
+            </div>
           </header>
 
           {series && <SeriesBox series={series} />}
@@ -166,6 +170,7 @@ export default async function BlogPostPage({ params }) {
             <p className="like-prompt">Enjoyed this post?</p>
             <div className="like-actions">
               <LikeButton slug={post.slug} />
+              <SaveButton slug={post.slug} />
               <ShareButton title={post.title} text={getDescription(post)} url={url} />
             </div>
           </div>

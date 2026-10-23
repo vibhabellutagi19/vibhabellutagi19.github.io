@@ -2279,7 +2279,8 @@ img {
 }
 
 .like-button,
-.share-button {
+.share-button,
+.save-button {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -2299,7 +2300,8 @@ img {
 }
 
 .like-button svg,
-.share-button svg {
+.share-button svg,
+.save-button svg {
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
@@ -2309,13 +2311,15 @@ img {
 }
 
 .like-button:hover,
-.share-button:hover {
+.share-button:hover,
+.save-button:hover {
   border-color: var(--accent);
   color: var(--accent-ink);
 }
 
 .like-button:active,
-.share-button:active {
+.share-button:active,
+.save-button:active {
   transform: scale(0.96);
 }
 
@@ -2332,6 +2336,210 @@ img {
 
 .like-button:disabled {
   cursor: progress;
+}
+
+.save-button[aria-pressed='true'] {
+  border-color: var(--accent);
+  background: var(--accent-tint);
+  color: var(--accent-ink);
+}
+
+.save-button[aria-pressed='true'] svg {
+  fill: var(--accent);
+  stroke: var(--accent);
+}
+
+.article-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.article-tools .post-tags {
+  margin-top: 0;
+}
+
+.article-tools .save-button {
+  padding: 6px 14px;
+  font-size: 14px;
+}
+
+/* Welcome-back offer for a half-read post */
+.resume {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  z-index: 55;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: max-content;
+  max-width: calc(100vw - 32px);
+  padding: 10px 10px 10px 20px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  transform: translateX(-50%);
+  animation: resume-in 0.4s var(--ease) both;
+}
+
+@keyframes resume-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 16px);
+  }
+}
+
+.resume p {
+  font-size: 15px;
+}
+
+.resume-close {
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-soft);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.resume-close:hover {
+  background: var(--bg-alt);
+  color: var(--text);
+}
+
+@media (max-width: 640px) {
+  .resume {
+    left: 16px;
+    right: 16px;
+    flex-wrap: wrap;
+    width: auto;
+    border-radius: var(--radius);
+    transform: none;
+    animation-name: resume-in-mobile;
+  }
+
+  .resume p {
+    flex: 1 1 100%;
+    padding-right: 32px;
+  }
+
+  .resume-close {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+  }
+}
+
+@keyframes resume-in-mobile {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resume {
+    animation: none;
+  }
+}
+
+/* "Continue reading" on /blog, and read marks in post lists */
+.continue {
+  margin-bottom: 32px;
+}
+
+.continue-title {
+  margin-bottom: 12px;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+}
+
+.continue-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.continue-card {
+  display: grid;
+  gap: 10px;
+  height: 100%;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  transition: border-color 0.2s var(--ease);
+}
+
+.continue-card:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.continue-post {
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.continue-bar {
+  height: 5px;
+  border-radius: 3px;
+  background: var(--bg-alt);
+  overflow: hidden;
+}
+
+.continue-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+  background: var(--accent);
+}
+
+.continue-meta {
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+.continue-cta {
+  color: var(--accent-ink);
+  font-weight: 600;
+}
+
+.filter-chip-saved::before {
+  content: '';
+  width: 10px;
+  height: 12px;
+  background: currentColor;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 72%, 0 100%);
+}
+
+.read-mark {
+  margin-left: 10px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--bg-alt);
+  color: var(--text-soft);
+}
+
+.read-mark.is-done {
+  background: color-mix(in srgb, var(--live) 16%, transparent);
+  color: var(--text);
 }
 
 .like-actions {
