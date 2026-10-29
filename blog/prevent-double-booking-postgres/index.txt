@@ -1,0 +1,303 @@
+1:"$Sreact.fragment"
+2:I[4493,["860","static/chunks/860-8aefa8da6e6a472b.js","177","static/chunks/app/layout-abae048957121d27.js"],"Header"]
+3:I[7449,[],""]
+4:I[6637,[],""]
+5:I[6860,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],""]
+6:I[3901,["860","static/chunks/860-8aefa8da6e6a472b.js","177","static/chunks/app/layout-abae048957121d27.js"],"GoatCounter"]
+8:I[3868,[],"OutletBoundary"]
+a:I[3589,[],"AsyncMetadataOutlet"]
+c:I[3868,[],"ViewportBoundary"]
+e:I[3868,[],"MetadataBoundary"]
+f:"$Sreact.suspense"
+11:I[5227,[],""]
+:HL["/_next/static/media/558ca1a6aa3cb55e-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/af4bf8399d1aacdf-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/e4af272ccee01ff0-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/3eef02d45825f04f.css","style"]
+0:{"P":null,"b":"jl6XMdaFAN4NgsPHiuLcv","p":"","c":["","blog","prevent-double-booking-postgres",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","prevent-double-booking-postgres","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/3eef02d45825f04f.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","className":"__variable_d8ebd1 __variable_a0f193 __variable_a3cc63","children":["$","body",null,{"children":[["$","a",null,{"className":"skip-link","href":"#main","children":"Skip to content"}],["$","$L2",null,{}],["$","div",null,{"id":"main","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"site-footer","children":["$","div",null,{"className":"container footer-row","children":[["$","p",null,{"className":"footer-copy","children":["© 2026 ","Vibhavari Bellutagi"]}],["$","div",null,{"className":"footer-links","children":[["$","a",null,{"href":"mailto:vibhavari.bellutagi@gmail.com","children":"Email"}],["$","a",null,{"href":"https://wa.me/919742352994?text=Hi%20Vibhavari%2C%20I'd%20like%20to%20discuss%20a%20project.","target":"_blank","rel":"noreferrer","children":"WhatsApp"}],["$","a",null,{"href":"https://www.linkedin.com/in/vibhavari-bellutagi/","target":"_blank","rel":"noreferrer","children":"LinkedIn"}],["$","a",null,{"href":"https://github.com/vibhabellutagi19","target":"_blank","rel":"noreferrer","children":"GitHub"}],["$","$L5",null,{"href":"/blog/","children":"Blog"}]]}]]}]}],["$","$L6",null,{"code":"vibhavaribellutagi"}]]}]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","prevent-double-booking-postgres","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L7",null,["$","$L8",null,{"children":["$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$Le",null,{"children":["$","div",null,{"hidden":true,"children":["$","$f",null,{"fallback":null,"children":"$L10"}]}]}]]}],false]],"m":"$undefined","G":["$11",[]],"s":false,"S":true}
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+9:null
+12:I[3581,[],"IconMark"]
+b:{"metadata":[["$","title","0",{"children":"Preventing Double Bookings in Postgres with SELECT FOR UPDATE · Vibhavari Bellutagi"}],["$","meta","1",{"name":"description","content":"Two members, one spot left. How Move stops overbooking with Postgres row locks, the race reproduced without them, and two lock mistakes found along the way."}],["$","link","2",{"rel":"author","href":"https://buildwithvibs.in"}],["$","meta","3",{"name":"author","content":"Vibhavari Bellutagi"}],["$","meta","4",{"name":"keywords","content":"Building Apps,Postgres,Concurrency,Drizzle"}],["$","link","5",{"rel":"canonical","href":"https://buildwithvibs.in/blog/prevent-double-booking-postgres/"}],["$","link","6",{"rel":"alternate","type":"application/rss+xml","title":"Vibhavari Bellutagi · Blog","href":"https://buildwithvibs.in/feed.xml"}],["$","meta","7",{"property":"og:title","content":"Preventing Double Bookings in Postgres with SELECT FOR UPDATE · Vibhavari Bellutagi"}],["$","meta","8",{"property":"og:description","content":"Two members, one spot left. How Move stops overbooking with Postgres row locks, the race reproduced without them, and two lock mistakes found along the way."}],["$","meta","9",{"property":"og:url","content":"https://buildwithvibs.in/blog/prevent-double-booking-postgres/"}],["$","meta","10",{"property":"og:image","content":"https://buildwithvibs.in/opengraph-image.jpg"}],["$","meta","11",{"property":"og:type","content":"article"}],["$","meta","12",{"property":"article:published_time","content":"2026-10-22"}],["$","meta","13",{"property":"article:author","content":"Vibhavari Bellutagi"}],["$","meta","14",{"property":"article:tag","content":"Building Apps"}],["$","meta","15",{"property":"article:tag","content":"Postgres"}],["$","meta","16",{"property":"article:tag","content":"Concurrency"}],["$","meta","17",{"property":"article:tag","content":"Drizzle"}],["$","meta","18",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","19",{"name":"twitter:title","content":"Preventing Double Bookings in Postgres with SELECT FOR UPDATE · Vibhavari Bellutagi"}],["$","meta","20",{"name":"twitter:description","content":"Two members, one spot left. How Move stops overbooking with Postgres row locks, the race reproduced without them, and two lock mistakes found along the way."}],["$","meta","21",{"name":"twitter:image","content":"https://buildwithvibs.in/twitter-image.jpg"}],["$","link","22",{"rel":"icon","href":"/icon.svg?0f63625a4946e8f0","type":"image/svg+xml","sizes":"any"}],["$","link","23",{"rel":"apple-touch-icon","href":"/apple-icon.png?ccfb558910f9ffaa","type":"image/png","sizes":"180x180"}],["$","$L12","24",{}]],"error":null,"digest":"$undefined"}
+10:"$b:metadata"
+14:I[5093,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"ReadingProgress"]
+15:I[1939,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"ResumeReading"]
+16:I[2498,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"CodeCopy"]
+17:I[2649,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"LikeButton"]
+18:I[667,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"SaveButton"]
+19:I[6097,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"ShareButton"]
+1a:I[653,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"Image"]
+1b:I[5560,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"ViewCount"]
+1c:I[4305,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"TableOfContents"]
+13:T4bf,{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"Preventing Double Bookings in Postgres with SELECT FOR UPDATE","description":"Two members, one spot left. How Move stops overbooking with Postgres row locks, the race reproduced without them, and two lock mistakes found along the way.","datePublished":"2026-10-22","url":"https://buildwithvibs.in/blog/prevent-double-booking-postgres/","mainEntityOfPage":"https://buildwithvibs.in/blog/prevent-double-booking-postgres/","image":"https://buildwithvibs.in/opengraph-image.jpg","keywords":"Building Apps, Postgres, Concurrency, Drizzle","author":{"@type":"Person","name":"Vibhavari Bellutagi","url":"https://buildwithvibs.in"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://buildwithvibs.in/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://buildwithvibs.in/blog/"},{"@type":"ListItem","position":3,"name":"Building Apps","item":"https://buildwithvibs.in/blog/tags/building-apps/"},{"@type":"ListItem","position":4,"name":"Preventing Double Bookings in Postgres with SELECT FOR UPDATE","item":"https://buildwithvibs.in/blog/prevent-double-booking-postgres/"}]}]}7:["$","main",null,{"className":"section post-page","children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","$L14",null,{"targetId":"post-body"}],["$","$L15",null,{"slug":"prevent-double-booking-postgres","targetId":"post-body"}],["$","$L16",null,{}],["$","div",null,{"className":"container article-layout","children":[["$","article",null,{"className":"article","children":[["$","nav",null,{"className":"breadcrumbs","aria-label":"Breadcrumb","children":["$","ol",null,{"children":[[["$","li","/",{"children":["$","$L5",null,{"href":"/","children":"Home"}]}],["$","li","/blog/",{"children":["$","$L5",null,{"href":"/blog/","children":"Blog"}]}],["$","li","/blog/tags/building-apps/",{"children":["$","$L5",null,{"href":"/blog/tags/building-apps/","children":"Building Apps"}]}]],["$","li",null,{"aria-current":"page","children":"Preventing Double Bookings in Postgres with SELECT FOR UPDATE"}]]}]}],["$","header",null,{"className":"article-head","children":[["$","h1",null,{"children":"Preventing Double Bookings in Postgres with SELECT FOR UPDATE"}],["$","div",null,{"className":"article-tools","children":[["$","p",null,{"className":"post-tags","children":[["$","$L5","building-apps",{"className":"tag-chip","href":"/blog/tags/building-apps/","children":"Building Apps"}],["$","$L5","postgres",{"className":"tag-chip","href":"/blog/tags/postgres/","children":"Postgres"}],["$","$L5","concurrency",{"className":"tag-chip","href":"/blog/tags/concurrency/","children":"Concurrency"}],["$","$L5","drizzle",{"className":"tag-chip","href":"/blog/tags/drizzle/","children":"Drizzle"}]]}],["$","div",null,{"className":"post-actions","children":[["$","$L17",null,{"slug":"prevent-double-booking-postgres"}],["$","$L18",null,{"slug":"prevent-double-booking-postgres"}],["$","$L19",null,{"title":"Preventing Double Bookings in Postgres with SELECT FOR UPDATE","text":"Two members, one spot left. How Move stops overbooking with Postgres row locks, the race reproduced without them, and two lock mistakes found along the way.","url":"https://buildwithvibs.in/blog/prevent-double-booking-postgres/"}]]}]]}],["$","div",null,{"className":"byline","children":[["$","$L1a",null,{"className":"byline-photo","src":"/me/vibhavari_bellutagi-avatar.jpg","alt":"","width":44,"height":44}],["$","div",null,{"children":[["$","p",null,{"className":"byline-name","children":"Vibhavari Bellutagi"}],["$","p",null,{"className":"post-meta","children":["Oct 22, 2026"," · ","9 min read",["$","$L1b",null,{"path":"/blog/prevent-double-booking-postgres/"}]]}]]}]]}]]}],null,["$","$L1c",null,{"headings":[{"level":2,"id":"the-obvious-code-has-a-race-condition","text":"The obvious code has a race condition"},{"level":2,"id":"the-fix-lock-the-row-with-select-for-update","text":"The fix: lock the row with SELECT … FOR UPDATE"},{"level":2,"id":"how-moves-booking-transaction-is-built","text":"How Move's booking transaction is built"},{"level":3,"id":"1-always-take-locks-in-the-same-order","text":"1. Always take locks in the same order"},{"level":3,"id":"2-nothing-slow-happens-while-the-lock-is-held","text":"2. Nothing slow happens while the lock is held"},{"level":3,"id":"3-every-check-that-depends-on-shared-state-runs-after-the-lock","text":"3. Every check that depends on shared state runs after the lock"},{"level":2,"id":"mistake-1-a-second-connection-inside-the-transaction-can-freeze-every-booking","text":"Mistake 1: a second connection inside the transaction can freeze every booking"},{"level":2,"id":"mistake-2-for-update-locks-every-table-in-the-join","text":"Mistake 2: FOR UPDATE locks every table in the join"},{"level":2,"id":"dont-let-the-lock-be-your-only-guard","text":"Don't let the lock be your only guard"},{"level":2,"id":"other-ways-to-prevent-double-booking","text":"Other ways to prevent double booking"},{"level":2,"id":"frequently-asked-questions","text":"Frequently asked questions"},{"level":3,"id":"how-do-i-prevent-double-booking-in-postgres","text":"How do I prevent double booking in Postgres?"},{"level":3,"id":"does-a-transaction-alone-prevent-race-conditions","text":"Does a transaction alone prevent race conditions?"},{"level":3,"id":"does-select-for-update-lock-the-whole-table","text":"Does SELECT FOR UPDATE lock the whole table?"},{"level":3,"id":"how-do-i-use-for-update-in-drizzle-orm","text":"How do I use FOR UPDATE in Drizzle ORM?"},{"level":2,"id":"wrapping-up","text":"Wrapping up"}],"variant":"inline"}],"$L1d","$L1e","$L1f"]}],"$L20"]}]]}]
+21:T1843,<p>A class in <a href="/#work">Move</a>, the gym management app I&#39;m building, has 10 spots. Nine are booked. Two members open the app and tap &quot;Book&quot; at the same moment.</p>
+<p>Exactly one of them should get the spot. The other should see &quot;This session is full&quot;. If both get in, the coach walks into a class with 11 people and 10 bikes.</p>
+<p>This post covers how Move prevents that with a Postgres row lock, a reproduction of the race without the lock, and two mistakes around that lock: one that could freeze every booking at once, and one that quietly makes unrelated bookings wait for each other.</p>
+<aside class="callout callout-tldr">
+      <p class="callout-title">TL;DR</p>
+      <div class="callout-body"><p><strong>Problem:</strong> two people booking the last spot at the same moment can both get in, because each checks the count before the other has written.</p>
+<p><strong>Fix:</strong> lock the class&#39;s row with <code>SELECT … FOR UPDATE</code> inside the booking transaction, so the second request waits and sees the real count. Keep the lock short, and lock only the table you&#39;re changing (<code>FOR UPDATE OF sessions</code>).</p>
+</div>
+    </aside>
+
+<h2 id="the-obvious-code-has-a-race-condition">The obvious code has a race condition<a class="heading-anchor" href="#the-obvious-code-has-a-race-condition" aria-label="Link to this section">#</a></h2>
+<p>The natural way to write a booking looks like this:</p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">TypeScript</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#A0111F">const</span><span style="color:#023B95"> session</span><span style="color:#A0111F"> =</span><span style="color:#A0111F"> await</span><span style="color:#0E1116"> db</span></span>
+<span class="line"><span style="color:#0E1116">  .</span><span style="color:#622CBC">select</span><span style="color:#0E1116">()</span></span>
+<span class="line"><span style="color:#0E1116">  .</span><span style="color:#622CBC">from</span><span style="color:#0E1116">(sessions)</span></span>
+<span class="line"><span style="color:#0E1116">  .</span><span style="color:#622CBC">where</span><span style="color:#0E1116">(</span><span style="color:#622CBC">eq</span><span style="color:#0E1116">(sessions.id, sessionId));</span></span>
+<span class="line"><span style="color:#A0111F">if</span><span style="color:#0E1116"> (session.bookedCount </span><span style="color:#A0111F">>=</span><span style="color:#0E1116"> session.capacity) {</span></span>
+<span class="line"><span style="color:#A0111F">  throw</span><span style="color:#A0111F"> new</span><span style="color:#622CBC"> SessionFullError</span><span style="color:#0E1116">();</span></span>
+<span class="line"><span style="color:#0E1116">}</span></span>
+<span class="line"><span style="color:#A0111F">await</span><span style="color:#622CBC"> insertBooking</span><span style="color:#0E1116">(clientId, sessionId);</span></span>
+<span class="line"><span style="color:#A0111F">await</span><span style="color:#0E1116"> db</span></span>
+<span class="line"><span style="color:#0E1116">  .</span><span style="color:#622CBC">update</span><span style="color:#0E1116">(sessions)</span></span>
+<span class="line"><span style="color:#0E1116">  .</span><span style="color:#622CBC">set</span><span style="color:#0E1116">({ bookedCount: </span><span style="color:#622CBC">sql</span><span style="color:#032563">`booked_count + 1`</span><span style="color:#0E1116"> })</span></span>
+<span class="line"><span style="color:#0E1116">  .</span><span style="color:#622CBC">where</span><span style="color:#0E1116">(</span><span style="color:#622CBC">eq</span><span style="color:#0E1116">(sessions.id, sessionId));</span></span></code></pre>
+    </div><p>It reads the count, checks it, then writes. That&#39;s a <strong>check-then-act</strong> pattern, and it breaks the moment two requests interleave: both read 9, both decide there&#39;s room, both insert.</p>
+<p>You don&#39;t need to take my word for it. I ran two transactions against Postgres 16 that do exactly this, with a one-second pause between the check and the write to make the overlap certain:</p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang"></span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki"><code>B booked (saw 9/10)
+A booked (saw 9/10)
+final: 11/10</code></pre>
+    </div><p>Both requests saw 9 of 10 and both booked. The class is overbooked, and no error was raised anywhere.</p>
+<aside class="callout callout-warning">
+      <p class="callout-title">Warning</p>
+      <div class="callout-body"><p>Wrapping the code in a transaction doesn&#39;t fix this on its own. At Postgres&#39;s default isolation level (<code>READ COMMITTED</code>), a plain <code>SELECT</code> takes no lock, so two transactions can still read the same count and both act on it.</p>
+</div>
+    </aside>
+
+<h2 id="the-fix-lock-the-row-with-select-for-update">The fix: lock the row with SELECT … FOR UPDATE<a class="heading-anchor" href="#the-fix-lock-the-row-with-select-for-update" aria-label="Link to this section">#</a></h2>
+<p><code>SELECT … FOR UPDATE</code> reads a row <strong>and locks it</strong> until the transaction ends. Any other transaction that tries to lock the same row waits until the first one commits or rolls back. Then it reads the row again and sees the new value.</p>
+<p>Same experiment, with <code>FOR UPDATE</code> added to the read:</p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang"></span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki"><code>B booked (saw 9/10)
+A rejected: full (saw 10/10)
+final: 10/10</code></pre>
+    </div><p>B got the lock first and booked. A waited, then read the real count of 10 and was turned away. Exactly one booking, no matter how the requests are timed.</p>
+<p>Here&#39;s the race as an interactive demo. Play it with and without the lock:</p>
+1d:["$","div",null,{"id":"post-body","className":"article-content","children":[["$","div","0",{"className":"article-html","dangerouslySetInnerHTML":{"__html":"$21"}}],"$L22","$L23"]}]
+1e:["$","section",null,{"className":"read-next","aria-labelledby":"read-next-title","children":[["$","h2",null,{"id":"read-next-title","className":"read-next-title","children":"Read next"}],"$undefined",["$","ul",null,{"className":"read-next-list","children":[["$","li","better-auth-logged-out-while-active",{"children":["$","$L5",null,{"className":"post-item","href":"/blog/better-auth-logged-out-while-active/","children":[["$","span",null,{"className":"post-meta","children":["Oct 22, 2026"," · ","9 min read"]}],["$","span",null,{"className":"post-title","children":"Why Better Auth Kept Logging Users Out While They Were Active"}],["$","ul",null,{"className":"tags post-row-tags","children":[["$","li","building-apps",{"children":"Building Apps"}],["$","li","better-auth",{"children":"Better Auth"}],["$","li","trpc",{"children":"tRPC"}],["$","li","authentication",{"children":"Authentication"}]]}]]}]}],["$","li","the-magic-of-call-apply-bind",{"children":["$","$L5",null,{"className":"post-item","href":"/blog/the-magic-of-call-apply-bind/","children":[["$","span",null,{"className":"post-meta","children":["Apr 18, 2026"," · ","4 min read"]}],["$","span",null,{"className":"post-title","children":"The magic of call(), apply(), bind()"}],["$","ul",null,{"className":"tags post-row-tags","children":[["$","li","javascript",{"children":"JavaScript"}],["$","li","hashnode",{"children":"Hashnode"}]]}]]}]}],["$","li","control-flow-in-javascript-if-else-and-switch-explained",{"children":["$","$L5",null,{"className":"post-item","href":"/blog/control-flow-in-javascript-if-else-and-switch-explained/","children":[["$","span",null,{"className":"post-meta","children":["Apr 18, 2026"," · ","6 min read"]}],["$","span",null,{"className":"post-title","children":"Control Flow in JavaScript: If, Else, and Switch Explained"}],["$","ul",null,{"className":"tags post-row-tags","children":[["$","li","javascript",{"children":"JavaScript"}],["$","li","hashnode",{"children":"Hashnode"}]]}]]}]}]]}],"$undefined"]}]
+1f:["$","footer",null,{"className":"article-foot","children":[["$","$L5",null,{"className":"text-link","href":"/blog/","children":"← All posts"}],["$","$L5",null,{"className":"text-link","href":"/#contact","children":"Work with me →"}]]}]
+20:["$","aside",null,{"className":"post-sidebar","children":[["$","section",null,{"className":"author-card","aria-label":"About the author","children":[["$","$L1a",null,{"className":"author-photo","src":"/me/vibhavari_bellutagi-avatar.jpg","alt":"Vibhavari Bellutagi","width":96,"height":96}],["$","p",null,{"className":"author-name","children":"Vibhavari Bellutagi"}],["$","p",null,{"className":"author-bio","children":["Freelance Full-Stack Developer",". 10+ years in software, seven of them building data platforms (Spark, Kafka, Databricks) at Deloitte, AgileLab and Mews. Now building products end to end, including"," ",["$","$L5",null,{"href":"/#work","children":"Move"}],", a gym management app."]}],["$","$L5",null,{"className":"btn btn-primary btn-sm author-cta","href":"/#contact","children":"Work with me"}],["$","ul",null,{"className":"author-links","children":[["$","li","github",{"children":["$","a",null,{"href":"https://github.com/vibhabellutagi19","aria-label":"GitHub","title":"GitHub","target":"_blank","rel":"noopener noreferrer","children":["$","svg",null,{"viewBox":"0 0 24 24","width":"18","height":"18","aria-hidden":"true","children":["$","path",null,{"d":"M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"}]}]}]}],["$","li","linkedin",{"children":["$","a",null,{"href":"https://www.linkedin.com/in/vibhavari-bellutagi/","aria-label":"LinkedIn","title":"LinkedIn","target":"_blank","rel":"noopener noreferrer","children":["$","svg",null,{"viewBox":"0 0 24 24","width":"18","height":"18","aria-hidden":"true","children":["$","path",null,{"d":"M8 11v5M8 8v.01M12 16v-5M16 16v-3a2 2 0 1 0 -4 0M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z"}]}]}]}],["$","li","mail",{"children":["$","a",null,{"href":"mailto:vibhavari.bellutagi@gmail.com","aria-label":"Email","title":"Email","children":["$","svg",null,{"viewBox":"0 0 24 24","width":"18","height":"18","aria-hidden":"true","children":["$","path",null,{"d":"M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10zM3 7l9 6l9 -6"}]}]}]}],["$","li","rss",{"children":["$","a",null,{"href":"/feed.xml","aria-label":"RSS feed","title":"RSS feed","children":["$","svg",null,{"viewBox":"0 0 24 24","width":"18","height":"18","aria-hidden":"true","children":["$","path",null,{"d":"M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0M4 4a16 16 0 0 1 16 16M4 11a9 9 0 0 1 9 9"}]}]}]}]]}]]}],["$","$L1c",null,{"headings":"$7:props:children:4:props:children:0:props:children:3:props:headings","variant":"side"}]]}]
+24:I[4923,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"BookingRace"]
+22:["$","$L24","1",{}]
+25:T6104,
+
+
+<h2 id="how-moves-booking-transaction-is-built">How Move&#39;s booking transaction is built<a class="heading-anchor" href="#how-moves-booking-transaction-is-built" aria-label="Link to this section">#</a></h2>
+<p>Move uses <a href="https://orm.drizzle.team/">Drizzle ORM</a> on Postgres. Stripped down to the parts that matter for concurrency, the booking service looks like this:</p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">TypeScript</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#A0111F">await</span><span style="color:#0E1116"> db.</span><span style="color:#622CBC">transaction</span><span style="color:#0E1116">(</span><span style="color:#A0111F">async</span><span style="color:#0E1116"> (</span><span style="color:#702C00">tx</span><span style="color:#0E1116">) </span><span style="color:#A0111F">=></span><span style="color:#0E1116"> {</span></span>
+<span class="line"><span style="color:#66707B">  // 1. Lock the client: one person's double-taps run one at a time.</span></span>
+<span class="line"><span style="color:#A0111F">  const</span><span style="color:#023B95"> client</span><span style="color:#A0111F"> =</span><span style="color:#A0111F"> await</span><span style="color:#0E1116"> repository.</span><span style="color:#622CBC">lockClient</span><span style="color:#0E1116">(tx, clientId);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#66707B">  // 2. Lock the session: the real guard on capacity.</span></span>
+<span class="line"><span style="color:#A0111F">  const</span><span style="color:#023B95"> session</span><span style="color:#A0111F"> =</span><span style="color:#A0111F"> await</span><span style="color:#0E1116"> repository.</span><span style="color:#622CBC">findSessionForUpdate</span><span style="color:#0E1116">(tx, sessionId);</span></span>
+<span class="line"><span style="color:#A0111F">  if</span><span style="color:#0E1116"> (session.bookedCount </span><span style="color:#A0111F">>=</span><span style="color:#0E1116"> session.capacity) {</span></span>
+<span class="line"><span style="color:#A0111F">    throw</span><span style="color:#A0111F"> new</span><span style="color:#622CBC"> SessionFullError</span><span style="color:#0E1116">(</span><span style="color:#032563">"Session is at capacity"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#0E1116">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#66707B">  // 3. Write everything while still holding both locks.</span></span>
+<span class="line"><span style="color:#A0111F">  const</span><span style="color:#023B95"> booking</span><span style="color:#A0111F"> =</span><span style="color:#A0111F"> await</span><span style="color:#0E1116"> repository.</span><span style="color:#622CBC">insertBooking</span><span style="color:#0E1116">(tx, {</span></span>
+<span class="line"><span style="color:#0E1116">    clientId,</span></span>
+<span class="line"><span style="color:#0E1116">    sessionId,</span></span>
+<span class="line"><span style="color:#0E1116">    idempotencyKey,</span></span>
+<span class="line"><span style="color:#0E1116">  });</span></span>
+<span class="line"><span style="color:#A0111F">  await</span><span style="color:#0E1116"> chargeStrategy.</span><span style="color:#622CBC">chargeFor</span><span style="color:#0E1116">(tx, {</span></span>
+<span class="line"><span style="color:#0E1116">    clientId,</span></span>
+<span class="line"><span style="color:#0E1116">    refBookingId: booking.id </span><span style="color:#66707B">/* ... */</span><span style="color:#0E1116">,</span></span>
+<span class="line"><span style="color:#0E1116">  });</span></span>
+<span class="line"><span style="color:#A0111F">  await</span><span style="color:#0E1116"> repository.</span><span style="color:#622CBC">incrementSessionBookedCount</span><span style="color:#0E1116">(tx, sessionId);</span></span>
+<span class="line"><span style="color:#A0111F">  await</span><span style="color:#0E1116"> repository.</span><span style="color:#622CBC">appendAuditLogEntry</span><span style="color:#0E1116">(tx, {</span></span>
+<span class="line"><span style="color:#0E1116">    action: </span><span style="color:#032563">"BOOKING_CREATED"</span><span style="color:#66707B"> /* ... */</span><span style="color:#0E1116">,</span></span>
+<span class="line"><span style="color:#0E1116">  });</span></span>
+<span class="line"><span style="color:#0E1116">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#66707B">// 4. Only after COMMIT: send the confirmation emails.</span></span>
+<span class="line"><span style="color:#A0111F">await</span><span style="color:#622CBC"> sendBookingEmails</span><span style="color:#0E1116">(booking.id);</span></span></code></pre>
+    </div><p>In Drizzle, the lock is <code>.for(&quot;update&quot;)</code> on the select:</p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">TypeScript</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#A0111F">const</span><span style="color:#0E1116"> [</span><span style="color:#023B95">session</span><span style="color:#0E1116">] </span><span style="color:#A0111F">=</span><span style="color:#A0111F"> await</span><span style="color:#0E1116"> tx</span></span>
+<span class="line"><span style="color:#0E1116">  .</span><span style="color:#622CBC">select</span><span style="color:#0E1116">({</span></span>
+<span class="line"><span style="color:#0E1116">    capacity: sessions.capacity,</span></span>
+<span class="line"><span style="color:#0E1116">    bookedCount: sessions.bookedCount </span><span style="color:#66707B">/* ... */</span><span style="color:#0E1116">,</span></span>
+<span class="line"><span style="color:#0E1116">  })</span></span>
+<span class="line"><span style="color:#0E1116">  .</span><span style="color:#622CBC">from</span><span style="color:#0E1116">(sessions)</span></span>
+<span class="line"><span style="color:#0E1116">  .</span><span style="color:#622CBC">where</span><span style="color:#0E1116">(</span><span style="color:#622CBC">eq</span><span style="color:#0E1116">(sessions.id, sessionId))</span></span>
+<span class="line"><span style="color:#0E1116">  .</span><span style="color:#622CBC">for</span><span style="color:#0E1116">(</span><span style="color:#032563">"update"</span><span style="color:#0E1116">);</span></span></code></pre>
+    </div><p>Three rules hold this together.</p>
+<h3 id="1-always-take-locks-in-the-same-order">1. Always take locks in the same order<a class="heading-anchor" href="#1-always-take-locks-in-the-same-order" aria-label="Link to this section">#</a></h3>
+<p>Every booking locks the <strong>client first, then the session, then the credit lot</strong> it spends from. If one request locked session → client while another locked client → session, each could end up holding the lock the other needs. That&#39;s a deadlock, and Postgres resolves it by killing one of the transactions.</p>
+<p>Locking the client also covers a quieter case: a member double-tapping &quot;Book&quot; on two different classes that overlap in time. Their two requests now run one after another, so the overlap check in the second one sees the first booking.</p>
+<h3 id="2-nothing-slow-happens-while-the-lock-is-held">2. Nothing slow happens while the lock is held<a class="heading-anchor" href="#2-nothing-slow-happens-while-the-lock-is-held" aria-label="Link to this section">#</a></h3>
+<p>Everything inside the transaction is a fast local Postgres statement: about eight of them per booking, including the credit deduction and the audit log entry. There&#39;s no payment gateway call, no HTTP request and no email under the lock.</p>
+<p>Confirmation emails are sent <strong>after</strong> the transaction commits. If the email provider takes three seconds to respond, the next person booking that class doesn&#39;t wait three seconds for the lock.</p>
+<h3 id="3-every-check-that-depends-on-shared-state-runs-after-the-lock">3. Every check that depends on shared state runs after the lock<a class="heading-anchor" href="#3-every-check-that-depends-on-shared-state-runs-after-the-lock" aria-label="Link to this section">#</a></h3>
+<p>The capacity check, the &quot;has the class already started?&quot; check, and the overlap check all run after the locks are taken. A check done before locking is a check against data that may already be out of date.</p>
+<h2 id="mistake-1-a-second-connection-inside-the-transaction-can-freeze-every-booking">Mistake 1: a second connection inside the transaction can freeze every booking<a class="heading-anchor" href="#mistake-1-a-second-connection-inside-the-transaction-can-freeze-every-booking" aria-label="Link to this section">#</a></h2>
+<p>Inside a transaction, one query that uses the global client instead of the transaction handle can hang your whole app. It&#39;s a one-word mistake, and it usually hides in a helper function.</p>
+<p>Charging for a booking is a good example. A helper, <code>pickCreditLot</code>, decides which of the member&#39;s credit packs to spend from (the one expiring soonest), and runs its query like this:</p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">TypeScript</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#66707B">// inside chargeFor(tx, ...), while the booking transaction holds its locks</span></span>
+<span class="line"><span style="color:#A0111F">const</span><span style="color:#023B95"> candidates</span><span style="color:#A0111F"> =</span><span style="color:#A0111F"> await</span><span style="color:#0E1116"> db.</span><span style="color:#622CBC">select</span><span style="color:#0E1116">().</span><span style="color:#622CBC">from</span><span style="color:#0E1116">(creditLots).</span><span style="color:#622CBC">where</span><span style="color:#0E1116">(</span><span style="color:#66707B">/* ... */</span><span style="color:#0E1116">);</span></span></code></pre>
+    </div><p>Note <code>db</code>, not <code>tx</code>. <code>db</code> is the connection pool, so this query borrows a <strong>second</strong> connection while the transaction is still holding its first one.</p>
+<p>With a pool of 10 connections, that&#39;s a trap:</p>
+<ol>
+<li>Ten members book at once. Each booking transaction takes one connection: the pool is now empty.</li>
+<li>Each of them reaches <code>pickCreditLot</code> and asks the pool for a second connection.</li>
+<li>None is free, and none will be: every connection belongs to a transaction that&#39;s waiting for another connection.</li>
+</ol>
+<p>Every booking hangs at once, and without a timeout, nothing ever breaks the wait. Postgres can&#39;t detect it as a deadlock either, because Postgres never sees the waiting: it happens in the pool, inside the application.</p>
+<p>The fix is to pass the transaction through:</p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">TypeScript</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#A0111F">const</span><span style="color:#023B95"> candidates</span><span style="color:#A0111F"> =</span><span style="color:#A0111F"> await</span><span style="color:#0E1116"> tx.</span><span style="color:#622CBC">select</span><span style="color:#0E1116">().</span><span style="color:#622CBC">from</span><span style="color:#0E1116">(creditLots).</span><span style="color:#622CBC">where</span><span style="color:#0E1116">(</span><span style="color:#66707B">/* ... */</span><span style="color:#0E1116">);</span></span></code></pre>
+    </div><p>Then add bounds, so that if another code path makes the same mistake, it fails loudly instead of freezing:</p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">TypeScript</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#A0111F">export</span><span style="color:#A0111F"> const</span><span style="color:#023B95"> db</span><span style="color:#A0111F"> =</span><span style="color:#622CBC"> drizzle</span><span style="color:#0E1116">({</span></span>
+<span class="line"><span style="color:#0E1116">  connection: {</span></span>
+<span class="line"><span style="color:#0E1116">    connectionString: env.</span><span style="color:#023B95">DATABASE_URL</span><span style="color:#0E1116">,</span></span>
+<span class="line"><span style="color:#0E1116">    max: </span><span style="color:#023B95">10</span><span style="color:#0E1116">,</span></span>
+<span class="line"><span style="color:#0E1116">    statement_timeout: </span><span style="color:#023B95">30_000</span><span style="color:#0E1116">, </span><span style="color:#66707B">// no statement (or lock wait) runs longer than 30s</span></span>
+<span class="line"><span style="color:#0E1116">    idle_in_transaction_session_timeout: </span><span style="color:#023B95">30_000</span><span style="color:#0E1116">, </span><span style="color:#66707B">// no transaction sits open doing nothing for 30s</span></span>
+<span class="line"><span style="color:#0E1116">    connectionTimeoutMillis: </span><span style="color:#023B95">10_000</span><span style="color:#0E1116">, </span><span style="color:#66707B">// waiting for a pool connection fails after 10s</span></span>
+<span class="line"><span style="color:#0E1116">  },</span></span>
+<span class="line"><span style="color:#0E1116">});</span></span></code></pre>
+    </div><aside class="callout callout-tip">
+      <p class="callout-title">Tip</p>
+      <div class="callout-body"><p>Inside a transaction callback, every query should use the transaction handle (<code>tx</code>), never the global client. A lint rule or a repository interface that requires <code>tx</code> as an argument makes this mistake hard to write.</p>
+</div>
+    </aside>
+
+<h2 id="mistake-2-for-update-locks-every-table-in-the-join">Mistake 2: FOR UPDATE locks every table in the join<a class="heading-anchor" href="#mistake-2-for-update-locks-every-table-in-the-join" aria-label="Link to this section">#</a></h2>
+<p>In Postgres, <code>FOR UPDATE</code> without a table list locks the matching rows in <strong>every table in the query</strong>, not just the one you meant to lock. Add a join for convenience and you&#39;ve widened the lock without changing a word of the locking code.</p>
+<p>It&#39;s an easy join to write. Reading a class&#39;s row together with its type, to get the credit type in one query, looks like this:</p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">TypeScript</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#0E1116">.</span><span style="color:#622CBC">from</span><span style="color:#0E1116">(sessions)</span></span>
+<span class="line"><span style="color:#0E1116">.</span><span style="color:#622CBC">innerJoin</span><span style="color:#0E1116">(sessionTypes, </span><span style="color:#622CBC">eq</span><span style="color:#0E1116">(sessions.sessionTypeId, sessionTypes.id))</span></span>
+<span class="line"><span style="color:#0E1116">.</span><span style="color:#622CBC">where</span><span style="color:#0E1116">(</span><span style="color:#622CBC">eq</span><span style="color:#0E1116">(sessions.id, sessionId))</span></span>
+<span class="line"><span style="color:#0E1116">.</span><span style="color:#622CBC">for</span><span style="color:#0E1116">(</span><span style="color:#032563">"update"</span><span style="color:#0E1116">);</span></span></code></pre>
+    </div><p>Drizzle turns that into a plain <code>FOR UPDATE</code>, so it locks the session row <strong>and</strong> the <code>session_types</code> row for &quot;HIIT&quot;. Every HIIT class shares that one row.</p>
+<p>So two members booking <strong>different</strong> HIIT classes (the 7am and the 6pm) wait for each other, because both transactions want the same <code>session_types</code> row. A lock meant to protect one class now serialises every booking of that class type.</p>
+<p>You can see it with two transactions, the second with a one-second <code>lock_timeout</code>:</p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang"></span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki"><code>-- for update: A locks the 7am HIIT, B wants the 6pm HIIT
+B: ERROR:  canceling statement due to lock timeout
+B: CONTEXT:  while locking tuple (0,1) in relation &quot;session_types&quot;
+
+-- for update of s
+B: 2
+B took 0.03s</code></pre>
+    </div><p>The fix is to name the table to lock. In SQL that&#39;s <code>FOR UPDATE OF sessions</code>; in Drizzle:</p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">TypeScript</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#0E1116">.</span><span style="color:#622CBC">for</span><span style="color:#0E1116">(</span><span style="color:#032563">"update"</span><span style="color:#0E1116">, { of: sessions });</span></span></code></pre>
+    </div><p>The lesson: <strong>whenever a <code>FOR UPDATE</code> query has a join, name the table you mean to lock.</strong> Under light traffic the extra lock costs milliseconds, so tests and staging won&#39;t show it. It surfaces when traffic peaks, as unrelated requests queueing behind each other, and nothing in the code looks wrong unless you know the rule.</p>
+<h2 id="dont-let-the-lock-be-your-only-guard">Don&#39;t let the lock be your only guard<a class="heading-anchor" href="#dont-let-the-lock-be-your-only-guard" aria-label="Link to this section">#</a></h2>
+<p>A row lock prevents overbooking only as long as every code path takes it. Two more pieces make the design hold up when something goes wrong.</p>
+<p><strong>Put a constraint under the lock.</strong> If someone later removes <code>.for(&quot;update&quot;)</code> by accident, or writes a new booking path that forgets it, nothing stops an overbook. A <code>CHECK</code> constraint makes the database itself refuse the invalid state:</p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">SQL</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#A0111F">ALTER</span><span style="color:#A0111F"> TABLE</span><span style="color:#A0111F"> sessions</span></span>
+<span class="line"><span style="color:#A0111F">  ADD</span><span style="color:#A0111F"> CONSTRAINT</span><span style="color:#0E1116"> sessions_booked_count_within_capacity</span></span>
+<span class="line"><span style="color:#A0111F">  CHECK</span><span style="color:#0E1116"> (booked_count </span><span style="color:#A0111F">&#x3C;=</span><span style="color:#0E1116"> capacity);</span></span></code></pre>
+    </div><p>Now the eleventh booking fails with a constraint error instead of silently succeeding. The lock keeps things correct; the constraint catches the day the lock is missing.</p>
+<p><strong>Expect a popular row to become a queue.</strong> Every booking for the same class takes the same lock, even when 8 spots are left. If 200 people try to book the 7am class the second it opens, they run one at a time. With a lock held for a few milliseconds that&#39;s acceptable, but the wait is real, and a slow transaction makes it worse. Set a short <code>lock_timeout</code> on the booking transaction so a request that waits too long fails fast and the client can retry, instead of hanging until <code>statement_timeout</code>.</p>
+<h2 id="other-ways-to-prevent-double-booking">Other ways to prevent double booking<a class="heading-anchor" href="#other-ways-to-prevent-double-booking" aria-label="Link to this section">#</a></h2>
+<p><code>SELECT … FOR UPDATE</code> isn&#39;t the only option. Here&#39;s how the common approaches compare:</p>
+<table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>How it works</th>
+<th>Good for</th>
+<th>Watch out for</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>SELECT … FOR UPDATE</code></td>
+<td>Lock the row, check, write</td>
+<td>Several checks before the write (capacity, timing, credits)</td>
+<td>Hot rows queue; lock only what you need</td>
+</tr>
+<tr>
+<td>Conditional <code>UPDATE</code></td>
+<td><code>UPDATE sessions SET booked_count = booked_count + 1 WHERE id = $1 AND booked_count &lt; capacity RETURNING id</code></td>
+<td>A single counter with one rule</td>
+<td>Hard to fit more checks into one statement</td>
+</tr>
+<tr>
+<td><code>SERIALIZABLE</code> isolation</td>
+<td>Postgres aborts transactions that would conflict</td>
+<td>Complex invariants across many rows</td>
+<td>Every caller must retry on serialization errors</td>
+</tr>
+<tr>
+<td><code>CHECK</code> constraint</td>
+<td>The database rejects an invalid state</td>
+<td>A backstop under any of the above</td>
+<td>Only checks one row; turns a race into an error, not a queue</td>
+</tr>
+</tbody></table>
+<p>Move uses <code>FOR UPDATE</code> because a booking checks a lot more than capacity: whether the class has started, whether the member&#39;s membership is paused, whether they have a valid credit, whether it overlaps another booking. All of those need a consistent view of the data, and a row lock gives that with ordinary code.</p>
+<h2 id="frequently-asked-questions">Frequently asked questions<a class="heading-anchor" href="#frequently-asked-questions" aria-label="Link to this section">#</a></h2>
+<h3 id="how-do-i-prevent-double-booking-in-postgres">How do I prevent double booking in Postgres?<a class="heading-anchor" href="#how-do-i-prevent-double-booking-in-postgres" aria-label="Link to this section">#</a></h3>
+<p>Run the capacity check and the insert in one transaction, and read the row with <code>SELECT … FOR UPDATE</code> so concurrent bookings for the same slot wait for each other. Add a <code>CHECK (booked_count &lt;= capacity)</code> constraint as a backstop.</p>
+<h3 id="does-a-transaction-alone-prevent-race-conditions">Does a transaction alone prevent race conditions?<a class="heading-anchor" href="#does-a-transaction-alone-prevent-race-conditions" aria-label="Link to this section">#</a></h3>
+<p>No. At the default <code>READ COMMITTED</code> isolation level, two transactions can read the same row and both act on the stale value. You need a row lock, a conditional update, or <code>SERIALIZABLE</code> isolation.</p>
+<h3 id="does-select-for-update-lock-the-whole-table">Does SELECT FOR UPDATE lock the whole table?<a class="heading-anchor" href="#does-select-for-update-lock-the-whole-table" aria-label="Link to this section">#</a></h3>
+<p>No, only the rows the query returns. But with a join, it locks the matching rows in <strong>every</strong> joined table unless you write <code>FOR UPDATE OF &lt;table&gt;</code>.</p>
+<h3 id="how-do-i-use-for-update-in-drizzle-orm">How do I use FOR UPDATE in Drizzle ORM?<a class="heading-anchor" href="#how-do-i-use-for-update-in-drizzle-orm" aria-label="Link to this section">#</a></h3>
+<p>Call <code>.for(&quot;update&quot;)</code> on the select query inside <code>db.transaction()</code>. Pass <code>{ of: table }</code> as the second argument to lock only one table in a join: <code>.for(&quot;update&quot;, { of: sessions })</code>.</p>
+<h2 id="wrapping-up">Wrapping up<a class="heading-anchor" href="#wrapping-up" aria-label="Link to this section">#</a></h2>
+<p>Preventing double bookings comes down to one line: lock the row before you check it. The interesting part is everything around that line: keeping the lock short, taking locks in the same order, never borrowing a second connection inside the transaction, and locking only the table you mean to.</p>
+<p>If you&#39;re building something similar, try the race yourself: two <code>psql</code> sessions, a <code>pg_sleep(1)</code> between the check and the write, and watch the count go to 11.</p>
+<p>More posts from building Move are under <a href="/blog/tags/building-apps/">Building Apps</a>.</p>
+23:["$","div","2",{"className":"article-html","dangerouslySetInnerHTML":{"__html":"$25"}}]

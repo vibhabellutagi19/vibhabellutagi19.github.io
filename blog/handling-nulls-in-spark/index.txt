@@ -1,9 +1,9 @@
 1:"$Sreact.fragment"
-2:I[832,["860","static/chunks/860-8aefa8da6e6a472b.js","177","static/chunks/app/layout-e55d61e2b55f9105.js"],"Header"]
+2:I[4493,["860","static/chunks/860-8aefa8da6e6a472b.js","177","static/chunks/app/layout-abae048957121d27.js"],"Header"]
 3:I[7449,[],""]
 4:I[6637,[],""]
-5:I[6860,["860","static/chunks/860-8aefa8da6e6a472b.js","953","static/chunks/app/blog/%5Bslug%5D/page-108006a25127fd3d.js"],""]
-6:I[7065,["860","static/chunks/860-8aefa8da6e6a472b.js","177","static/chunks/app/layout-e55d61e2b55f9105.js"],""]
+5:I[6860,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],""]
+6:I[3901,["860","static/chunks/860-8aefa8da6e6a472b.js","177","static/chunks/app/layout-abae048957121d27.js"],"GoatCounter"]
 8:I[3868,[],"OutletBoundary"]
 a:I[3589,[],"AsyncMetadataOutlet"]
 c:I[3868,[],"ViewportBoundary"]
@@ -13,23 +13,53 @@ f:"$Sreact.suspense"
 :HL["/_next/static/media/558ca1a6aa3cb55e-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/af4bf8399d1aacdf-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/e4af272ccee01ff0-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/_next/static/css/485d9a97dc438858.css","style"]
-0:{"P":null,"b":"UdiwCVufnaSiYQ6JUHu5X","p":"","c":["","blog","handling-nulls-in-spark",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","handling-nulls-in-spark","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/485d9a97dc438858.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","className":"__variable_d8ebd1 __variable_a0f193 __variable_a3cc63","children":["$","body",null,{"children":[["$","a",null,{"className":"skip-link","href":"#main","children":"Skip to content"}],["$","$L2",null,{}],["$","div",null,{"id":"main","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"site-footer","children":["$","div",null,{"className":"container footer-row","children":[["$","p",null,{"className":"footer-copy","children":["© 2026 ","Vibhavari Bellutagi"]}],["$","div",null,{"className":"footer-links","children":[["$","a",null,{"href":"mailto:vibhavari.bellutagi@gmail.com","children":"Email"}],["$","a",null,{"href":"https://wa.me/919742352994?text=Hi%20Vibhavari%2C%20I'd%20like%20to%20discuss%20a%20project.","target":"_blank","rel":"noreferrer","children":"WhatsApp"}],["$","a",null,{"href":"https://www.linkedin.com/in/vibhavari-bellutagi/","target":"_blank","rel":"noreferrer","children":"LinkedIn"}],["$","a",null,{"href":"https://github.com/vibhabellutagi19","target":"_blank","rel":"noreferrer","children":"GitHub"}],["$","$L5",null,{"href":"/blog/","children":"Blog"}]]}]]}]}],["$","$L6",null,{"type":"module","src":"https://static.cloudflareinsights.com/beacon.min.js","data-cf-beacon":"{\"token\":\"7cbed45ff06d49078c9c8ec08d2fad34\"}","strategy":"afterInteractive"}]]}]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","handling-nulls-in-spark","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L7",null,["$","$L8",null,{"children":["$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$Le",null,{"children":["$","div",null,{"hidden":true,"children":["$","$f",null,{"fallback":null,"children":"$L10"}]}]}]]}],false]],"m":"$undefined","G":["$11",[]],"s":false,"S":true}
+:HL["/_next/static/css/3eef02d45825f04f.css","style"]
+0:{"P":null,"b":"jl6XMdaFAN4NgsPHiuLcv","p":"","c":["","blog","handling-nulls-in-spark",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","handling-nulls-in-spark","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/3eef02d45825f04f.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","className":"__variable_d8ebd1 __variable_a0f193 __variable_a3cc63","children":["$","body",null,{"children":[["$","a",null,{"className":"skip-link","href":"#main","children":"Skip to content"}],["$","$L2",null,{}],["$","div",null,{"id":"main","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"site-footer","children":["$","div",null,{"className":"container footer-row","children":[["$","p",null,{"className":"footer-copy","children":["© 2026 ","Vibhavari Bellutagi"]}],["$","div",null,{"className":"footer-links","children":[["$","a",null,{"href":"mailto:vibhavari.bellutagi@gmail.com","children":"Email"}],["$","a",null,{"href":"https://wa.me/919742352994?text=Hi%20Vibhavari%2C%20I'd%20like%20to%20discuss%20a%20project.","target":"_blank","rel":"noreferrer","children":"WhatsApp"}],["$","a",null,{"href":"https://www.linkedin.com/in/vibhavari-bellutagi/","target":"_blank","rel":"noreferrer","children":"LinkedIn"}],["$","a",null,{"href":"https://github.com/vibhabellutagi19","target":"_blank","rel":"noreferrer","children":"GitHub"}],["$","$L5",null,{"href":"/blog/","children":"Blog"}]]}]]}]}],["$","$L6",null,{"code":"vibhavaribellutagi"}]]}]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","handling-nulls-in-spark","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L7",null,["$","$L8",null,{"children":["$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$Le",null,{"children":["$","div",null,{"hidden":true,"children":["$","$f",null,{"fallback":null,"children":"$L10"}]}]}]]}],false]],"m":"$undefined","G":["$11",[]],"s":false,"S":true}
 d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 9:null
-14:I[3581,[],"IconMark"]
-12:T5e78,<p>In SQL <code>null</code> or <code>Null</code> is a special marker used to indicate that a data value does not exist in the database. A null should not be confused with a value of 0. A null indicates a lack of a value, which is not the same as a zero value.</p>
-<p>For example:<br>Consider the question &quot;How many books does Krishna own?&quot;<br>The answer may be <code>zero</code> (we know that he owns none) or <code>null</code> (we do not know how many he owns).</p>
-<p>Let&#39;s deep dive into handling nulls in Spark.</p>
+12:I[3581,[],"IconMark"]
+b:{"metadata":[["$","title","0",{"children":"Handling Nulls in Spark · Vibhavari Bellutagi"}],["$","meta","1",{"name":"description","content":"Six of ten movies have no rating, and filtering for == None returns zero rows with no error. How nulls behave in Spark, and the functions that handle them…"}],["$","link","2",{"rel":"author","href":"https://buildwithvibs.in"}],["$","meta","3",{"name":"author","content":"Vibhavari Bellutagi"}],["$","meta","4",{"name":"keywords","content":"Apache Spark"}],["$","link","5",{"rel":"canonical","href":"https://buildwithvibs.in/blog/handling-nulls-in-spark/"}],["$","link","6",{"rel":"alternate","type":"application/rss+xml","title":"Vibhavari Bellutagi · Blog","href":"https://buildwithvibs.in/feed.xml"}],["$","meta","7",{"property":"og:title","content":"Handling Nulls in Spark · Vibhavari Bellutagi"}],["$","meta","8",{"property":"og:description","content":"Six of ten movies have no rating, and filtering for == None returns zero rows with no error. How nulls behave in Spark, and the functions that handle them…"}],["$","meta","9",{"property":"og:url","content":"https://buildwithvibs.in/blog/handling-nulls-in-spark/"}],["$","meta","10",{"property":"og:image","content":"https://buildwithvibs.in/opengraph-image.jpg"}],["$","meta","11",{"property":"og:type","content":"article"}],["$","meta","12",{"property":"article:published_time","content":"2025-01-13"}],["$","meta","13",{"property":"article:author","content":"Vibhavari Bellutagi"}],["$","meta","14",{"property":"article:tag","content":"Apache Spark"}],["$","meta","15",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","16",{"name":"twitter:title","content":"Handling Nulls in Spark · Vibhavari Bellutagi"}],["$","meta","17",{"name":"twitter:description","content":"Six of ten movies have no rating, and filtering for == None returns zero rows with no error. How nulls behave in Spark, and the functions that handle them…"}],["$","meta","18",{"name":"twitter:image","content":"https://buildwithvibs.in/twitter-image.jpg"}],["$","link","19",{"rel":"icon","href":"/icon.svg?0f63625a4946e8f0","type":"image/svg+xml","sizes":"any"}],["$","link","20",{"rel":"apple-touch-icon","href":"/apple-icon.png?ccfb558910f9ffaa","type":"image/png","sizes":"180x180"}],["$","$L12","21",{}]],"error":null,"digest":"$undefined"}
+10:"$b:metadata"
+14:I[5093,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"ReadingProgress"]
+15:I[1939,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"ResumeReading"]
+16:I[2498,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"CodeCopy"]
+17:I[2649,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"LikeButton"]
+18:I[667,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"SaveButton"]
+19:I[6097,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"ShareButton"]
+1a:I[653,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"Image"]
+1b:I[5560,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"ViewCount"]
+1c:I[4305,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"TableOfContents"]
+13:T439,{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"Handling Nulls in Spark","description":"Six of ten movies have no rating, and filtering for == None returns zero rows with no error. How nulls behave in Spark, and the functions that handle them…","datePublished":"2025-01-13","url":"https://buildwithvibs.in/blog/handling-nulls-in-spark/","mainEntityOfPage":"https://buildwithvibs.in/blog/handling-nulls-in-spark/","image":"https://buildwithvibs.in/opengraph-image.jpg","keywords":"Apache Spark","author":{"@type":"Person","name":"Vibhavari Bellutagi","url":"https://buildwithvibs.in"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://buildwithvibs.in/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://buildwithvibs.in/blog/"},{"@type":"ListItem","position":3,"name":"Apache Spark","item":"https://buildwithvibs.in/blog/tags/apache-spark/"},{"@type":"ListItem","position":4,"name":"Handling Nulls in Spark","item":"https://buildwithvibs.in/blog/handling-nulls-in-spark/"}]}]}7:["$","main",null,{"className":"section post-page","children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","$L14",null,{"targetId":"post-body"}],["$","$L15",null,{"slug":"handling-nulls-in-spark","targetId":"post-body"}],["$","$L16",null,{}],["$","div",null,{"className":"container article-layout","children":[["$","article",null,{"className":"article","children":[["$","nav",null,{"className":"breadcrumbs","aria-label":"Breadcrumb","children":["$","ol",null,{"children":[[["$","li","/",{"children":["$","$L5",null,{"href":"/","children":"Home"}]}],["$","li","/blog/",{"children":["$","$L5",null,{"href":"/blog/","children":"Blog"}]}],["$","li","/blog/tags/apache-spark/",{"children":["$","$L5",null,{"href":"/blog/tags/apache-spark/","children":"Apache Spark"}]}]],["$","li",null,{"aria-current":"page","children":"Handling Nulls in Spark"}]]}]}],["$","header",null,{"className":"article-head","children":[["$","h1",null,{"children":"Handling Nulls in Spark"}],["$","div",null,{"className":"article-tools","children":[["$","p",null,{"className":"post-tags","children":[["$","$L5","apache-spark",{"className":"tag-chip","href":"/blog/tags/apache-spark/","children":"Apache Spark"}]]}],["$","div",null,{"className":"post-actions","children":[["$","$L17",null,{"slug":"handling-nulls-in-spark"}],["$","$L18",null,{"slug":"handling-nulls-in-spark"}],["$","$L19",null,{"title":"Handling Nulls in Spark","text":"Six of ten movies have no rating, and filtering for == None returns zero rows with no error. How nulls behave in Spark, and the functions that handle them…","url":"https://buildwithvibs.in/blog/handling-nulls-in-spark/"}]]}]]}],["$","div",null,{"className":"byline","children":[["$","$L1a",null,{"className":"byline-photo","src":"/me/vibhavari_bellutagi-avatar.jpg","alt":"","width":44,"height":44}],["$","div",null,{"children":[["$","p",null,{"className":"byline-name","children":"Vibhavari Bellutagi"}],["$","p",null,{"className":"post-meta","children":["Jan 13, 2025"," · ","8 min read",["$","$L1b",null,{"path":"/blog/handling-nulls-in-spark/"}]]}]]}]]}]]}],["$","details",null,{"className":"series-box","children":[["$","summary",null,{"children":[["$","span",null,{"className":"eyebrow","children":["Apache Spark"," series"]}],["$","span",null,{"className":"series-part","children":["Part ",1," of ",4]}]]}],["$","ol",null,{"className":"series-list","children":[["$","li","handling-nulls-in-spark",{"children":["$","span",null,{"aria-current":"page","children":"Handling Nulls in Spark"}]}],["$","li","spark-job-anatomy",{"children":["$","$L5",null,{"href":"/blog/spark-job-anatomy/","children":"Under the hood of a Spark job"}]}],["$","li","spark-execution-modes",{"children":["$","$L5",null,{"href":"/blog/spark-execution-modes/","children":"Spark Execution Modes"}]}],["$","li","spark-application-lifecycle-outside",{"children":["$","$L5",null,{"href":"/blog/spark-application-lifecycle-outside/","children":"The Life Cycle of a Spark Application ( Outside )"}]}]]}]]}],["$","$L1c",null,{"headings":[{"level":2,"id":"null-is-a-marker-not-a-value","text":"Null Is a Marker, Not a Value"},{"level":3,"id":"the-dataset","text":"The Dataset"},{"level":2,"id":"coalesce-picks-the-first-value-that-exists","text":"coalesce Picks the First Value That Exists"},{"level":2,"id":"check-with-isnull-never-none","text":"Check with isNull, Never == None"},{"level":2,"id":"sorting-puts-nulls-first-unless-you-say-otherwise","text":"Sorting Puts Nulls First Unless You Say Otherwise"},{"level":2,"id":"replace-nulls-with-a-default","text":"Replace Nulls with a Default"},{"level":2,"id":"drop-rows-with-missing-values","text":"Drop Rows with Missing Values"},{"level":2,"id":"spark-sqls-other-null-functions","text":"Spark SQL's Other Null Functions"},{"level":2,"id":"cheat-sheet","text":"Cheat Sheet"}],"variant":"inline"}],"$L1d","$L1e","$L1f"]}],"$L20"]}]]}]
+21:Ta94e,<p>Here&#39;s a filter that looks correct:</p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">Python</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#0E1116">df.filter(col(</span><span style="color:#032563">"Rotten_Tomatoes_Rating"</span><span style="color:#0E1116">) </span><span style="color:#A0111F">==</span><span style="color:#023B95"> None</span><span style="color:#0E1116">).count()  </span><span style="color:#66707B"># 0</span></span></code></pre>
+    </div><p>Six of the ten movies in the dataset below have no Rotten Tomatoes rating. Spark returns zero rows, and no error.</p>
+<p>That&#39;s because null in Spark isn&#39;t a value you can compare against. It&#39;s a marker that means &quot;unknown&quot;, and almost anything you do with an unknown gives you back another unknown.</p>
+<blockquote>
+<p>Null is not zero, not an empty string, and not false. It&#39;s &quot;we don&#39;t know&quot;.</p>
+</blockquote>
+<p>Consider the question &quot;How many books does Krishna own?&quot; The answer may be <code>0</code> (we know he owns none) or <code>null</code> (we don&#39;t know how many he owns). Treat those two the same and your numbers quietly go wrong.</p>
+<p>This is the first post in my <a href="/blog/tags/apache-spark">Apache Spark</a> series, where I work through Spark from the DataFrame API down to how jobs actually run. It covers how nulls behave in Spark, and the functions for checking, replacing, sorting and dropping them.</p>
+<aside class="callout callout-tldr">
+      <p class="callout-title">TL;DR</p>
+      <div class="callout-body"><p><strong>Problem:</strong> any comparison or arithmetic with null gives null, so <code>== None</code> filters match nothing and <code>colA + colB</code> silently turns into null.</p>
+<p><strong>Fix:</strong> check with <code>isNull()</code> / <code>isNotNull()</code>, compare with <code>eqNullSafe()</code> (<code>&lt;=&gt;</code>), and decide explicitly what a missing value should become with <code>coalesce()</code>, <code>na.fill()</code> or <code>na.drop()</code>.</p>
+</div>
+    </aside>
+
 <!-- truncate -->
 
-<h2>Handling nulls in Spark</h2>
-<p>In Spark, a null value represents the absence of any value: it is not zero, an empty string, or false. Spark treats nulls in a way similar to SQL. When performing operations on null values, you need to be explicit about how to handle them, as any operation with a null value generally yields a null result (unless specifically handled).</p>
-<p>Key Points about Nulls in Spark:</p>
+<h2 id="null-is-a-marker-not-a-value">Null Is a Marker, Not a Value<a class="heading-anchor" href="#null-is-a-marker-not-a-value" aria-label="Link to this section">#</a></h2>
+<p>Spark treats nulls the way SQL does. Any operation involving a null generally yields null, unless you handle it explicitly.</p>
+<p>Three rules explain most null surprises:</p>
 <ol>
-<li><p><strong>Null propagation</strong>: If you do an arithmetic operation (e.g., <code>colA + colB</code>) and either <code>colA</code> or <code>colB</code> is null, the result is null unless there is a function to handle null explicitly (like coalesce).</p>
+<li><p><strong>Null propagation</strong>: If you do an arithmetic operation (e.g., <code>colA + colB</code>) and either <code>colA</code> or <code>colB</code> is null, the result is null unless a function handles the null explicitly (like coalesce).</p>
 </li>
-<li><p><strong>Comparison</strong>: Comparisons with null always yield false or unknown. For example, df.filter(<code>df(&quot;age&quot;) == null</code>) might not work as intended. Instead, you need to use methods like isNull or isNotNull.</p>
+<li><p><strong>Comparison</strong>: Comparing anything with null, even null itself, gives null, and a filter treats null as &quot;no&quot;. That&#39;s why <code>col(&quot;age&quot;) == None</code> matches nothing. Use <code>isNull()</code> or <code>isNotNull()</code> instead.</p>
 </li>
 <li><p><strong>Equi-Null safe join</strong>: Spark SQL provides nullSafeEq or eqNullSafe (<code>&lt;=&gt;</code> in SQL) to compare two columns including nulls. This means if both sides are null, it returns true.</p>
 </li>
@@ -40,33 +70,37 @@ d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","cont
 </div>
     </aside>
 
-<h3>Data Preparation</h3>
-<pre><code class="language-python">from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, isnull, when, coalesce
-
-spark = SparkSession.builder \
-    .appName(&quot;NullHandlingExample&quot;) \
-    .getOrCreate()
-
-data = [
-    (6.1,   1071,  &quot;12-Jun-98&quot;,  None,  None,                &quot;The Land Girls&quot;),
-    (6.9,   207,   &quot;7-Aug-98&quot;,   None,  None,                &quot;First Love, Last Rites&quot;),
-    (6.8,   865,   &quot;28-Aug-98&quot;,  None,  None,                &quot;I Married a Strange Person&quot;),
-    (5.8,   3275,  &quot;1-Jul-86&quot;,  &quot;13&quot;,  None,                &quot;Pirates&quot;),
-    (3.4,   165,   &quot;9-Oct-98&quot;,   &quot;62&quot;,  &quot;Original Screenplay&quot;,&quot;Slam&quot;),
-    (None,  None,  &quot;15-Jan-99&quot;,  None,  None,                &quot;Mississippi Mermaid&quot;),
-    (7.7,   15133, &quot;4-Apr-99&quot;,   None,  None,                &quot;Following&quot;),
-    (3.8,   353,   &quot;9-Apr-99&quot;,   None,  &quot;Original Screenplay&quot;,&quot;Foolish&quot;),
-    (5.8,   3275,  &quot;1-Jul-86&quot;,   &quot;25&quot;,  None,                &quot;Pirates&quot;),
-    (7.0,   2906,  &quot;31-Dec-46&quot;,  &quot;86&quot;,  None,                &quot;Duel in the Sun&quot;)
-]
-
-columns = [&quot;IMDB_Rating&quot;, &quot;IMDB_Votes&quot;, &quot;Release_Date&quot;, &quot;Rotten_Tomatoes_Rating&quot;, &quot;Source&quot;, &quot;Title&quot;]
-df = spark.createDataFrame(data, columns)
-
-df.show()
-</code></pre>
-<details>
+<h3 id="the-dataset">The Dataset<a class="heading-anchor" href="#the-dataset" aria-label="Link to this section">#</a></h3>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">Python</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#A0111F">from</span><span style="color:#0E1116"> pyspark.sql </span><span style="color:#A0111F">import</span><span style="color:#0E1116"> SparkSession</span></span>
+<span class="line"><span style="color:#A0111F">from</span><span style="color:#0E1116"> pyspark.sql.functions </span><span style="color:#A0111F">import</span><span style="color:#0E1116"> col, isnull, when, coalesce</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#0E1116">spark </span><span style="color:#A0111F">=</span><span style="color:#0E1116"> SparkSession.builder \</span></span>
+<span class="line"><span style="color:#0E1116">    .appName(</span><span style="color:#032563">"NullHandlingExample"</span><span style="color:#0E1116">) \</span></span>
+<span class="line"><span style="color:#0E1116">    .getOrCreate()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#0E1116">data </span><span style="color:#A0111F">=</span><span style="color:#0E1116"> [</span></span>
+<span class="line"><span style="color:#0E1116">    (</span><span style="color:#023B95">6.1</span><span style="color:#0E1116">,   </span><span style="color:#023B95">1071</span><span style="color:#0E1116">,  </span><span style="color:#032563">"12-Jun-98"</span><span style="color:#0E1116">,  </span><span style="color:#023B95">None</span><span style="color:#0E1116">,  </span><span style="color:#023B95">None</span><span style="color:#0E1116">,                </span><span style="color:#032563">"The Land Girls"</span><span style="color:#0E1116">),</span></span>
+<span class="line"><span style="color:#0E1116">    (</span><span style="color:#023B95">6.9</span><span style="color:#0E1116">,   </span><span style="color:#023B95">207</span><span style="color:#0E1116">,   </span><span style="color:#032563">"7-Aug-98"</span><span style="color:#0E1116">,   </span><span style="color:#023B95">None</span><span style="color:#0E1116">,  </span><span style="color:#023B95">None</span><span style="color:#0E1116">,                </span><span style="color:#032563">"First Love, Last Rites"</span><span style="color:#0E1116">),</span></span>
+<span class="line"><span style="color:#0E1116">    (</span><span style="color:#023B95">6.8</span><span style="color:#0E1116">,   </span><span style="color:#023B95">865</span><span style="color:#0E1116">,   </span><span style="color:#032563">"28-Aug-98"</span><span style="color:#0E1116">,  </span><span style="color:#023B95">None</span><span style="color:#0E1116">,  </span><span style="color:#023B95">None</span><span style="color:#0E1116">,                </span><span style="color:#032563">"I Married a Strange Person"</span><span style="color:#0E1116">),</span></span>
+<span class="line"><span style="color:#0E1116">    (</span><span style="color:#023B95">5.8</span><span style="color:#0E1116">,   </span><span style="color:#023B95">3275</span><span style="color:#0E1116">,  </span><span style="color:#032563">"1-Jul-86"</span><span style="color:#0E1116">,  </span><span style="color:#032563">"13"</span><span style="color:#0E1116">,  </span><span style="color:#023B95">None</span><span style="color:#0E1116">,                </span><span style="color:#032563">"Pirates"</span><span style="color:#0E1116">),</span></span>
+<span class="line"><span style="color:#0E1116">    (</span><span style="color:#023B95">3.4</span><span style="color:#0E1116">,   </span><span style="color:#023B95">165</span><span style="color:#0E1116">,   </span><span style="color:#032563">"9-Oct-98"</span><span style="color:#0E1116">,   </span><span style="color:#032563">"62"</span><span style="color:#0E1116">,  </span><span style="color:#032563">"Original Screenplay"</span><span style="color:#0E1116">,</span><span style="color:#032563">"Slam"</span><span style="color:#0E1116">),</span></span>
+<span class="line"><span style="color:#0E1116">    (</span><span style="color:#023B95">None</span><span style="color:#0E1116">,  </span><span style="color:#023B95">None</span><span style="color:#0E1116">,  </span><span style="color:#032563">"15-Jan-99"</span><span style="color:#0E1116">,  </span><span style="color:#023B95">None</span><span style="color:#0E1116">,  </span><span style="color:#023B95">None</span><span style="color:#0E1116">,                </span><span style="color:#032563">"Mississippi Mermaid"</span><span style="color:#0E1116">),</span></span>
+<span class="line"><span style="color:#0E1116">    (</span><span style="color:#023B95">7.7</span><span style="color:#0E1116">,   </span><span style="color:#023B95">15133</span><span style="color:#0E1116">, </span><span style="color:#032563">"4-Apr-99"</span><span style="color:#0E1116">,   </span><span style="color:#023B95">None</span><span style="color:#0E1116">,  </span><span style="color:#023B95">None</span><span style="color:#0E1116">,                </span><span style="color:#032563">"Following"</span><span style="color:#0E1116">),</span></span>
+<span class="line"><span style="color:#0E1116">    (</span><span style="color:#023B95">3.8</span><span style="color:#0E1116">,   </span><span style="color:#023B95">353</span><span style="color:#0E1116">,   </span><span style="color:#032563">"9-Apr-99"</span><span style="color:#0E1116">,   </span><span style="color:#023B95">None</span><span style="color:#0E1116">,  </span><span style="color:#032563">"Original Screenplay"</span><span style="color:#0E1116">,</span><span style="color:#032563">"Foolish"</span><span style="color:#0E1116">),</span></span>
+<span class="line"><span style="color:#0E1116">    (</span><span style="color:#023B95">5.8</span><span style="color:#0E1116">,   </span><span style="color:#023B95">3275</span><span style="color:#0E1116">,  </span><span style="color:#032563">"1-Jul-86"</span><span style="color:#0E1116">,   </span><span style="color:#032563">"25"</span><span style="color:#0E1116">,  </span><span style="color:#023B95">None</span><span style="color:#0E1116">,                </span><span style="color:#032563">"Pirates"</span><span style="color:#0E1116">),</span></span>
+<span class="line"><span style="color:#0E1116">    (</span><span style="color:#023B95">7.0</span><span style="color:#0E1116">,   </span><span style="color:#023B95">2906</span><span style="color:#0E1116">,  </span><span style="color:#032563">"31-Dec-46"</span><span style="color:#0E1116">,  </span><span style="color:#032563">"86"</span><span style="color:#0E1116">,  </span><span style="color:#023B95">None</span><span style="color:#0E1116">,                </span><span style="color:#032563">"Duel in the Sun"</span><span style="color:#0E1116">)</span></span>
+<span class="line"><span style="color:#0E1116">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#0E1116">columns </span><span style="color:#A0111F">=</span><span style="color:#0E1116"> [</span><span style="color:#032563">"IMDB_Rating"</span><span style="color:#0E1116">, </span><span style="color:#032563">"IMDB_Votes"</span><span style="color:#0E1116">, </span><span style="color:#032563">"Release_Date"</span><span style="color:#0E1116">, </span><span style="color:#032563">"Rotten_Tomatoes_Rating"</span><span style="color:#0E1116">, </span><span style="color:#032563">"Source"</span><span style="color:#0E1116">, </span><span style="color:#032563">"Title"</span><span style="color:#0E1116">]</span></span>
+<span class="line"><span style="color:#0E1116">df </span><span style="color:#A0111F">=</span><span style="color:#0E1116"> spark.createDataFrame(data, columns)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#0E1116">df.show()</span></span></code></pre>
+    </div><details>
 <summary>Output: You will see the movies data with some null values.</summary>
 ```
 +-----------+----------+------------+----------------------+-------------------+--------------------------+
@@ -86,19 +120,23 @@ df.show()
 ```
 </details>
 
-<h3>Coalesce</h3>
+<h2 id="coalesce-picks-the-first-value-that-exists">coalesce Picks the First Value That Exists<a class="heading-anchor" href="#coalesce-picks-the-first-value-that-exists" aria-label="Link to this section">#</a></h2>
 <ul>
 <li>In Spark SQL and DataFrame APIs, <code>coalesce()</code> is used to return the first non-null value among its arguments.</li>
 <li>If you have multiple columns and want a single column which picks up a non-null value from one of them in order, or you want to replace a single column’s null value with a fallback.</li>
 </ul>
-<pre><code class="language-python">rating_df = df.select(col(&quot;Title&quot;),  
-              col(&quot;Rotten_Tomatoes_Rating&quot;),  
-              col(&quot;IMDB_Rating&quot;),  
-              coalesce(col(&quot;Rotten_Tomatoes_Rating&quot;), col(&quot;IMDB_Rating&quot;) * 10).alias(&quot;Rating&quot;))
-
-rating_df.show(10, False)
-</code></pre>
-<details>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">Python</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#0E1116">rating_df </span><span style="color:#A0111F">=</span><span style="color:#0E1116"> df.select(col(</span><span style="color:#032563">"Title"</span><span style="color:#0E1116">),  </span></span>
+<span class="line"><span style="color:#0E1116">              col(</span><span style="color:#032563">"Rotten_Tomatoes_Rating"</span><span style="color:#0E1116">),  </span></span>
+<span class="line"><span style="color:#0E1116">              col(</span><span style="color:#032563">"IMDB_Rating"</span><span style="color:#0E1116">),  </span></span>
+<span class="line"><span style="color:#0E1116">              coalesce(col(</span><span style="color:#032563">"Rotten_Tomatoes_Rating"</span><span style="color:#0E1116">), col(</span><span style="color:#032563">"IMDB_Rating"</span><span style="color:#0E1116">) </span><span style="color:#A0111F">*</span><span style="color:#023B95"> 10</span><span style="color:#0E1116">).alias(</span><span style="color:#032563">"Rating"</span><span style="color:#0E1116">))</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#0E1116">rating_df.show(</span><span style="color:#023B95">10</span><span style="color:#0E1116">, </span><span style="color:#023B95">False</span><span style="color:#0E1116">)</span></span></code></pre>
+    </div><details>
 <summary>Output: You will see when `Rotten_Tomatoes_Rating` is null, `Rating` is calculated as `IMDB_Rating * 10`.</summary>
 ```
 +--------------------------+----------------------+-----------+------+
@@ -118,21 +156,33 @@ rating_df.show(10, False)
 ```
 </details>
 
-<h3>Checking for nulls</h3>
-<p>In Spark, null indicates missing or unknown data. To check if a column has null values, you can use:</p>
+<h2 id="check-with-isnull-never-none">Check with isNull, Never == None<a class="heading-anchor" href="#check-with-isnull-never-none" aria-label="Link to this section">#</a></h2>
+<p>Back to the filter from the start of this post. Here it is next to the one that works:</p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">Python</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#0E1116">df.filter(col(</span><span style="color:#032563">"Rotten_Tomatoes_Rating"</span><span style="color:#0E1116">) </span><span style="color:#A0111F">==</span><span style="color:#023B95"> None</span><span style="color:#0E1116">).count()    </span><span style="color:#66707B"># 0</span></span>
+<span class="line"><span style="color:#0E1116">df.filter(col(</span><span style="color:#032563">"Rotten_Tomatoes_Rating"</span><span style="color:#0E1116">).isNull()).count()   </span><span style="color:#66707B"># 6</span></span></code></pre>
+    </div><p>To check for nulls, use:</p>
 <ul>
 <li><code>isNull()</code></li>
 <li><code>isNotNull()</code></li>
 <li><code>eqNullSafe()</code>: compares two columns, treating null values as equal.</li>
 </ul>
-<pre><code class="language-python"># Check if Rotten_Tomatoes_Rating is null
-check_nulls = df.select(col(&quot;Title&quot;)
-               ,col(&quot;Rotten_Tomatoes_Rating&quot;),col(&quot;IMDB_Rating&quot;)
-               ,coalesce(col(&quot;Rotten_Tomatoes_Rating&quot;)
-               , col(&quot;IMDB_Rating&quot;) * 10).alias(&quot;Rating&quot;)).where(col(&quot;Rating&quot;).isNotNull())
-check_nulls.show(10, False)
-</code></pre>
-<details>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">Python</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#66707B"># Check if Rotten_Tomatoes_Rating is null</span></span>
+<span class="line"><span style="color:#0E1116">check_nulls </span><span style="color:#A0111F">=</span><span style="color:#0E1116"> df.select(col(</span><span style="color:#032563">"Title"</span><span style="color:#0E1116">)</span></span>
+<span class="line"><span style="color:#0E1116">               ,col(</span><span style="color:#032563">"Rotten_Tomatoes_Rating"</span><span style="color:#0E1116">),col(</span><span style="color:#032563">"IMDB_Rating"</span><span style="color:#0E1116">)</span></span>
+<span class="line"><span style="color:#0E1116">               ,coalesce(col(</span><span style="color:#032563">"Rotten_Tomatoes_Rating"</span><span style="color:#0E1116">)</span></span>
+<span class="line"><span style="color:#0E1116">               , col(</span><span style="color:#032563">"IMDB_Rating"</span><span style="color:#0E1116">) </span><span style="color:#A0111F">*</span><span style="color:#023B95"> 10</span><span style="color:#0E1116">).alias(</span><span style="color:#032563">"Rating"</span><span style="color:#0E1116">)).where(col(</span><span style="color:#032563">"Rating"</span><span style="color:#0E1116">).isNotNull())</span></span>
+<span class="line"><span style="color:#0E1116">check_nulls.show(</span><span style="color:#023B95">10</span><span style="color:#0E1116">, </span><span style="color:#023B95">False</span><span style="color:#0E1116">)</span></span></code></pre>
+    </div><details>
 <summary>Output: You will see only rows where `Rating` is not null.</summary>
 ```
 +--------------------------+----------------------+-----------+------+
@@ -152,12 +202,16 @@ check_nulls.show(10, False)
 </details>
 ---
 
-<pre><code class="language-python"># Check for equi-null safe join
-
-df_eq_null_safe = df.filter(col(&quot;IMDB_Rating&quot;).eqNullSafe(&quot;Rotten_Tomatoes_Rating&quot;))
-df_eq_null_safe.show()
-</code></pre>
-<details>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">Python</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#66707B"># Check for equi-null safe join</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#0E1116">df_eq_null_safe </span><span style="color:#A0111F">=</span><span style="color:#0E1116"> df.filter(col(</span><span style="color:#032563">"IMDB_Rating"</span><span style="color:#0E1116">).eqNullSafe(col(</span><span style="color:#032563">"Rotten_Tomatoes_Rating"</span><span style="color:#0E1116">)))</span></span>
+<span class="line"><span style="color:#0E1116">df_eq_null_safe.show()</span></span></code></pre>
+    </div><details>
 <summary>Output: You will see only rows where `IMDB_Rating` is equal to `Rotten_Tomatoes_Rating`.</summary>
 ```python
 +-----------+----------+------------+----------------------+------+-------------------+
@@ -168,7 +222,7 @@ df_eq_null_safe.show()
 ```
 </details>
 
-<h3>Nulls when ordering columns</h3>
+<h2 id="sorting-puts-nulls-first-unless-you-say-otherwise">Sorting Puts Nulls First Unless You Say Otherwise<a class="heading-anchor" href="#sorting-puts-nulls-first-unless-you-say-otherwise" aria-label="Link to this section">#</a></h2>
 <p>When you order a DataFrame in Spark, null handling can change your result. By default, Spark sorts <code>nulls first in ascending order</code> and <code>last in descending order</code>.</p>
 <ol>
 <li><code>asc_nulls_first</code>: Ascending order, placing nulls at the top.</li>
@@ -176,12 +230,16 @@ df_eq_null_safe.show()
 <li><code>desc_nulls_first</code>: Descending order, placing nulls at the top.</li>
 <li><code>desc_nulls_last</code>: Descending order, placing nulls at the bottom</li>
 </ol>
-<pre><code class="language-python"># Move nulls to the end in descending order
-
-move_nulls_to_end = df.orderBy(col(&quot;Rotten_Tomatoes_Rating&quot;).desc_nulls_last())
-move_nulls_to_end.show()
-</code></pre>
-<details>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">Python</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#66707B"># Move nulls to the end in descending order</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#0E1116">move_nulls_to_end </span><span style="color:#A0111F">=</span><span style="color:#0E1116"> df.orderBy(col(</span><span style="color:#032563">"Rotten_Tomatoes_Rating"</span><span style="color:#0E1116">).desc_nulls_last())</span></span>
+<span class="line"><span style="color:#0E1116">move_nulls_to_end.show()</span></span></code></pre>
+    </div><details>
 <summary>Output: You will see the rows ordered by `Rotten_Tomatoes_Rating` with nulls at the end.</summary>
 ```
 +-----------+----------+------------+----------------------+-------------------+--------------------+
@@ -202,17 +260,21 @@ move_nulls_to_end.show()
 </details>
 
 
-<h3>Replace nulls with a value</h3>
+<h2 id="replace-nulls-with-a-default">Replace Nulls with a Default<a class="heading-anchor" href="#replace-nulls-with-a-default" aria-label="Link to this section">#</a></h2>
 <p>Spark provides multiple ways to replace null values:</p>
 <ul>
 <li><code>DataFrame.na.fill(value, subset=None)</code> – Fill null values in specified columns.</li>
 <li><code>DataFrame.fillna(value, subset=None)</code> – Same as na.fill, a common alias.</li>
 </ul>
-<pre><code class="language-python"># Replace nulls with a value for Source column
-replace_nulls = df.na.fill(&quot;Un Source&quot;,[&quot;Source&quot;])
-replace_nulls.show(5, False)
-</code></pre>
-<details>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">Python</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#66707B"># Replace nulls with a value for Source column</span></span>
+<span class="line"><span style="color:#0E1116">replace_nulls </span><span style="color:#A0111F">=</span><span style="color:#0E1116"> df.na.fill(</span><span style="color:#032563">"Un Source"</span><span style="color:#0E1116">,[</span><span style="color:#032563">"Source"</span><span style="color:#0E1116">])</span></span>
+<span class="line"><span style="color:#0E1116">replace_nulls.show(</span><span style="color:#023B95">5</span><span style="color:#0E1116">, </span><span style="color:#023B95">False</span><span style="color:#0E1116">)</span></span></code></pre>
+    </div><details>
 <summary>Output: You will see the rows with nulls in the `Source` column replaced with `Un Source`.</summary>
 ```
 +-----------+----------+------------+----------------------+-------------------+--------------------------+
@@ -227,18 +289,22 @@ replace_nulls.show(5, False)
 ```
 </details>
 
-<pre><code class="language-python"># Replacing multiple columns with nulls
-
-fill_values = {
-    &quot;IMDB_Rating&quot;: 0.0,
-    &quot;IMDB_Votes&quot;:  0,
-    &quot;Source&quot;:      &quot;Unknown Source&quot;
-}
-
-df_fill_multiple = df.na.fill(fill_values)
-df_fill_multiple.show(5, False)
-</code></pre>
-<details>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">Python</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#66707B"># Replacing multiple columns with nulls</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#0E1116">fill_values </span><span style="color:#A0111F">=</span><span style="color:#0E1116"> {</span></span>
+<span class="line"><span style="color:#032563">    "IMDB_Rating"</span><span style="color:#0E1116">: </span><span style="color:#023B95">0.0</span><span style="color:#0E1116">,</span></span>
+<span class="line"><span style="color:#032563">    "IMDB_Votes"</span><span style="color:#0E1116">:  </span><span style="color:#023B95">0</span><span style="color:#0E1116">,</span></span>
+<span class="line"><span style="color:#032563">    "Source"</span><span style="color:#0E1116">:      </span><span style="color:#032563">"Unknown Source"</span></span>
+<span class="line"><span style="color:#0E1116">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#0E1116">df_fill_multiple </span><span style="color:#A0111F">=</span><span style="color:#0E1116"> df.na.fill(fill_values)</span></span>
+<span class="line"><span style="color:#0E1116">df_fill_multiple.show(</span><span style="color:#023B95">5</span><span style="color:#0E1116">, </span><span style="color:#023B95">False</span><span style="color:#0E1116">)</span></span></code></pre>
+    </div><details>
 <summary>Output: You will see the rows with nulls in the specified columns replaced with the provided values.</summary>
 ```
 +-----------+----------+------------+----------------------+-------------------+--------------------------+
@@ -253,15 +319,19 @@ df_fill_multiple.show(5, False)
 ```
 </details>
 
-<h3>Remove nulls</h3>
+<h2 id="drop-rows-with-missing-values">Drop Rows with Missing Values<a class="heading-anchor" href="#drop-rows-with-missing-values" aria-label="Link to this section">#</a></h2>
 <p>Sometimes you might want to drop rows that contain any null or all nulls, or conditionally drop rows with null in specific columns.</p>
 <p>Example 1:</p>
-<pre><code class="language-python"># Drop rows with all null values
-
-df_drop_any = df.na.drop(&quot;any&quot;) # &quot;any&quot; means if any column in the row has null, that row is dropped.
-df_drop_any.show(5, False)
-</code></pre>
-<details>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">Python</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#66707B"># Drop rows with any null value</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#0E1116">df_drop_any </span><span style="color:#A0111F">=</span><span style="color:#0E1116"> df.na.drop(</span><span style="color:#032563">"any"</span><span style="color:#0E1116">) </span><span style="color:#66707B"># "any" means if any column in the row has null, that row is dropped.</span></span>
+<span class="line"><span style="color:#0E1116">df_drop_any.show(</span><span style="color:#023B95">5</span><span style="color:#0E1116">, </span><span style="color:#023B95">False</span><span style="color:#0E1116">)</span></span></code></pre>
+    </div><details>
 <summary>Output: You will see the rows with any null values dropped.</summary>
 ```
 +-----------+----------+------------+----------------------+-------------------+-----+
@@ -273,11 +343,15 @@ df_drop_any.show(5, False)
 </details>
 
 <p>Example 2:</p>
-<pre><code class="language-python"># Drop rows with all null values
-df_drop_all = df.na.drop(&quot;all&quot;) # &quot;all&quot; means a row must have all columns as null to be dropped.
-df_drop_all.show()
-</code></pre>
-<details>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">Python</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#66707B"># Drop rows with all null values</span></span>
+<span class="line"><span style="color:#0E1116">df_drop_all </span><span style="color:#A0111F">=</span><span style="color:#0E1116"> df.na.drop(</span><span style="color:#032563">"all"</span><span style="color:#0E1116">) </span><span style="color:#66707B"># "all" means a row must have all columns as null to be dropped.</span></span>
+<span class="line"><span style="color:#0E1116">df_drop_all.show()</span></span></code></pre>
+    </div><details>
 <summary>Output: You will see the rows with all null values dropped.</summary>
 ```
 +-----------+----------+------------+----------------------+-------------------+--------------------------+
@@ -293,12 +367,16 @@ df_drop_all.show()
 </details>
 
 <p>Example 3:</p>
-<pre><code class="language-python"># Drop rows if &quot;IMDB_Rating&quot; or &quot;IMDB_Votes&quot; is null
-
-df_drop_subset = df.na.drop(&quot;any&quot;, subset=[&quot;IMDB_Rating&quot;, &quot;IMDB_Votes&quot;])
-df_drop_subset.show()
-</code></pre>
-<details>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">Python</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#66707B"># Drop rows if "IMDB_Rating" or "IMDB_Votes" is null</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#0E1116">df_drop_subset </span><span style="color:#A0111F">=</span><span style="color:#0E1116"> df.na.drop(</span><span style="color:#032563">"any"</span><span style="color:#0E1116">, </span><span style="color:#702C00">subset</span><span style="color:#A0111F">=</span><span style="color:#0E1116">[</span><span style="color:#032563">"IMDB_Rating"</span><span style="color:#0E1116">, </span><span style="color:#032563">"IMDB_Votes"</span><span style="color:#0E1116">])</span></span>
+<span class="line"><span style="color:#0E1116">df_drop_subset.show()</span></span></code></pre>
+    </div><details>
 <summary>Output: You will see the rows with null values in `IMDB_Rating` or `IMDB_Votes` dropped.</summary>
 ```python
 +-----------+----------+------------+----------------------+-------------------+--------------------+
@@ -317,7 +395,7 @@ df_drop_subset.show()
 ```
 </details>
 
-<h3>Special Null functions</h3>
+<h2 id="spark-sqls-other-null-functions">Spark SQL&#39;s Other Null Functions<a class="heading-anchor" href="#spark-sqls-other-null-functions" aria-label="Link to this section">#</a></h2>
 <ol>
 <li><strong>equal_null</strong>: Returns <code>true</code> if both expressions are equal (including both being <code>NULL</code>), else <code>false</code>.  </li>
 <li><strong>ifnull</strong>: Returns the second expression if the first is <code>NULL</code>, otherwise returns the first. Same as <code>coalesce</code>. </li>
@@ -325,20 +403,24 @@ df_drop_subset.show()
 <li><strong>nullif</strong>: Returns <code>NULL</code> if both expressions match, otherwise returns the first expression.  </li>
 <li><strong>nvl2</strong>: Returns the second expression if the first is not <code>NULL</code>, otherwise returns the third.</li>
 </ol>
-<pre><code class="language-python">special_nulls = df.selectExpr(
-    &quot;Title&quot;,
-    &quot;Rotten_Tomatoes_Rating&quot;,
-    &quot;IMDB_Rating&quot;,
-    &quot;equal_null(Rotten_Tomatoes_Rating, IMDB_Rating) as equal_null&quot;,
-    &quot;ifnull(Rotten_Tomatoes_Rating, IMDB_Rating * 10) as if_null&quot;, 
-    &quot;nvl(Rotten_Tomatoes_Rating, IMDB_Rating * 10) as nvl&quot;,
-    &quot;nullif(Rotten_Tomatoes_Rating, IMDB_Rating * 10) as nullif&quot;,
-    &quot;nvl2(Rotten_Tomatoes_Rating, IMDB_Rating * 10, 0.0)&quot; # if (first != null) second else third
-)
-
-special_nulls.show(10, False)
-</code></pre>
-<details>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">Python</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#0E1116">special_nulls </span><span style="color:#A0111F">=</span><span style="color:#0E1116"> df.selectExpr(</span></span>
+<span class="line"><span style="color:#032563">    "Title"</span><span style="color:#0E1116">,</span></span>
+<span class="line"><span style="color:#032563">    "Rotten_Tomatoes_Rating"</span><span style="color:#0E1116">,</span></span>
+<span class="line"><span style="color:#032563">    "IMDB_Rating"</span><span style="color:#0E1116">,</span></span>
+<span class="line"><span style="color:#032563">    "equal_null(Rotten_Tomatoes_Rating, IMDB_Rating) as equal_null"</span><span style="color:#0E1116">,</span></span>
+<span class="line"><span style="color:#032563">    "ifnull(Rotten_Tomatoes_Rating, IMDB_Rating * 10) as if_null"</span><span style="color:#0E1116">, </span></span>
+<span class="line"><span style="color:#032563">    "nvl(Rotten_Tomatoes_Rating, IMDB_Rating * 10) as nvl"</span><span style="color:#0E1116">,</span></span>
+<span class="line"><span style="color:#032563">    "nullif(Rotten_Tomatoes_Rating, IMDB_Rating * 10) as nullif"</span><span style="color:#0E1116">,</span></span>
+<span class="line"><span style="color:#032563">    "nvl2(Rotten_Tomatoes_Rating, IMDB_Rating * 10, 0.0)"</span><span style="color:#66707B"> # if (first != null) second else third</span></span>
+<span class="line"><span style="color:#0E1116">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#0E1116">special_nulls.show(</span><span style="color:#023B95">10</span><span style="color:#0E1116">, </span><span style="color:#023B95">False</span><span style="color:#0E1116">)</span></span></code></pre>
+    </div><details>
 <summary>Output: You will see the special null functions applied to the columns.</summary>
 ```
 +--------------------------+----------------------+-----------+----------+-------+----+------+----+
@@ -358,8 +440,7 @@ special_nulls.show(10, False)
 ```
 </details>
 
-<h2>Conclusion</h2>
-<p>Putting all together - </p>
+<h2 id="cheat-sheet">Cheat Sheet<a class="heading-anchor" href="#cheat-sheet" aria-label="Link to this section">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -416,9 +497,9 @@ special_nulls.show(10, False)
 <td>Orders rows descending, placing nulls either first or last.</td>
 </tr>
 </tbody></table>
-<p>I hope you enjoyed reading this blog on handling nulls in Spark, if you are interested in more such content, do check out <a href="/blog/tags/apache-spark">Apache Spark</a>. series.</p>
-<p>If you have any questions or feedback, feel free to reach out to me.</p>
-7:["$","main",null,{"className":"section","children":["$","article",null,{"className":"container container-narrow","children":[["$","$L5",null,{"className":"text-link back-link","href":"/blog/","children":"← All posts"}],["$","header",null,{"className":"article-head","children":[["$","p",null,{"className":"post-meta","children":["Jan 13, 2025"," · ","8 min read"]}],["$","h1",null,{"children":"Handling Nulls in Spark"}]]}],["$","div",null,{"className":"article-content","dangerouslySetInnerHTML":{"__html":"$12"}}],"$L13"]}]}]
-b:{"metadata":[["$","title","0",{"children":"Handling Nulls in Spark · Vibhavari Bellutagi"}],["$","meta","1",{"name":"description","content":"In SQL null is a special marker used to indicate that a data value does not exist in the database. A null should not be confused with a value of 0. Let's…"}],["$","link","2",{"rel":"canonical","href":"https://vibhabellutagi19.github.io/blog/handling-nulls-in-spark/"}],["$","meta","3",{"property":"og:title","content":"Handling Nulls in Spark · Vibhavari Bellutagi"}],["$","meta","4",{"property":"og:description","content":"In SQL null is a special marker used to indicate that a data value does not exist in the database. A null should not be confused with a value of 0. Let's…"}],["$","meta","5",{"property":"og:url","content":"https://vibhabellutagi19.github.io/blog/handling-nulls-in-spark/"}],["$","meta","6",{"property":"og:image","content":"https://vibhabellutagi19.github.io/opengraph-image.jpg"}],["$","meta","7",{"property":"og:type","content":"article"}],["$","meta","8",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","9",{"name":"twitter:title","content":"Handling Nulls in Spark · Vibhavari Bellutagi"}],["$","meta","10",{"name":"twitter:description","content":"In SQL null is a special marker used to indicate that a data value does not exist in the database. A null should not be confused with a value of 0. Let's…"}],["$","meta","11",{"name":"twitter:image","content":"https://vibhabellutagi19.github.io/twitter-image.jpg"}],["$","link","12",{"rel":"icon","href":"/icon.svg?0f63625a4946e8f0","type":"image/svg+xml","sizes":"any"}],["$","link","13",{"rel":"apple-touch-icon","href":"/apple-icon.png?ccfb558910f9ffaa","type":"image/png","sizes":"180x180"}],["$","$L14","14",{}]],"error":null,"digest":"$undefined"}
-10:"$b:metadata"
-13:["$","footer",null,{"className":"article-foot","children":[["$","$L5",null,{"className":"text-link","href":"/blog/","children":"← All posts"}],["$","$L5",null,{"className":"text-link","href":"/#contact","children":"Work with me →"}]]}]
+<p>The next time a filter returns zero rows and no error, check whether it compared something with null.</p>
+<p>Next in the series: <a href="/blog/spark-job-anatomy">Under the hood of a Spark job</a>.</p>
+1d:["$","div",null,{"id":"post-body","className":"article-content","children":[["$","div","0",{"className":"article-html","dangerouslySetInnerHTML":{"__html":"$21"}}]]}]
+1e:["$","section",null,{"className":"read-next","aria-labelledby":"read-next-title","children":[["$","h2",null,{"id":"read-next-title","className":"read-next-title","children":"Keep reading"}],["$","$L5",null,{"className":"next-card","href":"/blog/spark-job-anatomy/","children":[["$","span",null,{"className":"eyebrow","children":"Part 2 of 4 · Apache Spark"}],["$","span",null,{"className":"next-card-title","children":"Under the hood of a Spark job"}],["$","span",null,{"className":"next-card-excerpt","children":"Two DataFrames with 5 and 6 partitions, one join, and the Spark UI shows 200 tasks. Where that number comes from, and how Spark splits work into jobs, stages and tasks."}],["$","span",null,{"className":"next-card-foot","children":[["$","span",null,{"className":"post-meta","children":"7 min read"}],["$","ul",null,{"className":"tags post-row-tags","children":[["$","li","apache-spark",{"children":"Apache Spark"}]]}]]}]]}],["$","ul",null,{"className":"read-next-list","children":[["$","li","spark-application-lifecycle-outside",{"children":["$","$L5",null,{"className":"post-item","href":"/blog/spark-application-lifecycle-outside/","children":[["$","span",null,{"className":"post-meta","children":["Feb 7, 2025"," · ","4 min read"]}],["$","span",null,{"className":"post-title","children":"The Life Cycle of a Spark Application ( Outside )"}],["$","ul",null,{"className":"tags post-row-tags","children":[["$","li","apache-spark",{"children":"Apache Spark"}]]}]]}]}],["$","li","spark-execution-modes",{"children":["$","$L5",null,{"className":"post-item","href":"/blog/spark-execution-modes/","children":[["$","span",null,{"className":"post-meta","children":["Feb 6, 2025"," · ","6 min read"]}],["$","span",null,{"className":"post-title","children":"Spark Execution Modes"}],["$","ul",null,{"className":"tags post-row-tags","children":[["$","li","apache-spark",{"children":"Apache Spark"}]]}]]}]}],["$","li","prevent-double-booking-postgres",{"children":["$","$L5",null,{"className":"post-item","href":"/blog/prevent-double-booking-postgres/","children":[["$","span",null,{"className":"post-meta","children":["Oct 22, 2026"," · ","9 min read"]}],["$","span",null,{"className":"post-title","children":"Preventing Double Bookings in Postgres with SELECT FOR UPDATE"}],["$","ul",null,{"className":"tags post-row-tags","children":[["$","li","building-apps",{"children":"Building Apps"}],["$","li","postgres",{"children":"Postgres"}],["$","li","concurrency",{"children":"Concurrency"}],["$","li","drizzle",{"children":"Drizzle"}]]}]]}]}]]}],null]}]
+1f:["$","footer",null,{"className":"article-foot","children":[["$","$L5",null,{"className":"text-link","href":"/blog/","children":"← All posts"}],["$","$L5",null,{"className":"text-link","href":"/#contact","children":"Work with me →"}]]}]
+20:["$","aside",null,{"className":"post-sidebar","children":[["$","section",null,{"className":"author-card","aria-label":"About the author","children":[["$","$L1a",null,{"className":"author-photo","src":"/me/vibhavari_bellutagi-avatar.jpg","alt":"Vibhavari Bellutagi","width":96,"height":96}],["$","p",null,{"className":"author-name","children":"Vibhavari Bellutagi"}],["$","p",null,{"className":"author-bio","children":["Freelance Full-Stack Developer",". 10+ years in software, seven of them building data platforms (Spark, Kafka, Databricks) at Deloitte, AgileLab and Mews. Now building products end to end, including"," ",["$","$L5",null,{"href":"/#work","children":"Move"}],", a gym management app."]}],["$","$L5",null,{"className":"btn btn-primary btn-sm author-cta","href":"/#contact","children":"Work with me"}],["$","ul",null,{"className":"author-links","children":[["$","li","github",{"children":["$","a",null,{"href":"https://github.com/vibhabellutagi19","aria-label":"GitHub","title":"GitHub","target":"_blank","rel":"noopener noreferrer","children":["$","svg",null,{"viewBox":"0 0 24 24","width":"18","height":"18","aria-hidden":"true","children":["$","path",null,{"d":"M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"}]}]}]}],["$","li","linkedin",{"children":["$","a",null,{"href":"https://www.linkedin.com/in/vibhavari-bellutagi/","aria-label":"LinkedIn","title":"LinkedIn","target":"_blank","rel":"noopener noreferrer","children":["$","svg",null,{"viewBox":"0 0 24 24","width":"18","height":"18","aria-hidden":"true","children":["$","path",null,{"d":"M8 11v5M8 8v.01M12 16v-5M16 16v-3a2 2 0 1 0 -4 0M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z"}]}]}]}],["$","li","mail",{"children":["$","a",null,{"href":"mailto:vibhavari.bellutagi@gmail.com","aria-label":"Email","title":"Email","children":["$","svg",null,{"viewBox":"0 0 24 24","width":"18","height":"18","aria-hidden":"true","children":["$","path",null,{"d":"M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10zM3 7l9 6l9 -6"}]}]}]}],["$","li","rss",{"children":["$","a",null,{"href":"/feed.xml","aria-label":"RSS feed","title":"RSS feed","children":["$","svg",null,{"viewBox":"0 0 24 24","width":"18","height":"18","aria-hidden":"true","children":["$","path",null,{"d":"M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0M4 4a16 16 0 0 1 16 16M4 11a9 9 0 0 1 9 9"}]}]}]}]]}]]}],["$","$L1c",null,{"headings":"$7:props:children:4:props:children:0:props:children:3:props:headings","variant":"side"}]]}]

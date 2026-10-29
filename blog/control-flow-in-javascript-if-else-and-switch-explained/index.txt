@@ -1,0 +1,541 @@
+1:"$Sreact.fragment"
+2:I[4493,["860","static/chunks/860-8aefa8da6e6a472b.js","177","static/chunks/app/layout-abae048957121d27.js"],"Header"]
+3:I[7449,[],""]
+4:I[6637,[],""]
+5:I[6860,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],""]
+6:I[3901,["860","static/chunks/860-8aefa8da6e6a472b.js","177","static/chunks/app/layout-abae048957121d27.js"],"GoatCounter"]
+8:I[3868,[],"OutletBoundary"]
+a:I[3589,[],"AsyncMetadataOutlet"]
+c:I[3868,[],"ViewportBoundary"]
+e:I[3868,[],"MetadataBoundary"]
+f:"$Sreact.suspense"
+11:I[5227,[],""]
+:HL["/_next/static/media/558ca1a6aa3cb55e-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/af4bf8399d1aacdf-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/e4af272ccee01ff0-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/3eef02d45825f04f.css","style"]
+0:{"P":null,"b":"jl6XMdaFAN4NgsPHiuLcv","p":"","c":["","blog","control-flow-in-javascript-if-else-and-switch-explained",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","control-flow-in-javascript-if-else-and-switch-explained","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/3eef02d45825f04f.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","className":"__variable_d8ebd1 __variable_a0f193 __variable_a3cc63","children":["$","body",null,{"children":[["$","a",null,{"className":"skip-link","href":"#main","children":"Skip to content"}],["$","$L2",null,{}],["$","div",null,{"id":"main","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"site-footer","children":["$","div",null,{"className":"container footer-row","children":[["$","p",null,{"className":"footer-copy","children":["© 2026 ","Vibhavari Bellutagi"]}],["$","div",null,{"className":"footer-links","children":[["$","a",null,{"href":"mailto:vibhavari.bellutagi@gmail.com","children":"Email"}],["$","a",null,{"href":"https://wa.me/919742352994?text=Hi%20Vibhavari%2C%20I'd%20like%20to%20discuss%20a%20project.","target":"_blank","rel":"noreferrer","children":"WhatsApp"}],["$","a",null,{"href":"https://www.linkedin.com/in/vibhavari-bellutagi/","target":"_blank","rel":"noreferrer","children":"LinkedIn"}],["$","a",null,{"href":"https://github.com/vibhabellutagi19","target":"_blank","rel":"noreferrer","children":"GitHub"}],["$","$L5",null,{"href":"/blog/","children":"Blog"}]]}]]}]}],["$","$L6",null,{"code":"vibhavaribellutagi"}]]}]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","control-flow-in-javascript-if-else-and-switch-explained","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L7",null,["$","$L8",null,{"children":["$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$Le",null,{"children":["$","div",null,{"hidden":true,"children":["$","$f",null,{"fallback":null,"children":"$L10"}]}]}]]}],false]],"m":"$undefined","G":["$11",[]],"s":false,"S":true}
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+9:null
+12:I[3581,[],"IconMark"]
+b:{"metadata":[["$","title","0",{"children":"Control Flow in JavaScript: If, Else, and Switch Explained · Vibhavari Bellutagi"}],["$","meta","1",{"name":"description","content":"Your bank app blocks a payment when your balance is too low. Your game says Game Over when your health hits zero. Every decision a program makes comes down…"}],["$","link","2",{"rel":"author","href":"https://buildwithvibs.in"}],["$","meta","3",{"name":"author","content":"Vibhavari Bellutagi"}],["$","meta","4",{"name":"keywords","content":"JavaScript,Hashnode"}],["$","link","5",{"rel":"canonical","href":"https://buildwithvibs.in/blog/control-flow-in-javascript-if-else-and-switch-explained/"}],["$","link","6",{"rel":"alternate","type":"application/rss+xml","title":"Vibhavari Bellutagi · Blog","href":"https://buildwithvibs.in/feed.xml"}],["$","meta","7",{"property":"og:title","content":"Control Flow in JavaScript: If, Else, and Switch Explained · Vibhavari Bellutagi"}],["$","meta","8",{"property":"og:description","content":"Your bank app blocks a payment when your balance is too low. Your game says Game Over when your health hits zero. Every decision a program makes comes down…"}],["$","meta","9",{"property":"og:url","content":"https://buildwithvibs.in/blog/control-flow-in-javascript-if-else-and-switch-explained/"}],["$","meta","10",{"property":"og:image","content":"https://buildwithvibs.in/opengraph-image.jpg"}],["$","meta","11",{"property":"og:type","content":"article"}],["$","meta","12",{"property":"article:published_time","content":"2026-04-18"}],["$","meta","13",{"property":"article:author","content":"Vibhavari Bellutagi"}],["$","meta","14",{"property":"article:tag","content":"JavaScript"}],["$","meta","15",{"property":"article:tag","content":"Hashnode"}],["$","meta","16",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","17",{"name":"twitter:title","content":"Control Flow in JavaScript: If, Else, and Switch Explained · Vibhavari Bellutagi"}],["$","meta","18",{"name":"twitter:description","content":"Your bank app blocks a payment when your balance is too low. Your game says Game Over when your health hits zero. Every decision a program makes comes down…"}],["$","meta","19",{"name":"twitter:image","content":"https://buildwithvibs.in/twitter-image.jpg"}],["$","link","20",{"rel":"icon","href":"/icon.svg?0f63625a4946e8f0","type":"image/svg+xml","sizes":"any"}],["$","link","21",{"rel":"apple-touch-icon","href":"/apple-icon.png?ccfb558910f9ffaa","type":"image/png","sizes":"180x180"}],["$","$L12","22",{}]],"error":null,"digest":"$undefined"}
+10:"$b:metadata"
+14:I[5093,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"ReadingProgress"]
+15:I[1939,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"ResumeReading"]
+16:I[2498,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"CodeCopy"]
+17:I[2649,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"LikeButton"]
+18:I[667,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"SaveButton"]
+19:I[6097,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"ShareButton"]
+1a:I[653,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"Image"]
+1b:I[5560,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"ViewCount"]
+1c:I[4305,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"TableOfContents"]
+13:T4e4,{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"Control Flow in JavaScript: If, Else, and Switch Explained","description":"Your bank app blocks a payment when your balance is too low. Your game says Game Over when your health hits zero. Every decision a program makes comes down…","datePublished":"2026-04-18","url":"https://buildwithvibs.in/blog/control-flow-in-javascript-if-else-and-switch-explained/","mainEntityOfPage":"https://buildwithvibs.in/blog/control-flow-in-javascript-if-else-and-switch-explained/","image":"https://buildwithvibs.in/opengraph-image.jpg","keywords":"JavaScript, Hashnode","author":{"@type":"Person","name":"Vibhavari Bellutagi","url":"https://buildwithvibs.in"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://buildwithvibs.in/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://buildwithvibs.in/blog/"},{"@type":"ListItem","position":3,"name":"JavaScript","item":"https://buildwithvibs.in/blog/tags/javascript/"},{"@type":"ListItem","position":4,"name":"Control Flow in JavaScript: If, Else, and Switch Explained","item":"https://buildwithvibs.in/blog/control-flow-in-javascript-if-else-and-switch-explained/"}]}]}7:["$","main",null,{"className":"section post-page","children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","$L14",null,{"targetId":"post-body"}],["$","$L15",null,{"slug":"control-flow-in-javascript-if-else-and-switch-explained","targetId":"post-body"}],["$","$L16",null,{}],["$","div",null,{"className":"container article-layout","children":[["$","article",null,{"className":"article","children":[["$","nav",null,{"className":"breadcrumbs","aria-label":"Breadcrumb","children":["$","ol",null,{"children":[[["$","li","/",{"children":["$","$L5",null,{"href":"/","children":"Home"}]}],["$","li","/blog/",{"children":["$","$L5",null,{"href":"/blog/","children":"Blog"}]}],["$","li","/blog/tags/javascript/",{"children":["$","$L5",null,{"href":"/blog/tags/javascript/","children":"JavaScript"}]}]],["$","li",null,{"aria-current":"page","children":"Control Flow in JavaScript: If, Else, and Switch Explained"}]]}]}],["$","header",null,{"className":"article-head","children":[["$","h1",null,{"children":"Control Flow in JavaScript: If, Else, and Switch Explained"}],["$","div",null,{"className":"article-tools","children":[["$","p",null,{"className":"post-tags","children":[["$","$L5","javascript",{"className":"tag-chip","href":"/blog/tags/javascript/","children":"JavaScript"}],["$","$L5","hashnode",{"className":"tag-chip","href":"/blog/tags/hashnode/","children":"Hashnode"}]]}],["$","div",null,{"className":"post-actions","children":[["$","$L17",null,{"slug":"control-flow-in-javascript-if-else-and-switch-explained"}],["$","$L18",null,{"slug":"control-flow-in-javascript-if-else-and-switch-explained"}],["$","$L19",null,{"title":"Control Flow in JavaScript: If, Else, and Switch Explained","text":"Your bank app blocks a payment when your balance is too low. Your game says Game Over when your health hits zero. Every decision a program makes comes down…","url":"https://buildwithvibs.in/blog/control-flow-in-javascript-if-else-and-switch-explained/"}]]}]]}],["$","div",null,{"className":"byline","children":[["$","$L1a",null,{"className":"byline-photo","src":"/me/vibhavari_bellutagi-avatar.jpg","alt":"","width":44,"height":44}],["$","div",null,{"children":[["$","p",null,{"className":"byline-name","children":"Vibhavari Bellutagi"}],["$","p",null,{"className":"post-meta","children":["Apr 18, 2026"," · ","6 min read",["$","$L1b",null,{"path":"/blog/control-flow-in-javascript-if-else-and-switch-explained/"}]]}]]}]]}]]}],null,["$","$L1c",null,{"headings":[{"level":2,"id":"1-code-runs-top-to-bottom-until-you-branch","text":"1. Code Runs Top to Bottom, Until You Branch"},{"level":2,"id":"2-if-runs-code-only-when-a-condition-is-true","text":"2. if Runs Code Only When a Condition Is True"},{"level":3,"id":"syntax","text":"Syntax"},{"level":3,"id":"real-life-example-checking-age-for-voting","text":"Real-Life Example: Checking Age for Voting"},{"level":3,"id":"key-takeaway","text":"Key Takeaway"},{"level":2,"id":"3-if-else-always-picks-one-of-two-paths","text":"3. if-else Always Picks One of Two Paths"},{"level":3,"id":"syntax-1","text":"Syntax"},{"level":3,"id":"real-life-example-pass-or-fail","text":"Real-Life Example: Pass or Fail"},{"level":3,"id":"key-takeaway-1","text":"Key Takeaway"},{"level":2,"id":"4-else-if-checks-conditions-top-to-bottom-and-stops-at-the-first-match","text":"4. else if Checks Conditions Top to Bottom and Stops at the First Match"},{"level":3,"id":"syntax-2","text":"Syntax"},{"level":3,"id":"real-life-example-grade-calculator","text":"Real-Life Example: Grade Calculator"},{"level":3,"id":"key-takeaway-2","text":"Key Takeaway"},{"level":2,"id":"5-switch-matches-one-value-against-many","text":"5. switch Matches One Value Against Many"},{"level":3,"id":"syntax-3","text":"Syntax"},{"level":3,"id":"real-life-example-day-of-the-week","text":"Real-Life Example: Day of the Week"},{"level":3,"id":"forget-break-and-every-case-below-runs-too","text":"🔴 Forget break and Every Case Below Runs Too"},{"level":3,"id":"using-fallthrough-intentionally","text":"Using Fallthrough Intentionally"},{"level":3,"id":"the-default-case","text":"The default Case"},{"level":3,"id":"key-takeaway-3","text":"Key Takeaway"},{"level":2,"id":"6-when-to-use-switch-vs-if-else","text":"6. When to Use switch vs if-else"},{"level":3,"id":"side-by-side-comparison","text":"Side-by-Side Comparison"},{"level":3,"id":"the-golden-rule","text":"The Golden Rule"},{"level":2,"id":"putting-it-all-together","text":"Putting It All Together"},{"level":2,"id":"summary","text":"Summary"}],"variant":"inline"}],"$L1d","$L1e","$L1f"]}],"$L20"]}]]}]
+21:Tbfeb,<p>Your music app skips explicit songs when parental controls are on. Your bank app blocks a payment when your balance is too low. Your favorite game says &quot;Game Over&quot; the moment your health hits zero.</p>
+<p>None of these apps runs the same code every time. They check something first, then decide what to do.</p>
+<blockquote>
+<p>Every decision a program makes comes down to a handful of statements: <code>if</code>, <code>else</code> and <code>switch</code>.</p>
+</blockquote>
+<p>This post covers each of them with step-by-step examples, the one <code>switch</code> mistake that causes real bugs, and a simple rule for choosing between <code>switch</code> and <code>if-else</code>.</p>
+<hr>
+<h2 id="1-code-runs-top-to-bottom-until-you-branch">1. Code Runs Top to Bottom, Until You Branch<a class="heading-anchor" href="#1-code-runs-top-to-bottom-until-you-branch" aria-label="Link to this section">#</a></h2>
+<p>Imagine you&#39;re getting ready in the morning. You don&#39;t just blindly follow the same routine every day — you <em>make decisions</em>:</p>
+<ul>
+<li><p><strong>If</strong> it&#39;s raining, grab an umbrella.</p>
+</li>
+<li><p><strong>Otherwise</strong>, leave it at home.</p>
+</li>
+<li><p><strong>If</strong> you&#39;re running late, skip breakfast.</p>
+</li>
+</ul>
+<p>This is exactly what control flow means in programming. By default, JavaScript reads and executes your code <strong>line by line, top to bottom</strong>. But with control flow statements, you can tell JavaScript:</p>
+<blockquote>
+<p><em>&quot;Don&#39;t just run everything blindly — check a condition first, then decide what to do.&quot;</em></p>
+</blockquote>
+<p>Control flow lets your program <strong>branch</strong> into different paths based on conditions. The three main tools for this in JavaScript are:</p>
+<ul>
+<li><p><code>if</code> statements</p>
+</li>
+<li><p><code>if-else</code> and <code>else if</code> ladders</p>
+</li>
+<li><p><code>switch</code> statements</p>
+</li>
+</ul>
+<p>Let&#39;s explore each one.</p>
+<hr>
+<h2 id="2-if-runs-code-only-when-a-condition-is-true">2. <code>if</code> Runs Code Only When a Condition Is True<a class="heading-anchor" href="#2-if-runs-code-only-when-a-condition-is-true" aria-label="Link to this section">#</a></h2>
+<p>The <code>if</code> statement is the simplest form of decision-making. It says: <strong>&quot;Only run this block of code IF the condition is true.&quot;</strong></p>
+<h3 id="syntax">Syntax<a class="heading-anchor" href="#syntax" aria-label="Link to this section">#</a></h3>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">JavaScript</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#A0111F">if</span><span style="color:#0E1116"> (condition) {</span></span>
+<span class="line"><span style="color:#66707B">  // code to run if condition is true</span></span>
+<span class="line"><span style="color:#0E1116">}</span></span></code></pre>
+    </div><p>If the condition is <code>false</code>, JavaScript simply skips the block entirely and moves on.</p>
+<h3 id="real-life-example-checking-age-for-voting">Real-Life Example: Checking Age for Voting<a class="heading-anchor" href="#real-life-example-checking-age-for-voting" aria-label="Link to this section">#</a></h3>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">JavaScript</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#A0111F">let</span><span style="color:#0E1116"> age </span><span style="color:#A0111F">=</span><span style="color:#023B95"> 20</span><span style="color:#0E1116">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0111F">if</span><span style="color:#0E1116"> (age </span><span style="color:#A0111F">>=</span><span style="color:#023B95"> 18</span><span style="color:#0E1116">) {</span></span>
+<span class="line"><span style="color:#0E1116">  console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"You are eligible to vote."</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#0E1116">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#66707B">// Output: You are eligible to vote.</span></span></code></pre>
+    </div><p><strong>Step-by-step walkthrough:</strong></p>
+<ol>
+<li><p>JavaScript reads <code>age &gt;= 18</code></p>
+</li>
+<li><p>It checks: is <code>20 &gt;= 18</code>? → <strong>Yes, true</strong></p>
+</li>
+<li><p>So it enters the block and prints the message</p>
+</li>
+</ol>
+<p>Now try with a different value:</p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">JavaScript</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#A0111F">let</span><span style="color:#0E1116"> age </span><span style="color:#A0111F">=</span><span style="color:#023B95"> 15</span><span style="color:#0E1116">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0111F">if</span><span style="color:#0E1116"> (age </span><span style="color:#A0111F">>=</span><span style="color:#023B95"> 18</span><span style="color:#0E1116">) {</span></span>
+<span class="line"><span style="color:#0E1116">  console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"You are eligible to vote."</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#0E1116">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#66707B">// No output — the block is skipped</span></span></code></pre>
+    </div><p>Since <code>15 &gt;= 18</code> is <code>false</code>, JavaScript quietly skips the entire <code>if</code> block. Nothing happens.</p>
+<h3 id="key-takeaway">Key Takeaway<a class="heading-anchor" href="#key-takeaway" aria-label="Link to this section">#</a></h3>
+<blockquote>
+<p>Use <code>if</code> when you only care about what happens <strong>when the condition is true</strong>, and want to do nothing otherwise.</p>
+</blockquote>
+<hr>
+<h2 id="3-if-else-always-picks-one-of-two-paths">3. <code>if-else</code> Always Picks One of Two Paths<a class="heading-anchor" href="#3-if-else-always-picks-one-of-two-paths" aria-label="Link to this section">#</a></h2>
+<p>What if you want to handle <strong>both</strong> cases — when the condition is true <em>and</em> when it&#39;s false? That&#39;s where <code>else</code> comes in.</p>
+<h3 id="syntax-1">Syntax<a class="heading-anchor" href="#syntax-1" aria-label="Link to this section">#</a></h3>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">JavaScript</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#A0111F">if</span><span style="color:#0E1116"> (condition) {</span></span>
+<span class="line"><span style="color:#66707B">  // runs if condition is true</span></span>
+<span class="line"><span style="color:#0E1116">} </span><span style="color:#A0111F">else</span><span style="color:#0E1116"> {</span></span>
+<span class="line"><span style="color:#66707B">  // runs if condition is false</span></span>
+<span class="line"><span style="color:#0E1116">}</span></span></code></pre>
+    </div><h3 id="real-life-example-pass-or-fail">Real-Life Example: Pass or Fail<a class="heading-anchor" href="#real-life-example-pass-or-fail" aria-label="Link to this section">#</a></h3>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">JavaScript</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#A0111F">let</span><span style="color:#0E1116"> marks </span><span style="color:#A0111F">=</span><span style="color:#023B95"> 45</span><span style="color:#0E1116">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0111F">if</span><span style="color:#0E1116"> (marks </span><span style="color:#A0111F">>=</span><span style="color:#023B95"> 50</span><span style="color:#0E1116">) {</span></span>
+<span class="line"><span style="color:#0E1116">  console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Result: Pass ✅"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#0E1116">} </span><span style="color:#A0111F">else</span><span style="color:#0E1116"> {</span></span>
+<span class="line"><span style="color:#0E1116">  console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Result: Fail ❌"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#0E1116">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#66707B">// Output: Result: Fail ❌</span></span></code></pre>
+    </div><p><strong>Step-by-step walkthrough:</strong></p>
+<ol>
+<li><p>JavaScript checks: is <code>45 &gt;= 50</code>? → <strong>No, false</strong></p>
+</li>
+<li><p>It skips the <code>if</code> block</p>
+</li>
+<li><p>It falls into the <code>else</code> block and prints <code>&quot;Result: Fail ❌&quot;</code></p>
+</li>
+</ol>
+<p>Only <strong>one</strong> of the two blocks will ever run — never both.</p>
+<h3 id="key-takeaway-1">Key Takeaway<a class="heading-anchor" href="#key-takeaway-1" aria-label="Link to this section">#</a></h3>
+<blockquote>
+<p>Use <code>if-else</code> when there are exactly <strong>two possible outcomes</strong> — the condition is either true or false.</p>
+</blockquote>
+<hr>
+<h2 id="4-else-if-checks-conditions-top-to-bottom-and-stops-at-the-first-match">4. <code>else if</code> Checks Conditions Top to Bottom and Stops at the First Match<a class="heading-anchor" href="#4-else-if-checks-conditions-top-to-bottom-and-stops-at-the-first-match" aria-label="Link to this section">#</a></h2>
+<p>Real life rarely gives us just two choices. What if you need to check <strong>multiple conditions</strong> in sequence? That&#39;s where <code>else if</code> comes in — it lets you build a <strong>ladder</strong> of conditions.</p>
+<h3 id="syntax-2">Syntax<a class="heading-anchor" href="#syntax-2" aria-label="Link to this section">#</a></h3>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">JavaScript</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#A0111F">if</span><span style="color:#0E1116"> (condition1) {</span></span>
+<span class="line"><span style="color:#66707B">  // runs if condition1 is true</span></span>
+<span class="line"><span style="color:#0E1116">} </span><span style="color:#A0111F">else</span><span style="color:#A0111F"> if</span><span style="color:#0E1116"> (condition2) {</span></span>
+<span class="line"><span style="color:#66707B">  // runs if condition2 is true</span></span>
+<span class="line"><span style="color:#0E1116">} </span><span style="color:#A0111F">else</span><span style="color:#A0111F"> if</span><span style="color:#0E1116"> (condition3) {</span></span>
+<span class="line"><span style="color:#66707B">  // runs if condition3 is true</span></span>
+<span class="line"><span style="color:#0E1116">} </span><span style="color:#A0111F">else</span><span style="color:#0E1116"> {</span></span>
+<span class="line"><span style="color:#66707B">  // runs if none of the above are true</span></span>
+<span class="line"><span style="color:#0E1116">}</span></span></code></pre>
+    </div><p>JavaScript checks each condition <strong>from top to bottom</strong> and stops as soon as it finds one that&#39;s true.</p>
+<h3 id="real-life-example-grade-calculator">Real-Life Example: Grade Calculator<a class="heading-anchor" href="#real-life-example-grade-calculator" aria-label="Link to this section">#</a></h3>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">JavaScript</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#A0111F">let</span><span style="color:#0E1116"> marks </span><span style="color:#A0111F">=</span><span style="color:#023B95"> 72</span><span style="color:#0E1116">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0111F">if</span><span style="color:#0E1116"> (marks </span><span style="color:#A0111F">>=</span><span style="color:#023B95"> 90</span><span style="color:#0E1116">) {</span></span>
+<span class="line"><span style="color:#0E1116">  console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Grade: A"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#0E1116">} </span><span style="color:#A0111F">else</span><span style="color:#A0111F"> if</span><span style="color:#0E1116"> (marks </span><span style="color:#A0111F">>=</span><span style="color:#023B95"> 75</span><span style="color:#0E1116">) {</span></span>
+<span class="line"><span style="color:#0E1116">  console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Grade: B"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#0E1116">} </span><span style="color:#A0111F">else</span><span style="color:#A0111F"> if</span><span style="color:#0E1116"> (marks </span><span style="color:#A0111F">>=</span><span style="color:#023B95"> 60</span><span style="color:#0E1116">) {</span></span>
+<span class="line"><span style="color:#0E1116">  console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Grade: C"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#0E1116">} </span><span style="color:#A0111F">else</span><span style="color:#A0111F"> if</span><span style="color:#0E1116"> (marks </span><span style="color:#A0111F">>=</span><span style="color:#023B95"> 40</span><span style="color:#0E1116">) {</span></span>
+<span class="line"><span style="color:#0E1116">  console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Grade: D"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#0E1116">} </span><span style="color:#A0111F">else</span><span style="color:#0E1116"> {</span></span>
+<span class="line"><span style="color:#0E1116">  console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Grade: F — Please retake the exam"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#0E1116">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#66707B">// Output: Grade: C</span></span></code></pre>
+    </div><p><strong>Step-by-step walkthrough:</strong></p>
+<ol>
+<li><p>Is <code>72 &gt;= 90</code>? → No. Move on.</p>
+</li>
+<li><p>Is <code>72 &gt;= 75</code>? → No. Move on.</p>
+</li>
+<li><p>Is <code>72 &gt;= 60</code>? → <strong>Yes!</strong> → Print <code>&quot;Grade: C&quot;</code> and <strong>stop</strong>.</p>
+</li>
+</ol>
+<p>JavaScript never even checks the <code>&gt;= 40</code> condition because it already found a match.</p>
+<p>Order matters: put <code>marks &gt;= 40</code> first and every passing student gets a D, because it matches before the higher grades are ever checked.</p>
+<h3 id="key-takeaway-2">Key Takeaway<a class="heading-anchor" href="#key-takeaway-2" aria-label="Link to this section">#</a></h3>
+<blockquote>
+<p>Use <code>else if</code> when you have <strong>3 or more possible outcomes</strong> that depend on a single variable being checked against different ranges or values.</p>
+</blockquote>
+<hr>
+<h2 id="5-switch-matches-one-value-against-many">5. <code>switch</code> Matches One Value Against Many<a class="heading-anchor" href="#5-switch-matches-one-value-against-many" aria-label="Link to this section">#</a></h2>
+<p>The <code>switch</code> statement is a cleaner alternative when you&#39;re comparing <strong>one variable against many specific values</strong>. Instead of writing a long chain of <code>else if</code>, <code>switch</code> lays all the options out neatly.</p>
+<h3 id="syntax-3">Syntax<a class="heading-anchor" href="#syntax-3" aria-label="Link to this section">#</a></h3>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">JavaScript</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#A0111F">switch</span><span style="color:#0E1116"> (expression) {</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#0E1116"> value1:</span></span>
+<span class="line"><span style="color:#66707B">    // code for value1</span></span>
+<span class="line"><span style="color:#A0111F">    break</span><span style="color:#0E1116">;</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#0E1116"> value2:</span></span>
+<span class="line"><span style="color:#66707B">    // code for value2</span></span>
+<span class="line"><span style="color:#A0111F">    break</span><span style="color:#0E1116">;</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#0E1116"> value3:</span></span>
+<span class="line"><span style="color:#66707B">    // code for value3</span></span>
+<span class="line"><span style="color:#A0111F">    break</span><span style="color:#0E1116">;</span></span>
+<span class="line"><span style="color:#A0111F">  default</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#66707B">    // code if no case matches</span></span>
+<span class="line"><span style="color:#0E1116">}</span></span></code></pre>
+    </div><h3 id="real-life-example-day-of-the-week">Real-Life Example: Day of the Week<a class="heading-anchor" href="#real-life-example-day-of-the-week" aria-label="Link to this section">#</a></h3>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">JavaScript</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#A0111F">let</span><span style="color:#0E1116"> day </span><span style="color:#A0111F">=</span><span style="color:#023B95"> 3</span><span style="color:#0E1116">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0111F">switch</span><span style="color:#0E1116"> (day) {</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#023B95"> 1</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#0E1116">    console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Monday"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#A0111F">    break</span><span style="color:#0E1116">;</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#023B95"> 2</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#0E1116">    console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Tuesday"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#A0111F">    break</span><span style="color:#0E1116">;</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#023B95"> 3</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#0E1116">    console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Wednesday"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#A0111F">    break</span><span style="color:#0E1116">;</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#023B95"> 4</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#0E1116">    console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Thursday"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#A0111F">    break</span><span style="color:#0E1116">;</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#023B95"> 5</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#0E1116">    console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Friday"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#A0111F">    break</span><span style="color:#0E1116">;</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#023B95"> 6</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#0E1116">    console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Saturday"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#A0111F">    break</span><span style="color:#0E1116">;</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#023B95"> 7</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#0E1116">    console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Sunday"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#A0111F">    break</span><span style="color:#0E1116">;</span></span>
+<span class="line"><span style="color:#A0111F">  default</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#0E1116">    console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Invalid day number"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#0E1116">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#66707B">// Output: Wednesday</span></span></code></pre>
+    </div><p><strong>Step-by-step walkthrough:</strong></p>
+<ol>
+<li><p>JavaScript evaluates <code>day</code> → it&#39;s <code>3</code></p>
+</li>
+<li><p>It checks <code>case 1</code> → not a match</p>
+</li>
+<li><p>It checks <code>case 2</code> → not a match</p>
+</li>
+<li><p>It checks <code>case 3</code> → <strong>match!</strong> → prints <code>&quot;Wednesday&quot;</code></p>
+</li>
+<li><p>It hits <code>break</code> → exits the switch block immediately</p>
+</li>
+</ol>
+<h3 id="forget-break-and-every-case-below-runs-too">🔴 Forget <code>break</code> and Every Case Below Runs Too<a class="heading-anchor" href="#forget-break-and-every-case-below-runs-too" aria-label="Link to this section">#</a></h3>
+<p>The <code>break</code> keyword tells JavaScript: <strong>&quot;You&#39;re done. Exit the switch now.&quot;</strong></p>
+<p>What happens if you forget it? JavaScript will <strong>fall through</strong> — it keeps running every case below the matched one, even if they don&#39;t match. This is called <strong>fallthrough behavior</strong> and is a common source of bugs.</p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">JavaScript</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#A0111F">let</span><span style="color:#0E1116"> day </span><span style="color:#A0111F">=</span><span style="color:#023B95"> 3</span><span style="color:#0E1116">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0111F">switch</span><span style="color:#0E1116"> (day) {</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#023B95"> 3</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#0E1116">    console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Wednesday"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#66707B">    // ⚠️ No break here!</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#023B95"> 4</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#0E1116">    console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Thursday"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#66707B">    // ⚠️ No break here!</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#023B95"> 5</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#0E1116">    console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Friday"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#A0111F">    break</span><span style="color:#0E1116">;</span></span>
+<span class="line"><span style="color:#0E1116">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#66707B">// Output:</span></span>
+<span class="line"><span style="color:#66707B">// Wednesday</span></span>
+<span class="line"><span style="color:#66707B">// Thursday</span></span>
+<span class="line"><span style="color:#66707B">// Friday</span></span></code></pre>
+    </div><p>Even though <code>day</code> is <code>3</code>, all three cases ran because there was no <code>break</code> to stop the flow. <strong>Always add</strong> <code>break</code> unless you deliberately want fallthrough.</p>
+<h3 id="using-fallthrough-intentionally">Using Fallthrough Intentionally<a class="heading-anchor" href="#using-fallthrough-intentionally" aria-label="Link to this section">#</a></h3>
+<p>Sometimes fallthrough is actually useful — when multiple cases should share the same outcome:</p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">JavaScript</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#A0111F">let</span><span style="color:#0E1116"> day </span><span style="color:#A0111F">=</span><span style="color:#032563"> "Saturday"</span><span style="color:#0E1116">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0111F">switch</span><span style="color:#0E1116"> (day) {</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#032563"> "Saturday"</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#032563"> "Sunday"</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#0E1116">    console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"It's the weekend! 🎉"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#A0111F">    break</span><span style="color:#0E1116">;</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#032563"> "Monday"</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#032563"> "Tuesday"</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#032563"> "Wednesday"</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#032563"> "Thursday"</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#032563"> "Friday"</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#0E1116">    console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"It's a weekday. 💼"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#A0111F">    break</span><span style="color:#0E1116">;</span></span>
+<span class="line"><span style="color:#A0111F">  default</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#0E1116">    console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Unknown day"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#0E1116">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#66707B">// Output: It's the weekend! 🎉</span></span></code></pre>
+    </div><p>Here, both <code>&quot;Saturday&quot;</code> and <code>&quot;Sunday&quot;</code> fall through to the same <code>console.log</code> — this is clean, intentional, and readable.</p>
+<h3 id="the-default-case">The <code>default</code> Case<a class="heading-anchor" href="#the-default-case" aria-label="Link to this section">#</a></h3>
+<p><code>default</code> is like the <code>else</code> in an <code>if-else</code> — it runs when <strong>no case matches</strong>. It&#39;s optional, but always a good idea to include it.</p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">JavaScript</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#A0111F">let</span><span style="color:#0E1116"> trafficLight </span><span style="color:#A0111F">=</span><span style="color:#032563"> "purple"</span><span style="color:#0E1116">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0111F">switch</span><span style="color:#0E1116"> (trafficLight) {</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#032563"> "red"</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#0E1116">    console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Stop 🔴"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#A0111F">    break</span><span style="color:#0E1116">;</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#032563"> "yellow"</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#0E1116">    console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Slow down 🟡"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#A0111F">    break</span><span style="color:#0E1116">;</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#032563"> "green"</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#0E1116">    console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Go! 🟢"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#A0111F">    break</span><span style="color:#0E1116">;</span></span>
+<span class="line"><span style="color:#A0111F">  default</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#0E1116">    console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Unknown signal — proceed with caution"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#0E1116">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#66707B">// Output: Unknown signal — proceed with caution</span></span></code></pre>
+    </div><h3 id="key-takeaway-3">Key Takeaway<a class="heading-anchor" href="#key-takeaway-3" aria-label="Link to this section">#</a></h3>
+<blockquote>
+<p>Use <code>switch</code> when you&#39;re matching <strong>one variable</strong> against <strong>multiple exact values</strong>, and each case has a distinct action. Always use <code>break</code> unless you intentionally want fallthrough.</p>
+</blockquote>
+<hr>
+<h2 id="6-when-to-use-switch-vs-if-else">6. When to Use <code>switch</code> vs <code>if-else</code><a class="heading-anchor" href="#6-when-to-use-switch-vs-if-else" aria-label="Link to this section">#</a></h2>
+<p>This is one of the most common questions beginners ask. Here&#39;s a clear breakdown:</p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Best Choice</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Checking a range of values (<code>&gt;= 60</code>, <code>&lt; 100</code>)</td>
+<td><code>if-else</code></td>
+</tr>
+<tr>
+<td>Checking complex conditions (<code>age &gt; 18 &amp;&amp; hasID</code>)</td>
+<td><code>if-else</code></td>
+</tr>
+<tr>
+<td>Matching one variable to many exact values</td>
+<td><code>switch</code></td>
+</tr>
+<tr>
+<td>Two possible outcomes</td>
+<td><code>if-else</code></td>
+</tr>
+<tr>
+<td>Many named cases (days, months, menu options)</td>
+<td><code>switch</code></td>
+</tr>
+<tr>
+<td>Conditions involve different variables</td>
+<td><code>if-else</code></td>
+</tr>
+</tbody></table>
+<h3 id="side-by-side-comparison">Side-by-Side Comparison<a class="heading-anchor" href="#side-by-side-comparison" aria-label="Link to this section">#</a></h3>
+<p>Here&#39;s the same logic written both ways — you decide which is cleaner:</p>
+<p><strong>Using</strong> <code>if-else</code><strong>:</strong></p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">JavaScript</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#A0111F">let</span><span style="color:#0E1116"> fruit </span><span style="color:#A0111F">=</span><span style="color:#032563"> "mango"</span><span style="color:#0E1116">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0111F">if</span><span style="color:#0E1116"> (fruit </span><span style="color:#A0111F">===</span><span style="color:#032563"> "apple"</span><span style="color:#0E1116">) {</span></span>
+<span class="line"><span style="color:#0E1116">  console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"🍎 Apple selected"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#0E1116">} </span><span style="color:#A0111F">else</span><span style="color:#A0111F"> if</span><span style="color:#0E1116"> (fruit </span><span style="color:#A0111F">===</span><span style="color:#032563"> "banana"</span><span style="color:#0E1116">) {</span></span>
+<span class="line"><span style="color:#0E1116">  console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"🍌 Banana selected"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#0E1116">} </span><span style="color:#A0111F">else</span><span style="color:#A0111F"> if</span><span style="color:#0E1116"> (fruit </span><span style="color:#A0111F">===</span><span style="color:#032563"> "mango"</span><span style="color:#0E1116">) {</span></span>
+<span class="line"><span style="color:#0E1116">  console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"🥭 Mango selected"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#0E1116">} </span><span style="color:#A0111F">else</span><span style="color:#0E1116"> {</span></span>
+<span class="line"><span style="color:#0E1116">  console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Unknown fruit"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#0E1116">}</span></span></code></pre>
+    </div><p><strong>Using</strong> <code>switch</code><strong>:</strong></p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">JavaScript</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#A0111F">let</span><span style="color:#0E1116"> fruit </span><span style="color:#A0111F">=</span><span style="color:#032563"> "mango"</span><span style="color:#0E1116">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0111F">switch</span><span style="color:#0E1116"> (fruit) {</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#032563"> "apple"</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#0E1116">    console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"🍎 Apple selected"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#A0111F">    break</span><span style="color:#0E1116">;</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#032563"> "banana"</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#0E1116">    console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"🍌 Banana selected"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#A0111F">    break</span><span style="color:#0E1116">;</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#032563"> "mango"</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#0E1116">    console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"🥭 Mango selected"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#A0111F">    break</span><span style="color:#0E1116">;</span></span>
+<span class="line"><span style="color:#A0111F">  default</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#0E1116">    console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Unknown fruit"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#0E1116">}</span></span></code></pre>
+    </div><p>Both produce the same output. But when you have 10+ specific values to check, <code>switch</code> wins on readability every time.</p>
+<h3 id="the-golden-rule">The Golden Rule<a class="heading-anchor" href="#the-golden-rule" aria-label="Link to this section">#</a></h3>
+<ul>
+<li><p>If your conditions involve <strong>ranges, inequalities, or multiple variables</strong> → use <code>if-else</code></p>
+</li>
+<li><p>If you&#39;re matching <strong>one thing to a list of exact values</strong> → use <code>switch</code></p>
+</li>
+</ul>
+<hr>
+<h2 id="putting-it-all-together">Putting It All Together<a class="heading-anchor" href="#putting-it-all-together" aria-label="Link to this section">#</a></h2>
+<p>Here&#39;s a mini program that uses everything you&#39;ve learned:</p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">JavaScript</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#A0111F">let</span><span style="color:#0E1116"> studentMarks </span><span style="color:#A0111F">=</span><span style="color:#023B95"> 68</span><span style="color:#0E1116">;</span></span>
+<span class="line"><span style="color:#A0111F">let</span><span style="color:#0E1116"> studentAge </span><span style="color:#A0111F">=</span><span style="color:#023B95"> 17</span><span style="color:#0E1116">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#66707B">// else if ladder: school stage by age</span></span>
+<span class="line"><span style="color:#A0111F">if</span><span style="color:#0E1116"> (studentAge </span><span style="color:#A0111F">&#x3C;</span><span style="color:#023B95"> 5</span><span style="color:#0E1116">) {</span></span>
+<span class="line"><span style="color:#0E1116">  console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Too young for school."</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#0E1116">} </span><span style="color:#A0111F">else</span><span style="color:#A0111F"> if</span><span style="color:#0E1116"> (studentAge </span><span style="color:#A0111F">&#x3C;</span><span style="color:#023B95"> 18</span><span style="color:#0E1116">) {</span></span>
+<span class="line"><span style="color:#0E1116">  console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"School-going student."</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#0E1116">} </span><span style="color:#A0111F">else</span><span style="color:#0E1116"> {</span></span>
+<span class="line"><span style="color:#0E1116">  console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Adult learner."</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#0E1116">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#66707B">// else if ladder: marks are a range, so if-else picks the grade</span></span>
+<span class="line"><span style="color:#A0111F">let</span><span style="color:#0E1116"> grade;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0111F">if</span><span style="color:#0E1116"> (studentMarks </span><span style="color:#A0111F">>=</span><span style="color:#023B95"> 90</span><span style="color:#0E1116">) {</span></span>
+<span class="line"><span style="color:#0E1116">  grade </span><span style="color:#A0111F">=</span><span style="color:#032563"> "A"</span><span style="color:#0E1116">;</span></span>
+<span class="line"><span style="color:#0E1116">} </span><span style="color:#A0111F">else</span><span style="color:#A0111F"> if</span><span style="color:#0E1116"> (studentMarks </span><span style="color:#A0111F">>=</span><span style="color:#023B95"> 75</span><span style="color:#0E1116">) {</span></span>
+<span class="line"><span style="color:#0E1116">  grade </span><span style="color:#A0111F">=</span><span style="color:#032563"> "B"</span><span style="color:#0E1116">;</span></span>
+<span class="line"><span style="color:#0E1116">} </span><span style="color:#A0111F">else</span><span style="color:#A0111F"> if</span><span style="color:#0E1116"> (studentMarks </span><span style="color:#A0111F">>=</span><span style="color:#023B95"> 60</span><span style="color:#0E1116">) {</span></span>
+<span class="line"><span style="color:#0E1116">  grade </span><span style="color:#A0111F">=</span><span style="color:#032563"> "C"</span><span style="color:#0E1116">;</span></span>
+<span class="line"><span style="color:#0E1116">} </span><span style="color:#A0111F">else</span><span style="color:#0E1116"> {</span></span>
+<span class="line"><span style="color:#0E1116">  grade </span><span style="color:#A0111F">=</span><span style="color:#032563"> "F"</span><span style="color:#0E1116">;</span></span>
+<span class="line"><span style="color:#0E1116">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#66707B">// switch: the grade is one exact value, so switch picks the message</span></span>
+<span class="line"><span style="color:#A0111F">switch</span><span style="color:#0E1116"> (grade) {</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#032563"> "A"</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#0E1116">    console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Outstanding performance! 🌟"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#A0111F">    break</span><span style="color:#0E1116">;</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#032563"> "B"</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#0E1116">    console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Great job! Keep it up. 👍"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#A0111F">    break</span><span style="color:#0E1116">;</span></span>
+<span class="line"><span style="color:#A0111F">  case</span><span style="color:#032563"> "C"</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#0E1116">    console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Good effort. Room to improve. 📈"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#A0111F">    break</span><span style="color:#0E1116">;</span></span>
+<span class="line"><span style="color:#A0111F">  default</span><span style="color:#0E1116">:</span></span>
+<span class="line"><span style="color:#0E1116">    console.</span><span style="color:#622CBC">log</span><span style="color:#0E1116">(</span><span style="color:#032563">"Needs significant improvement. 📚"</span><span style="color:#0E1116">);</span></span>
+<span class="line"><span style="color:#0E1116">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#66707B">// Output:</span></span>
+<span class="line"><span style="color:#66707B">// School-going student.</span></span>
+<span class="line"><span style="color:#66707B">// Good effort. Room to improve. 📈</span></span></code></pre>
+    </div><hr>
+<h2 id="summary">Summary<a class="heading-anchor" href="#summary" aria-label="Link to this section">#</a></h2>
+<p>Here&#39;s everything you covered in one quick reference:</p>
+<table>
+<thead>
+<tr>
+<th>Statement</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>if</code></td>
+<td>Run code only when condition is true</td>
+</tr>
+<tr>
+<td><code>if-else</code></td>
+<td>Handle true/false — two outcomes</td>
+</tr>
+<tr>
+<td><code>else if</code></td>
+<td>Handle multiple conditions in order</td>
+</tr>
+<tr>
+<td><code>switch</code></td>
+<td>Match one value against many exact cases</td>
+</tr>
+<tr>
+<td><code>break</code></td>
+<td>Exit the switch block after a match</td>
+</tr>
+<tr>
+<td><code>default</code></td>
+<td>Fallback if no case matches</td>
+</tr>
+</tbody></table>
+<p>The music app, the bank app and the game from the start of this post all work this way. Under the features, each one is a stack of these checks: is the balance high enough, is health above zero, is this song allowed. Learn to read <code>if</code>, <code>else</code> and <code>switch</code>, and you can read how any program makes up its mind.</p>
+<p>More posts on <a href="/blog/tags/javascript/">JavaScript</a>.</p>
+1d:["$","div",null,{"id":"post-body","className":"article-content","children":[["$","div","0",{"className":"article-html","dangerouslySetInnerHTML":{"__html":"$21"}}]]}]
+1e:["$","section",null,{"className":"read-next","aria-labelledby":"read-next-title","children":[["$","h2",null,{"id":"read-next-title","className":"read-next-title","children":"Read next"}],"$undefined",["$","ul",null,{"className":"read-next-list","children":[["$","li","the-magic-of-call-apply-bind",{"children":["$","$L5",null,{"className":"post-item","href":"/blog/the-magic-of-call-apply-bind/","children":[["$","span",null,{"className":"post-meta","children":["Apr 18, 2026"," · ","4 min read"]}],["$","span",null,{"className":"post-title","children":"The magic of call(), apply(), bind()"}],["$","ul",null,{"className":"tags post-row-tags","children":[["$","li","javascript",{"children":"JavaScript"}],["$","li","hashnode",{"children":"Hashnode"}]]}]]}]}],["$","li","global-vs-globalthis",{"children":["$","$L5",null,{"className":"post-item","href":"/blog/global-vs-globalthis/","children":[["$","span",null,{"className":"post-meta","children":["Mar 8, 2026"," · ","4 min read"]}],["$","span",null,{"className":"post-title","children":"Global vs GlobalThis"}],["$","ul",null,{"className":"tags post-row-tags","children":[["$","li","javascript",{"children":"JavaScript"}],["$","li","hashnode",{"children":"Hashnode"}]]}]]}]}],["$","li","javascript-operators-the-basics-you-need-to-know",{"children":["$","$L5",null,{"className":"post-item","href":"/blog/javascript-operators-the-basics-you-need-to-know/","children":[["$","span",null,{"className":"post-meta","children":["Mar 1, 2026"," · ","5 min read"]}],["$","span",null,{"className":"post-title","children":"JavaScript Operators: The Basics You Need to Know"}],["$","ul",null,{"className":"tags post-row-tags","children":[["$","li","javascript",{"children":"JavaScript"}],["$","li","hashnode",{"children":"Hashnode"}]]}]]}]}]]}],"$undefined"]}]
+1f:["$","footer",null,{"className":"article-foot","children":[["$","$L5",null,{"className":"text-link","href":"/blog/","children":"← All posts"}],["$","$L5",null,{"className":"text-link","href":"/#contact","children":"Work with me →"}]]}]
+20:["$","aside",null,{"className":"post-sidebar","children":[["$","section",null,{"className":"author-card","aria-label":"About the author","children":[["$","$L1a",null,{"className":"author-photo","src":"/me/vibhavari_bellutagi-avatar.jpg","alt":"Vibhavari Bellutagi","width":96,"height":96}],["$","p",null,{"className":"author-name","children":"Vibhavari Bellutagi"}],["$","p",null,{"className":"author-bio","children":["Freelance Full-Stack Developer",". 10+ years in software, seven of them building data platforms (Spark, Kafka, Databricks) at Deloitte, AgileLab and Mews. Now building products end to end, including"," ",["$","$L5",null,{"href":"/#work","children":"Move"}],", a gym management app."]}],["$","$L5",null,{"className":"btn btn-primary btn-sm author-cta","href":"/#contact","children":"Work with me"}],["$","ul",null,{"className":"author-links","children":[["$","li","github",{"children":["$","a",null,{"href":"https://github.com/vibhabellutagi19","aria-label":"GitHub","title":"GitHub","target":"_blank","rel":"noopener noreferrer","children":["$","svg",null,{"viewBox":"0 0 24 24","width":"18","height":"18","aria-hidden":"true","children":["$","path",null,{"d":"M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"}]}]}]}],["$","li","linkedin",{"children":["$","a",null,{"href":"https://www.linkedin.com/in/vibhavari-bellutagi/","aria-label":"LinkedIn","title":"LinkedIn","target":"_blank","rel":"noopener noreferrer","children":["$","svg",null,{"viewBox":"0 0 24 24","width":"18","height":"18","aria-hidden":"true","children":["$","path",null,{"d":"M8 11v5M8 8v.01M12 16v-5M16 16v-3a2 2 0 1 0 -4 0M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z"}]}]}]}],["$","li","mail",{"children":["$","a",null,{"href":"mailto:vibhavari.bellutagi@gmail.com","aria-label":"Email","title":"Email","children":["$","svg",null,{"viewBox":"0 0 24 24","width":"18","height":"18","aria-hidden":"true","children":["$","path",null,{"d":"M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10zM3 7l9 6l9 -6"}]}]}]}],["$","li","rss",{"children":["$","a",null,{"href":"/feed.xml","aria-label":"RSS feed","title":"RSS feed","children":["$","svg",null,{"viewBox":"0 0 24 24","width":"18","height":"18","aria-hidden":"true","children":["$","path",null,{"d":"M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0M4 4a16 16 0 0 1 16 16M4 11a9 9 0 0 1 9 9"}]}]}]}]]}]]}],["$","$L1c",null,{"headings":"$7:props:children:4:props:children:0:props:children:3:props:headings","variant":"side"}]]}]

@@ -1,0 +1,215 @@
+1:"$Sreact.fragment"
+2:I[4493,["860","static/chunks/860-8aefa8da6e6a472b.js","177","static/chunks/app/layout-abae048957121d27.js"],"Header"]
+3:I[7449,[],""]
+4:I[6637,[],""]
+5:I[6860,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],""]
+6:I[3901,["860","static/chunks/860-8aefa8da6e6a472b.js","177","static/chunks/app/layout-abae048957121d27.js"],"GoatCounter"]
+8:I[3868,[],"OutletBoundary"]
+a:I[3589,[],"AsyncMetadataOutlet"]
+c:I[3868,[],"ViewportBoundary"]
+e:I[3868,[],"MetadataBoundary"]
+f:"$Sreact.suspense"
+11:I[5227,[],""]
+:HL["/_next/static/media/558ca1a6aa3cb55e-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/af4bf8399d1aacdf-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/e4af272ccee01ff0-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/3eef02d45825f04f.css","style"]
+0:{"P":null,"b":"jl6XMdaFAN4NgsPHiuLcv","p":"","c":["","blog","dns-record-types",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","dns-record-types","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/3eef02d45825f04f.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","className":"__variable_d8ebd1 __variable_a0f193 __variable_a3cc63","children":["$","body",null,{"children":[["$","a",null,{"className":"skip-link","href":"#main","children":"Skip to content"}],["$","$L2",null,{}],["$","div",null,{"id":"main","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"site-footer","children":["$","div",null,{"className":"container footer-row","children":[["$","p",null,{"className":"footer-copy","children":["© 2026 ","Vibhavari Bellutagi"]}],["$","div",null,{"className":"footer-links","children":[["$","a",null,{"href":"mailto:vibhavari.bellutagi@gmail.com","children":"Email"}],["$","a",null,{"href":"https://wa.me/919742352994?text=Hi%20Vibhavari%2C%20I'd%20like%20to%20discuss%20a%20project.","target":"_blank","rel":"noreferrer","children":"WhatsApp"}],["$","a",null,{"href":"https://www.linkedin.com/in/vibhavari-bellutagi/","target":"_blank","rel":"noreferrer","children":"LinkedIn"}],["$","a",null,{"href":"https://github.com/vibhabellutagi19","target":"_blank","rel":"noreferrer","children":"GitHub"}],["$","$L5",null,{"href":"/blog/","children":"Blog"}]]}]]}]}],["$","$L6",null,{"code":"vibhavaribellutagi"}]]}]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","dns-record-types","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L7",null,["$","$L8",null,{"children":["$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$Le",null,{"children":["$","div",null,{"hidden":true,"children":["$","$f",null,{"fallback":null,"children":"$L10"}]}]}]]}],false]],"m":"$undefined","G":["$11",[]],"s":false,"S":true}
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+9:null
+12:I[3581,[],"IconMark"]
+b:{"metadata":[["$","title","0",{"children":"DNS Record Types Explained · Vibhavari Bellutagi"}],["$","meta","1",{"name":"description","content":"Pointing a domain at your website takes one DNS record. Receiving email takes another. Proving to Google you own it takes a third. A, AAAA, CNAME, NS, MX and…"}],["$","link","2",{"rel":"author","href":"https://buildwithvibs.in"}],["$","meta","3",{"name":"author","content":"Vibhavari Bellutagi"}],["$","meta","4",{"name":"keywords","content":"Networking,Hashnode"}],["$","link","5",{"rel":"canonical","href":"https://buildwithvibs.in/blog/dns-record-types/"}],["$","link","6",{"rel":"alternate","type":"application/rss+xml","title":"Vibhavari Bellutagi · Blog","href":"https://buildwithvibs.in/feed.xml"}],["$","meta","7",{"property":"og:title","content":"DNS Record Types Explained · Vibhavari Bellutagi"}],["$","meta","8",{"property":"og:description","content":"Pointing a domain at your website takes one DNS record. Receiving email takes another. Proving to Google you own it takes a third. A, AAAA, CNAME, NS, MX and…"}],["$","meta","9",{"property":"og:url","content":"https://buildwithvibs.in/blog/dns-record-types/"}],["$","meta","10",{"property":"og:image","content":"https://buildwithvibs.in/opengraph-image.jpg"}],["$","meta","11",{"property":"og:type","content":"article"}],["$","meta","12",{"property":"article:published_time","content":"2026-01-26"}],["$","meta","13",{"property":"article:author","content":"Vibhavari Bellutagi"}],["$","meta","14",{"property":"article:tag","content":"Networking"}],["$","meta","15",{"property":"article:tag","content":"Hashnode"}],["$","meta","16",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","17",{"name":"twitter:title","content":"DNS Record Types Explained · Vibhavari Bellutagi"}],["$","meta","18",{"name":"twitter:description","content":"Pointing a domain at your website takes one DNS record. Receiving email takes another. Proving to Google you own it takes a third. A, AAAA, CNAME, NS, MX and…"}],["$","meta","19",{"name":"twitter:image","content":"https://buildwithvibs.in/twitter-image.jpg"}],["$","link","20",{"rel":"icon","href":"/icon.svg?0f63625a4946e8f0","type":"image/svg+xml","sizes":"any"}],["$","link","21",{"rel":"apple-touch-icon","href":"/apple-icon.png?ccfb558910f9ffaa","type":"image/png","sizes":"180x180"}],["$","$L12","22",{}]],"error":null,"digest":"$undefined"}
+10:"$b:metadata"
+14:I[5093,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"ReadingProgress"]
+15:I[1939,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"ResumeReading"]
+16:I[2498,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"CodeCopy"]
+17:I[2649,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"LikeButton"]
+18:I[667,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"SaveButton"]
+19:I[6097,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"ShareButton"]
+1a:I[653,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"Image"]
+1b:I[5560,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"ViewCount"]
+1c:I[4305,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"TableOfContents"]
+13:T431,{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"DNS Record Types Explained","description":"Pointing a domain at your website takes one DNS record. Receiving email takes another. Proving to Google you own it takes a third. A, AAAA, CNAME, NS, MX and…","datePublished":"2026-01-26","url":"https://buildwithvibs.in/blog/dns-record-types/","mainEntityOfPage":"https://buildwithvibs.in/blog/dns-record-types/","image":"https://buildwithvibs.in/opengraph-image.jpg","keywords":"Networking, Hashnode","author":{"@type":"Person","name":"Vibhavari Bellutagi","url":"https://buildwithvibs.in"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://buildwithvibs.in/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://buildwithvibs.in/blog/"},{"@type":"ListItem","position":3,"name":"Networking","item":"https://buildwithvibs.in/blog/tags/networking/"},{"@type":"ListItem","position":4,"name":"DNS Record Types Explained","item":"https://buildwithvibs.in/blog/dns-record-types/"}]}]}1d:T3ba5,<p>Say you buy <code>vibhavari.com</code> for your blog. Pointing it at your website takes one DNS record. Receiving email at <code>hello@vibhavari.com</code> takes a different one. Proving to Google that you own the domain takes a third.</p>
+<p>One domain, three jobs, three different records.</p>
+<blockquote>
+<p>A domain isn&#39;t one address. It&#39;s a set of records, and each record answers a different question about it.</p>
+</blockquote>
+<p>In <a href="/blog/how-dns-resolution-works">How DNS Resolution Works</a> we followed a lookup down to the authoritative server that &quot;holds the records&quot;. This post is about those records: the six types you&#39;ll actually use, what each one does, and when you need it.</p>
+<h2 id="one-domain-many-jobs">One Domain, Many Jobs<a class="heading-anchor" href="#one-domain-many-jobs" aria-label="Link to this section">#</a></h2>
+<p>Think about a contact in your phone. You don&#39;t store just one piece of information: you save their mobile number, work number, email, maybe their home address. Each one serves a different purpose, but they all belong to the same person.</p>
+<p>DNS records work the same way. Your website needs to load. Emails need to arrive. Subdomains need to work. Ownership needs to be verified. A single IP address can&#39;t express all of that, so DNS stores <strong>records</strong>: different types of entries that tell the internet how to handle different requests for your domain.</p>
+<h2 id="a-record-name-ipv4-address">A Record: Name → IPv4 Address<a class="heading-anchor" href="#a-record-name-ipv4-address" aria-label="Link to this section">#</a></h2>
+<p>A → &quot;Address&quot;, the most fundamental record type. It maps a domain to an IPv4 address. When a <a href="/blog/how-dns-resolution-works">DNS resolver</a> asks for a domain&#39;s address, the A record returns the 32-bit IPv4 address attached to it.</p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang"></span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki"><code>example.com.    3600    IN    A           93.184.216.34</code></pre>
+    </div><ul>
+<li>TTL (Time To Live): 3600 seconds</li>
+<li>Class: IN (Internet)</li>
+<li>Type: A</li>
+<li>Value: IPv4 address</li>
+</ul>
+<p>Most websites have a single A record, but some high-traffic sites have several, and resolvers rotate between them as a simple form of load balancing (round robin).</p>
+<p>Imagine you&#39;re looking up &quot;Krishna&#39;s Kapi Shop&quot; in a city directory. The A record is the entry that says &quot;Krishna&#39;s Kapi Shop → 742 Evergreen Terrace.&quot; Now you know exactly which building (server) to go to. Without it, you know the name but can&#39;t find the place.</p>
+<h4 id="when-and-why-used">When and Why Used<a class="heading-anchor" href="#when-and-why-used" aria-label="Link to this section">#</a></h4>
+<ul>
+<li><strong>Primary use</strong>: Pointing your domain to your web server</li>
+<li><strong>When</strong>: Every website needs at least one A record for the root domain (or an AAAA record for IPv6)</li>
+<li><strong>Why</strong>: Without it, browsers can&#39;t find your website; they need the IP address to connect</li>
+<li><strong>Example scenario</strong>: You host your website on a server at IP 203.0.113.50. You create an A record so <code>mysite.com</code> points to that IP</li>
+</ul>
+<h2 id="aaaa-record-name-ipv6-address">AAAA Record: Name → IPv6 Address<a class="heading-anchor" href="#aaaa-record-name-ipv6-address" aria-label="Link to this section">#</a></h2>
+<p>An AAAA record maps a domain name to a 128-bit IPv6 address. It works exactly like an A record, but for the newer IPv6 addressing scheme. The name comes from IPv6 addresses being four times larger than IPv4 (128 bits vs 32 bits).</p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang"></span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki"><code>example.com. 3600 IN AAAA 2001:0db8:85a3:0000:0000:8a2e:0370:7334</code></pre>
+    </div><p>Think of phone numbers. The old system had short local numbers (IPv4), and we ran out. Now there are longer numbers with country codes and more digits (IPv6). Both get you to the same place; they&#39;re just different numbering systems.</p>
+<h4 id="when-and-why-used-1">When and Why Used<a class="heading-anchor" href="#when-and-why-used-1" aria-label="Link to this section">#</a></h4>
+<ul>
+<li><strong>Primary use</strong>: Making your services reachable over IPv6</li>
+<li><strong>When</strong>: Increasingly necessary as IPv4 addresses run out; major sites have both A and AAAA records</li>
+<li><strong>Why</strong>: Some networks are IPv6-only, and IPv6 clients can reach you directly without translation</li>
+<li><strong>Example scenario</strong>: Your hosting provider gives you an IPv6 address. You add an AAAA record so visitors on IPv6 networks can reach you directly</li>
+</ul>
+<h2 id="cname-record-name-another-name">CNAME Record: Name → Another Name<a class="heading-anchor" href="#cname-record-name-another-name" aria-label="Link to this section">#</a></h2>
+<p>CNAME is easiest to understand with a common setup: a blog on GitHub Pages.</p>
+<p><strong>The default.</strong> GitHub hosts every Pages site at its own address:</p>
+<ul>
+<li>Personal site: <code>username.github.io</code></li>
+<li>Project site: <code>username.github.io/repository-name</code></li>
+</ul>
+<p>Say my GitHub username is <code>vibhavari</code>. Then my site lives at <code>vibhavari.github.io</code>.</p>
+<p><strong>The problem.</strong> I want my blog at <code>www.vibhavari.com</code> instead, because:</p>
+<ul>
+<li>A custom domain looks more professional</li>
+<li>It&#39;s easier to remember</li>
+<li>I control the branding</li>
+<li>I can move away from GitHub Pages later without breaking links</li>
+</ul>
+<h4 id="how-cname-solves-this">How CNAME Solves This<a class="heading-anchor" href="#how-cname-solves-this" aria-label="Link to this section">#</a></h4>
+<p>My content actually lives at <code>vibhavari.github.io</code>, on servers whose IP addresses GitHub controls, and can change. I don&#39;t want to copy those IPs into my DNS. I want to say &quot;<code>www.vibhavari.com</code> is whatever <code>vibhavari.github.io</code> is&quot;.</p>
+<p>That&#39;s exactly a CNAME. In the DNS provider (Cloudflare, GoDaddy, Route53, etc.), I create:</p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang"></span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki"><code>www.vibhavari.com.  3600  IN  CNAME  vibhavari.github.io.</code></pre>
+    </div><p>This means:</p>
+<ul>
+<li>&quot;When someone asks for <code>www.vibhavari.com</code>, look up <code>vibhavari.github.io</code> instead&quot;</li>
+<li>The resolver follows the chain: <code>www.vibhavari.com</code> → <code>vibhavari.github.io</code> → (GitHub&#39;s A records) → IP address</li>
+</ul>
+<p>Then, in the repository settings, I tell GitHub to accept traffic for <code>www.vibhavari.com</code>, and GitHub adds a <code>CNAME</code> file containing <code>www.vibhavari.com</code> to the repository root.</p>
+<p>So a CNAME record creates an alias: it maps one domain name to another (the canonical name). When a resolver meets a CNAME, it performs another lookup for the target. If GitHub changes its IPs tomorrow, my site keeps working.</p>
+<aside class="callout callout-warning">
+      <p class="callout-title">Warning</p>
+      <div class="callout-body"><p>You CANNOT have a CNAME at the root domain (<code>example.com</code>) - only subdomains (<code>www.example.com</code>, <code>blog.example.com</code>, etc.). A CNAME can&#39;t share its name with any other record, and the root domain always needs NS records.</p>
+</div>
+    </aside>
+
+<h2 id="ns-record-who-answers-for-this-domain">NS Record: Who Answers for This Domain<a class="heading-anchor" href="#ns-record-who-answers-for-this-domain" aria-label="Link to this section">#</a></h2>
+<p>An NS record delegates a DNS zone to a specific <code>authoritative name server</code>. It tells resolvers which servers are allowed to answer questions about a domain. Every domain should have at least two NS records, for redundancy.</p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang"></span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki"><code>example.com. 86400 IN NS ns1.nameserver.com.</code></pre>
+    </div><p>Think of a <strong>corporate directory</strong>: the main receptionist doesn&#39;t know everyone&#39;s extension. When you ask for Marketing, they say: &quot;Marketing is handled by extension 5000, let me transfer you.&quot; The NS record is that transfer.</p>
+<h4 id="when-and-why-used-2">When and Why Used<a class="heading-anchor" href="#when-and-why-used-2" aria-label="Link to this section">#</a></h4>
+<ul>
+<li><strong>Primary use</strong>: Delegating DNS authority for a domain or subdomain</li>
+<li><strong>When</strong>: Setting up a domain, delegating subdomains to different DNS providers, using a CDN</li>
+<li><strong>Why</strong>: Lets different teams or services control their own part of a domain</li>
+<li><strong>Example scenario</strong>: You register <code>example.com</code> at a registrar, then point its NS records to your DNS hosting provider (like Cloudflare or Route53)</li>
+</ul>
+<h2 id="mx-record-where-email-goes">MX Record: Where Email Goes<a class="heading-anchor" href="#mx-record-where-email-goes" aria-label="Link to this section">#</a></h2>
+<p>An MX record names the mail servers that accept email for a domain. Each has a priority value (lower number = tried first), which allows fallback servers. When someone sends email to <code>user@example.com</code>, their mail server looks up the MX records to find where to deliver it.</p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang"></span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki"><code>example.com. 3600 IN MX 10 mail1.example.com.</code></pre>
+    </div><ul>
+<li>Priority: 10 (lower is preferred)</li>
+<li>Mail server: <code>mail1.example.com</code></li>
+</ul>
+<p>Think of a <strong>company mail room with backups</strong>:</p>
+<ul>
+<li><strong>Priority 10</strong>: Main mail room - <code>mail1.example.com</code></li>
+<li><strong>Priority 20</strong>: Backup mail room, if the main one is closed - <code>mail2.example.com</code></li>
+<li><strong>Priority 30</strong>: Emergency off-site facility - <code>mail3.example.com</code></li>
+</ul>
+<p>The postal service tries the priority 10 location first. If it&#39;s unavailable, it tries priority 20, and so on.</p>
+<h4 id="when-and-why-used-3">When and Why Used<a class="heading-anchor" href="#when-and-why-used-3" aria-label="Link to this section">#</a></h4>
+<ul>
+<li><strong>Primary use</strong>: Directing email to the correct mail servers</li>
+<li><strong>When</strong>: Setting up email for your domain, for example with Google Workspace or Microsoft 365</li>
+<li><strong>Why</strong>: Keeps email separate from web hosting, and gives you redundancy</li>
+<li><strong>Example scenario</strong>: You use Google Workspace for email, so you create MX records:</li>
+</ul>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang"></span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki"><code>  example.com. IN MX 1 aspmx.l.google.com.
+  example.com. IN MX 5 alt1.aspmx.l.google.com.
+  example.com. IN MX 5 alt2.aspmx.l.google.com.</code></pre>
+    </div><p>If the primary server is down, email automatically goes to the backups.</p>
+<h2 id="txt-record-notes-for-machines">TXT Record: Notes for Machines<a class="heading-anchor" href="#txt-record-notes-for-machines" aria-label="Link to this section">#</a></h2>
+<p>A TXT record stores arbitrary text on a domain. It was originally meant for human-readable notes, but today it&#39;s mostly used for machine-readable data: domain verification and email security policies (SPF, DKIM, DMARC). Each string can be up to 255 characters, and several strings can be combined.</p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang"></span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki"><code>example.com. 3600 IN TXT &quot;v=spf1 include:_spf.google.com ~all&quot;</code></pre>
+    </div><p>Think of a notice board outside your house:</p>
+<ul>
+<li>&quot;This is indeed the Johnson residence&quot; (domain verification)</li>
+<li>&quot;We only accept mail from USPS and FedEx&quot; (SPF)</li>
+<li>&quot;Packages should be left with neighbor at #125&quot; (special instructions)</li>
+</ul>
+<h4 id="when-and-why-used-4">When and Why Used<a class="heading-anchor" href="#when-and-why-used-4" aria-label="Link to this section">#</a></h4>
+<ul>
+<li><strong>Primary use</strong>: Domain verification, email authentication, security policies</li>
+<li><strong>When</strong>: Proving domain ownership, preventing email spoofing, setting up third-party services</li>
+<li><strong>Why</strong>: A flexible way to attach data to a domain without inventing new record types</li>
+</ul>
+<p><strong>Common Use Cases:</strong></p>
+<p><strong>1. Domain Verification</strong></p>
+<ul>
+<li><strong>When</strong>: Setting up Google Workspace, Microsoft 365, or any service that needs proof you own the domain</li>
+<li><strong>Example</strong>: <code>example.com. IN TXT &quot;google-site-verification=abc123xyz&quot;</code></li>
+<li><strong>Why</strong>: Proves you control the domain before the service activates</li>
+</ul>
+<p><strong>2. SPF (Sender Policy Framework)</strong></p>
+<ul>
+<li><strong>When</strong>: Configuring email to prevent spoofing</li>
+<li><strong>Example</strong>: <code>example.com. IN TXT &quot;v=spf1 ip4:192.0.2.1 include:_spf.google.com ~all&quot;</code></li>
+<li><strong>Why</strong>: Lists which servers may send email for your domain, which reduces spam and phishing</li>
+<li><strong>Translation</strong>: &quot;Only these mail servers can send email claiming to be from @example.com&quot;</li>
+</ul>
+<h2 id="the-whole-domain-as-a-city">The Whole Domain as a City<a class="heading-anchor" href="#the-whole-domain-as-a-city" aria-label="Link to this section">#</a></h2>
+<ul>
+<li><strong>NS Records</strong> → City charter (who governs)</li>
+<li><strong>A/AAAA Records</strong> → Building addresses (where things are)</li>
+<li><strong>CNAME Records</strong> → Street signs &amp; aliases (how to find things)</li>
+<li><strong>MX Records</strong> → Post office system (mail delivery)</li>
+<li><strong>TXT Records</strong> → Business licenses &amp; permits (verification &amp; security)</li>
+</ul>
+<p>So back to <code>vibhavari.com</code>: a CNAME for the blog, MX records for email, a TXT record for Google, and NS records saying who answers for all of them. One domain, a different record for every job.</p>
+<p>More posts on <a href="/blog/tags/networking/">networking</a>.</p>
+7:["$","main",null,{"className":"section post-page","children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","$L14",null,{"targetId":"post-body"}],["$","$L15",null,{"slug":"dns-record-types","targetId":"post-body"}],["$","$L16",null,{}],["$","div",null,{"className":"container article-layout","children":[["$","article",null,{"className":"article","children":[["$","nav",null,{"className":"breadcrumbs","aria-label":"Breadcrumb","children":["$","ol",null,{"children":[[["$","li","/",{"children":["$","$L5",null,{"href":"/","children":"Home"}]}],["$","li","/blog/",{"children":["$","$L5",null,{"href":"/blog/","children":"Blog"}]}],["$","li","/blog/tags/networking/",{"children":["$","$L5",null,{"href":"/blog/tags/networking/","children":"Networking"}]}]],["$","li",null,{"aria-current":"page","children":"DNS Record Types Explained"}]]}]}],["$","header",null,{"className":"article-head","children":[["$","h1",null,{"children":"DNS Record Types Explained"}],["$","div",null,{"className":"article-tools","children":[["$","p",null,{"className":"post-tags","children":[["$","$L5","networking",{"className":"tag-chip","href":"/blog/tags/networking/","children":"Networking"}],["$","$L5","hashnode",{"className":"tag-chip","href":"/blog/tags/hashnode/","children":"Hashnode"}]]}],["$","div",null,{"className":"post-actions","children":[["$","$L17",null,{"slug":"dns-record-types"}],["$","$L18",null,{"slug":"dns-record-types"}],["$","$L19",null,{"title":"DNS Record Types Explained","text":"Pointing a domain at your website takes one DNS record. Receiving email takes another. Proving to Google you own it takes a third. A, AAAA, CNAME, NS, MX and…","url":"https://buildwithvibs.in/blog/dns-record-types/"}]]}]]}],["$","div",null,{"className":"byline","children":[["$","$L1a",null,{"className":"byline-photo","src":"/me/vibhavari_bellutagi-avatar.jpg","alt":"","width":44,"height":44}],["$","div",null,{"children":[["$","p",null,{"className":"byline-name","children":"Vibhavari Bellutagi"}],["$","p",null,{"className":"post-meta","children":["Jan 26, 2026"," · ","8 min read",["$","$L1b",null,{"path":"/blog/dns-record-types/"}]]}]]}]]}]]}],null,["$","$L1c",null,{"headings":[{"level":2,"id":"one-domain-many-jobs","text":"One Domain, Many Jobs"},{"level":2,"id":"a-record-name-ipv4-address","text":"A Record: Name → IPv4 Address"},{"level":2,"id":"aaaa-record-name-ipv6-address","text":"AAAA Record: Name → IPv6 Address"},{"level":2,"id":"cname-record-name-another-name","text":"CNAME Record: Name → Another Name"},{"level":2,"id":"ns-record-who-answers-for-this-domain","text":"NS Record: Who Answers for This Domain"},{"level":2,"id":"mx-record-where-email-goes","text":"MX Record: Where Email Goes"},{"level":2,"id":"txt-record-notes-for-machines","text":"TXT Record: Notes for Machines"},{"level":2,"id":"the-whole-domain-as-a-city","text":"The Whole Domain as a City"}],"variant":"inline"}],["$","div",null,{"id":"post-body","className":"article-content","children":[["$","div","0",{"className":"article-html","dangerouslySetInnerHTML":{"__html":"$1d"}}]]}],"$L1e","$L1f"]}],"$L20"]}]]}]
+1e:["$","section",null,{"className":"read-next","aria-labelledby":"read-next-title","children":[["$","h2",null,{"id":"read-next-title","className":"read-next-title","children":"Read next"}],"$undefined",["$","ul",null,{"className":"read-next-list","children":[["$","li","tcp-3-way-handshake",{"children":["$","$L5",null,{"className":"post-item","href":"/blog/tcp-3-way-handshake/","children":[["$","span",null,{"className":"post-meta","children":["Jan 30, 2026"," · ","6 min read"]}],["$","span",null,{"className":"post-title","children":"TCP Working: 3-Way Handshake & Reliable Communication"}],["$","ul",null,{"className":"tags post-row-tags","children":[["$","li","networking",{"children":"Networking"}],["$","li","hashnode",{"children":"Hashnode"}]]}]]}]}],["$","li","tcp-and-udp",{"children":["$","$L5",null,{"className":"post-item","href":"/blog/tcp-and-udp/","children":[["$","span",null,{"className":"post-meta","children":["Jan 28, 2026"," · ","5 min read"]}],["$","span",null,{"className":"post-title","children":"Networking Basics: Comparing TCP and UDP Protocols"}],["$","ul",null,{"className":"tags post-row-tags","children":[["$","li","networking",{"children":"Networking"}],["$","li","hashnode",{"children":"Hashnode"}]]}]]}]}],["$","li","getting-started-with-curl",{"children":["$","$L5",null,{"className":"post-item","href":"/blog/getting-started-with-curl/","children":[["$","span",null,{"className":"post-meta","children":["Jan 28, 2026"," · ","4 min read"]}],["$","span",null,{"className":"post-title","children":"Getting Started with cURL"}],["$","ul",null,{"className":"tags post-row-tags","children":[["$","li","networking",{"children":"Networking"}],["$","li","hashnode",{"children":"Hashnode"}]]}]]}]}]]}],"$undefined"]}]
+1f:["$","footer",null,{"className":"article-foot","children":[["$","$L5",null,{"className":"text-link","href":"/blog/","children":"← All posts"}],["$","$L5",null,{"className":"text-link","href":"/#contact","children":"Work with me →"}]]}]
+20:["$","aside",null,{"className":"post-sidebar","children":[["$","section",null,{"className":"author-card","aria-label":"About the author","children":[["$","$L1a",null,{"className":"author-photo","src":"/me/vibhavari_bellutagi-avatar.jpg","alt":"Vibhavari Bellutagi","width":96,"height":96}],["$","p",null,{"className":"author-name","children":"Vibhavari Bellutagi"}],["$","p",null,{"className":"author-bio","children":["Freelance Full-Stack Developer",". 10+ years in software, seven of them building data platforms (Spark, Kafka, Databricks) at Deloitte, AgileLab and Mews. Now building products end to end, including"," ",["$","$L5",null,{"href":"/#work","children":"Move"}],", a gym management app."]}],["$","$L5",null,{"className":"btn btn-primary btn-sm author-cta","href":"/#contact","children":"Work with me"}],["$","ul",null,{"className":"author-links","children":[["$","li","github",{"children":["$","a",null,{"href":"https://github.com/vibhabellutagi19","aria-label":"GitHub","title":"GitHub","target":"_blank","rel":"noopener noreferrer","children":["$","svg",null,{"viewBox":"0 0 24 24","width":"18","height":"18","aria-hidden":"true","children":["$","path",null,{"d":"M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"}]}]}]}],["$","li","linkedin",{"children":["$","a",null,{"href":"https://www.linkedin.com/in/vibhavari-bellutagi/","aria-label":"LinkedIn","title":"LinkedIn","target":"_blank","rel":"noopener noreferrer","children":["$","svg",null,{"viewBox":"0 0 24 24","width":"18","height":"18","aria-hidden":"true","children":["$","path",null,{"d":"M8 11v5M8 8v.01M12 16v-5M16 16v-3a2 2 0 1 0 -4 0M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z"}]}]}]}],["$","li","mail",{"children":["$","a",null,{"href":"mailto:vibhavari.bellutagi@gmail.com","aria-label":"Email","title":"Email","children":["$","svg",null,{"viewBox":"0 0 24 24","width":"18","height":"18","aria-hidden":"true","children":["$","path",null,{"d":"M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10zM3 7l9 6l9 -6"}]}]}]}],["$","li","rss",{"children":["$","a",null,{"href":"/feed.xml","aria-label":"RSS feed","title":"RSS feed","children":["$","svg",null,{"viewBox":"0 0 24 24","width":"18","height":"18","aria-hidden":"true","children":["$","path",null,{"d":"M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0M4 4a16 16 0 0 1 16 16M4 11a9 9 0 0 1 9 9"}]}]}]}]]}]]}],["$","$L1c",null,{"headings":"$7:props:children:4:props:children:0:props:children:3:props:headings","variant":"side"}]]}]

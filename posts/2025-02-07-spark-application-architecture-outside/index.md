@@ -1,18 +1,23 @@
 ---
 title: 'The Life Cycle of a Spark Application ( Outside )'
 date: 'Feb 7, 2025'
+excerpt: "You run spark-submit and, a while later, get a result. In between, four things happen and none of them are in your code: the request, the launch, the execution and the shutdown."
 slug: 'spark-application-lifecycle-outside'
+series: "Apache Spark"
+tags: "apache-spark"
 ---
 
-In this blog, we will go in-depth on the overall life cycle of Spark Applications from outside the actual Spark code. Before going ahead, I recommend reading the [Execution Modes](/blog/spark-execution-modes) of the Spark application.
+You type `spark-submit`, press enter, and some time later the result shows up. Your code ran somewhere in the middle of that, but most of what happened wasn't your code at all.
+
+> Before your first line of Spark code runs, a driver has to be placed, executors have to be requested, and a cluster has to agree to give them to you.
+
+This post follows a Spark application from the outside, in four steps: the request, the launch, the execution and the completion. It assumes **cluster mode**, where the driver runs inside the cluster; if that's new, read [Spark Execution Modes](/blog/spark-execution-modes) first.
 
 <!-- truncate -->
 
-## Client Request
+## 1. The Request: spark-submit Asks for a Driver
 
-- The first step is the client request. This is the request that is made by the user to the Spark Application.
-- This request can be made in a variety of ways: Compiled Jars or a library. The most common way is through the `Spark Submit` command Using compiled Jars.
-- At this point, the client is executing code on the local machine and is going to make a request to the cluster manager driver node.
+Everything starts on your machine. `spark-submit` packages up what to run and sends a request to the **cluster manager** (YARN, Kubernetes, or Spark's standalone master): "please start a driver for this application".
 
 ![Requesting Resources](assets/requesting_resources.gif)
 
@@ -27,42 +32,51 @@ In this blog, we will go in-depth on the overall life cycle of Spark Application
   [application-arguments]
 ```
 
-The Spark Submit command takes number of arguments, for example:
+The arguments describe the application, not the work:
 
-- the main class of the Application
-- the master URL ( local, yarn, Mesos etc )
-- the deploy mode (local, cluster, client)
-- the configuration of the application
-- Other arguments like the number of executors to use, the amount of memory to allocate to each executor, the location of the input data.
-- the location of the application jar file.
+- `--class`: the main class of the application
+- `--master`: which cluster manager to talk to (`yarn`, `k8s://…`, `spark://…`, or `local` for no cluster)
+- `--deploy-mode`: where the driver runs, `cluster` or `client`
+- `--conf`: configuration such as executor count, memory and cores
+- the application JAR (or Python file) and its arguments
 
-## Launch
+At this point no Spark code has run. Your machine has only asked for a driver.
 
-- After the spark-submit command is executed, the driver process has been placed on the cluster, begins running user code
-- The user code should contain `SparkSession`, which is responsible for initializing the Spark Cluster(eg: driver and executors).
-- Subsequently, the `SparkSession` will communicate with cluster manager for launching the spark executors processors across the cluster.
-- The relevant configurations like number of executors, memory, cores etc are passed to the cluster manager by user via `spark-submit` command.
+## 2. The Launch: The Driver Asks for Executors
+
+The cluster manager starts the driver process on one of the cluster's nodes, and the driver starts running your code.
+
+One of the first things your code does is create a `SparkSession`. That's the moment the driver turns to the cluster manager again, this time asking for **executors**, with the number, memory and cores you passed to `spark-submit`. The cluster manager launches the executor processes across the cluster and tells the driver where they are.
 
 ![Launch Application](assets/launch.gif)
 
-## Execution
+Now there's a driver and a set of executors, and the application finally has somewhere to run.
 
-- Spark Context is created now, spark goes about executing the code.
-- The driver process and executors communicate with each other, executing code and moving data between each other.
-- The driver schedules tasks onto each worker, and each worker responds with the status of those tasks and success or failure.
+## 3. Execution: The Driver Schedules, Executors Report Back
+
+With executors running, the driver goes through your code. Each action becomes a job, each job is split into stages and tasks (see [Under the hood of a Spark job](/blog/spark-job-anatomy)), and the driver sends those tasks to the executors.
+
+The executors run them, move data between each other when a shuffle needs it, and report each task's success or failure back to the driver. The cluster manager isn't involved here at all: it only hands out resources.
 
 ![Execution](assets/execution.gif)
 
-## Completion
+## 4. Completion: The Cluster Manager Cleans Up
 
-- Upon completion, the driver process exits with either success or failure.
-- The cluster manager shuts down the executors in the Spark cluster for the driver.
-- The success or failure of the Spark Application can be checked by querying the cluster manager.
+When your code finishes, the driver exits with either success or failure. The cluster manager then shuts down the executors that belonged to that driver and frees their resources for the next application.
 
 ![Completion](assets/completion.gif)
 
-## Conclusion
+To find out whether the application succeeded, ask the cluster manager (for example, the YARN ResourceManager UI), not your terminal: in cluster mode, your machine stopped being involved after step 1.
 
-In this blog, we have explored the overall life cycle of a Spark Application from outside the actual Spark code. We have detailed how the client request is made, how the Spark Application is launched, how the code is executed, and how the Spark Application reaches its completion. If you are interested in more such content, do check out [Apache Spark](/blog/tags/apache-spark) series.
+## The Whole Trip
 
-If you have any questions or feedback, feel free to reach out to me.
+| Step | Who acts | What happens |
+| --- | --- | --- |
+| Request | Your machine → cluster manager | `spark-submit` asks for a driver |
+| Launch | Driver → cluster manager | `SparkSession` asks for executors |
+| Execution | Driver ↔ executors | Tasks are scheduled, run and reported |
+| Completion | Cluster manager | Executors are shut down and resources freed |
+
+So when a job is "slow to start", it might not be your code at all. It might still be at step 1 or 2, waiting for the cluster to hand over a driver or executors.
+
+More in the [Apache Spark](/blog/tags/apache-spark) series.

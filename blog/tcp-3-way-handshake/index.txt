@@ -1,0 +1,192 @@
+1:"$Sreact.fragment"
+2:I[4493,["860","static/chunks/860-8aefa8da6e6a472b.js","177","static/chunks/app/layout-abae048957121d27.js"],"Header"]
+3:I[7449,[],""]
+4:I[6637,[],""]
+5:I[6860,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],""]
+6:I[3901,["860","static/chunks/860-8aefa8da6e6a472b.js","177","static/chunks/app/layout-abae048957121d27.js"],"GoatCounter"]
+8:I[3868,[],"OutletBoundary"]
+a:I[3589,[],"AsyncMetadataOutlet"]
+c:I[3868,[],"ViewportBoundary"]
+e:I[3868,[],"MetadataBoundary"]
+f:"$Sreact.suspense"
+11:I[5227,[],""]
+:HL["/_next/static/media/558ca1a6aa3cb55e-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/af4bf8399d1aacdf-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/e4af272ccee01ff0-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/3eef02d45825f04f.css","style"]
+0:{"P":null,"b":"jl6XMdaFAN4NgsPHiuLcv","p":"","c":["","blog","tcp-3-way-handshake",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","tcp-3-way-handshake","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/3eef02d45825f04f.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","className":"__variable_d8ebd1 __variable_a0f193 __variable_a3cc63","children":["$","body",null,{"children":[["$","a",null,{"className":"skip-link","href":"#main","children":"Skip to content"}],["$","$L2",null,{}],["$","div",null,{"id":"main","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"site-footer","children":["$","div",null,{"className":"container footer-row","children":[["$","p",null,{"className":"footer-copy","children":["© 2026 ","Vibhavari Bellutagi"]}],["$","div",null,{"className":"footer-links","children":[["$","a",null,{"href":"mailto:vibhavari.bellutagi@gmail.com","children":"Email"}],["$","a",null,{"href":"https://wa.me/919742352994?text=Hi%20Vibhavari%2C%20I'd%20like%20to%20discuss%20a%20project.","target":"_blank","rel":"noreferrer","children":"WhatsApp"}],["$","a",null,{"href":"https://www.linkedin.com/in/vibhavari-bellutagi/","target":"_blank","rel":"noreferrer","children":"LinkedIn"}],["$","a",null,{"href":"https://github.com/vibhabellutagi19","target":"_blank","rel":"noreferrer","children":"GitHub"}],["$","$L5",null,{"href":"/blog/","children":"Blog"}]]}]]}]}],["$","$L6",null,{"code":"vibhavaribellutagi"}]]}]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","tcp-3-way-handshake","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L7",null,["$","$L8",null,{"children":["$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$Le",null,{"children":["$","div",null,{"hidden":true,"children":["$","$f",null,{"fallback":null,"children":"$L10"}]}]}]]}],false]],"m":"$undefined","G":["$11",[]],"s":false,"S":true}
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+9:null
+12:I[3581,[],"IconMark"]
+b:{"metadata":[["$","title","0",{"children":"TCP Working: 3-Way Handshake & Reliable Communication · Vibhavari Bellutagi"}],["$","meta","1",{"name":"description","content":"Before your browser sends a byte of HTTP, it trades three packets with the server, and none of them carry data. They exist to agree on one thing: where to…"}],["$","link","2",{"rel":"author","href":"https://buildwithvibs.in"}],["$","meta","3",{"name":"author","content":"Vibhavari Bellutagi"}],["$","meta","4",{"name":"keywords","content":"Networking,Hashnode"}],["$","link","5",{"rel":"canonical","href":"https://buildwithvibs.in/blog/tcp-3-way-handshake/"}],["$","link","6",{"rel":"alternate","type":"application/rss+xml","title":"Vibhavari Bellutagi · Blog","href":"https://buildwithvibs.in/feed.xml"}],["$","meta","7",{"property":"og:title","content":"TCP Working: 3-Way Handshake & Reliable Communication · Vibhavari Bellutagi"}],["$","meta","8",{"property":"og:description","content":"Before your browser sends a byte of HTTP, it trades three packets with the server, and none of them carry data. They exist to agree on one thing: where to…"}],["$","meta","9",{"property":"og:url","content":"https://buildwithvibs.in/blog/tcp-3-way-handshake/"}],["$","meta","10",{"property":"og:image","content":"https://buildwithvibs.in/opengraph-image.jpg"}],["$","meta","11",{"property":"og:type","content":"article"}],["$","meta","12",{"property":"article:published_time","content":"2026-01-30"}],["$","meta","13",{"property":"article:author","content":"Vibhavari Bellutagi"}],["$","meta","14",{"property":"article:tag","content":"Networking"}],["$","meta","15",{"property":"article:tag","content":"Hashnode"}],["$","meta","16",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","17",{"name":"twitter:title","content":"TCP Working: 3-Way Handshake & Reliable Communication · Vibhavari Bellutagi"}],["$","meta","18",{"name":"twitter:description","content":"Before your browser sends a byte of HTTP, it trades three packets with the server, and none of them carry data. They exist to agree on one thing: where to…"}],["$","meta","19",{"name":"twitter:image","content":"https://buildwithvibs.in/twitter-image.jpg"}],["$","link","20",{"rel":"icon","href":"/icon.svg?0f63625a4946e8f0","type":"image/svg+xml","sizes":"any"}],["$","link","21",{"rel":"apple-touch-icon","href":"/apple-icon.png?ccfb558910f9ffaa","type":"image/png","sizes":"180x180"}],["$","$L12","22",{}]],"error":null,"digest":"$undefined"}
+10:"$b:metadata"
+14:I[5093,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"ReadingProgress"]
+15:I[1939,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"ResumeReading"]
+16:I[2498,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"CodeCopy"]
+17:I[2649,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"LikeButton"]
+18:I[667,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"SaveButton"]
+19:I[6097,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"ShareButton"]
+1a:I[653,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"Image"]
+1b:I[5560,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"ViewCount"]
+1c:I[4305,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"TableOfContents"]
+13:T46d,{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"TCP Working: 3-Way Handshake & Reliable Communication","description":"Before your browser sends a byte of HTTP, it trades three packets with the server, and none of them carry data. They exist to agree on one thing: where to…","datePublished":"2026-01-30","url":"https://buildwithvibs.in/blog/tcp-3-way-handshake/","mainEntityOfPage":"https://buildwithvibs.in/blog/tcp-3-way-handshake/","image":"https://buildwithvibs.in/opengraph-image.jpg","keywords":"Networking, Hashnode","author":{"@type":"Person","name":"Vibhavari Bellutagi","url":"https://buildwithvibs.in"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://buildwithvibs.in/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://buildwithvibs.in/blog/"},{"@type":"ListItem","position":3,"name":"Networking","item":"https://buildwithvibs.in/blog/tags/networking/"},{"@type":"ListItem","position":4,"name":"TCP Working: 3-Way Handshake & Reliable Communication","item":"https://buildwithvibs.in/blog/tcp-3-way-handshake/"}]}]}7:["$","main",null,{"className":"section post-page","children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","$L14",null,{"targetId":"post-body"}],["$","$L15",null,{"slug":"tcp-3-way-handshake","targetId":"post-body"}],["$","$L16",null,{}],["$","div",null,{"className":"container article-layout","children":[["$","article",null,{"className":"article","children":[["$","nav",null,{"className":"breadcrumbs","aria-label":"Breadcrumb","children":["$","ol",null,{"children":[[["$","li","/",{"children":["$","$L5",null,{"href":"/","children":"Home"}]}],["$","li","/blog/",{"children":["$","$L5",null,{"href":"/blog/","children":"Blog"}]}],["$","li","/blog/tags/networking/",{"children":["$","$L5",null,{"href":"/blog/tags/networking/","children":"Networking"}]}]],["$","li",null,{"aria-current":"page","children":"TCP Working: 3-Way Handshake & Reliable Communication"}]]}]}],["$","header",null,{"className":"article-head","children":[["$","h1",null,{"children":"TCP Working: 3-Way Handshake & Reliable Communication"}],["$","div",null,{"className":"article-tools","children":[["$","p",null,{"className":"post-tags","children":[["$","$L5","networking",{"className":"tag-chip","href":"/blog/tags/networking/","children":"Networking"}],["$","$L5","hashnode",{"className":"tag-chip","href":"/blog/tags/hashnode/","children":"Hashnode"}]]}],["$","div",null,{"className":"post-actions","children":[["$","$L17",null,{"slug":"tcp-3-way-handshake"}],["$","$L18",null,{"slug":"tcp-3-way-handshake"}],["$","$L19",null,{"title":"TCP Working: 3-Way Handshake & Reliable Communication","text":"Before your browser sends a byte of HTTP, it trades three packets with the server, and none of them carry data. They exist to agree on one thing: where to…","url":"https://buildwithvibs.in/blog/tcp-3-way-handshake/"}]]}]]}],["$","div",null,{"className":"byline","children":[["$","$L1a",null,{"className":"byline-photo","src":"/me/vibhavari_bellutagi-avatar.jpg","alt":"","width":44,"height":44}],["$","div",null,{"children":[["$","p",null,{"className":"byline-name","children":"Vibhavari Bellutagi"}],["$","p",null,{"className":"post-meta","children":["Jan 30, 2026"," · ","6 min read",["$","$L1b",null,{"path":"/blog/tcp-3-way-handshake/"}]]}]]}]]}]]}],null,["$","$L1c",null,{"headings":[{"level":2,"id":"ip-makes-no-promises-tcp-does","text":"IP Makes No Promises; TCP Does"},{"level":2,"id":"six-ways-a-network-breaks-your-data","text":"Six Ways a Network Breaks Your Data"},{"level":2,"id":"the-handshake-is-about-sequence-numbers","text":"The Handshake Is About Sequence Numbers"},{"level":3,"id":"every-byte-gets-a-number","text":"Every Byte Gets a Number"},{"level":2,"id":"how-tcp-keeps-its-promises","text":"How TCP Keeps Its Promises"},{"level":2,"id":"closing-takes-four-messages-not-three","text":"Closing Takes Four Messages, Not Three"}],"variant":"inline"}],["$","div",null,{"id":"post-body","className":"article-content","children":["$L1d"]}],"$L1e","$L1f"]}],"$L20"]}]]}]
+21:T26d1,<p>Before your browser sends a single byte of an HTTP request, it has already exchanged three packets with the server. None of them carry any data.</p>
+<p>They exist so that both sides agree on one thing: which number each of them will start counting bytes from.</p>
+<blockquote>
+<p>The handshake isn&#39;t a greeting. It&#39;s how both sides synchronize sequence numbers, and every TCP guarantee is built on those numbers.</p>
+</blockquote>
+<p>This post covers why TCP is needed at all, what can go wrong on a network, the handshake step by step, how data is acknowledged, and how a connection is closed.</p>
+<h2 id="ip-makes-no-promises-tcp-does">IP Makes No Promises; TCP Does<a class="heading-anchor" href="#ip-makes-no-promises-tcp-does" aria-label="Link to this section">#</a></h2>
+<p><strong>TCP (Transmission Control Protocol)</strong> is one of the core protocols of the Internet Protocol Suite. It runs at the Transport Layer (Layer 4) and gives applications reliable, ordered, error-checked delivery of data.</p>
+<p>It&#39;s needed because the layer below it, the Internet Protocol (IP), is <strong>unreliable</strong>: packets can be lost, duplicated, delayed or arrive out of order. Applications don&#39;t want to deal with that. A developer wants to write data into a stream and trust it arrives intact.</p>
+<p>Think of TCP as a postal service with tracking and confirmation. When you send a package, you want to know:</p>
+<ul>
+<li>Did it arrive?</li>
+<li>Did it arrive intact?</li>
+<li>Did it arrive in the right order (if you sent several)?</li>
+</ul>
+<p>TCP answers all three for every byte. Web browsers, email clients, file transfers and SSH all rely on it.</p>
+<hr>
+<h2 id="six-ways-a-network-breaks-your-data">Six Ways a Network Breaks Your Data<a class="heading-anchor" href="#six-ways-a-network-breaks-your-data" aria-label="Link to this section">#</a></h2>
+<table>
+<thead>
+<tr>
+<th><strong>Problem</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>TCP&#39;s Solution</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Packet Loss</strong></td>
+<td>Networks are unreliable. Packets can be dropped due to network congestion, router failures, or buffer overflows.</td>
+<td>Acknowledgments (ACKs) and retransmissions. The sender retransmits data if it doesn&#39;t receive an acknowledgment within a timeout period.</td>
+</tr>
+<tr>
+<td><strong>Out-of-Order Delivery</strong></td>
+<td>Packets can take different routes through the network and arrive in a different order than they were sent.</td>
+<td>Sequence numbers. Each byte of data is numbered, allowing the receiver to reorder packets correctly.</td>
+</tr>
+<tr>
+<td><strong>Data Corruption</strong></td>
+<td>Bits can be flipped during transmission due to electrical interference or hardware issues.</td>
+<td>Checksums. TCP includes a checksum in every segment to detect corrupted data.</td>
+</tr>
+<tr>
+<td><strong>Duplicate Packets</strong></td>
+<td>Network devices might accidentally send the same packet multiple times.</td>
+<td>Sequence numbers help identify and discard duplicate packets.</td>
+</tr>
+<tr>
+<td><strong>Flow Control</strong></td>
+<td>A fast sender can overwhelm a slow receiver.</td>
+<td>Sliding window mechanism that allows the receiver to tell the sender how much data it can handle.</td>
+</tr>
+<tr>
+<td><strong>Congestion Control</strong></td>
+<td>Too many senders can overwhelm the network itself.</td>
+<td>Congestion control algorithms (like Slow Start, Congestion Avoidance) that detect network congestion and reduce sending rates.</td>
+</tr>
+</tbody></table>
+<p>Notice how many of these rely on <strong>sequence numbers</strong>. That&#39;s why the connection can&#39;t start until both sides have agreed on them.</p>
+<h2 id="the-handshake-is-about-sequence-numbers">The Handshake Is About Sequence Numbers<a class="heading-anchor" href="#the-handshake-is-about-sequence-numbers" aria-label="Link to this section">#</a></h2>
+<p>Imagine starting a phone call with a friend:</p>
+<p><strong>You:</strong> &quot;Hey, can you hear me?&quot; (This is the <strong>SYN</strong>: you&#39;re initiating contact)<br><strong>Friend:</strong> &quot;Yes, I can hear you! Can you hear me?&quot; (This is the <strong>SYN-ACK</strong>: they acknowledge you AND check that you can hear them)<br><strong>You:</strong> &quot;Yep, I hear you too!&quot; (This is the <strong>ACK</strong>: you confirm you got their response)</p>
+<p>Now you both know the line works in both directions, and the actual conversation can start.</p>
+<p>In TCP terms:</p>
+<p><strong>Step 1: SYN (Synchronize)</strong></p>
+<ul>
+<li>The client sends a segment with the <strong>SYN flag</strong> set</li>
+<li>It includes its <strong>initial sequence number (ISN)</strong>, say <code>seq=1000</code></li>
+<li>Meaning: &quot;I want to connect, and I&#39;ll start numbering my bytes from 1000&quot;</li>
+</ul>
+<p><strong>Step 2: SYN-ACK (Synchronize-Acknowledge)</strong></p>
+<ul>
+<li>The server responds with <strong>both SYN and ACK flags</strong> set</li>
+<li>It sends its own initial sequence number, say <code>seq=5000</code></li>
+<li>It acknowledges the client&#39;s number: <code>ack=1001</code> (client&#39;s seq + 1)</li>
+<li>Meaning: &quot;Got it. I&#39;ll start numbering from 5000, and I expect your next byte to be 1001&quot;</li>
+</ul>
+<p><strong>Step 3: ACK (Acknowledge)</strong></p>
+<ul>
+<li>The client sends an ACK back</li>
+<li><code>seq=1001</code> (as the server expects)</li>
+<li><code>ack=5001</code> (server&#39;s seq + 1)</li>
+<li>Meaning: &quot;Got your number too. I expect your next byte to be 5001&quot;</li>
+</ul>
+<p><strong>Connection is now ESTABLISHED!</strong> Both sides know where the other starts counting.</p>
+<aside class="callout callout-note">
+      <p class="callout-title">Note</p>
+      <div class="callout-body"><p>Real initial sequence numbers are random, not 1000 and 5000. That makes it much harder for an attacker to guess them and inject fake packets into a connection.</p>
+</div>
+    </aside>
+
+<p><img src="/posts/2026-01-30-tcp-3-way-handshake/assets/image-1.png" loading="lazy" /></p>
+<h3 id="every-byte-gets-a-number">Every Byte Gets a Number<a class="heading-anchor" href="#every-byte-gets-a-number" aria-label="Link to this section">#</a></h3>
+<p>Once connected, TCP splits data into <strong>segments</strong>, each labelled with the sequence number of its first byte. The receiver acknowledges by saying which byte it expects next.</p>
+<p><strong>Example:</strong> You send &quot;Hello World&quot; (11 bytes), numbering from 1 for readability:</p>
+<ul>
+<li>TCP sends two segments: <code>[SEQ=1, &quot;Hello&quot;]</code> and <code>[SEQ=6, &quot; World&quot;]</code></li>
+<li>The receiver gets segment 1 → sends <code>ACK=6</code> (expecting byte 6 next)</li>
+<li>The receiver gets segment 2 → sends <code>ACK=12</code></li>
+</ul>
+<p>If <code>&quot; World&quot;</code> were lost, the receiver would keep saying <code>ACK=6</code>, and the sender would know exactly what to resend.</p>
+<h2 id="how-tcp-keeps-its-promises">How TCP Keeps Its Promises<a class="heading-anchor" href="#how-tcp-keeps-its-promises" aria-label="Link to this section">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Mechanism</th>
+<th>How It Works</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Sequence Numbers</strong></td>
+<td>Each byte gets a number. Receiver reorders out-of-order packets.</td>
+</tr>
+<tr>
+<td><strong>Acknowledgments (ACKs)</strong></td>
+<td>Receiver confirms receipt. Missing ACK triggers retransmission.</td>
+</tr>
+<tr>
+<td><strong>Checksum</strong></td>
+<td>Detects corrupted data. Bad packets are discarded and resent.</td>
+</tr>
+<tr>
+<td><strong>Retransmission Timer</strong></td>
+<td>If no ACK arrives in time, sender resends the segment.</td>
+</tr>
+<tr>
+<td><strong>Flow Control</strong></td>
+<td>Receiver advertises window size to prevent overwhelming it.</td>
+</tr>
+</tbody></table>
+<h2 id="closing-takes-four-messages-not-three">Closing Takes Four Messages, Not Three<a class="heading-anchor" href="#closing-takes-four-messages-not-three" aria-label="Link to this section">#</a></h2>
+<p>Either side can start closing, using the <strong>FIN</strong> (finish) flag. Each direction is closed separately, so it takes four messages:</p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang"></span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki"><code>    Client                    Server
+       |                         |
+       |-------- FIN -----------&gt;|   1. Client: &quot;I'm done sending&quot;
+       |&lt;------- ACK ------------|   2. Server: &quot;Got it&quot;
+       |                         |
+       |&lt;------- FIN ------------|   3. Server: &quot;I'm done too&quot;
+       |-------- ACK -----------&gt;|   4. Client: &quot;Got it, closing&quot;
+       |                         |
+    CLOSED                    CLOSED</code></pre>
+    </div><p><strong>Example:</strong> closing an HTTP connection</p>
+<ol>
+<li>The browser is done sending → sends <strong>FIN</strong></li>
+<li>The server acknowledges with <strong>ACK</strong></li>
+<li>The server finishes its response → sends its own <strong>FIN</strong></li>
+<li>The browser sends the final <strong>ACK</strong> → both sides close</li>
+</ol>
+<p>The side that closed first then waits in a <strong>TIME_WAIT</strong> state, for twice the maximum segment lifetime (60 seconds on Linux), so any delayed packets from the old connection die out before the same address and port are reused.</p>
+<hr>
+<p>Three packets with no data in them look like overhead. They&#39;re what lets TCP spot a missing byte, put segments back in order and throw away duplicates. Every guarantee TCP makes starts with two numbers agreed in that handshake.</p>
+<p>Compare with UDP in <a href="/blog/tcp-and-udp">TCP vs UDP</a>. More posts on <a href="/blog/tags/networking/">networking</a>.</p>
+1d:["$","div","0",{"className":"article-html","dangerouslySetInnerHTML":{"__html":"$21"}}]
+1e:["$","section",null,{"className":"read-next","aria-labelledby":"read-next-title","children":[["$","h2",null,{"id":"read-next-title","className":"read-next-title","children":"Read next"}],"$undefined",["$","ul",null,{"className":"read-next-list","children":[["$","li","tcp-and-udp",{"children":["$","$L5",null,{"className":"post-item","href":"/blog/tcp-and-udp/","children":[["$","span",null,{"className":"post-meta","children":["Jan 28, 2026"," · ","5 min read"]}],["$","span",null,{"className":"post-title","children":"Networking Basics: Comparing TCP and UDP Protocols"}],["$","ul",null,{"className":"tags post-row-tags","children":[["$","li","networking",{"children":"Networking"}],["$","li","hashnode",{"children":"Hashnode"}]]}]]}]}],["$","li","getting-started-with-curl",{"children":["$","$L5",null,{"className":"post-item","href":"/blog/getting-started-with-curl/","children":[["$","span",null,{"className":"post-meta","children":["Jan 28, 2026"," · ","4 min read"]}],["$","span",null,{"className":"post-title","children":"Getting Started with cURL"}],["$","ul",null,{"className":"tags post-row-tags","children":[["$","li","networking",{"children":"Networking"}],["$","li","hashnode",{"children":"Hashnode"}]]}]]}]}],["$","li","dns-record-types",{"children":["$","$L5",null,{"className":"post-item","href":"/blog/dns-record-types/","children":[["$","span",null,{"className":"post-meta","children":["Jan 26, 2026"," · ","8 min read"]}],["$","span",null,{"className":"post-title","children":"DNS Record Types Explained"}],["$","ul",null,{"className":"tags post-row-tags","children":[["$","li","networking",{"children":"Networking"}],["$","li","hashnode",{"children":"Hashnode"}]]}]]}]}]]}],"$undefined"]}]
+1f:["$","footer",null,{"className":"article-foot","children":[["$","$L5",null,{"className":"text-link","href":"/blog/","children":"← All posts"}],["$","$L5",null,{"className":"text-link","href":"/#contact","children":"Work with me →"}]]}]
+20:["$","aside",null,{"className":"post-sidebar","children":[["$","section",null,{"className":"author-card","aria-label":"About the author","children":[["$","$L1a",null,{"className":"author-photo","src":"/me/vibhavari_bellutagi-avatar.jpg","alt":"Vibhavari Bellutagi","width":96,"height":96}],["$","p",null,{"className":"author-name","children":"Vibhavari Bellutagi"}],["$","p",null,{"className":"author-bio","children":["Freelance Full-Stack Developer",". 10+ years in software, seven of them building data platforms (Spark, Kafka, Databricks) at Deloitte, AgileLab and Mews. Now building products end to end, including"," ",["$","$L5",null,{"href":"/#work","children":"Move"}],", a gym management app."]}],["$","$L5",null,{"className":"btn btn-primary btn-sm author-cta","href":"/#contact","children":"Work with me"}],["$","ul",null,{"className":"author-links","children":[["$","li","github",{"children":["$","a",null,{"href":"https://github.com/vibhabellutagi19","aria-label":"GitHub","title":"GitHub","target":"_blank","rel":"noopener noreferrer","children":["$","svg",null,{"viewBox":"0 0 24 24","width":"18","height":"18","aria-hidden":"true","children":["$","path",null,{"d":"M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"}]}]}]}],["$","li","linkedin",{"children":["$","a",null,{"href":"https://www.linkedin.com/in/vibhavari-bellutagi/","aria-label":"LinkedIn","title":"LinkedIn","target":"_blank","rel":"noopener noreferrer","children":["$","svg",null,{"viewBox":"0 0 24 24","width":"18","height":"18","aria-hidden":"true","children":["$","path",null,{"d":"M8 11v5M8 8v.01M12 16v-5M16 16v-3a2 2 0 1 0 -4 0M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z"}]}]}]}],["$","li","mail",{"children":["$","a",null,{"href":"mailto:vibhavari.bellutagi@gmail.com","aria-label":"Email","title":"Email","children":["$","svg",null,{"viewBox":"0 0 24 24","width":"18","height":"18","aria-hidden":"true","children":["$","path",null,{"d":"M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10zM3 7l9 6l9 -6"}]}]}]}],["$","li","rss",{"children":["$","a",null,{"href":"/feed.xml","aria-label":"RSS feed","title":"RSS feed","children":["$","svg",null,{"viewBox":"0 0 24 24","width":"18","height":"18","aria-hidden":"true","children":["$","path",null,{"d":"M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0M4 4a16 16 0 0 1 16 16M4 11a9 9 0 0 1 9 9"}]}]}]}]]}]]}],["$","$L1c",null,{"headings":"$7:props:children:4:props:children:0:props:children:3:props:headings","variant":"side"}]]}]

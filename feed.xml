@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vibhavari Bellutagi · Blog</title>
+    <link>https://buildwithvibs.in/blog/</link>
+    <atom:link href="https://buildwithvibs.in/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Notes on data engineering, Git, networking and the problems I run into building apps.</description>
+    <language>en</language>
+    <lastBuildDate>Thu, 22 Oct 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Preventing Double Bookings in Postgres with SELECT FOR UPDATE</title>
+      <link>https://buildwithvibs.in/blog/prevent-double-booking-postgres/</link>
+      <guid isPermaLink="true">https://buildwithvibs.in/blog/prevent-double-booking-postgres/</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Two members, one spot left. How Move stops overbooking with Postgres row locks, the race reproduced without them, and two lock mistakes found along the way.</description>
+      <category>Building Apps</category>
+      <category>Postgres</category>
+      <category>Concurrency</category>
+      <category>Drizzle</category>
+    </item>
+    <item>
+      <title>Why Better Auth Kept Logging Users Out While They Were Active</title>
+      <link>https://buildwithvibs.in/blog/better-auth-logged-out-while-active/</link>
+      <guid isPermaLink="true">https://buildwithvibs.in/blog/better-auth-logged-out-while-active/</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
+      <description>A 15-minute idle timeout in Better Auth logged users out mid-click. The cause: a sliding session renewed in the database but never in the browser cookie.</description>
+      <category>Building Apps</category>
+      <category>Better Auth</category>
+      <category>tRPC</category>
+      <category>Authentication</category>
+    </item>
+    <item>
+      <title>The magic of call(), apply(), bind()</title>
+      <link>https://buildwithvibs.in/blog/the-magic-of-call-apply-bind/</link>
+      <guid isPermaLink="true">https://buildwithvibs.in/blog/the-magic-of-call-apply-bind/</guid>
+      <pubDate>Sat, 18 Apr 2026 00:00:00 GMT</pubDate>
+      <description>user.greet() prints &apos;Hi, alice&apos;. Pass the same function to setTimeout and it prints &apos;Hi, undefined&apos;. Why this changes, and how call, apply and bind put you in control of it.</description>
+      <category>JavaScript</category>
+      <category>Hashnode</category>
+    </item>
+    <item>
+      <title>Control Flow in JavaScript: If, Else, and Switch Explained</title>
+      <link>https://buildwithvibs.in/blog/control-flow-in-javascript-if-else-and-switch-explained/</link>
+      <guid isPermaLink="true">https://buildwithvibs.in/blog/control-flow-in-javascript-if-else-and-switch-explained/</guid>
+      <pubDate>Sat, 18 Apr 2026 00:00:00 GMT</pubDate>
+      <description>Your bank app blocks a payment when your balance is too low. Your game says Game Over when your health hits zero. Every decision a program makes comes down to if, else and switch.</description>
+      <category>JavaScript</category>
+      <category>Hashnode</category>
+    </item>
+    <item>
+      <title>Global vs GlobalThis</title>
+      <link>https://buildwithvibs.in/blog/global-vs-globalthis/</link>
+      <guid isPermaLink="true">https://buildwithvibs.in/blog/global-vs-globalthis/</guid>
+      <pubDate>Sun, 08 Mar 2026 00:00:00 GMT</pubDate>
+      <description>window.myVar works in the browser. Run the same file in Node.js and it crashes: window is not defined. Same language, same global object, different names, and the one name that works everywhere.</description>
+      <category>JavaScript</category>
+      <category>Hashnode</category>
+    </item>
+    <item>
+      <title>JavaScript Operators: The Basics You Need to Know</title>
+      <link>https://buildwithvibs.in/blog/javascript-operators-the-basics-you-need-to-know/</link>
+      <guid isPermaLink="true">https://buildwithvibs.in/blog/javascript-operators-the-basics-you-need-to-know/</guid>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <description>You already know how operators work: you&apos;ve used a calculator. JavaScript&apos;s version adds a compare mode, a logic mode and memory buttons, plus one button that trips up almost everyone.</description>
+      <category>JavaScript</category>
+      <category>Hashnode</category>
+    </item>
+    <item>
+      <title>TCP Working: 3-Way Handshake &amp; Reliable Communication</title>
+      <link>https://buildwithvibs.in/blog/tcp-3-way-handshake/</link>
+      <guid isPermaLink="true">https://buildwithvibs.in/blog/tcp-3-way-handshake/</guid>
+      <pubDate>Fri, 30 Jan 2026 00:00:00 GMT</pubDate>
+      <description>Before your browser sends a byte of HTTP, it trades three packets with the server, and none of them carry data. They exist to agree on one thing: where to start counting.</description>
+      <category>Networking</category>
+      <category>Hashnode</category>
+    </item>
+    <item>
+      <title>Networking Basics: Comparing TCP and UDP Protocols</title>
+      <link>https://buildwithvibs.in/blog/tcp-and-udp/</link>
+      <guid isPermaLink="true">https://buildwithvibs.in/blog/tcp-and-udp/</guid>
+      <pubDate>Wed, 28 Jan 2026 00:00:00 GMT</pubDate>
+      <description>Before a webpage sends one byte over TCP, there&apos;s already been a full round trip. A DNS lookup over UDP is one packet out and one back. TCP vs UDP is a trade between guarantees and speed.</description>
+      <category>Networking</category>
+      <category>Hashnode</category>
+    </item>
+    <item>
+      <title>Getting Started with cURL</title>
+      <link>https://buildwithvibs.in/blog/getting-started-with-curl/</link>
+      <guid isPermaLink="true">https://buildwithvibs.in/blog/getting-started-with-curl/</guid>
+      <pubDate>Wed, 28 Jan 2026 00:00:00 GMT</pubDate>
+      <description>When an API call fails in the browser, all you see is &apos;Something went wrong&apos;. One terminal command sends the same request and shows you everything the server sent back.</description>
+      <category>Networking</category>
+      <category>Hashnode</category>
+    </item>
+    <item>
+      <title>DNS Record Types Explained</title>
+      <link>https://buildwithvibs.in/blog/dns-record-types/</link>
+      <guid isPermaLink="true">https://buildwithvibs.in/blog/dns-record-types/</guid>
+      <pubDate>Mon, 26 Jan 2026 00:00:00 GMT</pubDate>
+      <description>Pointing a domain at your website takes one DNS record. Receiving email takes another. Proving to Google you own it takes a third. A, AAAA, CNAME, NS, MX and TXT records, and the job each one does.</description>
+      <category>Networking</category>
+      <category>Hashnode</category>
+    </item>
+    <item>
+      <title>How DNS Resolution Works</title>
+      <link>https://buildwithvibs.in/blog/how-dns-resolution-works/</link>
+      <guid isPermaLink="true">https://buildwithvibs.in/blog/how-dns-resolution-works/</guid>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 GMT</pubDate>
+      <description>You type google.com and the page starts loading almost instantly. In that time a resolver may have asked three servers where google.com lives, and none of them knew the whole answer.</description>
+      <category>Networking</category>
+      <category>Hashnode</category>
+    </item>
+    <item>
+      <title>Inside Git: How It Works Under the Hood</title>
+      <link>https://buildwithvibs.in/blog/inside-git/</link>
+      <guid isPermaLink="true">https://buildwithvibs.in/blog/inside-git/</guid>
+      <pubDate>Fri, 16 Jan 2026 00:00:00 GMT</pubDate>
+      <description>Change one file, commit, and Git stores a new blob and a new tree, then reuses everything else. A look inside .git with cat-file.</description>
+      <category>Git</category>
+    </item>
+    <item>
+      <title>Git for Beginners: Essential Commands You Need to Know</title>
+      <link>https://buildwithvibs.in/blog/git-essentials/</link>
+      <guid isPermaLink="true">https://buildwithvibs.in/blog/git-essentials/</guid>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 GMT</pubDate>
+      <description>You save your game before the boss fight. Git lets you do the same with code. The core Git commands, explained as save points.</description>
+      <category>Git</category>
+    </item>
+    <item>
+      <title>Why Version Control Exists - The Pendrive Problem</title>
+      <link>https://buildwithvibs.in/blog/why-version-control-exists/</link>
+      <guid isPermaLink="true">https://buildwithvibs.in/blog/why-version-control-exists/</guid>
+      <pubDate>Sat, 10 Jan 2026 00:00:00 GMT</pubDate>
+      <description>One pendrive, two developers, and a folder called Final_v2_DO_NOT_DELETE. What sharing code looked like before version control, and why Git exists.</description>
+      <category>Git</category>
+    </item>
+    <item>
+      <title>Automating Unit Tests and Deploying AWS Glue &amp; Lambda Python Jobs with CI/CD</title>
+      <link>https://buildwithvibs.in/blog/automate-unit-tests-using-ci-cd/</link>
+      <guid isPermaLink="true">https://buildwithvibs.in/blog/automate-unit-tests-using-ci-cd/</guid>
+      <pubDate>Fri, 21 Mar 2025 00:00:00 GMT</pubDate>
+      <description>Most Glue and Lambda code is tested by deploying it and reading CloudWatch logs. A Jenkins pipeline that catches bugs on the pull request instead, with uv, ruff, pytest and Terraform.</description>
+
+    </item>
+    <item>
+      <title>The Life Cycle of a Spark Application ( Outside )</title>
+      <link>https://buildwithvibs.in/blog/spark-application-lifecycle-outside/</link>
+      <guid isPermaLink="true">https://buildwithvibs.in/blog/spark-application-lifecycle-outside/</guid>
+      <pubDate>Fri, 07 Feb 2025 00:00:00 GMT</pubDate>
+      <description>You run spark-submit and, a while later, get a result. In between, four things happen and none of them are in your code: the request, the launch, the execution and the shutdown.</description>
+      <category>Apache Spark</category>
+    </item>
+    <item>
+      <title>Spark Execution Modes</title>
+      <link>https://buildwithvibs.in/blog/spark-execution-modes/</link>
+      <guid isPermaLink="true">https://buildwithvibs.in/blog/spark-execution-modes/</guid>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 GMT</pubDate>
+      <description>Submit a Spark job from your laptop, close the lid, and the job dies. Change one flag and it keeps running. Cluster, client and local mode come down to where the driver runs.</description>
+      <category>Apache Spark</category>
+    </item>
+    <item>
+      <title>Under the hood of a Spark job</title>
+      <link>https://buildwithvibs.in/blog/spark-job-anatomy/</link>
+      <guid isPermaLink="true">https://buildwithvibs.in/blog/spark-job-anatomy/</guid>
+      <pubDate>Tue, 21 Jan 2025 00:00:00 GMT</pubDate>
+      <description>Two DataFrames with 5 and 6 partitions, one join, and the Spark UI shows 200 tasks. Where that number comes from, and how Spark splits work into jobs, stages and tasks.</description>
+      <category>Apache Spark</category>
+    </item>
+    <item>
+      <title>Handling Nulls in Spark</title>
+      <link>https://buildwithvibs.in/blog/handling-nulls-in-spark/</link>
+      <guid isPermaLink="true">https://buildwithvibs.in/blog/handling-nulls-in-spark/</guid>
+      <pubDate>Mon, 13 Jan 2025 00:00:00 GMT</pubDate>
+      <description>Six of ten movies have no rating, and filtering for == None returns zero rows with no error. How nulls behave in Spark, and the functions that handle them properly.</description>
+      <category>Apache Spark</category>
+    </item>
+  </channel>
+</rss>

@@ -1,9 +1,9 @@
 1:"$Sreact.fragment"
-2:I[832,["860","static/chunks/860-8aefa8da6e6a472b.js","177","static/chunks/app/layout-e55d61e2b55f9105.js"],"Header"]
+2:I[4493,["860","static/chunks/860-8aefa8da6e6a472b.js","177","static/chunks/app/layout-abae048957121d27.js"],"Header"]
 3:I[7449,[],""]
 4:I[6637,[],""]
-5:I[6860,["860","static/chunks/860-8aefa8da6e6a472b.js","953","static/chunks/app/blog/%5Bslug%5D/page-108006a25127fd3d.js"],""]
-6:I[7065,["860","static/chunks/860-8aefa8da6e6a472b.js","177","static/chunks/app/layout-e55d61e2b55f9105.js"],""]
+5:I[6860,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],""]
+6:I[3901,["860","static/chunks/860-8aefa8da6e6a472b.js","177","static/chunks/app/layout-abae048957121d27.js"],"GoatCounter"]
 8:I[3868,[],"OutletBoundary"]
 a:I[3589,[],"AsyncMetadataOutlet"]
 c:I[3868,[],"ViewportBoundary"]
@@ -13,196 +13,261 @@ f:"$Sreact.suspense"
 :HL["/_next/static/media/558ca1a6aa3cb55e-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/af4bf8399d1aacdf-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/e4af272ccee01ff0-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/_next/static/css/485d9a97dc438858.css","style"]
-0:{"P":null,"b":"UdiwCVufnaSiYQ6JUHu5X","p":"","c":["","blog","automate-unit-tests-using-ci-cd",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","automate-unit-tests-using-ci-cd","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/485d9a97dc438858.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","className":"__variable_d8ebd1 __variable_a0f193 __variable_a3cc63","children":["$","body",null,{"children":[["$","a",null,{"className":"skip-link","href":"#main","children":"Skip to content"}],["$","$L2",null,{}],["$","div",null,{"id":"main","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"site-footer","children":["$","div",null,{"className":"container footer-row","children":[["$","p",null,{"className":"footer-copy","children":["© 2026 ","Vibhavari Bellutagi"]}],["$","div",null,{"className":"footer-links","children":[["$","a",null,{"href":"mailto:vibhavari.bellutagi@gmail.com","children":"Email"}],["$","a",null,{"href":"https://wa.me/919742352994?text=Hi%20Vibhavari%2C%20I'd%20like%20to%20discuss%20a%20project.","target":"_blank","rel":"noreferrer","children":"WhatsApp"}],["$","a",null,{"href":"https://www.linkedin.com/in/vibhavari-bellutagi/","target":"_blank","rel":"noreferrer","children":"LinkedIn"}],["$","a",null,{"href":"https://github.com/vibhabellutagi19","target":"_blank","rel":"noreferrer","children":"GitHub"}],["$","$L5",null,{"href":"/blog/","children":"Blog"}]]}]]}]}],["$","$L6",null,{"type":"module","src":"https://static.cloudflareinsights.com/beacon.min.js","data-cf-beacon":"{\"token\":\"7cbed45ff06d49078c9c8ec08d2fad34\"}","strategy":"afterInteractive"}]]}]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","automate-unit-tests-using-ci-cd","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L7",null,["$","$L8",null,{"children":["$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$Le",null,{"children":["$","div",null,{"hidden":true,"children":["$","$f",null,{"fallback":null,"children":"$L10"}]}]}]]}],false]],"m":"$undefined","G":["$11",[]],"s":false,"S":true}
+:HL["/_next/static/css/3eef02d45825f04f.css","style"]
+0:{"P":null,"b":"jl6XMdaFAN4NgsPHiuLcv","p":"","c":["","blog","automate-unit-tests-using-ci-cd",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","automate-unit-tests-using-ci-cd","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/3eef02d45825f04f.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","className":"__variable_d8ebd1 __variable_a0f193 __variable_a3cc63","children":["$","body",null,{"children":[["$","a",null,{"className":"skip-link","href":"#main","children":"Skip to content"}],["$","$L2",null,{}],["$","div",null,{"id":"main","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"site-footer","children":["$","div",null,{"className":"container footer-row","children":[["$","p",null,{"className":"footer-copy","children":["© 2026 ","Vibhavari Bellutagi"]}],["$","div",null,{"className":"footer-links","children":[["$","a",null,{"href":"mailto:vibhavari.bellutagi@gmail.com","children":"Email"}],["$","a",null,{"href":"https://wa.me/919742352994?text=Hi%20Vibhavari%2C%20I'd%20like%20to%20discuss%20a%20project.","target":"_blank","rel":"noreferrer","children":"WhatsApp"}],["$","a",null,{"href":"https://www.linkedin.com/in/vibhavari-bellutagi/","target":"_blank","rel":"noreferrer","children":"LinkedIn"}],["$","a",null,{"href":"https://github.com/vibhabellutagi19","target":"_blank","rel":"noreferrer","children":"GitHub"}],["$","$L5",null,{"href":"/blog/","children":"Blog"}]]}]]}]}],["$","$L6",null,{"code":"vibhavaribellutagi"}]]}]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","automate-unit-tests-using-ci-cd","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L7",null,["$","$L8",null,{"children":["$L9",["$","$La",null,{"promise":"$@b"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$Le",null,{"children":["$","div",null,{"hidden":true,"children":["$","$f",null,{"fallback":null,"children":"$L10"}]}]}]]}],false]],"m":"$undefined","G":["$11",[]],"s":false,"S":true}
 d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 9:null
-14:I[3581,[],"IconMark"]
-12:T2358,<p>In this blog, we’ll explore how to set up a complete CI/CD pipeline using <code>Jenkins</code>, <code>pytest</code>, and <code>Terraform</code> to automate unit testing and deployment for AWS Glue and Lambda jobs. You’ll also learn how to manage Python dependencies using <code>uv</code> and <code>pyproject.toml</code>, use <code>JFrog Artifactory</code> to store and retrieve build artifacts, and enforce code quality with <code>Ruff</code>.</p>
-<h2>Summary</h2>
-<p>Automating the execution of unit tests within a DevOps pipeline is indispensable for ensuring the integrity, resilience, and maintainability of distributed data systems. As a data engineer, I’ve worked on setting up Jenkins pipelines that streamline the development lifecycle. These pipelines have brought noticeable improvements in code quality, deployment consistency, and developer confidence.</p>
-<p>This comprehensive guide presents a production-ready approach to:</p>
-<ul>
-<li>Automating unit testing for AWS Glue and Lambda Python applications using <code>pytest</code></li>
-<li>Enforcing code quality with <code>ruff</code> (replacing flake8, black, and isort)</li>
-<li>Managing dependencies efficiently with <code>uv</code> and <code>pyproject.toml</code></li>
-<li>Packaging and publishing artifacts via <code>JFrog Artifactory</code></li>
-<li>Deploying verified code to Amazon S3 via <code>Terraform</code></li>
-<li>Executing downstream Glue or Lambda jobs using the uploaded package</li>
-</ul>
-<hr>
-<h2>CI/CD Lifecycle Overview</h2>
-<h3>Continuous Integration (CI)</h3>
-<p>Triggered on each commit or pull request, the CI pipeline performs the following operations:</p>
-<ol>
-<li><strong>Initialize Environment</strong>: Initialize Environment: Use <code>uv</code> to set up and sync dependencies from pyproject.toml.</li>
-<li><strong>Install Dependencies</strong>: Install project requirements from <code>pyproject.toml</code>.</li>
-<li><strong>Code Quality Check</strong>:<ol>
-<li><strong>Formatting</strong>: Use <code>uv run ruff format --check</code> to auto-format your code consistently.</li>
-<li><strong>Linting</strong>: Use <code>uv run ruff check .</code> to detect syntax issues, unused imports, and common code errors.</li>
-<li><strong>Import Sorting</strong>: Use <code>uv run ruff check --select I</code> to enforce import order rules.</li>
-</ol>
-</li>
-<li><strong>Unit Testing</strong>: Execute <code>uv run pytest</code> and produce JUnit reports.</li>
-<li><strong>Artifact Packaging</strong>: Zip the tested code and upload it to JFrog Artifactory.</li>
-</ol>
-<aside class="callout callout-tip">
-      <p class="callout-title">Tip</p>
-      <div class="callout-body"><p>Using <code>Formatter</code> first and then <code>linter</code> will save you time and effort in fixing the linting issues, you will thank me later ;)</p>
+12:I[3581,[],"IconMark"]
+b:{"metadata":[["$","title","0",{"children":"Automating Unit Tests and Deploying AWS Glue & Lambda Python Jobs with CI/CD · Vibhavari Bellutagi"}],["$","meta","1",{"name":"description","content":"Most Glue and Lambda code is tested by deploying it and reading CloudWatch logs. A Jenkins pipeline that catches bugs on the pull request instead, with uv,…"}],["$","link","2",{"rel":"author","href":"https://buildwithvibs.in"}],["$","meta","3",{"name":"author","content":"Vibhavari Bellutagi"}],["$","link","4",{"rel":"canonical","href":"https://buildwithvibs.in/blog/automate-unit-tests-using-ci-cd/"}],["$","link","5",{"rel":"alternate","type":"application/rss+xml","title":"Vibhavari Bellutagi · Blog","href":"https://buildwithvibs.in/feed.xml"}],["$","meta","6",{"property":"og:title","content":"Automating Unit Tests and Deploying AWS Glue & Lambda Python Jobs with CI/CD · Vibhavari Bellutagi"}],["$","meta","7",{"property":"og:description","content":"Most Glue and Lambda code is tested by deploying it and reading CloudWatch logs. A Jenkins pipeline that catches bugs on the pull request instead, with uv,…"}],["$","meta","8",{"property":"og:url","content":"https://buildwithvibs.in/blog/automate-unit-tests-using-ci-cd/"}],["$","meta","9",{"property":"og:image","content":"https://buildwithvibs.in/opengraph-image.jpg"}],["$","meta","10",{"property":"og:type","content":"article"}],["$","meta","11",{"property":"article:published_time","content":"2025-03-21"}],["$","meta","12",{"property":"article:author","content":"Vibhavari Bellutagi"}],["$","meta","13",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","14",{"name":"twitter:title","content":"Automating Unit Tests and Deploying AWS Glue & Lambda Python Jobs with CI/CD · Vibhavari Bellutagi"}],["$","meta","15",{"name":"twitter:description","content":"Most Glue and Lambda code is tested by deploying it and reading CloudWatch logs. A Jenkins pipeline that catches bugs on the pull request instead, with uv,…"}],["$","meta","16",{"name":"twitter:image","content":"https://buildwithvibs.in/twitter-image.jpg"}],["$","link","17",{"rel":"icon","href":"/icon.svg?0f63625a4946e8f0","type":"image/svg+xml","sizes":"any"}],["$","link","18",{"rel":"apple-touch-icon","href":"/apple-icon.png?ccfb558910f9ffaa","type":"image/png","sizes":"180x180"}],["$","$L12","19",{}]],"error":null,"digest":"$undefined"}
+10:"$b:metadata"
+14:I[5093,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"ReadingProgress"]
+15:I[1939,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"ResumeReading"]
+16:I[2498,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"CodeCopy"]
+17:I[2649,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"LikeButton"]
+18:I[667,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"SaveButton"]
+19:I[6097,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"ShareButton"]
+1a:I[653,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"Image"]
+1b:I[5560,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"ViewCount"]
+1c:I[4305,["860","static/chunks/860-8aefa8da6e6a472b.js","653","static/chunks/653-4cb18ba26c603380.js","953","static/chunks/app/blog/%5Bslug%5D/page-1a89f1894c03e5d3.js"],"TableOfContents"]
+13:T43e,{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"Automating Unit Tests and Deploying AWS Glue & Lambda Python Jobs with CI/CD","description":"Most Glue and Lambda code is tested by deploying it and reading CloudWatch logs. A Jenkins pipeline that catches bugs on the pull request instead, with uv,…","datePublished":"2025-03-21","url":"https://buildwithvibs.in/blog/automate-unit-tests-using-ci-cd/","mainEntityOfPage":"https://buildwithvibs.in/blog/automate-unit-tests-using-ci-cd/","image":"https://buildwithvibs.in/opengraph-image.jpg","keywords":"","author":{"@type":"Person","name":"Vibhavari Bellutagi","url":"https://buildwithvibs.in"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://buildwithvibs.in/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://buildwithvibs.in/blog/"},{"@type":"ListItem","position":3,"name":"Automating Unit Tests and Deploying AWS Glue & Lambda Python Jobs with CI/CD","item":"https://buildwithvibs.in/blog/automate-unit-tests-using-ci-cd/"}]}]}7:["$","main",null,{"className":"section post-page","children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$13"}}],["$","$L14",null,{"targetId":"post-body"}],["$","$L15",null,{"slug":"automate-unit-tests-using-ci-cd","targetId":"post-body"}],["$","$L16",null,{}],["$","div",null,{"className":"container article-layout","children":[["$","article",null,{"className":"article","children":[["$","nav",null,{"className":"breadcrumbs","aria-label":"Breadcrumb","children":["$","ol",null,{"children":[[["$","li","/",{"children":["$","$L5",null,{"href":"/","children":"Home"}]}],["$","li","/blog/",{"children":["$","$L5",null,{"href":"/blog/","children":"Blog"}]}]],["$","li",null,{"aria-current":"page","children":"Automating Unit Tests and Deploying AWS Glue & Lambda Python Jobs with CI/CD"}]]}]}],["$","header",null,{"className":"article-head","children":[["$","h1",null,{"children":"Automating Unit Tests and Deploying AWS Glue & Lambda Python Jobs with CI/CD"}],["$","div",null,{"className":"article-tools","children":[["$","p",null,{"className":"post-tags","children":[]}],["$","div",null,{"className":"post-actions","children":[["$","$L17",null,{"slug":"automate-unit-tests-using-ci-cd"}],["$","$L18",null,{"slug":"automate-unit-tests-using-ci-cd"}],["$","$L19",null,{"title":"Automating Unit Tests and Deploying AWS Glue & Lambda Python Jobs with CI/CD","text":"Most Glue and Lambda code is tested by deploying it and reading CloudWatch logs. A Jenkins pipeline that catches bugs on the pull request instead, with uv,…","url":"https://buildwithvibs.in/blog/automate-unit-tests-using-ci-cd/"}]]}]]}],["$","div",null,{"className":"byline","children":[["$","$L1a",null,{"className":"byline-photo","src":"/me/vibhavari_bellutagi-avatar.jpg","alt":"","width":44,"height":44}],["$","div",null,{"children":[["$","p",null,{"className":"byline-name","children":"Vibhavari Bellutagi"}],["$","p",null,{"className":"post-meta","children":["Mar 21, 2025"," · ","10 min read",["$","$L1b",null,{"path":"/blog/automate-unit-tests-using-ci-cd/"}]]}]]}]]}]]}],null,["$","$L1c",null,{"headings":[{"level":2,"id":"the-pipeline-ci-checks-the-code-cd-ships-it","text":"The Pipeline: CI Checks the Code, CD Ships It"},{"level":3,"id":"continuous-integration-ci","text":"Continuous Integration (CI)"},{"level":3,"id":"continuous-deployment-cd","text":"Continuous Deployment (CD)"},{"level":2,"id":"step-1-keep-aws-out-of-your-business-logic","text":"Step 1: Keep AWS Out of Your Business Logic"},{"level":2,"id":"step-2-test-logic-with-pytest-and-aws-calls-with-moto","text":"Step 2: Test Logic with pytest, and AWS Calls with moto"},{"level":2,"id":"step-3-ci-runs-format-lint-test-package","text":"Step 3: CI Runs Format, Lint, Test, Package"},{"level":2,"id":"step-4-cd-deploys-what-ci-built-with-terraform","text":"Step 4: CD Deploys What CI Built, with Terraform"},{"level":2,"id":"toolchain-summary","text":"Toolchain Summary"}],"variant":"inline"}],"$L1d","$L1e","$L1f"]}],"$L20"]}]]}]
+21:T6360,<p>Most AWS Glue and Lambda code gets tested the same way: deploy it, run the job, and read the CloudWatch logs. Every fix means another deploy and another wait, and the only bugs you catch are the ones that happened to show up in that run.</p>
+<p>The logic inside those jobs (cleaning a name, parsing a record, deciding where a file goes) doesn&#39;t need AWS to be tested. It&#39;s plain Python.</p>
+<blockquote>
+<p>Test the logic before it reaches AWS, and let the pipeline refuse to ship anything that fails.</p>
+</blockquote>
+<p>As a data engineer, I&#39;ve set up Jenkins pipelines that do exactly this. This post walks through one end to end: <code>uv</code> and <code>pyproject.toml</code> for dependencies, <code>ruff</code> for formatting and linting, <code>pytest</code> and <code>moto</code> for tests, <code>JFrog Artifactory</code> for build artifacts, and <code>Terraform</code> to deploy the tested code to S3 for Glue or Lambda to run.</p>
+<aside class="callout callout-tldr">
+      <p class="callout-title">TL;DR</p>
+      <div class="callout-body"><p><strong>Problem:</strong> Glue and Lambda code is often only tested by deploying it, so bugs are found late and slowly.</p>
+<p><strong>Fix:</strong> keep business logic in plain Python modules, test it with <code>pytest</code> (and AWS calls with <code>moto</code>) on every pull request, and only let CD deploy the exact artifact that passed.</p>
 </div>
     </aside>
 
-<h3>Continuous Deployment (CD)</h3>
-<p>Upon CI success, CD automates infrastructure provisioning and code deployment:</p>
+<h2 id="the-pipeline-ci-checks-the-code-cd-ships-it">The Pipeline: CI Checks the Code, CD Ships It<a class="heading-anchor" href="#the-pipeline-ci-checks-the-code-cd-ships-it" aria-label="Link to this section">#</a></h2>
+<h3 id="continuous-integration-ci">Continuous Integration (CI)<a class="heading-anchor" href="#continuous-integration-ci" aria-label="Link to this section">#</a></h3>
+<p>Triggered on each commit or pull request, CI runs:</p>
 <ol>
-<li><strong>Artifact Download</strong>: Retrieve the latest build from Artifactory.</li>
-<li><strong>Terraform Plan</strong>: Generate a preview of infrastructure changes.</li>
-<li><strong>Terraform Apply</strong>: Apply changes to provision or update cloud resources.</li>
-<li><strong>Trigger Execution</strong>: Enable Glue or Lambda jobs to consume the new code from <code>S3</code>.</li>
+<li><strong>Set Up the Environment</strong>: install <code>uv</code> and sync dependencies from <code>pyproject.toml</code>.</li>
+<li><strong>Code Quality Checks</strong>:<ol>
+<li><strong>Formatting</strong>: <code>uv run ruff format --check</code> fails if any file isn&#39;t formatted.</li>
+<li><strong>Linting</strong>: <code>uv run ruff check .</code> catches syntax issues, unused imports and common errors.</li>
+<li><strong>Import Sorting</strong>: <code>uv run ruff check --select I</code> enforces import order.</li>
+</ol>
+</li>
+<li><strong>Unit Testing</strong>: <code>uv run pytest</code>, producing JUnit reports.</li>
+<li><strong>Artifact Packaging</strong>: zip the tested code and upload it to JFrog Artifactory.</li>
+</ol>
+<aside class="callout callout-tip">
+      <p class="callout-title">Tip</p>
+      <div class="callout-body"><p>Run the formatter before the linter. A lot of lint errors are formatting issues, and the formatter fixes those for free. You will thank me later ;)</p>
+</div>
+    </aside>
+
+<h3 id="continuous-deployment-cd">Continuous Deployment (CD)<a class="heading-anchor" href="#continuous-deployment-cd" aria-label="Link to this section">#</a></h3>
+<p>Once CI passes, CD deploys:</p>
+<ol>
+<li><strong>Artifact Download</strong>: fetch the build that CI just tested from Artifactory.</li>
+<li><strong>Terraform Plan</strong>: preview the infrastructure changes.</li>
+<li><strong>Terraform Apply</strong>: apply them.</li>
+<li><strong>Trigger Execution</strong>: Glue or Lambda jobs pick up the new code from <code>S3</code>.</li>
 </ol>
 <p><img src="/posts/2025-03-21-ci-cd-pipeline/assets/ci_cd.png" alt="CI/CD Pipeline" loading="lazy" /></p>
+<p>The important part is that CD never rebuilds anything. It deploys the exact zip that passed the tests.</p>
 <hr>
-<h2>Step 1: Modularizing Code for Testability</h2>
+<h2 id="step-1-keep-aws-out-of-your-business-logic">Step 1: Keep AWS Out of Your Business Logic<a class="heading-anchor" href="#step-1-keep-aws-out-of-your-business-logic" aria-label="Link to this section">#</a></h2>
+<p>Code is only easy to test if the logic doesn&#39;t depend on AWS. Keep the handler thin, and put the real work in modules that take plain data and return plain data.</p>
 <p><strong>Python Code Structure</strong></p>
-<pre><code class="language-bash">data-pipeline/
-├── pyproject.toml
-├── Jenkinsfile
-├── src/
-│   ├── __init__.py
-│   ├── handler.py         # Lambda handler logic
-│   ├── transform.py       # Glue transformations or shared business logic
-├── tests/
-│   ├── __init__.py
-│   ├── test_handler.py
-│   └── test_transform.py
-├── scripts/
-│   └── deploy.sh          # Optional scripts for local testing or deployment
-└── README.md
-</code></pre>
-<p><strong>Glue Example</strong></p>
-<pre><code class="language-python">
-# transform.py
-def clean_name(data):
-    return [{&quot;name&quot;: item[&quot;name&quot;].strip().lower()} for item in data]
-</code></pre>
-<hr>
-<h2>Step 2: Writing and Executing Unit Tests</h2>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">Bash</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#702C00">data-pipeline/</span></span>
+<span class="line"><span style="color:#702C00">├──</span><span style="color:#032563"> pyproject.toml</span></span>
+<span class="line"><span style="color:#702C00">├──</span><span style="color:#032563"> Jenkinsfile</span></span>
+<span class="line"><span style="color:#702C00">├──</span><span style="color:#032563"> src/</span></span>
+<span class="line"><span style="color:#702C00">│</span><span style="color:#032563">   ├──</span><span style="color:#032563"> __init__.py</span></span>
+<span class="line"><span style="color:#702C00">│</span><span style="color:#032563">   ├──</span><span style="color:#032563"> handler.py</span><span style="color:#66707B">         # Lambda handler logic</span></span>
+<span class="line"><span style="color:#702C00">│</span><span style="color:#032563">   ├──</span><span style="color:#032563"> transform.py</span><span style="color:#66707B">       # Glue transformations or shared business logic</span></span>
+<span class="line"><span style="color:#702C00">├──</span><span style="color:#032563"> tests/</span></span>
+<span class="line"><span style="color:#702C00">│</span><span style="color:#032563">   ├──</span><span style="color:#032563"> __init__.py</span></span>
+<span class="line"><span style="color:#702C00">│</span><span style="color:#032563">   ├──</span><span style="color:#032563"> test_handler.py</span></span>
+<span class="line"><span style="color:#702C00">│</span><span style="color:#032563">   └──</span><span style="color:#032563"> test_transform.py</span></span>
+<span class="line"><span style="color:#702C00">├──</span><span style="color:#032563"> scripts/</span></span>
+<span class="line"><span style="color:#702C00">│</span><span style="color:#032563">   └──</span><span style="color:#032563"> deploy.sh</span><span style="color:#66707B">          # Optional scripts for local testing or deployment</span></span>
+<span class="line"><span style="color:#702C00">└──</span><span style="color:#032563"> README.md</span></span></code></pre>
+    </div><p><strong>Glue Example</strong></p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">Python</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"></span>
+<span class="line"><span style="color:#66707B"># transform.py</span></span>
+<span class="line"><span style="color:#A0111F">def</span><span style="color:#622CBC"> clean_name</span><span style="color:#0E1116">(data):</span></span>
+<span class="line"><span style="color:#A0111F">    return</span><span style="color:#0E1116"> [{</span><span style="color:#032563">"name"</span><span style="color:#0E1116">: item[</span><span style="color:#032563">"name"</span><span style="color:#0E1116">].strip().lower()} </span><span style="color:#A0111F">for</span><span style="color:#0E1116"> item </span><span style="color:#A0111F">in</span><span style="color:#0E1116"> data]</span></span>
+<span class="line"></span></code></pre>
+    </div><hr>
+<h2 id="step-2-test-logic-with-pytest-and-aws-calls-with-moto">Step 2: Test Logic with pytest, and AWS Calls with moto<a class="heading-anchor" href="#step-2-test-logic-with-pytest-and-aws-calls-with-moto" aria-label="Link to this section">#</a></h2>
 <p><strong>Basic Unit Test with Pytest</strong></p>
-<pre><code class="language-python">from transform import clean_name
-
-def test_clean_name():
-    input_data = [{&quot;name&quot;: &quot; John &quot;}]
-    expected_output = [{&quot;name&quot;: &quot;john&quot;}]
-    assert clean_name(input_data) == expected_output
-</code></pre>
-<p>Run locally:</p>
-<pre><code class="language-bash">uv run pytest tests/
-</code></pre>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">Python</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#A0111F">from</span><span style="color:#0E1116"> transform </span><span style="color:#A0111F">import</span><span style="color:#0E1116"> clean_name</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0111F">def</span><span style="color:#622CBC"> test_clean_name</span><span style="color:#0E1116">():</span></span>
+<span class="line"><span style="color:#0E1116">    input_data </span><span style="color:#A0111F">=</span><span style="color:#0E1116"> [{</span><span style="color:#032563">"name"</span><span style="color:#0E1116">: </span><span style="color:#032563">" John "</span><span style="color:#0E1116">}]</span></span>
+<span class="line"><span style="color:#0E1116">    expected_output </span><span style="color:#A0111F">=</span><span style="color:#0E1116"> [{</span><span style="color:#032563">"name"</span><span style="color:#0E1116">: </span><span style="color:#032563">"john"</span><span style="color:#0E1116">}]</span></span>
+<span class="line"><span style="color:#A0111F">    assert</span><span style="color:#0E1116"> clean_name(input_data) </span><span style="color:#A0111F">==</span><span style="color:#0E1116"> expected_output</span></span></code></pre>
+    </div><p>Run locally:</p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">Bash</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#702C00">uv</span><span style="color:#032563"> run</span><span style="color:#032563"> pytest</span><span style="color:#032563"> tests/</span></span></code></pre>
+    </div><p>This runs in milliseconds on your laptop, with no AWS account involved.</p>
 <p><strong>Mocking AWS Services with Moto</strong></p>
-<pre><code class="language-python">
-from moto import mock_s3
-import boto3
-
-def test_s3_upload():
-    with mock_s3():
-        s3 = boto3.client(&#39;s3&#39;, region_name=&#39;us-east-1&#39;)
-        s3.create_bucket(Bucket=&#39;test-bucket&#39;)
-        s3.put_object(Bucket=&#39;test-bucket&#39;, Key=&#39;file.txt&#39;, Body=&#39;test&#39;)
-        response = s3.get_object(Bucket=&#39;test-bucket&#39;, Key=&#39;file.txt&#39;)
-        assert response[&#39;Body&#39;].read().decode() == &#39;test&#39;
-</code></pre>
-<p><strong>Sample Pyproject.toml for Dependency Management</strong></p>
-<pre><code class="language-toml">
-[project]
-name = &quot;data-pipeline&quot;
-version = &quot;0.1.0&quot;
-dependencies = [
-    &quot;boto3&quot;,
-    &quot;pytest&quot;,
-    &quot;moto&quot;,
-    &quot;ruff&quot;
-]
-
-[tool.ruff]
-line-length = 88
-select = [&quot;E&quot;, &quot;F&quot;, &quot;I&quot;, &quot;UP&quot;]
-exclude = [&quot;.venv&quot;, &quot;build&quot;]
-</code></pre>
+<p>For the code that does talk to AWS, <code>moto</code> fakes the AWS API in memory, so tests never touch a real bucket:</p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">Python</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"></span>
+<span class="line"><span style="color:#A0111F">from</span><span style="color:#0E1116"> moto </span><span style="color:#A0111F">import</span><span style="color:#0E1116"> mock_aws</span></span>
+<span class="line"><span style="color:#A0111F">import</span><span style="color:#0E1116"> boto3</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#622CBC">@mock_aws</span></span>
+<span class="line"><span style="color:#A0111F">def</span><span style="color:#622CBC"> test_s3_upload</span><span style="color:#0E1116">():</span></span>
+<span class="line"><span style="color:#0E1116">    s3 </span><span style="color:#A0111F">=</span><span style="color:#0E1116"> boto3.client(</span><span style="color:#032563">'s3'</span><span style="color:#0E1116">, </span><span style="color:#702C00">region_name</span><span style="color:#A0111F">=</span><span style="color:#032563">'us-east-1'</span><span style="color:#0E1116">)</span></span>
+<span class="line"><span style="color:#0E1116">    s3.create_bucket(</span><span style="color:#702C00">Bucket</span><span style="color:#A0111F">=</span><span style="color:#032563">'test-bucket'</span><span style="color:#0E1116">)</span></span>
+<span class="line"><span style="color:#0E1116">    s3.put_object(</span><span style="color:#702C00">Bucket</span><span style="color:#A0111F">=</span><span style="color:#032563">'test-bucket'</span><span style="color:#0E1116">, </span><span style="color:#702C00">Key</span><span style="color:#A0111F">=</span><span style="color:#032563">'file.txt'</span><span style="color:#0E1116">, </span><span style="color:#702C00">Body</span><span style="color:#A0111F">=</span><span style="color:#032563">'test'</span><span style="color:#0E1116">)</span></span>
+<span class="line"><span style="color:#0E1116">    response </span><span style="color:#A0111F">=</span><span style="color:#0E1116"> s3.get_object(</span><span style="color:#702C00">Bucket</span><span style="color:#A0111F">=</span><span style="color:#032563">'test-bucket'</span><span style="color:#0E1116">, </span><span style="color:#702C00">Key</span><span style="color:#A0111F">=</span><span style="color:#032563">'file.txt'</span><span style="color:#0E1116">)</span></span>
+<span class="line"><span style="color:#A0111F">    assert</span><span style="color:#0E1116"> response[</span><span style="color:#032563">'Body'</span><span style="color:#0E1116">].read().decode() </span><span style="color:#A0111F">==</span><span style="color:#032563"> 'test'</span></span>
+<span class="line"></span></code></pre>
+    </div><p><strong>Sample pyproject.toml for Dependency Management</strong></p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">TOML</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"></span>
+<span class="line"><span style="color:#0E1116">[</span><span style="color:#702C00">project</span><span style="color:#0E1116">]</span></span>
+<span class="line"><span style="color:#0E1116">name = </span><span style="color:#032563">"data-pipeline"</span></span>
+<span class="line"><span style="color:#0E1116">version = </span><span style="color:#032563">"0.1.0"</span></span>
+<span class="line"><span style="color:#0E1116">dependencies = [</span></span>
+<span class="line"><span style="color:#032563">    "boto3"</span><span style="color:#0E1116">,</span></span>
+<span class="line"><span style="color:#0E1116">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#0E1116">[</span><span style="color:#702C00">dependency-groups</span><span style="color:#0E1116">]</span></span>
+<span class="line"><span style="color:#0E1116">dev = [</span></span>
+<span class="line"><span style="color:#032563">    "pytest"</span><span style="color:#0E1116">,</span></span>
+<span class="line"><span style="color:#032563">    "moto"</span><span style="color:#0E1116">,</span></span>
+<span class="line"><span style="color:#032563">    "ruff"</span><span style="color:#0E1116">,</span></span>
+<span class="line"><span style="color:#0E1116">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#0E1116">[</span><span style="color:#702C00">tool</span><span style="color:#0E1116">.</span><span style="color:#702C00">ruff</span><span style="color:#0E1116">]</span></span>
+<span class="line"><span style="color:#0E1116">line-length = </span><span style="color:#023B95">88</span></span>
+<span class="line"><span style="color:#0E1116">exclude = [</span><span style="color:#032563">".venv"</span><span style="color:#0E1116">, </span><span style="color:#032563">"build"</span><span style="color:#0E1116">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#0E1116">[</span><span style="color:#702C00">tool</span><span style="color:#0E1116">.</span><span style="color:#702C00">ruff</span><span style="color:#0E1116">.</span><span style="color:#702C00">lint</span><span style="color:#0E1116">]</span></span>
+<span class="line"><span style="color:#0E1116">select = [</span><span style="color:#032563">"E"</span><span style="color:#0E1116">, </span><span style="color:#032563">"F"</span><span style="color:#0E1116">, </span><span style="color:#032563">"I"</span><span style="color:#0E1116">, </span><span style="color:#032563">"UP"</span><span style="color:#0E1116">]</span></span>
+<span class="line"></span></code></pre>
+    </div><p>Test tools go in the <code>dev</code> group so they&#39;re installed in CI (<code>uv sync</code> includes it by default) but aren&#39;t part of what your job needs at runtime.</p>
 <hr>
-<h2>Step 3: Sample Jenkins CI Pipeline Configuration</h2>
+<h2 id="step-3-ci-runs-format-lint-test-package">Step 3: CI Runs Format, Lint, Test, Package<a class="heading-anchor" href="#step-3-ci-runs-format-lint-test-package" aria-label="Link to this section">#</a></h2>
 <p><strong>CI Jenkinsfile using uv</strong></p>
-<pre><code class="language-groovy">pipeline {
-    agent any
-    stages {
-        stage(&#39;Setup Env&#39;) {
-            steps { sh &#39;curl -Ls https://astral.sh/uv/install.sh | sh&#39; }
-        }
-        stage(&#39;Install Deps&#39;) {
-            steps { sh &#39;uv sync&#39; }
-        }
-        stage(&#39;Format&#39;) {
-            steps { sh &#39;uv run ruff format --check&#39; }
-        }
-        stage(&#39;Lint&#39;) {
-            steps { sh &#39;uv run ruff check .&#39; }
-        }
-        stage(&#39;Unit Tests&#39;) {
-            steps { sh &#39;uv run pytest&#39; }
-        }
-        stage(&#39;Publish Artifact&#39;) {
-            steps {
-                sh &#39;zip -r my_code.zip .&#39;
-                sh &#39;curl -u $JFROG_USER:$JFROG_PASSWORD -T my_code.zip https://your-jfrog-url/artifactory/repo-name/&#39;
-            }
-        }
-    }
-}
-</code></pre>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">Groovy</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"><span style="color:#0E1116">pipeline {</span></span>
+<span class="line"><span style="color:#0E1116">    agent any</span></span>
+<span class="line"><span style="color:#0E1116">    stages {</span></span>
+<span class="line"><span style="color:#0E1116">        stage(</span><span style="color:#032563">'Setup Env'</span><span style="color:#0E1116">) {</span></span>
+<span class="line"><span style="color:#0E1116">            steps { sh </span><span style="color:#032563">'curl -Ls https://astral.sh/uv/install.sh | sh'</span><span style="color:#0E1116"> }</span></span>
+<span class="line"><span style="color:#0E1116">        }</span></span>
+<span class="line"><span style="color:#0E1116">        stage(</span><span style="color:#032563">'Install Deps'</span><span style="color:#0E1116">) {</span></span>
+<span class="line"><span style="color:#0E1116">            steps { sh </span><span style="color:#032563">'uv sync'</span><span style="color:#0E1116"> }</span></span>
+<span class="line"><span style="color:#0E1116">        }</span></span>
+<span class="line"><span style="color:#0E1116">        stage(</span><span style="color:#032563">'Format'</span><span style="color:#0E1116">) {</span></span>
+<span class="line"><span style="color:#0E1116">            steps { sh </span><span style="color:#032563">'uv run ruff format --check'</span><span style="color:#0E1116"> }</span></span>
+<span class="line"><span style="color:#0E1116">        }</span></span>
+<span class="line"><span style="color:#0E1116">        stage(</span><span style="color:#032563">'Lint'</span><span style="color:#0E1116">) {</span></span>
+<span class="line"><span style="color:#0E1116">            steps { sh </span><span style="color:#032563">'uv run ruff check .'</span><span style="color:#0E1116"> }</span></span>
+<span class="line"><span style="color:#0E1116">        }</span></span>
+<span class="line"><span style="color:#0E1116">        stage(</span><span style="color:#032563">'Unit Tests'</span><span style="color:#0E1116">) {</span></span>
+<span class="line"><span style="color:#0E1116">            steps { sh </span><span style="color:#032563">'uv run pytest'</span><span style="color:#0E1116"> }</span></span>
+<span class="line"><span style="color:#0E1116">        }</span></span>
+<span class="line"><span style="color:#0E1116">        stage(</span><span style="color:#032563">'Publish Artifact'</span><span style="color:#0E1116">) {</span></span>
+<span class="line"><span style="color:#0E1116">            steps {</span></span>
+<span class="line"><span style="color:#0E1116">                sh </span><span style="color:#032563">'zip -r my_code.zip src pyproject.toml'</span></span>
+<span class="line"><span style="color:#0E1116">                sh </span><span style="color:#032563">'curl -u $JFROG_USER:$JFROG_PASSWORD -T my_code.zip https://your-jfrog-url/artifactory/repo-name/'</span></span>
+<span class="line"><span style="color:#0E1116">            }</span></span>
+<span class="line"><span style="color:#0E1116">        }</span></span>
+<span class="line"><span style="color:#0E1116">    }</span></span>
+<span class="line"><span style="color:#0E1116">}</span></span></code></pre>
+    </div><p>Every stage is a gate. If formatting, linting or a single test fails, the pipeline stops and nothing is published.</p>
 <hr>
-<h2>Step 4: SampleJenkins CD Pipeline + Terraform</h2>
+<h2 id="step-4-cd-deploys-what-ci-built-with-terraform">Step 4: CD Deploys What CI Built, with Terraform<a class="heading-anchor" href="#step-4-cd-deploys-what-ci-built-with-terraform" aria-label="Link to this section">#</a></h2>
 <p><strong>CD Jenkinsfile</strong></p>
-<pre><code class="language-groovy">
-pipeline {
-    agent any
-    environment {
-        TF_VAR_code_url = &#39;https://your-jfrog-url/artifactory/repo-name/my_code.zip&#39;
-    }
-    stages {
-        stage(&#39;Terraform Init&#39;) { steps { sh &#39;terraform init&#39; } }
-        stage(&#39;Terraform Plan&#39;) { steps { sh &#39;terraform plan&#39; } }
-        stage(&#39;Terraform Apply&#39;) { steps { sh &#39;terraform apply -auto-approve&#39; } }
-    }
-}
-</code></pre>
-<p><strong>Sample Terraform Code</strong></p>
-<pre><code class="language-hcl">
-resource &quot;null_resource&quot; &quot;download_code&quot; {
-  provisioner &quot;local-exec&quot; {
-    command = &quot;curl -o /tmp/my_code.zip ${var.code_url}&quot;
-  }
-}
-
-resource &quot;aws_s3_object&quot; &quot;upload_code&quot; {
-  bucket = &quot;my-etl-code-bucket&quot;
-  key    = &quot;glue_or_lambda/my_code.zip&quot;
-  source = &quot;/tmp/my_code.zip&quot;
-}
-</code></pre>
-<hr>
-<h2>Toolchain Summary</h2>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">Groovy</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"></span>
+<span class="line"><span style="color:#0E1116">pipeline {</span></span>
+<span class="line"><span style="color:#0E1116">    agent any</span></span>
+<span class="line"><span style="color:#0E1116">    environment {</span></span>
+<span class="line"><span style="color:#A0111F">        TF_VAR_code_url</span><span style="color:#A0111F"> =</span><span style="color:#032563"> 'https://your-jfrog-url/artifactory/repo-name/my_code.zip'</span></span>
+<span class="line"><span style="color:#0E1116">    }</span></span>
+<span class="line"><span style="color:#0E1116">    stages {</span></span>
+<span class="line"><span style="color:#0E1116">        stage(</span><span style="color:#032563">'Terraform Init'</span><span style="color:#0E1116">) { steps { sh </span><span style="color:#032563">'terraform init'</span><span style="color:#0E1116"> } }</span></span>
+<span class="line"><span style="color:#0E1116">        stage(</span><span style="color:#032563">'Terraform Plan'</span><span style="color:#0E1116">) { steps { sh </span><span style="color:#032563">'terraform plan'</span><span style="color:#0E1116"> } }</span></span>
+<span class="line"><span style="color:#0E1116">        stage(</span><span style="color:#032563">'Terraform Apply'</span><span style="color:#0E1116">) { steps { sh </span><span style="color:#032563">'terraform apply -auto-approve'</span><span style="color:#0E1116"> } }</span></span>
+<span class="line"><span style="color:#0E1116">    }</span></span>
+<span class="line"><span style="color:#0E1116">}</span></span>
+<span class="line"></span></code></pre>
+    </div><p><strong>Sample Terraform Code</strong></p>
+<div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">HCL</span>
+        <button type="button" class="code-copy">Copy</button>
+      </div>
+      <pre class="shiki github-light-high-contrast" tabindex="0"><code><span class="line"></span>
+<span class="line"><span style="color:#702C00">resource</span><span style="color:#023B95"> "null_resource"</span><span style="color:#023B95"> "download_code"</span><span style="color:#0E1116"> {</span></span>
+<span class="line"><span style="color:#702C00">  provisioner</span><span style="color:#023B95"> "local-exec"</span><span style="color:#0E1116"> {</span></span>
+<span class="line"><span style="color:#0E1116">    command</span><span style="color:#A0111F"> =</span><span style="color:#032563"> "curl -o /tmp/my_code.zip </span><span style="color:#A0111F">${</span><span style="color:#0E1116">var</span><span style="color:#A0111F">.</span><span style="color:#0E1116">code_url</span><span style="color:#A0111F">}</span><span style="color:#032563">"</span></span>
+<span class="line"><span style="color:#0E1116">  }</span></span>
+<span class="line"><span style="color:#0E1116">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#702C00">resource</span><span style="color:#023B95"> "aws_s3_object"</span><span style="color:#023B95"> "upload_code"</span><span style="color:#0E1116"> {</span></span>
+<span class="line"><span style="color:#0E1116">  bucket</span><span style="color:#A0111F"> =</span><span style="color:#032563"> "my-etl-code-bucket"</span></span>
+<span class="line"><span style="color:#0E1116">  key</span><span style="color:#A0111F">    =</span><span style="color:#032563"> "glue_or_lambda/my_code.zip"</span></span>
+<span class="line"><span style="color:#0E1116">  source</span><span style="color:#A0111F"> =</span><span style="color:#032563"> "/tmp/my_code.zip"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#0E1116">  depends_on</span><span style="color:#A0111F"> =</span><span style="color:#0E1116"> [null_resource</span><span style="color:#A0111F">.</span><span style="color:#0E1116">download_code] </span><span style="color:#66707B"># upload only after the zip is downloaded</span></span>
+<span class="line"><span style="color:#0E1116">}</span></span>
+<span class="line"></span></code></pre>
+    </div><hr>
+<h2 id="toolchain-summary">Toolchain Summary<a class="heading-anchor" href="#toolchain-summary" aria-label="Link to this section">#</a></h2>
 <ol>
-<li><a href="https://www.jenkins.io/">Jenkins</a> – Core CI/CD orchestrator</li>
-<li><a href="https://docs.pytest.org/en/stable/">pytest</a> – Testing framework for validating business logic</li>
-<li><a href="https://docs.getmoto.org/en/latest/docs/getting_started.html">moto</a> – AWS mocking tool for offline unit testing</li>
-<li><a href="https://docs.astral.sh/ruff/">ruff</a> – All-in-one Python linter, formatter, and import sorter</li>
-<li><a href="https://docs.astral.sh/uv/">uv</a> – Lightning-fast dependency manager for Python projects</li>
-<li><a href="https://www.terraform.io/">Terraform</a> – Infrastructure as Code for AWS resource automation</li>
-<li><a href="https://jfrog.com/">JFrog Artifactory</a> – Artifact repository for storing build assets</li>
+<li><a href="https://www.jenkins.io/">Jenkins</a> – CI/CD orchestrator</li>
+<li><a href="https://docs.pytest.org/en/stable/">pytest</a> – Testing framework for business logic</li>
+<li><a href="https://docs.getmoto.org/en/latest/docs/getting_started.html">moto</a> – Mocks AWS services for offline tests</li>
+<li><a href="https://docs.astral.sh/ruff/">ruff</a> – Python linter, formatter and import sorter in one</li>
+<li><a href="https://docs.astral.sh/uv/">uv</a> – Fast Python dependency manager</li>
+<li><a href="https://www.terraform.io/">Terraform</a> – Infrastructure as Code for AWS resources</li>
+<li><a href="https://jfrog.com/">JFrog Artifactory</a> – Artifact repository for build outputs</li>
 </ol>
 <hr>
-<h2>Final Thoughts</h2>
-<p>Having a CI/CD pipeline in place is no longer optional — it’s foundational to any reliable data engineering workflow. Whether you&#39;re building Lambda functions, Glue jobs, or full-fledged data platforms, automating testing, validation, and deployment allows teams to move faster while maintaining confidence in every release.</p>
-7:["$","main",null,{"className":"section","children":["$","article",null,{"className":"container container-narrow","children":[["$","$L5",null,{"className":"text-link back-link","href":"/blog/","children":"← All posts"}],["$","header",null,{"className":"article-head","children":[["$","p",null,{"className":"post-meta","children":["Mar 21, 2025"," · ","10 min read"]}],["$","h1",null,{"children":"Automating Unit Tests and Deploying AWS Glue & Lambda Python Jobs with CI/CD"}]]}],["$","div",null,{"className":"article-content","dangerouslySetInnerHTML":{"__html":"$12"}}],"$L13"]}]}]
-b:{"metadata":[["$","title","0",{"children":"Automating Unit Tests and Deploying AWS Glue & Lambda Python Jobs with CI/CD · Vibhavari Bellutagi"}],["$","meta","1",{"name":"description","content":"In this blog, we’ll explore how to set up a complete CI/CD pipeline using Jenkins, pytest, and Terraform to automate unit testing and deployment for AWS Glue…"}],["$","link","2",{"rel":"canonical","href":"https://vibhabellutagi19.github.io/blog/automate-unit-tests-using-ci-cd/"}],["$","meta","3",{"property":"og:title","content":"Automating Unit Tests and Deploying AWS Glue & Lambda Python Jobs with CI/CD · Vibhavari Bellutagi"}],["$","meta","4",{"property":"og:description","content":"In this blog, we’ll explore how to set up a complete CI/CD pipeline using Jenkins, pytest, and Terraform to automate unit testing and deployment for AWS Glue…"}],["$","meta","5",{"property":"og:url","content":"https://vibhabellutagi19.github.io/blog/automate-unit-tests-using-ci-cd/"}],["$","meta","6",{"property":"og:image","content":"https://vibhabellutagi19.github.io/opengraph-image.jpg"}],["$","meta","7",{"property":"og:type","content":"article"}],["$","meta","8",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","9",{"name":"twitter:title","content":"Automating Unit Tests and Deploying AWS Glue & Lambda Python Jobs with CI/CD · Vibhavari Bellutagi"}],["$","meta","10",{"name":"twitter:description","content":"In this blog, we’ll explore how to set up a complete CI/CD pipeline using Jenkins, pytest, and Terraform to automate unit testing and deployment for AWS Glue…"}],["$","meta","11",{"name":"twitter:image","content":"https://vibhabellutagi19.github.io/twitter-image.jpg"}],["$","link","12",{"rel":"icon","href":"/icon.svg?0f63625a4946e8f0","type":"image/svg+xml","sizes":"any"}],["$","link","13",{"rel":"apple-touch-icon","href":"/apple-icon.png?ccfb558910f9ffaa","type":"image/png","sizes":"180x180"}],["$","$L14","14",{}]],"error":null,"digest":"$undefined"}
-10:"$b:metadata"
-13:["$","footer",null,{"className":"article-foot","children":[["$","$L5",null,{"className":"text-link","href":"/blog/","children":"← All posts"}],["$","$L5",null,{"className":"text-link","href":"/#contact","children":"Work with me →"}]]}]
+<p>The tools matter less than the order they run in. A bug in <code>clean_name</code> should fail a pull request in seconds, not a Glue job run after deployment.</p>
+1d:["$","div",null,{"id":"post-body","className":"article-content","children":[["$","div","0",{"className":"article-html","dangerouslySetInnerHTML":{"__html":"$21"}}]]}]
+1e:["$","section",null,{"className":"read-next","aria-labelledby":"read-next-title","children":[["$","h2",null,{"id":"read-next-title","className":"read-next-title","children":"Read next"}],"$undefined",["$","ul",null,{"className":"read-next-list","children":[["$","li","prevent-double-booking-postgres",{"children":["$","$L5",null,{"className":"post-item","href":"/blog/prevent-double-booking-postgres/","children":[["$","span",null,{"className":"post-meta","children":["Oct 22, 2026"," · ","9 min read"]}],["$","span",null,{"className":"post-title","children":"Preventing Double Bookings in Postgres with SELECT FOR UPDATE"}],["$","ul",null,{"className":"tags post-row-tags","children":[["$","li","building-apps",{"children":"Building Apps"}],["$","li","postgres",{"children":"Postgres"}],["$","li","concurrency",{"children":"Concurrency"}],["$","li","drizzle",{"children":"Drizzle"}]]}]]}]}],["$","li","better-auth-logged-out-while-active",{"children":["$","$L5",null,{"className":"post-item","href":"/blog/better-auth-logged-out-while-active/","children":[["$","span",null,{"className":"post-meta","children":["Oct 22, 2026"," · ","9 min read"]}],["$","span",null,{"className":"post-title","children":"Why Better Auth Kept Logging Users Out While They Were Active"}],["$","ul",null,{"className":"tags post-row-tags","children":[["$","li","building-apps",{"children":"Building Apps"}],["$","li","better-auth",{"children":"Better Auth"}],["$","li","trpc",{"children":"tRPC"}],["$","li","authentication",{"children":"Authentication"}]]}]]}]}],["$","li","the-magic-of-call-apply-bind",{"children":["$","$L5",null,{"className":"post-item","href":"/blog/the-magic-of-call-apply-bind/","children":[["$","span",null,{"className":"post-meta","children":["Apr 18, 2026"," · ","4 min read"]}],["$","span",null,{"className":"post-title","children":"The magic of call(), apply(), bind()"}],["$","ul",null,{"className":"tags post-row-tags","children":[["$","li","javascript",{"children":"JavaScript"}],["$","li","hashnode",{"children":"Hashnode"}]]}]]}]}]]}],"$undefined"]}]
+1f:["$","footer",null,{"className":"article-foot","children":[["$","$L5",null,{"className":"text-link","href":"/blog/","children":"← All posts"}],["$","$L5",null,{"className":"text-link","href":"/#contact","children":"Work with me →"}]]}]
+20:["$","aside",null,{"className":"post-sidebar","children":[["$","section",null,{"className":"author-card","aria-label":"About the author","children":[["$","$L1a",null,{"className":"author-photo","src":"/me/vibhavari_bellutagi-avatar.jpg","alt":"Vibhavari Bellutagi","width":96,"height":96}],["$","p",null,{"className":"author-name","children":"Vibhavari Bellutagi"}],["$","p",null,{"className":"author-bio","children":["Freelance Full-Stack Developer",". 10+ years in software, seven of them building data platforms (Spark, Kafka, Databricks) at Deloitte, AgileLab and Mews. Now building products end to end, including"," ",["$","$L5",null,{"href":"/#work","children":"Move"}],", a gym management app."]}],["$","$L5",null,{"className":"btn btn-primary btn-sm author-cta","href":"/#contact","children":"Work with me"}],["$","ul",null,{"className":"author-links","children":[["$","li","github",{"children":["$","a",null,{"href":"https://github.com/vibhabellutagi19","aria-label":"GitHub","title":"GitHub","target":"_blank","rel":"noopener noreferrer","children":["$","svg",null,{"viewBox":"0 0 24 24","width":"18","height":"18","aria-hidden":"true","children":["$","path",null,{"d":"M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"}]}]}]}],["$","li","linkedin",{"children":["$","a",null,{"href":"https://www.linkedin.com/in/vibhavari-bellutagi/","aria-label":"LinkedIn","title":"LinkedIn","target":"_blank","rel":"noopener noreferrer","children":["$","svg",null,{"viewBox":"0 0 24 24","width":"18","height":"18","aria-hidden":"true","children":["$","path",null,{"d":"M8 11v5M8 8v.01M12 16v-5M16 16v-3a2 2 0 1 0 -4 0M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z"}]}]}]}],["$","li","mail",{"children":["$","a",null,{"href":"mailto:vibhavari.bellutagi@gmail.com","aria-label":"Email","title":"Email","children":["$","svg",null,{"viewBox":"0 0 24 24","width":"18","height":"18","aria-hidden":"true","children":["$","path",null,{"d":"M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10zM3 7l9 6l9 -6"}]}]}]}],["$","li","rss",{"children":["$","a",null,{"href":"/feed.xml","aria-label":"RSS feed","title":"RSS feed","children":["$","svg",null,{"viewBox":"0 0 24 24","width":"18","height":"18","aria-hidden":"true","children":["$","path",null,{"d":"M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0M4 4a16 16 0 0 1 16 16M4 11a9 9 0 0 1 9 9"}]}]}]}]]}]]}],["$","$L1c",null,{"headings":"$7:props:children:4:props:children:0:props:children:3:props:headings","variant":"side"}]]}]
