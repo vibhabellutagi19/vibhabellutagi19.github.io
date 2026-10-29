@@ -6,6 +6,8 @@ export const profile = {
     "Hi Vibhavari, I'd like to discuss a project."
   )}`,
   photo: "/me/vibsii.jpg",
+  // Square, lightly sharpened crop of /me/vibhavari_bellutagi.jpg for the blog byline and author card.
+  avatar: "/me/vibhavari_bellutagi-avatar.jpg",
   email: "vibhavari.bellutagi@gmail.com",
   bookingUrl: "https://calendly.com/vibhavari-bellutagi/discovery-call",
   github: "https://github.com/vibhabellutagi19",

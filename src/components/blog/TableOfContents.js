@@ -44,10 +44,11 @@ function TocList({ entries, activeId, onNavigate }) {
 }
 
 /**
- * A sticky "On this page" list beside the article on wide screens, and a collapsible one above
- * it on narrower screens. The section being read is highlighted in both.
+ * "On this page", highlighting the section being read. The page renders it twice: `inline`, a
+ * collapsible box above the post for narrow screens, and `side`, a sticky list in the sidebar.
+ * CSS shows one or the other.
  */
-export function TableOfContents({ headings }) {
+export function TableOfContents({ headings, variant }) {
   const [activeId, setActiveId] = useState(null);
   const [open, setOpen] = useState(false);
   const entries = getEntries(headings);
@@ -104,23 +105,22 @@ export function TableOfContents({ headings }) {
   const listedActiveId = getListedActiveId(headings, entries, activeId);
   const activeText = entries.find((entry) => entry.id === listedActiveId)?.text;
 
-  return (
-    <>
-      <details className="toc toc-inline" open={open} onToggle={(event) => setOpen(event.currentTarget.open)}>
-        <summary>
-          <span className="toc-title">On this page</span>
-          {activeText && !open && <span className="toc-current">{activeText}</span>}
-        </summary>
-        <TocList entries={entries} activeId={listedActiveId} onNavigate={() => setOpen(false)} />
-      </details>
-
-      {/* Spans the article's full height so the inner list can stick while the post scrolls. */}
-      <nav className="toc-side" aria-label="On this page">
-        <div className="toc toc-side-inner">
-          <p className="toc-title">On this page</p>
-          <TocList entries={entries} activeId={listedActiveId} />
-        </div>
+  if (variant === 'side') {
+    return (
+      <nav className="toc toc-side" aria-label="On this page">
+        <p className="toc-title">On this page</p>
+        <TocList entries={entries} activeId={listedActiveId} />
       </nav>
-    </>
+    );
+  }
+
+  return (
+    <details className="toc toc-inline" open={open} onToggle={(event) => setOpen(event.currentTarget.open)}>
+      <summary>
+        <span className="toc-title">On this page</span>
+        {activeText && !open && <span className="toc-current">{activeText}</span>}
+      </summary>
+      <TocList entries={entries} activeId={listedActiveId} onNavigate={() => setOpen(false)} />
+    </details>
   );
 }

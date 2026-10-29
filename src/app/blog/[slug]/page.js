@@ -1,7 +1,9 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import { ViewCount } from '@/components/analytics/ViewCount';
+import { AuthorCard } from '@/components/blog/AuthorCard';
 import { CodeCopy } from '@/components/blog/CodeCopy';
 import { LikeButton } from '@/components/blog/LikeButton';
 import { ReadNext, SeriesBox } from '@/components/blog/PostNav';
@@ -112,21 +114,41 @@ export default async function BlogPostPage({ params }) {
   const tagLabels = Object.fromEntries(allPosts.flatMap((item) => item.tags).map((tag) => [tag, formatTag(tag)]));
 
   const url = `${SITE_URL}/blog/${post.slug}/`;
+  // The breadcrumb's middle step is the post's first tag, which has its own page.
+  const primaryTag = post.tags[0];
+  const crumbs = [
+    { name: 'Home', path: '/' },
+    { name: 'Blog', path: '/blog/' },
+    ...(primaryTag ? [{ name: formatTag(primaryTag), path: `/blog/tags/${primaryTag}/` }] : []),
+  ];
   const structuredData = {
     '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    headline: post.title,
-    description: getDescription(post),
-    datePublished: getIsoDate(post.date),
-    url,
-    mainEntityOfPage: url,
-    image: `${SITE_URL}/opengraph-image.jpg`,
-    keywords: post.tags.map(formatTag).join(', '),
-    author: { '@type': 'Person', name: profile.name, url: SITE_URL },
+    '@graph': [
+      {
+        '@type': 'BlogPosting',
+        headline: post.title,
+        description: getDescription(post),
+        datePublished: getIsoDate(post.date),
+        url,
+        mainEntityOfPage: url,
+        image: `${SITE_URL}/opengraph-image.jpg`,
+        keywords: post.tags.map(formatTag).join(', '),
+        author: { '@type': 'Person', name: profile.name, url: SITE_URL },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [...crumbs, { name: post.title, path: `/blog/${post.slug}/` }].map((crumb, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: crumb.name,
+          item: `${SITE_URL}${crumb.path}`,
+        })),
+      },
+    ],
   };
 
   return (
-    <main className="section">
+    <main className="section post-page">
       <script
         type="application/ld+json"
         // JSON.stringify doesn't escape "<", so a title containing "</script>" could break out of the tag.
@@ -138,14 +160,18 @@ export default async function BlogPostPage({ params }) {
 
       <div className="container article-layout">
         <article className="article">
-          <Link className="text-link back-link" href="/blog/">
-            ← All posts
-          </Link>
+          <nav className="breadcrumbs" aria-label="Breadcrumb">
+            <ol>
+              {crumbs.map((crumb) => (
+                <li key={crumb.path}>
+                  <Link href={crumb.path}>{crumb.name}</Link>
+                </li>
+              ))}
+              <li aria-current="page">{post.title}</li>
+            </ol>
+          </nav>
+
           <header className="article-head">
-            <p className="post-meta">
-              {post.date} · {post.readTime}
-              <ViewCount path={`/blog/${post.slug}/`} />
-            </p>
             <h1>{post.title}</h1>
             <div className="article-tools">
               <p className="post-tags">
@@ -161,10 +187,20 @@ export default async function BlogPostPage({ params }) {
                 <ShareButton title={post.title} text={getDescription(post)} url={url} />
               </div>
             </div>
+            <div className="byline">
+              <Image className="byline-photo" src={profile.avatar} alt="" width={44} height={44} />
+              <div>
+                <p className="byline-name">{profile.name}</p>
+                <p className="post-meta">
+                  {post.date} · {post.readTime}
+                  <ViewCount path={`/blog/${post.slug}/`} />
+                </p>
+              </div>
+            </div>
           </header>
 
           {series && <SeriesBox series={series} />}
-          <TableOfContents headings={post.headings} />
+          <TableOfContents headings={post.headings} variant="inline" />
 
           <div id="post-body" className="article-content">
             {renderContent(post.html)}
@@ -181,6 +217,11 @@ export default async function BlogPostPage({ params }) {
             </Link>
           </footer>
         </article>
+
+        <aside className="post-sidebar">
+          <AuthorCard />
+          <TableOfContents headings={post.headings} variant="side" />
+        </aside>
       </div>
     </main>
   );
