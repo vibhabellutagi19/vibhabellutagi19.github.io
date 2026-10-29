@@ -78,7 +78,8 @@ The heading list alone should read like the argument. Write them as assertions.
 
 - Paragraphs of 2–4 sentences. Use a one-line paragraph for emphasis, sparingly (≈ once per section at most).
 - Plain declarative sentences. Dashes for asides. Cut intensifiers: "very", "really", "extremely", "super", "basically", "simply", "just" (when it minimizes difficulty).
-- The reader is the protagonist: mostly "you" and "we". Use "I" deliberately — for what the author built, ran, or got wrong ("one I only found while writing this post"), and for honest admissions of uncertainty. A post that admits what the author doesn't know reads as more trustworthy, not less.
+- The reader is the protagonist: mostly "you" and "we". Use "I" deliberately — for what the author built, ran, or got wrong, and for honest admissions of uncertainty. A post that admits what the author doesn't know reads as more trustworthy, not less.
+- No behind-the-scenes narration. Cut sentences about how or when the post or the fix came about ("I found this while writing this post", "fixed in September", "this took me two days"). The reader needs the problem and the fix, not the author's timeline. A mistake is interesting because of what it breaks, so say that instead.
 - No hype words: "game-changer", "revolutionary", "powerful", "seamless", "unlock", "dive deep", "leverage".
 
 ## Repo conventions
@@ -101,7 +102,7 @@ When reviewing, go through each item and report pass / fix with a concrete sugge
 7. Are trade-offs and "when not to use this" covered?
 8. Is the obvious misreading pre-empted?
 9. Does the close echo the hook in one line (no "thanks for reading")?
-10. Voice: short paragraphs, no intensifiers/hype, "I" used only where it earns trust.
+10. Voice: short paragraphs, no intensifiers/hype, "I" used only where it earns trust, no narration of how the post or fix came about.
 11. Does the `excerpt` work as a hook on its own?
 
 Lead the review with the 2–3 changes that would improve the post most — usually the opening, the headings, and missing numbers — before the full checklist.

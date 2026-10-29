@@ -10,7 +10,7 @@ A class in [Move](/#work), the gym management app I'm building, has 10 spots. Ni
 
 Exactly one of them should get the spot. The other should see "This session is full". If both get in, the coach walks into a class with 11 people and 10 bikes.
 
-This post covers how Move prevents that with a Postgres row lock, a reproduction of the race without the lock, and two mistakes around that lock: one that could freeze every booking at once, and one I only found while writing this post.
+This post covers how Move prevents that with a Postgres row lock, a reproduction of the race without the lock, and two mistakes around that lock: one that could freeze every booking at once, and one that quietly makes unrelated bookings wait for each other.
 
 :::tldr
 **Problem:** two people booking the last spot at the same moment can both get in, because each checks the count before the other has written.
@@ -23,12 +23,18 @@ This post covers how Move prevents that with a Postgres row lock, a reproduction
 The natural way to write a booking looks like this:
 
 ```ts
-const session = await db.select().from(sessions).where(eq(sessions.id, sessionId));
+const session = await db
+  .select()
+  .from(sessions)
+  .where(eq(sessions.id, sessionId));
 if (session.bookedCount >= session.capacity) {
   throw new SessionFullError();
 }
 await insertBooking(clientId, sessionId);
-await db.update(sessions).set({ bookedCount: sql`booked_count + 1` }).where(eq(sessions.id, sessionId));
+await db
+  .update(sessions)
+  .set({ bookedCount: sql`booked_count + 1` })
+  .where(eq(sessions.id, sessionId));
 ```
 
 It reads the count, checks it, then writes. That's a **check-then-act** pattern, and it breaks the moment two requests interleave: both read 9, both decide there's room, both insert.
@@ -81,10 +87,19 @@ await db.transaction(async (tx) => {
   }
 
   // 3. Write everything while still holding both locks.
-  const booking = await repository.insertBooking(tx, { clientId, sessionId, idempotencyKey });
-  await chargeStrategy.chargeFor(tx, { clientId, refBookingId: booking.id /* ... */ });
+  const booking = await repository.insertBooking(tx, {
+    clientId,
+    sessionId,
+    idempotencyKey,
+  });
+  await chargeStrategy.chargeFor(tx, {
+    clientId,
+    refBookingId: booking.id /* ... */,
+  });
   await repository.incrementSessionBookedCount(tx, sessionId);
-  await repository.appendAuditLogEntry(tx, { action: "BOOKING_CREATED" /* ... */ });
+  await repository.appendAuditLogEntry(tx, {
+    action: "BOOKING_CREATED" /* ... */,
+  });
 });
 
 // 4. Only after COMMIT: send the confirmation emails.
@@ -95,7 +110,10 @@ In Drizzle, the lock is `.for("update")` on the select:
 
 ```ts
 const [session] = await tx
-  .select({ capacity: sessions.capacity, bookedCount: sessions.bookedCount /* ... */ })
+  .select({
+    capacity: sessions.capacity,
+    bookedCount: sessions.bookedCount /* ... */,
+  })
   .from(sessions)
   .where(eq(sessions.id, sessionId))
   .for("update");
@@ -121,16 +139,16 @@ The capacity check, the "has the class already started?" check, and the overlap 
 
 ## Mistake 1: a second connection inside the transaction can freeze every booking
 
-This one was a real bug, fixed in September.
+Inside a transaction, one query that uses the global client instead of the transaction handle can hang your whole app. It's a one-word mistake, and it usually hides in a helper function.
 
-Charging for a booking calls `pickCreditLot`, which decides which of the member's credit packs to spend from (the one expiring soonest). It ran its query like this:
+Charging for a booking is a good example. A helper, `pickCreditLot`, decides which of the member's credit packs to spend from (the one expiring soonest), and runs its query like this:
 
 ```ts
 // inside chargeFor(tx, ...), while the booking transaction holds its locks
 const candidates = await db.select().from(creditLots).where(/* ... */);
 ```
 
-Note `db`, not `tx`. `db` is the connection pool, so this query borrowed a **second** connection while the transaction was still holding its first one.
+Note `db`, not `tx`. `db` is the connection pool, so this query borrows a **second** connection while the transaction is still holding its first one.
 
 With a pool of 10 connections, that's a trap:
 
@@ -138,24 +156,24 @@ With a pool of 10 connections, that's a trap:
 2. Each of them reaches `pickCreditLot` and asks the pool for a second connection.
 3. None is free, and none will be: every connection belongs to a transaction that's waiting for another connection.
 
-Every booking hangs at once, and at the time there was no timeout to break the wait. It's not a deadlock Postgres can detect, because Postgres never sees the waiting: it's the pool, in the application.
+Every booking hangs at once, and without a timeout, nothing ever breaks the wait. Postgres can't detect it as a deadlock either, because Postgres never sees the waiting: it happens in the pool, inside the application.
 
-The fix was to pass the transaction through:
+The fix is to pass the transaction through:
 
 ```ts
 const candidates = await tx.select().from(creditLots).where(/* ... */);
 ```
 
-I also added bounds so that if a future code path makes the same mistake, it fails loudly instead of freezing:
+Then add bounds, so that if another code path makes the same mistake, it fails loudly instead of freezing:
 
 ```ts
 export const db = drizzle({
   connection: {
     connectionString: env.DATABASE_URL,
     max: 10,
-    statement_timeout: 30_000,                  // no statement (or lock wait) runs longer than 30s
+    statement_timeout: 30_000, // no statement (or lock wait) runs longer than 30s
     idle_in_transaction_session_timeout: 30_000, // no transaction sits open doing nothing for 30s
-    connectionTimeoutMillis: 10_000,            // waiting for a pool connection fails after 10s
+    connectionTimeoutMillis: 10_000, // waiting for a pool connection fails after 10s
   },
 });
 ```
@@ -166,9 +184,9 @@ Inside a transaction callback, every query should use the transaction handle (`t
 
 ## Mistake 2: FOR UPDATE locks every table in the join
 
-I found this one while writing this post.
+In Postgres, `FOR UPDATE` without a table list locks the matching rows in **every table in the query**, not just the one you meant to lock. Add a join for convenience and you've widened the lock without changing a word of the locking code.
 
-The real `findSessionForUpdate` doesn't only read `sessions`. It joins `session_types` too, to get the class's credit type in the same query:
+It's an easy join to write. Reading a class's row together with its type, to get the credit type in one query, looks like this:
 
 ```ts
 .from(sessions)
@@ -177,11 +195,11 @@ The real `findSessionForUpdate` doesn't only read `sessions`. It joins `session_
 .for("update");
 ```
 
-Drizzle turns that into a plain `FOR UPDATE`. In Postgres, `FOR UPDATE` without a table list locks the matching rows in **every table in the query**. So this locks the session row and the `session_types` row for "HIIT".
+Drizzle turns that into a plain `FOR UPDATE`, so it locks the session row **and** the `session_types` row for "HIIT". Every HIIT class shares that one row.
 
-That means two members booking **different** HIIT classes (the 7am and the 6pm) wait for each other, because both transactions want the same `session_types` row. Every HIIT booking in the gym runs one at a time.
+So two members booking **different** HIIT classes (the 7am and the 6pm) wait for each other, because both transactions want the same `session_types` row. A lock meant to protect one class now serialises every booking of that class type.
 
-I checked it with two transactions, the second with a one-second `lock_timeout`:
+You can see it with two transactions, the second with a one-second `lock_timeout`:
 
 ```text
 -- for update: A locks the 7am HIIT, B wants the 6pm HIIT
@@ -199,13 +217,13 @@ The fix is to name the table to lock. In SQL that's `FOR UPDATE OF sessions`; in
 .for("update", { of: sessions });
 ```
 
-At a small gym's booking volume this costs milliseconds, which is why nothing broke. But it would be one of the first things to hurt on a busy morning, and it's invisible from the code unless you know the rule.
+The lesson: **whenever a `FOR UPDATE` query has a join, name the table you mean to lock.** Under light traffic the extra lock costs milliseconds, so tests and staging won't show it. It surfaces when traffic peaks, as unrelated requests queueing behind each other, and nothing in the code looks wrong unless you know the rule.
 
-## The lock is the only guard, and that's a gap
+## Don't let the lock be your only guard
 
-The row lock prevents overbooking, but it's the only thing that does. Some gaps are worth knowing about.
+A row lock prevents overbooking only as long as every code path takes it. Two more pieces make the design hold up when something goes wrong.
 
-**No database constraint as a backstop.** If someone removed `.for("update")` by accident, nothing would stop an overbook. A `CHECK` constraint would make the database itself refuse it:
+**Put a constraint under the lock.** If someone later removes `.for("update")` by accident, or writes a new booking path that forgets it, nothing stops an overbook. A `CHECK` constraint makes the database itself refuse the invalid state:
 
 ```sql
 ALTER TABLE sessions
@@ -213,20 +231,20 @@ ALTER TABLE sessions
   CHECK (booked_count <= capacity);
 ```
 
-With that in place, the eleventh booking fails with a constraint error instead of silently succeeding.
+Now the eleventh booking fails with a constraint error instead of silently succeeding. The lock keeps things correct; the constraint catches the day the lock is missing.
 
-**One popular class is a queue.** Every booking for the same class takes the same lock, even when 8 spots are left. If 200 people try to book the 7am class the second it opens, they run one at a time. Each holds the lock for a few milliseconds, so that's fine for a gym, but the wait is real. `statement_timeout` caps it at 30 seconds; a shorter `lock_timeout` for the booking transaction would fail faster and let the client retry.
+**Expect a popular row to become a queue.** Every booking for the same class takes the same lock, even when 8 spots are left. If 200 people try to book the 7am class the second it opens, they run one at a time. With a lock held for a few milliseconds that's acceptable, but the wait is real, and a slow transaction makes it worse. Set a short `lock_timeout` on the booking transaction so a request that waits too long fails fast and the client can retry, instead of hanging until `statement_timeout`.
 
 ## Other ways to prevent double booking
 
 `SELECT … FOR UPDATE` isn't the only option. Here's how the common approaches compare:
 
-| Approach | How it works | Good for | Watch out for |
-| --- | --- | --- | --- |
-| `SELECT … FOR UPDATE` | Lock the row, check, write | Several checks before the write (capacity, timing, credits) | Hot rows queue; lock only what you need |
-| Conditional `UPDATE` | `UPDATE sessions SET booked_count = booked_count + 1 WHERE id = $1 AND booked_count < capacity RETURNING id` | A single counter with one rule | Hard to fit more checks into one statement |
-| `SERIALIZABLE` isolation | Postgres aborts transactions that would conflict | Complex invariants across many rows | Every caller must retry on serialization errors |
-| `CHECK` constraint | The database rejects an invalid state | A backstop under any of the above | Only checks one row; turns a race into an error, not a queue |
+| Approach                 | How it works                                                                                                 | Good for                                                    | Watch out for                                                |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------- | ------------------------------------------------------------ |
+| `SELECT … FOR UPDATE`    | Lock the row, check, write                                                                                   | Several checks before the write (capacity, timing, credits) | Hot rows queue; lock only what you need                      |
+| Conditional `UPDATE`     | `UPDATE sessions SET booked_count = booked_count + 1 WHERE id = $1 AND booked_count < capacity RETURNING id` | A single counter with one rule                              | Hard to fit more checks into one statement                   |
+| `SERIALIZABLE` isolation | Postgres aborts transactions that would conflict                                                             | Complex invariants across many rows                         | Every caller must retry on serialization errors              |
+| `CHECK` constraint       | The database rejects an invalid state                                                                        | A backstop under any of the above                           | Only checks one row; turns a race into an error, not a queue |
 
 Move uses `FOR UPDATE` because a booking checks a lot more than capacity: whether the class has started, whether the member's membership is paused, whether they have a valid credit, whether it overlaps another booking. All of those need a consistent view of the data, and a row lock gives that with ordinary code.
 
