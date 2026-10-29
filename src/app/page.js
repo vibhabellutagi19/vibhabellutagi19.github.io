@@ -155,7 +155,7 @@ export default function HomePage() {
         </section>
       )}
 
-      <section id="services" className="section section-alt">
+      <section id="what-i-build" className="section section-alt">
         <div className="container">
           <SectionHead
             eyebrow="What I build"

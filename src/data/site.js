@@ -33,9 +33,9 @@ export const likes = {
 };
 
 export const heroData = {
-  eyebrow: "Freelance full-stack developer · available for projects",
-  title: "I build the software that runs your business.",
-  lede: "From the first sketch to a live product with paying users. Ten years of engineering, including seven building data platforms, means what I ship stays fast, reliable and affordable as you grow.",
+  eyebrow: "Build with Vibs · available for projects",
+  title: "Ideas into impact.",
+  lede: "I build web apps, platforms and AI features that help ambitious businesses turn ideas into products people use every day. From your first concept to a live product with paying users, ten years of engineering, seven of them building data platforms, means what I ship stays fast, reliable and affordable as you grow.",
   stats: [
     { value: "10+", label: "years in software" },
     { value: "2", label: "products live in production" },
