@@ -3,7 +3,7 @@ title: "How DNS Resolution Works"
 date: "Jan 23, 2026"
 excerpt: "You type google.com and the page starts loading almost instantly. In that time a resolver may have asked three servers where google.com lives, and none of them knew the whole answer."
 slug: "how-dns-resolution-works"
-tags: "networking, hashnode"
+tags: "networking"
 ---
 
 You type `google.com` and the page starts loading almost instantly. In that moment, a server you've probably never heard of may have asked three other servers where google.com lives, and none of them, on its own, knew the full answer.

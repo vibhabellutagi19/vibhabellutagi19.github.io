@@ -3,7 +3,7 @@ title: "Networking Basics: Comparing TCP and UDP Protocols"
 date: "Jan 28, 2026"
 excerpt: "Before a webpage sends one byte over TCP, there's already been a full round trip. A DNS lookup over UDP is one packet out and one back. TCP vs UDP is a trade between guarantees and speed."
 slug: "tcp-and-udp"
-tags: "networking, hashnode"
+tags: "networking"
 ---
 
 Before your browser sends a single byte of a webpage request over TCP, it has already waited a full round trip to the server just to set up the connection. A DNS lookup over UDP doesn't wait at all: one packet goes out, one packet comes back.

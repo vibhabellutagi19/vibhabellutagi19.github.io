@@ -3,7 +3,7 @@ title: "Global vs GlobalThis"
 date: "Mar 8, 2026"
 excerpt: "window.myVar works in the browser. Run the same file in Node.js and it crashes: window is not defined. Same language, same global object, different names, and the one name that works everywhere."
 slug: "global-vs-globalthis"
-tags: "javascript, hashnode"
+tags: "javascript"
 ---
 
 Write `window.myVar = 1` and it works in the browser. Run the same file in Node.js and it crashes:
