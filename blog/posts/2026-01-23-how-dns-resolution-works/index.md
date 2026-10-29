@@ -24,19 +24,21 @@ Usually DNS administrators use dig command to troubleshoot DNS problems because 
 
 When you run `dig google.com` you get a detailed report with sections like:
 
-````
 **1. Question Section** - What you asked
+
 ```
 ;; QUESTION SECTION:
 ;google.com.                    IN      A
 ```
+
 Translation: "What is the A record (IP address) for google.com?"
 
 **2. Answer Section** - The actual answer
+
 ```
 ;; ANSWER SECTION:
 google.com.             300     IN      A       142.250.185.46
-````
+```
 
 ### The DNS Hierarchy: A Three-Tier Architecture
 

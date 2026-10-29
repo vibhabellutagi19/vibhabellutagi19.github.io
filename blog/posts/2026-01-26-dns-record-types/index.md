@@ -132,9 +132,9 @@ In your GitHub repository settings, you tell GitHub:
 
 So what does CNAME record do? A CNAME Record creates an alias by mapping one domain name to another domain name (the canonical name). When a DNS resolver encounters a CNAME, it performs another lookup for the target domain. CNAMEs cannot coexist with other record types at the same name level (this is a critical DNS protocol requirement).
 
-💡
-
-You CANNOT have a CNAME at the root domain ([example.com](http://example.com)) - only subdomains ([www.example.com,](http://www.example.com) [blog.example.com](http://blog.example.com), etc.)
+:::warning
+You CANNOT have a CNAME at the root domain (`example.com`) - only subdomains (`www.example.com`, `blog.example.com`, etc.)
+:::
 
 ### NS Record
 

@@ -29,7 +29,7 @@ When an action is called on a RDD/DF, a job is created.
 Key Features of Spark Jobs:
 - Each job is composed of multiple stages.
 - Spark generates one job per action.
-- Jobs are independent and can run in parallel if no dependencies exist between them.
+- Jobs triggered from the same thread run one after another. They only run in parallel if you submit them from separate threads.
 
 ### Stages
 
@@ -56,7 +56,7 @@ val res0: Long = 4999999
 ![stages](assets/shuffles.png)
 
 In the above example:
-- The the 1st stage (stage-0) correspond to the `range` that you perform in order to create your DataFrames. By default when you create a DataFrame with range, it has `8 partitions`.
+- The 1st stage (stage-0) correspond to the `range` that you perform in order to create your DataFrames. By default when you create a DataFrame with range, it has `8 partitions`.
 - The next stage (stage-1) is the `repartitioning`. This changes the number of partitions by shuffling the data. These DataFrames are shuffled into `5 partitions`.
 - The final stage (stage-2) is the `count action`. This is the final stage that is executed.
 

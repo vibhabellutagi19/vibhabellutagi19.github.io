@@ -23,9 +23,7 @@ This forced developers to write messy environment-detection code just to access 
 
 Almost every modern programming language has the concept of scope, and JavaScript is no exception. At its core, scope answers simple question:
 
-❔
-
-Where in your code can this variable be seen and used?
+> Where in your code can this variable be seen and used?
 
 Think of a code which has 10000 lines, if a variable defined once, is accessible throughout the huge code, is it a good practice?  
 The scope here sets the boundary of the variables - when you create a variable, it's not always everywhere, scope defines the boundaries of where that variable lives and who can access it.
@@ -72,11 +70,11 @@ We just saw that variables declared outside any function are accessible everywhe
 
 In each JavaScript environment, there's always a global object defined. The context of global's interface depends on the execution context in which the script is running -
 
-| Enviornment | Global Object |  |
-| --- | --- | --- |
-| Browser | Window |  |
-| Node.js | global |  |
-| Web Workers | self | browser background threads |
+| Environment | Global Object |
+| --- | --- |
+| Browser | `window` |
+| Node.js | `global` |
+| Web Workers (browser background threads) | `self` |
 
 ## The Problem: global, window, self
 
@@ -93,7 +91,7 @@ function getGlobalObject() {
 const globalObj = getGlobalObject();
 ```
 
-This approach was error-prone. In strict mode, `this` is `undefined` instead of the global object, silently breaking the fallback. It was too much boilerplate just to do one simple thing , access the global object.
+This approach was error-prone. Some versions added a last-resort fallback of `this`, which only works in non-strict scripts: in strict mode and in ES modules, top-level `this` is `undefined`, so the fallback silently breaks. It was too much boilerplate just to do one simple thing, access the global object.
 
 ## What is globalThis and what problem does it solve?
 
@@ -186,8 +184,6 @@ console.log(globalThis.myVar); // 42
 ### ⚠️ Don't Pollute the Global Scope
 
 Every property you add to `globalThis` is available everywhere in your entire program. This sounds convenient but causes real problems:
-
-javascript
 
 ```javascript
 // ❌ Bad — polluting the global scope

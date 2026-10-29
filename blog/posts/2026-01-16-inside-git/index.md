@@ -1,12 +1,13 @@
 ---
 title: 'Inside Git: How It Works Under the Hood'
-date: 'January 16, 2026'
+date: 'Jan 16, 2026'
+excerpt: "Change one file, commit, and Git stores a new blob and a new tree, then reuses everything else. A look inside .git with cat-file."
 slug: 'inside-git'
 series: "Git"
 tags: "git"
 ---
 
-In the previous post, we learnt [How Git manages version control](post.html?post=git-essentials) through its internal structures. In this continuation, we will delve deeper into how git works internally and the specific components of the `.git` folder and their functions.
+In the previous post, we learnt [How Git manages version control](/blog/git-essentials) through its internal structures. In this continuation, we will delve deeper into how git works internally and the specific components of the `.git` folder and their functions.
 
 ## Git Object Model
 
@@ -23,13 +24,15 @@ Git tracks changes by operating as a `content-addressable file system`, meaning 
 
 Let's look at the internals practically. We will create a repository, make two commits, and then "X-ray" the .git folder to see how Git maps these objects together.
 
-The Setup
+### The Setup
+
 We start with a simple project structure:
 
-```project/
+```
+project/
 ├── story.txt
 └── stories/
-    └── story.txt
+    ├── metadata.txt
     └── readme.md
 ```
 
@@ -41,16 +44,17 @@ We initialize the repository (git init), which creates the hidden .git directory
 > Initialized empty Git repository in /path/to/project/.git/
 ```
 
-The Staging Area (The Index)
+### The Staging Area (The Index)
+
 Before we commit, we must add files.
 
 ```bash
-❯ git add . -- adds all files to the staging area
+❯ git add .   # adds all files to the staging area
 ```
 
 What just happened internally? Git isn't just listing filenames. It is taking the content of every file, compressing it into a Blob (Binary Large Object), hashing it, and storing it in the .git/objects folder. The Index (or Staging Area) is a draft manifest. It maps your filenames to these new Blob hashes. It acts as a "construction zone" where the next tree is currently being assembled.
 
-Commit 1: The Initial Snapshot
+### Commit 1: The Initial Snapshot
 
 We commit our work:
 
@@ -87,11 +91,7 @@ Let's look inside that Root Tree:
 100644 blob f6d043db0fd669f2d8685b634b662e39fdacaf12	story.txt
 ```
 
-This tree represents our project root. It points to one blob (story.txt) and another tree (stories folder). If we follow the stories tree (a096f1), we find the blobs for metadata.txt and readme.md.
-
-Visualizing Commit 1 Here is how Git has mapped these objects. Note that arrows point away from the commit snapshot to the data.
-
-Again when we look inside the `stories` tree object, we can see the files inside that directory:
+This tree represents our project root. It points to one blob (story.txt) and another tree (stories folder). If we follow the stories tree (a096f1), we find the blobs for metadata.txt and readme.md:
 
 ```bash
 
@@ -100,7 +100,8 @@ Again when we look inside the `stories` tree object, we can see the files inside
 100644 blob 8728a858d9d21a8c78488c8b4e70e531b659141f	readme.md
 ```
 
-Commit 2: The Evolution (The DAG)
+### Commit 2: The Evolution (The DAG)
+
 Now, let's modify story.txt and commit again.
 
 ```bash
@@ -130,7 +131,11 @@ parent 90ae71002a1512aa87565bead79f205a3469f58d
 second commit
 ```
 
-The Efficiency of Git Git created a new Blob for the modified story.txt and a new Root Tree to list it. However, look at the stories directory. We didn't touch it. Because the content inside stories/ didn't change, the hashes didn't change. Git doesn't create a copy; it simply points to the existing tree object from the first commit. Visualizing the DAG This is where the "Graph" in DAG comes from. Git reuses unchanged objects to save space and ensure integrity.
+### The Efficiency of Git
+
+Git created a new Blob for the modified story.txt and a new Root Tree to list it. However, look at the stories directory. We didn't touch it. Because the content inside stories/ didn't change, the hashes didn't change. Git doesn't create a copy; it simply points to the existing tree object from the first commit.
+
+This is where the "Graph" in DAG comes from. Git reuses unchanged objects to save space and ensure integrity.
 
 ![git-dag|w=550](assets/git-dag.svg)
 

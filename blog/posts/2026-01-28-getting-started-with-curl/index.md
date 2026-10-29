@@ -127,9 +127,9 @@ The `-v` (verbose) flag shows you everything. Let me explain what you'll see:
 }
 ```
 
-💡
-
+:::tip
 `>` → request (what you sent) and `<` → response (what you got back)
+:::
 
 ### GET and POST Methods
 
@@ -145,8 +145,6 @@ The `-v` (verbose) flag shows you everything. Let me explain what you'll see:
     
 
 **Curl example:**
-
-bash
 
 ```
 curl https://api.github.com/users/octocat
@@ -166,8 +164,6 @@ This asks: "Hey GitHub, can I see octocat's profile?"
     
 
 **Curl example:**
-
-bash
 
 ```
 curl -X POST https://httpbin.org/post \

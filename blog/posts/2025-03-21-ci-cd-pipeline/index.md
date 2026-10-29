@@ -1,6 +1,7 @@
 ---
 title: 'Automating Unit Tests and Deploying AWS Glue & Lambda Python Jobs with CI/CD'
 date: 'Mar 21, 2025'
+excerpt: "A Jenkins pipeline that formats, lints and tests AWS Glue and Lambda Python code with uv, ruff and pytest, then ships it to S3 with Terraform."
 readTime: '10 min read'
 slug: 'automate-unit-tests-using-ci-cd'
 ---
@@ -173,7 +174,7 @@ pipeline {
         }
         stage('Publish Artifact') {
             steps {
-                sh 'zip -r my_code.zip .'
+                sh 'zip -r my_code.zip src pyproject.toml'
                 sh 'curl -u $JFROG_USER:$JFROG_PASSWORD -T my_code.zip https://your-jfrog-url/artifactory/repo-name/'
             }
         }
@@ -217,6 +218,8 @@ resource "aws_s3_object" "upload_code" {
   bucket = "my-etl-code-bucket"
   key    = "glue_or_lambda/my_code.zip"
   source = "/tmp/my_code.zip"
+
+  depends_on = [null_resource.download_code] # upload only after the zip is downloaded
 }
 
 ```

@@ -1,6 +1,7 @@
 ---
 title: 'Why Version Control Exists - The Pendrive Problem'
-date: 'January 10, 2026'
+date: 'Jan 10, 2026'
+excerpt: "One pendrive, two developers, and a folder called Final_v2_DO_NOT_DELETE. What sharing code looked like before version control, and why Git exists."
 slug: 'why-version-control-exists'
 series: "Git"
 tags: "git"

@@ -44,8 +44,6 @@ The `if` statement is the simplest form of decision-making. It says: **"Only run
 
 ### Syntax
 
-js
-
 ```js
 if (condition) {
   // code to run if condition is true
@@ -101,8 +99,6 @@ What if you want to handle **both** cases — when the condition is true _and_ w
 
 ### Syntax
 
-js
-
 ```js
 if (condition) {
   // runs if condition is true
@@ -112,8 +108,6 @@ if (condition) {
 ```
 
 ### Real-Life Example: Pass or Fail
-
-js
 
 ```js
 let marks = 45;
@@ -139,8 +133,6 @@ if (marks >= 50) {
 Only **one** of the two blocks will ever run — never both.
 
 ### Another Example: Even or Odd
-
-js
 
 ```js
 let number = 7;
@@ -168,8 +160,6 @@ Real life rarely gives us just two choices. What if you need to check **multiple
 
 ### Syntax
 
-js
-
 ```js
 if (condition1) {
   // runs if condition1 is true
@@ -185,8 +175,6 @@ if (condition1) {
 JavaScript checks each condition **from top to bottom** and stops as soon as it finds one that's true.
 
 ### Real-Life Example: Grade Calculator
-
-js
 
 ```js
 let marks = 72;
@@ -219,8 +207,6 @@ JavaScript never even checks the `>= 40` condition because it already found a ma
 
 ### Real-Life Example: Time of Day Greeting
 
-js
-
 ```js
 let hour = 14; // 2 PM in 24-hour format
 
@@ -249,8 +235,6 @@ The `switch` statement is a cleaner alternative when you're comparing **one vari
 
 ### Syntax
 
-js
-
 ```js
 switch (expression) {
   case value1:
@@ -268,8 +252,6 @@ switch (expression) {
 ```
 
 ### Real-Life Example: Day of the Week
-
-js
 
 ```js
 let day = 3;
@@ -349,8 +331,6 @@ Even though `day` is `3`, all three cases ran because there was no `break` to st
 
 Sometimes fallthrough is actually useful — when multiple cases should share the same outcome:
 
-js
-
 ```js
 let day = "Saturday";
 
@@ -378,8 +358,6 @@ Here, both `"Saturday"` and `"Sunday"` fall through to the same `console.log` �
 ### The `default` Case
 
 `default` is like the `else` in an `if-else` — it runs when **no case matches**. It's optional, but always a good idea to include it.
-
-js
 
 ```js
 let trafficLight = "purple";
@@ -426,8 +404,6 @@ Here's the same logic written both ways — you decide which is cleaner:
 
 **Using** `if-else`**:**
 
-js
-
 ```js
 let fruit = "mango";
 
@@ -443,8 +419,6 @@ if (fruit === "apple") {
 ```
 
 **Using** `switch`**:**
-
-js
 
 ```js
 let fruit = "mango";
@@ -478,8 +452,6 @@ Both produce the same output. But when you have 10+ specific values to check, `s
 ## Putting It All Together
 
 Here's a mini program that uses everything you've learned:
-
-js
 
 ```js
 let studentMarks = 68;

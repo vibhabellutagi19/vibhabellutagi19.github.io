@@ -1,6 +1,7 @@
 ---
 title: 'Git for Beginners: Essential Commands You Need to Know'
-date: 'January 13, 2026'
+date: 'Jan 13, 2026'
+excerpt: "You save your game before the boss fight. Git lets you do the same with code. The core Git commands, explained as save points."
 slug: 'git-essentials'
 series: "Git"
 tags: "git"
@@ -24,7 +25,7 @@ Git is a distributed version control system - which means that code on a local m
 
 ### Why Use Git?
 
-The major difference between Git and any other version control system is the way git thinks about data. Most version control systems stores information as a list of file-based changes. But git stores as a set of files and the changes made to each file.
+The major difference between Git and most other version control systems is the way Git thinks about data. Most version control systems store information as a list of file-based changes (deltas). Git instead stores a snapshot of your whole project every time you commit; files that didn't change aren't copied again, Git just points to the version it already has.
 
 This approach has several advantages:
 
@@ -70,7 +71,7 @@ git status
 
 3. Create Content - Create a file named story.txt and type "Chapter 1: The Hero Wakes Up." If you run `git status` now, the text will be Red. This means Git sees a new file, but it isn't prepared to be saved yet.
 
-4. Prepare the Save - `git add`¯
+4. Prepare the Save - `git add`
    In a game, you might organize your inventory before saving. In Git, this is called Staging. We have to tell Git which files we want to put in the save capsule.
 
 ```

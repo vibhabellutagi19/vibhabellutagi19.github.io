@@ -1,6 +1,7 @@
 ---
 title: 'The Life Cycle of a Spark Application ( Outside )'
 date: 'Feb 7, 2025'
+excerpt: "What happens between running spark-submit and getting a result: the request, the launch, the execution and the shutdown of a Spark application."
 slug: 'spark-application-lifecycle-outside'
 series: "Apache Spark"
 tags: "apache-spark"

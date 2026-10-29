@@ -152,7 +152,7 @@ check_nulls.show(10, False)
 ```python
 # Check for equi-null safe join
 
-df_eq_null_safe = df.filter(col("IMDB_Rating").eqNullSafe("Rotten_Tomatoes_Rating"))
+df_eq_null_safe = df.filter(col("IMDB_Rating").eqNullSafe(col("Rotten_Tomatoes_Rating")))
 df_eq_null_safe.show()
 ```
 
@@ -263,7 +263,7 @@ Sometimes you might want to drop rows that contain any null or all nulls, or con
 
 Example 1:
 ```python
-# Drop rows with all null values
+# Drop rows with any null value
 
 df_drop_any = df.na.drop("any") # "any" means if any column in the row has null, that row is dropped.
 df_drop_any.show(5, False)

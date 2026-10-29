@@ -95,8 +95,8 @@ When you type a URL in your browser:
 
 This is why HTTP is called an "application layer" protocol, it sits on top of TCP (the "transport layer"). HTTP handles _what_ you're communicating, while TCP handles _how_ it gets there.
 
-💡
-
+:::note
 Modern websites use HTTPS (HTTP Secure), which adds encryption for security, but it still relies on TCP underneath for reliable delivery.
+:::
 
 If you like the blog, please share it with others. Follow me on [**linkedin**](https://www.linkedin.com/in/vibhavari-bellutagi/)

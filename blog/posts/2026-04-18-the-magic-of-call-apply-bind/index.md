@@ -79,7 +79,7 @@ All three do the same core thing: **let you borrow a function and control what**
 const person = { name: "Alice" };
 
 function greet(greeting, punctuation) {
-  console.log(`\({greeting}, \){this.name}${punctuation}`);
+  console.log(`${greeting}, ${this.name}${punctuation}`);
 }
 ```
 
