@@ -3,7 +3,7 @@ title: "Control Flow in JavaScript: If, Else, and Switch Explained"
 date: "Apr 18, 2026"
 excerpt: "Your bank app blocks a payment when your balance is too low. Your game says Game Over when your health hits zero. Every decision a program makes comes down to if, else and switch."
 slug: "control-flow-in-javascript-if-else-and-switch-explained"
-tags: "javascript, hashnode"
+tags: "javascript"
 ---
 
 Your music app skips explicit songs when parental controls are on. Your bank app blocks a payment when your balance is too low. Your favorite game says "Game Over" the moment your health hits zero.

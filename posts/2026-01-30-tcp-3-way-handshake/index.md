@@ -3,7 +3,7 @@ title: "TCP Working: 3-Way Handshake & Reliable Communication"
 date: "Jan 30, 2026"
 excerpt: "Before your browser sends a byte of HTTP, it trades three packets with the server, and none of them carry data. They exist to agree on one thing: where to start counting."
 slug: "tcp-3-way-handshake"
-tags: "networking, hashnode"
+tags: "networking"
 ---
 
 Before your browser sends a single byte of an HTTP request, it has already exchanged three packets with the server. None of them carry any data.

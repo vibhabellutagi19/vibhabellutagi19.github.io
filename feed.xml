@@ -36,7 +36,6 @@
       <pubDate>Sat, 18 Apr 2026 00:00:00 GMT</pubDate>
       <description>user.greet() prints &apos;Hi, alice&apos;. Pass the same function to setTimeout and it prints &apos;Hi, undefined&apos;. Why this changes, and how call, apply and bind put you in control of it.</description>
       <category>JavaScript</category>
-      <category>Hashnode</category>
     </item>
     <item>
       <title>Control Flow in JavaScript: If, Else, and Switch Explained</title>
@@ -45,7 +44,6 @@
       <pubDate>Sat, 18 Apr 2026 00:00:00 GMT</pubDate>
       <description>Your bank app blocks a payment when your balance is too low. Your game says Game Over when your health hits zero. Every decision a program makes comes down to if, else and switch.</description>
       <category>JavaScript</category>
-      <category>Hashnode</category>
     </item>
     <item>
       <title>Global vs GlobalThis</title>
@@ -54,7 +52,6 @@
       <pubDate>Sun, 08 Mar 2026 00:00:00 GMT</pubDate>
       <description>window.myVar works in the browser. Run the same file in Node.js and it crashes: window is not defined. Same language, same global object, different names, and the one name that works everywhere.</description>
       <category>JavaScript</category>
-      <category>Hashnode</category>
     </item>
     <item>
       <title>JavaScript Operators: The Basics You Need to Know</title>
@@ -63,7 +60,6 @@
       <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
       <description>You already know how operators work: you&apos;ve used a calculator. JavaScript&apos;s version adds a compare mode, a logic mode and memory buttons, plus one button that trips up almost everyone.</description>
       <category>JavaScript</category>
-      <category>Hashnode</category>
     </item>
     <item>
       <title>TCP Working: 3-Way Handshake &amp; Reliable Communication</title>
@@ -72,7 +68,6 @@
       <pubDate>Fri, 30 Jan 2026 00:00:00 GMT</pubDate>
       <description>Before your browser sends a byte of HTTP, it trades three packets with the server, and none of them carry data. They exist to agree on one thing: where to start counting.</description>
       <category>Networking</category>
-      <category>Hashnode</category>
     </item>
     <item>
       <title>Networking Basics: Comparing TCP and UDP Protocols</title>
@@ -81,7 +76,6 @@
       <pubDate>Wed, 28 Jan 2026 00:00:00 GMT</pubDate>
       <description>Before a webpage sends one byte over TCP, there&apos;s already been a full round trip. A DNS lookup over UDP is one packet out and one back. TCP vs UDP is a trade between guarantees and speed.</description>
       <category>Networking</category>
-      <category>Hashnode</category>
     </item>
     <item>
       <title>Getting Started with cURL</title>
@@ -90,7 +84,6 @@
       <pubDate>Wed, 28 Jan 2026 00:00:00 GMT</pubDate>
       <description>When an API call fails in the browser, all you see is &apos;Something went wrong&apos;. One terminal command sends the same request and shows you everything the server sent back.</description>
       <category>Networking</category>
-      <category>Hashnode</category>
     </item>
     <item>
       <title>DNS Record Types Explained</title>
@@ -99,7 +92,6 @@
       <pubDate>Mon, 26 Jan 2026 00:00:00 GMT</pubDate>
       <description>Pointing a domain at your website takes one DNS record. Receiving email takes another. Proving to Google you own it takes a third. A, AAAA, CNAME, NS, MX and TXT records, and the job each one does.</description>
       <category>Networking</category>
-      <category>Hashnode</category>
     </item>
     <item>
       <title>How DNS Resolution Works</title>
@@ -108,7 +100,6 @@
       <pubDate>Fri, 23 Jan 2026 00:00:00 GMT</pubDate>
       <description>You type google.com and the page starts loading almost instantly. In that time a resolver may have asked three servers where google.com lives, and none of them knew the whole answer.</description>
       <category>Networking</category>
-      <category>Hashnode</category>
     </item>
     <item>
       <title>Inside Git: How It Works Under the Hood</title>

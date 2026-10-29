@@ -3,7 +3,7 @@ title: "The magic of call(), apply(), bind()"
 date: "Apr 18, 2026"
 excerpt: "user.greet() prints 'Hi, alice'. Pass the same function to setTimeout and it prints 'Hi, undefined'. Why this changes, and how call, apply and bind put you in control of it."
 slug: "the-magic-of-call-apply-bind"
-tags: "javascript, hashnode"
+tags: "javascript"
 ---
 
 Here's a method that works:

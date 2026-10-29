@@ -3,7 +3,7 @@ title: "JavaScript Operators: The Basics You Need to Know"
 date: "Mar 1, 2026"
 excerpt: "You already know how operators work: you've used a calculator. JavaScript's version adds a compare mode, a logic mode and memory buttons, plus one button that trips up almost everyone."
 slug: "javascript-operators-the-basics-you-need-to-know"
-tags: "javascript, hashnode"
+tags: "javascript"
 ---
 
 Think about the last time you used a calculator. You typed in a number, hit a button: +, -, ×, ÷ - typed another number, and got a result. Simple as that.
