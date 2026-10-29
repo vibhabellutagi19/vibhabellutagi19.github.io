@@ -13,9 +13,9 @@ describe('post loading', () => {
   });
 
   it('resolves slug even when folder and slug differ', async () => {
-    const post = await getPostBySlug('columns-and-expressions');
+    const post = await getPostBySlug('spark-application-lifecycle-outside');
     expect(post).not.toBeNull();
-    expect(post.slug).toBe('columns-and-expressions');
+    expect(post.slug).toBe('spark-application-lifecycle-outside');
   });
 });
 
@@ -64,12 +64,12 @@ describe('getRelatedPosts', () => {
 });
 
 describe('real series', () => {
-  it('chains the Apache Spark posts from the introduction', async () => {
+  it('chains the Apache Spark posts from the first part', async () => {
     const posts = await getAllPosts();
-    const series = getSeries(posts, posts.find((item) => item.slug === 'spark-basics'));
+    const series = getSeries(posts, posts.find((item) => item.slug === 'handling-nulls-in-spark'));
 
-    expect(series.parts).toHaveLength(6);
+    expect(series.parts).toHaveLength(4);
     expect(series.index).toBe(0);
-    expect(series.next.slug).toBe('columns-and-expressions');
+    expect(series.next.slug).toBe('spark-job-anatomy');
   });
 });
