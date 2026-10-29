@@ -3,7 +3,7 @@ title: "DNS Record Types Explained"
 date: "Jan 26, 2026"
 excerpt: "Pointing a domain at your website takes one DNS record. Receiving email takes another. Proving to Google you own it takes a third. A, AAAA, CNAME, NS, MX and TXT records, and the job each one does."
 slug: "dns-record-types"
-tags: "networking, hashnode"
+tags: "networking"
 ---
 
 Say you buy `vibhavari.com` for your blog. Pointing it at your website takes one DNS record. Receiving email at `hello@vibhavari.com` takes a different one. Proving to Google that you own the domain takes a third.

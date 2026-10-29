@@ -3,7 +3,7 @@ title: "Getting Started with cURL"
 date: "Jan 28, 2026"
 excerpt: "When an API call fails in the browser, all you see is 'Something went wrong'. One terminal command sends the same request and shows you everything the server sent back."
 slug: "getting-started-with-curl"
-tags: "networking, hashnode"
+tags: "networking"
 ---
 
 An API call fails in your app and the page just says "Something went wrong". Was it a 401? A 500? Did the server even get the request? The browser hides most of that.
