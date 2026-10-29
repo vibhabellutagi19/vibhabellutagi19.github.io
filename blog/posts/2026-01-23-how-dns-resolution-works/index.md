@@ -1,28 +1,28 @@
 ---
 title: "How DNS Resolution Works"
 date: "Jan 23, 2026"
-excerpt: "Understand DNS resolution, its layers, and the role of tools like `dig` in translating domain names to IP addresses effectively"
+excerpt: "You type google.com and the page starts loading almost instantly. In that time a resolver may have asked three servers where google.com lives, and none of them knew the whole answer."
 slug: "how-dns-resolution-works"
 tags: "networking, hashnode"
 ---
 
-Lets say we need to connect to google.com, but assume we don’t have the domain names but its all [IP address](https://en.wikipedia.org/wiki/IP_address) - a numerical label like _192.0.2.1_ which is assigned to each device connected on internet for communication. It feels difficult to remember the 10 digits phone numbers of everyone we know, remembering IP address of the websites would have been difficult task in itself. To avoid this, we have Domain Name System.
+You type `google.com` and the page starts loading almost instantly. In that moment, a server you've probably never heard of may have asked three other servers where google.com lives, and none of them, on its own, knew the full answer.
 
-## What is DNS?
+> DNS works because no server knows everything. Each one only knows who to ask next.
 
-Domain Name System ( DNS ) is is a hierarchical and distributed [name service](https://en.wikipedia.org/wiki/Name_service) that provides a naming system for computers, services, and other resources on the Internet or other [Internet Protocol](https://en.wikipedia.org/wiki/Internet_Protocol) (IP) networks, in layman words - is a process where it helps internet users to search using the host names instead of numeric IP address. DNS is like a phonebook of internet, it transforms human readable host names into numeric IP address for computers to communicate through network.
+This post follows a single lookup through that chain: what DNS is, the three layers of servers it asks, why it's split up that way, and how to watch each step yourself with `dig`.
 
-As we know, each device connected to internet has a unique IP address which other machines can find and communicate to. Name resolution is process in converting hostnames ( simple english string ) to IP address for network communication. Human always understand descriptive names, but machine communication through network using IP address.
+## DNS Is the Internet's Phonebook
 
-## What is the dig command and its uses
+Every device on the internet is reached by an [IP address](https://en.wikipedia.org/wiki/IP_address), a numerical label like _192.0.2.1_. Remembering the IP address of every website you visit would be like remembering the phone number of everyone you know, without a contacts app.
 
-`dig` stands for Domain Information Groper, think of it as a tool that lets peek whats happening in DNS. It is a diagnostic tool, it performs interrogation with DNS name servers. It performs DNS lookups and display the answers that returned from the queries name server(s).
+The Domain Name System (DNS) is that contacts app. It's a hierarchical, distributed [name service](https://en.wikipedia.org/wiki/Name_service) that turns human-readable names like `google.com` into the IP addresses machines use to talk to each other. That conversion is called **name resolution**.
 
-When you type [`google.com`](http://google.com) in your browser, DNS quietly works in the background to find the IP address. `dig` lets you manually ask those same DNS questions yourself and see all the details of what happens.
+## dig Lets You Ask DNS Yourself
 
-Usually DNS administrators use dig command to troubleshoot DNS problems because of its flexibility, easy to use and provides clear output.
+`dig` (Domain Information Groper) is a command-line tool that sends DNS queries and shows you the full answer. When you type `google.com` into your browser, DNS works quietly in the background; `dig` lets you ask the same question yourself and see the details. It's the tool DNS administrators reach for first when troubleshooting.
 
-When you run `dig google.com` you get a detailed report with sections like:
+When you run `dig google.com`, you get a report with sections like:
 
 **1. Question Section** - What you asked
 
@@ -40,35 +40,27 @@ Translation: "What is the A record (IP address) for google.com?"
 google.com.             300     IN      A       142.250.185.46
 ```
 
-### The DNS Hierarchy: A Three-Tier Architecture
+The `300` is the TTL: how many seconds this answer can be cached before someone has to ask again.
 
-The sequence in which query resolves describes the hierarchial path of a DNS. The sequence is Root → TLD → Authoritative Servers.
+## Three Layers, Each Knowing Only the Next
 
-**Root Servers** →  
-The root of the DNS tree, represented by a dot (.). It is the starting point for all DNS queries. The root servers do not know the IP address of a domain but direct queries to the appropriate TLD server. There are 13 logical root server addresses, with hundreds of actual servers worldwide.
+A lookup walks down a hierarchy: **Root → TLD → Authoritative**. Each layer knows a little, and points you to the layer below.
 
-**Top-Level Domains(TLD)** →
+**Root Servers** →
+The root of the DNS tree, written as a dot (`.`). Every lookup that isn't cached starts here. Root servers don't know any domain's IP address; they only know which servers handle each top-level domain. There are 13 root server identities (`a` to `m.root-servers.net`), served by more than a thousand physical servers around the world.
 
-If a website address is like a street address, the TLD is like the city, state, or country at the end. It tells you the general "location" or category that the website belongs to. Lets say, in the address [**www.google.com**](http://www.google.com), the TLD is just the **.com** part.
+**Top-Level Domains (TLD)** →
+If a website address is like a street address, the TLD is the country at the end. In **www.google.com**, the TLD is **.com**. TLDs split the internet into manageable groups:
 
-Why do we need them?
+-   **.com** usually means a **com**mercial business (like Amazon or Google).
+-   **.in** is for India.
+-   **.edu** means an **edu**cational institution (like a university).
+-   **.gov** means a **gov**ernment agency.
 
-The internet is too big to be one giant list. TLDs help organize websites into different categories so they are easier to manage and understand.
-
-They act like big labels that give you a hint about what a website is for:
-
--   **.com** usually means it is a **comm**ercial business (like Amazon or Google).
-    
--   **.in** is for the India.
-    
--   **.edu** means it is an **edu**cational institution (like a university).
-    
--   **.gov** means it is a **gov**ernment agency.
-    
+TLD servers don't know google.com's IP address either. They know which servers are **authoritative** for google.com.
 
 **Authoritative Servers** →
-
-Think of authoritative servers as **the official source of truth** for a specific domain, holding the actual DNS records ( A, AAAA, MX, etc ) for a specific domain name. They provide the final IP address to the resolver
+These are **the official source of truth** for a specific domain. They hold its actual DNS records (A, AAAA, MX, etc.) and give the final answer.
 
 ```
                     [ROOT]
@@ -84,49 +76,46 @@ Think of authoritative servers as **the official source of truth** for a specifi
  [IP: 142.250.185.46]
 ```
 
-#### Why this Layered System Exists?
-
-**Scalability** - If one person tried to memorise every address in the world - is it ever possible? they’d fail. But if you divide the worlds into countries, then cities, then streets - each level only needs to know about their piece. The internet has billions of domain names. No single server could handle all those requests. By splitting it up, each layer handles a manageable portion.
-
-Decentralisation - What if the master directory gets destroyed or hacked? The whole internet breaks. Instead, DNS spreads the responsibility:
-
--   13 root server systems (actually hundreds of physical servers)
-    
--   Different organisations manage different TLDs (.com, .org, .uk, etc.)
-    
--   Individual companies manage their own authoritative servers
-    
-
-If one piece fails, the rest keep working.
+You can ask each layer directly:
 
 | command | what you’re Asking | what it reveals | DNS Layer | when to use |
 | --- | --- | --- | --- | --- |
 | `dig . NS` | Who runs the root of DNS? | The 13 root server identifiers ([a-m.root-servers.net](http://a-m.root-servers.net)) | **Layer 0: Root** | Learning DNS fundamentals; Understanding the starting point |
 | `dig com NS` | Who manages .com domains? | TLD name servers for .com ([a-m.gtld-servers.net](http://a-m.gtld-servers.net)) | Layer 1: TLD | Understanding TLD infrastructure; Troubleshooting domain registration issues |
-| `dig` [`google.com`](http://google.com) `NS` | Who are Google's official DNS servers? | Google's authoritative name servers ([ns1-4.google.com](http://ns1-4.google.com)) | Layer 2: Authoritative | Finding who hosts a domain's DNS; Verifying DNS configuration; Planning DNS migrations |
-| `dig` [`google.com`](http://google.com) | What's Google's IP address? | The actual IP address (142.250.185.46) | Layer 3: Resolution | Normal DNS lookups; Troubleshooting connectivity; Verifying DNS changes went live |
+| `dig google.com NS` | Who are Google's official DNS servers? | Google's authoritative name servers (ns1-4.google.com) | Layer 2: Authoritative | Finding who hosts a domain's DNS; Verifying DNS configuration; Planning DNS migrations |
+| `dig google.com` | What's Google's IP address? | The actual IP address (142.250.185.46) | Layer 3: Resolution | Normal DNS lookups; Troubleshooting connectivity; Verifying DNS changes went live |
 
-### Behind the Scenes: How Recursive Resolvers Work
+To watch the whole walk in one command, run `dig +trace google.com`. It starts at the root and follows each referral down, printing every step.
 
-A recursive DNS server is a key part of DNS hierarchy, which handles the domain lookups. Let’s see how the recursive DNS works behind the scenes:
+### Why Split It Up: Scale and Survival
 
-1.  `Request initiated` → When you type a website URL (e.g., `www.asample.com`) into your browser, your device sends a request to a recursive DNS resolver to find the corresponding IP address.
-    
-    1.  **Cache Check**: If this URL was recently requested, the resolver checks its cache first and immediately returns the IP address if found.
-2.  `Query to the Root Server` → If the IP address isn't in cache, the recursive resolver begins searching through the DNS hierarchy starting with root DNS servers.
-    
-    -   Root servers don't store domain IP addresses, but they direct the resolver to the appropriate Top-Level Domain (TLD) server based on the domain extension.
-3.  `Querying the TLD Server` → The TLD server manages all domains within a specific extension (`.com`, `.in`, etc.) and directs the recursive resolver to the authoritative DNS server responsible for the specific domain.
-    
-4.  `Querying the authoritative DNS server:` → The authoritative server holds the official DNS records for the domain, including the IP address. It responds with the exact IP address for the requested domain.
-    
-5.  `Returning the result to your device` **→** The recursive DNS resolver returns the IP address to your device, allowing your browser to connect to the website. The resolver also caches this IP address temporarily to speed up future requests for the same domain.
-    
+**Scalability** - Could one person memorise every address in the world? No. But divide the world into countries, then cities, then streets, and each level only needs to know its own piece. The internet has hundreds of millions of domain names; no single server could answer for all of them. Splitting the work up gives each layer a manageable portion.
+
+**Decentralisation** - If there were one master directory and it went down or got hacked, the whole internet would break. Instead, DNS spreads the responsibility:
+
+-   13 root server identities, run by different organisations on more than a thousand servers
+-   Different organisations manage different TLDs (.com, .org, .uk, etc.)
+-   Individual companies manage their own authoritative servers
+
+If one piece fails, the rest keep working.
+
+## The Resolver Does the Asking for You
+
+Your browser doesn't walk this chain itself. It hands the question to a **recursive resolver** (usually run by your ISP, or a public one like `1.1.1.1` or `8.8.8.8`), which does the walking and hands back just the answer:
+
+1.  `Request initiated` → You type a URL (e.g., `www.example.com`), and your device asks the recursive resolver for its IP address.
+    1.  **Cache Check**: If this name was looked up recently, the resolver answers from its cache straight away.
+2.  `Query to the Root Server` → If it's not cached, the resolver starts at a root server, which replies with the TLD servers for `.com`.
+3.  `Querying the TLD Server` → The `.com` TLD server replies with the authoritative servers for `example.com`.
+4.  `Querying the authoritative DNS server` → The authoritative server replies with the actual IP address.
+5.  `Returning the result to your device` → The resolver returns the IP to your device, and caches it for the record's TTL so the next lookup skips steps 2–4.
 
 ![](assets/image-1.png)
 
-## Conclusion
+That cache is why most lookups are fast: the full walk only happens the first time someone using that resolver asks for a name.
 
-The DNS resolution process efficiently translates domain names into IP addresses through a hierarchical lookup system. While multiple servers are involved, caching at each level ensures most requests are resolved within milliseconds. This distributed architecture makes DNS both scalable and reliable, serving as the foundational addressing system that keeps the internet accessible and performant for billions of users worldwide.
+---
 
-If you like the blog, please share it with others. Follow me on [linkedin](https://www.linkedin.com/in/vibhavari-bellutagi/)
+So when `google.com` loads instantly, it's not because one server knew the answer. It's because the root knew who handles `.com`, `.com` knew who handles google.com, and google.com's own servers finally knew the address.
+
+Next: [DNS Record Types Explained](/blog/dns-record-types). More posts on [networking](/blog/tags/networking/).

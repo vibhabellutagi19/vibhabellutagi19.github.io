@@ -1,34 +1,36 @@
 ---
 title: "Global vs GlobalThis"
 date: "Mar 8, 2026"
-excerpt: "Learn the difference between global and globalThis in JavaScript. Understand the global object, why it has different names across environments, and ho"
+excerpt: "window.myVar works in the browser. Run the same file in Node.js and it crashes: window is not defined. Same language, same global object, different names, and the one name that works everywhere."
 slug: "global-vs-globalthis"
 tags: "javascript, hashnode"
 ---
 
-**TL;DR**
+Write `window.myVar = 1` and it works in the browser. Run the same file in Node.js and it crashes:
 
-Every JavaScript environment has a global object, but it has different names:
+```
+ReferenceError: window is not defined
+```
 
-1.  `window` in browsers
-    
-2.  `global` in Node.js,
-    
-3.  and `self` in Web Workers.
-    
+Same language. Same idea of a global object. A different name.
 
-This forced developers to write messy environment-detection code just to access it reliably. `globalThis`, introduced in ES2020, solves this by providing one universal name that works everywhere. Use it when you need cross-environment compatibility - but use it sparingly, as polluting the global scope leads to bugs and messy code.
+> `globalThis` is the one name for the global object that works in every JavaScript environment.
 
-## What is scope?
+This post covers what the global object is, why it ended up with a different name in each environment, how `globalThis` fixes that, and why you should still use it sparingly.
 
-Almost every modern programming language has the concept of scope, and JavaScript is no exception. At its core, scope answers simple question:
+:::tldr
+**Problem:** the global object is called `window` in browsers, `global` in Node.js and `self` in Web Workers, so code that touches it breaks when it runs somewhere else.
+
+**Fix:** use `globalThis` (ES2020), which works everywhere. But prefer module exports over globals: reach for `globalThis` only when something truly must be global.
+:::
+
+## Global Variables Live on an Object
+
+Scope answers one question:
 
 > Where in your code can this variable be seen and used?
 
-Think of a code which has 10000 lines, if a variable defined once, is accessible throughout the huge code, is it a good practice?  
-The scope here sets the boundary of the variables - when you create a variable, it's not always everywhere, scope defines the boundaries of where that variable lives and who can access it.
-
-#### Global & Function Scope
+A variable declared inside a function or a `{ }` block is only visible there. A variable at the top level is visible everywhere:
 
 ```javascript
 let globalVar = 'This is global variable';
@@ -46,29 +48,9 @@ console.log('Outside function: ', globalVar); // ✅ This is global variable
 console.log('Outside function: ', localVar);  // ❌ ReferenceError: localVar is not defined
 ```
 
-Global Scope - visible _everywhere_ in your code  
-Function Scope - visible only inside that function
+But what does "everywhere" actually mean? JavaScript always has a container that holds the things available everywhere: built-ins like `setTimeout`, `fetch` and `console`, plus anything you attach to it yourself. That container is the **global object**.
 
-#### Block Scope
-
-Block Scope - visible only _inside that block_ `{ }`
-
-```javascript
-let localFlag = true;
-
-if (localFlag) {
-  let blockVar = 'This is in if block';
-  console.log('Inside block: ', blockVar); // ✅ This is in if block
-}
-
-console.log('Outside block: ', blockVar); // ❌ ReferenceError: blockVar is not defined
-```
-
-## What is the Global Object?
-
-We just saw that variables declared outside any function are accessible everywhere. But have you ever wondered what 'everywhere' actually means in JavaScript? There's a container that holds all of these global variables, and it's called the global object.
-
-In each JavaScript environment, there's always a global object defined. The context of global's interface depends on the execution context in which the script is running -
+Every JavaScript environment has one, but each environment named it differently:
 
 | Environment | Global Object |
 | --- | --- |
@@ -76,9 +58,9 @@ In each JavaScript environment, there's always a global object defined. The cont
 | Node.js | `global` |
 | Web Workers (browser background threads) | `self` |
 
-## The Problem: global, window, self
+## Three Names for One Object
 
-The real problem is this: the global object means the same thing in every JavaScript environment, but it goes by a different name in each one. To write code that worked everywhere, developers either required to write environment specific code or had to manually check which environment they were in:
+The global object means the same thing in every environment, but it goes by a different name in each one. To write code that worked everywhere, such as a library used in both the browser and Node.js, developers had to detect which environment they were in:
 
 ```javascript
 function getGlobalObject() {
@@ -93,39 +75,27 @@ const globalObj = getGlobalObject();
 
 This approach was error-prone. Some versions added a last-resort fallback of `this`, which only works in non-strict scripts: in strict mode and in ES modules, top-level `this` is `undefined`, so the fallback silently breaks. It was too much boilerplate just to do one simple thing, access the global object.
 
-## What is globalThis and what problem does it solve?
+## globalThis Is the Name That Works Everywhere
 
-Remember that function we just wrote to detect the environment? `globalThis` makes it completely unnecessary. Introduced in ES2020, it gives JavaScript a single standardised way to access the global object, no environment checks, no fragile fallbacks. It just works, everywhere.
+`globalThis`, introduced in ES2020, makes that function unnecessary. It's a single, standard name for the global object, with no environment checks and no fragile fallbacks.
+
+```javascript
+// ❌ Before — environment detection
+const globalObj = getGlobalObject();
+globalObj.myVar = 42;
+
+// ✅ After — works in browsers, Node.js and Web Workers
+globalThis.myVar = 42;
+console.log(globalThis.myVar); // 42
+```
 
 **Benefits of** `globalThis`**:**
 
-1.  **Easy Access** - Available out of the box in every JavaScript environment. No imports, no setup, no configuration needed.
-    
-2.  **Simplified Code** - Replaces lengthy environment detection code with a single, consistent reference. What used to take 5 lines now takes one.
-    
-3.  **Maintainable Code** - Any developer, regardless of their background, immediately understands what `globalThis` refers to. No guessing, no environment-specific surprises.
-    
+1.  **Available everywhere** - built into every modern JavaScript environment. No imports, no setup.
+2.  **Simpler code** - one consistent reference instead of a detection function.
+3.  **Readable** - any developer immediately knows what `globalThis` refers to.
 
-## How to Use globalThis?
-
-**Setting a global variable**
-
-```javascript
-globalThis.myVar = 'Hello World';
-console.log(globalThis.myVar); // Hello World
-```
-
-**Sharing data across modules**
-
-```javascript
-// module-a.js
-globalThis.config = { debug: true, version: '1.0.0' };
-
-// module-b.js
-console.log(globalThis.config.version); // 1.0.0
-```
-
-**Checking if a feature exists**
+A common use is checking whether a feature exists, without caring where the code runs:
 
 ```javascript
 if (typeof globalThis.fetch !== 'undefined') {
@@ -135,55 +105,26 @@ if (typeof globalThis.fetch !== 'undefined') {
 }
 ```
 
-#### Comparing with global
+## Use It Rarely, Because Globals Are Shared by Everyone
 
-```javascript
-// ❌ Before — complicated environment detection
-function getGlobalObject() {
-  if (typeof window !== 'undefined') return window;   // Browser
-  if (typeof global !== 'undefined') return global;   // Node.js
-  if (typeof self !== 'undefined') return self;       // Web Workers
-  throw new Error('Unable to locate global object');  // Unknown environment
-}
+`globalThis` makes the global object easy to reach. That doesn't make globals a good idea.
 
-const globalObj = getGlobalObject();
-globalObj.myVar = 42;
-console.log(globalObj.myVar); // 42
-
-// ✅ After — simple and universal
-globalThis.myVar = 42;
-console.log(globalThis.myVar); // 42
-```
-
-## When should you use it? (+ avoid polluting globals)
-
-`globalThis` is powerful, but that doesn't mean you should reach for it often. Here's a simple rule:
-
-> Use `globalThis` only when you genuinely need something to be accessible across your entire application and across different environments.
+> Use `globalThis` only when something genuinely needs to be reachable from your entire program, across different environments.
 
 **Good use cases:**
 
--   Writing a library or utility that runs in both browser and Node.js
-    
+-   Writing a library or utility that runs in both the browser and Node.js
 -   Feature detection across environments
-    
 -   Polyfilling missing features
-    
--   Sharing configuration across modules
-    
 
 **Avoid it when:**
 
 -   A regular variable or module export would do the job
-    
 -   You're tempted to use it just to avoid passing data around properly
-    
-
-* * *
 
 ### ⚠️ Don't Pollute the Global Scope
 
-Every property you add to `globalThis` is available everywhere in your entire program. This sounds convenient but causes real problems:
+Every property you add to `globalThis` is visible to every file in your program, including third-party code:
 
 ```javascript
 // ❌ Bad — polluting the global scope
@@ -199,12 +140,9 @@ export const config = { debug: true };
 
 Polluting globals leads to:
 
--   **Name collisions** : two files accidentally overwrite each other's variables
-    
--   **Harder debugging** : variables change from unexpected places
-    
--   **Messy codebase** : nothing is predictable
-    
+-   **Name collisions**: two files accidentally overwrite each other's variables
+-   **Harder debugging**: values change from places you didn't expect
+-   **Unpredictable code**: any file can depend on anything
 
 ## global vs globalThis
 
@@ -217,6 +155,8 @@ Polluting globals leads to:
 | Standardised | ❌ Node-specific | ✅ Official JS standard |
 | Recommended | Only for Node.js specific code | Always preferred |
 
-### Wrap up
+---
 
-If you learnt something new about the global and globalThis concept in Javascript, share it with your friends and teammates :) Follow me for more content
+So when code needs to reach the global object, don't ask which environment you're in. Write `globalThis`, and then ask whether it should be global at all.
+
+More posts on [JavaScript](/blog/tags/javascript/).

@@ -1,18 +1,39 @@
 ---
 title: "The magic of call(), apply(), bind()"
 date: "Apr 18, 2026"
-excerpt: "If you ever worked with javascript, you would have encountered with a famous yet confusing keyword 'this'. In this blog, we will explore how 'this' works…"
+excerpt: "user.greet() prints 'Hi, alice'. Pass the same function to setTimeout and it prints 'Hi, undefined'. Why this changes, and how call, apply and bind put you in control of it."
 slug: "the-magic-of-call-apply-bind"
 tags: "javascript, hashnode"
 ---
 
-If you ever worked with javascript, you would have encountered with a famous yet confusing keyword "this". In this blog, we will explore how "this" works, and more about call(), apply() and bind() methods
+Here's a method that works:
 
-### What `this` means in JavaScript
+```javascript
+const user = {
+  username: "alice",
+  greet() {
+    console.log(`Hi, ${this.username}`);
+  }
+};
 
-`this` keyword refers the context where a piece of code runs, might be in function's body or a object. The golden rule that explains everything about `this` depends on how a function is called, not where its defined but how its invoked.
+user.greet();               // Hi, alice
+setTimeout(user.greet, 0);  // Hi, undefined
+```
 
-When a regular function is invoked as a method of an object, `this` points to that object. When invoked as a standalone function (not attached to an object: `func()`), `this` typically refers to the global object (in non-strict mode) or `undefined` (in strict mode).
+Same function, same object. The only thing that changed is **how the function was called**, and that was enough to lose `this`.
+
+> `this` is decided when a function is called, not where it's written. `call`, `apply` and `bind` let you decide it yourself.
+
+This post covers how JavaScript picks `this`, then the three methods that let you set it, and how each one would fix the bug above.
+
+## `this` Is Decided at Call Time
+
+`this` refers to the context a function runs in. The rule that explains almost everything about it: **`this` depends on how a function is called, not where it's defined.**
+
+- Called as a method of an object (`user.greet()`), `this` is that object.
+- Called as a standalone function (`greet()`), `this` is the global object in non-strict mode, or `undefined` in strict mode.
+
+In the example above, `setTimeout` receives only the function, not the object it came from. When it calls the function later, it's a plain call, so `this` is no longer `user`.
 
 ### `this` inside a regular function
 
@@ -31,11 +52,8 @@ showThis();
 #### What `this` is
 
 -   In **non-strict mode (browser)** → `this` = `window`
-    
 -   In **strict mode** → `this` = `undefined`
-    
 -   In **Node.js** → `this` = `global` (or `undefined` in strict mode)
-    
 
 👉 Key point: `this` depends on **how the function is called**, not where it’s defined.
 
@@ -61,19 +79,17 @@ user.greet();
 #### What `this` is
 
 -   `this` = the object before the dot → `user`
-    
 -   So `this.name` → `"Alice"`
-    
 
 👉 Key point: When a function is called as a **method**, `this` refers to the **owning object**.
 
-### `call`, `apply`, and `bind` in JavaScript
+## `call`, `apply` and `bind` Let You Choose `this`
 
-All three do the same core thing: **let you borrow a function and control what** `this` **refers to inside it.** The difference is _how_ and _when_ the function runs.
+All three do the same core thing: **let you borrow a function and control what** `this` **refers to inside it.** The difference is _how_ you pass arguments and _when_ the function runs.
 
 * * *
 
-#### The Setup — why do we need them?
+#### The Setup
 
 ```js
 const person = { name: "Alice" };
@@ -83,7 +99,7 @@ function greet(greeting, punctuation) {
 }
 ```
 
-`greet` uses `this.name`, but `this` isn't set. These three methods let us _inject_ `person` as `this`.
+`greet` uses `this.name`, but nothing sets `this`. These three methods let us _inject_ `person` as `this`.
 
 * * *
 
@@ -96,7 +112,7 @@ greet.call(person, "Hello", "!");
 
 **Syntax:** `fn.call(thisArg, arg1, arg2, ...)`
 
-🧠 **Mental model:** Think of it as a **phone call** — you dial (call) someone right now, and you pass each thing you want to say one at a time.
+🧠 **Mental model:** Think of it as a **phone call**: you dial (call) someone right now, and say each thing one at a time.
 
 * * *
 
@@ -109,7 +125,7 @@ greet.apply(person, ["Hey", "?"]);
 
 **Syntax:** `fn.apply(thisArg, [arg1, arg2, ...])`
 
-🧠 **Mental model:** Same as `call`, but you **apply** a whole list of arguments at once — like handing someone a _sheet of paper_ with everything on it, instead of saying each thing one by one.
+🧠 **Mental model:** Same as `call`, but you **apply** a whole list of arguments at once, like handing someone a _sheet of paper_ with everything on it instead of saying each thing one by one.
 
 * * *
 
@@ -125,9 +141,9 @@ greetAlice("!!");
 
 **Syntax:** `const newFn = fn.bind(thisArg, arg1, ...)`
 
-`bind` lets you **pre-fill** some arguments too (called _partial application_).
+`bind` also lets you **pre-fill** some arguments (called _partial application_).
 
-🧠 **Mental model:** Think of `bind` as a **sticky note** — you write down who `this` is and pre-fill some args, then stick it on the function. The function doesn't run until _you_ decide to call it later.
+🧠 **Mental model:** Think of `bind` as a **sticky note**: you write down who `this` is, pre-fill some args, and stick it on the function. The function doesn't run until _you_ decide to call it later.
 
 #### Side-by-side comparison
 
@@ -140,7 +156,17 @@ greetAlice("!!");
 ### The one-line summary for each
 
 -   `call` → _"Run this function NOW, with this_ `this`_, passing args separately"_
-    
 -   `apply` → _"Run this function NOW, with this_ `this`_, passing args as an array"_
-    
 -   `bind` → _"Give me a new function with_ `this` _(and maybe some args) locked in — I'll call it later"_
+
+## Back to the setTimeout Bug
+
+`setTimeout` calls the function later, so `call` and `apply` don't fit: they run it immediately. `bind` is the one that fits, because it returns a function with `this` locked in:
+
+```javascript
+setTimeout(user.greet.bind(user), 0);  // Hi, alice
+```
+
+Whenever you hand a method to something else to call later (a timer, an event listener, a callback), the object doesn't come with it. `bind` is how you send it along.
+
+More posts on [JavaScript](/blog/tags/javascript/).

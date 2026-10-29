@@ -119,7 +119,7 @@ Confirmation emails are sent **after** the transaction commits. If the email pro
 
 The capacity check, the "has the class already started?" check, and the overlap check all run after the locks are taken. A check done before locking is a check against data that may already be out of date.
 
-## Mistake 1: a second connection inside the transaction
+## Mistake 1: a second connection inside the transaction can freeze every booking
 
 This one was a real bug, fixed in September.
 
@@ -164,7 +164,7 @@ export const db = drizzle({
 Inside a transaction callback, every query should use the transaction handle (`tx`), never the global client. A lint rule or a repository interface that requires `tx` as an argument makes this mistake hard to write.
 :::
 
-## Mistake 2: locking more than one table
+## Mistake 2: FOR UPDATE locks every table in the join
 
 I found this one while writing this post.
 
@@ -201,7 +201,7 @@ The fix is to name the table to lock. In SQL that's `FOR UPDATE OF sessions`; in
 
 At a small gym's booking volume this costs milliseconds, which is why nothing broke. But it would be one of the first things to hurt on a busy morning, and it's invisible from the code unless you know the rule.
 
-## What's still missing
+## The lock is the only guard, and that's a gap
 
 The row lock prevents overbooking, but it's the only thing that does. Some gaps are worth knowing about.
 

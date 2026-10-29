@@ -2,30 +2,44 @@
 title: "Handling Nulls in Spark"
 date: "Jan 13, 2025"
 readTime: "8 min read"
-excerpt: "In SQL null is a special marker used to indicate that a data value does not exist in the database. A null should not be confused with a value of 0. Let's deep dive into handling nulls in Spark."
+excerpt: "Six of ten movies have no rating, and filtering for == None returns zero rows with no error. How nulls behave in Spark, and the functions that handle them properly."
 slug: "handling-nulls-in-spark"
 series: "Apache Spark"
 tags: "apache-spark"
 ---
 
-In SQL `null` or `Null` is a special marker used to indicate that a data value does not exist in the database. A null should not be confused with a value of 0. A null indicates a lack of a value, which is not the same as a zero value.
+Here's a filter that looks correct:
 
-For example:
-Consider the question "How many books does Krishna own?" 
-The answer may be `zero` (we know that he owns none) or `null` (we do not know how many he owns).
+```python
+df.filter(col("Rotten_Tomatoes_Rating") == None).count()  # 0
+```
 
-Let's deep dive into handling nulls in Spark.
+Six of the ten movies in the dataset below have no Rotten Tomatoes rating. Spark returns zero rows, and no error.
+
+That's because null in Spark isn't a value you can compare against. It's a marker that means "unknown", and almost anything you do with an unknown gives you back another unknown.
+
+> Null is not zero, not an empty string, and not false. It's "we don't know".
+
+Consider the question "How many books does Krishna own?" The answer may be `0` (we know he owns none) or `null` (we don't know how many he owns). Treat those two the same and your numbers quietly go wrong.
+
+This is the first post in my [Apache Spark](/blog/tags/apache-spark) series, where I work through Spark from the DataFrame API down to how jobs actually run. It covers how nulls behave in Spark, and the functions for checking, replacing, sorting and dropping them.
+
+:::tldr
+**Problem:** any comparison or arithmetic with null gives null, so `== None` filters match nothing and `colA + colB` silently turns into null.
+
+**Fix:** check with `isNull()` / `isNotNull()`, compare with `eqNullSafe()` (`<=>`), and decide explicitly what a missing value should become with `coalesce()`, `na.fill()` or `na.drop()`.
+:::
 
 <!-- truncate -->
 
-## Handling nulls in Spark
+## Null Is a Marker, Not a Value
 
-In Spark, a null value represents the absence of any value: it is not zero, an empty string, or false. Spark treats nulls in a way similar to SQL. When performing operations on null values, you need to be explicit about how to handle them, as any operation with a null value generally yields a null result (unless specifically handled).
+Spark treats nulls the way SQL does. Any operation involving a null generally yields null, unless you handle it explicitly.
 
-Key Points about Nulls in Spark:
-1. **Null propagation**: If you do an arithmetic operation (e.g., `colA + colB`) and either `colA` or `colB` is null, the result is null unless there is a function to handle null explicitly (like coalesce).
+Three rules explain most null surprises:
+1. **Null propagation**: If you do an arithmetic operation (e.g., `colA + colB`) and either `colA` or `colB` is null, the result is null unless a function handles the null explicitly (like coalesce).
 
-2. **Comparison**: Comparisons with null always yield false or unknown. For example, df.filter(`df("age") == null`) might not work as intended. Instead, you need to use methods like isNull or isNotNull.
+2. **Comparison**: Comparing anything with null, even null itself, gives null, and a filter treats null as "no". That's why `col("age") == None` matches nothing. Use `isNull()` or `isNotNull()` instead.
 
 3. **Equi-Null safe join**: Spark SQL provides nullSafeEq or eqNullSafe (`<=>` in SQL) to compare two columns including nulls. This means if both sides are null, it returns true.
 
@@ -33,7 +47,7 @@ Key Points about Nulls in Spark:
 In SQL, null is a marker, not a value.
 :::
 
-### Data Preparation 
+### The Dataset
 
 ```python
 from pyspark.sql import SparkSession
@@ -82,7 +96,7 @@ df.show()
 ```
 </details>
 
-### Coalesce
+## coalesce Picks the First Value That Exists
 - In Spark SQL and DataFrame APIs, `coalesce()` is used to return the first non-null value among its arguments.
 - If you have multiple columns and want a single column which picks up a non-null value from one of them in order, or you want to replace a single column’s null value with a fallback.
 
@@ -114,8 +128,15 @@ rating_df.show(10, False)
 ```
 </details>
 
-### Checking for nulls
-In Spark, null indicates missing or unknown data. To check if a column has null values, you can use:
+## Check with isNull, Never == None
+Back to the filter from the start of this post. Here it is next to the one that works:
+
+```python
+df.filter(col("Rotten_Tomatoes_Rating") == None).count()    # 0
+df.filter(col("Rotten_Tomatoes_Rating").isNull()).count()   # 6
+```
+
+To check for nulls, use:
 
 - `isNull()`
 - `isNotNull()`
@@ -167,7 +188,7 @@ df_eq_null_safe.show()
 ```
 </details>
 
-### Nulls when ordering columns
+## Sorting Puts Nulls First Unless You Say Otherwise
 
 When you order a DataFrame in Spark, null handling can change your result. By default, Spark sorts `nulls first in ascending order` and `last in descending order`.
 
@@ -204,7 +225,7 @@ move_nulls_to_end.show()
 </details>
 
 
-### Replace nulls with a value
+## Replace Nulls with a Default
 Spark provides multiple ways to replace null values:
 
 - `DataFrame.na.fill(value, subset=None)` – Fill null values in specified columns.
@@ -258,7 +279,7 @@ df_fill_multiple.show(5, False)
 ```
 </details>
 
-### Remove nulls
+## Drop Rows with Missing Values
 Sometimes you might want to drop rows that contain any null or all nulls, or conditionally drop rows with null in specific columns.
 
 Example 1:
@@ -327,7 +348,7 @@ df_drop_subset.show()
 ```
 </details>
 
-### Special Null functions
+## Spark SQL's Other Null Functions
 
 1. **equal_null**: Returns `true` if both expressions are equal (including both being `NULL`), else `false`.  
 2. **ifnull**: Returns the second expression if the first is `NULL`, otherwise returns the first. Same as `coalesce`. 
@@ -369,9 +390,7 @@ special_nulls.show(10, False)
 ```
 </details>
 
-## Conclusion
-
-Putting all together - 
+## Cheat Sheet
 
 | **Function / Operation**                            | **One-Line Explanation**                                                                                       |
 |------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
@@ -388,6 +407,6 @@ Putting all together -
 | **asc_nulls_first / asc_nulls_last** (when sorting) | Orders rows ascending, placing nulls either first or last.                                                     |
 | **desc_nulls_first / desc_nulls_last** (when sorting)| Orders rows descending, placing nulls either first or last.                                                    |
 
-I hope you enjoyed reading this blog on handling nulls in Spark, if you are interested in more such content, do check out [Apache Spark](/blog/tags/apache-spark). series.
+The next time a filter returns zero rows and no error, check whether it compared something with null.
 
-If you have any questions or feedback, feel free to reach out to me.
+Next in the series: [Under the hood of a Spark job](/blog/spark-job-anatomy).
