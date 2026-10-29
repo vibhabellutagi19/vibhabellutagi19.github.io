@@ -1,0 +1,17 @@
+name = "blog-likes"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+workers_dev = true
+preview_urls = false
+
+[vars]
+# http://localhost on any port is always allowed, for local development.
+ALLOWED_ORIGINS = "https://buildwithvibs.in"
+
+# Create the namespace with `npx wrangler kv namespace create LIKES`
+# and paste the id it prints here.
+[[kv_namespaces]]
+binding = "LIKES"
+id = "739b375a59dc48ee8b2252a2999475ac"
+
+# IP_SALT is a secret: set it with `npx wrangler secret put IP_SALT`.

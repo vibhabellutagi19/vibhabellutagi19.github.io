@@ -1,6 +1,6 @@
 import { Fraunces, Inter, JetBrains_Mono } from 'next/font/google';
-import Script from 'next/script';
 
+import { GoatCounter } from '@/components/analytics/GoatCounter';
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
 import { analytics } from '@/data/site';
@@ -30,9 +30,12 @@ const description =
 
 // The preview image comes from opengraph-image.jpg / twitter-image.jpg in this folder.
 export const metadata = {
-  metadataBase: new URL('https://vibhabellutagi19.github.io'),
+  metadataBase: new URL('https://buildwithvibs.in'),
   title,
   description,
+  alternates: {
+    types: { 'application/rss+xml': [{ url: '/feed.xml', title: 'Vibhavari Bellutagi · Blog' }] },
+  },
   openGraph: {
     type: 'website',
     url: '/',
@@ -58,14 +61,7 @@ export default function RootLayout({ children }) {
         <Header />
         <div id="main">{children}</div>
         <Footer />
-        {analytics.cloudflareToken && (
-          <Script
-            type="module"
-            src="https://static.cloudflareinsights.com/beacon.min.js"
-            data-cf-beacon={JSON.stringify({ token: analytics.cloudflareToken })}
-            strategy="afterInteractive"
-          />
-        )}
+        {analytics.goatcounterCode && <GoatCounter code={analytics.goatcounterCode} />}
       </body>
     </html>
   );

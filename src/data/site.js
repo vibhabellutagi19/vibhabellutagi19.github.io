@@ -6,6 +6,8 @@ export const profile = {
     "Hi Vibhavari, I'd like to discuss a project."
   )}`,
   photo: "/me/vibsii.jpg",
+  // Square, lightly sharpened crop of /me/vibhavari_bellutagi.jpg for the blog byline and author card.
+  avatar: "/me/vibhavari_bellutagi-avatar.jpg",
   email: "vibhavari.bellutagi@gmail.com",
   bookingUrl: "https://calendly.com/vibhavari-bellutagi/discovery-call",
   github: "https://github.com/vibhabellutagi19",
@@ -15,17 +17,25 @@ export const profile = {
 };
 
 /**
- * Cloudflare Web Analytics. Paste the site token from the Cloudflare
- * dashboard; the beacon stays off while this is empty.
+ * GoatCounter. Set this to your site code (the "mycode" in
+ * mycode.goatcounter.com); tracking and view counts stay off while it is empty.
  */
 export const analytics = {
-  cloudflareToken: "7cbed45ff06d49078c9c8ec08d2fad34",
+  goatcounterCode: "vibhavaribellutagi",
+};
+
+/**
+ * Likes API: the Cloudflare Worker in /worker. Paste its URL once deployed,
+ * e.g. "https://blog-likes.<you>.workers.dev"; the like button stays hidden while empty.
+ */
+export const likes = {
+  apiUrl: "https://blog-likes.vibhavari-bellutagi.workers.dev",
 };
 
 export const heroData = {
-  eyebrow: "Freelance full-stack developer · available for projects",
-  title: "I build the software that runs your business.",
-  lede: "From the first sketch to a live product with paying users. Ten years of engineering, including seven building data platforms, means what I ship stays fast, reliable and affordable as you grow.",
+  eyebrow: "Build with Vibs · available for projects",
+  title: "Ideas into impact.",
+  lede: "I build web apps, platforms and AI features that help ambitious businesses turn ideas into products people use every day. From your first concept to a live product with paying users, ten years of engineering, seven of them building data platforms, means what I ship stays fast, reliable and affordable as you grow.",
   stats: [
     { value: "10+", label: "years in software" },
     { value: "2", label: "products live in production" },

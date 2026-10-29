@@ -33,6 +33,7 @@ date: "Nov 26, 2024"
 readTime: "5 min read"
 excerpt: "A brief description of your post that will appear in the blog listing."
 slug: "welcome-to-my-blog"
+tags: "apache-spark, data-engineering"   # optional, comma-separated
 ---
 
 Your markdown content goes here...
@@ -80,3 +81,26 @@ The blog supports standard Markdown syntax including:
 
 The markdown is rendered using [marked.js](https://marked.js.org/) which is lazy-loaded only when viewing individual posts.
 
+
+## Interactive demos
+
+Put a line like this on its own in a post to embed an interactive React component:
+
+```markdown
+::demo[session-simulator]
+```
+
+Demos live in `src/components/blog/demos/` and are registered by name in
+`src/components/blog/demos/index.js`. To add one, create a client component there
+and add it to `postDemos`. Unknown names render nothing.
+
+## Series
+
+Posts that belong together can share a series name in their frontmatter:
+
+```markdown
+series: "Apache Spark"
+```
+
+Parts are ordered by date, oldest first. Each part gets a "Part 2 of 6" box at the top
+listing every part, and a "Keep reading" card for the next part at the end.
