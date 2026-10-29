@@ -28,6 +28,9 @@ export default function PrivacyPage() {
   return (
     <main className="section">
       <div className="container container-narrow">
+        <Link className="text-link back-link" href="/">
+          ← Home
+        </Link>
         <div className="section-head">
           <p className="eyebrow">Privacy</p>
           <h1>Privacy policy</h1>
@@ -81,12 +84,6 @@ export default function PrivacyPage() {
             request to delete anything, go to <a href={`mailto:${profile.email}`}>{profile.email}</a>.
           </p>
         </div>
-
-        <p>
-          <Link className="text-link" href="/">
-            ← Home
-          </Link>
-        </p>
       </div>
     </main>
   );
