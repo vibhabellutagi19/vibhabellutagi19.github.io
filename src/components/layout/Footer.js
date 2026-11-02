@@ -19,6 +19,7 @@ export function Footer() {
             GitHub
           </a>
           <Link href="/blog/">Blog</Link>
+          <Link href="/privacy/">Privacy</Link>
         </div>
       </div>
     </footer>

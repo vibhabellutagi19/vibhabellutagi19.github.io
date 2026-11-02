@@ -30,6 +30,10 @@ export default async function sitemap() {
       url: `${SITE_URL}/blog/tags/`,
       lastModified: new Date(),
     },
+    {
+      url: `${SITE_URL}/privacy/`,
+      lastModified: new Date(),
+    },
     ...tagEntries,
     ...postEntries,
   ];
