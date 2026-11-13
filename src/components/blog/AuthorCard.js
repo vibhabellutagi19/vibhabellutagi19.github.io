@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { profile } from '@/data/site';
+import { profile, resumeLink } from '@/data/site';
 
 // Outline icons from Tabler Icons (MIT, tabler.io/icons), merged into one path each.
 const ICONS = {
@@ -28,12 +28,16 @@ export function AuthorCard() {
       <p className="author-name">{profile.name}</p>
       <p className="author-bio">
         {profile.role}. 10+ years in software, seven of them building data platforms (Spark, Kafka, Databricks) at
-        Deloitte, AgileLab and Mews. Now building products end to end, including{' '}
-        <Link href="/#work">Move</Link>, a gym management app.
+        Deloitte, AgileLab and Mews. On the side, I build full-stack <Link href="/#projects">projects</Link> and
+        write up the hard parts here.
       </p>
-      <Link className="btn btn-primary btn-sm author-cta" href="/#contact">
-        Work with me
-      </Link>
+      <a
+        className="btn btn-primary btn-sm author-cta"
+        href={resumeLink.href}
+        {...(resumeLink.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+      >
+        Résumé
+      </a>
       <ul className="author-links">
         {LINKS.map(({ icon, label, href }) => (
           <li key={icon}>

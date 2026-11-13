@@ -1,310 +1,350 @@
-import { MoveDemo } from '@/components/demos/MoveDemo';
-import { NimmaVasatiDemo } from '@/components/demos/NimmaVasatiDemo';
+import Link from 'next/link';
+
+import { GymDemo } from '@/components/demos/GymDemo';
+import { PgDemo } from '@/components/demos/PgDemo';
 import { Reveal } from '@/components/ui/Reveal';
-import { TestimonialCarousel } from '@/components/ui/TestimonialCarousel';
 import {
-  aboutData,
-  caseStudies,
   experienceData,
   heroData,
-  otherWorkData,
-  processData,
+  impactData,
+  pillarsData,
+  previousCompanies,
   profile,
-  servicesData,
+  resumeLink,
+  sideProjects,
   testimonialsData,
 } from '@/data/site';
+import { getAllPosts } from '@/lib/posts';
 
-function hostOf(url) {
-  return url.replace(/^https?:\/\//, '').replace(/\/$/, '');
-}
+const DEMOS = { gym: GymDemo, pg: PgDemo };
+const NUMERALS = ['i.', 'ii.', 'iii.'];
 
-const DEMOS = {
-  nimmavasati: NimmaVasatiDemo,
-  move: MoveDemo,
-};
-
-function Screenshot({ study }) {
-  const Demo = DEMOS[study.slug];
-
+function ResumeButton({ className = 'btn btn-primary btn-lg' }) {
   return (
-    <div className="shot">
-      <div className="shot-bar" aria-hidden="true">
-        <span />
-        <span />
-        <span />
-        <em>{hostOf(study.href)}</em>
-      </div>
-      {study.image ? (
-        <img src={study.image} alt={`${study.name} screenshot`} loading="lazy" />
-      ) : Demo ? (
-        <Demo />
-      ) : (
-        <div className="shot-placeholder">
-          <span>{study.name}</span>
-          <small>Screenshot coming soon</small>
-        </div>
-      )}
-    </div>
+    <a className={className} href={resumeLink.href} {...(resumeLink.external ? { target: '_blank', rel: 'noreferrer' } : {})}>
+      {resumeLink.label}
+    </a>
   );
 }
 
-function CaseStudy({ study, index }) {
+function Hero() {
   return (
-    <Reveal as="article" className={`case${index % 2 ? ' case-flip' : ''}`}>
-      <Screenshot study={study} />
-      <div className="case-body">
-        <p className="eyebrow">{study.kind}</p>
-        <h3>{study.name}</h3>
-        <p className="case-summary">{study.summary}</p>
-        <ul className="checklist">
-          {study.features.map((feature) => (
-            <li key={feature}>{feature}</li>
-          ))}
-        </ul>
-        <p className="case-outcome">{study.outcome}</p>
-        <ul className="tags" aria-label="Tech stack">
-          {study.stack.map((tech) => (
-            <li key={tech}>{tech}</li>
-          ))}
-        </ul>
-        <a className="text-link" href={study.href} target="_blank" rel="noreferrer">
-          Visit {hostOf(study.href)} →
-        </a>
-      </div>
-    </Reveal>
-  );
-}
-
-function SectionHead({ eyebrow, title, lede }) {
-  return (
-    <div className="section-head">
-      <p className="eyebrow">{eyebrow}</p>
-      <h2>{title}</h2>
-      {lede && <p className="section-lede">{lede}</p>}
-    </div>
-  );
-}
-
-export default function HomePage() {
-  const testimonials = testimonialsData.filter((item) => item.quote);
-
-  return (
-    <main>
+    <div className="dark">
       <section className="hero">
         <div className="container hero-grid">
           <div className="hero-copy">
-            <p className="eyebrow eyebrow-pill">
+            <p className="status">
               <span className="dot" aria-hidden="true" />
-              {heroData.eyebrow}
+              {heroData.status}
             </p>
-            <h1>{heroData.title}</h1>
+            <h1>
+              I build the data platforms <span className="serif">and</span> the products that run on them.
+            </h1>
             <p className="hero-lede">{heroData.lede}</p>
             <div className="hero-actions">
-              <a className="btn btn-primary" href={profile.bookingUrl} target="_blank" rel="noreferrer">
-                Book a discovery call
+              <ResumeButton />
+              <a className="btn btn-ghost-dark btn-lg" href="#experience">
+                See my experience
               </a>
-              <a className="btn btn-ghost" href="#work">
-                See my work
-              </a>
+              <div className="hero-icons">
+                <a className="icon-btn" href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" />
+                  </svg>
+                </a>
+                <a className="icon-btn" href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="3" />
+                    <path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7" />
+                  </svg>
+                </a>
+              </div>
             </div>
-            <dl className="stats">
-              {heroData.stats.map((stat) => (
-                <div key={stat.label}>
-                  <dt>{stat.label}</dt>
-                  <dd>{stat.value}</dd>
-                </div>
+          </div>
+
+          <div className="hero-visual">
+            <figure className="hero-photo">
+              <img
+                src={profile.photo}
+                alt={`Illustration of ${profile.name} at a desk with a laptop`}
+                width="900"
+                height="900"
+                fetchPriority="high"
+              />
+            </figure>
+            <div className="ledger">
+              <div className="ledger-dots" aria-hidden="true">
+                <span />
+                <span />
+                <span />
+              </div>
+              <p className="ledger-cmd" aria-hidden="true">
+                $ impact --since 2018
+              </p>
+              <dl aria-label="Impact since 2018">
+                {impactData.map((row) => (
+                  <div key={row.what}>
+                    <dt>{row.what}</dt>
+                    <dd>{row.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="previously">
+        <div className="container previously-row">
+          <span className="previously-label">Previously at</span>
+          <ul>
+            {previousCompanies.map((company) => (
+              <li key={company}>{company}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function WhatIDo() {
+  return (
+    <section className="home-section" aria-labelledby="what-i-do">
+      <div className="container">
+        <p className="label">01 / What I do</p>
+        <h2 id="what-i-do" className="h-section" style={{ marginBottom: 48, maxWidth: 760 }}>
+          Three kinds of engineering, <span className="serif">one</span> engineer.
+        </h2>
+        <div className="pillars">
+          {pillarsData.map((pillar, index) => (
+            <Reveal key={pillar.title} className="pillar" delay={index * 60}>
+              <span className="pillar-num" aria-hidden="true">
+                {NUMERALS[index]}
+              </span>
+              <h3>{pillar.title}</h3>
+              <p>{pillar.body}</p>
+              <ul className="chips" aria-label="Tools">
+                {pillar.tools.map((tool) => (
+                  <li key={tool}>{tool}</li>
+                ))}
+              </ul>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Experience() {
+  return (
+    <section id="experience" className="home-section" aria-labelledby="experience-title">
+      <div className="container exp">
+        <div className="exp-intro">
+          <p className="label">02 / Experience</p>
+          <h2 id="experience-title" className="h-section">
+            Where I have <span className="serif">shipped.</span>
+          </h2>
+          <p>Since 2018, on data teams in Bengaluru and France, from Hadoop ETL to lakehouse platforms.</p>
+          <nav className="exp-jump" aria-label="Jump to role">
+            <ul>
+              {experienceData.map((job) => (
+                <li key={job.id}>
+                  <a href={`#exp-${job.id}`}>
+                    {job.company}
+                    <span>{job.short}</span>
+                  </a>
+                </li>
               ))}
-            </dl>
-          </div>
-          <figure className="hero-photo">
-            <img
-              src={profile.photo}
-              alt={`Illustration of ${profile.name} at a desk with a laptop, labelled software developer, data engineer and freelancer`}
-              width="900"
-              height="900"
-              fetchPriority="high"
-            />
-          </figure>
+            </ul>
+          </nav>
+          <ResumeButton className="btn btn-ghost" />
         </div>
-      </section>
 
-      <section id="work" className="section">
-        <div className="container">
-          <SectionHead
-            eyebrow="Selected work"
-            title="Products running real businesses"
-            lede="Built end to end, from database design to deployment, and live in production today."
-          />
-          <div className="cases">
-            {caseStudies.map((study, index) => (
-              <CaseStudy key={study.slug} study={study} index={index} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {testimonials.length > 0 && (
-        <section id="testimonials" className="section section-follow">
-          <div className="container testimonials">
-            <SectionHead eyebrow="Kind words" title="What clients and colleagues say" />
-            <TestimonialCarousel items={testimonials} />
-            <a className="text-link quotes-more" href={profile.linkedinRecommendations} target="_blank" rel="noreferrer">
-              Read all {profile.recommendationCount} recommendations on LinkedIn →
-            </a>
-          </div>
-        </section>
-      )}
-
-      <section id="what-i-build" className="section section-alt">
-        <div className="container">
-          <SectionHead
-            eyebrow="What I build"
-            title="Any product, from idea to production"
-            lede="Business owner or startup founder: if it can be built as software, I can take it from idea to launch, on a data foundation that holds up as you grow."
-          />
-          <div className="grid grid-4">
-            {servicesData.map((service, index) => (
-              <Reveal key={service.title} className="card" delay={index * 60}>
-                <h3>{service.title}</h3>
-                <p>{service.body}</p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="process" className="section">
-        <div className="container">
-          <SectionHead eyebrow="How we work together" title="From first call to launch" />
-          <ol className="steps">
-            {processData.map((step, index) => (
-              <Reveal as="li" key={step.title} className="step" delay={index * 60}>
-                <span className="step-num">{String(index + 1).padStart(2, '0')}</span>
-                <h3>{step.title}</h3>
-                <p>{step.body}</p>
-              </Reveal>
+        <div className="exp-scroll" tabIndex={0} role="region" aria-label="Experience timeline, scrollable">
+          <ol className="exp-list">
+            {experienceData.map((job) => (
+              <li key={job.id} id={`exp-${job.id}`} className="exp-item">
+                <div className="exp-meta">
+                  <span>{job.date}</span>
+                  {job.place && <span>{job.place}</span>}
+                </div>
+                <h3>
+                  {job.title} <span>· {job.company}</span>
+                </h3>
+                <ul>
+                  {job.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+                <ul className="chips" aria-label="Skills">
+                  {job.skills.map((skill) => (
+                    <li key={skill}>{skill}</li>
+                  ))}
+                </ul>
+              </li>
             ))}
           </ol>
-        </div>
-      </section>
-
-      <section id="about" className="section section-alt">
-        <div className="container about">
-          <div>
-            <SectionHead eyebrow="About" title="Ten years of engineering, now building products" />
-            {aboutData.paragraphs.map((paragraph) => (
-              <p className="about-p" key={paragraph}>
-                {paragraph}
-              </p>
-            ))}
+          <div className="exp-fade" aria-hidden="true">
+            <span>
+              scroll
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </span>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
-          <div className="timeline" tabIndex={0} role="region" aria-label="Experience, scrollable">
-            <h3 className="timeline-title">Experience</h3>
-            <ul>
-              <li className="timeline-item timeline-current">
-                <div className="timeline-meta">
-                  <span>Jan 2026 – present</span>
+function KindWords() {
+  const [lead, ...rest] = testimonialsData;
+
+  return (
+    <section className="kind-words" aria-label="Recommendations">
+      <div className="container kind-words-grid">
+        <figure className="quote-lead">
+          <svg width="44" height="34" viewBox="0 0 44 34" fill="currentColor" aria-hidden="true">
+            <path d="M0 34V20C0 8 6 1 18 0v7c-6 1-9 5-9 11h9v16H0Zm26 0V20C26 8 32 1 44 0v7c-6 1-9 5-9 11h9v16H26Z" />
+          </svg>
+          <blockquote>“{lead.quote}”</blockquote>
+          <figcaption>
+            <strong>{lead.name}</strong> · {lead.role}
+          </figcaption>
+        </figure>
+        <div className="quote-stack">
+          {rest.map((item) => (
+            <figure className="quote-card" key={item.name}>
+              <blockquote>“{item.quote}”</blockquote>
+              <figcaption>
+                {item.name} · {item.role}
+              </figcaption>
+            </figure>
+          ))}
+          <a className="text-link" href={profile.linkedinRecommendations} target="_blank" rel="noreferrer">
+            Read all {profile.recommendationCount} recommendations on LinkedIn →
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function SideProjects() {
+  return (
+    <section id="projects" className="home-section" aria-labelledby="projects-title">
+      <div className="container">
+        <p className="label">03 / Side projects</p>
+        <div className="section-row">
+          <h2 id="projects-title" className="h-section" style={{ maxWidth: 620 }}>
+            Things I build <span className="serif">after hours</span>, and write about.
+          </h2>
+          <p>Real apps with real constraints: payments, concurrency, auth. The hard parts become blog posts.</p>
+        </div>
+
+        <div className="projects">
+          {sideProjects.map((project, index) => {
+            const Demo = DEMOS[project.demo];
+            return (
+              <Reveal as="article" key={project.name} className={`project${index === 0 ? ' dark' : ''}`} delay={index * 80}>
+                <div className="project-frame">
+                  <Demo />
                 </div>
-                <h4>
-                  Freelance Full-Stack Developer <span>· Independent</span>
-                </h4>
-                <p>Building NimmaVasati and Move, plus the client projects below.</p>
-              </li>
-              {experienceData.map((item) => (
-                <li className="timeline-item" key={item.company}>
-                  <div className="timeline-meta">
-                    <span>{item.date}</span>
-                  </div>
-                  <h4>
-                    {item.title} <span>· {item.company}</span>
-                  </h4>
-                  <p>{item.description}</p>
-                  <ul className="tags tags-sm">
-                    {item.skills.map((skill) => (
-                      <li key={skill}>{skill}</li>
-                    ))}
+                <div className="project-body">
+                  <ul className="project-tags">
+                    <li>Side project</li>
+                    <li>In progress</li>
                   </ul>
-                </li>
-              ))}
-            </ul>
+                  <h3>{project.name}</h3>
+                  <p className="project-summary">{project.summary}</p>
+                  <p className="project-hard">
+                    <em>Hard part →</em> {project.hardPart}{' '}
+                    {project.post ? <Link href={project.post.href}>{project.post.label}</Link> : <span>(post coming)</span>}
+                  </p>
+                  <p className="project-stack">{project.stack.join(' · ')}</p>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
 
-            <h3 className="timeline-title">Other client work</h3>
-            <ul>
-              {otherWorkData.map((item) => (
-                <li className="timeline-item" key={item.title}>
-                  <h4>
-                    {item.title} <span>· {item.company}</span>
-                  </h4>
-                  <p>{item.description}</p>
-                  <ul className="tags tags-sm">
-                    {item.skills.map((skill) => (
-                      <li key={skill}>{skill}</li>
-                    ))}
-                  </ul>
-                </li>
-              ))}
-            </ul>
+function Writing({ posts, total }) {
+  return (
+    <section id="writing" className="home-section" aria-labelledby="writing-title">
+      <div className="container">
+        <div className="section-row">
+          <div>
+            <p className="label">04 / Writing</p>
+            <h2 id="writing-title" className="h-section">
+              {total} posts on how things <span className="serif">actually</span> work.
+            </h2>
           </div>
+          <Link className="text-link" href="/blog/">
+            All posts →
+          </Link>
         </div>
-      </section>
+        <ul className="posts">
+          {posts.map((post) => (
+            <li key={post.slug}>
+              <Link href={`/blog/${post.slug}/`}>
+                <span className="posts-date">{post.date}</span>
+                <span className="posts-title">{post.title}</span>
+                {post.tags[0] && <span className="posts-tag">#{post.tags[0]}</span>}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
 
-      <section id="contact" className="section">
-        <div className="container">
-          <Reveal className="cta">
-            <h2>Have a product in mind?</h2>
-            <p>
-              Tell me about your business and what you want to build. I will reply within a couple of
-              days with honest next steps, even if I am not the right fit.
-            </p>
-            <div className="hero-actions">
-              <a className="btn btn-primary" href={profile.bookingUrl} target="_blank" rel="noreferrer">
-                Book a discovery call
-              </a>
-              <a
-                className="btn btn-ghost btn-round"
-                href={profile.whatsappUrl}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={`WhatsApp ${profile.whatsapp}`}
-                title={`WhatsApp ${profile.whatsapp}`}
-              >
-                <svg className="icon-whatsapp" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-                  <path
-                    d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1 0 12 2.5Z"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M8.7 7.3c.2-.4.4-.4.6-.4h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .6l-.4.6c-.1.2-.1.4 0 .6.4.8 1.3 1.8 2.3 2.3.2.1.4.1.6 0l.6-.6c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.4v.5c0 .5-.3 1-.8 1.3-.6.3-1.4.4-2.4.1-1.6-.5-3.4-2.1-4.3-3.6-.7-1.2-.9-2.2-.7-3 .1-.4.3-.8.5-1Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </a>
-              <a
-                className="btn btn-ghost btn-round"
-                href={`mailto:${profile.email}`}
-                aria-label={`Email ${profile.email}`}
-                title={profile.email}
-              >
-                <svg className="icon-email" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-                  <rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" strokeWidth="1.8" />
-                  <path
-                    d="m4 7 8 6 8-6"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </a>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+function Contact() {
+  return (
+    <section id="contact" className="contact" aria-labelledby="contact-title">
+      <div className="container">
+        <Reveal className="contact-card dark">
+          <div>
+            <p className="label">05 / Contact</p>
+            <h2 id="contact-title">
+              Hiring for a <span className="serif">data or full-stack</span> role?
+            </h2>
+            <p>Senior data engineering, platform or full-stack product roles. Remote or hybrid.</p>
+          </div>
+          <div className="hero-actions">
+            <ResumeButton />
+            <a className="btn btn-ghost-dark btn-lg" href={profile.linkedin} target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
+            <a className="btn btn-ghost-dark btn-lg" href={`mailto:${profile.email}`}>
+              Email
+            </a>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+export default async function HomePage() {
+  const posts = await getAllPosts();
+
+  return (
+    <main>
+      <Hero />
+      <WhatIDo />
+      <Experience />
+      <KindWords />
+      <SideProjects />
+      <Writing posts={posts.slice(0, 4)} total={posts.length} />
+      <Contact />
     </main>
   );
 }

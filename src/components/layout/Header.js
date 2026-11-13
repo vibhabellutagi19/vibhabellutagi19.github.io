@@ -3,15 +3,16 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-import { profile } from '@/data/site';
+import { resumeLink } from '@/data/site';
 
 const navItems = [
-  { href: '/#work', label: 'Work' },
-  { href: '/#what-i-build', label: 'What I build' },
-  { href: '/#process', label: 'Process' },
-  { href: '/#about', label: 'About' },
+  { href: '/#experience', label: 'Experience' },
+  { href: '/#projects', label: 'Side projects' },
   { href: '/blog/', label: 'Blog' },
+  { href: '/#contact', label: 'Contact' },
 ];
+
+const resumeProps = resumeLink.external ? { target: '_blank', rel: 'noreferrer' } : {};
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -35,6 +36,9 @@ export function Header() {
     <header className={`site-header${open ? ' is-open' : ''}`}>
       <div className="container header-row">
         <Link className="brand" href="/" onClick={close}>
+          <span className="brand-mark" aria-hidden="true">
+            vb
+          </span>
           Vibhavari Bellutagi
         </Link>
 
@@ -49,17 +53,14 @@ export function Header() {
             ))}
           </ul>
           <div className="nav-extra">
-            <a className="btn btn-ghost" href={profile.whatsappUrl} target="_blank" rel="noreferrer" onClick={close}>
-              WhatsApp
-            </a>
-            <a className="btn btn-primary" href={profile.bookingUrl} target="_blank" rel="noreferrer" onClick={close}>
-              Book a call
+            <a className="btn btn-primary" href={resumeLink.href} {...resumeProps} onClick={close}>
+              Résumé
             </a>
           </div>
         </nav>
 
-        <a className="btn btn-primary btn-sm header-cta" href={profile.bookingUrl} target="_blank" rel="noreferrer">
-          Book a call
+        <a className="btn btn-primary btn-sm header-cta" href={resumeLink.href} {...resumeProps}>
+          Résumé
         </a>
 
         <button

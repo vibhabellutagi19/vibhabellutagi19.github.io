@@ -1,16 +1,16 @@
 ---
 title: "Preventing Double Bookings in Postgres with SELECT FOR UPDATE"
 date: "Oct 22, 2026"
-excerpt: "Two members, one spot left. How Move stops overbooking with Postgres row locks, the race reproduced without them, and two lock mistakes found along the way."
+excerpt: "Two members, one spot left. How a gym-booking app stops overbooking with Postgres row locks, the race reproduced without them, and two lock mistakes found along the way."
 slug: "prevent-double-booking-postgres"
 tags: "building-apps, postgres, concurrency, drizzle"
 ---
 
-A class in [Move](/#work), the gym management app I'm building, has 10 spots. Nine are booked. Two members open the app and tap "Book" at the same moment.
+A class in a [gym-booking side project](/#projects) of mine has 10 spots. Nine are booked. Two members open the app and tap "Book" at the same moment.
 
 Exactly one of them should get the spot. The other should see "This session is full". If both get in, the coach walks into a class with 11 people and 10 bikes.
 
-This post covers how Move prevents that with a Postgres row lock, a reproduction of the race without the lock, and two mistakes around that lock: one that could freeze every booking at once, and one that quietly makes unrelated bookings wait for each other.
+This post covers how the app prevents that with a Postgres row lock, a reproduction of the race without the lock, and two mistakes around that lock: one that could freeze every booking at once, and one that quietly makes unrelated bookings wait for each other.
 
 :::tldr
 **Problem:** two people booking the last spot at the same moment can both get in, because each checks the count before the other has written.
@@ -71,9 +71,9 @@ Here's the race as an interactive demo. Play it with and without the lock:
 
 ::demo[booking-race]
 
-## How Move's booking transaction is built
+## How the booking transaction is built
 
-Move uses [Drizzle ORM](https://orm.drizzle.team/) on Postgres. Stripped down to the parts that matter for concurrency, the booking service looks like this:
+The app uses [Drizzle ORM](https://orm.drizzle.team/) on Postgres. Stripped down to the parts that matter for concurrency, the booking service looks like this:
 
 ```ts
 await db.transaction(async (tx) => {
@@ -246,7 +246,7 @@ Now the eleventh booking fails with a constraint error instead of silently succe
 | `SERIALIZABLE` isolation | Postgres aborts transactions that would conflict                                                             | Complex invariants across many rows                         | Every caller must retry on serialization errors              |
 | `CHECK` constraint       | The database rejects an invalid state                                                                        | A backstop under any of the above                           | Only checks one row; turns a race into an error, not a queue |
 
-Move uses `FOR UPDATE` because a booking checks a lot more than capacity: whether the class has started, whether the member's membership is paused, whether they have a valid credit, whether it overlaps another booking. All of those need a consistent view of the data, and a row lock gives that with ordinary code.
+The app uses `FOR UPDATE` because a booking checks a lot more than capacity: whether the class has started, whether the member's membership is paused, whether they have a valid credit, whether it overlaps another booking. All of those need a consistent view of the data, and a row lock gives that with ordinary code.
 
 ## Frequently asked questions
 
@@ -272,4 +272,4 @@ Preventing double bookings comes down to one line: lock the row before you check
 
 If you're building something similar, try the race yourself: two `psql` sessions, a `pg_sleep(1)` between the check and the write, and watch the count go to 11.
 
-More posts from building Move are under [Building Apps](/blog/tags/building-apps/).
+More posts from building my side projects are under [Building Apps](/blog/tags/building-apps/).
