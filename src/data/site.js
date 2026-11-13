@@ -17,14 +17,6 @@ export const profile = {
 };
 
 /**
- * GoatCounter. Set this to your site code (the "mycode" in
- * mycode.goatcounter.com); tracking and view counts stay off while it is empty.
- */
-export const analytics = {
-  goatcounterCode: "vibhavaribellutagi",
-};
-
-/**
  * Likes API: the Cloudflare Worker in /worker. Paste its URL once deployed,
  * e.g. "https://blog-likes.<you>.workers.dev"; the like button stays hidden while empty.
  */

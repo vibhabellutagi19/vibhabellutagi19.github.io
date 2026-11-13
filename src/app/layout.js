@@ -1,9 +1,8 @@
+import { Analytics } from '@vercel/analytics/next';
 import { Fraunces, Inter, JetBrains_Mono } from 'next/font/google';
 
-import { GoatCounter } from '@/components/analytics/GoatCounter';
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
-import { analytics } from '@/data/site';
 
 import './globals.css';
 
@@ -61,7 +60,7 @@ export default function RootLayout({ children }) {
         <Header />
         <div id="main">{children}</div>
         <Footer />
-        {analytics.goatcounterCode && <GoatCounter code={analytics.goatcounterCode} />}
+        <Analytics />
       </body>
     </html>
   );

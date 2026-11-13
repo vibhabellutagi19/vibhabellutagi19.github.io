@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-import { ViewCount } from '@/components/analytics/ViewCount';
 import { AuthorCard } from '@/components/blog/AuthorCard';
 import { CodeCopy } from '@/components/blog/CodeCopy';
 import { LikeButton } from '@/components/blog/LikeButton';
@@ -193,7 +192,6 @@ export default async function BlogPostPage({ params }) {
                 <p className="byline-name">{profile.name}</p>
                 <p className="post-meta">
                   {post.date} · {post.readTime}
-                  <ViewCount path={`/blog/${post.slug}/`} />
                 </p>
               </div>
             </div>
