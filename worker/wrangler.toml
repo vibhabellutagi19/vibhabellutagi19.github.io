@@ -6,7 +6,8 @@ preview_urls = false
 
 [vars]
 # http://localhost on any port is always allowed, for local development.
-ALLOWED_ORIGINS = "https://buildwithvibs.in"
+# buildwithvibs.in redirects to www, so the browser sends the www origin.
+ALLOWED_ORIGINS = "https://buildwithvibs.in,https://www.buildwithvibs.in"
 
 # Create the namespace with `npx wrangler kv namespace create LIKES`
 # and paste the id it prints here.
