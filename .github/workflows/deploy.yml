@@ -4,7 +4,15 @@ on:
   push:
     branches:
       - main
+  # Picks up newly published study posts even when this repo hasn't changed.
+  schedule:
+    - cron: "0 6 * * *"
   workflow_dispatch:
+
+# A scheduled run and a push can land together; let them take turns.
+concurrency:
+  group: deploy
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -27,6 +35,17 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      # Study posts live in system-design-public. They are copied in for the build
+      # only and never committed here.
+      - name: Check out study repo
+        uses: actions/checkout@v4
+        with:
+          repository: vibhabellutagi19/system-design-public
+          path: .study
+
+      - name: Sync published study posts
+        run: node scripts/sync-study-posts.mjs .study
 
       - name: Build static site
         run: pnpm run build
