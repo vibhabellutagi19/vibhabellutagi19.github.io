@@ -82,6 +82,12 @@ spark-submit --master "local[*]" ...
 3. No cluster manager is needed.
 4. It's for learning, testing and quick experiments on small data, not for production.
 
+## Try It: Close the Laptop
+
+Submit the same job in each mode, then close the laptop:
+
+::demo[driver-location]
+
 ## Client vs Cluster at a Glance
 
 |                            | **Client Mode**                          | **Cluster Mode**                       |

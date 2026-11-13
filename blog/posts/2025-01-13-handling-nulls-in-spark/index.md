@@ -96,6 +96,10 @@ df.show()
 ```
 </details>
 
+Rule 2 is the one behind the filter at the top of this post. Run it on these ten movies, then swap the condition:
+
+::demo[null-filter]
+
 ## coalesce Picks the First Value That Exists
 - In Spark SQL and DataFrame APIs, `coalesce()` is used to return the first non-null value among its arguments.
 - If you have multiple columns and want a single column which picks up a non-null value from one of them in order, or you want to replace a single column’s null value with a fallback.

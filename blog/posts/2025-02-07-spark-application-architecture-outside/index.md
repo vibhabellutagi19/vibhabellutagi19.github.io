@@ -68,6 +68,10 @@ When your code finishes, the driver exits with either success or failure. The cl
 
 To find out whether the application succeeded, ask the cluster manager (for example, the YARN ResourceManager UI), not your terminal: in cluster mode, your machine stopped being involved after step 1.
 
+All four steps in one place. Watch which process is acting at each step, and when your machine drops out:
+
+::demo[app-lifecycle]
+
 ## The Whole Trip
 
 | Step | Who acts | What happens |
