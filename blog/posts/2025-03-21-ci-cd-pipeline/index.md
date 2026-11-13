@@ -49,7 +49,9 @@ Once CI passes, CD deploys:
 3. **Terraform Apply**: apply them.
 4. **Trigger Execution**: Glue or Lambda jobs pick up the new code from `S3`.
 
-![CI/CD Pipeline](assets/ci_cd.png)
+Here is one pull request going through both. Put a mistake in it and see how far it gets:
+
+::demo[ci-cd-pipeline]
 
 The important part is that CD never rebuilds anything. It deploys the exact zip that passed the tests.
 
