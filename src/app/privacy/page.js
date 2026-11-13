@@ -71,10 +71,12 @@ export default function PrivacyPage() {
 
           <h2>Hosting</h2>
           <p>
-            The site is hosted on Vercel and the like service runs on Cloudflare. Like any web host, they
-            may keep standard server logs, including IP addresses, under their own privacy policies:{' '}
-            <a href="https://vercel.com/legal/privacy-policy">Vercel</a> and{' '}
-            <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a>.
+            The site is hosted on GitHub Pages and the like service runs on Cloudflare. Like any web host,
+            they may keep standard server logs, including IP addresses, under their own privacy policies:{' '}
+            <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">
+              GitHub
+            </a>{' '}
+            and <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a>.
           </p>
 
           <h2>Contacting me</h2>
