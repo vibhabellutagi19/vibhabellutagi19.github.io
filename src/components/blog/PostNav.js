@@ -2,14 +2,16 @@ import Link from 'next/link';
 
 import { PostTags } from './PostList';
 
-/** "Part 2 of 6" box near the top of a post in a series, with every part one click away. */
+/**
+ * The line above a post's title, "Git · Part 2 of 3". It opens to list every part,
+ * so the rest of the series is one click away without a box of its own.
+ */
 export function SeriesBox({ series }) {
   return (
     <details className="series-box">
       <summary>
-        <span className="eyebrow">{series.name} series</span>
-        <span className="series-part">
-          Part {series.index + 1} of {series.parts.length}
+        <span className="eyebrow">
+          {series.name} · Part {series.index + 1} of {series.parts.length}
         </span>
       </summary>
       <ol className="series-list">
@@ -42,7 +44,7 @@ function NextCard({ post, label, tagLabels }) {
 }
 
 /**
- * The end of a post: the next part of its series first, then posts on the same topics.
+ * The end of a post: the next part of its series, or posts on the same topics when there isn't one.
  * Gives a reader who just finished somewhere to go other than back to the list.
  */
 export function ReadNext({ series, related, tagLabels }) {
@@ -62,7 +64,7 @@ export function ReadNext({ series, related, tagLabels }) {
         />
       )}
 
-      {related.length > 0 && (
+      {!next && related.length > 0 && (
         <ul className="read-next-list">
           {related.map((post) => (
             <li key={post.slug}>

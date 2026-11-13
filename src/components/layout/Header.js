@@ -6,10 +6,10 @@ import { useEffect, useState } from 'react';
 import { resumeLink } from '@/data/site';
 
 const navItems = [
-  { href: '/#experience', label: 'Experience' },
+  { href: '/#learn', label: 'Learn' },
   { href: '/#projects', label: 'Side projects' },
+  { href: '/#about', label: 'About' },
   { href: '/blog/', label: 'Blog' },
-  { href: '/#contact', label: 'Contact' },
 ];
 
 const resumeProps = resumeLink.external ? { target: '_blank', rel: 'noreferrer' } : {};

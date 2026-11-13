@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { profile, resumeLink } from '@/data/site';
+import { profile } from '@/data/site';
 
 // Outline icons from Tabler Icons (MIT, tabler.io/icons), merged into one path each.
 const ICONS = {
@@ -20,7 +20,7 @@ const LINKS = [
   { icon: 'rss', label: 'RSS feed', href: '/feed.xml' },
 ];
 
-/** Who wrote this, in the post sidebar: photo, a short bio from the About section, and links. */
+/** Who wrote this, at the end of a post: photo, a short bio from the About section, and links. */
 export function AuthorCard() {
   return (
     <section className="author-card" aria-label="About the author">
@@ -31,13 +31,6 @@ export function AuthorCard() {
         Deloitte, AgileLab and Mews. On the side, I build full-stack <Link href="/#projects">projects</Link> and
         write up the hard parts here.
       </p>
-      <a
-        className="btn btn-primary btn-sm author-cta"
-        href={resumeLink.href}
-        {...(resumeLink.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-      >
-        Résumé
-      </a>
       <ul className="author-links">
         {LINKS.map(({ icon, label, href }) => (
           <li key={icon}>

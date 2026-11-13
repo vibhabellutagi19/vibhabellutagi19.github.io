@@ -87,6 +87,10 @@ You can change it:
 spark.conf.set("spark.sql.shuffle.partitions", 50)
 ```
 
+Here is the whole job, one row per stage and one square per task. Change the setting and run it again:
+
+::demo[job-stages]
+
 :::note
 A good rule of thumb: the number of partitions should be larger than the number of executor cores on your cluster, often by a few times, so every core has work. On a small dataset, 200 tiny partitions is mostly overhead.
 :::

@@ -1,8 +1,8 @@
 export const profile = {
   name: "Vibhavari Bellutagi",
   role: "Data & Full-Stack Engineer",
-  photo: "/me/vibsii.jpg",
-  // Square, lightly sharpened crop of /me/vibhavari_bellutagi.jpg for the blog byline and author card.
+  photo: "/me/vibhavari_bellutagi.jpg",
+  // Square, lightly sharpened crop of the photo above, for the hero, the blog byline and the author card.
   avatar: "/me/vibhavari_bellutagi-avatar.jpg",
   email: "vibhavari.bellutagi@gmail.com",
   // Drop the PDF at public/resume.pdf. Until it exists, the résumé buttons fall back to LinkedIn.
@@ -29,10 +29,63 @@ export const likes = {
 
 export const heroData = {
   status: "Open to senior data & full-stack roles",
-  lede: "Software engineer, 10+ years. Seven of them spent on data platforms (Spark, Kafka, Databricks, Terraform) at Deloitte, AgileLab and Mews. On the side, I build full-stack products end to end, from the data model to the UI.",
+  lede: "Software engineer, 10+ years. Seven of them on data platforms at Deloitte, AgileLab and Mews. The hard parts get written down here.",
 };
 
-/** The terminal card in the hero. Every number comes from the experience entries below. */
+export const aboutData = {
+  bio: "Software engineer, 10+ years. Seven of them spent on data platforms (Spark, Kafka, Databricks, Terraform) at Deloitte, AgileLab and Mews. On the side, I build full-stack products end to end, from the data model to the UI.",
+};
+
+/**
+ * The question card in the hero: one thing a post teaches, as a question and a two-line answer.
+ * `slug` is the post it comes from; a lesson whose post no longer exists is left out.
+ */
+export const lessonsData = [
+  {
+    slug: "spark-job-anatomy",
+    tag: "apache-spark",
+    question: "Two DataFrames with 5 and 6 partitions, one join. Why does the Spark UI show 200 tasks?",
+    answer:
+      "A join shuffles the data, and the number of shuffle partitions is not taken from your input. It comes from spark.sql.shuffle.partitions, which defaults to 200.",
+  },
+  {
+    slug: "prevent-double-booking-postgres",
+    tag: "postgres",
+    question: "Two members tap Book at the same moment and one spot is left. Who gets it?",
+    answer:
+      "Without a lock, both. SELECT … FOR UPDATE locks the class row, so the second request waits, reads the row again and sees the real count.",
+  },
+  {
+    slug: "tcp-3-way-handshake",
+    tag: "networking",
+    question: "Before your browser sends a byte of HTTP, it trades three packets that carry no data. What for?",
+    answer:
+      "The handshake is not a greeting. It is how both sides synchronize sequence numbers, and every TCP guarantee is built on those numbers.",
+  },
+  {
+    slug: "handling-nulls-in-spark",
+    tag: "apache-spark",
+    question: "Six of ten movies have no rating. Why does filtering for == None return zero rows, with no error?",
+    answer:
+      "Comparing anything with null, even null itself, gives null, and a filter treats null as “no”. Use isNull() or isNotNull() instead.",
+  },
+  {
+    slug: "global-vs-globalthis",
+    tag: "javascript",
+    question: "window.myVar works in the browser. Why does the same file crash in Node.js?",
+    answer:
+      "Node has no window. globalThis is the one name for the global object that works in every JavaScript environment.",
+  },
+  {
+    slug: "better-auth-logged-out-while-active",
+    tag: "authentication",
+    question: "A 15-minute idle timeout kept logging users out while they were active. Why?",
+    answer:
+      "The session was extended in the database, but the renewed cookie never reached the browser, so it expired at its original time.",
+  },
+];
+
+/** The terminal card beside the photo. Every number comes from the experience entries below. */
 export const impactData = [
   { what: "pipeline runtime", value: "10h+ → 2h" },
   { what: "compute cost", value: "−60–75%" },
