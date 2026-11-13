@@ -4,7 +4,7 @@ import { profile } from '@/data/site';
 
 const title = 'Privacy · Vibhavari Bellutagi';
 const description = 'What this site collects, why, and where it is kept.';
-const LAST_UPDATED = 'Oct 29, 2026';
+const LAST_UPDATED = 'Nov 13, 2026';
 
 export const metadata = {
   title,
@@ -44,12 +44,13 @@ export default function PrivacyPage() {
 
           <h2>Page views</h2>
           <p>
-            I count visits with <a href="https://www.goatcounter.com/">GoatCounter</a>, a privacy-friendly
-            analytics service. When you load a page, it receives the page address, the site you came from,
-            your browser and operating system, your screen size, and your country (worked out from your IP
-            address). GoatCounter does not store your IP address or set cookies, and it does not track you
-            across other websites. I use it to see which posts people read, and to show the view count on
-            each post.
+            I count visits with <a href="https://vercel.com/docs/analytics/privacy-policy">Vercel Web
+            Analytics</a>, a privacy-friendly analytics service from the company that hosts this site. When
+            you load a page, it receives the page address, the site you came from, your browser, operating
+            system and device type, and your country (worked out from your IP address). It sets no cookies,
+            does not store your IP address, and identifies visitors only by a hash that is discarded after a
+            day, so it cannot track you across days or across other websites. I use it to see which posts
+            people read.
           </p>
 
           <h2>Likes</h2>

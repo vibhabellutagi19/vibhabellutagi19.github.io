@@ -6,7 +6,7 @@ slug: "better-auth-logged-out-while-active"
 tags: "building-apps, better-auth, trpc, authentication"
 ---
 
-I was demoing [Move](/#work), the gym management app I'm building, and got kicked back to the sign-in page three times in 40 minutes. I wasn't idle. I was clicking through bookings, opening member profiles, presenting the whole time.
+I was demoing a [gym management app](/#projects) I build on the side, and got kicked back to the sign-in page three times in 40 minutes. I wasn't idle. I was clicking through bookings, opening member profiles, presenting the whole time.
 
 The app has a deliberate security rule: **stay active and you stay signed in; go idle for 15 minutes and you're signed out.** What I got instead was "signed out roughly every 15 minutes, no matter what you're doing".
 
@@ -20,7 +20,7 @@ This post walks through why that happened with [Better Auth](https://www.better-
 
 ## The setup: a sliding 15-minute session
 
-Move uses Better Auth for authentication and tRPC on Express for the API. The session config looks like this:
+The app uses Better Auth for authentication and tRPC on Express for the API. The session config looks like this:
 
 ```ts
 session: {
@@ -205,4 +205,4 @@ The bug wasn't in Better Auth or in the session settings. It was in the space be
 
 If your sliding sessions behave like fixed ones, look at what happens to the `Set-Cookie` headers from `getSession`. Mine were going nowhere.
 
-I'm writing more about problems I run into while building Move and other apps. You can find them under [Building Apps](/blog/tags/building-apps/).
+I'm writing more about problems I run into while building my side projects. You can find them under [Building Apps](/blog/tags/building-apps/).

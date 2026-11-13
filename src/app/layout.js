@@ -1,9 +1,8 @@
+import { Analytics } from '@vercel/analytics/next';
 import { Fraunces, Inter, JetBrains_Mono } from 'next/font/google';
 
-import { GoatCounter } from '@/components/analytics/GoatCounter';
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
-import { analytics } from '@/data/site';
 
 import './globals.css';
 
@@ -12,9 +11,11 @@ const inter = Inter({
   variable: '--font-sans',
 });
 
+// Headings, plus the italic accent word inside them.
 const fraunces = Fraunces({
   subsets: ['latin'],
-  weight: ['500', '600'],
+  weight: ['400', '500', '600'],
+  style: ['normal', 'italic'],
   variable: '--font-display',
 });
 
@@ -24,9 +25,9 @@ const mono = JetBrains_Mono({
   variable: '--font-mono',
 });
 
-const title = 'Vibhavari Bellutagi · Freelance Full-Stack Developer';
+const title = 'Vibhavari Bellutagi · Data & Full-Stack Engineer';
 const description =
-  'Freelance full-stack developer with 10+ years in software. I build web apps, SaaS products, MVPs and business tools, from idea to live product.';
+  'Software engineer with 10+ years in IT, seven of them building data platforms on Spark, Kafka and Databricks at Deloitte, AgileLab and Mews.';
 
 // The preview image comes from opengraph-image.jpg / twitter-image.jpg in this folder.
 export const metadata = {
@@ -61,7 +62,7 @@ export default function RootLayout({ children }) {
         <Header />
         <div id="main">{children}</div>
         <Footer />
-        {analytics.goatcounterCode && <GoatCounter code={analytics.goatcounterCode} />}
+        <Analytics />
       </body>
     </html>
   );
