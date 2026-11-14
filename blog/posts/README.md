@@ -50,7 +50,7 @@ Your markdown content goes here...
 ]
 ```
 
-The list is automatically loaded by both `blog.js` and `blog/post.html`, so you only need to update this one file!
+The list drives the blog index and every post page, so you only need to update this one file!
 
 6. Write your content in Markdown format below the frontmatter.
 

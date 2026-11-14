@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, follow" />
+    <title>Redirecting…</title>
+    <link rel="canonical" href="https://www.buildwithvibs.in/blog/" />
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 2rem;
+        background: #11111b;
+        color: #cdd6f4;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        text-align: center;
+      }
+      a {
+        color: #89b4fa;
+      }
+    </style>
+    <script>
+      // Legacy URLs were /blog/post.html?post=<slug>; posts now live at /blog/<slug>/.
+      // This file must stay a real file (not a Next route) because GitHub Pages
+      // serves 404 for a directory whose name ends in .html.
+      (function () {
+        var slug = new URLSearchParams(window.location.search).get('post');
+
+        if (slug && /^[a-z0-9][a-z0-9-]*$/.test(slug)) {
+          window.location.replace('/blog/' + slug + '/');
+          return;
+        }
+
+        window.location.replace('/blog/');
+      })();
+    </script>
+  </head>
+  <body>
+    <p>
+      This article moved. <a href="/blog/">Go to the blog index</a> if you are not redirected
+      automatically.
+    </p>
+  </body>
+</html>
