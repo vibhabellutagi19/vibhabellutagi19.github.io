@@ -57,7 +57,10 @@ npx serve out    # optional: preview the static export
 | Themes & styles | `src/app/terminal.css`, `src/app/globals.css` |
 
 Blog URLs: `/blog/<slug>/`  
-Legacy links `/blog/post.html?post=<slug>` redirect to the canonical slug URL.
+Legacy links `/blog/post.html?post=<slug>` redirect to the canonical slug URL via
+`public/blog/post.html`. Keep that a static file — as a Next route it exports to
+`out/blog/post.html/index.html`, and GitHub Pages returns 404 for a directory whose
+name ends in `.html`.
 
 ## Deploy to GitHub Pages
 
