@@ -1,0 +1,227 @@
+/* Dark mode and print. data-theme is set on <html> before paint (src/lib/theme.js). */
+
+/* ---------- Dark mode ---------- */
+
+/* Text colours below pass WCAG AA (4.5:1) on --bg, --bg-alt and --surface. */
+:root[data-theme='dark'] {
+  --bg: #171715;
+  --bg-alt: #201f1c;
+  --surface: #24231f;
+  --text: #ece5d8;
+  --text-soft: #c4bba9;
+  --text-faint: #a39a88;
+  --line: #34322d;
+  --line-strong: #4a4740;
+  --accent: #2f6bff;
+  --accent-hover: #4a7dff;
+  --accent-ink: #8fb0ff;
+  --accent-tint: #1c2846;
+  --on-accent: #ffffff;
+  --live: #5fd68a;
+  --warn: #e3b65c;
+  --code-bg: #1d1c19;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px rgb(0 0 0 / 0.35);
+
+  color-scheme: dark;
+}
+
+/* Screen only, so printing from dark mode still gets the light page and code colours. */
+@media screen {
+  /* The header, hero, contact card and footer are dark in both themes. On a dark page they're
+     lifted to a lighter shade with an edge, so the home page keeps its contrast between the
+     dark hero and the content below. (Only these backgrounds change: --charcoal itself is also
+     a text and stroke colour, so it stays as it is.) */
+  :root[data-theme='dark'] {
+    --chrome: #26251f;
+    --chrome-raised: #312f29;
+  }
+
+  :root[data-theme='dark'] .dark,
+  :root[data-theme='dark'] .site-footer {
+    background: var(--chrome);
+  }
+
+  :root[data-theme='dark'] .site-header {
+    background: color-mix(in srgb, var(--chrome) 94%, transparent);
+  }
+
+  :root[data-theme='dark'] main > .dark:first-child,
+  :root[data-theme='dark'] .site-footer {
+    border-block: 1px solid var(--line-strong);
+  }
+
+  :root[data-theme='dark'] .lesson {
+    background: var(--chrome-raised);
+  }
+
+  /* Dark cards (featured post, read next, project) sit on the lifted shade too. */
+  :root[data-theme='dark'] :is(.post-featured, .next-card, .project.dark) {
+    border-color: var(--chrome);
+    background: var(--chrome);
+  }
+
+  /* Selected chips and tabs are "ink on paper" in light mode: a dark pill on a light page.
+     On a dark page the ink is light, so the pill inverts. */
+  :root[data-theme='dark'] :is(.filter-chip, .sort-toggle button)[aria-pressed='true'] {
+    border-color: var(--text);
+    background: var(--text);
+    color: var(--bg);
+  }
+
+  /* Marks drawn in ink on the light page. */
+  :root[data-theme='dark'] .timeline > li:first-child {
+    border-top-color: var(--text);
+  }
+
+  :root[data-theme='dark'] .quote-lead figcaption strong {
+    color: var(--text);
+  }
+
+  :root[data-theme='dark'] .quote-card {
+    background: var(--surface);
+  }
+
+  /* Interactive demos are designed on a light panel, where dark boxes mark what is active
+     ("dark boxes are the ones acting"). Inverting them would lose that, so on a dark page
+     each demo keeps its light palette, like the images above. */
+  :root[data-theme='dark'] .sim {
+    --bg: #f4efe6;
+    --bg-alt: #eae2d3;
+    --surface: #ffffff;
+    --text: #1e1e1c;
+    --text-soft: #5a554c;
+    --text-faint: #6e685d;
+    --line: #e2d8c6;
+    --line-strong: #c9bca4;
+    --accent-ink: #2457d6;
+    --accent-tint: #e6edff;
+    --live: #2e9e5b;
+    --warn: #9e6f0c;
+    --code-bg: #eae2d3;
+    --shadow: 0 1px 2px rgb(30 30 28 / 0.05), 0 8px 24px rgb(30 30 28 / 0.08);
+    color-scheme: light;
+    color: var(--text);
+  }
+
+  /* Code: every token carries its dark colour in --shiki-dark (src/lib/markdown.js). */
+  :root[data-theme='dark'] .shiki,
+  :root[data-theme='dark'] .shiki span {
+    color: var(--shiki-dark) !important;
+  }
+
+  :root[data-theme='dark'] .article-content pre {
+    color: var(--text);
+  }
+
+  /* Diagrams are drawn for a light page, often with transparent backgrounds and dark lines.
+     On a dark page they sit on a light card so they stay readable. */
+  :root[data-theme='dark'] .article-content img {
+    padding: 10px;
+    background: #f4efe6;
+    border-radius: 10px;
+  }
+}
+
+/* ---------- Print (and "Save as PDF") ---------- */
+
+@media print {
+  /* [data-theme] so this outranks both the light :root in globals.css and the dark block above. */
+  :root[data-theme] {
+    --bg: #ffffff;
+    --bg-alt: #f3f3f3;
+    --surface: #ffffff;
+    --text: #000000;
+    --text-soft: #333333;
+    --text-faint: #555555;
+    --line: #cccccc;
+    --line-strong: #999999;
+    --accent-ink: #000000;
+    --code-bg: #f5f5f5;
+    --shadow: none;
+    color-scheme: light;
+  }
+
+  @page {
+    margin: 18mm 16mm;
+  }
+
+  body {
+    background: #fff;
+    font-size: 11.5pt;
+  }
+
+  /* Only the article: no site chrome, buttons, sidebars or reader tools. */
+  .site-header,
+  .site-footer,
+  .skip-link,
+  .post-sidebar,
+  .post-actions,
+  .reading-progress,
+  .toc,
+  .code-copy,
+  .read-next,
+  .author-card,
+  .article-foot,
+  .selection-share,
+  .image-zoom,
+  .resume,
+  .note-section:has(.note-cards),
+  [data-demo] {
+    display: none !important;
+  }
+
+  .article-layout {
+    display: block !important;
+  }
+
+  .article {
+    max-width: none !important;
+  }
+
+  .section {
+    padding: 0 !important;
+  }
+
+  /* Print where each link goes; skip in-page anchors and links whose text is already the URL. */
+  .article-content a[href^='http']::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.85em;
+    color: #555;
+    word-break: break-all;
+  }
+
+  .article-content pre,
+  .article-content .code-block,
+  .article-content table,
+  .article-content img,
+  .callout,
+  .recall-card {
+    break-inside: avoid;
+  }
+
+  .article-content pre {
+    white-space: pre-wrap !important;
+    word-break: break-word;
+  }
+
+  .article-content h2,
+  .article-content h3 {
+    break-after: avoid;
+  }
+
+  /* Recall answers print open, so a printed note works as a study sheet. */
+  .recall-card > p {
+    display: block !important;
+  }
+
+  .recall-card summary::marker {
+    content: '';
+  }
+}
+
+/* Mobile menu panel: same lifted shade as the header in dark mode. */
+@media screen and (max-width: 760px) {
+  :root[data-theme='dark'] .site-nav {
+    background: var(--chrome);
+  }
+}

@@ -1,6 +1,7 @@
 import { BlogIndex } from '@/components/blog/BlogIndex';
 import { getAllPosts, getAllTags } from '@/lib/posts';
 import { groupByTopic } from '@/lib/topics';
+import { SITE_OG_IMAGES, SITE_TWITTER_IMAGES } from '@/lib/share-image';
 
 const title = 'Blog · Vibhavari Bellutagi';
 const description = 'Technical essays on data engineering, Git, and software systems.';
@@ -9,16 +10,16 @@ export const metadata = {
   title,
   description,
   openGraph: {
+    images: SITE_OG_IMAGES,
     url: '/blog/',
     title,
     description,
-    images: ['/opengraph-image.jpg'],
   },
   twitter: {
     card: 'summary_large_image',
+    images: SITE_TWITTER_IMAGES,
     title,
     description,
-    images: ['/twitter-image.jpg'],
   },
 };
 

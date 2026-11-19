@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest';
 
-import { getAllPosts, getPostBySlug, getRelatedPosts, getSeries } from '../posts';
+import { pinnedPosts } from '@/data/site';
+
+import { getAllPosts, getPostBySlug, getRelatedPosts, getSeries, pickPosts } from '../posts';
 
 describe('post loading', () => {
   it('loads and sorts posts by date desc', async () => {
@@ -71,5 +73,21 @@ describe('real series', () => {
     expect(series.parts).toHaveLength(4);
     expect(series.index).toBe(0);
     expect(series.next.slug).toBe('spark-job-anatomy');
+  });
+});
+
+describe('pickPosts', () => {
+  const posts = [{ slug: 'a' }, { slug: 'b' }, { slug: 'c' }];
+
+  it('returns the named posts in the given order', () => {
+    expect(pickPosts(posts, ['c', 'a']).map((post) => post.slug)).toEqual(['c', 'a']);
+  });
+
+  it('fails loudly on a slug with no post', () => {
+    expect(() => pickPosts(posts, ['a', 'gone'])).toThrow(/don't exist: gone/);
+  });
+
+  it('every pinned post in site.js exists', async () => {
+    expect(pickPosts(await getAllPosts(), pinnedPosts)).toHaveLength(pinnedPosts.length);
   });
 });

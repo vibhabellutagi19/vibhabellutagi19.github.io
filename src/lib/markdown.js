@@ -9,19 +9,39 @@ const CONTAINER_TITLES = {
 
 // Code blocks are highlighted at build time; the page ships coloured HTML, no highlighter.
 const CODE_THEME = 'github-light-high-contrast';
+// Dark mode: each token also carries --shiki-dark, which theme.css switches to.
+const CODE_THEME_DARK = 'github-dark-high-contrast';
+// Each language here adds its grammar to the build-time highlighter; unknown ones render as plain code.
 const CODE_LANGUAGES = {
   bash: 'Bash',
+  css: 'CSS',
+  diff: 'Diff',
+  dockerfile: 'Dockerfile',
+  go: 'Go',
   groovy: 'Groovy',
   hcl: 'HCL',
+  html: 'HTML',
+  java: 'Java',
   javascript: 'JavaScript',
   js: 'JavaScript',
+  json: 'JSON',
+  jsx: 'JSX',
+  markdown: 'Markdown',
+  md: 'Markdown',
   python: 'Python',
+  py: 'Python',
+  rust: 'Rust',
   scala: 'Scala',
   sh: 'Shell',
+  shell: 'Shell',
   sql: 'SQL',
   toml: 'TOML',
   ts: 'TypeScript',
+  tsx: 'TSX',
   typescript: 'TypeScript',
+  yaml: 'YAML',
+  yml: 'YAML',
+  zsh: 'Shell',
 };
 
 let markedPromise;
@@ -30,7 +50,7 @@ let highlighterPromise;
 function getHighlighter() {
   if (!highlighterPromise) {
     highlighterPromise = import('shiki').then(({ createHighlighter }) =>
-      createHighlighter({ themes: [CODE_THEME], langs: Object.keys(CODE_LANGUAGES) })
+      createHighlighter({ themes: [CODE_THEME, CODE_THEME_DARK], langs: Object.keys(CODE_LANGUAGES) })
     );
   }
 
@@ -51,7 +71,9 @@ async function getMarked() {
   return markedPromise;
 }
 
-export function parseFrontmatter(markdown) {
+export function parseFrontmatter(rawMarkdown) {
+  // Files saved with Windows line endings would otherwise lose their frontmatter.
+  const markdown = rawMarkdown.replace(/\r\n?/g, '\n');
   const frontmatterRegex = /^---\n([\s\S]*?)\n---\n?([\s\S]*)$/;
   const match = markdown.match(frontmatterRegex);
   if (!match) {
@@ -81,18 +103,79 @@ export function parseFrontmatter(markdown) {
   return { metadata, content };
 }
 
-function renderContainers(markdown, marked) {
-  const containerRegex = /:::(\w+)\n([\s\S]*?)\n:::/g;
-  return markdown.replace(containerRegex, (_, type, body) => {
-    const normalized = type.toLowerCase();
-    const title = CONTAINER_TITLES[normalized] ?? 'Note';
-    const htmlBody = marked.parse(body.trim());
+/**
+ * Splits markdown into fenced code blocks and everything else: `[{ text, code }]`.
+ * A fence opens with 3+ backticks or tildes and closes with at least as many of the same character.
+ * Line-based, so a fence inside a fence and an unclosed fence (code to the end) both behave.
+ */
+export function splitFences(markdown) {
+  const segments = [];
+  let current = { text: '', code: false };
+  let fence = null;
 
-    return `<aside class="callout callout-${normalized}">
-      <p class="callout-title">${title}</p>
-      <div class="callout-body">${htmlBody}</div>
-    </aside>`;
+  markdown.split('\n').forEach((line, index) => {
+    const text = index === 0 ? line : `\n${line}`;
+    const marker = line.match(/^ {0,3}(`{3,}|~{3,})/)?.[1];
+
+    if (!fence && marker) {
+      segments.push(current);
+      current = { text, code: true };
+      fence = marker;
+    } else if (fence && marker && marker[0] === fence[0] && marker.length >= fence.length && line.trim() === marker) {
+      current.text += text;
+      segments.push(current);
+      current = { text: '', code: false };
+      fence = null;
+    } else {
+      current.text += text;
+    }
   });
+
+  segments.push(current);
+  return segments.filter((segment) => segment.text);
+}
+
+/** Runs `fn` on the markdown outside fenced code blocks. */
+export function mapOutsideFences(markdown, fn) {
+  return splitFences(markdown)
+    .map((segment) => (segment.code ? segment.text : fn(segment.text)))
+    .join('');
+}
+
+/** Runs `fn` on the markdown outside fenced code blocks and `inline code`. */
+export function mapOutsideCode(markdown, fn) {
+  return mapOutsideFences(markdown, (text) =>
+    text
+      .split(/(`[^`\n]*`)/)
+      .map((part, index) => (index % 2 === 1 ? part : fn(part)))
+      .join('')
+  );
+}
+
+// `:::tip` or `:::tip Custom title`, closed by `:::` on its own line.
+const CONTAINER = /^:::(\w+)[ \t]*([^\n]*)\n([\s\S]*?)\n:::[ \t]*$/gm;
+
+/**
+ * Callouts. A body can hold anything a post can, so it's parsed with the post's renderer:
+ * code inside a callout is highlighted and images get the same path rewriting.
+ * Fenced code is split out first, so a code block may contain a callout, and a callout a code block.
+ */
+function renderContainers(markdown, render) {
+  const segments = splitFences(markdown);
+  // Callouts can span fences, so match on the text with each fence swapped for a placeholder.
+  const masked = segments.map((segment, index) => (segment.code ? `\u0000${index}\u0000` : segment.text)).join('');
+  const unmask = (text) => text.replace(/\u0000(\d+)\u0000/g, (_, index) => segments[Number(index)].text);
+
+  return unmask(
+    masked.replace(CONTAINER, (_, type, customTitle, body) => {
+      const normalized = type.toLowerCase();
+      const title = customTitle.trim() ? escapeHtml(customTitle.trim()) : (CONTAINER_TITLES[normalized] ?? 'Note');
+      return `<aside class="callout callout-${normalized}">
+      <p class="callout-title">${title}</p>
+      <div class="callout-body">${render(unmask(body.trim()))}</div>
+    </aside>`;
+    })
+  );
 }
 
 // A line like `::demo[session-simulator]` marks where an interactive demo goes.
@@ -100,7 +183,9 @@ function renderContainers(markdown, marked) {
 export const DEMO_PLACEHOLDER = /<div data-demo="([a-z0-9-]+)"><\/div>/;
 
 function renderDemoPlaceholders(markdown) {
-  return markdown.replace(/^::demo\[([a-z0-9-]+)\]$/gm, '\n<div data-demo="$1"></div>\n');
+  return mapOutsideFences(markdown, (text) =>
+    text.replace(/^::demo\[([a-z0-9-]+)\]$/gm, '\n<div data-demo="$1"></div>\n')
+  );
 }
 
 function escapeHtml(text) {
@@ -148,7 +233,8 @@ async function highlightCodeBlocks(html, blocks) {
     const code = label
       ? highlighter.codeToHtml(text, {
           lang,
-          theme: CODE_THEME,
+          themes: { light: CODE_THEME, dark: CODE_THEME_DARK },
+          defaultColor: 'light',
           // The page sets the code background; drop the theme's own.
           transformers: [{ pre: (node) => void delete node.properties.style }],
         })
@@ -171,7 +257,8 @@ function normalizeLegacyLinks(html) {
   );
 }
 
-export async function renderMarkdownToHtml(content, folderName) {
+// Relative image paths resolve against the post's folder; notes pass their own `assetBase`.
+export async function renderMarkdownToHtml(content, folderName, { assetBase = `/posts/${folderName}` } = {}) {
   const marked = await getMarked();
   const renderer = new marked.Renderer();
   renderer.image = ({ href = '', text = '', title = '' }) => {
@@ -184,12 +271,12 @@ export async function renderMarkdownToHtml(content, folderName) {
       !normalizedHref.startsWith('/')
     ) {
       normalizedHref = normalizedHref.replace(/^\.\//, '');
-      normalizedHref = `/posts/${folderName}/${normalizedHref}`;
+      normalizedHref = `${assetBase}/${normalizedHref}`;
     }
 
-    const safeTitle = title ? ` title="${title}"` : '';
-    const safeAlt = text ? ` alt="${text}"` : '';
-    return `<img src="${normalizedHref}"${safeAlt}${safeTitle} loading="lazy" />`;
+    const safeTitle = title ? ` title="${escapeHtml(title)}"` : '';
+    const safeAlt = ` alt="${escapeHtml(text)}"`;
+    return `<img src="${escapeHtml(normalizedHref)}"${safeAlt}${safeTitle} loading="lazy" decoding="async" />`;
   };
 
   // Headings get unique ids and a self-link, so sections can be linked to and listed in the TOC.
@@ -209,7 +296,9 @@ export async function renderMarkdownToHtml(content, folderName) {
     return `<!--code-block:${codeBlocks.length - 1}-->`;
   };
 
-  const contentWithContainers = renderContainers(renderDemoPlaceholders(content), marked);
+  const contentWithContainers = renderContainers(renderDemoPlaceholders(content), (body) =>
+    marked.parse(body, { renderer })
+  );
   const html = marked.parse(contentWithContainers, { renderer });
   return normalizeLegacyLinks(await highlightCodeBlocks(html, codeBlocks));
 }

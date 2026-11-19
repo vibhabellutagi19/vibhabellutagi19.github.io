@@ -6,6 +6,7 @@ import { getHeadings, parseFrontmatter, renderMarkdownToHtml } from './markdown'
 const POSTS_DIR = path.join(process.cwd(), 'blog', 'posts');
 const POSTS_MANIFEST_PATH = path.join(POSTS_DIR, 'posts.json');
 
+
 function parsePostDate(dateString) {
   const parsed = new Date(dateString);
   if (Number.isNaN(parsed.getTime())) {
@@ -33,7 +34,14 @@ function parseTags(raw) {
 
 // Tags whose display name isn't plain title case.
 const TAG_LABELS = {
+  ai: 'AI',
+  apis: 'APIs',
+  devops: 'DevOps',
   javascript: 'JavaScript',
+  llms: 'LLMs',
+  sql: 'SQL',
+  sqlite: 'SQLite',
+  typescript: 'TypeScript',
   trpc: 'tRPC',
 };
 
@@ -167,4 +175,14 @@ export function getRelatedPosts(posts, post, { exclude = [], limit = 3 } = {}) {
 
   const latest = candidates.filter((item) => !related.includes(item));
   return [...related, ...latest].slice(0, limit);
+}
+
+/** The posts named in `slugs`, in that order. Throws on a slug with no post, so a renamed post can't vanish quietly. */
+export function pickPosts(posts, slugs) {
+  const bySlug = new Map(posts.map((post) => [post.slug, post]));
+  const missing = slugs.filter((slug) => !bySlug.has(slug));
+  if (missing.length > 0) {
+    throw new Error(`pinnedPosts in src/data/site.js names posts that don't exist: ${missing.join(', ')}`);
+  }
+  return slugs.map((slug) => bySlug.get(slug));
 }

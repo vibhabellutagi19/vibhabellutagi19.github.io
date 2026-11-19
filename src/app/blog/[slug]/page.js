@@ -4,11 +4,13 @@ import { notFound } from 'next/navigation';
 
 import { AuthorCard } from '@/components/blog/AuthorCard';
 import { CodeCopy } from '@/components/blog/CodeCopy';
+import { ImageZoom } from '@/components/blog/ImageZoom';
 import { LikeButton } from '@/components/blog/LikeButton';
 import { ReadNext, SeriesBox } from '@/components/blog/PostNav';
 import { ReadingProgress } from '@/components/blog/ReadingProgress';
 import { ResumeReading } from '@/components/blog/ResumeReading';
 import { SaveButton } from '@/components/blog/SaveButton';
+import { SelectionShare } from '@/components/blog/SelectionShare';
 import { ShareButton } from '@/components/blog/ShareButton';
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { postDemos } from '@/components/blog/demos';
@@ -90,13 +92,11 @@ export async function generateMetadata({ params }) {
       publishedTime,
       authors: [profile.name],
       tags: post.tags.map(formatTag),
-      images: ['/opengraph-image.jpg'],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: ['/twitter-image.jpg'],
     },
   };
 }
@@ -132,7 +132,7 @@ export default async function BlogPostPage({ params }) {
         datePublished: getIsoDate(post.date),
         url,
         mainEntityOfPage: url,
-        image: `${SITE_URL}/opengraph-image.jpg`,
+        image: `${url}opengraph-image`,
         keywords: post.tags.map(formatTag).join(', '),
         author: { '@type': 'Person', name: profile.name, url: SITE_URL },
       },
@@ -158,13 +158,15 @@ export default async function BlogPostPage({ params }) {
       <ReadingProgress targetId="post-body" />
       <ResumeReading slug={post.slug} targetId="post-body" />
       <CodeCopy />
+      <ImageZoom targetId="post-body" />
+      <SelectionShare targetId="post-body" url={url} />
 
       <div className="container article-layout">
-        <article className="article">
+        <article className="article" data-pagefind-filter="type:Blog" data-pagefind-body>
           <header className="article-head">
-            {series ? <SeriesBox series={series} /> : <p className="eyebrow">{getTopic(post).name}</p>}
+            {series ? <SeriesBox series={series} /> : <p className="eyebrow" data-pagefind-ignore>{getTopic(post).name}</p>}
             <h1>{post.title}</h1>
-            <div className="article-tools">
+            <div className="article-tools" data-pagefind-ignore>
               <div className="byline">
                 <Image className="byline-photo" src={profile.avatar} alt="" width={44} height={44} />
                 <div>
@@ -182,14 +184,16 @@ export default async function BlogPostPage({ params }) {
             </div>
           </header>
 
-          <TableOfContents headings={post.headings} variant="inline" />
+          <div data-pagefind-ignore>
+            <TableOfContents headings={post.headings} variant="inline" />
+          </div>
 
           <div id="post-body" className="article-content">
             {renderContent(post.html)}
           </div>
 
           {post.tags.length > 0 && (
-            <p className="post-tags article-tags">
+            <p className="post-tags article-tags" data-pagefind-ignore>
               {post.tags.map((tag) => (
                 <Link key={tag} className="tag-chip" href={`/blog/tags/${tag}/`}>
                   {formatTag(tag)}
@@ -198,11 +202,12 @@ export default async function BlogPostPage({ params }) {
             </p>
           )}
 
-          <ReadNext series={series} related={related} tagLabels={tagLabels} />
+          <div data-pagefind-ignore>
+            <ReadNext series={series} related={related} tagLabels={tagLabels} />
+            <AuthorCard />
+          </div>
 
-          <AuthorCard />
-
-          <footer className="article-foot">
+          <footer className="article-foot" data-pagefind-ignore>
             <Link className="text-link" href="/blog/">
               ← All posts
             </Link>

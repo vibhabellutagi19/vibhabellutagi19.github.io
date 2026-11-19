@@ -5,11 +5,14 @@ import { useEffect, useState } from 'react';
 
 import { resumeLink } from '@/data/site';
 
+import { ThemeToggle } from './ThemeToggle';
+
 const navItems = [
   { href: '/#learn', label: 'Learn' },
   { href: '/#projects', label: 'Side projects' },
   { href: '/#about', label: 'About' },
   { href: '/blog/', label: 'Blog' },
+  { href: '/notes/', label: 'Notes' },
 ];
 
 const resumeProps = resumeLink.external ? { target: '_blank', rel: 'noreferrer' } : {};
@@ -59,6 +62,15 @@ export function Header() {
           </div>
         </nav>
 
+        <div className="header-tools">
+          <Link className="icon-btn header-icon" href="/search/" aria-label="Search" title="Search" onClick={close}>
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+              <circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" strokeWidth="2" />
+              <path d="m16 16 4.5 4.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          </Link>
+          <ThemeToggle />
+        </div>
         <a className="btn btn-primary btn-sm header-cta" href={resumeLink.href} {...resumeProps}>
           Résumé
         </a>

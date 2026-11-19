@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import { getAllTags } from '@/lib/posts';
+import { SITE_OG_IMAGES, SITE_TWITTER_IMAGES } from '@/lib/share-image';
 
 const title = 'Tags · Blog · Vibhavari Bellutagi';
 const description = 'Browse blog posts by topic.';
@@ -10,16 +11,16 @@ export const metadata = {
   description,
   alternates: { canonical: '/blog/tags/' },
   openGraph: {
+    images: SITE_OG_IMAGES,
     url: '/blog/tags/',
     title,
     description,
-    images: ['/opengraph-image.jpg'],
   },
   twitter: {
     card: 'summary_large_image',
+    images: SITE_TWITTER_IMAGES,
     title,
     description,
-    images: ['/twitter-image.jpg'],
   },
 };
 

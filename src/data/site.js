@@ -1,6 +1,6 @@
 export const profile = {
   name: "Vibhavari Bellutagi",
-  role: "Data & Full-Stack Engineer",
+  role: "Data Engineer · Backend",
   photo: "/me/vibhavari_bellutagi.jpg",
   // Square, lightly sharpened crop of the photo above, for the hero, the blog byline and the author card.
   avatar: "/me/vibhavari_bellutagi-avatar.jpg",
@@ -28,13 +28,25 @@ export const likes = {
 };
 
 export const heroData = {
-  status: "Open to senior data & full-stack roles",
-  lede: "Software engineer, 10+ years. Seven of them on data platforms at Deloitte, AgileLab and Mews. The hard parts get written down here.",
+  status: "Open to senior data engineering and backend roles",
+  lede: "Software engineer, 10+ years. Seven of them on data platforms at Deloitte, AgileLab and Mews, and now more and more on the backend. The hard parts get written down here.",
 };
 
 export const aboutData = {
-  bio: "Software engineer, 10+ years. Seven of them spent on data platforms (Spark, Kafka, Databricks, Terraform) at Deloitte, AgileLab and Mews. On the side, I build full-stack products end to end, from the data model to the UI.",
+  bio: "Software engineer, 10+ years. Seven of them spent on data platforms (Spark, Kafka, Databricks, Terraform) at Deloitte, AgileLab and Mews. Alongside that, I build the backends of my own products: Postgres schemas, APIs, auth and payments. That's the direction I'm growing in.",
 };
+
+/**
+ * Posts shown on the home page, in this order (slugs). Chosen to match what I'm hired for:
+ * backend first, then data. A slug that doesn't match a post fails the build.
+ */
+export const pinnedPosts = [
+  "prevent-double-booking-postgres",
+  "better-auth-logged-out-while-active",
+  "spark-job-anatomy",
+  "automate-unit-tests-using-ci-cd",
+  "inside-git",
+];
 
 /**
  * The question card in the hero: one thing a post teaches, as a question and a two-line answer.
@@ -44,42 +56,48 @@ export const lessonsData = [
   {
     slug: "spark-job-anatomy",
     tag: "apache-spark",
-    question: "Two DataFrames with 5 and 6 partitions, one join. Why does the Spark UI show 200 tasks?",
+    question:
+      "Two DataFrames with 5 and 6 partitions, one join. Why does the Spark UI show 200 tasks?",
     answer:
       "A join shuffles the data, and the number of shuffle partitions is not taken from your input. It comes from spark.sql.shuffle.partitions, which defaults to 200.",
   },
   {
     slug: "prevent-double-booking-postgres",
     tag: "postgres",
-    question: "Two members tap Book at the same moment and one spot is left. Who gets it?",
+    question:
+      "Two members tap Book at the same moment and one spot is left. Who gets it?",
     answer:
       "Without a lock, both. SELECT … FOR UPDATE locks the class row, so the second request waits, reads the row again and sees the real count.",
   },
   {
     slug: "tcp-3-way-handshake",
     tag: "networking",
-    question: "Before your browser sends a byte of HTTP, it trades three packets that carry no data. What for?",
+    question:
+      "Before your browser sends a byte of HTTP, it trades three packets that carry no data. What for?",
     answer:
       "The handshake is not a greeting. It is how both sides synchronize sequence numbers, and every TCP guarantee is built on those numbers.",
   },
   {
     slug: "handling-nulls-in-spark",
     tag: "apache-spark",
-    question: "Six of ten movies have no rating. Why does filtering for == None return zero rows, with no error?",
+    question:
+      "Six of ten movies have no rating. Why does filtering for == None return zero rows, with no error?",
     answer:
       "Comparing anything with null, even null itself, gives null, and a filter treats null as “no”. Use isNull() or isNotNull() instead.",
   },
   {
     slug: "global-vs-globalthis",
     tag: "javascript",
-    question: "window.myVar works in the browser. Why does the same file crash in Node.js?",
+    question:
+      "window.myVar works in the browser. Why does the same file crash in Node.js?",
     answer:
       "Node has no window. globalThis is the one name for the global object that works in every JavaScript environment.",
   },
   {
     slug: "better-auth-logged-out-while-active",
     tag: "authentication",
-    question: "A 15-minute idle timeout kept logging users out while they were active. Why?",
+    question:
+      "A 15-minute idle timeout kept logging users out while they were active. Why?",
     answer:
       "The session was extended in the database, but the renewed cookie never reached the browser, so it expired at its original time.",
   },
@@ -94,23 +112,25 @@ export const impactData = [
   { what: "workflow efficiency", value: "+40%" },
 ];
 
-export const previousCompanies = ["Mews", "AgileLab", "Deloitte"];
+export const previousCompanies = [
+  { name: "Mews", url: "https://www.mews.com" },
+  { name: "AgileLab", url: "https://www.agilelab.it" },
+  { name: "Deloitte", url: "https://www.deloitte.com/ui/en/about.html" },
+];
 
+/** What I do, and where each is proven: data at work, backend in my own products. */
 export const pillarsData = [
   {
+    label: "My day job, seven years",
     title: "Data platforms",
     body: "Batch and streaming pipelines, CDC, lakehouse architecture and the infrastructure-as-code that keeps it all reproducible and cheap to run.",
     tools: ["Databricks", "Spark", "Kafka", "FlinkSQL", "Terraform"],
   },
   {
+    label: "Where I'm growing, in my own products",
     title: "Backend & APIs",
-    body: "Type-safe APIs, auth and payments, built on Postgres schemas designed to hold up under real concurrency.",
+    body: "Type-safe APIs, auth and payments, built on Postgres schemas designed to hold up under real concurrency. Both side projects below run on them.",
     tools: ["Python", "FastAPI", "TypeScript", "tRPC", "PostgreSQL"],
-  },
-  {
-    title: "Product engineering",
-    body: "Full products, from data model to UI to deployment, with monitoring, backups and the boring parts done properly.",
-    tools: ["Next.js", "React", "AWS", "GCP", "Railway"],
   },
 ];
 
