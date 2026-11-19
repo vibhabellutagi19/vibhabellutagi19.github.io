@@ -3,7 +3,7 @@
 My second brain: what I **learn** from others (engineering blogs I read, cohort sessions).
 What I **find** while building goes in the blog (`blog/posts/`) instead.
 
-Published at `buildwithvibs.in/notes/` (`notes.buildwithvibs.in` redirects there).
+Published at `buildwithvibs.in/notes/`.
 Product spec: [`docs/notes-prd.md`](../docs/notes-prd.md).
 
 ## Daily loop

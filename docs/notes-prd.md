@@ -5,10 +5,10 @@
 | **Owner** | Vibha |
 | **Status** | v0.7, M1 and M2 built except Mermaid and a notes RSS feed (not yet live) |
 | **Date** | 2026-11-19 |
-| **Lives at** | `buildwithvibs.in/notes/` · `notes.buildwithvibs.in` redirects there |
+| **Lives at** | `buildwithvibs.in/notes/` |
 | **Code** | this repo: `src/lib/notes.js`, `src/app/notes/`, `notes/`, `.claude/skills/note-writing/` |
 
-**History.** v0.1–v0.4 planned a separate Astro site in a private repo, with a local editor. v0.5 moves everything into this portfolio repo (Next.js 15 static export on Vercel), because the portfolio already had most of the reader experience. That changes four decisions, all marked **(v0.5)** below: one repo, a `/notes` path with a subdomain redirect, drafts kept out of Git, and public recall cards.
+**History.** v0.1–v0.4 planned a separate Astro site in a private repo, with a local editor. v0.5 moves everything into this portfolio repo (Next.js 15 static export on Vercel), because the portfolio already had most of the reader experience. That changes four decisions, all marked **(v0.5)** below: one repo, a `/notes` path, drafts kept out of Git, and public recall cards. (v0.8 dropped the planned `notes.` subdomain redirect: nothing links to it.)
 
 ---
 
@@ -53,7 +53,7 @@ I explain what I understood to an AI assistant, and it drafts the note **in my w
 | D1 | **Markdown files in Git** are the source of truth | I own them, they're portable, history is free, nothing to operate | I need multi-user or phone-first capture |
 | D2 | **No editor; AI-assisted capture** through the `note-writing` skill | I don't write notes by hand, so effort goes to the reader side | I start writing long notes by hand |
 | D3 | **(v0.5) Same repo and stack as the portfolio** (Next.js 15, `output: 'export'`) | Reuses the existing TOC, reading progress, code highlighting, share button, tests and design. One codebase to maintain. | Notes outgrow the portfolio (e.g. need server features) |
-| D4 | **(v0.5) Served at `/notes`; `notes.buildwithvibs.in` 301-redirects there** (`vercel.json`) | A true subdomain on a single static export needs host rewrites and absolute links everywhere. A path is simpler and keeps search ranking on one domain; the subdomain still works as a short link to share. | I want notes to look like a separate site → host rewrite + per-host links (contained change: `NOTES_PATH` and `noteHref` in `src/lib/notes.js`) |
+| D4 | **(v0.5) Served at `/notes`, no subdomain** (v0.8: the `notes.` redirect was dropped) | A true subdomain on a single static export needs host rewrites and absolute links everywhere. A path is simpler and keeps search ranking on one domain. A short `notes.` link could be added later as a redirect in `vercel.json` plus a domain in Vercel. | I want notes to look like a separate site → host rewrite + per-host links (contained change: `NOTES_PATH` and `noteHref` in `src/lib/notes.js`) |
 | D5 | **(v0.5) Drafts live in `notes/drafts/`, git-ignored** | This repo is public; anything committed is visible on GitHub, even if not built. Drafts never leave my machine. | The repo goes private |
 | D6 | **Publishing is enforced by the build**: only `status: published` notes in `notes/` are built; a missing status means draft | Safety in code, not in remembering | — |
 | D7 | **(v0.5) Recall cards are public** as "Test yourself" on each note | They're in a public repo anyway, and readers benefit from them | — |
@@ -167,7 +167,7 @@ docs/notes-prd.md            # this file
                                                                        │   backlinks              │
                                                                        └────────────┬─────────────┘
                                                                                     ▼
-                                                         buildwithvibs.in/notes  ◄── notes.buildwithvibs.in (301)
+                                                                  buildwithvibs.in/notes
 ```
 
 ## 8. Non-functional requirements
@@ -197,14 +197,12 @@ docs/notes-prd.md            # this file
 | Milestone | Scope | Status |
 |---|---|---|
 | **M0: Habit** | `note-writing` skill + format; read and capture daily | Ready, start now |
-| **M1: Publish** | Loader, validation, `/notes` pages, home section, nav, sitemap, subdomain redirect, tests | **Built**, needs merge + domain setup |
+| **M1: Publish** | Loader, validation, `/notes` pages, home section, nav, sitemap, tests | **Built**, needs merge |
 | **M2: Reader polish + sharing** | **Built (v0.6), site-wide for posts and notes:** a preview image per page for X/LinkedIn, search (Pagefind), reading streak on `/notes`, like/save/resume/author card on notes, highlight-to-share quotes, click-to-zoom images, dark mode, print stylesheet. **v0.7:** the `/notes/cohort/` page (Software-dev cohort, grouped by week, a share link per week), note tag pages with a fixed tag list (`notes/tags.json`, enforced by the build), and dark mode site-wide (the dark header, hero and footer get a lifted shade in dark mode; interactive demos keep their light design). **Still to do:** Mermaid diagrams, notes RSS feed | Before the cohort starts, **by mid-December 2026** (the India move overlaps January) |
 | **M3: Recall** | Local review page with spaced repetition, streak | After M2 |
 | **v2** | Graph view, "ask my notes" (RAG), suggested links, editing from phone | After a month of use |
 
-**To go live (manual, one-time):**
-1. In Vercel → project → Domains, add `notes.buildwithvibs.in`; add the DNS record Vercel shows (CNAME to Vercel).
-2. Merge the branch; publish the first note.
+**To go live:** merge the branch, then publish the first note. No domain or DNS setup is needed.
 
 ## 11. Success metrics (first 60 days)
 - ≥ 40 source notes, ≥ 15 concept notes with ≥ 2 backlinks each
