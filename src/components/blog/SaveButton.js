@@ -2,8 +2,8 @@
 
 import { toggleSaved, useReadingState } from '@/lib/reading-state';
 
-/** Saves the post to the reader's list on /blog (kept in their browser only). */
-export function SaveButton({ slug }) {
+/** Saves the post (or note) to the reader's list, kept in their browser only. */
+export function SaveButton({ slug, hint = 'Saved. Find it under Saved on the blog page' }) {
   const { saved } = useReadingState();
   const isSaved = Boolean(saved[slug]);
 
@@ -13,7 +13,7 @@ export function SaveButton({ slug }) {
       className="save-button"
       aria-pressed={isSaved}
       aria-label="Save for later"
-      title={isSaved ? 'Saved. Find it under Saved on the blog page' : 'Save for later'}
+      title={isSaved ? hint : 'Save for later'}
       onClick={() => toggleSaved(slug)}
     >
       <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">

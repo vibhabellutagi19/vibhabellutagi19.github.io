@@ -27,3 +27,6 @@ yarn-error.log*
 /worker/node_modules
 /worker/.wrangler
 /worker/.dev.vars
+
+# Notes drafts stay on my machine; this repo is public
+/notes/drafts/

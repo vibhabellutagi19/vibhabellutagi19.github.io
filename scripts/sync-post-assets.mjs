@@ -8,8 +8,11 @@ async function copyDirectory(source, destination) {
   await fs.mkdir(destination, { recursive: true });
   const entries = await fs.readdir(source, { withFileTypes: true });
 
+  // Dotfiles such as .DS_Store aren't post assets.
+  const assets = entries.filter((entry) => !entry.name.startsWith('.'));
+
   await Promise.all(
-    entries.map(async (entry) => {
+    assets.map(async (entry) => {
       const sourcePath = path.join(source, entry.name);
       const destinationPath = path.join(destination, entry.name);
 

@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
+import { PostTags } from '@/components/blog/PostList';
+import { ReadMark } from '@/components/blog/ReadMark';
 import { GymDemo } from '@/components/demos/GymDemo';
 import { PgDemo } from '@/components/demos/PgDemo';
 import { LessonCard } from '@/components/home/LessonCard';
-import { TopicExplorer } from '@/components/home/TopicExplorer';
+import { NoteCards } from '@/components/notes/NoteList';
 import { Reveal } from '@/components/ui/Reveal';
 import {
   aboutData,
@@ -11,6 +13,7 @@ import {
   heroData,
   impactData,
   lessonsData,
+  pinnedPosts,
   pillarsData,
   previousCompanies,
   profile,
@@ -18,8 +21,8 @@ import {
   sideProjects,
   testimonialsData,
 } from '@/data/site';
-import { getAllPosts } from '@/lib/posts';
-import { groupByTopic } from '@/lib/topics';
+import { getAllNotes } from '@/lib/notes';
+import { formatTag, getAllPosts, pickPosts } from '@/lib/posts';
 
 const DEMOS = { gym: GymDemo, pg: PgDemo };
 const NUMERALS = ['i.', 'ii.', 'iii.'];
@@ -46,7 +49,7 @@ function Hero({ lessons, total }) {
               </p>
             </div>
             <h1>
-              I build the data platforms <span className="serif">and</span> the products that run on them.
+              I build data platforms, <span className="serif">and</span> the backends that feed them.
             </h1>
             <p className="hero-lede">
               {heroData.lede} {total} posts so far.
@@ -82,8 +85,15 @@ function Hero({ lessons, total }) {
         <div className="container previously-row">
           <span className="previously-label">Previously at</span>
           <ul>
-            {previousCompanies.map((company) => (
-              <li key={company}>{company}</li>
+            {previousCompanies.map(({ name, url }) => (
+              <li key={name}>
+                <a className="company-link" href={url} target="_blank" rel="noreferrer" title={`${name} website`}>
+                  {name}
+                  <span className="company-link-arrow" aria-hidden="true">
+                    ↗
+                  </span>
+                </a>
+              </li>
             ))}
           </ul>
         </div>
@@ -92,18 +102,66 @@ function Hero({ lessons, total }) {
   );
 }
 
-function Learn({ topics, total }) {
+/** Pinned posts (pinnedPosts in site.js), in their order. Everything else lives on /blog. */
+function SelectedPosts({ posts, total }) {
+  const tagLabels = Object.fromEntries(posts.flatMap((post) => post.tags).map((tag) => [tag, formatTag(tag)]));
+
   return (
     <section id="learn" className="home-section" aria-labelledby="learn-title">
       <div className="container">
-        <p className="label">01 / Learn</p>
+        <p className="label">01 / Blog</p>
         <div className="section-row">
           <h2 id="learn-title" className="h-section" style={{ maxWidth: 680 }}>
-            Pick a topic. <span className="serif">Leave</span> knowing how it works.
+            Highlights of my <span className="serif">writing.</span>
           </h2>
           <p>Every post starts from something that surprised me, then explains the mechanism with a small worked example.</p>
         </div>
-        <TopicExplorer topics={topics} total={total} />
+        <ul className="post-list recent-posts">
+          {posts.map((post) => (
+            <li key={post.slug}>
+              <Link className="post-item" href={`/blog/${post.slug}/`}>
+                <span className="post-meta">
+                  {post.date} · {post.readTime}
+                  <ReadMark slug={post.slug} />
+                </span>
+                <span className="post-title">{post.title}</span>
+                {post.excerpt && <span className="post-excerpt">{post.excerpt}</span>}
+                <PostTags tags={post.tags} tagLabels={tagLabels} />
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <p className="home-notes-foot">
+          <Link className="text-link" href="/blog/">
+            All {total} posts, by topic →
+          </Link>
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function LatestNotes({ notes }) {
+  if (notes.length === 0) {
+    return null;
+  }
+
+  return (
+    <section id="notes" className="home-section" aria-labelledby="notes-title">
+      <div className="container">
+        <p className="label">02 / Notes</p>
+        <div className="section-row">
+          <h2 id="notes-title" className="h-section" style={{ maxWidth: 640 }}>
+            One blog a day. <span className="serif">What stuck.</span>
+          </h2>
+          <p>Short, linked notes on the engineering blogs I read: how it works, what it trades away, what I still wonder.</p>
+        </div>
+        <NoteCards notes={notes} />
+        <p className="home-notes-foot">
+          <Link className="text-link" href="/notes/">
+            All notes →
+          </Link>
+        </p>
       </div>
     </section>
   );
@@ -113,7 +171,7 @@ function SideProjects() {
   return (
     <section id="projects" className="home-section" aria-labelledby="projects-title">
       <div className="container">
-        <p className="label">02 / Side projects</p>
+        <p className="label">03 / Side projects</p>
         <div className="section-row">
           <h2 id="projects-title" className="h-section" style={{ maxWidth: 640 }}>
             Each app has one <span className="serif">hard part.</span> That is the lesson.
@@ -159,7 +217,7 @@ function About() {
   return (
     <section id="about" className="home-section about" aria-labelledby="about-title">
       <div className="container">
-        <p className="label">03 / About</p>
+        <p className="label">04 / About</p>
         <h2 id="about-title" className="h-section" style={{ marginBottom: 48 }}>
           Who is <span className="serif">writing</span> this.
         </h2>
@@ -193,6 +251,7 @@ function About() {
                     {NUMERALS[index]}
                   </span>
                   <div>
+                    {pillar.label && <p className="skills-label">{pillar.label}</p>}
                     <h3>{pillar.title}</h3>
                     <p>{pillar.body}</p>
                     <p className="skills-tools">{pillar.tools.join(' · ')}</p>
@@ -269,11 +328,14 @@ function Contact() {
       <div className="container">
         <Reveal className="contact-card dark">
           <div>
-            <p className="label">04 / Contact</p>
+            <p className="label">05 / Contact</p>
             <h2 id="contact-title">
-              Hiring for a <span className="serif">data or full-stack</span> role?
+              Hiring a <span className="serif">data or backend</span> engineer?
             </h2>
-            <p>Senior data engineering, platform or full-stack product roles. Remote or hybrid. Questions about a post are welcome too.</p>
+            <p>
+              Senior data engineering and data platform roles, or backend roles where the data model matters. Remote or
+              hybrid. Questions about a post are welcome too.
+            </p>
           </div>
           <div className="hero-actions">
             <ResumeButton />
@@ -292,6 +354,7 @@ function Contact() {
 
 export default async function HomePage() {
   const posts = await getAllPosts();
+  const notes = (await getAllNotes()).filter((note) => note.status === 'published').slice(0, 3);
   const bySlug = Object.fromEntries(posts.map((post) => [post.slug, post]));
   const lessons = lessonsData
     .filter((lesson) => bySlug[lesson.slug])
@@ -300,7 +363,8 @@ export default async function HomePage() {
   return (
     <main>
       <Hero lessons={lessons} total={posts.length} />
-      <Learn topics={groupByTopic(posts)} total={posts.length} />
+      <SelectedPosts posts={pickPosts(posts, pinnedPosts)} total={posts.length} />
+      <LatestNotes notes={notes} />
       <SideProjects />
       <About />
       <KindWords />

@@ -28,8 +28,8 @@ export function AuthorCard() {
       <p className="author-name">{profile.name}</p>
       <p className="author-bio">
         {profile.role}. 10+ years in software, seven of them building data platforms (Spark, Kafka, Databricks) at
-        Deloitte, AgileLab and Mews. On the side, I build full-stack <Link href="/#projects">projects</Link> and
-        write up the hard parts here.
+        Deloitte, AgileLab and Mews. Alongside that, I build the backends of my own{' '}
+        <Link href="/#projects">projects</Link> and write up the hard parts here.
       </p>
       <ul className="author-links">
         {LINKS.map(({ icon, label, href }) => (

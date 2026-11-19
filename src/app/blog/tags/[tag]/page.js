@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 
 import { PostList } from '@/components/blog/PostList';
 import { formatTag, getAllTags, getPostsByTag } from '@/lib/posts';
+import { SITE_OG_IMAGES, SITE_TWITTER_IMAGES } from '@/lib/share-image';
 
 export const dynamicParams = false;
 
@@ -22,16 +23,16 @@ export async function generateMetadata({ params }) {
     description,
     alternates: { canonical: `/blog/tags/${tag}/` },
     openGraph: {
+      images: SITE_OG_IMAGES,
       url: `/blog/tags/${tag}/`,
       title,
       description,
-      images: ['/opengraph-image.jpg'],
     },
     twitter: {
       card: 'summary_large_image',
+      images: SITE_TWITTER_IMAGES,
       title,
       description,
-      images: ['/twitter-image.jpg'],
     },
   };
 }

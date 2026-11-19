@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import { profile } from '@/data/site';
+import { SITE_OG_IMAGES, SITE_TWITTER_IMAGES } from '@/lib/share-image';
 
 const title = 'Privacy · Vibhavari Bellutagi';
 const description = 'What this site collects, why, and where it is kept.';
@@ -11,16 +12,16 @@ export const metadata = {
   description,
   alternates: { canonical: '/privacy/' },
   openGraph: {
+    images: SITE_OG_IMAGES,
     url: '/privacy/',
     title,
     description,
-    images: ['/opengraph-image.jpg'],
   },
   twitter: {
     card: 'summary_large_image',
+    images: SITE_TWITTER_IMAGES,
     title,
     description,
-    images: ['/twitter-image.jpg'],
   },
 };
 
