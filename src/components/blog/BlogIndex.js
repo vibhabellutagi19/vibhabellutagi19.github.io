@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 import { isInProgress, useReadingState } from '@/lib/reading-state';
 
-import { PostList } from './PostList';
+import { LatestPost, PostList } from './PostList';
 
 const ALL = 'all';
 const SAVED = 'saved';
@@ -89,8 +89,9 @@ export function BlogIndex({ posts, topics }) {
         ))}
       </nav>
 
-      {/* A series filter reads oldest first, so the parts come in order. */}
-      <PostList posts={topic ? [...shown].reverse() : shown} groupYears={!topic} />
+      {/* The newest post is pinned on the unfiltered view; a series filter reads oldest first. */}
+      {active === ALL && shown.length > 0 && <LatestPost post={shown[0]} />}
+      <PostList posts={topic ? [...shown].reverse() : active === ALL ? shown.slice(1) : shown} groupYears={!topic} />
     </>
   );
 }

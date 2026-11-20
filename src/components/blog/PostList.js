@@ -45,6 +45,23 @@ function PostRow({ post, showYear }) {
   );
 }
 
+/** The newest post, pinned above the list: same content as a row, with more room. */
+export function LatestPost({ post }) {
+  return (
+    <Link className="post-latest" href={`/blog/${post.slug}/`}>
+      <span className="post-latest-label">
+        Latest{post.part ? ` · ${post.part}` : ''}
+      </span>
+      <span className="post-latest-title">{post.title}</span>
+      {post.excerpt && <span className="post-latest-excerpt">{post.excerpt}</span>}
+      <span className="post-row-meta">
+        {post.date} · {post.readTime}
+        <ReadMark slug={post.slug} />
+      </span>
+    </Link>
+  );
+}
+
 /** Posts in the order given, with a small year heading whenever the year changes (unless `groupYears` is off). */
 export function PostList({ posts, groupYears = true }) {
   if (posts.length === 0) {
