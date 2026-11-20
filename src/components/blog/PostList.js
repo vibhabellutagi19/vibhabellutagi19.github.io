@@ -7,18 +7,9 @@ function getYear(date) {
   return Number.isNaN(year) ? 'Earlier' : String(year);
 }
 
-function groupByYear(posts) {
-  const groups = [];
-  posts.forEach((post) => {
-    const year = getYear(post.date);
-    const last = groups[groups.length - 1];
-    if (last && last.year === year) {
-      last.posts.push(post);
-    } else {
-      groups.push({ year, posts: [post] });
-    }
-  });
-  return groups;
+/** "Jan 13, 2025" -> "Jan 13" (the year is shown once, above its posts). */
+function shortDate(date) {
+  return String(date).replace(/,?\s*\d{4}$/, '');
 }
 
 export function PostTags({ tags, tagLabels }) {
@@ -35,48 +26,62 @@ export function PostTags({ tags, tagLabels }) {
   );
 }
 
-export function FeaturedPost({ post, tagLabels }) {
+function PostRow({ post, showYear }) {
   return (
-    <Link className="post-featured" href={`/blog/${post.slug}/`}>
-      <span className="eyebrow">Latest post</span>
-      <span className="post-featured-title">{post.title}</span>
-      {post.excerpt && <span className="post-featured-excerpt">{post.excerpt}</span>}
-      <span className="post-featured-foot">
-        <span className="post-meta">
-          {post.date} · {post.readTime}
+    <li>
+      <Link className="post-row" href={`/blog/${post.slug}/`}>
+        <span className="post-row-date">{showYear ? post.date : shortDate(post.date)}</span>
+        <span className="post-row-body">
+          {post.part && <span className="post-row-part">{post.part}</span>}
+          <span className="post-row-title">{post.title}</span>
+          {post.excerpt && <span className="post-row-excerpt">{post.excerpt}</span>}
+          <span className="post-row-meta">
+            {post.readTime}
+            <ReadMark slug={post.slug} />
+          </span>
         </span>
-        <PostTags tags={post.tags} tagLabels={tagLabels} />
-        <span className="post-featured-cta">Read post →</span>
-      </span>
-    </Link>
+      </Link>
+    </li>
   );
 }
 
-export function PostList({ posts, tagLabels }) {
+/** Posts in the order given, with a small year heading whenever the year changes (unless `groupYears` is off). */
+export function PostList({ posts, groupYears = true }) {
+  if (posts.length === 0) {
+    return <p className="post-list-empty">No posts here yet.</p>;
+  }
+
+  if (!groupYears) {
+    return (
+      <ul className="post-rows">
+        {posts.map((post) => (
+          <PostRow key={post.slug} post={post} showYear />
+        ))}
+      </ul>
+    );
+  }
+
+  const years = [];
+  posts.forEach((post) => {
+    const year = getYear(post.date);
+    const last = years[years.length - 1];
+    if (last && last.year === year) {
+      last.posts.push(post);
+    } else {
+      years.push({ year, posts: [post] });
+    }
+  });
+
   return (
     <div className="post-years">
-      {groupByYear(posts).map(({ year, posts: yearPosts }) => (
-        <section key={year} className="post-year" aria-labelledby={`year-${year}`}>
+      {years.map(({ year, posts: yearPosts }) => (
+        <section key={year} aria-labelledby={`year-${year}`}>
           <h2 id={`year-${year}`} className="post-year-label">
             {year}
-            <span>
-              {yearPosts.length} {yearPosts.length === 1 ? 'post' : 'posts'}
-            </span>
           </h2>
-
-          <ul className="post-list">
+          <ul className="post-rows">
             {yearPosts.map((post) => (
-              <li key={post.slug}>
-                <Link className="post-item" href={`/blog/${post.slug}/`}>
-                  <span className="post-meta">
-                    {post.date} · {post.readTime}
-                    <ReadMark slug={post.slug} />
-                  </span>
-                  <span className="post-title">{post.title}</span>
-                  {post.excerpt && <span className="post-excerpt">{post.excerpt}</span>}
-                  <PostTags tags={post.tags} tagLabels={tagLabels} />
-                </Link>
-              </li>
+              <PostRow key={post.slug} post={post} showYear={false} />
             ))}
           </ul>
         </section>
