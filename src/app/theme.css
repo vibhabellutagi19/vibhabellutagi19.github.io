@@ -50,12 +50,8 @@
     border-block: 1px solid var(--line-strong);
   }
 
-  :root[data-theme='dark'] .lesson {
-    background: var(--chrome-raised);
-  }
-
-  /* Dark cards (featured post, read next, project) sit on the lifted shade too. */
-  :root[data-theme='dark'] :is(.next-card, .project.dark) {
+  /* Dark cards (featured post, read next) sit on the lifted shade too. */
+  :root[data-theme='dark'] .next-card {
     border-color: var(--chrome);
     background: var(--chrome);
   }
@@ -66,19 +62,6 @@
     border-color: var(--text);
     background: var(--text);
     color: var(--bg);
-  }
-
-  /* Marks drawn in ink on the light page. */
-  :root[data-theme='dark'] .timeline > li:first-child {
-    border-top-color: var(--text);
-  }
-
-  :root[data-theme='dark'] .quote-lead figcaption strong {
-    color: var(--text);
-  }
-
-  :root[data-theme='dark'] .quote-card {
-    background: var(--surface);
   }
 
   /* Interactive demos are designed on a light panel, where dark boxes mark what is active

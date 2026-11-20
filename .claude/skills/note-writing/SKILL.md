@@ -110,10 +110,29 @@ Concept notes grow: when a new source note uses an existing concept, offer to ad
 
 Same sections as a source note. Add `cohort_week: <n>`; `source_url` is optional (session recording or exercise link).
 
+## Quick note template (`type: quick`)
+
+For days with little time. Three to five lines in her words, no required sections, no recall cards, no summary (the first line is used).
+
+```markdown
+---
+title: <what it is, in a few words>
+type: quick
+status: draft
+date: <YYYY-MM-DD>
+tags: <from notes/tags.json>
+ai_assisted: false
+---
+
+<Her three to five lines, lightly cleaned up.>
+```
+
+Rules: don't expand a quick note into a full note unless she asks. Keep `<!-- verify -->` markers for anything she didn't state. Set `ai_assisted: false` when she wrote the lines herself.
+
 ## Checklist before replying
 
 - [ ] File is in `notes/drafts/`, `status: draft`, slug matches the file name (kebab-case)
-- [ ] Required fields: title, type, date (YYYY-MM-DD), summary; `source_url` for source notes
+- [ ] Required fields: title, type, date (YYYY-MM-DD), summary (not needed for `quick`); `source_url` for source notes
 - [ ] Every fact she didn't state has a `<!-- verify -->` marker
 - [ ] "My questions" contains only her questions
 - [ ] `[[links]]` use existing slugs where a note exists

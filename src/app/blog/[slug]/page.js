@@ -211,9 +211,9 @@ export default async function BlogPostPage({ params }) {
             <Link className="text-link" href="/blog/">
               ← All posts
             </Link>
-            <Link className="text-link" href="/#contact">
+            <a className="text-link" href={`mailto:${profile.email}`}>
               Work with me →
-            </Link>
+            </a>
           </footer>
         </article>
 

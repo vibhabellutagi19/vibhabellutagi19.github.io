@@ -1,6 +1,6 @@
 export const profile = {
   name: "Vibhavari Bellutagi",
-  role: "Data Engineer · Backend",
+  role: "Data and Backend Engineer",
   photo: "/me/vibhavari_bellutagi.jpg",
   // Square, lightly sharpened crop of the photo above, for the hero, the blog byline and the author card.
   avatar: "/me/vibhavari_bellutagi-avatar.jpg",
@@ -33,7 +33,7 @@ export const heroData = {
 };
 
 export const aboutData = {
-  bio: "Software engineer, 10+ years. Seven of them spent on data platforms (Spark, Kafka, Databricks, Terraform) at Deloitte, AgileLab and Mews. Alongside that, I build the backends of my own products: Postgres schemas, APIs, auth and payments. That's the direction I'm growing in.",
+  bio: "Software engineer, 10+ years. Seven of them spent on data platforms (Spark, Kafka, Databricks, AWS Cloud) at Deloitte, AgileLab and Mews. Alongside that, I build the backends of my own products: APIs, auth and payments. That's the direction I'm growing in.",
 };
 
 /**
@@ -48,90 +48,39 @@ export const pinnedPosts = [
   "inside-git",
 ];
 
-/**
- * The question card in the hero: one thing a post teaches, as a question and a two-line answer.
- * `slug` is the post it comes from; a lesson whose post no longer exists is left out.
- */
-export const lessonsData = [
-  {
-    slug: "spark-job-anatomy",
-    tag: "apache-spark",
-    question:
-      "Two DataFrames with 5 and 6 partitions, one join. Why does the Spark UI show 200 tasks?",
-    answer:
-      "A join shuffles the data, and the number of shuffle partitions is not taken from your input. It comes from spark.sql.shuffle.partitions, which defaults to 200.",
-  },
-  {
-    slug: "prevent-double-booking-postgres",
-    tag: "postgres",
-    question:
-      "Two members tap Book at the same moment and one spot is left. Who gets it?",
-    answer:
-      "Without a lock, both. SELECT … FOR UPDATE locks the class row, so the second request waits, reads the row again and sees the real count.",
-  },
-  {
-    slug: "tcp-3-way-handshake",
-    tag: "networking",
-    question:
-      "Before your browser sends a byte of HTTP, it trades three packets that carry no data. What for?",
-    answer:
-      "The handshake is not a greeting. It is how both sides synchronize sequence numbers, and every TCP guarantee is built on those numbers.",
-  },
-  {
-    slug: "handling-nulls-in-spark",
-    tag: "apache-spark",
-    question:
-      "Six of ten movies have no rating. Why does filtering for == None return zero rows, with no error?",
-    answer:
-      "Comparing anything with null, even null itself, gives null, and a filter treats null as “no”. Use isNull() or isNotNull() instead.",
-  },
-  {
-    slug: "global-vs-globalthis",
-    tag: "javascript",
-    question:
-      "window.myVar works in the browser. Why does the same file crash in Node.js?",
-    answer:
-      "Node has no window. globalThis is the one name for the global object that works in every JavaScript environment.",
-  },
-  {
-    slug: "better-auth-logged-out-while-active",
-    tag: "authentication",
-    question:
-      "A 15-minute idle timeout kept logging users out while they were active. Why?",
-    answer:
-      "The session was extended in the database, but the renewed cookie never reached the browser, so it expired at its original time.",
-  },
-];
-
-/** The terminal card beside the photo. Every number comes from the experience entries below. */
-export const impactData = [
-  { what: "pipeline runtime", value: "10h+ → 2h" },
-  { what: "compute cost", value: "−60–75%" },
-  { what: "model deploy time", value: "−50%" },
-  { what: "profile update latency", value: "−75–80%" },
-  { what: "workflow efficiency", value: "+40%" },
-];
-
 export const previousCompanies = [
   { name: "Mews", url: "https://www.mews.com" },
   { name: "AgileLab", url: "https://www.agilelab.it" },
   { name: "Deloitte", url: "https://www.deloitte.com/ui/en/about.html" },
 ];
 
-/** What I do, and where each is proven: data at work, backend in my own products. */
-export const pillarsData = [
-  {
-    label: "My day job, seven years",
-    title: "Data platforms",
-    body: "Batch and streaming pipelines, CDC, lakehouse architecture and the infrastructure-as-code that keeps it all reproducible and cheap to run.",
-    tools: ["Databricks", "Spark", "Kafka", "FlinkSQL", "Terraform"],
-  },
-  {
-    label: "Where I'm growing, in my own products",
-    title: "Backend & APIs",
-    body: "Type-safe APIs, auth and payments, built on Postgres schemas designed to hold up under real concurrency. Both side projects below run on them.",
-    tools: ["Python", "FastAPI", "TypeScript", "tRPC", "PostgreSQL"],
-  },
+/**
+ * The two scrolling rows under the hero: data platforms first (day job), then backend (own products).
+ * `icon` is a file in public/skills/ (brand logos from Simple Icons, CC0; the rest are plain glyphs).
+ * `color` is what the icon turns on hover.
+ */
+export const skillRows = [
+  [
+    { name: "AWS", icon: "cloud", color: "#FF9900" },
+    { name: "Databricks", icon: "databricks", color: "#FF3621" },
+    { name: "Apache Spark", icon: "apachespark", color: "#E25A1C" },
+    { name: "Kafka", icon: "apachekafka", color: "#F5F5F5" },
+    { name: "FlinkSQL", icon: "apacheflink", color: "#E6526F" },
+    { name: "Terraform", icon: "terraform", color: "#844FBA" },
+    { name: "CDC", icon: "arrows", color: "#34D399" },
+    { name: "SQL", icon: "database", color: "#38BDF8" },
+  ],
+  [
+    { name: "Python", icon: "python", color: "#FFD43B" },
+    { name: "FastAPI", icon: "fastapi", color: "#05C3A8" },
+    { name: "TypeScript", icon: "typescript", color: "#3178C6" },
+    { name: "tRPC", icon: "trpc", color: "#398CCB" },
+    { name: "Better Auth", icon: "lock", color: "#A78BFA" },
+    { name: "REST APIs", icon: "braces", color: "#22C55E" },
+    { name: "Docker", icon: "docker", color: "#2496ED" },
+    { name: "Microservices", icon: "network", color: "#60A5FA" },
+    { name: "Agentic AI", icon: "sparkles", color: "#F472B6" },
+  ],
 ];
 
 export const experienceData = [
@@ -179,46 +128,15 @@ export const experienceData = [
 ];
 
 /**
- * LinkedIn recommendations, trimmed excerpts with the wording unchanged.
- * The first one is shown large; the rest sit beside it.
- */
-export const testimonialsData = [
-  {
-    quote:
-      "A real sense of ownership. She follows through, keeps herself accountable, and does not need to be pushed to deliver high-quality work.",
-    name: "Elliot Ip",
-    role: "Senior Data Engineer, Mews",
-  },
-  {
-    quote:
-      "Highly autonomous, proactive, and has a remarkable long-term vision.",
-    name: "Vincenzo Pafundi",
-    role: "Machine Learning Engineer, AXA Italia",
-  },
-  {
-    quote:
-      "In just a few weeks, she mastered the technical skills to work independently and soon took full ownership of entire projects.",
-    name: "Marco Vagaggini",
-    role: "Senior Software Engineer, QuestIT",
-  },
-  {
-    quote: "She brought several ML projects to production on the AWS platform.",
-    name: "Paolo Cristofanelli",
-    role: "ML & Data Platform Engineer, Cleo",
-  },
-];
-
-/**
- * Side projects, deliberately unnamed and unlinked. `demo` picks the
- * animated preview; `post` links the write-up of the hardest part.
+ * Side projects, deliberately unnamed and unlinked. `mock` is the one-line terminal snippet on the card;
+ * `post` links the write-up of the hardest part (the whole card links there).
  */
 export const sideProjects = [
   {
-    demo: "gym",
-    name: "Gym & studio management platform",
-    summary:
-      "Class scheduling with session credits, attendance, invoicing and online payments, with separate admin, coach and member portals.",
-    hardPart: "Two members, one spot left.",
+    name: "Gym & studio management",
+    blurb:
+      "Class scheduling, session credits, invoicing and payments, with admin, coach and member portals.",
+    mock: "SELECT … FOR UPDATE  -- two members, one spot left",
     post: {
       label: "How Postgres row locks prevent double bookings",
       href: "/blog/prevent-double-booking-postgres/",
@@ -226,12 +144,10 @@ export const sideProjects = [
     stack: ["TypeScript", "Next.js", "tRPC", "PostgreSQL", "Better Auth"],
   },
   {
-    demo: "pg",
-    name: "PG & hostel management platform",
-    summary:
-      "Multi-property dashboard, floor-room-bed layouts, a rent ledger that tracks paid, partial and overdue automatically, PDF invoices and role-based staff access.",
-    hardPart:
-      "Keeping a rent ledger correct when payments arrive partial, late or twice.",
+    name: "PG & hostel management",
+    blurb:
+      "Multi-property dashboard, floor-room-bed layouts, a rent ledger and PDF invoices.",
+    mock: "paid · partial · overdue  -- payments arrive late or twice",
     post: null,
     stack: ["TypeScript", "Next.js", "tRPC", "PostgreSQL", "Clerk"],
   },
