@@ -43,10 +43,10 @@ A: The answer in one or two sentences.
 | Field | Required | Notes |
 |---|---|---|
 | `title` | yes | |
-| `type` | yes | `source` (a blog I read), `concept` (an idea that outlives one source), `cohort`, `log` |
+| `type` | yes | `source` (a blog I read), `concept` (an idea that outlives one source), `cohort`, `log`, `quick` (3–5 lines, see below) |
 | `status` | no | `published` or `draft`. **Missing means draft**, so nothing goes live by accident |
 | `date` | yes | `YYYY-MM-DD` |
-| `summary` | yes | one line |
+| `summary` | yes, except `quick` | one line. A quick note may skip it; its first line is used instead |
 | `source_url` | `source` only | https |
 | `source_author` | no | shown next to the source link |
 | `cohort_week` | `cohort` only | a number; groups the note under that week on `/notes/cohort/` |
@@ -66,6 +66,23 @@ Use 3–5 tags per note, for broad topics (`databases`, `networking`). Specific 
 ## Software-dev cohort
 
 Cohort notes (`type: cohort`, `cohort_week: N`) appear on `/notes` like any note, and on `/notes/cohort/` grouped by week. Every week has its own link to share (`/notes/cohort/#week-N`), with a share button next to it.
+
+## Quick notes
+
+For days with little time: `type: quick`, three to five lines, no `summary:` needed and no required sections. Set `ai_assisted: false` on one you wrote yourself.
+
+```markdown
+---
+title: WAL before data
+type: quick
+status: published
+date: 2026-12-08
+tags: postgres, databases
+ai_assisted: false
+---
+
+The WAL is written before the data page, so a crash can replay it.
+```
 
 ## Rules the build enforces
 

@@ -229,3 +229,27 @@ describe('groupByWeek', () => {
     ]);
   });
 });
+
+describe('quick notes', () => {
+  it('lets a quick note skip the summary and uses its first line instead', () => {
+    const [note] = buildNotes([
+      file('wal-in-one-line', { type: 'quick', summary: undefined }, '**The WAL** is written before the data page, so a crash can replay it.\n\nMore.'),
+    ]);
+    expect(note.typeLabel).toBe('Quick note');
+    expect(note.summary).toBe('The WAL is written before the data page, so a crash can replay it.');
+  });
+
+  it('still requires a summary on other note types', () => {
+    expect(() => buildNotes([file('no-summary', { summary: undefined })])).toThrow(/summary is required/);
+  });
+
+  it('shortens a long first line and flattens wikilinks', () => {
+    const [note] = buildNotes([
+      file('long-line', { type: 'quick', summary: undefined }, `See [[group-commit|group commit]] ${'word '.repeat(60)}`),
+    ]);
+    expect(note.summary.startsWith('See group commit word')).toBe(true);
+    expect(note.summary.endsWith('...')).toBe(true);
+    expect(note.summary.length).toBeLessThanOrEqual(140);
+  });
+
+});

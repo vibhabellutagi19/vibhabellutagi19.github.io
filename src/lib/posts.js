@@ -43,6 +43,7 @@ const TAG_LABELS = {
   sqlite: 'SQLite',
   typescript: 'TypeScript',
   trpc: 'tRPC',
+  'backend-concepts': 'Backend engineering concepts',
 };
 
 export function formatTag(tag) {

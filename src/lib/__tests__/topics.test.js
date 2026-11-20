@@ -24,6 +24,25 @@ describe('getTopic', () => {
   });
 });
 
+describe('backend concepts topic', () => {
+  it('groups posts tagged backend-concepts as a read-in-order topic', () => {
+    const series = [
+      post('cdc', 'Dec 14, 2026', ['backend-concepts', 'postgres']),
+      post('auth', 'Nov 28, 2026', ['backend-concepts', 'authentication']),
+      post('locks', 'Oct 22, 2026', ['building-apps']),
+    ];
+    const topic = groupByTopic(series).find((group) => group.id === 'backend-concepts');
+
+    expect(topic.name).toBe('Backend engineering concepts');
+    expect(topic.posts.map((item) => item.slug)).toEqual(['auth', 'cdc']);
+    expect(getTopicPath(series, series[1]).next.slug).toBe('cdc');
+  });
+
+  it('does not show the topic until it has a post', () => {
+    expect(groupByTopic(posts).map((group) => group.id)).not.toContain('backend-concepts');
+  });
+});
+
 describe('groupByTopic', () => {
   it('lists each topic oldest post first and skips empty topics', () => {
     const groups = groupByTopic(posts);
