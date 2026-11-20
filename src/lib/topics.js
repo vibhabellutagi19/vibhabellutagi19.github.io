@@ -31,6 +31,13 @@ export const TOPICS = [
     ordered: true,
   },
   {
+    id: 'backend-concepts',
+    name: 'Backend engineering concepts',
+    blurb: 'Core backend ideas, one at a time, read alongside Designing Data-Intensive Applications.',
+    tags: ['backend-concepts'],
+    ordered: true,
+  },
+  {
     // Also where a post lands when none of its tags belong to a topic above.
     // Its posts stand alone, so they aren't presented as parts of a sequence.
     id: 'projects',

@@ -1,6 +1,6 @@
 import { BlogIndex } from '@/components/blog/BlogIndex';
-import { getAllPosts, getAllTags } from '@/lib/posts';
-import { groupByTopic } from '@/lib/topics';
+import { getAllPosts } from '@/lib/posts';
+import { getTopicPath, groupByTopic } from '@/lib/topics';
 import { SITE_OG_IMAGES, SITE_TWITTER_IMAGES } from '@/lib/share-image';
 
 const title = 'Blog · Vibhavari Bellutagi';
@@ -24,22 +24,27 @@ export const metadata = {
 };
 
 export default async function BlogIndexPage() {
-  const posts = await getAllPosts();
-  const tags = await getAllTags();
-  const topics = groupByTopic(posts);
+  const allPosts = await getAllPosts();
+  // Series are filters and a small "Part N" label, not sections: only ones with 2+ posts read in order.
+  const topics = groupByTopic(allPosts)
+    .filter((topic) => topic.ordered && topic.posts.length > 1)
+    .map((topic) => ({ id: topic.id, name: topic.name, slugs: topic.posts.map((post) => post.slug) }));
+  const posts = allPosts.map((post) => {
+    const path = getTopicPath(allPosts, post);
+    return { ...post, part: path ? `${path.name} · Part ${path.index + 1} of ${path.parts.length}` : null };
+  });
 
   return (
     <main className="section blog-index">
-      <div className="container">
+      <div className="container container-blog">
         <div className="blog-head">
           <div>
             <p className="eyebrow">Writing</p>
             <h1>
-              {posts.length} posts on how things <span className="serif">actually</span> work.
+              How things <span className="serif">actually</span> work.
             </h1>
             <p className="section-lede">
-              Notes on data engineering, Git, networking and the systems behind software. Pick a topic and read it
-              in order, or browse by date.
+              {posts.length} posts on data engineering, backend systems, Git and networking, newest first.
             </p>
           </div>
           <a className="text-link rss-link" href="/feed.xml">
@@ -51,7 +56,7 @@ export default async function BlogIndexPage() {
           </a>
         </div>
 
-        <BlogIndex posts={posts} topics={topics} tags={tags} />
+        <BlogIndex posts={posts} topics={topics} />
       </div>
     </main>
   );

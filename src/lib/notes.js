@@ -24,6 +24,7 @@ export const NOTE_TYPES = {
   concept: 'Concept',
   cohort: 'Cohort',
   log: 'Log',
+  quick: 'Quick note',
 };
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -42,6 +43,17 @@ export function noteTagHref(tag) {
 
 export function cohortWeekHref(week) {
   return `${COHORT_PATH}#week-${week}`;
+}
+
+
+/** A quick note has no `summary:`; its first line stands in so lists and link previews still have text. */
+function firstLine(content) {
+  const line = content
+    .split('\n')
+    .map((text) => text.replace(/^[#>*\-\s]+/, '').trim())
+    .find((text) => text && !text.startsWith('<!--') && !text.startsWith(':::'));
+  const plain = (line || '').replace(/[`*]|\[\[([^\]|]+?)(?:\|([^\]]+))?\]\]/g, (_, target, label) => label || target || '');
+  return plain.length > 140 ? `${plain.slice(0, 137).trimEnd()}...` : plain;
 }
 
 /** "2026-11-19" -> { iso, display: "Nov 19, 2026", time } or null. Parsed by hand so the day never shifts with the time zone. */
@@ -187,7 +199,7 @@ export function validateNote(note, { allowedTags } = {}) {
   if (!parseNoteDate(metadata.date)) {
     problems.push('date must be a real date written YYYY-MM-DD');
   }
-  if (!metadata.summary) {
+  if (!metadata.summary && metadata.type !== 'quick') {
     problems.push('summary is required (one line, used in lists and link previews)');
   }
   if (metadata.type === 'source' && !/^https:\/\//.test(metadata.source_url || '')) {
@@ -229,7 +241,7 @@ function toNote({ slug, raw, isDraftFile }) {
     date: date?.iso ?? '',
     displayDate: date?.display ?? '',
     time: date?.time ?? 0,
-    summary: metadata.summary || '',
+    summary: metadata.summary || (metadata.type === 'quick' ? firstLine(content) : ''),
     sourceUrl: metadata.source_url || null,
     sourceAuthor: metadata.source_author || null,
     tags: parseTags(metadata.tags),

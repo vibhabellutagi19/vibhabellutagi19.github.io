@@ -61,6 +61,11 @@ The list drives the blog index and every post page, so you only need to update t
 - **readTime**: Estimated reading time, e.g., "5 min read" (required)
 - **excerpt**: Short description for the blog listing (required)
 - **slug**: URL-friendly identifier used in URLs (required)
+- **series**: Name of a series the post belongs to (optional), e.g. `"Apache Spark"`.
+
+## Starting a series
+
+A series is a **topic** in `src/lib/topics.js`: a name, a blurb and the tag that owns it. Tag each post in it (e.g. `tags: "backend-concepts, postgres"`) and it shows as a chip and a read-in-order section on the blog index, with Part N navigation on each post. The topic appears once it has a post. Current topics: Apache Spark, Git, Networking, JavaScript and Backend engineering concepts (`backend-concepts`).
 
 ## Folder Naming Convention
 

@@ -55,14 +55,14 @@
   }
 
   /* Dark cards (featured post, read next, project) sit on the lifted shade too. */
-  :root[data-theme='dark'] :is(.post-featured, .next-card, .project.dark) {
+  :root[data-theme='dark'] :is(.next-card, .project.dark) {
     border-color: var(--chrome);
     background: var(--chrome);
   }
 
   /* Selected chips and tabs are "ink on paper" in light mode: a dark pill on a light page.
      On a dark page the ink is light, so the pill inverts. */
-  :root[data-theme='dark'] :is(.filter-chip, .sort-toggle button)[aria-pressed='true'] {
+  :root[data-theme='dark'] .filter-chip[aria-pressed='true'] {
     border-color: var(--text);
     background: var(--text);
     color: var(--bg);

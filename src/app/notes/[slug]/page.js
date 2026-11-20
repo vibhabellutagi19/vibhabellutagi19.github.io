@@ -135,7 +135,7 @@ export default async function NotePage({ params }) {
               {note.status === 'draft' && <span className="note-draft-badge">Draft, only visible locally</span>}
             </p>
             <h1>{note.title}</h1>
-            {note.summary && <p className="note-lede">{note.summary}</p>}
+            {note.summary && note.type !== 'quick' && <p className="note-lede">{note.summary}</p>}
             <div className="article-tools" data-pagefind-ignore>
               <div className="byline">
                 <Image className="byline-photo" src={profile.avatar} alt="" width={44} height={44} />

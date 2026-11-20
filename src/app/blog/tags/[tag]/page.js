@@ -60,7 +60,7 @@ export default async function BlogTagPage({ params }) {
           </p>
         </div>
 
-        <PostList posts={posts} tagLabels={tagLabels} />
+        <PostList posts={posts} />
       </div>
     </main>
   );

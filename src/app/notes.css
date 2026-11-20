@@ -337,3 +337,8 @@
 .cohort-week-head .share {
   margin-left: auto;
 }
+
+/* The quick-note type label */
+.note-type-quick {
+  color: var(--text-soft);
+}

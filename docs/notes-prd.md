@@ -3,8 +3,8 @@
 | | |
 |---|---|
 | **Owner** | Vibha |
-| **Status** | v0.7, M1 and M2 built except Mermaid and a notes RSS feed (not yet live) |
-| **Date** | 2026-11-19 |
+| **Status** | v0.8, M1 and M2 built except Mermaid and a notes RSS feed (not yet live) |
+| **Date** | 2026-11-20 |
 | **Lives at** | `buildwithvibs.in/notes/` |
 | **Code** | this repo: `src/lib/notes.js`, `src/app/notes/`, `notes/`, `.claude/skills/note-writing/` |
 
@@ -75,6 +75,7 @@ I explain what I understood to an AI assistant, and it drafts the note **in my w
 - **Concept note** (`type: concept`): an idea that outlives one source (e.g. *Redis Cluster hash slots*). Collects backlinks from every source that uses it.
 - **Cohort note** (`type: cohort`): a cohort session or exercise, with `cohort_week`.
 - **Log** (`type: log`): optional "read X today".
+- **Quick note** (`type: quick`): three to five lines, no `summary:` needed (its first line is used), for days with little time.
 
 Format: `notes/README.md`.
 
