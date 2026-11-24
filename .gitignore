@@ -30,3 +30,8 @@ yarn-error.log*
 
 # Notes drafts stay on my machine; this repo is public
 /notes/drafts/
+
+/blog/drafts/
+
+# Lavish review sessions (local planning artifacts)
+/.lavish/
