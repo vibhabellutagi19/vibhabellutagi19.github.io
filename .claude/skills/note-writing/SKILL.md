@@ -129,6 +129,10 @@ ai_assisted: false
 
 Rules: don't expand a quick note into a full note unless she asks. Keep `<!-- verify -->` markers for anything she didn't state. Set `ai_assisted: false` when she wrote the lines herself.
 
+## LinkedIn and X posts
+
+Her daily LinkedIn and X posts are about notes; they are not a separate kind of note. When she gives a post URL for a note, add `linkedin_url:` (`https://www.linkedin.com/...`) or `x_url:` (`https://x.com/...`) to that note's frontmatter. Don't invent URLs; leave the field out until she has posted.
+
 ## Checklist before replying
 
 - [ ] File is in `notes/drafts/`, `status: draft`, slug matches the file name (kebab-case)

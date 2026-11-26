@@ -105,6 +105,40 @@
   color: var(--text-faint);
 }
 
+.note-discuss {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.note-discuss a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  color: var(--text-soft);
+  transition:
+    border-color 0.2s var(--ease),
+    color 0.2s var(--ease);
+}
+
+.note-discuss a:hover,
+.note-discuss a:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.note-discuss svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .note-ai {
   color: var(--text-faint);
   font-size: 13.5px;
