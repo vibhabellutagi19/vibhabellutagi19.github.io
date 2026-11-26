@@ -27,6 +27,13 @@ import {
 } from '@/lib/notes';
 import { formatTag, getAllPosts } from '@/lib/posts';
 
+// Outline icons from Tabler Icons (MIT, tabler.io/icons), the same ones the share menu uses.
+const SOCIAL_ICONS = {
+  linkedin:
+    'M8 11v5M8 8v.01M12 16v-5M16 16v-3a2 2 0 1 0 -4 0M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z',
+  x: 'M4 4l11.733 16h4.267l-11.733 -16zM4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772',
+};
+
 const SITE_URL = 'https://buildwithvibs.in';
 
 export const dynamicParams = false;
@@ -105,6 +112,7 @@ export default async function NotePage({ params }) {
     keywords: note.tags.map(formatTag).join(', '),
     author: { '@type': 'Person', name: profile.name, url: SITE_URL },
     ...(note.sourceUrl ? { isBasedOn: note.sourceUrl } : {}),
+    ...(note.linkedinUrl || note.xUrl ? { sameAs: [note.linkedinUrl, note.xUrl].filter(Boolean) } : {}),
   };
 
   return (
@@ -153,7 +161,7 @@ export default async function NotePage({ params }) {
               </div>
             </div>
 
-            {(note.sourceUrl || note.aiAssisted) && (
+            {(note.sourceUrl || note.aiAssisted || note.linkedinUrl || note.xUrl) && (
               <div className="note-provenance" data-pagefind-ignore>
                 {note.sourceUrl && (
                   <p>
@@ -162,6 +170,30 @@ export default async function NotePage({ params }) {
                       {note.sourceAuthor ? `${note.sourceAuthor} · ` : ''}
                       {sourceHost(note.sourceUrl)} ↗
                     </a>
+                  </p>
+                )}
+                {(note.linkedinUrl || note.xUrl) && (
+                  <p className="note-discuss">
+                    <span className="note-provenance-label">Discuss on</span>
+                    {[
+                      { href: note.linkedinUrl, label: 'LinkedIn', icon: SOCIAL_ICONS.linkedin },
+                      { href: note.xUrl, label: 'X', icon: SOCIAL_ICONS.x },
+                    ]
+                      .filter(({ href }) => href)
+                      .map(({ href, label, icon }) => (
+                        <a
+                          key={label}
+                          href={href}
+                          target="_blank"
+                          rel="noreferrer"
+                          aria-label={`Discuss on ${label}`}
+                          title={`Discuss on ${label}`}
+                        >
+                          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                            <path d={icon} />
+                          </svg>
+                        </a>
+                      ))}
                   </p>
                 )}
                 {note.aiAssisted && (

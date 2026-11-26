@@ -102,6 +102,22 @@ describe('validateNote', () => {
     expect(problems.join()).toMatch(/281 characters/);
   });
 
+  it('accepts LinkedIn and X post links and rejects other hosts', () => {
+    const ok = {
+      ...valid,
+      linkedin_url: 'https://www.linkedin.com/posts/vibha_abc-123',
+      x_url: 'https://x.com/vibha/status/123',
+    };
+    expect(validateNote(note(ok))).toEqual([]);
+    expect(validateNote(note({ ...valid, x_url: 'https://twitter.com/vibha/status/123' }))).toEqual([]);
+
+    const problems = validateNote(
+      note({ ...valid, linkedin_url: 'http://linkedin.com/posts/a', x_url: 'https://example.com/x.com/a' })
+    );
+    expect(problems.join()).toMatch(/linkedin_url/);
+    expect(problems.join()).toMatch(/x_url/);
+  });
+
   it('allows verify markers in drafts', () => {
     expect(validateNote(note({ ...valid, status: 'draft' }, '<!-- verify: check this -->'))).toEqual([]);
   });

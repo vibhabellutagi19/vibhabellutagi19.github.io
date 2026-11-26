@@ -32,6 +32,8 @@ const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const VERIFY_MARKER = /<!--\s*verify\b[\s\S]*?-->/i;
 const WIKILINK = /\[\[([^\]|\n]+?)(?:\|([^\]\n]+))?\]\]/g;
 const TWEET_LIMIT = 280;
+const LINKEDIN_URL = /^https:\/\/(?:[a-z]{2,3}\.)?linkedin\.com\/\S+$/i;
+const X_URL = /^https:\/\/(?:www\.)?(?:x|twitter)\.com\/\S+$/i;
 
 export function noteHref(slug) {
   return `${NOTES_PATH}/${slug}/`;
@@ -211,6 +213,12 @@ export function validateNote(note, { allowedTags } = {}) {
   if (metadata.tweet && [...metadata.tweet].length > TWEET_LIMIT) {
     problems.push(`tweet is ${[...metadata.tweet].length} characters; the limit is ${TWEET_LIMIT}`);
   }
+  if (metadata.linkedin_url && !LINKEDIN_URL.test(metadata.linkedin_url)) {
+    problems.push('linkedin_url must be an https://www.linkedin.com/... link to the post');
+  }
+  if (metadata.x_url && !X_URL.test(metadata.x_url)) {
+    problems.push('x_url must be an https://x.com/... link to the post');
+  }
   if (allowedTags) {
     (note.tags ?? []).forEach((tag) => {
       if (!allowedTags.includes(tag)) {
@@ -246,6 +254,8 @@ function toNote({ slug, raw, isDraftFile }) {
     sourceAuthor: metadata.source_author || null,
     tags: parseTags(metadata.tags),
     tweet: metadata.tweet || null,
+    linkedinUrl: metadata.linkedin_url || null,
+    xUrl: metadata.x_url || null,
     cohortWeek: metadata.cohort_week ? Number(metadata.cohort_week) : null,
     aiAssisted: metadata.ai_assisted !== 'false',
     blogPosts: parseList(metadata.blog_posts),

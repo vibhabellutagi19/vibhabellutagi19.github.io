@@ -52,10 +52,22 @@ A: The answer in one or two sentences.
 | `cohort_week` | `cohort` only | a number; groups the note under that week on `/notes/cohort/` |
 | `tags` | no | comma-separated, **only from `notes/tags.json`** (see below) |
 | `tweet` | no | ≤ 280 characters |
+| `linkedin_url` | no | link to my LinkedIn post about this note (`https://www.linkedin.com/...`); shows "Discuss on LinkedIn" |
+| `x_url` | no | link to my X post about this note (`https://x.com/...`); shows "Discuss on X" |
 | `blog_posts` | no | comma-separated slugs of my blog posts that use this idea ("Where I used this") |
 | `ai_assisted` | no | defaults to `true`; shows "Drafted with AI from my own explanation" |
 
 Frontmatter is one `key: value` per line (no YAML lists), same as blog posts.
+
+## Posting on LinkedIn and X
+
+The thoughts I post on LinkedIn and X every day are notes too: same file, same type (`source`, `quick`, ...), same rules.
+
+1. Write the note as usual (daily loop above) and publish it.
+2. Post on LinkedIn and X, ending with the note's link (`buildwithvibs.in/notes/<slug>/`).
+3. Copy each post's URL into `linkedin_url:` and `x_url:`, commit, push. The note page then links to both posts, so readers can join the discussion.
+
+Both fields are optional; add only the one I posted to.
 
 ## Tags
 
